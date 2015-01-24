@@ -16,14 +16,14 @@
 
 static void		push_to_arr(void *data, void *arr)
 {
-	arr_push(arr, data);
+	twl_arr_push(arr, data);
 }
 
-void **lst_to_arr_(t_lst *lst)
+void **lst_to_twl_arr_(t_lst *lst)
 {
 	void **arr;
 
-	arr = arr_init(lst_len(lst));
+	arr = twl_arr_init(lst_len(lst));
 	lst_iter(lst, push_to_arr, arr);
 	return (arr);
 }

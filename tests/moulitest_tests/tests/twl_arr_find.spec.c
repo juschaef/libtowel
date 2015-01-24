@@ -19,11 +19,11 @@ static void simple_test(t_test *test)
 
 	char *find;
 
-	find = arr_find(arr, find_fn, "ccc");
+	find = twl_arr_find(arr, find_fn, "ccc");
 	mt_assert(strcmp(find, "ccc") == 0);
 }
 
-void	suite_arr_find(t_suite *suite)
+void	suite_twl_arr_find(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }

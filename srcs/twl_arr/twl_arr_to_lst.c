@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_to_lst.c                                       :+:      :+:    :+:   */
+/*   twl_arr_to_lst.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -19,11 +19,11 @@ static void		push_to_lst(void *elem, void *lst)
 	lst_push(lst, elem);
 }
 
-t_lst *arr_to_lst(void *arr)
+t_lst *twl_arr_to_lst(void *arr)
 {
 	t_lst *lst;
 
 	lst = lst_init();
-	arr_iter(arr, push_to_lst, lst);
+	twl_arr_iter(arr, push_to_lst, lst);
 	return (lst);
 }

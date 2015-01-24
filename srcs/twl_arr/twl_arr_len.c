@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_cpy.c                                          :+:      :+:    :+:   */
+/*   twl_arr_len.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/13 13:41:44 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/14 10:40:33 by yyang            ###   ########.fr       */
+/*   Created: 2014/12/13 12:23:16 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/22 22:30:56 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <arr.h>
-#include <stdlib.h>
 
-/*
-** warning: NOT WORKING
-*/
-
-void	*arr_cpy(void *arr)
+size_t	twl_arr_len(void *twl_arr_)
 {
-	long	*arr_tmp;
-	long	*new_arr;
-	int		i;
+	size_t	size;
+	void 	**arr;
 
-	arr_tmp = (long *)arr;
-	new_arr = (long *)malloc(sizeof(arr_tmp) * (arr_len(arr_tmp) + 1));
-	i = 0;
-	while (arr_tmp[i])
-	{
-		new_arr[i] = arr_tmp[i];
-		i++;
-	}
-	new_arr[i] = 0;
-	return (new_arr);
+	arr = twl_arr_;
+	size = 0;
+	while (arr[size])
+		size++;
+	return (size);
 }

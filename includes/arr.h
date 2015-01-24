@@ -18,20 +18,20 @@
 # include <twl_bool.h>
 # include <lst.h>
 
-size_t	arr_len(void *arr);
-void	*arr_rev(void *arr);
-void	*arr_cpy(void *arr);
-void	arr_del(void *arr_ptr);
-void	arr_iter(void *arr_, void (*f)(void *elem, void *context),
+size_t	twl_arr_len(void *arr);
+void	*twl_arr_rev(void *arr);
+void	*twl_arr_cpy(void *arr);
+void	twl_arr_del(void *twl_arr_ptr);
+void	twl_arr_iter(void *twl_arr_, void (*f)(void *elem, void *context),
 															void *context);
-void	*arr_last(void *arr_);
-void	arr_push(void *arr_, void *elem);
-void 	*arr_find(void *arr_, int (*find_fn)(void *arr, void *context), void *context);
-void	arr_swap(void *arr_, int i, int j);
-void	*arr_init(size_t size);
-void	arr_del_elem(void *arr_, int index);
-int		arr_indexof(void *arr_, void *target);
-void	arr_sort(void *arr_, t_sort_cmp_fn *cmp_fn, void *context);
-t_lst 	*arr_to_lst(void *arr);
+void	*twl_arr_last(void *twl_arr_);
+void	twl_arr_push(void *twl_arr_, void *elem);
+void 	*twl_arr_find(void *twl_arr_, int (*find_fn)(void *arr, void *context), void *context);
+void	twl_arr_swap(void *twl_arr_, int i, int j);
+void	*twl_arr_init(size_t size);
+void	twl_arr_del_elem(void *twl_arr_, int index);
+int		twl_arr_indexof(void *twl_arr_, void *target);
+void	twl_arr_sort(void *twl_arr_, t_sort_cmp_fn *cmp_fn, void *context);
+t_lst 	*twl_arr_to_lst(void *arr);
 
 #endif

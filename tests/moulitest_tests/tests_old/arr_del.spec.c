@@ -1,7 +1,7 @@
 #include "project.h"
 #include <arr.h>
 
-UT_TEST(arr_del)
+UT_TEST(twl_arr_del)
 {
 	char **arr;
 	char *str;
@@ -13,7 +13,7 @@ UT_TEST(arr_del)
 	arr[2] = strdup("ccc");
 	arr[3] = NULL;
 
-	arr_del(arr);
+	twl_arr_del(arr);
 
 	UT_ASSERT(arr[0] == NULL);
 }

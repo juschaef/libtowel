@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_del.c                                          :+:      :+:    :+:   */
+/*   twl_arr_del_elem.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/13 13:41:44 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 11:23:28 by juschaef         ###   ########.fr       */
+/*   Created: 2015/01/19 13:53:40 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/19 14:02:17 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <arr.h>
 #include <stdlib.h>
 
-void	arr_del(void *arr_)
+void	twl_arr_del_elem(void *twl_arr_, int index)
 {
 	void **arr;
-	size_t size;
-	size_t i;
 
-	arr = arr_;
-	size = arr_len(arr);
-	i = 0;
-	while (i < size)
+	arr = twl_arr_;
+	arr = arr + index;
+	while (*arr)
 	{
-		free(arr[i]);
-		arr[i] = NULL;
-		i++;
+		*arr = *(arr + 1);
+		arr++;
 	}
-	free(arr);
 }

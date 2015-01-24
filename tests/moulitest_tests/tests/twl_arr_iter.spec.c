@@ -19,7 +19,7 @@ static void simple_test(t_test *test)
 	arr[2] = strdup("ccc");
 	arr[3] = NULL;
 
-	arr_iter(arr, iter_fn, NULL);
+	twl_arr_iter(arr, iter_fn, NULL);
 
 	mt_assert(strcmp(arr[0], "baa") == 0);
 	mt_assert(strcmp(arr[1], "cbb") == 0);
@@ -27,7 +27,7 @@ static void simple_test(t_test *test)
 	mt_assert(arr[3] == 0);
 }
 
-void	suite_arr_iter(t_suite *suite)
+void	suite_twl_arr_iter(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }

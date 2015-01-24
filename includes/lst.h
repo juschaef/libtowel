@@ -54,7 +54,7 @@ t_lst					*lst_init(void);
 t_lst_elem				*lst_create_elem_(void *data);
 t_lst_elem				*lst_get_(t_lst *lst, size_t index);
 void					lst__link_(t_lst_elem *elem1, t_lst_elem *elem2);
-void 					**lst_to_arr_(t_lst *lst);
+void 					**lst_to_twl_arr_(t_lst *lst);
 void					lstelem_del(t_lst_elem *elem, void (*delfn)());
 
 

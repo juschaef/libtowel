@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_find.c                                         :+:      :+:    :+:   */
+/*   twl_arr_del.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/18 20:08:08 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/21 19:42:23 by annguyen         ###   ########.fr       */
+/*   Created: 2014/12/13 13:41:44 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/23 11:23:28 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <arr.h>
+#include <stdlib.h>
 
-void *arr_find(void *arr_, int (*find_fn)(void *arr, void *context), void *context)
+void	twl_arr_del(void *twl_arr_)
 {
 	void **arr;
+	size_t size;
+	size_t i;
 
-arr = arr_;
-	while (*arr)
+	arr = twl_arr_;
+	size = twl_arr_len(arr);
+	i = 0;
+	while (i < size)
 	{
-		if (find_fn(*arr, context))
-			return (*arr);
-		arr++;
+		free(arr[i]);
+		arr[i] = NULL;
+		i++;
 	}
-	return (NULL);
+	free(arr);
 }

@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_len.c                                          :+:      :+:    :+:   */
+/*   twl_arr_indexof.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/13 12:23:16 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/22 22:30:56 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/11 22:09:03 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/23 14:24:14 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <arr.h>
 
-size_t	arr_len(void *arr_)
+#include <stdio.h> //warning
+int		twl_arr_indexof(void *twl_arr_, void *target)
 {
-	size_t	size;
-	void 	**arr;
+	void **arr;
+	int i;
 
-	arr = arr_;
-	size = 0;
-	while (arr[size])
-		size++;
-	return (size);
+	i = 0;
+	arr = twl_arr_;
+	while (arr[i])
+	{
+		if (arr[i] == target)
+			return (i);
+		i++;
+	}
+	return (-1);
 }

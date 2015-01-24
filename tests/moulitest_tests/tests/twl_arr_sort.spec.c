@@ -13,7 +13,7 @@ int get_item_order(char *path)
 		return DIR;
 }
 
- bool 		arr_sort_obj_type_should_swap(void *item1, void *item2, void *context)
+ bool 		twl_arr_sort_obj_type_should_swap(void *item1, void *item2, void *context)
 {
 	char *s1 = item1;
 	char *s2 = item2;
@@ -21,7 +21,7 @@ int get_item_order(char *path)
 	return (get_item_order(s1) < get_item_order(s2));
 }
 
- bool 		arr_sort_twl_strcmp_should_swap(void *str1, void *str2, void *context)
+ bool 		twl_arr_sort_twl_strcmp_should_swap(void *str1, void *str2, void *context)
 {
 	char *s1;
 	char *s2;
@@ -47,25 +47,25 @@ static void simple_test(t_test *test)
 {
 	char **arr;
 
-	arr = arr_init(99);
-	arr_push(arr, strdup("d_zzz"));
-	arr_push(arr, strdup("d_ccc"));
-	arr_push(arr, strdup("d_www"));
-	arr_push(arr, strdup("f_bbb"));
-	arr_push(arr, strdup("f_ccc"));
-	arr_push(arr, strdup("f_bbb"));
-	arr_push(arr, strdup("d_aaa"));
-	arr_push(arr, strdup("f_aaa"));
-	arr_push(arr, strdup("f_ccc"));
-	arr_push(arr, strdup("f_bbb"));
-	arr_push(arr, strdup("f_zaa"));
-	arr_push(arr, strdup("f_zcc"));
-	arr_push(arr, strdup("f_zbb"));
-	arr_push(arr, strdup("d_bbb"));
+	arr = twl_arr_init(99);
+	twl_arr_push(arr, strdup("d_zzz"));
+	twl_arr_push(arr, strdup("d_ccc"));
+	twl_arr_push(arr, strdup("d_www"));
+	twl_arr_push(arr, strdup("f_bbb"));
+	twl_arr_push(arr, strdup("f_ccc"));
+	twl_arr_push(arr, strdup("f_bbb"));
+	twl_arr_push(arr, strdup("d_aaa"));
+	twl_arr_push(arr, strdup("f_aaa"));
+	twl_arr_push(arr, strdup("f_ccc"));
+	twl_arr_push(arr, strdup("f_bbb"));
+	twl_arr_push(arr, strdup("f_zaa"));
+	twl_arr_push(arr, strdup("f_zcc"));
+	twl_arr_push(arr, strdup("f_zbb"));
+	twl_arr_push(arr, strdup("d_bbb"));
 
-	arr_sort(arr, arr_sort_twl_strcmp_should_swap, NULL);
-	arr_sort(arr, arr_sort_obj_type_should_swap, NULL);
-	// arr_iter(arr, iter_fn, NULL);
+	twl_arr_sort(arr, twl_arr_sort_twl_strcmp_should_swap, NULL);
+	twl_arr_sort(arr, twl_arr_sort_obj_type_should_swap, NULL);
+	// twl_arr_iter(arr, iter_fn, NULL);
 
 	int i = 0;
 	mt_assert(strcmp(arr[i++], "f_aaa") == 0);
@@ -84,7 +84,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(arr[i++], "d_zzz") == 0);
 }
 
-void	suite_arr_sort(t_suite *suite)
+void	suite_twl_arr_sort(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }

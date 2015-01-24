@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_last.c                                         :+:      :+:    :+:   */
+/*   twl_arr_iter.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/18 20:08:08 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/19 12:47:44 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/11 22:09:03 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/19 17:32:02 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <arr.h>
 
-void *arr_last(void *arr_)
+void	twl_arr_iter(void *twl_arr_, void (*f)(void *elem, void *context), void *context)
 {
 	int i;
 	void **arr;
 
-	arr = arr_;
-	if (!arr[0])
-		return (NULL);
+	arr = twl_arr_;
 	i = 0;
-	while (arr[i + 1])
+	while (arr[i])
+	{
+		f(arr[i], context);
 		i++;
-	return (arr[i]);
+	}
 }

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_iter.c                                         :+:      :+:    :+:   */
+/*   twl_arr_find.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/11 22:09:03 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/19 17:32:02 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/18 20:08:08 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/21 19:42:23 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <arr.h>
 
-void	arr_iter(void *arr_, void (*f)(void *elem, void *context), void *context)
+void *twl_arr_find(void *twl_arr_, int (*find_fn)(void *arr, void *context), void *context)
 {
-	int i;
 	void **arr;
 
-	arr = arr_;
-	i = 0;
-	while (arr[i])
+arr = twl_arr_;
+	while (*arr)
 	{
-		f(arr[i], context);
-		i++;
+		if (find_fn(*arr, context))
+			return (*arr);
+		arr++;
 	}
+	return (NULL);
 }

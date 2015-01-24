@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_sort.c                                         :+:      :+:    :+:   */
+/*   twl_arr_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <libft.h>
 #include <arr.h>
 
-void			arr_sort(void *arr_, t_sort_cmp_fn *cmp_fn, void *context)
+void			twl_arr_sort(void *twl_arr_, t_sort_cmp_fn *cmp_fn, void *context)
 {
 	int i;
 	int j;
@@ -21,15 +21,15 @@ void			arr_sort(void *arr_, t_sort_cmp_fn *cmp_fn, void *context)
 	void **arr;
 
 	i = 0;
-	size = arr_len(arr_);
-	arr = arr_;
+	size = twl_arr_len(twl_arr_);
+	arr = twl_arr_;
 	while (i < size - 1)
 	{
 		j = 0;
 		while (j < size - 1 - i)
 		{
 			if (cmp_fn(arr[j + 1], arr[j], context))
-				arr_swap(arr, j + 1, j);
+				twl_arr_swap(arr, j + 1, j);
 			j++;
 		}
 		i++;

@@ -1,7 +1,7 @@
 #include "project.h"
 #include <arr.h>
 
-UT_TEST(arr_cpy)
+UT_TEST(twl_arr_cpy)
 {
 	char *arr[4];
 	char **arr2;
@@ -11,7 +11,7 @@ UT_TEST(arr_cpy)
 	arr[2] = strdup("ccc");
 	arr[3] = NULL;
 
-	arr2 = arr_cpy(arr);
+	arr2 = twl_arr_cpy(arr);
 
 	UT_ASSERT(arr2 != arr);
 	UT_ASSERT(strequ(arr2[0], "aaa"));

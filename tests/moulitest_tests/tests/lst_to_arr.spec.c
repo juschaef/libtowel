@@ -13,7 +13,7 @@ static void simple_test(t_test *test)
 	lst_push(lst, twl_strdup("bbb"));
 	lst_push(lst, twl_strdup("ccc"));
 
-	arr = (char **)lst_to_arr_(lst);
+	arr = (char **)lst_to_twl_arr_(lst);
 
 	mt_assert(strcmp(arr[0], "aaa") == 0);
 	mt_assert(strcmp(arr[1], "bbb") == 0);

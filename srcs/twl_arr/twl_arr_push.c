@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   arr_swap.c                                         :+:      :+:    :+:   */
+/*   twl_arr_push.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/18 20:08:08 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/19 14:07:36 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/19 14:37:33 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <arr.h>
 
-void	arr_swap(void *arr_, int i, int j)
+void twl_arr_push(void *twl_arr_, void *elem)
 {
-	void *tmp;
 	void **arr;
 
-	arr = arr_;
-	tmp = arr[i];
-	arr[i] = arr[j];
-	arr[j] = tmp;
+	arr = twl_arr_;
+	while (*arr)
+		arr++;
+	*arr = elem;
+	arr++;
+	*arr = NULL;
 }

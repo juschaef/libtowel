@@ -12,11 +12,11 @@ static void simple_test(t_test *test)
 
 	char *last;
 
-	last = (char *)arr_last(arr);
+	last = (char *)twl_arr_last(arr);
 	mt_assert(strcmp(last, "ccc") == 0);
 }
 
-void	suite_arr_last(t_suite *suite)
+void	suite_twl_arr_last(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }
