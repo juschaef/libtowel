@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_sys_isdir.c                                     :+:      :+:    :+:   */
+/*   twl_isdir.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 21:12:40 by annguyen          #+#    #+#             */
-/*   Updated: 2015/01/20 21:20:23 by annguyen         ###   ########.fr       */
+/*   Updated: 2015/01/24 19:31:42 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <sys/stat.h>
 
-int        twl_sys_isdir(char *path)
+int        twl_isdir(char *path)
 {
     struct stat st;
 

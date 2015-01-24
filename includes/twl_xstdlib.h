@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_joinpath.c                                     :+:      :+:    :+:   */
+/*   twl_xstdlib.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/20 21:12:40 by annguyen          #+#    #+#             */
-/*   Updated: 2015/01/24 19:34:47 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/24 19:24:29 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/24 19:29:47 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/stat.h>
-#include <libft.h>
+#ifndef TWL_XSTDLIB_H
+# define TWL_XSTDLIB_H
 
-char	*twl_joinpath(char *s1, char *s2)
-{
-	char	*s;
+char		*twl_joinpath(char *s1, char *s2);
 
-	s = twl_strjoin(s1, "/");
-	s = twl_strjoinfree(s, s2, 'l');
-	return (s);
-}
+#endif
