@@ -1,18 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_point_init.c                                    :+:      :+:    :+:   */
+/*   twl_point_init.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 22:18:04 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/15 13:08:17 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 20:04:12 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_point.h>
 #include <stdlib.h>
-#include <mlx.h>
 
 t_twl_point	*twl_point_init(int x, int y)
 {

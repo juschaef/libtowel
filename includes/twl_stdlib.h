@@ -1,16 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_cat.c                                          :+:      :+:    :+:   */
+/*   twl_stdlib.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/19 10:51:42 by juschaef          #+#    #+#             */
-/*   Updated: 2014/12/19 11:59:49 by juschaef         ###   ########.fr       */
+/*   Created: 2015/01/07 18:23:37 by juschaef          #+#    #+#             */
+/*   Updated: 2015/01/24 20:05:41 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		lstcat(void)
-{
 
-}
+#ifndef TWL_STDLIB_H
+# define TWL_STDLIB_H
+
+int		twl_atoi(const char *str);
+
+#endif

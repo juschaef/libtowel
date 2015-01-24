@@ -23,7 +23,7 @@ void	twl_lst_pop(t_lst *lst, void (*f)())
 	while (elem->next)
 		elem = elem->next;
 	prev = elem->prev;
-	lstelem_del(elem, f);
+	twl_lstelem_del(elem, f);
 	if (lst->elems == elem)
 		lst->elems = NULL;
 	if (prev)

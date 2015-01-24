@@ -20,7 +20,7 @@ void	twl_lst_del(t_lst *lst, void (*delfn)(void *))
 	elem = lst->elems;
 	while (elem)
 	{
-		lstelem_del(elem, delfn);
+		twl_lstelem_del(elem, delfn);
 		elem = elem->next;
 	}
 	free(lst);

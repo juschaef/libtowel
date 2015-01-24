@@ -22,7 +22,7 @@ static void	del_data(char *str)
 // 	mt_assert(elem != NULL);
 // 	mt_assert(str != NULL);
 
-// 	lstelem_del(elem, del_data);
+// 	twl_lstelem_del(elem, del_data);
 
 // 	mt_assert(elem->data == NULL);
 // 	mt_assert(elem->key == NULL);

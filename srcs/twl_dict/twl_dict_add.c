@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_dict_add.c                                        :+:      :+:    :+:   */
+/*   twl_dict_add.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 19:42:40 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/24 20:01:37 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_dict.h>
 #include <libft.h>
+
+/*
+** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_lst *lst, t_twl_lst_elem *elem)"
+*/
 
 void		twl_dict_add(t_lst *lst, char *key, void *data)
 {
@@ -42,5 +46,4 @@ void		twl_dict_add(t_lst *lst, char *key, void *data)
 			twl_lst__link_(tmpelem, tmpelem->next);
 		}
 	}
-
 }
