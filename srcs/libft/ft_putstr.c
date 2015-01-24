@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   twl_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,12 @@
 
 #include <unistd.h>
 
-static size_t	ft_strlen(const char *s)
+static size_t	twl_strlen(const char *s)
 {
-	return (*s ? ft_strlen(++s) + 1 : 0);
+	return (*s ? twl_strlen(++s) + 1 : 0);
 }
 
-void			ft_putstr(char const *s)
+void			twl_putstr(char const *s)
 {
-	write(1, s, ft_strlen(s));
+	write(1, s, twl_strlen(s));
 }

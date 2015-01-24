@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   twl_sys.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/15 14:35:02 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/17 14:49:02 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/20 21:12:52 by annguyen          #+#    #+#             */
+/*   Updated: 2015/01/20 22:09:02 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#ifndef FT_SYS_H
+# define FT_SYS_H
 
-# define T_FT_POINT(x, y)	((t_ft_point){(x), (y)})
-
-typedef struct	s_ft_point
-{
-	int x;
-	int y;
-}				t_ft_point;
-
-t_ft_point		*ft_point_init(int x, int y);
+int			twl_sys_isdir(char *path);
+char		*twl_sys_joinpath(char *s1, char *s2);
 
 #endif

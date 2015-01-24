@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sys_isdir.c                                     :+:      :+:    :+:   */
+/*   twl_sys_isdir.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <sys/stat.h>
 
-int        ft_sys_isdir(char *path)
+int        twl_sys_isdir(char *path)
 {
     struct stat st;
 

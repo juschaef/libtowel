@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdup.c                                        :+:      :+:    :+:   */
+/*   twl_memdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,15 +12,15 @@
 
 #include <libft.h>
 
-void	*ft_memdup(const void *s, size_t n)
+void	*twl_memdup(const void *s, size_t n)
 {
 	void	*dup;
 
 	if (!s)
 		return (NULL);
-	dup = ft_memalloc(n);
+	dup = twl_memalloc(n);
 	if (!dup)
 		return (NULL);
-	ft_memcpy(dup, s, n);
+	twl_memcpy(dup, s, n);
 	return (dup);
 }

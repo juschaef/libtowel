@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcountchar.c                                  :+:      :+:    :+:   */
+/*   twl_strcountchar.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-size_t	ft_strcountchar(char *s, char c)
+size_t	twl_strcountchar(char *s, char c)
 {
 	size_t count;
 

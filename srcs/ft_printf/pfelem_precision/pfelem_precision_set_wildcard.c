@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 void	pfelem_precision_set_wildcard(t_pfelem *pfelem)
 {
@@ -18,7 +18,7 @@ void	pfelem_precision_set_wildcard(t_pfelem *pfelem)
 	size_t	index;
 	int		precision;
 
-	wildcard_count = ft_strcountchar(pfelem->raw, '*');
+	wildcard_count = twl_strcountchar(pfelem->raw, '*');
 	index = 0;
 	if (wildcard_count == 1)
 		index = 0;

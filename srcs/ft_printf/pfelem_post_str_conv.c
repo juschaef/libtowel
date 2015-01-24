@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static void		pfelem_add_pointer_prefix(t_pfelem *pfelem)
 {
 	if ((pfelem->conv_spec == CONV_SPEC_P)
 		&& (pfelem->flags & FLAG_ZERO_MASK))
-		pfelem->str = ft_strjoinfree(PREFIX_FOR_POINTER, pfelem->str, 'r');
+		pfelem->str = twl_strjoinfree(PREFIX_FOR_POINTER, pfelem->str, 'r');
 }
 
 static void		pfelem_add_prefix(t_pfelem *pfelem)
 {
 	if (pfelem_fill_before_padding(pfelem))
-		pfelem->str = ft_strjoinfree(pfelem->prefix, pfelem->str, 'r');
+		pfelem->str = twl_strjoinfree(pfelem->prefix, pfelem->str, 'r');
 }
 
 void			pfelem_post_str_conv(t_pfelem *pfelem)

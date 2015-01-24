@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static void		pfelem_truncate_widestring(t_pfelem *pfelem)
 {
@@ -19,7 +19,7 @@ static void		pfelem_truncate_widestring(t_pfelem *pfelem)
 	int		is_end_of_char;
 
 	str = pfelem->str;
-	len = (int)ft_strlen(str);
+	len = (int)twl_strlen(str);
 	is_end_of_char = 0;
 	while (len > 0)
 	{
@@ -38,7 +38,7 @@ static void		pfelem_truncate_string(t_pfelem *pfelem)
 
 	if (pfelem->precision < 0)
 		return ;
-	len = ft_strlen(pfelem->str);
+	len = twl_strlen(pfelem->str);
 	if (pfelem->precision < (int)len)
 	{
 		if (pfelem->conv_spec == CONV_SPEC_S_UP)

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   twl_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-static void		ft_bzero(void *s, size_t n)
+static void		twl_bzero(void *s, size_t n)
 {
 	size_t	index;
 	char	*temp;
@@ -26,7 +26,7 @@ static void		ft_bzero(void *s, size_t n)
 	}
 }
 
-char			*ft_strncpy(char *dst, const char *src, size_t n)
+char			*twl_strncpy(char *dst, const char *src, size_t n)
 {
 	size_t i;
 
@@ -34,7 +34,7 @@ char			*ft_strncpy(char *dst, const char *src, size_t n)
 		return (void *)0;
 	if (n <= 0)
 		return (dst);
-	ft_bzero(dst, n);
+	twl_bzero(dst, n);
 	i = 0;
 	while (src[i] != '\0' && i < n)
 	{

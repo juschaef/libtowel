@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 #include <stdlib.h>
 
 t_pfelem	*pfelem_create(char *s)
@@ -26,8 +26,8 @@ t_pfelem	*pfelem_create(char *s)
 	elem->values[0] = NULL;
 	elem->raw = s;
 	elem->str = NULL;
-	elem->prefix = ft_strnew(0);
+	elem->prefix = twl_strnew(0);
 	elem->c_is_null_char = 0;
-	ft_bzero(elem->split, 5);
+	twl_bzero(elem->split, 5);
 	return (elem);
 }

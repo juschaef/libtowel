@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   twl_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <libft.h>
 #include <stdlib.h>
 
-t_list				*ft_lstnew(void const *content, size_t content_size)
+t_list				*twl_lstnew(void const *content, size_t content_size)
 {
 	t_list	*list;
 	void	*mem;
@@ -26,10 +26,10 @@ t_list				*ft_lstnew(void const *content, size_t content_size)
 	list->content_size = 0;
 	if (content_size <= 0 || !content)
 		return (list);
-	mem = ft_memalloc(content_size);
+	mem = twl_memalloc(content_size);
 	if (!mem)
 		return (NULL);
-	ft_memcpy(mem, content, content_size);
+	twl_memcpy(mem, content, content_size);
 	list->content = mem;
 	list->content_size = content_size;
 	return (list);

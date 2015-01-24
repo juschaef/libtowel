@@ -10,27 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static int		pfelem_get_last_digits_index(char *raw)
 {
 	int i;
 
-	i = ft_strlen(raw) - 1;
+	i = twl_strlen(raw) - 1;
 	while (i >= 0)
 	{
-		if (!ft_isdigit(raw[i]))
+		if (!twl_isdigit(raw[i]))
 			break ;
 		i--;
 	}
 	i++;
-	return (ft_atoi(&(raw[i])));
+	return (twl_atoi(&(raw[i])));
 }
 
 int				pfelem_get_value_or_wildcard(char *raw, int default_val,
 											int original_val)
 {
-	if (raw[ft_strlen(raw) - 1] == '*')
+	if (raw[twl_strlen(raw) - 1] == '*')
 		return (default_val);
 	else if (raw && *raw)
 		return (pfelem_get_last_digits_index(raw));

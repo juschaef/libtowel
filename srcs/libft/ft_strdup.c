@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   twl_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,12 +13,12 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+char	*twl_strdup(const char *s1)
 {
 	char *copy;
 
-	if (!(copy = (char *)malloc(sizeof(char) * (ft_strlen(s1) + 1))))
+	if (!(copy = (char *)malloc(sizeof(char) * (twl_strlen(s1) + 1))))
 		return (NULL);
-	ft_strcpy(copy, s1);
+	twl_strcpy(copy, s1);
 	return (copy);
 }

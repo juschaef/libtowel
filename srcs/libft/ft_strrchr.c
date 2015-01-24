@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   twl_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-static size_t	ft_strlen(const char *str)
+static size_t	twl_strlen(const char *str)
 {
 	int len;
 
@@ -22,13 +22,13 @@ static size_t	ft_strlen(const char *str)
 	return (len);
 }
 
-char			*ft_strrchr(const char *s, int c)
+char			*twl_strrchr(const char *s, int c)
 {
 	int		len;
 
 	if (!s)
 		return (NULL);
-	len = ft_strlen(s);
+	len = twl_strlen(s);
 	while (len >= 0 && s[len] != (char)c)
 		len--;
 	if (s[len] == (char)c)

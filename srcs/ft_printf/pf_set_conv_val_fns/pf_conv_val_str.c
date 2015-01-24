@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 void *pf_conv_val_str(t_pf *pf)
 {
@@ -18,6 +18,6 @@ void *pf_conv_val_str(t_pf *pf)
 
 	s = va_arg(pf->arglist, char *);
 	if (s)
-		s = ft_strdup(s);
+		s = twl_strdup(s);
 	return (s);
 }

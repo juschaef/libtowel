@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 void *pfelem_str2pfelem(void *data)
 {
 	t_pfelem *pfelem;
 
-	pfelem = pfelem_create(ft_strdup(data));
+	pfelem = pfelem_create(twl_strdup(data));
 	return (pfelem);
 }

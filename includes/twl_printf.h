@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   twl_printf.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 18:23:37 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/18 12:11:41 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 14:43:29 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef PF_H
 # define PF_H
@@ -16,7 +17,7 @@
 # include <libft.h>
 # include <lst.h>
 # include <ldict.h>
-# include <ft_printf_elem.h>
+# include <twl_printf_elem.h>
 
 # include <stdarg.h>
 # include <stdlib.h>
@@ -38,8 +39,8 @@ typedef struct	s_pf
 typedef void	*(*t_conv_val_fn) (t_pf *pf);
 typedef char	*(*t_conv_str_fn) (void *);
 
-int				ft_printf(const char *fmt, ...);
-int				ft_asprintf(char **s, const char *fmt, ...);
+int				twl_printf(const char *fmt, ...);
+int				twl_asprintf(char **s, const char *fmt, ...);
 
 t_pf			*pf_create(char *fmt);
 t_lst			*pf_split(char *s);

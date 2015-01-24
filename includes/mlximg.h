@@ -13,7 +13,7 @@
 #ifndef MLXIMG_H
 # define MLXIMG_H
 
-# include <ft_point.h>
+# include <twl_point.h>
 
 typedef struct	s_mlximg
 {
@@ -27,8 +27,8 @@ typedef struct	s_mlximg
 }				t_mlximg;
 
 t_mlximg		*mlximg_init(void *mlx, int width, int height);
-void			mlximg_draw_point(t_mlximg *image, t_ft_point *pt, int color);
+void			mlximg_draw_point(t_mlximg *image, t_twl_point *pt, int color);
 void			mlximg_iter(t_mlximg *mlximg, void (*iter_fn)(t_mlximg *mlximg,
-								t_ft_point *pt, void *context), void *context);
+								t_twl_point *pt, void *context), void *context);
 
 #endif

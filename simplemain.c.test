@@ -2,9 +2,9 @@
 #include <lst.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 int main()
 {
-	ft_printf("abc%s", "abc");
+	twl_printf("abc%s", "abc");
 }

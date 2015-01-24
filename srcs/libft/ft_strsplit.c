@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   twl_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static int		ft_count_words(const char *s, char c)
+static int		twl_count_words(const char *s, char c)
 {
 	int		count;
 	int		insub;
@@ -34,7 +34,7 @@ static int		ft_count_words(const char *s, char c)
 	return (count);
 }
 
-static int		ft_wordlen(const char *s, char c)
+static int		twl_wordlen(const char *s, char c)
 {
 	int		len;
 
@@ -47,7 +47,7 @@ static int		ft_wordlen(const char *s, char c)
 	return (len);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char			**twl_strsplit(char const *s, char c)
 {
 	char	**t;
 	int		word_count;
@@ -56,7 +56,7 @@ char			**ft_strsplit(char const *s, char c)
 	if (!s)
 		return (NULL);
 	index = 0;
-	word_count = ft_count_words(s, c);
+	word_count = twl_count_words(s, c);
 	t = (char **)malloc(sizeof(*t) * (word_count + 1));
 	if (t == NULL)
 		return (NULL);
@@ -64,10 +64,10 @@ char			**ft_strsplit(char const *s, char c)
 	{
 		while (*s == c && *s != '\0')
 			s++;
-		t[index] = ft_strsub(s, 0, ft_wordlen(s, c));
+		t[index] = twl_strsub(s, 0, twl_wordlen(s, c));
 		if (t[index] == NULL)
 			return (NULL);
-		s = s + ft_wordlen(s, c);
+		s = s + twl_wordlen(s, c);
 		index++;
 	}
 	t[index] = NULL;

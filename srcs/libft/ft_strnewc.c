@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnewc.c                                       :+:      :+:    :+:   */
+/*   twl_strnewc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,14 +13,14 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char			*ft_strnewc(size_t size, char c)
+char			*twl_strnewc(size_t size, char c)
 {
 	char *new;
 
 	new = (char *)malloc(sizeof(char) * (size + 1));
 	if (!new)
 		return (NULL);
-	ft_memset(new, c, size);
+	twl_memset(new, c, size);
 	new[size] = '\0';
 	return (new);
 }

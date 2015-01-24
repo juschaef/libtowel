@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wstr_to_str.c                                   :+:      :+:    :+:   */
+/*   twl_wstr_to_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,18 +14,18 @@
 #include <wchar.h>
 #include <stdlib.h>
 
-char	*ft_wstr_to_str(wchar_t *wstr)
+char	*twl_wstr_to_str(wchar_t *wstr)
 {
 	char *str;
 	char *wcharstr;
 
-	str = ft_strnew(sizeof(wchar_t) * ft_wstrlen(wstr));
+	str = twl_strnew(sizeof(wchar_t) * twl_wstrlen(wstr));
 	if (!str)
 		return (NULL);
 	while (*wstr)
 	{
-		wcharstr = ft_wchar_to_str(*wstr++);
-		str = ft_strcat(str, wcharstr);
+		wcharstr = twl_wchar_to_str(*wstr++);
+		str = twl_strcat(str, wcharstr);
 		free(wcharstr);
 	}
 	return (str);

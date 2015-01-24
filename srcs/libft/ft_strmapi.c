@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   twl_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-static size_t	ft_strlen(const char *str)
+static size_t	twl_strlen(const char *str)
 {
 	int len;
 
@@ -23,7 +23,7 @@ static size_t	ft_strlen(const char *str)
 	return (len);
 }
 
-char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char			*twl_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*new;
 	int		i;
@@ -31,7 +31,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	if (!s || !f)
 		return (NULL);
-	new = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	new = (char *)malloc(sizeof(char) * (twl_strlen(s) + 1));
 	if (!new)
 		return (NULL);
 	while (s[i])

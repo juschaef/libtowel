@@ -4,7 +4,7 @@ static t_lst_elem *catHello(t_lst_elem *elem)
 {
 	char *str;
 
-	str = ft_strdup(elem->data);
+	str = twl_strdup(elem->data);
 	*str = *str + 1;
 	return (lst_create_elem(str));
 }
@@ -14,9 +14,9 @@ UT_TEST(lst_map)
 	t_lst	*lst;
 	lst = lst_init();
 
-	lst_push(lst, lst_create_elem(ft_strdup("a")));
-	lst_push(lst, lst_create_elem(ft_strdup("b")));
-	lst_push(lst, lst_create_elem(ft_strdup("c")));
+	lst_push(lst, lst_create_elem(twl_strdup("a")));
+	lst_push(lst, lst_create_elem(twl_strdup("b")));
+	lst_push(lst, lst_create_elem(twl_strdup("c")));
 
 	t_lst	*new_lst;
 	new_lst = lst_map(lst, catHello);

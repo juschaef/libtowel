@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_factorial.c                                     :+:      :+:    :+:   */
+/*   twl_factorial.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,9 +12,9 @@
 
 #include <stddef.h>
 
-size_t	ft_factorial(size_t n)
+size_t	twl_factorial(size_t n)
 {
 	if (n == 0)
 		return (1);
-	return (n * ft_factorial(n - 1));
+	return (n * twl_factorial(n - 1));
 }

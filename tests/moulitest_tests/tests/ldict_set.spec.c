@@ -11,9 +11,9 @@ static void simple_test(t_test *test)
 	t_lst *lst;
 
 	lst = lst_init();
-	ldict_set(lst, "key1", ft_strdup("data1"), del);
-	ldict_set(lst, "key2", ft_strdup("data2"), del);
-	ldict_set(lst, "key3", ft_strdup("data3"), del);
+	ldict_set(lst, "key1", twl_strdup("data1"), del);
+	ldict_set(lst, "key2", twl_strdup("data2"), del);
+	ldict_set(lst, "key3", twl_strdup("data3"), del);
 	mt_assert(lst_len(lst) == 3);
 	mt_assert(strcmp(lst_get_(lst, 0)->key, "key1") == 0);
 	mt_assert(strcmp(lst_get_(lst, 0)->data, "data1") == 0);

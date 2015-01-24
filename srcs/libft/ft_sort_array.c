@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_array.c                                    :+:      :+:    :+:   */
+/*   twl_sort_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -17,9 +17,9 @@ static void		strswap(char **s1, char **s2)
 {
 	char	*temp;
 
-	temp = ft_strdup(*s1);
+	temp = twl_strdup(*s1);
 	free(*s1);
-	*s1 = ft_strdup(*s2);
+	*s1 = twl_strdup(*s2);
 	free(*s2);
 	*s2 = temp;
 }
@@ -35,7 +35,7 @@ static int		partition(char **s, int l, int h)
 	i = l;
 	while (i < h)
 	{
-		if (ft_strcmp(s[i], s[p]) < 0)
+		if (twl_strcmp(s[i], s[p]) < 0)
 		{
 			strswap(&s[i], &s[firsthight]);
 			firsthight++;
@@ -58,7 +58,7 @@ static void		quick_sort(char **s, int l, int h)
 	}
 }
 
-void			ft_sort_array(char **s, int size)
+void			twl_sort_array(char **s, int size)
 {
 	if (size == 1 || size == 0)
 		return ;

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   twl_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,18 @@
 
 #include <libft.h>
 
-void		*ft_realloc(void *ptr, size_t size)
+void		*twl_realloc(void *ptr, size_t size)
 {
 	void	*dup;
 
-	dup = ft_memalloc(size);
+	dup = twl_memalloc(size);
 	if (!dup)
 		return (NULL);
 	if (ptr)
 	{
 		if (dup)
-			ft_memcpy(dup, ptr, size);
-		ft_memdel(&ptr);
+			twl_memcpy(dup, ptr, size);
+		twl_memdel(&ptr);
 	}
 	return (dup);
 }

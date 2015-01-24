@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wchar_to_str.c                                  :+:      :+:    :+:   */
+/*   twl_wchar_to_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -38,7 +38,7 @@ static int	get_nbytes(unsigned int nbr)
 		return (4);
 }
 
-char		*ft_wchar_to_str(wchar_t wstr)
+char		*twl_wchar_to_str(wchar_t wstr)
 {
 	int				nbytes;
 	char			*bytes;
@@ -46,7 +46,7 @@ char		*ft_wchar_to_str(wchar_t wstr)
 
 	ch = wstr;
 	nbytes = get_nbytes(ch);
-	bytes = ft_strnew(nbytes);
+	bytes = twl_strnew(nbytes);
 	if (nbytes == 1)
 		bytes[0] = ch;
 	if (nbytes >= 2)
@@ -64,5 +64,5 @@ char		*ft_wchar_to_str(wchar_t wstr)
 		bytes[2] = ((ch >> 6 * 2) & 63) | 128;
 		bytes[3] = ((ch >> 6 * 3) & 7) | 240;
 	}
-	return (ft_strrev(bytes));
+	return (twl_strrev(bytes));
 }

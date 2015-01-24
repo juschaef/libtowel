@@ -15,10 +15,10 @@
 #include <libft.h>
 #include <mlx.h>
 
-void	mlximg_draw_point(t_mlximg *image, t_ft_point *pt, int color)
+void	mlximg_draw_point(t_mlximg *image, t_twl_point *pt, int color)
 {
 	char *point_ptr;
 
 	point_ptr = &image->img_data[(pt->x * 4) + (pt->y * image->size_line)];
-	ft_memcpy(point_ptr, &(color), (size_t)(sizeof(int)));
+	twl_memcpy(point_ptr, &(color), (size_t)(sizeof(int)));
 }

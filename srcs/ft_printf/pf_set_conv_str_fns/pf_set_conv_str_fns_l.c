@@ -10,37 +10,37 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 #define VOID_PTR_TO(type, value) *((type *)(value))
 
 char *pf_conv_str_long(void *val)
 {
-	return (free_val(ft_lltoa(VOID_PTR_TO(long, val)), val));
+	return (free_val(twl_lltoa(VOID_PTR_TO(long, val)), val));
 }
 
 char *pf_conv_str_octal_long(void *val)
 {
-	return (free_val(ft_llutobasestr(VOID_PTR_TO(long, val), 8), val));
+	return (free_val(twl_llutobasestr(VOID_PTR_TO(long, val), 8), val));
 }
 
 char *pf_conv_str_uoctal_long(void *val)
 {
 	char *s;
 
-	s = ft_llutobasestr(VOID_PTR_TO(unsigned long, val), 8);
+	s = twl_llutobasestr(VOID_PTR_TO(unsigned long, val), 8);
 	return (free_val(s, val));
 }
 
 char *pf_conv_str_unsign_long(void *val)
 {
-	return (free_val(ft_llutoa(VOID_PTR_TO(unsigned long, val)), val));
+	return (free_val(twl_llutoa(VOID_PTR_TO(unsigned long, val)), val));
 }
 
 char *pf_conv_str_hex_long(void *val)
 {
 	char *s;
 
-	s = ft_llutobasestr(VOID_PTR_TO(unsigned long, val), 16);
+	s = twl_llutobasestr(VOID_PTR_TO(unsigned long, val), 16);
 	return (free_val(s, val));
 }

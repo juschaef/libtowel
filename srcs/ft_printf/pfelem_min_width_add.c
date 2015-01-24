@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static int		pfelem_get_pad_dir(t_pfelem *pfelem)
 {
@@ -44,9 +44,9 @@ static void		pfelem_ajust_min_width_if_prefix(t_pfelem *pfelem)
 {
 	if (pfelem->conv_spec == CONV_SPEC_P
 		&& (pfelem->flags & FLAG_ZERO_MASK))
-		pfelem->min_width -= ft_strlen(PREFIX_FOR_POINTER);
+		pfelem->min_width -= twl_strlen(PREFIX_FOR_POINTER);
 	if (pfelem_fill_before_padding(pfelem))
-		pfelem->min_width -= ft_strlen(pfelem->prefix);
+		pfelem->min_width -= twl_strlen(pfelem->prefix);
 }
 
 void			pfelem_min_width_add(t_pfelem *pfelem)

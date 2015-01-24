@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_math.h                                          :+:      :+:    :+:   */
+/*   twl_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/15 14:55:14 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/15 14:58:40 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/15 14:35:02 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/17 14:49:02 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MATH_H
-# define FT_MATH_H
+#ifndef FT_POINT_H
+# define FT_POINT_H
 
-# define T_FT_COMPLEX(r, i)	((t_ft_complex){(r), (i)})
+# define T_FT_POINT(x, y)	((t_twl_point){(x), (y)})
 
-typedef struct	s_ft_complex
+typedef struct	s_twl_point
 {
-	long double		r;
-	long double		i;
-}				t_ft_complex;
+	int x;
+	int y;
+}				t_twl_point;
+
+t_twl_point		*twl_point_init(int x, int y);
 
 #endif

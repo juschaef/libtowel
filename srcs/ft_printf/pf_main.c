@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static char *pf_main(t_pf *pf)
 {
@@ -21,7 +21,7 @@ static char *pf_main(t_pf *pf)
 	return (pf->output);
 }
 
-int			ft_printf(const char *fmt, ...)
+int			twl_printf(const char *fmt, ...)
 {
 	t_pf	*pf;
 	size_t	len;
@@ -36,7 +36,7 @@ int			ft_printf(const char *fmt, ...)
 	return (len);
 }
 
-int			ft_asprintf(char **out, const char *fmt, ...)
+int			twl_asprintf(char **out, const char *fmt, ...)
 {
 	t_pf	*pf;
 	size_t	len;
@@ -45,7 +45,7 @@ int			ft_asprintf(char **out, const char *fmt, ...)
 	va_start(pf->arglist, (char *)fmt);
 	pf_main(pf);
 	va_end(pf->arglist);
-	*out = ft_strdup(pf->output);
+	*out = twl_strdup(pf->output);
 	len = pf->output_len;
 	pf_free(pf);
 	return (len);

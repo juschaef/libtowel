@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   twl_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+void	twl_putnbr_fd(int n, int fd)
 {
 	char c;
 
@@ -33,7 +33,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		twl_putnbr_fd(n / 10, fd);
+		twl_putnbr_fd(n % 10, fd);
 	}
 }

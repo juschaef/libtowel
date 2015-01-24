@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   twl_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n)
+int		twl_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if ((n == 0) || (!s1 && !s2))
 		return (0);

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static void	pfelem_harmonize_flags(t_pfelem *pfelem)
 {
@@ -25,15 +25,15 @@ static void	pfelem_harmonize_flags(t_pfelem *pfelem)
 
 void		pfelem_set_flags(t_pfelem *pfelem, char *flags)
 {
-	if (ft_strchr(flags, FLAG_SHARP))
+	if (twl_strchr(flags, FLAG_SHARP))
 		pfelem->flags = pfelem->flags | FLAG_SHARP_MASK;
-	if (ft_strchr(flags, FLAG_MINUS))
+	if (twl_strchr(flags, FLAG_MINUS))
 		pfelem->flags = pfelem->flags | FLAG_MINUS_MASK;
-	if (ft_strchr(flags, FLAG_ZERO))
+	if (twl_strchr(flags, FLAG_ZERO))
 		pfelem->flags = pfelem->flags | FLAG_ZERO_MASK;
-	if (ft_strchr(flags, FLAG_PLUS))
+	if (twl_strchr(flags, FLAG_PLUS))
 		pfelem->flags = pfelem->flags | FLAG_PLUS_MASK;
-	if (ft_strchr(flags, FLAG_SPACE))
+	if (twl_strchr(flags, FLAG_SPACE))
 		pfelem->flags = pfelem->flags | FLAG_SPACE_MASK;
 	pfelem_harmonize_flags(pfelem);
 }

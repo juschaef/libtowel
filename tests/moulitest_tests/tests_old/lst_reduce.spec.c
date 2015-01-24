@@ -2,9 +2,9 @@
 
 static void *lst_join(t_lst_elem *elem, void *memo)
 {
-	memo = ft_strjoinfree(memo, elem->data, 'l');
+	memo = twl_strjoinfree(memo, elem->data, 'l');
 	if (elem->next)
-		memo = ft_strjoinfree(memo, ", ", 'l');
+		memo = twl_strjoinfree(memo, ", ", 'l');
 	return (memo);
 }
 

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   twl_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-static size_t	ft_strlen(const char *str)
+static size_t	twl_strlen(const char *str)
 {
 	int len;
 
@@ -22,14 +22,14 @@ static size_t	ft_strlen(const char *str)
 	return (len);
 }
 
-char			*ft_strrev(char *str)
+char			*twl_strrev(char *str)
 {
 	int				j;
 	int				i;
 	unsigned char	a;
 	unsigned		len;
 
-	len = ft_strlen((const char *)str);
+	len = twl_strlen((const char *)str);
 	i = 0;
 	j = len - 1;
 	while (i < j)

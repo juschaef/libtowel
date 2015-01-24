@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 #include <arr.h>
 
 static void		pfelem_process_raw_string(t_pfelem *pfelem)
 {
 	char *tmp;
 
-	if (ft_strequ(pfelem->raw, "%%"))
+	if (twl_strequ(pfelem->raw, "%%"))
 		tmp = "%";
 	else
 		tmp = pfelem->raw;
 	free(pfelem->str);
-	pfelem->str = ft_strdup(tmp);
+	pfelem->str = twl_strdup(tmp);
 }
 
 static char		*pfelem_get_str(t_pfelem *pfelem)
@@ -35,7 +35,7 @@ static char		*pfelem_get_str(t_pfelem *pfelem)
 	}
 	else
 	{
-		str = ft_strnew(1);
+		str = twl_strnew(1);
 		*str = pfelem->conv_spec;
 	}
 	return (str);
@@ -50,7 +50,7 @@ static void		pfelem_process_conversion(t_pfelem *pfelem)
 		tmp = pfelem->str;
 		pfelem->str = pfelem_get_str(pfelem);
 		free(tmp);
-		if (ft_strchr(CONV_SPEC_ALL, pfelem->conv_spec))
+		if (twl_strchr(CONV_SPEC_ALL, pfelem->conv_spec))
 		{
 			pfelem_flag_add(pfelem);
 			pfelem_precision_add(pfelem);

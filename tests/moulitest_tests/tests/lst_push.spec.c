@@ -6,9 +6,9 @@ static void simple_test(t_test *test)
 
 	lst = lst_init();
 
-	lst_push(lst, ft_strdup("tata"));
-	lst_push(lst, ft_strdup("tutu"));
-	lst_push(lst, ft_strdup("toto"));
+	lst_push(lst, twl_strdup("tata"));
+	lst_push(lst, twl_strdup("tutu"));
+	lst_push(lst, twl_strdup("toto"));
 
 	mt_assert(strcmp(lst_get_(lst, 0)->data, "tata") == 0);
 	mt_assert(strcmp(lst_get_(lst, 1)->data, "tutu") == 0);

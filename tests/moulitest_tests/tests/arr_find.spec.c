@@ -3,7 +3,7 @@
 
 static int find_fn(void *str, void *key)
 {
-	if (ft_strequ(str, key))
+	if (twl_strequ(str, key))
 		return (1);
 	return (0);
 }

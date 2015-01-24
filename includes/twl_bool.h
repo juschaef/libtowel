@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sys.h                                           :+:      :+:    :+:   */
+/*   twl_bool.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/20 21:12:52 by annguyen          #+#    #+#             */
-/*   Updated: 2015/01/20 22:09:02 by annguyen         ###   ########.fr       */
+/*   Created: 2015/01/21 14:54:03 by annguyen          #+#    #+#             */
+/*   Updated: 2015/01/24 14:43:46 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_SYS_H
-# define FT_SYS_H
 
-int			ft_sys_isdir(char *path);
-char		*ft_sys_joinpath(char *s1, char *s2);
+#ifndef FT_BOOL_H
+# define FT_BOOL_H
+
+# define TRUE 1
+# define FALSE 0
+
+typedef int	bool;
 
 #endif

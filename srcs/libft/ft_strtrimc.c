@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrimc.c                                      :+:      :+:    :+:   */
+/*   twl_strtrimc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strtrimc(char const *s, char c)
+char	*twl_strtrimc(char const *s, char c)
 {
 	int start;
 	int end;
@@ -20,14 +20,14 @@ char	*ft_strtrimc(char const *s, char c)
 	if (!s)
 		return (NULL);
 	start = 0;
-	end = ft_strlen(s) - 1;
+	end = twl_strlen(s) - 1;
 	while (s[start] == c)
 		start++;
 	if (start >= end)
-		return (ft_strdup(""));
+		return (twl_strdup(""));
 	while (s[end] == c)
 	{
 		end--;
 	}
-	return (ft_strsub(s, start, end - start + 1));
+	return (twl_strsub(s, start, end - start + 1));
 }

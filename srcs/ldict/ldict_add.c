@@ -20,15 +20,15 @@ void		ldict_add(t_lst *lst, char *key, void *data)
 
 	if (ldict_get(lst, key))
 	{
-		ft_putstr_fd("\n[warning] ldict_add: Duplicate entry for key: ", 2);
-		ft_putstr_fd(key, 2);
-		ft_putstr_fd("\n", 2);
+		twl_putstr_fd("\n[warning] ldict_add: Duplicate entry for key: ", 2);
+		twl_putstr_fd(key, 2);
+		twl_putstr_fd("\n", 2);
 	}
 	else
 	{
 		elem = lst_create_elem_(data);
 		elem->parent = lst;
-		elem->key = ft_strdup(key);
+		elem->key = twl_strdup(key);
 		if (!lst->elems)
 		{
 			lst->elems = elem;

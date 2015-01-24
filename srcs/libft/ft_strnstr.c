@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   twl_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char	*twl_strnstr(const char *s1, const char *s2, size_t n)
 {
 	int found_last_char_pos;
 
-	found_last_char_pos = ft_strstr(s1, s2) - s1 + ft_strlen(s2);
+	found_last_char_pos = twl_strstr(s1, s2) - s1 + twl_strlen(s2);
 	if (found_last_char_pos > (int)n)
 		return (NULL);
-	return (ft_strstr(s1, s2));
+	return (twl_strstr(s1, s2));
 }

@@ -1,7 +1,7 @@
 #include "project.h"
 #include <lst.h>
 
-bool 		sort_ft_strcmp(void *str1, void *str2, void *context)
+bool 		sort_twl_strcmp(void *str1, void *str2, void *context)
 {
 	char *s1;
 	char *s2;
@@ -17,11 +17,11 @@ static void simple_test(t_test *test)
 	t_lst	*lst;
 	lst = lst_init();
 
-	lst_push(lst, ft_strdup("aaa"));
-	lst_push(lst, ft_strdup("ccc"));
-	lst_push(lst, ft_strdup("bbb"));
+	lst_push(lst, twl_strdup("aaa"));
+	lst_push(lst, twl_strdup("ccc"));
+	lst_push(lst, twl_strdup("bbb"));
 
-	lst_sort(lst, sort_ft_strcmp, NULL);
+	lst_sort(lst, sort_twl_strcmp, NULL);
 
 	mt_assert(strcmp(lst_get_(lst, 0)->data, "aaa") == 0);
 	mt_assert(strcmp(lst_get_(lst, 1)->data, "bbb") == 0);

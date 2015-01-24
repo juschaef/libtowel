@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static char	*pf_get_seg(char *s)
 {
@@ -19,13 +19,13 @@ static char	*pf_get_seg(char *s)
 	i = 1;
 	while (s[i])
 	{
-		if (!ft_strchr(VALID_CHARS_BEFORE_CONV_SPEC, s[i]))
+		if (!twl_strchr(VALID_CHARS_BEFORE_CONV_SPEC, s[i]))
 			break ;
 		i++;
 	}
 	if ((*s == '%') && s[i])
 		i++;
-	return (ft_strsub(s, 0, i));
+	return (twl_strsub(s, 0, i));
 }
 
 t_lst		*pf_split(char *s)
@@ -38,7 +38,7 @@ t_lst		*pf_split(char *s)
 	{
 		tmp = pf_get_seg(s);
 		lst_push(lst, tmp);
-		s = s + ft_strlen(tmp);
+		s = s + twl_strlen(tmp);
 		if (!*s)
 			break ;
 	}

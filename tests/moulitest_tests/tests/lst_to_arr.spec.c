@@ -9,9 +9,9 @@ static void simple_test(t_test *test)
 
 	lst = lst_init();
 
-	lst_push(lst, ft_strdup("aaa"));
-	lst_push(lst, ft_strdup("bbb"));
-	lst_push(lst, ft_strdup("ccc"));
+	lst_push(lst, twl_strdup("aaa"));
+	lst_push(lst, twl_strdup("bbb"));
+	lst_push(lst, twl_strdup("ccc"));
 
 	arr = (char **)lst_to_arr_(lst);
 

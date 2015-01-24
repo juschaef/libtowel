@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoinfree.c                                   :+:      :+:    :+:   */
+/*   twl_strjoinfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,11 +13,11 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strjoinfree(char *left, char *right, char free_num)
+char	*twl_strjoinfree(char *left, char *right, char free_num)
 {
 	char *out;
 
-	out = ft_strjoin(left, right);
+	out = twl_strjoin(left, right);
 	if (free_num == 'b')
 	{
 		free(left);

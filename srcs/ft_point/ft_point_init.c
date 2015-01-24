@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point_init.c                                    :+:      :+:    :+:   */
+/*   twl_point_init.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_point.h>
+#include <twl_point.h>
 #include <stdlib.h>
 #include <mlx.h>
 
-t_ft_point	*ft_point_init(int x, int y)
+t_twl_point	*twl_point_init(int x, int y)
 {
-	t_ft_point *pt;
+	t_twl_point *pt;
 
-	pt = malloc(sizeof(t_ft_point));
+	pt = malloc(sizeof(t_twl_point));
 	pt->x = x;
 	pt->y = y;
 	return (pt);

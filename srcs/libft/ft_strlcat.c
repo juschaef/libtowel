@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   twl_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,23 +12,23 @@
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t	twl_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	lendst;
 	size_t	lensrc;
 
-	lendst = ft_strlen(dst);
-	lensrc = ft_strlen(src);
+	lendst = twl_strlen(dst);
+	lensrc = twl_strlen(src);
 	if (size <= lendst)
 		return (size + lensrc);
 	if (lensrc < size - lendst)
 	{
-		ft_memcpy(dst + lendst, src, lensrc);
+		twl_memcpy(dst + lendst, src, lensrc);
 		dst += lendst + lensrc;
 	}
 	else
 	{
-		ft_memcpy(dst + lendst, src, size - lendst - 1);
+		twl_memcpy(dst + lendst, src, size - lendst - 1);
 		dst += size - 1;
 	}
 	*dst = '\0';

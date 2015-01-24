@@ -16,9 +16,9 @@ static void simple_test(t_test *test)
 	t_lst	*lst;
 	lst = lst_init();
 
-	lst_push(lst, ft_strdup("aaa"));
-	lst_push(lst, ft_strdup("bbb"));
-	lst_push(lst, ft_strdup("ccc"));
+	lst_push(lst, twl_strdup("aaa"));
+	lst_push(lst, twl_strdup("bbb"));
+	lst_push(lst, twl_strdup("ccc"));
 
 	char *c = "z";
 	lst_iter(lst, replace_first_letter, c);

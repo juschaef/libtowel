@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   twl_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <libft.h>
 #include <stdlib.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*twl_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char	*str;
 
@@ -22,8 +22,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (!src)
 		return (dst);
 	str = (unsigned char*)malloc(sizeof(*str) * len);
-	ft_memcpy(str, src, len);
-	ft_memcpy(dst, str, len);
+	twl_memcpy(str, src, len);
+	twl_memcpy(dst, str, len);
 	free(str);
 	return (dst);
 }

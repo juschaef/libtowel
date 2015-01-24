@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static char		*get_next_seg_from_raw(char *raw, char *charlist)
 {
@@ -19,17 +19,17 @@ static char		*get_next_seg_from_raw(char *raw, char *charlist)
 
 	i = 0;
 	if (!raw)
-		return (ft_strdup(""));
+		return (twl_strdup(""));
 	if (charlist == NULL)
-		return (ft_strdup(raw));
-	while (*raw && ft_strchr(charlist, *raw))
+		return (twl_strdup(raw));
+	while (*raw && twl_strchr(charlist, *raw))
 	{
 		out[i] = *raw;
 		raw++;
 		i++;
 	}
 	out[i] = 0;
-	return (ft_strdup(out));
+	return (twl_strdup(out));
 }
 
 void			pfelem_split_build(t_pfelem *pfelem)
@@ -40,15 +40,15 @@ void			pfelem_split_build(t_pfelem *pfelem)
 	len = 1;
 	raw = pfelem->raw;
 	pfelem->split[SEG_FLAG] = get_next_seg_from_raw(raw + len, FLAGS_ALL);
-	len += ft_strlen(pfelem->split[SEG_FLAG]);
+	len += twl_strlen(pfelem->split[SEG_FLAG]);
 	pfelem->split[SEG_MIN_WIDTH] = get_next_seg_from_raw(raw + len,
 															MIN_WIDTH_ALL);
-	len += ft_strlen(pfelem->split[SEG_MIN_WIDTH]);
+	len += twl_strlen(pfelem->split[SEG_MIN_WIDTH]);
 	pfelem->split[SEG_PRECISION] = get_next_seg_from_raw(raw + len,
 															PRECISION_ALL);
-	len += ft_strlen(pfelem->split[SEG_PRECISION]);
+	len += twl_strlen(pfelem->split[SEG_PRECISION]);
 	pfelem->split[SEG_LENGTH_MODIF] = get_next_seg_from_raw(raw + len,
 															LEN_MOD_ALL);
-	len += ft_strlen(pfelem->split[SEG_LENGTH_MODIF]);
+	len += twl_strlen(pfelem->split[SEG_LENGTH_MODIF]);
 	pfelem->split[SEG_CONV_SPEC] = get_next_seg_from_raw(raw + len, NULL);
 }

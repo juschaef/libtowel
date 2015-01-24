@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lutobasestr.c                                   :+:      :+:    :+:   */
+/*   twl_lutobasestr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,15 +15,15 @@
 
 #define MAX_CONVERTION_LENGTH 50
 
-char	*ft_llutobasestr(unsigned long long nbr, int base)
+char	*twl_llutobasestr(unsigned long long nbr, int base)
 {
 	char	hex[16];
 	char	*ret;
 	int		i;
 
-	ft_strcpy(hex, "0123456789abcdef");
+	twl_strcpy(hex, "0123456789abcdef");
 	i = 0;
-	ret = ft_strnew(MAX_CONVERTION_LENGTH);
+	ret = twl_strnew(MAX_CONVERTION_LENGTH);
 	while (1)
 	{
 		ret[i++] = hex[nbr % base];
@@ -32,6 +32,6 @@ char	*ft_llutobasestr(unsigned long long nbr, int base)
 			break ;
 	}
 	ret[i] = 0;
-	ft_strrev(ret);
+	twl_strrev(ret);
 	return (ret);
 }

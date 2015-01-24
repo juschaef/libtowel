@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 #define VOID_PTR_TO(type, value) *((type *)(value))
 
@@ -22,12 +22,12 @@ void			*free_val(void *val, void *val_to_free)
 
 static char		*pf_conv_str_ptr(void *val)
 {
-	return (free_val(ft_llutobasestr(VOID_PTR_TO(long, val), 16), val));
+	return (free_val(twl_llutobasestr(VOID_PTR_TO(long, val), 16), val));
 }
 
 static char		*pf_conv_str_octal_uc(void *val)
 {
-	return (free_val(ft_llutobasestr(VOID_PTR_TO(unsigned char, val), 8), val));
+	return (free_val(twl_llutobasestr(VOID_PTR_TO(unsigned char, val), 8), val));
 }
 
 static void		pf_set_conv_str_fns_help(t_pf *pf)

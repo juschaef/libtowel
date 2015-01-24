@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 #define VOID_PTR_TO(type, value) *((type *)(value))
 
@@ -20,26 +20,26 @@ char *pf_conv_str_str(void *val)
 
 	s = val;
 	if (!s)
-		return (ft_strdup(STRING_OF_NULL));
-	return (ft_strdup(s));
+		return (twl_strdup(STRING_OF_NULL));
+	return (twl_strdup(s));
 }
 
 char *pf_conv_str_char_c(void *val)
 {
-	return (free_val(ft_strdup(val), val));
+	return (free_val(twl_strdup(val), val));
 }
 
 char *pf_conv_str_char_hh(void *val)
 {
-	return (free_val(ft_itoa(VOID_PTR_TO(char, val)), val));
+	return (free_val(twl_itoa(VOID_PTR_TO(char, val)), val));
 }
 
 char *pf_conv_str_uchar(void *val)
 {
-	return (free_val(ft_itoa(VOID_PTR_TO(unsigned char, val)), val));
+	return (free_val(twl_itoa(VOID_PTR_TO(unsigned char, val)), val));
 }
 
 char *pf_conv_str_return_original(void *val)
 {
-	return (ft_strdup(val));
+	return (twl_strdup(val));
 }

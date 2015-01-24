@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static void		pfelem_process_do(t_pfelem *pfelem)
 {
@@ -20,7 +20,7 @@ static void		pfelem_process_do(t_pfelem *pfelem)
 		pfelem_split_process(pfelem);
 	}
 	else
-		pfelem->str = ft_strdup(pfelem->raw);
+		pfelem->str = twl_strdup(pfelem->raw);
 }
 
 void			pfelem_split(t_pfelem *pfelem)

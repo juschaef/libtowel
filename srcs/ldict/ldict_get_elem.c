@@ -20,7 +20,7 @@ t_lst_elem		*ldict_get_elem(t_lst *lst, char *key)
 	elem = lst->elems;
 	while (elem)
 	{
-		if (ft_strcmp(elem->key, key) == 0)
+		if (twl_strcmp(elem->key, key) == 0)
 			return (elem);
 		elem = elem->next;
 	}

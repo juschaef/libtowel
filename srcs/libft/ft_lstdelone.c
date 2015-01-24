@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   twl_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <libft.h>
 #include <stdlib.h>
 
-void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
+void				twl_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
 	if (!alst && !del)
 		return ;

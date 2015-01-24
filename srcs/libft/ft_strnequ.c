@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnequ.c                                       :+:      :+:    :+:   */
+/*   twl_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		ft_strnequ(char const *s1, char const *s2, size_t n)
+int		twl_strnequ(char const *s1, char const *s2, size_t n)
 {
-	return (ft_strequ(ft_strsub(s1, 0, n), ft_strsub(s2, 0, n)));
+	return (twl_strequ(twl_strsub(s1, 0, n), twl_strsub(s2, 0, n)));
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 void	pf_iter_pfelem(t_pf *pf)
 {
@@ -26,7 +26,7 @@ void	pf_iter_pfelem(t_pf *pf)
 		if (pfelem->conv_spec_str && *pfelem->conv_spec_str)
 		{
 			conv_str_data = ldict_get(pf->conv_str_fns,
-			ft_strjoin(pfelem->length_modifier_str, pfelem->conv_spec_str));
+			twl_strjoin(pfelem->length_modifier_str, pfelem->conv_spec_str));
 			if (conv_str_data)
 				pfelem->conv_to_str = conv_str_data;
 			else

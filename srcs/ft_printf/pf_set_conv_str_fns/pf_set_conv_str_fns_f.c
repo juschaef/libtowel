@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 #define VOID_PTR_TO(type, value) *((type *)(value))
 
 char *pf_conv_str_float(void *val)
 {
-	return (free_val(ft_ldtoa(VOID_PTR_TO(double, val)), val));
+	return (free_val(twl_ldtoa(VOID_PTR_TO(double, val)), val));
 }

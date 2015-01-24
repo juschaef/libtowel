@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ldtoa.c                                         :+:      :+:    :+:   */
+/*   twl_ldtoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -16,7 +16,7 @@
 #define FT_LDTOA_PRECISION 7
 #define FT_LDTOA_PRECISION_MULT 1000000
 
-char	*ft_ldtoa(long double ld)
+char	*twl_ldtoa(long double ld)
 {
 	int			is_neg;
 	char		*str;
@@ -29,16 +29,16 @@ char	*ft_ldtoa(long double ld)
 		is_neg = 1;
 		ld = -ld;
 	}
-	str = ft_llutoa((long long)(ld * FT_LDTOA_PRECISION_MULT));
+	str = twl_llutoa((long long)(ld * FT_LDTOA_PRECISION_MULT));
 	tmp = str;
-	str = ft_strpad(str, FT_LDTOA_PRECISION, FT_STRPAD_LEFT, '0');
+	str = twl_strpad(str, FT_LDTOA_PRECISION, FT_STRPAD_LEFT, '0');
 	free(tmp);
-	ft_bzero(first, 20);
-	ft_strncpy(first, str, ft_strlen(str) - 6);
-	tmp = ft_strjoin(first, ".");
-	tmp = ft_strjoinfree(tmp, str + ft_strlen(first), 'l');
+	twl_bzero(first, 20);
+	twl_strncpy(first, str, twl_strlen(str) - 6);
+	tmp = twl_strjoin(first, ".");
+	tmp = twl_strjoinfree(tmp, str + twl_strlen(first), 'l');
 	free(str);
 	if (is_neg)
-		tmp = ft_strjoinfree("-", tmp, 'r');
+		tmp = twl_strjoinfree("-", tmp, 'r');
 	return (tmp);
 }

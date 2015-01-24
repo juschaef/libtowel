@@ -14,7 +14,7 @@
 # define LIBFT_H
 
 # include <stddef.h>
-# include <ft_bool.h>
+# include <twl_bool.h>
 
 # define MAX_INT_LENGTH 13
 # define INT_MAX 2147483647
@@ -25,7 +25,7 @@
 # define FT_STRPAD_LEFT 0
 # define FT_STRPAD_RIGHT 1
 # ifdef DEBUG_ASSERT_ENABLED
-#  define DEBUG_ASSERT(cond) ft_assert(cond);
+#  define DEBUG_ASSERT(cond) twl_assert(cond);
 # else
 #  define DEBUG_ASSERT(cond) ;
 # endif
@@ -41,99 +41,99 @@ typedef struct		s_list
 
 typedef bool (t_sort_cmp_fn)(void *item1, void *item2, void *context);
 
-void				*ft_memset(void *b, int c, size_t len);
-void				ft_bzero(void *s, size_t n);
-void				*ft_memcpy(void *dst, const void *src, size_t n);
-void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
-void				*ft_memmove(void *dest, const void *src, size_t len);
-void				*ft_memchr(const void *s, int c, size_t n);
-int					ft_memcmp(const void *s1, const void *s2, size_t n);
-size_t				ft_strlen(const char *s);
-char				*ft_strdup(const char *s1);
-char				*ft_strcpy(char *dst, const char *src);
-char				*ft_strncpy(char *dst, const char *src, size_t n);
-char				*ft_strcat(char *s1, const char *s2);
-char				*ft_strncat(char *s1, const char *s2, size_t n);
-size_t				ft_strlcat(char *dst, const char *src, size_t size);
-char				*ft_strchr(const char *s, int c);
-char				*ft_strrchr(const char *s, int c);
-char				*ft_strstr(const char *s1, const char *s2);
-char				*ft_strnstr(const char *s1, const char *s2, size_t n);
-int					ft_strcmp(const char *s1, const char *s2);
-int					ft_strncmp(const char *s1, const char *s2, size_t n);
-int					ft_atoi(const char *str);
-int					ft_isalpha(int c);
-int					ft_isdigit(int c);
-int					ft_isalnum(int c);
-int					ft_isascii(int c);
-int					ft_isprint(int c);
-int					ft_toupper(int c);
-int					ft_tolower(int c);
+void				*twl_memset(void *b, int c, size_t len);
+void				twl_bzero(void *s, size_t n);
+void				*twl_memcpy(void *dst, const void *src, size_t n);
+void				*twl_memccpy(void *dst, const void *src, int c, size_t n);
+void				*twl_memmove(void *dest, const void *src, size_t len);
+void				*twl_memchr(const void *s, int c, size_t n);
+int					twl_memcmp(const void *s1, const void *s2, size_t n);
+size_t				twl_strlen(const char *s);
+char				*twl_strdup(const char *s1);
+char				*twl_strcpy(char *dst, const char *src);
+char				*twl_strncpy(char *dst, const char *src, size_t n);
+char				*twl_strcat(char *s1, const char *s2);
+char				*twl_strncat(char *s1, const char *s2, size_t n);
+size_t				twl_strlcat(char *dst, const char *src, size_t size);
+char				*twl_strchr(const char *s, int c);
+char				*twl_strrchr(const char *s, int c);
+char				*twl_strstr(const char *s1, const char *s2);
+char				*twl_strnstr(const char *s1, const char *s2, size_t n);
+int					twl_strcmp(const char *s1, const char *s2);
+int					twl_strncmp(const char *s1, const char *s2, size_t n);
+int					twl_atoi(const char *str);
+int					twl_isalpha(int c);
+int					twl_isdigit(int c);
+int					twl_isalnum(int c);
+int					twl_isascii(int c);
+int					twl_isprint(int c);
+int					twl_toupper(int c);
+int					twl_tolower(int c);
 
-void				*ft_memalloc(size_t size);
-void				ft_memdel(void **ap);
-char				*ft_strnew(size_t size);
-void				ft_strdel(char **as);
-void				ft_strclr(char *s);
-void				ft_striter(char *s, void(*f)(char *));
-void				ft_striteri(char *s, void(*f)(unsigned int, char *));
-char				*ft_strmap(char const *s, char(*f)(char));
-char				*ft_strmapi(char const *s, char(*f)(unsigned int, char));
-int					ft_strequ(char const *s1, char const *s2);
-int					ft_strnequ(char const *s1, char const *s2, size_t n);
-char				*ft_strsub(char const *s, unsigned int start, size_t len);
-char				*ft_strjoin(char const *s1, char const *s2);
-char				*ft_strtrim(char const *s);
-char				**ft_strsplit(char const *s, char c);
-char				*ft_itoa(int n);
-void				ft_putchar(char c);
-void				ft_putstr(char const *s);
-void				ft_putendl(char const *s);
-void				ft_putnbr(int n);
-void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char const *s, int fd);
-void				ft_putendl_fd(char const *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
+void				*twl_memalloc(size_t size);
+void				twl_memdel(void **ap);
+char				*twl_strnew(size_t size);
+void				twl_strdel(char **as);
+void				twl_strclr(char *s);
+void				twl_striter(char *s, void(*f)(char *));
+void				twl_striteri(char *s, void(*f)(unsigned int, char *));
+char				*twl_strmap(char const *s, char(*f)(char));
+char				*twl_strmapi(char const *s, char(*f)(unsigned int, char));
+int					twl_strequ(char const *s1, char const *s2);
+int					twl_strnequ(char const *s1, char const *s2, size_t n);
+char				*twl_strsub(char const *s, unsigned int start, size_t len);
+char				*twl_strjoin(char const *s1, char const *s2);
+char				*twl_strtrim(char const *s);
+char				**twl_strsplit(char const *s, char c);
+char				*twl_itoa(int n);
+void				twl_putchar(char c);
+void				twl_putstr(char const *s);
+void				twl_putendl(char const *s);
+void				twl_putnbr(int n);
+void				twl_putchar_fd(char c, int fd);
+void				twl_putstr_fd(char const *s, int fd);
+void				twl_putendl_fd(char const *s, int fd);
+void				twl_putnbr_fd(int n, int fd);
 
-char				*ft_strrev(char *s);
-int					ft_isblank(int c);
-char				*ft_strtrimc(char const *s, char c);
-void				*ft_memdup(const void *s, size_t n);
-char				*ft_strcapitalize(char *str);
-int					ft_islower(int c);
-int					ft_isupper(int c);
-int					ft_ispunct(int c);
-int					ft_isspace(int c);
-int					ft_abs(int n);
-size_t				ft_factorial(size_t n);
-char				*ft_strupcase(char *str);
-char				*ft_strlowcase(char *str);
-void				ft_memswap(void *s1, void *s2, size_t size);
-void				ft_swap(int *p1, int *p2);
-void				ft_ptrswap(void *p1, void *p2);
-void				*ft_realloc(void *ptr, size_t size);
-void				ft_strswap(char **s1, char **s2);
-void				ft_sort_array(char **tab, int size);
+char				*twl_strrev(char *s);
+int					twl_isblank(int c);
+char				*twl_strtrimc(char const *s, char c);
+void				*twl_memdup(const void *s, size_t n);
+char				*twl_strcapitalize(char *str);
+int					twl_islower(int c);
+int					twl_isupper(int c);
+int					twl_ispunct(int c);
+int					twl_isspace(int c);
+int					twl_abs(int n);
+size_t				twl_factorial(size_t n);
+char				*twl_strupcase(char *str);
+char				*twl_strlowcase(char *str);
+void				twl_memswap(void *s1, void *s2, size_t size);
+void				twl_swap(int *p1, int *p2);
+void				twl_ptrswap(void *p1, void *p2);
+void				*twl_realloc(void *ptr, size_t size);
+void				twl_strswap(char **s1, char **s2);
+void				twl_sort_array(char **tab, int size);
 
-t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list				*twl_lstnew(void const *content, size_t content_size);
+void				twl_lstdelone(t_list **alst, void (*del)(void*, size_t));
+void				twl_lstdel(t_list **alst, void (*del)(void*, size_t));
+void				twl_lstadd(t_list **alst, t_list *new);
+void				twl_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*twl_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-char				*ft_llutobasestr(unsigned long long nbr, int base);
-char				*ft_lltoa(long long ln);
-char				*ft_llutoa(unsigned long long ln);
-char				*ft_wchar_to_str(wchar_t wstr);
-size_t				ft_wstrlen(wchar_t *wstr);
-char				*ft_wstr_to_str(wchar_t *wstr);
-char				*ft_strpad(const char *s, size_t min_width,
+char				*twl_llutobasestr(unsigned long long nbr, int base);
+char				*twl_lltoa(long long ln);
+char				*twl_llutoa(unsigned long long ln);
+char				*twl_wchar_to_str(wchar_t wstr);
+size_t				twl_wstrlen(wchar_t *wstr);
+char				*twl_wstr_to_str(wchar_t *wstr);
+char				*twl_strpad(const char *s, size_t min_width,
 						int pad_dir, char c);
-char				*ft_strnewc(size_t size, char c);
-char				*ft_strjoinfree(char *left, char *right, char free_num);
-size_t				ft_strcountchar(char *s, char c);
-void				ft_assert(int cond);
-char				*ft_ldtoa(long double ld);
+char				*twl_strnewc(size_t size, char c);
+char				*twl_strjoinfree(char *left, char *right, char free_num);
+size_t				twl_strcountchar(char *s, char c);
+void				twl_assert(int cond);
+char				*twl_ldtoa(long double ld);
 
 #endif

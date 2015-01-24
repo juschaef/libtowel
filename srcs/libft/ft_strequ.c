@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   twl_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int		ft_strequ(char const *s1, char const *s2)
+int		twl_strequ(char const *s1, char const *s2)
 {
 	if (!s1 || !s2)
 		return (0);
-	return (ft_strcmp(s1, s2) == 0);
+	return (twl_strcmp(s1, s2) == 0);
 }

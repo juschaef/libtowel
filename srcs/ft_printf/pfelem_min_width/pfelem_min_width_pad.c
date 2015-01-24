@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 void	pfelem_min_width_pad(t_pfelem *pfelem, int pad_dir, char fill_char)
 {
@@ -27,12 +27,12 @@ void	pfelem_min_width_pad(t_pfelem *pfelem, int pad_dir, char fill_char)
 		is_neg = 1;
 		pfelem->str++;
 	}
-	pfelem->str = ft_strpad(pfelem->str, pad_width, pad_dir, fill_char);
+	pfelem->str = twl_strpad(pfelem->str, pad_width, pad_dir, fill_char);
 	free(tmp);
 	tmp = pfelem->str;
 	if (is_neg)
 	{
-		pfelem->str = ft_strjoin("-", pfelem->str);
+		pfelem->str = twl_strjoin("-", pfelem->str);
 		free(tmp);
 	}
 }

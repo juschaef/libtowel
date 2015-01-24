@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   twl_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-static void		ft_bzero(void *s, size_t n)
+static void		twl_bzero(void *s, size_t n)
 {
 	size_t	index;
 	char	*temp;
@@ -27,12 +27,12 @@ static void		ft_bzero(void *s, size_t n)
 	}
 }
 
-void			*ft_memalloc(size_t size)
+void			*twl_memalloc(size_t size)
 {
 	void *mem;
 
 	if (!(mem = (void *)malloc(size)))
 		return (NULL);
-	ft_bzero(mem, size);
+	twl_bzero(mem, size);
 	return (mem);
 }

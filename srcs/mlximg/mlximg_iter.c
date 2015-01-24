@@ -15,7 +15,7 @@
 #define DEFAULT_COLOR 0x000000
 
 void mlximg_iter(t_mlximg *mlximg,
-	void (*iter_fn)(t_mlximg *mlximg, t_ft_point *pt, void *context),
+	void (*iter_fn)(t_mlximg *mlximg, t_twl_point *pt, void *context),
 	void *context)
 {
 	int		x;
@@ -27,7 +27,7 @@ void mlximg_iter(t_mlximg *mlximg,
 		x = 0;
 		while (x < mlximg->width)
 		{
-			iter_fn(mlximg, &(t_ft_point){x, y}, context);
+			iter_fn(mlximg, &(t_twl_point){x, y}, context);
 			x++;
 		}
 		y++;

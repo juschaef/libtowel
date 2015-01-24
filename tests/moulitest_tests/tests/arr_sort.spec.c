@@ -21,7 +21,7 @@ int get_item_order(char *path)
 	return (get_item_order(s1) < get_item_order(s2));
 }
 
- bool 		arr_sort_ft_strcmp_should_swap(void *str1, void *str2, void *context)
+ bool 		arr_sort_twl_strcmp_should_swap(void *str1, void *str2, void *context)
 {
 	char *s1;
 	char *s2;
@@ -31,7 +31,7 @@ int get_item_order(char *path)
 	s1 += 2;
 	s2 += 2;
 	(void)context;
-	return (ft_strcmp(s1, s2) < 0);
+	return (twl_strcmp(s1, s2) < 0);
 }
 /*
 static void iter_fn(void *elem, void *context)
@@ -63,7 +63,7 @@ static void simple_test(t_test *test)
 	arr_push(arr, strdup("f_zbb"));
 	arr_push(arr, strdup("d_bbb"));
 
-	arr_sort(arr, arr_sort_ft_strcmp_should_swap, NULL);
+	arr_sort(arr, arr_sort_twl_strcmp_should_swap, NULL);
 	arr_sort(arr, arr_sort_obj_type_should_swap, NULL);
 	// arr_iter(arr, iter_fn, NULL);
 

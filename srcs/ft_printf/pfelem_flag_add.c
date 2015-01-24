@@ -10,30 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static void		pfelem_add_flags_sharp(t_pfelem *pfelem)
 {
 	char prefix[3];
 
 	*prefix = 0;
-	if (ft_strequ(pfelem->str, "0"))
+	if (twl_strequ(pfelem->str, "0"))
 		return ;
 	if (pfelem->conv_spec == CONV_SPEC_X)
-		ft_strcpy(prefix, "0x");
+		twl_strcpy(prefix, "0x");
 	else if (pfelem->conv_spec == CONV_SPEC_X_UP)
-		ft_strcpy(prefix, "0X");
+		twl_strcpy(prefix, "0X");
 	if (*prefix)
-		pfelem->prefix = ft_strjoinfree(pfelem->prefix, prefix, 'l');
+		pfelem->prefix = twl_strjoinfree(pfelem->prefix, prefix, 'l');
 	if ((pfelem->conv_spec == CONV_SPEC_O)
 									|| (pfelem->conv_spec == CONV_SPEC_O_UP))
-		pfelem->str = ft_strjoinfree("0", pfelem->str, 'r');
+		pfelem->str = twl_strjoinfree("0", pfelem->str, 'r');
 }
 
 static void		pfelem_add_flags_prefix(t_pfelem *pfelem, char *prefix)
 {
 	if (*pfelem->str != '-')
-		pfelem->prefix = ft_strjoinfree(pfelem->prefix, prefix, 'l');
+		pfelem->prefix = twl_strjoinfree(pfelem->prefix, prefix, 'l');
 }
 
 static int		skip_cases(t_pfelem *pfelem)

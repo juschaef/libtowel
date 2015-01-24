@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memswap.c                                       :+:      :+:    :+:   */
+/*   twl_memswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,13 +13,13 @@
 #include <libft.h>
 #include <stdlib.h>
 
-void	ft_memswap(void *s1, void *s2, size_t len)
+void	twl_memswap(void *s1, void *s2, size_t len)
 {
 	void *tmp;
 
-	tmp = ft_memalloc(len);
-	ft_memcpy(tmp, s1, len);
-	ft_memcpy(s1, s2, len);
-	ft_memcpy(s2, tmp, len);
+	tmp = twl_memalloc(len);
+	twl_memcpy(tmp, s1, len);
+	twl_memcpy(s1, s2, len);
+	twl_memcpy(s2, tmp, len);
 	free(tmp);
 }

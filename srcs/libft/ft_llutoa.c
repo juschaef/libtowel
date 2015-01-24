@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_llutoa.c                                        :+:      :+:    :+:   */
+/*   twl_llutoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <libft.h>
 #include <stdlib.h>
 
-char	*ft_llutoa(unsigned long long ln)
+char	*twl_llutoa(unsigned long long ln)
 {
 	char	*str;
 	int		i;
@@ -31,5 +31,5 @@ char	*ft_llutoa(unsigned long long ln)
 			break ;
 	}
 	str[i] = '\0';
-	return (ft_strrev(str));
+	return (twl_strrev(str));
 }

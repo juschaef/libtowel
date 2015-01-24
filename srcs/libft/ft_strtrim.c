@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   twl_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int		ft_local_isblank(int c)
+static int		twl_local_isblank(int c)
 {
 	if (c == ' ' || c == '\n' || c == '\t')
 		return (1);
@@ -20,7 +20,7 @@ static int		ft_local_isblank(int c)
 		return (0);
 }
 
-char			*ft_strtrim(char const *s)
+char			*twl_strtrim(char const *s)
 {
 	int		start;
 	int		end;
@@ -28,12 +28,12 @@ char			*ft_strtrim(char const *s)
 	if (!s)
 		return (NULL);
 	start = 0;
-	end = ft_strlen(s);
-	while (ft_local_isblank(s[start]))
+	end = twl_strlen(s);
+	while (twl_local_isblank(s[start]))
 		start++;
-	while (ft_local_isblank(s[end - 1]))
+	while (twl_local_isblank(s[end - 1]))
 		end--;
 	if (start >= end)
-		return (ft_strdup(""));
-	return (ft_strsub(s, start, end - start));
+		return (twl_strdup(""));
+	return (twl_strsub(s, start, end - start));
 }

@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static void		pfelem_add_pointer_prefix(t_pfelem *pfelem)
 {
 	if ((pfelem->conv_spec == CONV_SPEC_P)
 		&& !(pfelem->flags & FLAG_ZERO_MASK))
-		pfelem->str = ft_strjoinfree(PREFIX_FOR_POINTER, pfelem->str, 'r');
+		pfelem->str = twl_strjoinfree(PREFIX_FOR_POINTER, pfelem->str, 'r');
 }
 
 static void		pfelem_add_prefix(t_pfelem *pfelem)
 {
 	if (!pfelem_fill_before_padding(pfelem))
-		pfelem->str = ft_strjoinfree(pfelem->prefix, pfelem->str, 'r');
+		pfelem->str = twl_strjoinfree(pfelem->prefix, pfelem->str, 'r');
 }
 
 static void		pfelem_harmonize(t_pfelem *pfelem)
@@ -31,7 +31,7 @@ static void		pfelem_harmonize(t_pfelem *pfelem)
 		|| (pfelem->conv_spec == CONV_SPEC_C_UP)
 		|| (pfelem->conv_spec == CONV_SPEC_S)
 		|| (pfelem->conv_spec == CONV_SPEC_S_UP)
-		|| !(ft_strchr(CONV_SPEC_ALL, pfelem->conv_spec)))
+		|| !(twl_strchr(CONV_SPEC_ALL, pfelem->conv_spec)))
 		pfelem->precision = PRECISION_NOT_SET;
 	if (pfelem->precision != PRECISION_NOT_SET)
 		pfelem->flags = pfelem->flags & ~FLAG_ZERO_MASK;

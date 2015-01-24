@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strpad.c                                        :+:      :+:    :+:   */
+/*   twl_strpad.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,18 +13,18 @@
 #include "libft.h"
 #include <stdlib.h>
 
-char	*ft_strpad(const char *s, size_t min_width, int pad_dir, char c)
+char	*twl_strpad(const char *s, size_t min_width, int pad_dir, char c)
 {
 	size_t	len;
 	char	*tab;
 
-	len = ft_strlen(s);
+	len = twl_strlen(s);
 	if (min_width <= len)
-		return (ft_strdup(s));
-	tab = ft_strnewc(min_width, c);
+		return (twl_strdup(s));
+	tab = twl_strnewc(min_width, c);
 	if (pad_dir == FT_STRPAD_RIGHT)
-		ft_memcpy(tab, s, len);
+		twl_memcpy(tab, s, len);
 	else
-		ft_memcpy(tab + min_width - len, s, len);
+		twl_memcpy(tab + min_width - len, s, len);
 	return (tab);
 }

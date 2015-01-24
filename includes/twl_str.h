@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bool.h                                          :+:      :+:    :+:   */
+/*   twl_str.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/21 14:54:03 by annguyen          #+#    #+#             */
-/*   Updated: 2015/01/21 14:55:06 by annguyen         ###   ########.fr       */
+/*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/19 22:13:20 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_BOOL_H
-# define FT_BOOL_H
+#ifndef FT_STR_H
+# define FT_STR_H
+# include <stddef.h>
 
-# define TRUE 1
-# define FALSE 0
-
-typedef int	bool;
+void	twl_str_replace_char(char *s, char target, char replacement);
+char	*twl_str_replace(char *s, char *target, char *replacement);
 
 #endif

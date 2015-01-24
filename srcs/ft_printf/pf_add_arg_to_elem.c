@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 #include <arr.h>
 
 static int		pf_count_args(char *s)
 {
 	int i;
 
-	if (ft_strequ(s, "%"))
+	if (twl_strequ(s, "%"))
 		return (0);
 	if (*s != '%')
 		return (0);
@@ -57,10 +57,10 @@ static void		*pf_get_values(t_pf *pf, t_pfelem *pfelem, int i, int ac)
 		conv_val_fn = ldict_get(pf->conv_val_fns, LST_CONV_SPEC_D);
 		return (conv_val_fn(pf));
 	}
-	if (ft_strchr(CONV_SPEC_ALL, pfelem->conv_spec))
+	if (twl_strchr(CONV_SPEC_ALL, pfelem->conv_spec))
 	{
 		conv_val_fn = ldict_get(pf->conv_val_fns,
-		ft_strjoin(pfelem->length_modifier_str, pfelem->conv_spec_str));
+		twl_strjoin(pfelem->length_modifier_str, pfelem->conv_spec_str));
 		return (conv_val_fn(pf));
 	}
 	return (NULL);

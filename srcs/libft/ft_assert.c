@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_assert.c                                        :+:      :+:    :+:   */
+/*   twl_assert.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <assert.h>
 
-void	ft_assert(int cond)
+void	twl_assert(int cond)
 {
 	if (!cond)
 	{

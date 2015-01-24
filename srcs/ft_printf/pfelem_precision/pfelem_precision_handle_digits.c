@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static int		pfelem_is_not_octal_sharp_zero(t_pfelem *pfelem)
 {
@@ -30,7 +30,7 @@ static int		pfelem_not_print_zero(t_pfelem *pfelem)
 
 static int		pfelem_is_zero_value(t_pfelem *pfelem)
 {
-	return (ft_strequ(pfelem->str, "0") || ft_strequ(pfelem->str, "0x0"));
+	return (twl_strequ(pfelem->str, "0") || twl_strequ(pfelem->str, "0x0"));
 }
 
 static void		pfelem_precision_pad_handle_neg(t_pfelem *pfelem)
@@ -45,13 +45,13 @@ static void		pfelem_precision_pad_handle_neg(t_pfelem *pfelem)
 		is_neg = 1;
 		pfelem->str++;
 	}
-	pfelem->str = ft_strpad(pfelem->str, pfelem->precision,
+	pfelem->str = twl_strpad(pfelem->str, pfelem->precision,
 														FT_STRPAD_LEFT, '0');
 	free(tmp);
 	tmp = pfelem->str;
 	if (is_neg)
 	{
-		pfelem->str = ft_strjoin("-", pfelem->str);
+		pfelem->str = twl_strjoin("-", pfelem->str);
 		free(tmp);
 	}
 }
@@ -70,7 +70,7 @@ void			pfelem_precision_handle_digits(t_pfelem *pfelem)
 		{
 			if (pfelem_not_print_zero(pfelem))
 			{
-				pfelem->str[ft_strlen(pfelem->str) - 1] = '\0';
+				pfelem->str[twl_strlen(pfelem->str) - 1] = '\0';
 			}
 		}
 	}

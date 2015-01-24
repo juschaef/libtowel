@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   twl_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+char	*twl_strstr(const char *s1, const char *s2)
 {
 	if (!s1 || !s2)
 		return (NULL);
@@ -20,7 +20,7 @@ char	*ft_strstr(const char *s1, const char *s2)
 		return ((char *)s1);
 	while (*s1)
 	{
-		if (ft_memcmp(s1, s2, ft_strlen(s2)) == 0)
+		if (twl_memcmp(s1, s2, twl_strlen(s2)) == 0)
 			return ((char *)s1);
 		s1++;
 	}

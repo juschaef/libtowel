@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ptrswap.c                                       :+:      :+:    :+:   */
+/*   twl_ptrswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static void		ft_swap_local(int *p1, int *p2)
+static void		twl_swap_local(int *p1, int *p2)
 {
 	int tmp;
 
@@ -19,7 +19,7 @@ static void		ft_swap_local(int *p1, int *p2)
 	*p2 = tmp;
 }
 
-void			ft_ptrswap(void *p1, void *p2)
+void			twl_ptrswap(void *p1, void *p2)
 {
-	ft_swap_local(p1, p2);
+	twl_swap_local(p1, p2);
 }

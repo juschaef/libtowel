@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   twl_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-static void		ft_bzero(void *s, size_t n)
+static void		twl_bzero(void *s, size_t n)
 {
 	size_t	index;
 	char	*temp;
@@ -27,13 +27,13 @@ static void		ft_bzero(void *s, size_t n)
 	}
 }
 
-char			*ft_strnew(size_t size)
+char			*twl_strnew(size_t size)
 {
 	char *new;
 
 	new = (char *)malloc(sizeof(char) * (size + 1));
 	if (!new)
 		return (NULL);
-	ft_bzero(new, size + 1);
+	twl_bzero(new, size + 1);
 	return (new);
 }

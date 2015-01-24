@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lltoa.c                                         :+:      :+:    :+:   */
+/*   twl_lltoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <libft.h>
 #include <stdlib.h>
 
-char	*ft_lltoa(long long ln)
+char	*twl_lltoa(long long ln)
 {
 	int		is_neg;
 	char	*out;
@@ -25,11 +25,11 @@ char	*ft_lltoa(long long ln)
 		is_neg = 1;
 		ln = -ln;
 	}
-	out = ft_llutoa(ln);
+	out = twl_llutoa(ln);
 	if (is_neg)
 	{
 		tmp = out;
-		out = ft_strjoin("-", out);
+		out = twl_strjoin("-", out);
 		free(tmp);
 	}
 	return (out);

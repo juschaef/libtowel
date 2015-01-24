@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include <twl_printf.h>
 
 static size_t	pf_printf_len(t_pfelem *pfelem)
 {
@@ -25,7 +25,7 @@ static size_t	pf_printf_len(t_pfelem *pfelem)
 			return (len);
 		}
 	}
-	return (ft_strlen(pfelem->str));
+	return (twl_strlen(pfelem->str));
 }
 
 static void		pf_clean_str(t_pfelem *pfelem, char *str)
@@ -34,7 +34,7 @@ static void		pf_clean_str(t_pfelem *pfelem, char *str)
 	{
 		if (pfelem->c_is_null_char)
 		{
-			*(ft_strchr(str, REPLACEMENT_FOR_NULL_CHAR)) = '\0';
+			*(twl_strchr(str, REPLACEMENT_FOR_NULL_CHAR)) = '\0';
 		}
 	}
 }
@@ -45,12 +45,12 @@ char			*pf_cat(t_pf *pf, t_pfelem *pfelem)
 	char	*str;
 	size_t	len;
 
-	str = ft_strdup(pfelem->str);
+	str = twl_strdup(pfelem->str);
 	len = pf_printf_len(pfelem);
-	tmp = ft_memdup(pf->output, pf->output_len + len + 1);
+	tmp = twl_memdup(pf->output, pf->output_len + len + 1);
 	free(pf->output);
 	pf_clean_str(pfelem, str);
-	ft_memcpy(tmp + pf->output_len, str, len);
+	twl_memcpy(tmp + pf->output_len, str, len);
 	free(str);
 	tmp[pf->output_len + len] = '\0';
 	return (tmp);
@@ -62,7 +62,7 @@ void			pf_concat(t_pf *pf)
 	t_pfelem	*pfelem;
 
 	elem = pf->pflst->elems;
-	pf->output = ft_strnew(0);
+	pf->output = twl_strnew(0);
 	pf->output_len = 0;
 	while (elem)
 	{
