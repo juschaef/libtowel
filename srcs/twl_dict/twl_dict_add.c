@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ldict_add.c                                        :+:      :+:    :+:   */
+/*   twl_dict_add.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,14 +13,14 @@
 #include <twl_dict.h>
 #include <libft.h>
 
-void		ldict_add(t_lst *lst, char *key, void *data)
+void		twl_dict_add(t_lst *lst, char *key, void *data)
 {
 	t_twl_lst_elem	*elem;
 	t_twl_lst_elem	*tmpelem;
 
-	if (ldict_get(lst, key))
+	if (twl_dict_get(lst, key))
 	{
-		twl_putstr_fd("\n[warning] ldict_add: Duplicate entry for key: ", 2);
+		twl_putstr_fd("\n[warning] twl_dict_add: Duplicate entry for key: ", 2);
 		twl_putstr_fd(key, 2);
 		twl_putstr_fd("\n", 2);
 	}

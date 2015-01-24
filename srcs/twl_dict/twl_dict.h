@@ -14,9 +14,9 @@
 # define LDICT_H
 # include <twl_lst.h>
 
-t_twl_lst_elem		*ldict_set(t_lst *lst, char *key, void *data, void (*delfn)());
-void			ldict_add(t_lst *lst, char *key, void *data);
-void			*ldict_get(t_lst *lst, char *key);
-void			ldict_del_elem(t_lst *lst, char *key, void (*delfn)());
+t_twl_lst_elem		*twl_dict_set(t_lst *lst, char *key, void *data, void (*delfn)());
+void			twl_dict_add(t_lst *lst, char *key, void *data);
+void			*twl_dict_get(t_lst *lst, char *key);
+void			twl_dict_del_elem(t_lst *lst, char *key, void (*delfn)());
 
 #endif

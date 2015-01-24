@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ldict_set.c                                        :+:      :+:    :+:   */
+/*   twl_dict_set.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,16 +13,16 @@
 #include <twl_dict.h>
 #include <libft.h>
 
-void		ldict_set(t_lst *lst, char *key, void *data, void (*delfn)())
+void		twl_dict_set(t_lst *lst, char *key, void *data, void (*delfn)())
 {
 	t_twl_lst_elem	*elem;
 
-	elem = ldict_get_elem(lst, key);
+	elem = twl_dict_get_elem(lst, key);
 	if (elem != NULL)
 	{
 		delfn(elem->data);
 		elem->data = data;
 	}
 	else
-		ldict_add(lst, key, data);
+		twl_dict_add(lst, key, data);
 }

@@ -54,12 +54,12 @@ static void		*pf_get_values(t_pf *pf, t_pfelem *pfelem, int i, int ac)
 
 	if (i < (ac - 1))
 	{
-		conv_val_fn = ldict_get(pf->conv_val_fns, LST_CONV_SPEC_D);
+		conv_val_fn = twl_dict_get(pf->conv_val_fns, LST_CONV_SPEC_D);
 		return (conv_val_fn(pf));
 	}
 	if (twl_strchr(CONV_SPEC_ALL, pfelem->conv_spec))
 	{
-		conv_val_fn = ldict_get(pf->conv_val_fns,
+		conv_val_fn = twl_dict_get(pf->conv_val_fns,
 		twl_strjoin(pfelem->length_modifier_str, pfelem->conv_spec_str));
 		return (conv_val_fn(pf));
 	}

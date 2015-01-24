@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ldict_get.c                                        :+:      :+:    :+:   */
+/*   twl_dict_get.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <twl_dict.h>
 #include <libft.h>
 
-void		*ldict_get(t_lst *lst, char *key)
+void		*twl_dict_get(t_lst *lst, char *key)
 {
 	t_twl_lst_elem	*elem;
 

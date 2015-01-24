@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ldict_del_by_key.c                                 :+:      :+:    :+:   */
+/*   twl_dict_del_by_key.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,10 +13,10 @@
 #include <twl_dict.h>
 #include <twl_lst.h>
 
-void ldict_del_elem(t_lst *lst, char *key, void (*delfn)())
+void twl_dict_del_elem(t_lst *lst, char *key, void (*delfn)())
 {
 	t_twl_lst_elem	*elem;
 
-	elem = ldict_get(lst, key);
+	elem = twl_dict_get(lst, key);
 	lstelem_del(elem, delfn);
 }
