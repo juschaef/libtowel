@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ldict_set.c                                        :+:      :+:    :+:   */
+/*   ldict_get_elem.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/09 13:21:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 20:44:39 by juschaef         ###   ########.fr       */
+/*   Created: 2015/01/09 13:21:34 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/23 20:34:18 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ldict.h>
+#include <twl_dict.h>
 #include <libft.h>
 
-void		ldict_set(t_lst *lst, char *key, void *data, void (*delfn)())
+t_twl_lst_elem		*ldict_get_elem(t_lst *lst, char *key)
 {
 	t_twl_lst_elem	*elem;
 
-	elem = ldict_get_elem(lst, key);
-	if (elem != NULL)
+	elem = lst->elems;
+	while (elem)
 	{
-		delfn(elem->data);
-		elem->data = data;
+		if (twl_strcmp(elem->key, key) == 0)
+			return (elem);
+		elem = elem->next;
 	}
-	else
-		ldict_add(lst, key, data);
+	return (NULL);
 }

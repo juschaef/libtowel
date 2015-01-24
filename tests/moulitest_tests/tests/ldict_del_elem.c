@@ -1,5 +1,5 @@
 #include <project.h>
-#include <ldict.h>
+#include <twl_dict.h>
 
 static void	del_data(char *str)
 {

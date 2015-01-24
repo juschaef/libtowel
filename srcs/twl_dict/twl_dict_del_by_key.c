@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ldict_get_elem.c                                   :+:      :+:    :+:   */
+/*   ldict_del_by_key.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/09 13:21:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 20:34:18 by juschaef         ###   ########.fr       */
+/*   Created: 2015/01/09 13:47:40 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/23 17:42:01 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ldict.h>
-#include <libft.h>
+#include <twl_dict.h>
+#include <twl_lst.h>
 
-t_twl_lst_elem		*ldict_get_elem(t_lst *lst, char *key)
+void ldict_del_elem(t_lst *lst, char *key, void (*delfn)())
 {
 	t_twl_lst_elem	*elem;
 
-	elem = lst->elems;
-	while (elem)
-	{
-		if (twl_strcmp(elem->key, key) == 0)
-			return (elem);
-		elem = elem->next;
-	}
-	return (NULL);
+	elem = ldict_get(lst, key);
+	lstelem_del(elem, delfn);
 }

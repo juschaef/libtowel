@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ldict.h>
+#include <twl_dict.h>
 #include <libft.h>
 
 void		ldict_add(t_lst *lst, char *key, void *data)
