@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_init.c                                         :+:      :+:    :+:   */
+/*   twl_lst_reducei.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/12 09:45:21 by yyang             #+#    #+#             */
-/*   Updated: 2014/12/12 10:15:16 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/02 23:25:47 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/23 15:35:56 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
-#include <stdlib.h>
+#include "twl_lst.h"
 
-t_lst	*twl_lst_init(void)
+int twl_lst_reducei(t_lst *lst, int (*fn)(void *data, int memo), int memo)
 {
-	t_lst	*lst;
+	t_twl_lst_elem	*elem;
 
-	lst = (t_lst *)malloc(sizeof(t_lst));
-	lst->len = 0;
-	lst->elems = NULL;
-	return (lst);
+	elem = lst->elems;
+	while (elem)
+	{
+		memo = fn(elem->data, memo);
+		elem = elem->next;
+	}
+	return (memo);
 }

@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_del_elem.c                                     :+:      :+:    :+:   */
+/*   twl_lst_pop.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/12 16:52:50 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 21:00:44 by juschaef         ###   ########.fr       */
+/*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/23 18:53:49 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "twl_lst.h"
 #include <stdlib.h>
+#include <assert.h>
 
-void	twl_lst_del_elem(t_lst *lst, int index, void (*delfn)())
+void	twl_lst_pop(t_lst *lst, void (*f)())
 {
 	t_twl_lst_elem *elem;
+	t_twl_lst_elem *prev;
 
-	elem = twl_lst_get_(lst, index);
-	twl_lst__link_(elem->prev, elem->next);
-	if (!elem->prev)
-		lst->elems = elem->next;
-	if (delfn)
-		delfn(elem->data);
-	if (elem->key)
-		free(elem->key);
-	elem->data = NULL;
-	elem->next = NULL;
-	elem->prev = NULL;
-	elem->parent = NULL;
-	elem->key = NULL;
-	free(elem);
-	(void)lst;
+	elem = lst->elems;
+	while (elem->next)
+		elem = elem->next;
+	prev = elem->prev;
+	lstelem_del(elem, f);
+	if (lst->elems == elem)
+		lst->elems = NULL;
+	if (prev)
+		prev->next = NULL;
 }

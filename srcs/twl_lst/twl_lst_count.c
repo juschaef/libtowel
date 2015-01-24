@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_find.c                                         :+:      :+:    :+:   */
+/*   twl_lst_count.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/19 10:51:42 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/23 15:32:26 by juschaef         ###   ########.fr       */
+/*   Created: 2015/01/07 09:17:53 by juschaef          #+#    #+#             */
+/*   Updated: 2015/01/14 15:26:55 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "twl_lst.h"
 
-void		*twl_lst_find(t_lst *lst, void *(*f)(void *))
+size_t		twl_lst_count(t_lst *lst, void *(*f)(void *))
 {
+	int			len;
 	t_twl_lst_elem	*elem;
 
+	len = 0;
 	elem = lst->elems;
 	while (elem)
 	{
 		if (f(elem->data))
-			return (elem->data);
+			len++;
 		elem = elem->next;
 	}
-	return (NULL);
+	return (len);
 }

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_len.c                                          :+:      :+:    :+:   */
+/*   twl_lst_reduce.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/11 22:24:18 by yyang             #+#    #+#             */
-/*   Updated: 2014/12/28 09:48:55 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/02 23:25:47 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/23 15:57:05 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "twl_lst.h"
 
-size_t	twl_lst_len(t_lst *lst)
+void	*twl_lst_reduce(t_lst *lst, void *(*fn)(void *data, void *memo), void *context)
 {
-	int			len;
 	t_twl_lst_elem	*elem;
 
 	elem = lst->elems;
-	len = 0;
 	while (elem)
 	{
+		context = fn(elem, context);
 		elem = elem->next;
-		len++;
 	}
-	return (len);
+	return (context);
 }

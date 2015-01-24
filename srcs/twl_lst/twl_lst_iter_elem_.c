@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst__link_.c                                        :+:      :+:    :+:   */
+/*   twl_lst_iter_elem_.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/12 17:50:11 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 13:04:47 by juschaef         ###   ########.fr       */
+/*   Created: 2014/12/12 09:29:17 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/23 21:08:50 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "twl_lst.h"
+#include "twl_printf.h"
 
-void	twl_lst__link_(t_twl_lst_elem *elem1, t_twl_lst_elem *elem2)
+void	twl_lst_iter_elem_(t_lst *lst, void (*f)(t_twl_lst_elem *elem, void *context), void *context)
 {
-	if (elem1)
-		elem1->next = elem2;
-	if (elem2)
-		elem2->prev = elem1;
+	t_twl_lst_elem	*elem;
+	t_twl_lst_elem	*next;
+
+	elem = lst->elems;
+	while (elem)
+	{
+		next = elem->next;
+		f(elem, context);
+		elem = next;
+	}
 }

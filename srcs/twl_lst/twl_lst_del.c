@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lstelem_fake.c                                     :+:      :+:    :+:   */
+/*   twl_lst_del.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 16:52:50 by yyang             #+#    #+#             */
-/*   Updated: 2014/12/28 13:19:45 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/13 16:16:29 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "twl_lst.h"
 #include <stdlib.h>
 
-void	lstelem_fake(t_twl_lst_elem *elem, void (*delfn)())
+void	twl_lst_del(t_lst *lst, void (*delfn)(void *))
 {
-	(void)elem;
-	(void)delfn;
+	t_twl_lst_elem *elem;
+
+	elem = lst->elems;
+	while (elem)
+	{
+		lstelem_del(elem, delfn);
+		elem = elem->next;
+	}
+	free(lst);
 }

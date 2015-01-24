@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "twl_lst.h"
 
 void		*twl_lst_find_by_value(t_lst *lst, int (*f)(void *data, void *value), void *value)
 {

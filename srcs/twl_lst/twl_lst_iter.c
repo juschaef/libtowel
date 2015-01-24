@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_push.c                                         :+:      :+:    :+:   */
+/*   twl_lst_iter.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 16:58:00 by juschaef         ###   ########.fr       */
+/*   Created: 2014/12/12 09:29:17 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/23 17:19:38 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include "twl_lst.h"
+#include "twl_printf.h"
 
-void	twl_lst_push(t_lst *lst, void *data)
+void	twl_lst_iter(t_lst *lst, void (*f)(void *data, void *context), void *context)
 {
-	t_twl_lst_elem *tmpelem;
-	t_twl_lst_elem *newelem;
+	t_twl_lst_elem	*elem;
+	t_twl_lst_elem	*next;
 
-	newelem = twl_lst_create_elem_(data);
-	newelem->parent = lst;
-	if (!lst->elems)
+	elem = lst->elems;
+	while (elem)
 	{
-		lst->elems = newelem;
-	}
-	else
-	{
-		tmpelem = lst->elems;
-		while (tmpelem->next)
-			tmpelem = tmpelem->next;
-		tmpelem->next = newelem;
-		twl_lst__link_(tmpelem, tmpelem->next);
+		next = elem->next;
+		f(elem->data, context);
+		elem = next;
 	}
 }

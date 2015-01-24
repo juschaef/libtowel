@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_iter_elem_.c                                   :+:      :+:    :+:   */
+/*   twl_lst_unshift.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:29:17 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 21:08:50 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/24 15:34:54 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
-#include "twl_printf.h"
+#include "twl_lst.h"
 
-void	twl_lst_iter_elem_(t_lst *lst, void (*f)(t_twl_lst_elem *elem, void *context), void *context)
+void	twl_lst_unshift(t_lst *lst, void *data)
 {
-	t_twl_lst_elem	*elem;
-	t_twl_lst_elem	*next;
+	t_twl_lst_elem *elem;
 
-	elem = lst->elems;
-	while (elem)
-	{
-		next = elem->next;
-		f(elem, context);
-		elem = next;
-	}
+	elem = twl_lst_create_elem_(data);
+	twl_lst__link_(elem, lst->elems);
+	lst->elems = elem;
 }
