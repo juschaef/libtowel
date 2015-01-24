@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <lst.h>
+#include <twl_lst.h>
 #include <stdio.h> //
 
 void	twl_lst_clear(t_lst *lst, void (*delfn)())

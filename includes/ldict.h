@@ -12,7 +12,7 @@
 
 #ifndef LDICT_H
 # define LDICT_H
-# include <lst.h>
+# include <twl_lst.h>
 
 void			ldict_set(t_lst *lst, char *key, void *data, void (*delfn)());
 void			ldict_add(t_lst *lst, char *key, void *data);

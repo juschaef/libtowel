@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <ldict.h>
-#include <lst.h>
+#include <twl_lst.h>
 
 void ldict_del_elem(t_lst *lst, char *key, void (*delfn)())
 {

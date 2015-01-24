@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <lst.h>
+#include <twl_lst.h>
 
 int		twl_lst_indexof(t_lst *lst, void *target, int (*cmp_fn)())
 {
