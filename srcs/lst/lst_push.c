@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_push.c                                         :+:      :+:    :+:   */
+/*   twl_lst_push.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,12 +12,12 @@
 
 #include "lst.h"
 
-void	lst_push(t_lst *lst, void *data)
+void	twl_lst_push(t_lst *lst, void *data)
 {
-	t_lst_elem *tmpelem;
-	t_lst_elem *newelem;
+	t_twl_lst_elem *tmpelem;
+	t_twl_lst_elem *newelem;
 
-	newelem = lst_create_elem_(data);
+	newelem = twl_lst_create_elem_(data);
 	newelem->parent = lst;
 	if (!lst->elems)
 	{
@@ -29,6 +29,6 @@ void	lst_push(t_lst *lst, void *data)
 		while (tmpelem->next)
 			tmpelem = tmpelem->next;
 		tmpelem->next = newelem;
-		lst__link_(tmpelem, tmpelem->next);
+		twl_lst__link_(tmpelem, tmpelem->next);
 	}
 }

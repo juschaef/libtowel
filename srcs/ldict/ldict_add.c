@@ -15,8 +15,8 @@
 
 void		ldict_add(t_lst *lst, char *key, void *data)
 {
-	t_lst_elem	*elem;
-	t_lst_elem	*tmpelem;
+	t_twl_lst_elem	*elem;
+	t_twl_lst_elem	*tmpelem;
 
 	if (ldict_get(lst, key))
 	{
@@ -26,7 +26,7 @@ void		ldict_add(t_lst *lst, char *key, void *data)
 	}
 	else
 	{
-		elem = lst_create_elem_(data);
+		elem = twl_lst_create_elem_(data);
 		elem->parent = lst;
 		elem->key = twl_strdup(key);
 		if (!lst->elems)
@@ -39,7 +39,7 @@ void		ldict_add(t_lst *lst, char *key, void *data)
 			while (tmpelem->next)
 				tmpelem = tmpelem->next;
 			tmpelem->next = elem;
-			lst__link_(tmpelem, tmpelem->next);
+			twl_lst__link_(tmpelem, tmpelem->next);
 		}
 	}
 

@@ -15,7 +15,7 @@
 
 void		ldict_set(t_lst *lst, char *key, void *data, void (*delfn)())
 {
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 
 	elem = ldict_get_elem(lst, key);
 	if (elem != NULL)

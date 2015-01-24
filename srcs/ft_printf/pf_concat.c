@@ -58,7 +58,7 @@ char			*pf_cat(t_pf *pf, t_pfelem *pfelem)
 
 void			pf_concat(t_pf *pf)
 {
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 	t_pfelem	*pfelem;
 
 	elem = pf->pflst->elems;

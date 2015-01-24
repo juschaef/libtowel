@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_get_.c                                          :+:      :+:    :+:   */
+/*   twl_lst_get_.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,9 +12,9 @@
 
 #include "lst.h"
 
-t_lst_elem 	*lst_get_(t_lst *lst, size_t index)
+t_twl_lst_elem 	*twl_lst_get_(t_lst *lst, size_t index)
 {
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 
 	elem = lst->elems;
 	while (elem && index--)

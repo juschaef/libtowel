@@ -13,7 +13,7 @@
 #include "lst.h"
 #include <stdlib.h>
 
-void	lstelem_fake(t_lst_elem *elem, void (*delfn)())
+void	lstelem_fake(t_twl_lst_elem *elem, void (*delfn)())
 {
 	(void)elem;
 	(void)delfn;

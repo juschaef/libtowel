@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_del_elem.c                                     :+:      :+:    :+:   */
+/*   twl_lst_del_elem.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,12 +13,12 @@
 #include "lst.h"
 #include <stdlib.h>
 
-void	lst_del_elem(t_lst *lst, int index, void (*delfn)())
+void	twl_lst_del_elem(t_lst *lst, int index, void (*delfn)())
 {
-	t_lst_elem *elem;
+	t_twl_lst_elem *elem;
 
-	elem = lst_get_(lst, index);
-	lst__link_(elem->prev, elem->next);
+	elem = twl_lst_get_(lst, index);
+	twl_lst__link_(elem->prev, elem->next);
 	if (!elem->prev)
 		lst->elems = elem->next;
 	if (delfn)

@@ -17,31 +17,31 @@ static void simple_test(t_test *test)
 {
 	// test->debug = 1;
 	t_lst	*lst;
-	lst = lst_init();
+	lst = twl_lst_init();
 	int nbr1 = 1;
 	int nbr2 = 2;
 	int nbr3 = 3;
 	int nbr4 = 4;
 	int *nbr_p;
 
-	lst_push(lst, &nbr1);
-	lst_push(lst, &nbr2);
-	lst_push(lst, &nbr3);
-	lst_push(lst, &nbr4);
+	twl_lst_push(lst, &nbr1);
+	twl_lst_push(lst, &nbr2);
+	twl_lst_push(lst, &nbr3);
+	twl_lst_push(lst, &nbr4);
 
-	nbr_p = (int *)(lst_find_by_value(lst, find_nbr, &nbr3));
+	nbr_p = (int *)(twl_lst_find_by_value(lst, find_nbr, &nbr3));
 	mt_assert(*nbr_p == 3);
 
-	nbr_p = (int *)(lst_find_by_value(lst, find_nbr, &nbr2));
+	nbr_p = (int *)(twl_lst_find_by_value(lst, find_nbr, &nbr2));
 	mt_assert(*nbr_p == 2);
 
-	nbr_p = (int *)(lst_find_by_value(lst, find_nbr, &nbr1));
+	nbr_p = (int *)(twl_lst_find_by_value(lst, find_nbr, &nbr1));
 	mt_assert(*nbr_p == 1);
 
 	free(lst);
 }
 
-void	suite_lst_find_by_value(t_suite *suite)
+void	suite_twl_lst_find_by_value(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }

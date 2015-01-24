@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_del.c                                          :+:      :+:    :+:   */
+/*   twl_lst_del.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,9 +13,9 @@
 #include "lst.h"
 #include <stdlib.h>
 
-void	lst_del(t_lst *lst, void (*delfn)(void *))
+void	twl_lst_del(t_lst *lst, void (*delfn)(void *))
 {
-	t_lst_elem *elem;
+	t_twl_lst_elem *elem;
 
 	elem = lst->elems;
 	while (elem)

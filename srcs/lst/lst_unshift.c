@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_unshift.c                                      :+:      :+:    :+:   */
+/*   twl_lst_unshift.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,11 +12,11 @@
 
 #include "lst.h"
 
-void	lst_unshift(t_lst *lst, void *data)
+void	twl_lst_unshift(t_lst *lst, void *data)
 {
-	t_lst_elem *elem;
+	t_twl_lst_elem *elem;
 
-	elem = lst_create_elem_(data);
-	lst__link_(elem, lst->elems);
+	elem = twl_lst_create_elem_(data);
+	twl_lst__link_(elem, lst->elems);
 	lst->elems = elem;
 }

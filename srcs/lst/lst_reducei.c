@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_reducei.c                                      :+:      :+:    :+:   */
+/*   twl_lst_reducei.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,9 +12,9 @@
 
 #include "lst.h"
 
-int lst_reducei(t_lst *lst, int (*fn)(void *data, int memo), int memo)
+int twl_lst_reducei(t_lst *lst, int (*fn)(void *data, int memo), int memo)
 {
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 
 	elem = lst->elems;
 	while (elem)

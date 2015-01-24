@@ -13,9 +13,9 @@
 #include <ldict.h>
 #include <libft.h>
 
-t_lst_elem		*ldict_get_elem(t_lst *lst, char *key)
+t_twl_lst_elem		*ldict_get_elem(t_lst *lst, char *key)
 {
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 
 	elem = lst->elems;
 	while (elem)

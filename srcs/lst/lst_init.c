@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_init.c                                         :+:      :+:    :+:   */
+/*   twl_lst_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include "lst.h"
 #include <stdlib.h>
 
-t_lst	*lst_init(void)
+t_lst	*twl_lst_init(void)
 {
 	t_lst	*lst;
 

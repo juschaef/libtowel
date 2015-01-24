@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_count.c                                        :+:      :+:    :+:   */
+/*   twl_lst_count.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,10 +12,10 @@
 
 #include "lst.h"
 
-size_t		lst_count(t_lst *lst, void *(*f)(void *))
+size_t		twl_lst_count(t_lst *lst, void *(*f)(void *))
 {
 	int			len;
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 
 	len = 0;
 	elem = lst->elems;

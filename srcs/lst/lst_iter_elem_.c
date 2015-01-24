@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_iter_elem_.c                                   :+:      :+:    :+:   */
+/*   twl_lst_iter_elem_.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,10 +13,10 @@
 #include "lst.h"
 #include "twl_printf.h"
 
-void	lst_iter_elem_(t_lst *lst, void (*f)(t_lst_elem *elem, void *context), void *context)
+void	twl_lst_iter_elem_(t_lst *lst, void (*f)(t_twl_lst_elem *elem, void *context), void *context)
 {
-	t_lst_elem	*elem;
-	t_lst_elem	*next;
+	t_twl_lst_elem	*elem;
+	t_twl_lst_elem	*next;
 
 	elem = lst->elems;
 	while (elem)

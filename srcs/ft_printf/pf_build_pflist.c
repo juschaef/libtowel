@@ -17,6 +17,6 @@ void pf_build_pflist(t_pf *pf)
 	t_lst *fmt_list;
 
 	fmt_list = pf_split(pf->fmt);
-	pf->pflst = lst_map(fmt_list, pfelem_str2pfelem);
-	lst_del(fmt_list, free);
+	pf->pflst = twl_lst_map(fmt_list, pfelem_str2pfelem);
+	twl_lst_del(fmt_list, free);
 }

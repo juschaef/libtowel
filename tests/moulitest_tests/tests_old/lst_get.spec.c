@@ -1,15 +1,15 @@
 #include "project.h"
 
-UT_TEST(lst_get)
+UT_TEST(twl_lst_get)
 {
 	t_lst	*lst;
-	lst = lst_init();
+	lst = twl_lst_init();
 
-	lst_push(lst, lst_create_elem("aaa"));
-	lst_push(lst, lst_create_elem("bbb"));
-	lst_push(lst, lst_create_elem("ccc"));
-	UT_ASSERT(strequ(lst_get(lst, 0)->data, "aaa"));
-	UT_ASSERT(strequ(lst_get(lst, 1)->data, "bbb"));
-	UT_ASSERT(strequ(lst_get(lst, 2)->data, "ccc"));
-	UT_ASSERT(lst_get(lst, 3) == NULL);
+	twl_lst_push(lst, twl_lst_create_elem("aaa"));
+	twl_lst_push(lst, twl_lst_create_elem("bbb"));
+	twl_lst_push(lst, twl_lst_create_elem("ccc"));
+	UT_ASSERT(strequ(twl_lst_get(lst, 0)->data, "aaa"));
+	UT_ASSERT(strequ(twl_lst_get(lst, 1)->data, "bbb"));
+	UT_ASSERT(strequ(twl_lst_get(lst, 2)->data, "ccc"));
+	UT_ASSERT(twl_lst_get(lst, 3) == NULL);
 }

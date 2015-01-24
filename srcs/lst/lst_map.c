@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_map.c                                          :+:      :+:    :+:   */
+/*   twl_lst_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,16 +12,16 @@
 
 #include "lst.h"
 
-t_lst		*lst_map(t_lst *lst, void *(*f)(void *data))
+t_lst		*twl_lst_map(t_lst *lst, void *(*f)(void *data))
 {
 	t_lst		*new_lst;
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 
 	elem = lst->elems;
-	new_lst = lst_init();
+	new_lst = twl_lst_init();
 	while (elem)
 	{
-		lst_push(new_lst, f(elem->data));
+		twl_lst_push(new_lst, f(elem->data));
 		elem = elem->next;
 	}
 	return (new_lst);

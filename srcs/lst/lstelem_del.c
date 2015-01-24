@@ -13,7 +13,7 @@
 #include "lst.h"
 #include <stdlib.h>
 
-void	lstelem_del(t_lst_elem *elem, void (*delfn)())
+void	lstelem_del(t_twl_lst_elem *elem, void (*delfn)())
 {
 	if (delfn)
 		delfn(elem->data);

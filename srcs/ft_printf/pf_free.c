@@ -19,9 +19,9 @@ void	voidfn(void *fn)
 
 void	pf_free(t_pf *pf)
 {
-	lst_del(pf->pflst, pfelem_free);
-	lst_del(pf->conv_val_fns, voidfn);
-	lst_del(pf->conv_str_fns, voidfn);
+	twl_lst_del(pf->pflst, pfelem_free);
+	twl_lst_del(pf->conv_val_fns, voidfn);
+	twl_lst_del(pf->conv_str_fns, voidfn);
 	free(pf->output);
 	free(pf);
 }

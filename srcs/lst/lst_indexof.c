@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_indexof.c                                      :+:      :+:    :+:   */
+/*   twl_lst_indexof.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,9 +12,9 @@
 
 #include <lst.h>
 
-int		lst_indexof(t_lst *lst, void *target, int (*cmp_fn)())
+int		twl_lst_indexof(t_lst *lst, void *target, int (*cmp_fn)())
 {
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 	int 		i;
 
 	elem = lst->elems;

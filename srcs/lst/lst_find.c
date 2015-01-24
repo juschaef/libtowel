@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_find.c                                         :+:      :+:    :+:   */
+/*   twl_lst_find.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,9 +12,9 @@
 
 #include "lst.h"
 
-void		*lst_find(t_lst *lst, void *(*f)(void *))
+void		*twl_lst_find(t_lst *lst, void *(*f)(void *))
 {
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 
 	elem = lst->elems;
 	while (elem)

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_find_by_value.c                                :+:      :+:    :+:   */
+/*   twl_lst_find_by_value.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,9 +12,9 @@
 
 #include "lst.h"
 
-void		*lst_find_by_value(t_lst *lst, int (*f)(void *data, void *value), void *value)
+void		*twl_lst_find_by_value(t_lst *lst, int (*f)(void *data, void *value), void *value)
 {
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 
 	elem = lst->elems;
 	while (elem)

@@ -15,7 +15,7 @@
 
 void ldict_del_elem(t_lst *lst, char *key, void (*delfn)())
 {
-	t_lst_elem	*elem;
+	t_twl_lst_elem	*elem;
 
 	elem = ldict_get(lst, key);
 	lstelem_del(elem, delfn);

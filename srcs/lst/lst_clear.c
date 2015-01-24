@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_clear.c                                        :+:      :+:    :+:   */
+/*   twl_lst_clear.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,8 +13,8 @@
 #include <lst.h>
 #include <stdio.h> //
 
-void	lst_clear(t_lst *lst, void (*delfn)())
+void	twl_lst_clear(t_lst *lst, void (*delfn)())
 {
-	lst_iter_elem_(lst, (void *)lstelem_del, delfn);
+	twl_lst_iter_elem_(lst, (void *)lstelem_del, delfn);
 	lst->elems = NULL;
 }

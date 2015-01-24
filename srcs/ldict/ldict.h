@@ -14,7 +14,7 @@
 # define LDICT_H
 # include <lst.h>
 
-t_lst_elem		*ldict_set(t_lst *lst, char *key, void *data, void (*delfn)());
+t_twl_lst_elem		*ldict_set(t_lst *lst, char *key, void *data, void (*delfn)());
 void			ldict_add(t_lst *lst, char *key, void *data);
 void			*ldict_get(t_lst *lst, char *key);
 void			ldict_del_elem(t_lst *lst, char *key, void (*delfn)());

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst__link_.c                                        :+:      :+:    :+:   */
+/*   twl_lst__link_.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "lst.h"
 
-void	lst__link_(t_lst_elem *elem1, t_lst_elem *elem2)
+void	twl_lst__link_(t_twl_lst_elem *elem1, t_twl_lst_elem *elem2)
 {
 	if (elem1)
 		elem1->next = elem2;

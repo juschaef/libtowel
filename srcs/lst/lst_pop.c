@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_pop.c                                          :+:      :+:    :+:   */
+/*   twl_lst_pop.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,10 +14,10 @@
 #include <stdlib.h>
 #include <assert.h>
 
-void	lst_pop(t_lst *lst, void (*f)())
+void	twl_lst_pop(t_lst *lst, void (*f)())
 {
-	t_lst_elem *elem;
-	t_lst_elem *prev;
+	t_twl_lst_elem *elem;
+	t_twl_lst_elem *prev;
 
 	elem = lst->elems;
 	while (elem->next)
