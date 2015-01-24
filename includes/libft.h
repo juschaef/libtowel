@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 15:05:51 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 19:53:34 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 20:03:37 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,26 +41,7 @@ typedef struct		s_list
 
 typedef bool (t_sort_cmp_fn)(void *item1, void *item2, void *context);
 
-void				*twl_memset(void *b, int c, size_t len);
-void				twl_bzero(void *s, size_t n);
-void				*twl_memcpy(void *dst, const void *src, size_t n);
-void				*twl_memccpy(void *dst, const void *src, int c, size_t n);
 void				*twl_memmove(void *dest, const void *src, size_t len);
-void				*twl_memchr(const void *s, int c, size_t n);
-int					twl_memcmp(const void *s1, const void *s2, size_t n);
-size_t				twl_strlen(const char *s);
-char				*twl_strdup(const char *s1);
-char				*twl_strcpy(char *dst, const char *src);
-char				*twl_strncpy(char *dst, const char *src, size_t n);
-char				*twl_strcat(char *s1, const char *s2);
-char				*twl_strncat(char *s1, const char *s2, size_t n);
-size_t				twl_strlcat(char *dst, const char *src, size_t size);
-char				*twl_strchr(const char *s, int c);
-char				*twl_strrchr(const char *s, int c);
-char				*twl_strstr(const char *s1, const char *s2);
-char				*twl_strnstr(const char *s1, const char *s2, size_t n);
-int					twl_strcmp(const char *s1, const char *s2);
-int					twl_strncmp(const char *s1, const char *s2, size_t n);
 int					twl_atoi(const char *str);
 int					twl_isalpha(int c);
 int					twl_isdigit(int c);
@@ -82,7 +63,6 @@ void				twl_putendl_fd(char const *s, int fd);
 void				twl_putnbr_fd(int n, int fd);
 
 int					twl_isblank(int c);
-void				*twl_memdup(const void *s, size_t n);
 int					twl_islower(int c);
 int					twl_isupper(int c);
 int					twl_ispunct(int c);
