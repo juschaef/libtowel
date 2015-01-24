@@ -56,7 +56,7 @@ static void test_del_last(t_test *test)
 	mt_assert(twl_lst_len(lst) == 2);
 }
 
-void	suite_ldict_del_elem(t_suite *suite)
+void	suite_twl_ldict_del_elem(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, test_del_first);
 	SUITE_ADD_TEST(suite, test_del_middle);

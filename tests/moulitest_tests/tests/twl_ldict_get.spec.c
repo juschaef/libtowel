@@ -19,7 +19,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(s, "data3") == 0);
 }
 
-void	suite_ldict_get(t_suite *suite)
+void	suite_twl_ldict_get(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }
