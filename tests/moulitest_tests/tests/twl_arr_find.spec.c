@@ -1,5 +1,6 @@
 #include <project.h>
 #include <twl_arr.h>
+#include <twl_xstring.h>
 
 static int find_fn(void *str, void *key)
 {

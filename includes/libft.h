@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 15:05:51 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 19:43:57 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 19:53:34 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,6 @@ int					twl_tolower(int c);
 
 void				*twl_memalloc(size_t size);
 void				twl_memdel(void **ap);
-char				*twl_strnew(size_t size);
-void				twl_striter(char *s, void(*f)(char *));
-void				twl_striteri(char *s, void(*f)(unsigned int, char *));
-char				*twl_strmap(char const *s, char(*f)(char));
-char				*twl_strmapi(char const *s, char(*f)(unsigned int, char));
-int					twl_strequ(char const *s1, char const *s2);
-int					twl_strnequ(char const *s1, char const *s2, size_t n);
-char				*twl_strsub(char const *s, unsigned int start, size_t len);
-char				*twl_strjoin(char const *s1, char const *s2);
-char				*twl_strtrim(char const *s);
-char				**twl_strsplit(char const *s, char c);
 void				twl_putchar(char c);
 void				twl_putstr(char const *s);
 void				twl_putendl(char const *s);
@@ -92,9 +81,7 @@ void				twl_putstr_fd(char const *s, int fd);
 void				twl_putendl_fd(char const *s, int fd);
 void				twl_putnbr_fd(int n, int fd);
 
-char				*twl_strrev(char *s);
 int					twl_isblank(int c);
-char				*twl_strtrimc(char const *s, char c);
 void				*twl_memdup(const void *s, size_t n);
 int					twl_islower(int c);
 int					twl_isupper(int c);
@@ -102,12 +89,9 @@ int					twl_ispunct(int c);
 int					twl_isspace(int c);
 int					twl_abs(int n);
 size_t				twl_factorial(size_t n);
-char				*twl_strupcase(char *str);
-char				*twl_strlowcase(char *str);
 void				twl_swap(int *p1, int *p2);
 void				twl_ptrswap(void *p1, void *p2);
 void				*twl_realloc(void *ptr, size_t size);
-void				twl_strswap(char **s1, char **s2);
 void				twl_sort_array(char **tab, int size);
 
 t_list				*twl_lstnew(void const *content, size_t content_size);
@@ -117,13 +101,6 @@ void				twl_lstadd(t_list **alst, t_list *new);
 void				twl_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*twl_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-char				*twl_wchar_to_str(wchar_t wstr);
-size_t				twl_wstrlen(wchar_t *wstr);
-char				*twl_wstr_to_str(wchar_t *wstr);
-char				*twl_strpad(const char *s, size_t min_width,
-						int pad_dir, char c);
-char				*twl_strnewc(size_t size, char c);
-char				*twl_strjoinfree(char *left, char *right, char free_num);
 void				twl_assert(int cond);
 
 #endif
