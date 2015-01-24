@@ -6,12 +6,12 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 21:12:40 by annguyen          #+#    #+#             */
-/*   Updated: 2015/01/24 19:34:47 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 20:35:37 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <sys/stat.h>
-#include <libft.h>
+#include <twl_xstring.h>
 
 char	*twl_joinpath(char *s1, char *s2)
 {

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_dict_get.c                                        :+:      :+:    :+:   */
+/*   twl_dict_get.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 19:40:50 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/24 20:21:23 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_dict.h>
-#include <libft.h>
+#include <twl_string.h>
 
 void		*twl_dict_get(t_lst *lst, char *key)
 {

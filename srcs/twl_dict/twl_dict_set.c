@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <twl_dict.h>
-#include <libft.h>
+#include <twl_string.h>
 
 void		twl_dict_set(t_lst *lst, char *key, void *data, void (*delfn)())
 {

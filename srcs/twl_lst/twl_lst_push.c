@@ -29,6 +29,6 @@ void	twl_lst_push(t_lst *lst, void *data)
 		while (tmpelem->next)
 			tmpelem = tmpelem->next;
 		tmpelem->next = newelem;
-		twl_lst__link_(tmpelem, tmpelem->next);
+		twl_lst_link_(tmpelem, tmpelem->next);
 	}
 }

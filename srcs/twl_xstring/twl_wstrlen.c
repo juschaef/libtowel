@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <twl_string.h>
 #include <wchar.h>
 
 size_t		twl_wstrlen(wchar_t *wstr)

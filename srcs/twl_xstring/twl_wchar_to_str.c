@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_wchar_to_str.c                                  :+:      :+:    :+:   */
+/*   twl_wchar_to_str.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/29 18:01:50 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/08 16:23:49 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 20:40:56 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <twl_string.h>
+#include <twl_xstring.h>
 #include <wchar.h>
 
 static int	nbits(unsigned int nbr)

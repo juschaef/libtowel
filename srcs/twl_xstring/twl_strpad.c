@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_strpad.c                                        :+:      :+:    :+:   */
+/*   twl_strpad.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/01 16:16:43 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/07 18:08:14 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/24 20:40:15 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <twl_string.h>
+#include <twl_xstring.h>
 #include <stdlib.h>
 
 char	*twl_strpad(const char *s, size_t min_width, int pad_dir, char c)

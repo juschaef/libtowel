@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 15:05:51 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:03:37 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 20:45:22 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,12 @@
 # define LONG_MAX 9223372036854775807L
 # define LONG_MIN -LONG_MAX - 1L
 
-# define FT_STRPAD_LEFT 0
-# define FT_STRPAD_RIGHT 1
 # ifdef DEBUG_ASSERT_ENABLED
 #  define DEBUG_ASSERT(cond) twl_assert(cond);
 # else
 #  define DEBUG_ASSERT(cond) ;
 # endif
 
-# define FT_STRLEN_MAX_LEN 1 * 1000 * 1000
 
 typedef struct		s_list
 {
@@ -39,12 +36,10 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef bool (t_sort_cmp_fn)(void *item1, void *item2, void *context);
 
 void				*twl_memmove(void *dest, const void *src, size_t len);
 int					twl_atoi(const char *str);
 int					twl_isalpha(int c);
-int					twl_isdigit(int c);
 int					twl_isalnum(int c);
 int					twl_isascii(int c);
 int					twl_isprint(int c);
@@ -62,11 +57,6 @@ void				twl_putstr_fd(char const *s, int fd);
 void				twl_putendl_fd(char const *s, int fd);
 void				twl_putnbr_fd(int n, int fd);
 
-int					twl_isblank(int c);
-int					twl_islower(int c);
-int					twl_isupper(int c);
-int					twl_ispunct(int c);
-int					twl_isspace(int c);
 int					twl_abs(int n);
 size_t				twl_factorial(size_t n);
 void				twl_swap(int *p1, int *p2);

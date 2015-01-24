@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 19:53:48 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 20:42:22 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #ifndef TWL_XSTRING_H
 # define TWL_XSTRING_H
 # include <stddef.h>
+
+# define FT_STRPAD_LEFT 0
+# define FT_STRPAD_RIGHT 1
 
 char		*twl_itoa(int n);
 char		*twl_ldtoa(long double ld);

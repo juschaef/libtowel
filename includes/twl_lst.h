@@ -3,17 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:01:49 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/24 20:28:25 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LST_H
 # define LST_H
 # include <stddef.h>
-# include <libft.h>
+# include <twl_string.h>
+# include <twl_sort.h>
 
 typedef struct				s_twl_lst_elem
 {
@@ -30,7 +31,7 @@ typedef struct			s_lst
 	t_twl_lst_elem		*elems;
 }						t_lst;
 
-void					twl_lst__link_(t_twl_lst_elem *elem1, t_twl_lst_elem *elem2);
+void					twl_lst_link_(t_twl_lst_elem *elem1, t_twl_lst_elem *elem2);
 void					twl_lst_clear(t_lst *lst, void (*delfn)());
 size_t					twl_lst_count(t_lst *lst, void *(*f)(void *));
 t_twl_lst_elem			*twl_lst_create_elem_(void *data);

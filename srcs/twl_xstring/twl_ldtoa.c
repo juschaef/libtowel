@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_ldtoa.c                                         :+:      :+:    :+:   */
+/*   twl_ldtoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/07 18:05:39 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/24 20:37:20 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <twl_string.h>
+#include <twl_xstring.h>
 #include <stdlib.h>
 
 #define FT_LDTOA_PRECISION 7

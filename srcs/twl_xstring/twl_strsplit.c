@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_strsplit.c                                      :+:      :+:    :+:   */
+/*   twl_strsplit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
-/*   Updated: 2014/11/24 13:35:03 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 20:40:26 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <twl_string.h>
+#include <twl_xstring.h>
 #include <stdlib.h>
 
 static int		twl_count_words(const char *s, char c)

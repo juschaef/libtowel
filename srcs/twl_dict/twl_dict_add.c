@@ -6,12 +6,13 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:10:13 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 20:29:43 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_dict.h>
 #include <twl_string.h>
+#include <twl_xstdio.h>
 
 /*
 ** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_lst *lst, t_twl_lst_elem *elem)"
@@ -43,7 +44,7 @@ void		twl_dict_add(t_lst *lst, char *key, void *data)
 			while (tmpelem->next)
 				tmpelem = tmpelem->next;
 			tmpelem->next = elem;
-			twl_lst__link_(tmpelem, tmpelem->next);
+			twl_lst_link_(tmpelem, tmpelem->next);
 		}
 	}
 }

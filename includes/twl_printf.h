@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_printf.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 18:23:37 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/24 14:43:29 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/24 20:35:14 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 #ifndef PF_H
 # define PF_H
 
-# include <libft.h>
 # include <twl_lst.h>
 # include <twl_dict.h>
 # include <twl_printf_elem.h>
+# include <twl_xstring.h>
+# include <twl_string.h>
+# include <twl_ctype.h>
+# include <twl_stdlib.h>
 
 # include <stdarg.h>
 # include <stdlib.h>

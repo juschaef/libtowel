@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <twl_string.h>
 #include <stdlib.h>
 
 char	*twl_strjoin(char const *s1, char const *s2)

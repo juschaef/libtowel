@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 12:25:26 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 19:31:58 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/24 20:28:47 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARR_H
 # define ARR_H
 
-# include <libft.h>
+# include <twl_string.h>
 # include <stddef.h>
 # include <twl_bool.h>
 # include <twl_lst.h>
+# include <twl_sort.h>
 
 void	*twl_arr_cpy(void *arr);
 void	twl_arr_del(void *twl_arr_ptr);

@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lutobasestr.c                                   :+:      :+:    :+:   */
+/*   twl_llutobasestr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/11 22:11:03 by yyang             #+#    #+#             */
-/*   Updated: 2014/12/31 13:14:12 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/24 20:37:40 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <twl_string.h>
+#include <twl_xstring.h>
 #include <stdlib.h>
 
 #define MAX_CONVERTION_LENGTH 50
