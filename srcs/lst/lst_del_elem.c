@@ -1,0 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lst_del_elem.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2014/12/12 16:52:50 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/23 21:00:44 by juschaef         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "lst.h"
+#include <stdlib.h>
+
+void	lst_del_elem(t_lst *lst, int index, void (*delfn)())
+{
+	t_lst_elem *elem;
+
+	elem = lst_get_(lst, index);
+	lst__link_(elem->prev, elem->next);
+	if (!elem->prev)
+		lst->elems = elem->next;
+	if (delfn)
+		delfn(elem->data);
+	if (elem->key)
+		free(elem->key);
+	elem->data = NULL;
+	elem->next = NULL;
+	elem->prev = NULL;
+	elem->parent = NULL;
+	elem->key = NULL;
+	free(elem);
+	(void)lst;
+}

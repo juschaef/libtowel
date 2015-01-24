@@ -1,0 +1,10 @@
+#include <libft.h>
+#include <lst.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ft_printf.h>
+
+int main()
+{
+	ft_printf("abc%s", "abc");
+}

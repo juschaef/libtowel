@@ -1,0 +1,20 @@
+#include "project.h"
+
+// static int ft_lstcmp(t_list *lst1, t_list *lst2)
+// {
+// 	return (strcmp((char *)lst1->content, (char *)lst2->content));
+// }
+
+UT_TEST(ft_lstsort)
+{
+	// t_list	*list;
+
+	// list = ft_lstnew("b", 10);
+	// list->next = ft_lstnew("c", 10);
+	// list->next->next = ft_lstnew("a", 10);
+
+	// ft_lstsort(list, &ft_lstcmp);
+	// UT_ASSERT(strcmp(list->content, "a") == 0);
+
+	UT_ASSERT(1);
+}
