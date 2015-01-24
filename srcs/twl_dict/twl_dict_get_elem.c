@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_dict_get_elem.c                                :+:      :+:    :+:   */
+/*   twl_dict_get_elem_.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <twl_dict.h>
 #include <twl_string.h>
 
-t_twl_lst_elem		*twl_dict_get_elem(t_lst *lst, char *key)
+t_twl_lst_elem		*twl_dict_get_elem_(t_lst *lst, char *key)
 {
 	t_twl_lst_elem	*elem;
 

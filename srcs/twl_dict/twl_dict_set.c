@@ -17,7 +17,7 @@ void		twl_dict_set(t_lst *lst, char *key, void *data, void (*delfn)())
 {
 	t_twl_lst_elem	*elem;
 
-	elem = twl_dict_get_elem(lst, key);
+	elem = twl_dict_get_elem_(lst, key);
 	if (elem != NULL)
 	{
 		delfn(elem->data);
