@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_sys_joinpath.c                                  :+:      :+:    :+:   */
+/*   twl_joinpath.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 21:12:40 by annguyen          #+#    #+#             */
-/*   Updated: 2015/01/20 22:10:24 by annguyen         ###   ########.fr       */
+/*   Updated: 2015/01/24 19:34:47 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <sys/stat.h>
 #include <libft.h>
 
-char	*twl_sys_joinpath(char *s1, char *s2)
+char	*twl_joinpath(char *s1, char *s2)
 {
 	char	*s;
 

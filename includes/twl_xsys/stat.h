@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_sys.h                                           :+:      :+:    :+:   */
+/*   stat.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 21:12:52 by annguyen          #+#    #+#             */
-/*   Updated: 2015/01/20 22:09:02 by annguyen         ###   ########.fr       */
+/*   Updated: 2015/01/24 19:34:33 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_SYS_H
-# define FT_SYS_H
 
-int			twl_sys_isdir(char *path);
-char		*twl_sys_joinpath(char *s1, char *s2);
+#ifndef TWL_XSYS_STAT_H
+# define TWL_XSYS_STAT_H
+
+int			twl_isdir(char *path);
 
 #endif
