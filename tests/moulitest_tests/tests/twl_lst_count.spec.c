@@ -6,7 +6,7 @@
 
 void 	*twl_count_chars_3(void *s)
 {
-	if (twl_strlen(s) == 3)
+	if (strlen(s) == 3)
 		return (s);
 	return (0);
 
@@ -19,12 +19,12 @@ static void test_simple_count(t_test *test)
 
 	lst = twl_lst_init();
 
-	twl_lst_push(lst, twl_strdup("aaa"));
-	twl_lst_push(lst, twl_strdup("4444444"));
-	twl_lst_push(lst, twl_strdup("bbb"));
-	twl_lst_push(lst, twl_strdup("0"));
-	twl_lst_push(lst, twl_strdup("1111"));
-	twl_lst_push(lst, twl_strdup("ccc"));
+	twl_lst_push(lst, strdup("aaa"));
+	twl_lst_push(lst, strdup("4444444"));
+	twl_lst_push(lst, strdup("bbb"));
+	twl_lst_push(lst, strdup("0"));
+	twl_lst_push(lst, strdup("1111"));
+	twl_lst_push(lst, strdup("ccc"));
 
 	mt_assert(twl_lst_count(lst, twl_count_chars_3) == 3);
 }

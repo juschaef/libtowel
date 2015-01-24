@@ -14,9 +14,9 @@ static void simple_test(t_test *test)
 	t_lst	*lst;
 	lst = twl_lst_init();
 
-	twl_lst_push(lst, twl_strdup("aaa"));
-	twl_lst_push(lst, twl_strdup("bbb"));
-	twl_lst_push(lst, twl_strdup("ccc"));
+	twl_lst_push(lst, strdup("aaa"));
+	twl_lst_push(lst, strdup("bbb"));
+	twl_lst_push(lst, strdup("ccc"));
 
 	twl_lst_pop(lst, del_data);
 	mt_assert(strcmp(twl_lst_get_(lst, 0)->data, "aaa") == 0);

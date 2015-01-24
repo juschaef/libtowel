@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   twl_mlximg_draw_point.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 22:18:04 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:05:50 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/24 20:10:40 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_mlximg.h>
 #include <stddef.h>
-#include <libft.h>
-#include <mlx.h>
+#include <twl_mlximg.h>
+#include <twl_string.h>
 
 void	mlximg_draw_point(t_mlximg *image, t_twl_point *pt, int color)
 {

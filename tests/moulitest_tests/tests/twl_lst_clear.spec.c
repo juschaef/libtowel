@@ -4,8 +4,8 @@
 static void simple_test(t_test *test)
 {
 	t_lst	*lst;
-	char *s1 = twl_strdup("hello");
-	char *s2 = twl_strdup("coucou");
+	char *s1 = strdup("hello");
+	char *s2 = strdup("coucou");
 	
 	lst = twl_lst_init();
 

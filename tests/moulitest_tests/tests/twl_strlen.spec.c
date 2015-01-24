@@ -1,5 +1,6 @@
 #include <project.h>
 #include <twl_xstring.h>
+#include <twl_string.h>
 
 static void simple_test(t_test *test)
 {

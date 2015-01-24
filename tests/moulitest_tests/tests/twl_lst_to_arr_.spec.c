@@ -1,5 +1,6 @@
 #include <twl_lst.h>
 #include <twl_arr.h>
+#include <string.h>
 #include "project.h"
 
 static void simple_test(t_test *test)
@@ -9,9 +10,9 @@ static void simple_test(t_test *test)
 
 	lst = twl_lst_init();
 
-	twl_lst_push(lst, twl_strdup("aaa"));
-	twl_lst_push(lst, twl_strdup("bbb"));
-	twl_lst_push(lst, twl_strdup("ccc"));
+	twl_lst_push(lst, strdup("aaa"));
+	twl_lst_push(lst, strdup("bbb"));
+	twl_lst_push(lst, strdup("ccc"));
 
 	arr = (char **)twl_lst_to_arr_(lst);
 

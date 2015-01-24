@@ -31,7 +31,7 @@ int get_item_order(char *path)
 	s1 += 2;
 	s2 += 2;
 	(void)context;
-	return (twl_strcmp(s1, s2) < 0);
+	return (strcmp(s1, s2) < 0);
 }
 /*
 static void iter_fn(void *elem, void *context)
