@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_get.c                                      :+:      :+:    :+:   */
+/*   twl_lst_get_elem__.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 14:33:07 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/23 18:47:26 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "twl_lst.h"
 
-void 	*twl_lst_get(t_lst *lst, size_t index)
+t_twl_lst_elem 	*twl_lst_get_elem__(t_lst *lst, size_t index)
 {
 	t_twl_lst_elem	*elem;
 
-	elem = twl_lst_get_elem__(lst, index);
-	if (elem)
-		return (elem->data);
-	return (NULL);
+	elem = lst->head;
+	while (elem && index--)
+		elem = elem->next;
+	return (elem ? elem : NULL);
 }
