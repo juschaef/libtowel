@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_dict_del_by_key.c                              :+:      :+:    :+:   */
+/*   twl_dict_delone.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <twl_dict.h>
 #include <twl_lst.h>
 
-void twl_dict_del_by_key(t_dict *dict, char *key, void (*delfn)())
+void twl_dict_delone(t_dict *dict, char *key, void (*delfn)())
 {
 	t_twl_dict_elem	*elem;
 

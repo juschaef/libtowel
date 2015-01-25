@@ -1,13 +1,13 @@
 #include <project.h>
 #include <twl_lst.h>
 
-int find_nbr(void *data, void *value)
+int find_nbr(void *data, void *context)
 {
 	int *nbr_p1;
 	int *nbr_p2;
 
 	nbr_p1 = data;
-	nbr_p2 = value;
+	nbr_p2 = context;
 	if (*nbr_p1 == *nbr_p2)
 		return (1);
 	return (0);

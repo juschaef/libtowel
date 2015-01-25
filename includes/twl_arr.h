@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 12:25:26 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 19:39:39 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 19:42:41 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	twl_arr_delone(void *twl_arr_, int index);
 /*
 ** Search
 */
+
 void 	*twl_arr_find(void *twl_arr_, int (*find_fn)(void *arr, void *context), void *context);
 int		twl_arr_indexof(void *twl_arr_, void *target);
 void	*twl_arr_last(void *twl_arr_);
