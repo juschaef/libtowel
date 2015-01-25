@@ -44,7 +44,7 @@ static void test_relink_null_right(t_test *test)
 	mt_assert(twl_lst_len(lst) == 1);
 }
 
-void	suite_twl_lst__link(t_suite *suite)
+void	suite_twl_lst_link__(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 	SUITE_ADD_TEST(suite, test_relink_null_left);
