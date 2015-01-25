@@ -18,7 +18,7 @@ size_t		twl_lst_count(t_lst *lst, void *(*f)(void *))
 	t_twl_lst_elem	*elem;
 
 	len = 0;
-	elem = lst->elems;
+	elem = lst->head;
 	while (elem)
 	{
 		if (f(elem->data))

@@ -16,7 +16,7 @@ t_twl_lst_elem 	*twl_lst_get_(t_lst *lst, size_t index)
 {
 	t_twl_lst_elem	*elem;
 
-	elem = lst->elems;
+	elem = lst->head;
 	while (elem && index--)
 		elem = elem->next;
 	return (elem ? elem : NULL);

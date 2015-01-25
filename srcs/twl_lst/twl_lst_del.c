@@ -17,7 +17,7 @@ void	twl_lst_del(t_lst *lst, void (*delfn)(void *))
 {
 	t_twl_lst_elem *elem;
 
-	elem = lst->elems;
+	elem = lst->head;
 	while (elem)
 	{
 		twl_lstelem_del(elem, delfn);

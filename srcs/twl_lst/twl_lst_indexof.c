@@ -17,7 +17,7 @@ int		twl_lst_indexof(t_lst *lst, void *target, int (*cmp_fn)())
 	t_twl_lst_elem	*elem;
 	int 		i;
 
-	elem = lst->elems;
+	elem = lst->head;
 	i = 0;
 	while (elem)
 	{

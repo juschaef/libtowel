@@ -33,13 +33,13 @@ void		twl_dict_add(t_lst *lst, char *key, void *data)
 	{
 		elem = twl_lst_create_elem_(data);
 		elem->key = twl_strdup(key);
-		if (!lst->elems)
+		if (!lst->head)
 		{
-			lst->elems = elem;
+			lst->head = elem;
 		}
 		else
 		{
-			tmpelem = lst->elems;
+			tmpelem = lst->head;
 			while (tmpelem->next)
 				tmpelem = tmpelem->next;
 			tmpelem->next = elem;

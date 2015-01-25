@@ -17,7 +17,7 @@ t_twl_lst_elem		*twl_dict_get_elem_(t_lst *lst, char *key)
 {
 	t_twl_lst_elem	*elem;
 
-	elem = lst->elems;
+	elem = lst->head;
 	while (elem)
 	{
 		if (twl_strcmp(elem->key, key) == 0)

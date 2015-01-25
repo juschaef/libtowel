@@ -18,13 +18,13 @@ void	twl_lst_push(t_lst *lst, void *data)
 	t_twl_lst_elem *newelem;
 
 	newelem = twl_lst_create_elem_(data);
-	if (!lst->elems)
+	if (!lst->head)
 	{
-		lst->elems = newelem;
+		lst->head = newelem;
 	}
 	else
 	{
-		tmpelem = lst->elems;
+		tmpelem = lst->head;
 		while (tmpelem->next)
 			tmpelem = tmpelem->next;
 		tmpelem->next = newelem;

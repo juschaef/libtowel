@@ -17,7 +17,7 @@ size_t	twl_lst_len(t_lst *lst)
 	int			len;
 	t_twl_lst_elem	*elem;
 
-	elem = lst->elems;
+	elem = lst->head;
 	len = 0;
 	while (elem)
 	{

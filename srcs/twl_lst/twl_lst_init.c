@@ -18,6 +18,6 @@ t_lst	*twl_lst_new(void)
 	t_lst	*lst;
 
 	lst = (t_lst *)malloc(sizeof(t_lst));
-	lst->elems = NULL;
+	lst->head = NULL;
 	return (lst);
 }

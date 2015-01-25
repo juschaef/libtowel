@@ -20,7 +20,7 @@ void	twl_lst_del_elem(t_lst *lst, int index, void (*delfn)())
 	elem = twl_lst_get_(lst, index);
 	twl_lst_link_(elem->prev, elem->next);
 	if (!elem->prev)
-		lst->elems = elem->next;
+		lst->head = elem->next;
 	if (delfn)
 		delfn(elem->data);
 	if (elem->key)

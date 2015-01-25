@@ -61,7 +61,7 @@ void			pf_concat(t_pf *pf)
 	t_twl_lst_elem	*elem;
 	t_pfelem	*pfelem;
 
-	elem = pf->pflst->elems;
+	elem = pf->pflst->head;
 	pf->output = twl_strnew(0);
 	pf->output_len = 0;
 	while (elem)

@@ -19,13 +19,13 @@ void	twl_lst_pop(t_lst *lst, void (*f)())
 	t_twl_lst_elem *elem;
 	t_twl_lst_elem *prev;
 
-	elem = lst->elems;
+	elem = lst->head;
 	while (elem->next)
 		elem = elem->next;
 	prev = elem->prev;
 	twl_lstelem_del(elem, f);
-	if (lst->elems == elem)
-		lst->elems = NULL;
+	if (lst->head == elem)
+		lst->head = NULL;
 	if (prev)
 		prev->next = NULL;
 }

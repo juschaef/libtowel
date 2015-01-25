@@ -73,7 +73,7 @@ void			pf_add_arg_to_elem(t_pf *pf)
 	int			i;
 	int			ac;
 
-	elem = pf->pflst->elems;
+	elem = pf->pflst->head;
 	while (elem)
 	{
 		i = 0;

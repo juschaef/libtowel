@@ -18,7 +18,7 @@ void	twl_lst_iter(t_lst *lst, void (*f)(void *data, void *context), void *contex
 	t_twl_lst_elem	*elem;
 	t_twl_lst_elem	*next;
 
-	elem = lst->elems;
+	elem = lst->head;
 	while (elem)
 	{
 		next = elem->next;

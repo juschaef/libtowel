@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 14:05:48 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 14:14:27 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct				s_twl_lst_elem
 
 typedef struct			s_lst
 {
-	t_twl_lst_elem		*elems;
+	t_twl_lst_elem		*head;
 }						t_lst;
 
 void					twl_lst_link_(t_twl_lst_elem *elem1, t_twl_lst_elem *elem2);

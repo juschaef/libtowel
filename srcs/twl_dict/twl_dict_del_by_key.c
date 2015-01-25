@@ -20,6 +20,6 @@ void twl_dict_del_by_key(t_lst *lst, char *key, void (*delfn)())
 	elem = twl_dict_get_elem_(lst, key);
 	twl_lst_link_(elem->prev, elem->next);
 	if (!elem->prev)
-		lst->elems = elem->next;
+		lst->head = elem->next;
 	twl_lstelem_del(elem, delfn);
 }
