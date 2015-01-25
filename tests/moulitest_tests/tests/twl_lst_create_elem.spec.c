@@ -22,7 +22,6 @@ static void check_initial_values(t_test *test)
 	mt_assert(elem->data != NULL);
 	mt_assert(elem->next == NULL);
 	mt_assert(elem->prev == NULL);
-	mt_assert(elem->parent == NULL);
 	mt_assert(elem->key == NULL);
 }
 

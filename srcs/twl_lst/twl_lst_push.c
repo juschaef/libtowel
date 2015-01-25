@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_push.c                                         :+:      :+:    :+:   */
+/*   twl_lst_push.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 16:58:00 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/25 11:58:59 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	twl_lst_push(t_lst *lst, void *data)
 	t_twl_lst_elem *newelem;
 
 	newelem = twl_lst_create_elem_(data);
-	newelem->parent = lst;
 	if (!lst->elems)
 	{
 		lst->elems = newelem;

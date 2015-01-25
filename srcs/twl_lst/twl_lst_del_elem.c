@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_del_elem.c                                     :+:      :+:    :+:   */
+/*   twl_lst_del_elem.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 16:52:50 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 21:00:44 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/25 11:58:52 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	twl_lst_del_elem(t_lst *lst, int index, void (*delfn)())
 	elem->data = NULL;
 	elem->next = NULL;
 	elem->prev = NULL;
-	elem->parent = NULL;
 	elem->key = NULL;
 	free(elem);
 	(void)lst;

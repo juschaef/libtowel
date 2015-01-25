@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:29:43 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 11:58:38 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void		twl_dict_add(t_lst *lst, char *key, void *data)
 	else
 	{
 		elem = twl_lst_create_elem_(data);
-		elem->parent = lst;
 		elem->key = twl_strdup(key);
 		if (!lst->elems)
 		{

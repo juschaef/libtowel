@@ -9,28 +9,6 @@ static void	del_data(char *str)
 	(void)str;
 }
 
-
-// static void simple_test(t_test *test)
-// {
-// 	char *str;
-// 	t_twl_lstelem	*elem;
-
-// 	str = strdup("abc");
-// 	elem = twl_lstcreate_elem_(str);
-
-
-// 	mt_assert(elem != NULL);
-// 	mt_assert(str != NULL);
-
-// 	twl_lstelem_del(elem, del_data);
-
-// 	mt_assert(elem->data == NULL);
-// 	mt_assert(elem->key == NULL);
-// 	mt_assert(elem->prev == NULL);
-// 	mt_assert(elem->next == NULL);
-// 	mt_assert(elem->parent == NULL);
-// }
-
 static void test_relink(t_test *test)
 {
 	t_lst *lst;
