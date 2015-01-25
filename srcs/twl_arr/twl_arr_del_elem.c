@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_arr_del_elem.c                                     :+:      :+:    :+:   */
+/*   twl_arr_delone.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 13:53:40 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/19 14:02:17 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 19:27:59 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_arr.h>
 #include <stdlib.h>
 
-void	twl_arr_del_elem(void *twl_arr_, int index)
+void	twl_arr_delone(void *twl_arr_, int index)
 {
 	void **arr;
 

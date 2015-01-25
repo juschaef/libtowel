@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 15:55:45 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 19:33:06 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,6 @@ typedef struct				s_twl_lst_elem
 	struct s_twl_lst_elem	*prev;
 	char					*key;
 }							t_twl_lst_elem;
-/*
-** Implement if necessary
-** size_t				size__;
-*/
 
 typedef struct			s_lst
 {
@@ -90,4 +86,10 @@ void					twl_lst_link__(t_twl_lst_elem *elem1, t_twl_lst_elem *elem2);
 void 					**twl_lst_to_arr__(t_lst *lst);
 void					twl_lst_clear__(t_lst *lst, void (*delfn)());
 
+/*
+** Implement if necessary
+** size_t				size__;
+** t_twl_lst_elem		tail__;
+*/
+	
 #endif
