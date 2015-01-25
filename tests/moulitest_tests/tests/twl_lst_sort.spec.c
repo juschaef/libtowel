@@ -15,7 +15,7 @@ bool 		sort_twl_strcmp(void *str1, void *str2, void *context)
 static void simple_test(t_test *test)
 {
 	t_lst	*lst;
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("ccc"));

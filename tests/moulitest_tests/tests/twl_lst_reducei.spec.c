@@ -11,7 +11,7 @@ static int sum(void *data, int memo)
 static void simple_test(t_test *test)
 {
 	t_lst	*lst;
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	int memo = 0;
 	int nbr1 = 1;
 	int nbr2 = 2;

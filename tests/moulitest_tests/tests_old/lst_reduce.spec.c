@@ -17,7 +17,7 @@ static void *sum(t_twl_lst_elem *elem, void *memo)
 UT_TEST(twl_lst_reduce)
 {
 	t_lst	*lst;
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	int memo = 0;
 	int nbr1 = 1;
 	int nbr2 = 2;
@@ -33,7 +33,7 @@ UT_TEST(twl_lst_reduce)
 	UT_ASSERT(memo == 10);
 	free(lst);
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	char *str1 = "pomme";
 	char *str2 = "jambon";
 	char *str3 = "carrote";

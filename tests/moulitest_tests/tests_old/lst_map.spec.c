@@ -12,7 +12,7 @@ static t_twl_lst_elem *catHello(t_twl_lst_elem *elem)
 UT_TEST(twl_lst_map)
 {
 	t_lst	*lst;
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 
 	twl_lst_push(lst, twl_lst_create_elem(twl_strdup("a")));
 	twl_lst_push(lst, twl_lst_create_elem(twl_strdup("b")));

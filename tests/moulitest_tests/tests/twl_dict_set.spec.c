@@ -10,7 +10,7 @@ static void simple_test(t_test *test)
 {
 	t_lst *lst;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	twl_dict_set(lst, "key1", strdup("data1"), del);
 	twl_dict_set(lst, "key2", strdup("data2"), del);
 	twl_dict_set(lst, "key3", strdup("data3"), del);
@@ -25,7 +25,7 @@ static void test_set_multiple_times(t_test *test)
 {
 	t_lst *lst;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	twl_dict_set(lst, "key1", strdup("data1"), del);
 	twl_dict_set(lst, "key2", strdup("data2"), del);
 	mt_assert(strcmp(twl_lst_get_(lst, 0)->data, "data1") == 0);

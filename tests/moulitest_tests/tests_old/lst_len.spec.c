@@ -3,7 +3,7 @@
 UT_TEST(twl_lst_len)
 {
 	t_lst	*lst;
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 
 	UT_ASSERT(twl_lst_len(lst) == 0);
 	twl_lst_push(lst, twl_lst_create_elem("aaa"));

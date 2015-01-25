@@ -35,7 +35,7 @@ static void test_relink(t_test *test)
 {
 	t_lst *lst;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("bbb"));
@@ -53,7 +53,7 @@ static void test_del_first(t_test *test)
 {
 	t_lst *lst;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("bbb"));
@@ -68,7 +68,7 @@ static void test_del_last(t_test *test)
 {
 	t_lst *lst;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("bbb"));

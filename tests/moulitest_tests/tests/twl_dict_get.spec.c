@@ -5,7 +5,7 @@ static void simple_test(t_test *test)
 {
 	t_lst *lst;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	twl_dict_add(lst, "key1", "data1");
 	twl_dict_add(lst, "key2", "data2");
 	twl_dict_add(lst, "key3", "data3");

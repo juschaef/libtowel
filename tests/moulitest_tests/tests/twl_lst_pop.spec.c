@@ -12,7 +12,7 @@ static void	del_data(char *str)
 static void simple_test(t_test *test)
 {
 	t_lst	*lst;
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("bbb"));

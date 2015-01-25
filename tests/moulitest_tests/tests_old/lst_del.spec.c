@@ -16,7 +16,7 @@ UT_TEST(twl_lst_del)
 	t_twl_lst_elem *elem1;
 	t_twl_lst_elem *elem2;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	str1 = strdup("aaa");
 	str2 = strdup("bbb");
 	elem1 = twl_lst_create_elem(str1);

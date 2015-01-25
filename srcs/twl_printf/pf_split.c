@@ -33,7 +33,7 @@ t_lst		*pf_split(char *s)
 	t_lst	*lst;
 	char	*tmp;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	while (1)
 	{
 		tmp = pf_get_seg(s);

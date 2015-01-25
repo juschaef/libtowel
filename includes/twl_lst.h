@@ -41,7 +41,7 @@ void					*twl_lst_find(t_lst *lst, void *(*f)(void *));
 void					*twl_lst_find_by_value(t_lst *lst, int (*f)(void *data, void *value), void *value);
 t_twl_lst_elem			*twl_lst_get_(t_lst *lst, size_t index);
 int						twl_lst_indexof(t_lst *lst, void *target, int (*cmp_fn)());
-t_lst					*twl_lst_init(void);
+t_lst					*twl_lst_new(void);
 void					twl_lst_iter(t_lst *lst, void (*f)(void *data, void *context), void *context);
 void					twl_lst_iter_elem_(t_lst *lst, void (*f)(t_twl_lst_elem *elem, void *context), void *context);
 size_t					twl_lst_len(t_lst *lst);

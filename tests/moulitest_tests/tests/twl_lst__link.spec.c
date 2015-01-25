@@ -19,7 +19,7 @@ static void test_relink_null_left(t_test *test)
 {
 	t_lst *lst;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	twl_lst_push(lst, twl_lst_create_elem_("111"));
 	twl_lst_push(lst, twl_lst_create_elem_("222"));
 	mt_assert(twl_lst_len(lst) == 2);
@@ -35,7 +35,7 @@ static void test_relink_null_right(t_test *test)
 {
 	t_lst *lst;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	twl_lst_push(lst, twl_lst_create_elem_("111"));
 	twl_lst_push(lst, twl_lst_create_elem_("222"));
 	mt_assert(twl_lst_len(lst) == 2);

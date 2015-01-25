@@ -23,7 +23,7 @@ t_lst *twl_arr_to_lst(void *arr)
 {
 	t_lst *lst;
 
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	twl_arr_iter(arr, push_to_lst, lst);
 	return (lst);
 }

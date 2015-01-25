@@ -14,7 +14,7 @@ static void replace_first_letter(void *data, void *context_)
 static void simple_test(t_test *test)
 {
 	t_lst	*lst;
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("bbb"));

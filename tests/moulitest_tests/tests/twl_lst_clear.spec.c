@@ -7,7 +7,7 @@ static void simple_test(t_test *test)
 	char *s1 = strdup("hello");
 	char *s2 = strdup("coucou");
 	
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 
 	twl_lst_push(lst, twl_lst_create_elem_(s1));
 	twl_lst_push(lst, twl_lst_create_elem_(s2));

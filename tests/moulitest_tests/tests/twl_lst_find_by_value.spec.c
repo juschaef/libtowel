@@ -17,7 +17,7 @@ static void simple_test(t_test *test)
 {
 	// test->debug = 1;
 	t_lst	*lst;
-	lst = twl_lst_init();
+	lst = twl_lst_new();
 	int nbr1 = 1;
 	int nbr2 = 2;
 	int nbr3 = 3;
