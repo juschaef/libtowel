@@ -23,12 +23,12 @@ static void test_relink_null_left(t_test *test)
 	twl_lst_push(lst, twl_lst_create_elem_("111"));
 	twl_lst_push(lst, twl_lst_create_elem_("222"));
 	mt_assert(twl_lst_len(lst) == 2);
-	twl_lst_link_(NULL, twl_lst_get_(lst, 0));
-	mt_assert(twl_lst_get_(lst, 0)->next != NULL);
-	mt_assert(twl_lst_get_(lst, 0)->prev == NULL);
-	twl_lst_link_(NULL, twl_lst_get_(lst, 1));
-	mt_assert(twl_lst_get_(lst, 1)->next == NULL);
-	mt_assert(twl_lst_get_(lst, 1)->prev == NULL);
+	twl_lst_link_(NULL, twl_lst_get_elem__(lst, 0));
+	mt_assert(twl_lst_get_elem__(lst, 0)->next != NULL);
+	mt_assert(twl_lst_get_elem__(lst, 0)->prev == NULL);
+	twl_lst_link_(NULL, twl_lst_get_elem__(lst, 1));
+	mt_assert(twl_lst_get_elem__(lst, 1)->next == NULL);
+	mt_assert(twl_lst_get_elem__(lst, 1)->prev == NULL);
 }
 
 static void test_relink_null_right(t_test *test)
@@ -39,8 +39,8 @@ static void test_relink_null_right(t_test *test)
 	twl_lst_push(lst, twl_lst_create_elem_("111"));
 	twl_lst_push(lst, twl_lst_create_elem_("222"));
 	mt_assert(twl_lst_len(lst) == 2);
-	twl_lst_link_(twl_lst_get_(lst, 0), NULL);
-	mt_assert(twl_lst_get_(lst, 0)->next == NULL);
+	twl_lst_link_(twl_lst_get_elem__(lst, 0), NULL);
+	mt_assert(twl_lst_get_elem__(lst, 0)->next == NULL);
 	mt_assert(twl_lst_len(lst) == 1);
 }
 

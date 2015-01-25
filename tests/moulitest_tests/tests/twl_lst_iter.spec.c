@@ -23,10 +23,10 @@ static void simple_test(t_test *test)
 	char *c = "z";
 	twl_lst_iter(lst, replace_first_letter, c);
 
-	mt_assert(strcmp(twl_lst_get_(lst, 0)->data, "zaa") == 0);
-	mt_assert(strcmp(twl_lst_get_(lst, 1)->data, "zbb") == 0);
-	mt_assert(strcmp(twl_lst_get_(lst, 2)->data, "zcc") == 0);
-	mt_assert(twl_lst_get_(lst, 3) == NULL);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "zaa") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 1)->data, "zbb") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 2)->data, "zcc") == 0);
+	mt_assert(twl_lst_get_elem__(lst, 3) == NULL);
 }
 
 void	suite_twl_lst_iter(t_suite *suite)

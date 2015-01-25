@@ -12,7 +12,7 @@
 
 #include "twl_lst.h"
 
-void	twl_lst_link_(t_twl_lst_elem *elem1, t_twl_lst_elem *elem2)
+void	twl_lst_link__(t_twl_lst_elem *elem1, t_twl_lst_elem *elem2)
 {
 	if (elem1)
 		elem1->next = elem2;

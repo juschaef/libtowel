@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:29:17 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 14:13:45 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 14:16:32 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	twl_lst_unshift(t_lst *lst, void *data)
 {
 	t_twl_lst_elem *elem;
 
-	elem = twl_lst_create_elem_(data);
-	twl_lst_link_(elem, lst->head);
+	elem = twl_lst_create_elem__(data);
+	twl_lst_link__(elem, lst->head);
 	lst->head = elem;
 }

@@ -10,9 +10,9 @@ static void simple_test(t_test *test)
 	twl_lst_push(lst, strdup("tutu"));
 	twl_lst_push(lst, strdup("toto"));
 
-	mt_assert(strcmp(twl_lst_get_(lst, 0)->data, "tata") == 0);
-	mt_assert(strcmp(twl_lst_get_(lst, 1)->data, "tutu") == 0);
-	mt_assert(strcmp(twl_lst_get_(lst, 2)->data, "toto") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "tata") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 1)->data, "tutu") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 2)->data, "toto") == 0);
 
 }
 

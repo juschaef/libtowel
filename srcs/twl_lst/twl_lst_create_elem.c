@@ -13,7 +13,7 @@
 #include "twl_lst.h"
 #include <stdlib.h>
 
-t_twl_lst_elem	*twl_lst_create_elem_(void *data)
+t_twl_lst_elem	*twl_lst_create_elem__(void *data)
 {
 	t_twl_lst_elem *elem;
 

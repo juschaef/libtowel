@@ -10,9 +10,9 @@ static void simple_test(t_test *test)
 	twl_dict_add(lst, "key2", "data2");
 	twl_dict_add(lst, "key3", "data3");
 	mt_assert(twl_lst_len(lst) == 3);
-	mt_assert(strcmp((char *)twl_lst_get_(lst, 0)->data, "data1") == 0);
-	mt_assert(strcmp((char *)twl_lst_get_(lst, 1)->data, "data2") == 0);
-	mt_assert(strcmp((char *)twl_lst_get_(lst, 2)->data, "data3") == 0);
+	mt_assert(strcmp((char *)twl_lst_get_elem__(lst, 0)->data, "data1") == 0);
+	mt_assert(strcmp((char *)twl_lst_get_elem__(lst, 1)->data, "data2") == 0);
+	mt_assert(strcmp((char *)twl_lst_get_elem__(lst, 2)->data, "data3") == 0);
 }
 
 void	suite_twl_dict_add(t_suite *suite)

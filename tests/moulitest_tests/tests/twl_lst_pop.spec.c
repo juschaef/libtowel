@@ -19,9 +19,9 @@ static void simple_test(t_test *test)
 	twl_lst_push(lst, strdup("ccc"));
 
 	twl_lst_pop(lst, del_data);
-	mt_assert(strcmp(twl_lst_get_(lst, 0)->data, "aaa") == 0);
-	mt_assert(strcmp(twl_lst_get_(lst, 1)->data, "bbb") == 0);
-	mt_assert(twl_lst_get_(lst, 2) == NULL);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "aaa") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 1)->data, "bbb") == 0);
+	mt_assert(twl_lst_get_elem__(lst, 2) == NULL);
 }
 
 void	suite_twl_lst_pop(t_suite *suite)

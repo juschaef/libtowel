@@ -31,7 +31,7 @@ void		twl_dict_add(t_lst *lst, char *key, void *data)
 	}
 	else
 	{
-		elem = twl_lst_create_elem_(data);
+		elem = twl_lst_create_elem__(data);
 		elem->key = twl_strdup(key);
 		if (!lst->head)
 		{
@@ -43,7 +43,7 @@ void		twl_dict_add(t_lst *lst, char *key, void *data)
 			while (tmpelem->next)
 				tmpelem = tmpelem->next;
 			tmpelem->next = elem;
-			twl_lst_link_(tmpelem, tmpelem->next);
+			twl_lst_link__(tmpelem, tmpelem->next);
 		}
 	}
 }

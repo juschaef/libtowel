@@ -17,7 +17,7 @@ void	twl_lst_push(t_lst *lst, void *data)
 	t_twl_lst_elem *tmpelem;
 	t_twl_lst_elem *newelem;
 
-	newelem = twl_lst_create_elem_(data);
+	newelem = twl_lst_create_elem__(data);
 	if (!lst->head)
 	{
 		lst->head = newelem;
@@ -28,6 +28,6 @@ void	twl_lst_push(t_lst *lst, void *data)
 		while (tmpelem->next)
 			tmpelem = tmpelem->next;
 		tmpelem->next = newelem;
-		twl_lst_link_(tmpelem, tmpelem->next);
+		twl_lst_link__(tmpelem, tmpelem->next);
 	}
 }

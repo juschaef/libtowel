@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_get_.c                                          :+:      :+:    :+:   */
+/*   twl_lst_get_elem__.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "twl_lst.h"
 
-t_twl_lst_elem 	*twl_lst_get_(t_lst *lst, size_t index)
+t_twl_lst_elem 	*twl_lst_get_elem__(t_lst *lst, size_t index)
 {
 	t_twl_lst_elem	*elem;
 

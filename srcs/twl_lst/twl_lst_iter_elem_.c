@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_iter_elem_.c                                   :+:      :+:    :+:   */
+/*   twl_lst_iter_elem__.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include "twl_lst.h"
 #include "twl_printf.h"
 
-void	twl_lst_iter_elem_(t_lst *lst, void (*f)(t_twl_lst_elem *elem, void *context), void *context)
+void	twl_lst_iter_elem__(t_lst *lst, void (*f)(t_twl_lst_elem *elem, void *context), void *context)
 {
 	t_twl_lst_elem	*elem;
 	t_twl_lst_elem	*next;

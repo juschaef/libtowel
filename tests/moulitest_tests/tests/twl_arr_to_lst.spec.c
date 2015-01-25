@@ -14,10 +14,10 @@ static void simple_test(t_test *test)
 
 	lst = twl_arr_to_lst(arr);
 
-	mt_assert(strcmp(twl_lst_get_(lst, 0)->data, "zaa") == 0);
-	mt_assert(strcmp(twl_lst_get_(lst, 1)->data, "zbb") == 0);
-	mt_assert(strcmp(twl_lst_get_(lst, 2)->data, "zcc") == 0);
-	mt_assert(twl_lst_get_(lst, 3) == NULL);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "zaa") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 1)->data, "zbb") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(lst, 2)->data, "zcc") == 0);
+	mt_assert(twl_lst_get_elem__(lst, 3) == NULL);
 }
 
 void	suite_twl_arr_to_lst(t_suite *suite)

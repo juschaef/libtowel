@@ -15,6 +15,6 @@
 
 void	twl_lst_clear(t_lst *lst, void (*delfn)())
 {
-	twl_lst_iter_elem_(lst, (void *)twl_lstelem_del, delfn);
+	twl_lst_iter_elem__(lst, (void *)twl_lstelem_del, delfn);
 	lst->head = NULL;
 }
