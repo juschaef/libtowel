@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_arr_init.c                                         :+:      :+:    :+:   */
+/*   twl_arr_new.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <twl_arr.h>
 #include <stdlib.h>
 
-void	*twl_arr_init(size_t size)
+void	*twl_arr_new(size_t size)
 {
 	void **arr;
 

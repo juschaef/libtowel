@@ -8,7 +8,7 @@ static void test1(t_test *test)
 	char *s2 = "bbb";
 	char *s3 = "ccc";
 
-	arr = twl_arr_init(3);
+	arr = twl_arr_new(3);
 	twl_arr_push(arr, s1);
 	twl_arr_push(arr, s2);
 	twl_arr_push(arr, s3);
@@ -26,7 +26,7 @@ static void test2(t_test *test)
 	char *s2 = "bbb";
 	char *s3 = "ccc";
 
-	arr = twl_arr_init(3);
+	arr = twl_arr_new(3);
 	twl_arr_push(arr, s1);
 	twl_arr_push(arr, s2);
 	twl_arr_push(arr, s3);
@@ -43,7 +43,7 @@ static void test_not_found(t_test *test)
 	char *s1 = "aaa";
 	char *s2 = "bbb";
 
-	arr = twl_arr_init(3);
+	arr = twl_arr_new(3);
 	twl_arr_push(arr, s1);
 	twl_arr_push(arr, s2);
 

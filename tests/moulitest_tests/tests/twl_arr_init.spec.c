@@ -5,7 +5,7 @@ static void simple_test(t_test *test)
 {
 	char **arr;
 
-	arr = twl_arr_init(3);
+	arr = twl_arr_new(3);
 	twl_arr_push(arr, "aaa");
 	twl_arr_push(arr, "bbb");
 	twl_arr_push(arr, "ccc");
@@ -17,7 +17,7 @@ static void simple_test(t_test *test)
 	free(arr);
 }
 
-void	suite_twl_arr_init(t_suite *suite)
+void	suite_twl_arr_new(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }

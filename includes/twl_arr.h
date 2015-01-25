@@ -24,7 +24,7 @@ void	twl_arr_del(void *twl_arr_ptr);
 void	twl_arr_del_elem(void *twl_arr_, int index);
 void 	*twl_arr_find(void *twl_arr_, int (*find_fn)(void *arr, void *context), void *context);
 int		twl_arr_indexof(void *twl_arr_, void *target);
-void	*twl_arr_init(size_t size);
+void	*twl_arr_new(size_t size);
 void	twl_arr_iter(void *twl_arr_, void (*f)(void *elem, void *context),
 															void *context);
 void	*twl_arr_last(void *twl_arr_);

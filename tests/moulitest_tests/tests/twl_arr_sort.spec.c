@@ -47,7 +47,7 @@ static void simple_test(t_test *test)
 {
 	char **arr;
 
-	arr = twl_arr_init(99);
+	arr = twl_arr_new(99);
 	twl_arr_push(arr, strdup("d_zzz"));
 	twl_arr_push(arr, strdup("d_ccc"));
 	twl_arr_push(arr, strdup("d_www"));

@@ -7,7 +7,7 @@ static void simple_test(t_test *test)
 	char **arr;
 	t_lst *lst;
 
-	arr = twl_arr_init(99);
+	arr = twl_arr_new(99);
 	twl_arr_push(arr, strdup("zaa"));
 	twl_arr_push(arr, strdup("zbb"));
 	twl_arr_push(arr, strdup("zcc"));
