@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:37:49 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:22:46 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 20:32:13 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int				do_get_next_line(int const fd, char **line)
 	return (0);
 }
 
-int				get_next_line(int const fd, char **line)
+int				twl_get_next_line(int const fd, char **line)
 {
 	if (BUFF_SIZE > MAX_BUFF_SIZE
 		|| fd < 0

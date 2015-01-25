@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:37:49 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 11:51:52 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 20:32:16 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@
 # include <unistd.h>
 # include <twl_string.h>
 
-int get_next_line(int const fd, char **line);
+int twl_get_next_line(int const fd, char **line);
 
 #endif

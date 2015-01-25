@@ -6,12 +6,11 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 17:30:15 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 20:33:36 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_lst.h>
-#include <twl_err.h>
 #include <assert.h>
 
 t_twl_lst_elem 	*twl_lst_get_elem__(t_lst *lst, int index)
