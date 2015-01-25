@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_del_elem.c                                 :+:      :+:    :+:   */
+/*   twl_lst_del_elem__.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include "twl_lst.h"
 #include <stdlib.h>
 
-void	twl_lst_del_elem(t_lst *lst, int index, void (*delfn)())
+void	twl_lst_del_elem__(t_lst *lst, int index, void (*delfn)())
 {
 	t_twl_lst_elem *elem;
 

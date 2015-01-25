@@ -20,7 +20,7 @@ static void test_relink(t_test *test)
 	twl_lst_push(lst, strdup("ccc"));
 	mt_assert(twl_lst_len(lst) == 3);
 
-	twl_lst_del_elem(lst, 1, del_data);
+	twl_lst_del_elem__(lst, 1, del_data);
 
 	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "aaa") == 0);
 	mt_assert(strcmp(twl_lst_get_elem__(lst, 1)->data, "ccc") == 0);
@@ -36,7 +36,7 @@ static void test_del_first(t_test *test)
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("bbb"));
 
-	twl_lst_del_elem(lst, 0, del_data);
+	twl_lst_del_elem__(lst, 0, del_data);
 
 	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "bbb") == 0);
 	mt_assert(twl_lst_len(lst) == 1);
@@ -51,13 +51,13 @@ static void test_del_last(t_test *test)
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("bbb"));
 
-	twl_lst_del_elem(lst, 1, del_data);
+	twl_lst_del_elem__(lst, 1, del_data);
 
 	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "aaa") == 0);
 	mt_assert(twl_lst_len(lst) == 1);
 }
 
-void	suite_twl_lst_del_elem(t_suite *suite)
+void	suite_twl_lst_del_elem__(t_suite *suite)
 {
 	// SUITE_ADD_TEST(suite, simple_test);
 	SUITE_ADD_TEST(suite, test_relink);
