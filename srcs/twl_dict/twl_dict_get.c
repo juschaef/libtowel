@@ -6,18 +6,18 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 21:46:48 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 17:36:07 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_dict.h>
 #include <twl_string.h>
 
-void		*twl_dict_get(t_lst *lst, char *key)
+void		*twl_dict_get(t_dict *dict, char *key)
 {
-	t_twl_lst_elem	*elem;
+	t_twl_dict_elem	*elem;
 
-	elem = lst->head;
+	elem = dict->head;
 	while (elem)
 	{
 		if (twl_strcmp(elem->key, key) == 0)

@@ -6,20 +6,20 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:47:40 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 14:59:34 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 17:36:02 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_dict.h>
 #include <twl_lst.h>
 
-void twl_dict_del_by_key(t_lst *lst, char *key, void (*delfn)())
+void twl_dict_del_by_key(t_dict *dict, char *key, void (*delfn)())
 {
-	t_twl_lst_elem	*elem;
+	t_twl_dict_elem	*elem;
 
-	elem = twl_dict_get_elem_(lst, key);
+	elem = twl_dict_get_elem__(dict, key);
 	twl_lst_link__(elem->prev, elem->next);
 	if (!elem->prev)
-		lst->head = elem->next;
-	twl_lst_del_elem__(lst, elem, delfn);
+		dict->head = elem->next;
+	twl_lst_del_elem__(dict, elem, delfn);
 }

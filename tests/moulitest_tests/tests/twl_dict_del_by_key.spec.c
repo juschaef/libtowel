@@ -10,50 +10,50 @@ static void	del_data(char *str)
 
 static void test_del_first(t_test *test)
 {
-	t_lst *lst;
+	t_dict *dict;
 
-	lst = twl_lst_new();
-	twl_dict_add(lst, "key1", strdup("data1"));
-	twl_dict_add(lst, "key2", strdup("data2"));
-	twl_dict_add(lst, "key3", strdup("data3"));
+	dict = twl_lst_new();
+	twl_dict_add(dict, "key1", strdup("data1"));
+	twl_dict_add(dict, "key2", strdup("data2"));
+	twl_dict_add(dict, "key3", strdup("data3"));
 
-	twl_dict_del_by_key(lst, "key1", del_data);
+	twl_dict_del_by_key(dict, "key1", del_data);
 
-	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "data2") == 0);
-	mt_assert(strcmp(twl_lst_get_elem__(lst, 1)->data, "data3") == 0);
-	mt_assert(twl_lst_len(lst) == 2);
+	mt_assert(strcmp(twl_lst_get_elem__(dict, 0)->data, "data2") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(dict, 1)->data, "data3") == 0);
+	mt_assert(twl_lst_len(dict) == 2);
 }
 
 static void test_del_middle(t_test *test)
 {
-	t_lst *lst;
+	t_dict *dict;
 
-	lst = twl_lst_new();
-	twl_dict_add(lst, "key1", strdup("data1"));
-	twl_dict_add(lst, "key2", strdup("data2"));
-	twl_dict_add(lst, "key3", strdup("data3"));
+	dict = twl_lst_new();
+	twl_dict_add(dict, "key1", strdup("data1"));
+	twl_dict_add(dict, "key2", strdup("data2"));
+	twl_dict_add(dict, "key3", strdup("data3"));
 
-	twl_dict_del_by_key(lst, "key2", del_data);
+	twl_dict_del_by_key(dict, "key2", del_data);
 
-	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "data1") == 0);
-	mt_assert(strcmp(twl_lst_get_elem__(lst, 1)->data, "data3") == 0);
-	mt_assert(twl_lst_len(lst) == 2);
+	mt_assert(strcmp(twl_lst_get_elem__(dict, 0)->data, "data1") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(dict, 1)->data, "data3") == 0);
+	mt_assert(twl_lst_len(dict) == 2);
 }
 
 static void test_del_last(t_test *test)
 {
-	t_lst *lst;
+	t_dict *dict;
 
-	lst = twl_lst_new();
-	twl_dict_add(lst, "key1", strdup("data1"));
-	twl_dict_add(lst, "key2", strdup("data2"));
-	twl_dict_add(lst, "key3", strdup("data3"));
+	dict = twl_lst_new();
+	twl_dict_add(dict, "key1", strdup("data1"));
+	twl_dict_add(dict, "key2", strdup("data2"));
+	twl_dict_add(dict, "key3", strdup("data3"));
 
-	twl_dict_del_by_key(lst, "key3", del_data);
+	twl_dict_del_by_key(dict, "key3", del_data);
 
-	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "data1") == 0);
-	mt_assert(strcmp(twl_lst_get_elem__(lst, 1)->data, "data2") == 0);
-	mt_assert(twl_lst_len(lst) == 2);
+	mt_assert(strcmp(twl_lst_get_elem__(dict, 0)->data, "data1") == 0);
+	mt_assert(strcmp(twl_lst_get_elem__(dict, 1)->data, "data2") == 0);
+	mt_assert(twl_lst_len(dict) == 2);
 }
 
 void	suite_twl_dict_del_by_key(t_suite *suite)

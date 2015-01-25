@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_dict_get_elem_.c                                :+:      :+:    :+:   */
+/*   twl_lst_create_elem__.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/09 13:21:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:21:39 by yyang            ###   ########.fr       */
+/*   Created: 2014/12/12 10:18:33 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/25 17:39:32 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_dict.h>
-#include <twl_string.h>
+#include <twl_lst.h>
+#include <stdlib.h>
 
-t_twl_lst_elem		*twl_dict_get_elem_(t_lst *lst, char *key)
+t_twl_lst_elem	*twl_lst_create_elem__(void *data)
 {
-	t_twl_lst_elem	*elem;
+	t_twl_lst_elem *elem;
 
-	elem = lst->head;
-	while (elem)
-	{
-		if (twl_strcmp(elem->key, key) == 0)
-			return (elem);
-		elem = elem->next;
-	}
-	return (NULL);
+	elem = (t_twl_lst_elem *)malloc(sizeof(t_twl_lst_elem));
+	elem->data = data;
+	elem->next = NULL;
+	elem->prev = NULL;
+	elem->key = NULL;
+	return (elem);
 }
