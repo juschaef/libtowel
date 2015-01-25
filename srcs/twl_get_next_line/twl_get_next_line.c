@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <get_next_line.h>
+#include <twl_get_next_line.h>
 #include <twl_string.h>
 #include <twl_xstring.h>
 #include <unistd.h>
