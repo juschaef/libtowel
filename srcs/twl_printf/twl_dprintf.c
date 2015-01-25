@@ -6,12 +6,11 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/25 16:08:05 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 16:26:45 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 16:30:41 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_printf.h>
-#include <stdio.h>
 
 int			twl_dprintf(const int fd, const char *fmt, ...)
 {

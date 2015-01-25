@@ -42,7 +42,7 @@ static void non_existing_index(t_test *test)
 	twl_lst_push(lst, strdup("tutu"));
 	twl_lst_push(lst, strdup("toto"));
 
-	mt_assert(strcmp(twl_lst_get(lst, 10), "tata") == 0);
+	mt_assert(twl_lst_get(lst, 10) == NULL);
 }
 
 void	suite_twl_lst_get(t_suite *suite)
