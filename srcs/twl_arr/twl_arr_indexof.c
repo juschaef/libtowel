@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_arr_indexof.c                                      :+:      :+:    :+:   */
+/*   twl_arr_indexof.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/11 22:09:03 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 14:24:14 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 17:32:41 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_arr.h>
 
-#include <stdio.h> //warning
+/*
+** return -1 if not found
+*/
+
 int		twl_arr_indexof(void *twl_arr_, void *target)
 {
 	void **arr;
