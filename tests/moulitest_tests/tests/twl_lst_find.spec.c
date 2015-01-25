@@ -29,19 +29,19 @@ static void simple_test(t_test *test)
 	twl_lst_push(lst, &nbr3);
 	twl_lst_push(lst, &nbr4);
 
-	nbr_p = (int *)(twl_lst_find_by_value(lst, find_nbr, &nbr3));
+	nbr_p = (int *)(twl_lst_find(lst, find_nbr, &nbr3));
 	mt_assert(*nbr_p == 3);
 
-	nbr_p = (int *)(twl_lst_find_by_value(lst, find_nbr, &nbr2));
+	nbr_p = (int *)(twl_lst_find(lst, find_nbr, &nbr2));
 	mt_assert(*nbr_p == 2);
 
-	nbr_p = (int *)(twl_lst_find_by_value(lst, find_nbr, &nbr1));
+	nbr_p = (int *)(twl_lst_find(lst, find_nbr, &nbr1));
 	mt_assert(*nbr_p == 1);
 
 	free(lst);
 }
 
-void	suite_twl_lst_find_by_value(t_suite *suite)
+void	suite_twl_lst_find(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }

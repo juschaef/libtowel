@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 18:23:37 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/24 20:35:14 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 16:27:59 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,18 @@
 # define MAX_FNS 1000000000
 # define CONV_ERROR_MSG "(conversion error)"
 
+/*
+** API
+*/
+
+int				twl_printf(const char *fmt, ...);
+int				twl_asprintf(char **s, const char *fmt, ...);
+int				twl_dprintf(const int fd, const char *fmt, ...);
+
+/*
+** Internals
+*/
+
 typedef struct	s_pf
 {
 	t_lst		*pflst;
@@ -42,12 +54,11 @@ typedef struct	s_pf
 typedef void	*(*t_conv_val_fn) (t_pf *pf);
 typedef char	*(*t_conv_str_fn) (void *);
 
-int				twl_printf(const char *fmt, ...);
-int				twl_asprintf(char **s, const char *fmt, ...);
+char			*pf_prepare_xprintf__(t_pf *pf);
 
 t_pf			*pf_create(char *fmt);
 t_lst			*pf_split(char *s);
-void			pf_print(t_pf *pf);
+void			pf_print_fd(t_pf *pf, int fd);
 void			pf_concat(t_pf *pf);
 void			pf_iter_pfelem(t_pf *pf);
 void			pf_build_pflist(t_pf *pf);

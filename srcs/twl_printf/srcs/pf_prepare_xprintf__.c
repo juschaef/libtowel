@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_print.c                                         :+:      :+:    :+:   */
+/*   pf_prepare_xprintf__.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/28 12:12:23 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/14 13:51:56 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/07 18:00:34 by juschaef          #+#    #+#             */
+/*   Updated: 2015/01/25 16:11:37 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_printf.h>
-#include <unistd.h>
 
-void	pf_print(t_pf *pf)
+#include <twl_printf.h>
+
+char *pf_prepare_xprintf__(t_pf *pf)
 {
-	write(1, pf->output, pf->output_len);
+	pf_build_pflist(pf);
+	pf_iter_pfelem(pf);
+	pf_add_arg_to_elem(pf);
+	pf_concat(pf);
+	return (pf->output);
 }

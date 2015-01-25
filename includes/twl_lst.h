@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 15:07:14 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 15:55:45 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ typedef struct				s_twl_lst_elem
 	struct s_twl_lst_elem	*prev;
 	char					*key;
 }							t_twl_lst_elem;
+/*
+** Implement if necessary
+** size_t				size__;
+*/
 
 typedef struct			s_lst
 {
@@ -34,7 +38,7 @@ typedef struct			s_lst
 */
 
 t_lst					*twl_lst_new(void);
-void					*twl_lst_get(t_lst *lst, size_t index);
+void					*twl_lst_get(t_lst *lst, int index);
 size_t					twl_lst_len(t_lst *lst);
 void					twl_lst_del(t_lst *lst, void (*delfn)());
 
@@ -49,8 +53,7 @@ size_t					twl_lst_count(t_lst *lst, void *(*f)(void *));
 */
 
 int						twl_lst_indexof(t_lst *lst, void *target, int (*cmp_fn)());
-void					*twl_lst_find(t_lst *lst, void *(*f)(void *));
-void					*twl_lst_find_by_value(t_lst *lst, int (*f)(void *data, void *value), void *value);
+void					*twl_lst_find(t_lst *lst, int (*f)(void *data, void *context), void *context);
 
 /*
 ** Move
@@ -79,7 +82,7 @@ void					twl_lst_sort(t_lst *lst, t_sort_cmp_fn *cmp_fn, void *context);
 ** Private
 */
 
-t_twl_lst_elem			*twl_lst_get_elem__(t_lst *lst, size_t index);
+t_twl_lst_elem			*twl_lst_get_elem__(t_lst *lst, int index);
 t_twl_lst_elem			*twl_lst_create_elem__(void *data);
 void					twl_lst_del_elem__(t_lst *lst, t_twl_lst_elem *elem, void (*delfn)());
 void					twl_lst_iter_elem__(t_lst *lst, void (*f)(t_twl_lst_elem *elem, void *context), void *context);

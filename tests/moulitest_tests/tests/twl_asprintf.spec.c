@@ -17,7 +17,7 @@ static void test_digit(t_test *test)
 	mt_assert(strcmp(s, "{         001234}") == 0);
 }
 
-void	suite_twl_printf(t_suite *suite)
+void	suite_twl_asprintf(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, test_string);
 	SUITE_ADD_TEST(suite, test_digit);

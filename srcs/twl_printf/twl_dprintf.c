@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_find.c                                     :+:      :+:    :+:   */
+/*   twl_dprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/19 10:51:42 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/25 15:15:47 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/25 16:08:05 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/25 16:26:45 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include <twl_printf.h>
+#include <stdio.h>
 
-void		*twl_lst_find(t_lst *lst, int (*f)(void *data, void *context), void *context)
+int			twl_dprintf(const int fd, const char *fmt, ...)
 {
-	t_twl_lst_elem	*elem;
+	t_pf	*pf;
+	size_t	len;
 
-	elem = lst->head;
-	while (elem)
-	{
-		if (f(elem->data, context))
-			return (elem->data);
-		elem = elem->next;
-	}
-	return (NULL);
+	pf = pf_create((char *)fmt);
+	va_start(pf->arglist, (char *)fmt);
+	pf_prepare_xprintf__(pf);
+	pf_print_fd(pf, fd);
+	va_end(pf->arglist);
+	len = pf->output_len;
+	pf_free(pf);
+	return (len);
 }

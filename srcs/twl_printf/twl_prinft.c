@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_main.c                                          :+:      :+:    :+:   */
+/*   twl_prinft.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/07 18:00:34 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/18 12:12:20 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/25 16:07:49 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/25 16:17:16 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_printf.h>
-
-static char *pf_main(t_pf *pf)
-{
-	pf_build_pflist(pf);
-	pf_iter_pfelem(pf);
-	pf_add_arg_to_elem(pf);
-	pf_concat(pf);
-	return (pf->output);
-}
+#include <unistd.h>
 
 int			twl_printf(const char *fmt, ...)
 {
@@ -28,24 +20,9 @@ int			twl_printf(const char *fmt, ...)
 
 	pf = pf_create((char *)fmt);
 	va_start(pf->arglist, (char *)fmt);
-	pf_main(pf);
-	pf_print(pf);
+	pf_prepare_xprintf__(pf);
+	pf_print_fd(pf, STDOUT_FILENO);
 	va_end(pf->arglist);
-	len = pf->output_len;
-	pf_free(pf);
-	return (len);
-}
-
-int			twl_asprintf(char **out, const char *fmt, ...)
-{
-	t_pf	*pf;
-	size_t	len;
-
-	pf = pf_create((char *)fmt);
-	va_start(pf->arglist, (char *)fmt);
-	pf_main(pf);
-	va_end(pf->arglist);
-	*out = twl_strdup(pf->output);
 	len = pf->output_len;
 	pf_free(pf);
 	return (len);
