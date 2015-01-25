@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lstelem_del.c                                  :+:      :+:    :+:   */
+/*   twl_lst_del_elem__.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 16:52:50 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 11:59:08 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 15:00:27 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "twl_lst.h"
 #include <stdlib.h>
 
-void	twl_lstelem_del(t_twl_lst_elem *elem, void (*delfn)())
+void	twl_lst_del_elem__(t_lst *lst, t_twl_lst_elem *elem, void (*delfn)())
 {
+	twl_lst_link__(elem->prev, elem->next);
+	if (!elem->prev)
+		lst->head = elem->next;
 	if (delfn)
 		delfn(elem->data);
 	if (elem->key)
@@ -24,4 +27,5 @@ void	twl_lstelem_del(t_twl_lst_elem *elem, void (*delfn)())
 	elem->prev = NULL;
 	elem->key = NULL;
 	free(elem);
+	(void)lst;
 }

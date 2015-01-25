@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_dict_del_by_key.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:47:40 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 19:48:57 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/25 14:59:34 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void twl_dict_del_by_key(t_lst *lst, char *key, void (*delfn)())
 	twl_lst_link__(elem->prev, elem->next);
 	if (!elem->prev)
 		lst->head = elem->next;
-	twl_lstelem_del(elem, delfn);
+	twl_lst_del_elem__(lst, elem, delfn);
 }

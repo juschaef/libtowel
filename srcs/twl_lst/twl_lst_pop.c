@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_pop.c                                          :+:      :+:    :+:   */
+/*   twl_lst_pop.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 18:53:49 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/25 14:59:30 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	twl_lst_pop(t_lst *lst, void (*f)())
 	while (elem->next)
 		elem = elem->next;
 	prev = elem->prev;
-	twl_lstelem_del(elem, f);
+	twl_lst_del_elem__(lst, elem, f);
 	if (lst->head == elem)
 		lst->head = NULL;
 	if (prev)

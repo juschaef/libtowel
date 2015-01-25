@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_clear.c                                        :+:      :+:    :+:   */
+/*   twl_lst_clear__.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/21 23:23:44 by annguyen          #+#    #+#             */
-/*   Updated: 2015/01/23 21:09:18 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/25 14:56:55 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_lst.h>
-#include <stdio.h> //
+#include <stdlib.h>
 
-void	twl_lst_clear(t_lst *lst, void (*delfn)())
+static void	del_elem_without_link(t_twl_lst_elem *elem, void (*delfn)())
 {
-	twl_lst_iter_elem__(lst, (void *)twl_lstelem_del, delfn);
+	if (delfn)
+		delfn(elem->data);
+	if (elem->key)
+		free(elem->key);
+	elem->data = NULL;
+	elem->next = NULL;
+	elem->prev = NULL;
+	elem->key = NULL;
+	free(elem);
+}
+
+void	twl_lst_clear__(t_lst *lst, void (*delfn)())
+{
+	twl_lst_iter_elem__(lst, (void *)del_elem_without_link, delfn);
 	lst->head = NULL;
 }
