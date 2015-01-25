@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 11:58:13 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/25 14:05:48 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct				s_twl_lst_elem
 
 typedef struct			s_lst
 {
-	size_t				len;
 	t_twl_lst_elem		*elems;
 }						t_lst;
 
