@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:42:22 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/26 17:36:50 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char		**twl_strsplit(char const *s, char c);
 char		*twl_strsub(char const *s, unsigned int start, size_t len);
 void		twl_strswap(char **s1, char **s2);
 char		*twl_strtrim(char const *s);
-char		*twl_strtrimc(char const *s, char c);
+char		*twl_strtrimc(char const *s, char *chars);
 char		*twl_strupcase(char *str);
 char		*twl_wchar_to_str(wchar_t wstr);
 char		*twl_wstr_to_str(wchar_t *wstr);

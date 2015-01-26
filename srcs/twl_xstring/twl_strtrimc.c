@@ -6,14 +6,14 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/09 11:11:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:44:10 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/26 17:47:35 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_xstring.h>
 #include <twl_string.h>
 
-char	*twl_strtrimc(char const *s, char c)
+char	*twl_strtrimc(char const *s, char *chars)
 {
 	int start;
 	int end;
@@ -22,11 +22,11 @@ char	*twl_strtrimc(char const *s, char c)
 		return (NULL);
 	start = 0;
 	end = twl_strlen(s) - 1;
-	while (s[start] == c)
+	while (twl_strchr(chars, s[start]))
 		start++;
 	if (start >= end)
 		return (twl_strdup(""));
-	while (s[end] == c)
+	while (twl_strchr(chars, s[end]))
 	{
 		end--;
 	}
