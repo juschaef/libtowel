@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 17:02:10 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 23:54:49 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ void						twl_lst_unshift(t_lst *lst, void *data);
 
 void						twl_lst_iter(t_lst *lst,
 						void (*f)(void *data, void *context), void *context);
+void						twl_lst_filter(t_lst *lst, 
+						t_bool (*filter_fn)(void *data, void *context),
+						void *context, void (*delfn)(void *));
 t_lst						*twl_lst_map(t_lst *lst,
 													void *(*f)(void *data));
 void						*twl_lst_reduce(t_lst *lst,
