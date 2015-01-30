@@ -28,7 +28,7 @@ static void		free_splits(t_pfelem *pfelem)
 	}
 }
 
-static void		free_values(t_pfelem *elem)
+static void		freevlues(t_pfelem *elem)
 {
 	int i;
 
@@ -50,5 +50,5 @@ void			pfelem_free(t_pfelem *elem)
 	free_splits(elem);
 	free(elem->raw);
 	free(elem);
-	(void)free_values;
+	(void)freevlues;
 }

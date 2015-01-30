@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   pf_prepare_xprintf__.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 18:00:34 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/25 16:11:37 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/30 16:09:15 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <twl_printf.h>
 

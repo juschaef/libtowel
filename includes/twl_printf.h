@@ -114,6 +114,6 @@ char			*pf_conv_str_hex_up(void *val);
 char			*pf_conv_str_hex_ul_up(void *val);
 char			*pf_conv_str_unsign(void *val);
 char			*pf_conv_str_float(void *val);
-void			*free_val(void *val, void *val_to_free);
+void			*freevl(void *val, void *val_to_free);
 
 #endif

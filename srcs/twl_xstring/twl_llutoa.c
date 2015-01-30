@@ -6,10 +6,9 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 16:45:44 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:50:54 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include <twl_string.h>
 #include <twl_xstring.h>
