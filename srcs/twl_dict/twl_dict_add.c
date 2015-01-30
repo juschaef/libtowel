@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 15:39:17 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:58:45 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <twl_xstdio.h>
 
 /*
-** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_dict *dict, 
+** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_dict *dict,
 ** t_twl_dict_elem *elem)"
 */
 

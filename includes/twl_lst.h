@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 16:43:24 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 17:02:10 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,5 @@ void						twl_lst_clear__(t_lst *lst, void (*delfn)());
 ** size_t				size__;
 ** t_twl_lst_elem		tail__;
 */
-	
+
 #endif
