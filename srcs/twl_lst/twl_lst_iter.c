@@ -1,19 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_iter.c                                         :+:      :+:    :+:   */
+/*   twl_lst_iter.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:29:17 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 17:19:38 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 15:52:34 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_lst.h>
 #include "twl_printf.h"
 
-void	twl_lst_iter(t_lst *lst, void (*f)(void *data, void *context), void *context)
+void	twl_lst_iter(t_lst *lst, void (*f)(void *data, void *context),
+																void *context)
 {
 	t_twl_lst_elem	*elem;
 	t_twl_lst_elem	*next;

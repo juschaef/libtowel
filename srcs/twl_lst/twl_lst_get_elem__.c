@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst_get_elem__.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 17:30:15 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/30 15:50:27 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <twl_err.h>
 #include <assert.h>
 
-t_twl_lst_elem 	*twl_lst_get_elem__(t_lst *lst, int index)
+t_twl_lst_elem	*twl_lst_get_elem__(t_lst *lst, int index)
 {
 	t_twl_lst_elem	*elem;
-	size_t len;
+	size_t			len;
 
 	len = twl_lst_len(lst);
 	if (index < 0)

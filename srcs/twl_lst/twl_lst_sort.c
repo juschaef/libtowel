@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/11 22:24:18 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 17:46:21 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/30 16:00:56 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include <stdio.h>
 
-void push_item_to_lst(void *data, void *lst)
+void	push_item_to_lst(void *data, void *lst)
 {
 	twl_lst_push((t_lst *)lst, data);
 }
