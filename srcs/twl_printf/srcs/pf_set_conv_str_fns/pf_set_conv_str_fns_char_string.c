@@ -26,17 +26,17 @@ char *pf_conv_str_str(void *val)
 
 char *pf_conv_str_char_c(void *val)
 {
-	return (free_val(twl_strdup(val), val));
+	return (freevl(twl_strdup(val), val));
 }
 
 char *pf_conv_str_char_hh(void *val)
 {
-	return (free_val(twl_itoa(VOID_PTR_TO(char, val)), val));
+	return (freevl(twl_itoa(VOID_PTR_TO(char, val)), val));
 }
 
 char *pf_conv_str_uchar(void *val)
 {
-	return (free_val(twl_itoa(VOID_PTR_TO(unsigned char, val)), val));
+	return (freevl(twl_itoa(VOID_PTR_TO(unsigned char, val)), val));
 }
 
 char *pf_conv_str_return_original(void *val)

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_printf_elem.h                                   :+:      :+:    :+:   */
+/*   twl_printf_elem.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 13:21:50 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 16:32:09 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 15:17:30 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PFELEM_H
-# define PFELEM_H
+#ifndef TWL_PRINTF_ELEM_H
+# define TWL_PRINTF_ELEM_H
 
 # define MAX_VA_LIST_ELEM 8
 
@@ -60,49 +60,49 @@
 # define CONV_SPEC_HHX_UP ('h' * 'h' * 1000) + 'X'
 # define CONV_SPEC_PERCENT '%'
 
-# define LST_CONV_SPEC_S "s"
-# define LST_CONV_SPEC_D "d"
-# define LST_CONV_SPEC_P "p"
-# define LST_CONV_SPEC_S_UP "S"
-# define LST_CONV_SPEC_D_UP "D"
-# define LST_CONV_SPEC_I "i"
-# define LST_CONV_SPEC_O "o"
-# define LST_CONV_SPEC_O_UP "O"
-# define LST_CONV_SPEC_U "u"
-# define LST_CONV_SPEC_U_UP "U"
-# define LST_CONV_SPEC_X "x"
-# define LST_CONV_SPEC_X_UP "X"
-# define LST_CONV_SPEC_C "c"
-# define LST_CONV_SPEC_C_UP "C"
-# define LST_CONV_SPEC_F "f"
-# define LST_CONV_SPEC_F_UP "F"
-# define LST_CONV_SPEC_LD "ld"
-# define LST_CONV_SPEC_LI "li"
-# define LST_CONV_SPEC_LU "lu"
-# define LST_CONV_SPEC_LO "lo"
-# define LST_CONV_SPEC_LX "lx"
-# define LST_CONV_SPEC_LX_UP "lX"
-# define LST_CONV_SPEC_LC "lc"
-# define LST_CONV_SPEC_LS "ls"
-# define LST_CONV_SPEC_LLD "lld"
-# define LST_CONV_SPEC_LLI "lli"
-# define LST_CONV_SPEC_LLU "llu"
-# define LST_CONV_SPEC_LLO "llo"
-# define LST_CONV_SPEC_LLX "llx"
-# define LST_CONV_SPEC_LLX_UP "llX"
-# define LST_CONV_SPEC_HD "hd"
-# define LST_CONV_SPEC_HI "hi"
-# define LST_CONV_SPEC_HU "hu"
-# define LST_CONV_SPEC_HO "ho"
-# define LST_CONV_SPEC_HX "hx"
-# define LST_CONV_SPEC_HX_UP "hX"
-# define LST_CONV_SPEC_HHD "hhd"
-# define LST_CONV_SPEC_HHI "hhi"
-# define LST_CONV_SPEC_HHU "hhu"
-# define LST_CONV_SPEC_HHO "hho"
-# define LST_CONV_SPEC_HHX "hhx"
-# define LST_CONV_SPEC_HHX_UP "hhX"
-# define LST_CONV_SPEC_PERCENT "%"
+# define LST_CONV_S "s"
+# define LST_CONV_D "d"
+# define LST_CONV_P "p"
+# define LST_CONV_S_UP "S"
+# define LST_CONV_D_UP "D"
+# define LST_CONV_I "i"
+# define LST_CONV_O "o"
+# define LST_CONV_O_UP "O"
+# define LST_CONV_U "u"
+# define LST_CONV_U_UP "U"
+# define LST_CONV_X "x"
+# define LST_CONV_X_UP "X"
+# define LST_CONV_C "c"
+# define LST_CONV_C_UP "C"
+# define LST_CONV_F "f"
+# define LST_CONV_F_UP "F"
+# define LST_CONV_LD "ld"
+# define LST_CONV_LI "li"
+# define LST_CONV_LU "lu"
+# define LST_CONV_LO "lo"
+# define LST_CONV_LX "lx"
+# define LST_CONV_LX_UP "lX"
+# define LST_CONV_LC "lc"
+# define LST_CONV_LS "ls"
+# define LST_CONV_LLD "lld"
+# define LST_CONV_LLI "lli"
+# define LST_CONV_LLU "llu"
+# define LST_CONV_LLO "llo"
+# define LST_CONV_LLX "llx"
+# define LST_CONV_LLX_UP "llX"
+# define LST_CONV_HD "hd"
+# define LST_CONV_HI "hi"
+# define LST_CONV_HU "hu"
+# define LST_CONV_HO "ho"
+# define LST_CONV_HX "hx"
+# define LST_CONV_HX_UP "hX"
+# define LST_CONV_HHD "hhd"
+# define LST_CONV_HHI "hhi"
+# define LST_CONV_HHU "hhu"
+# define LST_CONV_HHO "hho"
+# define LST_CONV_HHX "hhx"
+# define LST_CONV_HHX_UP "hhX"
+# define LST_CONV_PERCENT "%"
 
 # define SEG_FLAG 0
 # define SEG_MIN_WIDTH 1
@@ -161,7 +161,7 @@ typedef struct		s_pf_elem
 }					t_pfelem;
 
 t_pfelem			*pfelem_create(char *s);
-void 				*pfelem_str2pfelem(void *data);
+void				*pfelem_str2pfelem(void *data);
 void				pfelem_split(t_pfelem *pfelem);
 int					pfelem_is_raw_string(t_pfelem *pfelem);
 void				pfelem_convert_to_str(t_pfelem *pfelem);

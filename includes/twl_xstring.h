@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   twl_xstring.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/26 17:36:50 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/30 16:43:38 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef TWL_XSTRING_H
 # define TWL_XSTRING_H

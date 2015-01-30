@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_to_arr.c                                       :+:      :+:    :+:   */
+/*   twl_lst_to_arr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/25 18:10:01 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/24 15:30:17 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:01:13 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void		push_to_arr(void *data, void *arr)
 	twl_arr_push(arr, data);
 }
 
-void **twl_lst_to_arr__(t_lst *lst)
+void			**twl_lst_to_arr__(t_lst *lst)
 {
 	void **arr;
 

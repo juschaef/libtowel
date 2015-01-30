@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   twl_get_next_line.h                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:37:49 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 20:32:16 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/30 16:43:14 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef TWL_GET_NEXT_LINE_H
+# define TWL_GET_NEXT_LINE_H
 
 # define BUFF_SIZE 8
 # define MAX_BUFF_SIZE 8385531

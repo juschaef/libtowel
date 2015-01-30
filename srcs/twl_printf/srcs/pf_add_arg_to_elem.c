@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 18:00:34 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/24 14:57:02 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:03:36 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void		*pf_get_values(t_pf *pf, t_pfelem *pfelem, int i, int ac)
 
 	if (i < (ac - 1))
 	{
-		conv_val_fn = twl_dict_get(pf->conv_val_fns, LST_CONV_SPEC_D);
+		conv_val_fn = twl_dict_get(pf->conv_val_fns, LST_CONV_D);
 		return (conv_val_fn(pf));
 	}
 	if (twl_strchr(CONV_SPEC_ALL, pfelem->conv_spec))
@@ -69,9 +69,9 @@ static void		*pf_get_values(t_pf *pf, t_pfelem *pfelem, int i, int ac)
 void			pf_add_arg_to_elem(t_pf *pf)
 {
 	t_twl_lst_elem	*elem;
-	t_pfelem	*pfelem;
-	int			i;
-	int			ac;
+	t_pfelem		*pfelem;
+	int				i;
+	int				ac;
 
 	elem = pf->pflst->head;
 	while (elem)

@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/28 14:59:28 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/07 20:22:10 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:03:47 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char			*pf_cat(t_pf *pf, t_pfelem *pfelem)
 void			pf_concat(t_pf *pf)
 {
 	t_twl_lst_elem	*elem;
-	t_pfelem	*pfelem;
+	t_pfelem		*pfelem;
 
 	elem = pf->pflst->head;
 	pf->output = twl_strnew(0);
