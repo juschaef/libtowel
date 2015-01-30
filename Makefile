@@ -6,7 +6,7 @@
 #    By: yyang <yyang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/08 15:09:01 by yyang             #+#    #+#              #
-#    Updated: 2015/01/23 11:34:01 by yyang            ###   ########.fr        #
+#    Updated: 2015/01/30 14:51:50 by yyang            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,5 +81,8 @@ run:
 
 check:
 	make -C tests/moulitest_tests
+
+norm:
+	find srcs includes -name '*.c' -o -name '*.h' | xargs norminette
 
 .PHONY: all debug clean fclean re _debug
