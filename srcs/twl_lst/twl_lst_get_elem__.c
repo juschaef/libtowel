@@ -6,12 +6,11 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 15:50:27 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:07:35 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_lst.h>
-#include <twl_err.h>
 #include <assert.h>
 
 t_twl_lst_elem	*twl_lst_get_elem__(t_lst *lst, int index)
