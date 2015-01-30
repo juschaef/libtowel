@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 12:25:26 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 19:42:41 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/30 16:41:51 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARR_H
-# define ARR_H
+#ifndef TWL_ARR_H
+# define TWL_ARR_H
 
 # include <twl_string.h>
 # include <stddef.h>

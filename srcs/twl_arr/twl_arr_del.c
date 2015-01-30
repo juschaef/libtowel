@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_arr_del.c                                          :+:      :+:    :+:   */
+/*   twl_arr_del.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 13:41:44 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 11:23:28 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 15:29:30 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void	twl_arr_del(void *twl_arr_)
 {
-	void **arr;
-	size_t size;
-	size_t i;
+	void	**arr;
+	size_t	size;
+	size_t	i;
 
 	arr = twl_arr_;
 	size = twl_arr_len(arr);
