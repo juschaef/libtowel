@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_arr_cpy.c                                          :+:      :+:    :+:   */
+/*   twl_arr_cpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 13:41:44 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/14 10:40:33 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/30 15:29:12 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void	*twl_arr_cpy(void *arr)
 	int		i;
 
 	twl_arr_tmp = (long *)arr;
-	new_arr = (long *)malloc(sizeof(twl_arr_tmp) * (twl_arr_len(twl_arr_tmp) + 1));
+	new_arr = (long *)malloc(sizeof(twl_arr_tmp) *
+											(twl_arr_len(twl_arr_tmp) + 1));
 	i = 0;
 	while (twl_arr_tmp[i])
 	{

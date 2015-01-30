@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_printf_elem.h                                   :+:      :+:    :+:   */
+/*   twl_printf_elem.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 13:21:50 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 16:32:09 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 15:17:30 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PFELEM_H
-# define PFELEM_H
+#ifndef TWL_PRINTF_ELEM_H
+# define TWL_PRINTF_ELEM_H
 
 # define MAX_VA_LIST_ELEM 8
 
@@ -161,7 +161,7 @@ typedef struct		s_pf_elem
 }					t_pfelem;
 
 t_pfelem			*pfelem_create(char *s);
-void 				*pfelem_str2pfelem(void *data);
+void				*pfelem_str2pfelem(void *data);
 void				pfelem_split(t_pfelem *pfelem);
 int					pfelem_is_raw_string(t_pfelem *pfelem);
 void				pfelem_convert_to_str(t_pfelem *pfelem);

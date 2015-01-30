@@ -6,12 +6,12 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 19:56:14 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/24 20:03:29 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 15:14:13 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MLXIMG_H
-# define MLXIMG_H
+#ifndef TWL_MLXIMG_H
+# define TWL_MLXIMG_H
 
 # include <twl_point.h>
 

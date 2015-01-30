@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 15:55:45 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/30 15:13:38 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LST_H
-# define LST_H
+#ifndef TWL_LST_H
+# define TWL_LST_H
 # include <stddef.h>
 # include <twl_string.h>
 # include <twl_sort.h>
@@ -28,66 +28,77 @@ typedef struct				s_twl_lst_elem
 ** size_t				size__;
 */
 
-typedef struct			s_lst
+typedef struct				s_lst
 {
-	t_twl_lst_elem		*head;
-}						t_lst;
+	t_twl_lst_elem			*head;
+}							t_lst;
 
 /*
 ** Basics
 */
 
-t_lst					*twl_lst_new(void);
-void					*twl_lst_get(t_lst *lst, int index);
-size_t					twl_lst_len(t_lst *lst);
-void					twl_lst_del(t_lst *lst, void (*delfn)());
+t_lst						*twl_lst_new(void);
+void						*twl_lst_get(t_lst *lst, int index);
+size_t						twl_lst_len(t_lst *lst);
+void						twl_lst_del(t_lst *lst, void (*delfn)());
 
 /*
 ** Aggregate
 */
 
-size_t					twl_lst_count(t_lst *lst, void *(*f)(void *));
+size_t						twl_lst_count(t_lst *lst, void *(*f)(void *));
 
 /*
 ** Search
 */
 
-int						twl_lst_indexof(t_lst *lst, void *target, int (*cmp_fn)());
-void					*twl_lst_find(t_lst *lst, int (*f)(void *data, void *context), void *context);
+int							twl_lst_indexof(t_lst *lst, void *target,
+														int (*cmp_fn)());
+void						*twl_lst_find(t_lst *lst,
+						int (*f)(void *data, void *context), void *context);
 
 /*
 ** Move
 */
 
-void					twl_lst_pop(t_lst *lst, void (*f)());
-void					twl_lst_push(t_lst *lst, void *data);
-void					twl_lst_unshift(t_lst *lst, void *data);
+void						twl_lst_pop(t_lst *lst, void (*f)());
+void						twl_lst_push(t_lst *lst, void *data);
+void						twl_lst_unshift(t_lst *lst, void *data);
 
 /*
 ** Collection
 */
 
-void					twl_lst_iter(t_lst *lst, void (*f)(void *data, void *context), void *context);
-t_lst					*twl_lst_map(t_lst *lst, void *(*f)(void *data));
-void					*twl_lst_reduce(t_lst *lst, void *(*fn)(void *data, void *memo), void *context);
-int 					twl_lst_reducei(t_lst *lst, int (*fn)(void *data, int memo), int memo);
+void						twl_lst_iter(t_lst *lst,
+						void (*f)(void *data, void *context), void *context);
+t_lst						*twl_lst_map(t_lst *lst,
+													void *(*f)(void *data));
+void						*twl_lst_reduce(t_lst *lst,
+						void *(*fn)(void *data, void *memo), void *context);
+int							twl_lst_reducei(t_lst *lst,
+								int (*fn)(void *data, int memo), int memo);
 
 /*
 ** Misc
 */
 
-void					twl_lst_sort(t_lst *lst, t_sort_cmp_fn *cmp_fn, void *context);
+void						twl_lst_sort(t_lst *lst,
+									t_sort_cmp_fn *cmp_fn, void *context);
 
 /*
 ** Private
 */
 
-t_twl_lst_elem			*twl_lst_get_elem__(t_lst *lst, int index);
-t_twl_lst_elem			*twl_lst_create_elem__(void *data);
-void					twl_lst_del_elem__(t_lst *lst, t_twl_lst_elem *elem, void (*delfn)());
-void					twl_lst_iter_elem__(t_lst *lst, void (*f)(t_twl_lst_elem *elem, void *context), void *context);
-void					twl_lst_link__(t_twl_lst_elem *elem1, t_twl_lst_elem *elem2);
-void 					**twl_lst_to_arr__(t_lst *lst);
-void					twl_lst_clear__(t_lst *lst, void (*delfn)());
+t_twl_lst_elem				*twl_lst_get_elem__(t_lst *lst, int index);
+t_twl_lst_elem				*twl_lst_create_elem__(void *data);
+void						twl_lst_del_elem__(t_lst *lst,
+									t_twl_lst_elem *elem,
+														void (*delfn)());
+void						twl_lst_iter_elem__(t_lst *lst,
+			void (*f)(t_twl_lst_elem *elem, void *context), void *context);
+void						twl_lst_link__(t_twl_lst_elem *elem1,
+													t_twl_lst_elem *elem2);
+void						**twl_lst_to_arr__(t_lst *lst);
+void						twl_lst_clear__(t_lst *lst, void (*delfn)());
 
 #endif
