@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst_del.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 16:52:50 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 15:45:10 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/31 16:15:58 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 void	twl_lst_del(t_lst *lst, void (*delfn)(void *))
 {
 	t_twl_lst_elem *elem;
+	t_twl_lst_elem *next;
 
 	elem = lst->head;
 	while (elem)
 	{
+		next = elem->next;
 		twl_lst_del_elem__(lst, elem, delfn);
-		elem = elem->next;
+		elem = next;
 	}
 	free(lst);
 }
