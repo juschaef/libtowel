@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_strtrimc.c                                     :+:      :+:    :+:   */
+/*   twl_stdio.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/09 11:11:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/31 12:11:45 by yyang            ###   ########.fr       */
+/*   Created: 2015/01/24 20:29:56 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/31 11:48:37 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_xstring.h>
-#include <twl_string.h>
-#include <twl_stdio.h>
+#ifndef TWL_STDIO_H
+# define TWL_STDIO_H
 
-char	*twl_strtrimc(char const *s, char *chars)
-{
-	int start;
-	int end;
+int				twl_printf(const char *fmt, ...);
+int				twl_asprintf(char **s, const char *fmt, ...);
+int				twl_dprintf(const int fd, const char *fmt, ...);
 
-	start = 0;
-	end = twl_strlen(s) - 1;
-	while (twl_strchr(chars, s[start]))
-		start++;
-	while (twl_strchr(chars, s[end]))
-		end--;
-	return (twl_strsub(s, start, end - start + 1));
-}
+#endif

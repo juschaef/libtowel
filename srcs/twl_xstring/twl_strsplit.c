@@ -6,12 +6,13 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:40:26 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/31 12:11:25 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_string.h>
 #include <twl_xstring.h>
+#include <twl_stdio.h>
 #include <stdlib.h>
 
 static int		twl_count_words(const char *s, char c)
@@ -72,5 +73,6 @@ char			**twl_strsplit(char const *s, char c)
 		index++;
 	}
 	t[index] = NULL;
+	// twl_printf("index %d\n", index);
 	return (t);
 }

@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 18:23:37 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/25 16:27:59 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/31 11:48:43 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,6 @@
 
 # define MAX_FNS 1000000000
 # define CONV_ERROR_MSG "(conversion error)"
-
-/*
-** API
-*/
-
-int				twl_printf(const char *fmt, ...);
-int				twl_asprintf(char **s, const char *fmt, ...);
-int				twl_dprintf(const int fd, const char *fmt, ...);
 
 /*
 ** Internals
