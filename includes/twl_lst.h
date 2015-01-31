@@ -6,7 +6,7 @@
 /*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 23:54:49 by annguyen         ###   ########.fr       */
+/*   Updated: 2015/01/31 18:50:41 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int							twl_lst_reducei(t_lst *lst,
 
 void						twl_lst_sort(t_lst *lst,
 									t_sort_cmp_fn *cmp_fn, void *context);
-
+void						twl_lst_rev(t_lst *lst);
 /*
 ** Private
 */
