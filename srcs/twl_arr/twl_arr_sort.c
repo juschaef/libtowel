@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_arr_sort.c                                         :+:      :+:    :+:   */
+/*   twl_arr_sort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/17 10:16:34 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/21 22:43:40 by annguyen         ###   ########.fr       */
+/*   Updated: 2015/01/30 15:35:13 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_string.h>
 #include <twl_arr.h>
 
-void			twl_arr_sort(void *twl_arr_, t_sort_cmp_fn *cmp_fn, void *context)
+void			twl_arr_sort(void *twl_arr_, t_sort_cmp_fn *cmp_fn,
+																void *context)
 {
-	int i;
-	int j;
-	int size;
-	void **arr;
+	int		i;
+	int		j;
+	int		size;
+	void	**arr;
 
 	i = 0;
 	size = twl_arr_len(twl_arr_);

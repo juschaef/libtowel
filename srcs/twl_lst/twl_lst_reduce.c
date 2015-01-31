@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_reduce.c                                       :+:      :+:    :+:   */
+/*   twl_lst_reduce.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/02 23:25:47 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/23 15:57:05 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/30 16:00:10 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_lst.h>
 
-void	*twl_lst_reduce(t_lst *lst, void *(*fn)(void *data, void *memo), void *context)
+void	*twl_lst_reduce(t_lst *lst, void *(*fn)(void *data, void *memo),
+																void *context)
 {
 	t_twl_lst_elem	*elem;
 

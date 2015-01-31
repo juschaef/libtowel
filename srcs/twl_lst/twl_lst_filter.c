@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_find.c                                     :+:      :+:    :+:   */
+/*   twl_lst_filter.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/19 10:51:42 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/30 16:48:46 by juschaef         ###   ########.fr       */
+/*   Created: 2014/12/12 09:29:17 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/30 23:55:58 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_lst.h>
+#include "twl_printf.h"
 
-void		*twl_lst_find(t_lst *lst, int (*iter_fn)(void *data, void *context),
-																void *context)
+void	twl_lst_filter(t_lst *lst, t_bool (*filter_fn)(void *data, void *context),
+											void *context, void (*delfn)(void *))
 {
 	t_twl_lst_elem	*elem;
+	t_twl_lst_elem	*next;
 
 	elem = lst->head;
 	while (elem)
 	{
-		if (iter_fn(elem->data, context))
-			return (elem->data);
-		elem = elem->next;
+		next = elem->next;
+		if (!filter_fn(elem->data, context))
+			twl_lst_del_elem__(lst, elem, delfn);
+		elem = next;
 	}
-	return (NULL);
 }

@@ -16,25 +16,25 @@
 
 char *pf_conv_str_int(void *val)
 {
-	return (free_val(twl_itoa(VOID_PTR_TO(int, val)), val));
+	return (freevl(twl_itoa(VOID_PTR_TO(int, val)), val));
 }
 
 char *pf_conv_str_short(void *val)
 {
-	return (free_val(twl_itoa(VOID_PTR_TO(short int, val)), val));
+	return (freevl(twl_itoa(VOID_PTR_TO(short int, val)), val));
 }
 
 char *pf_conv_str_ushort(void *val)
 {
-	return (free_val(twl_itoa(VOID_PTR_TO(unsigned short int, val)), val));
+	return (freevl(twl_itoa(VOID_PTR_TO(unsigned short int, val)), val));
 }
 
 char *pf_conv_str_octal_us(void *val)
 {
-	return (free_val(twl_llutobasestr(VOID_PTR_TO(unsigned int, val), 8), val));
+	return (freevl(twl_llutobasestr(VOID_PTR_TO(unsigned int, val), 8), val));
 }
 
 char *pf_conv_str_octal(void *val)
 {
-	return (free_val(twl_llutobasestr(VOID_PTR_TO(unsigned int, val), 8), val));
+	return (freevl(twl_llutobasestr(VOID_PTR_TO(unsigned int, val), 8), val));
 }

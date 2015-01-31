@@ -13,7 +13,7 @@ int get_item_order(char *path)
 		return DIR;
 }
 
- bool 		twl_arr_sort_obj_type_should_swap(void *item1, void *item2, void *context)
+t_bool 		twl_arr_sort_obj_type_should_swap(void *item1, void *item2, void *context)
 {
 	char *s1 = item1;
 	char *s2 = item2;
@@ -21,7 +21,7 @@ int get_item_order(char *path)
 	return (get_item_order(s1) < get_item_order(s2));
 }
 
- bool 		twl_arr_sort_twl_strcmp_should_swap(void *str1, void *str2, void *context)
+t_bool 		twl_arr_sort_twl_strcmp_should_swap(void *str1, void *str2, void *context)
 {
 	char *s1;
 	char *s2;

@@ -6,13 +6,12 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 18:23:37 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/31 11:48:43 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/31 15:13:12 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef PF_H
-# define PF_H
+#ifndef TWL_PRINTF_H
+# define TWL_PRINTF_H
 
 # include <twl_lst.h>
 # include <twl_dict.h>
@@ -107,6 +106,6 @@ char			*pf_conv_str_hex_up(void *val);
 char			*pf_conv_str_hex_ul_up(void *val);
 char			*pf_conv_str_unsign(void *val);
 char			*pf_conv_str_float(void *val);
-void			*free_val(void *val, void *val_to_free);
+void			*freevl(void *val, void *val_to_free);
 
 #endif

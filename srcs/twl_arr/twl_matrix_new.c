@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_memset.c                                       :+:      :+:    :+:   */
+/*   twl_matrix_new.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 16:11:24 by juschaef         ###   ########.fr       */
+/*   Created: 2015/01/30 21:53:13 by juschaef          #+#    #+#             */
+/*   Updated: 2015/01/30 22:06:33 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <twl_arr.h>
 
-void	*twl_memset(void *str, int c, size_t n)
+void	*twl_matrix_new(int *a)
 {
-	size_t	index;
-	char	*temp;
+	void **arr;
+	int i;
 
-	temp = str;
-	index = 0;
-	while (index < n)
+	i = 0;
+	arr = twl_arr_new(*a);
+	if (*a > 0)
 	{
-		temp[index] = c;
-		index++;
+		while (i < *a)
+		{
+			arr[i] = twl_matrix_new(++a);
+			i++;
+		}
 	}
-	return (str);
+	return (arr);
 }

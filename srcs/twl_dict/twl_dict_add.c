@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_dict_add.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 17:35:18 by yyang            ###   ########.fr       */
+/*   Updated: 2015/01/30 16:58:45 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <twl_xstdio.h>
 
 /*
-** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_dict *dict, t_twl_dict_elem *elem)"
+** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_dict *dict,
+** t_twl_dict_elem *elem)"
 */
 
 void		twl_dict_add(t_dict *dict, char *key, void *data)
@@ -34,9 +35,7 @@ void		twl_dict_add(t_dict *dict, char *key, void *data)
 		elem = twl_lst_create_elem__(data);
 		elem->key = twl_strdup(key);
 		if (!dict->head)
-		{
 			dict->head = elem;
-		}
 		else
 		{
 			tmpelem = dict->head;
