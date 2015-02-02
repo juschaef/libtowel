@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/30 21:53:13 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/30 22:06:33 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/02 17:45:45 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void	*twl_matrix_new(int *a)
 {
-	void **arr;
-	int i;
+	void	**arr;
+	int		i;
 
 	i = 0;
 	arr = twl_arr_new(*a);

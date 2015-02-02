@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 12:25:26 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 22:06:57 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/02 17:44:50 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	*twl_arr_new(size_t size);
 size_t	twl_arr_len(void *arr);
 void	twl_arr_del(void *twl_arr_ptr);
 void	*twl_matrix_new(int *a);
-
 
 /*
 ** Move / Del
