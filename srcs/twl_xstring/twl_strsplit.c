@@ -6,12 +6,13 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 16:14:34 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/02 17:48:50 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_string.h>
 #include <twl_xstring.h>
+#include <twl_stdio.h>
 #include <stdlib.h>
 
 static int		twl_count_words(const char *s, char c)

@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 17:02:10 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/02 17:47:11 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,9 @@ void						twl_lst_unshift(t_lst *lst, void *data);
 
 void						twl_lst_iter(t_lst *lst,
 						void (*f)(void *data, void *context), void *context);
+void						twl_lst_filter(t_lst *lst,
+						t_bool (*filter_fn)(void *data, void *context),
+						void *context, void (*delfn)(void *));
 t_lst						*twl_lst_map(t_lst *lst,
 													void *(*f)(void *data));
 void						*twl_lst_reduce(t_lst *lst,
@@ -80,7 +83,7 @@ int							twl_lst_reducei(t_lst *lst,
 
 void						twl_lst_sort(t_lst *lst,
 									t_sort_cmp_fn *cmp_fn, void *context);
-
+void						twl_lst_rev(t_lst *lst);
 /*
 ** Private
 */

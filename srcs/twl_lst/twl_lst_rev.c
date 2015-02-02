@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_sort.c                                     :+:      :+:    :+:   */
+/*   twl_lst_rev.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/11 22:24:18 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/31 18:51:17 by annguyen         ###   ########.fr       */
+/*   Updated: 2015/02/02 17:48:29 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,27 @@
 #include <twl_arr.h>
 #include <stdlib.h>
 
-#include <stdio.h>
-
-static void		push_item_to_lst(void *data, void *lst)
+static void		swap_elems_directions(t_twl_lst_elem *elem)
 {
-	twl_lst_push((t_lst *)lst, data);
+	t_twl_lst_elem *tmp_elem;
+
+	tmp_elem = elem->next;
+	elem->next = elem->prev;
+	elem->prev = tmp_elem;
 }
 
-void			twl_lst_sort(t_lst *lst, t_sort_cmp_fn *cmp_fn, void *context)
+void			twl_lst_rev(t_lst *lst)
 {
-	void **tmp_arr;
+	t_twl_lst_elem *elem;
+	t_twl_lst_elem *tmp_elem;
 
-	tmp_arr = twl_lst_to_arr__(lst);
-	twl_arr_sort(tmp_arr, cmp_fn, context);
-	twl_lst_clear__(lst, NULL);
-	twl_arr_iter(tmp_arr, push_item_to_lst, lst);
-	free(tmp_arr);
+	elem = lst->head;
+	while (elem)
+	{
+		tmp_elem = elem->next;
+		swap_elems_directions(elem);
+		if (!tmp_elem)
+			lst->head = elem;
+		elem = tmp_elem;
+	}
 }

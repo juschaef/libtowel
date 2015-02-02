@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst_del_elem__.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 16:52:50 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 15:45:12 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/31 16:23:48 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ void	twl_lst_del_elem__(t_lst *lst, t_twl_lst_elem *elem, void (*delfn)())
 	elem->prev = NULL;
 	elem->key = NULL;
 	free(elem);
-	(void)lst;
 }

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_free.c                                          :+:      :+:    :+:   */
+/*   twl_stdio.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/28 12:12:23 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/31 16:21:48 by annguyen         ###   ########.fr       */
+/*   Created: 2015/01/24 20:29:56 by yyang             #+#    #+#             */
+/*   Updated: 2015/01/31 11:48:37 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_printf.h>
+#ifndef TWL_STDIO_H
+# define TWL_STDIO_H
 
-void	pf_free(t_pf *pf)
-{
-	twl_lst_del(pf->pflst, pfelem_free);
-	free(pf->output);
-	free(pf);
-}
+int				twl_printf(const char *fmt, ...);
+int				twl_asprintf(char **s, const char *fmt, ...);
+int				twl_dprintf(const int fd, const char *fmt, ...);
+
+#endif

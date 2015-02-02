@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_printf.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 18:23:37 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/30 15:16:36 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/01/31 15:13:12 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,6 @@
 
 # define MAX_FNS 1000000000
 # define CONV_ERROR_MSG "(conversion error)"
-
-/*
-** API
-*/
-
-int				twl_printf(const char *fmt, ...);
-int				twl_asprintf(char **s, const char *fmt, ...);
-int				twl_dprintf(const int fd, const char *fmt, ...);
 
 /*
 ** Internals
