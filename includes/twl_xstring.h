@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_xstring.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 16:43:38 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/02 16:24:56 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define TWL_XSTRING_H
 # include <stddef.h>
 
-# define FT_STRPAD_LEFT 0
-# define FT_STRPAD_RIGHT 1
+# define FT_STRPAD_LEFT 'l'
+# define FT_STRPAD_RIGHT 'r'
 
 char		*twl_itoa(int n);
 char		*twl_ldtoa(long double ld);
@@ -41,7 +41,7 @@ int			twl_strnequ(char const *s1, char const *s2, size_t n);
 char		*twl_strnew(size_t size);
 char		*twl_strnewc(size_t size, char c);
 char		*twl_strpad(const char *s, size_t min_width,
-				int pad_dir, char c);
+				char pad_dir, char c);
 char		*twl_strrev(char *s);
 char		**twl_strsplit(char const *s, char c);
 char		*twl_strsub(char const *s, unsigned int start, size_t len);

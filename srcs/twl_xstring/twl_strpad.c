@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_strpad.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/01 16:16:43 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 16:14:33 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/02 16:24:12 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <twl_xstring.h>
 #include <stdlib.h>
 
-char	*twl_strpad(const char *s, size_t min_width, int pad_dir, char c)
+char	*twl_strpad(const char *s, size_t min_width, char pad_dir, char c)
 {
 	size_t	len;
 	char	*tab;
