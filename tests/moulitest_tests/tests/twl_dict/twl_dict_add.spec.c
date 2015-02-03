@@ -3,7 +3,7 @@
 
 static void simple_test(t_test *test)
 {
-	t_dict *dict;
+	t_twl_dict *dict;
 
 	dict = twl_lst_new();
 	twl_dict_add(dict, "key1", "data1");

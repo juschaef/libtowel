@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_mlximg_init.c                                  :+:      :+:    :+:   */
+/*   twl_mlximg_new.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 22:18:04 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/24 20:05:47 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/03 11:55:15 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <mlx.h>
 
-t_mlximg	*mlximg_init(void *mlx, int width, int height)
+t_mlximg	*mlximg_new(void *mlx, int width, int height)
 {
 	t_mlximg *mlximg;
 

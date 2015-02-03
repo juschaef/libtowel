@@ -15,11 +15,11 @@
 #include <twl_xstdio.h>
 
 /*
-** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_dict *dict,
+** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_twl_dict *dict,
 ** t_twl_dict_elem *elem)"
 */
 
-void		twl_dict_add(t_dict *dict, char *key, void *data)
+void		twl_dict_add(t_twl_dict *dict, char *key, void *data)
 {
 	t_twl_dict_elem	*elem;
 	t_twl_dict_elem	*tmpelem;

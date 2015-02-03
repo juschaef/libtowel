@@ -27,7 +27,7 @@ typedef struct	s_mlximg
 }				t_mlximg;
 
 void			mlximg_draw_point(t_mlximg *image, t_twl_point *pt, int color);
-t_mlximg		*mlximg_init(void *mlx, int width, int height);
+t_mlximg		*mlximg_new(void *mlx, int width, int height);
 void			mlximg_iter(t_mlximg *mlximg, void (*iter_fn)(t_mlximg *mlximg,
 								t_twl_point *pt, void *context), void *context);
 
