@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_point.h                                        :+:      :+:    :+:   */
+/*   get_rgb_color.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/15 14:35:02 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/02 20:25:27 by juschaef         ###   ########.fr       */
+/*   Created: 2015/02/02 21:44:34 by juschaef          #+#    #+#             */
+/*   Updated: 2015/02/02 21:45:30 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_POINT_H
-# define TWL_POINT_H
+#include <twl_graphics.h>
 
-# define T_FT_POINT(x, y)	((t_twl_point){(x), (y)})
-
-typedef struct	s_twl_point
+int		get_rgb_color(int r, int g, int b)
 {
-	int x;
-	int y;
-}				t_twl_point;
+	int result;
 
-typedef struct	s_twl_dpoint
-{
-	double x;
-	double y;
-}				t_twl_dpoint;
-
-
-t_twl_point		*twl_point_init(int x, int y);
-t_twl_dpoint	*twl_dpoint_init(double x, double y);
-
-#endif
+	result = 0;
+	result += r << 16;
+	result += g << 8;
+	result += b;
+	return (result);
+}
