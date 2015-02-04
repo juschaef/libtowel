@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_math.h                                         :+:      :+:    :+:   */
+/*   twl_dcomplex_new.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/15 14:55:14 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/03 17:17:45 by juschaef         ###   ########.fr       */
+/*   Created: 2015/01/14 22:18:04 by yyang             #+#    #+#             */
+/*   Updated: 2015/02/04 17:31:37 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_MATH_H
-# define TWL_MATH_H
+#include <twl_point.h>
+#include <stdlib.h>
 
-# define T_FT_COMPLEX(r, i)	((t_twl_complex){(r), (i)})
-
-typedef struct	s_twl_complex
+t_twl_dcomplex	twl_dcomplex_new(double r, double i)
 {
-	long double		r;
-	long double		i;
-}				t_twl_complex;
+	t_twl_dcomplex cpx;
 
-#endif
+	cpx.r = r;
+	cpx.i = i;
+	return (cpx);
+}
