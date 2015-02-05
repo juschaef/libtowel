@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 13:21:50 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/07 20:29:54 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/05 21:11:59 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ t_pfelem	*pfelem_create(char *s)
 	elem->precision = PRECISION_NOT_SET;
 	elem->length_modifier = 0;
 	elem->conv_spec = 0;
+	elem->conv_spec_str = NULL;
 	elem->values[0] = NULL;
 	elem->raw = s;
 	elem->str = NULL;
