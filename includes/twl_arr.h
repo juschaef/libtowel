@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 12:25:26 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/15 13:47:37 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/15 15:15:17 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,14 @@ void	*twl_arr_last(void *twl_arr_);
 
 void	twl_arr_iter(void *twl_arr_, void (*f)(void *elem, void *context),
 															void *context);
+
+void	*twl_arr_filter(void *arr_, t_bool (*filter_fn)
+			(void *data, void *context), void *context);
+
+size_t	twl_arr_count(void *arr_,
+	t_bool (*filter_fn)(void *elem, void *context), void *context);
+void	*twl_arr_filter_del(void *arr_, t_bool (*filter_fn)
+			(void *data, void *context), void *context, void (*delfn)(void *));
 
 /*
 ** Misc
