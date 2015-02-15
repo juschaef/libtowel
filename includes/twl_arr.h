@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 12:25:26 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/02 17:44:50 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/15 13:47:37 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 void	*twl_arr_new(size_t size);
 size_t	twl_arr_len(void *arr);
-void	twl_arr_del(void *twl_arr_ptr);
+void	twl_arr_del(void *twl_arr, void (*del_fn)(void *elem));
 void	*twl_matrix_new(int *a);
 
 /*

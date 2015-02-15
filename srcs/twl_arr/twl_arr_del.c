@@ -3,30 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr_del.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 13:41:44 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 15:29:30 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/15 13:49:47 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_arr.h>
 #include <stdlib.h>
 
-void	twl_arr_del(void *twl_arr_)
+static void del_fn_wrapper(void *elem, void *del_fn_)
 {
-	void	**arr;
-	size_t	size;
-	size_t	i;
+	void (*del_fn)(void *elem) = del_fn_;
 
-	arr = twl_arr_;
-	size = twl_arr_len(arr);
-	i = 0;
-	while (i < size)
-	{
-		free(arr[i]);
-		arr[i] = NULL;
-		i++;
-	}
+	del_fn(elem);
+}
+
+void	twl_arr_del(void *arr, void (*del_fn)(void *elem))
+{
+	twl_arr_iter(arr, del_fn_wrapper, del_fn);
 	free(arr);
 }
