@@ -1,1 +1,1 @@
-../../../moulitest/testframework/v3_templates/Makefile_template.mk
+../../../moulitest_42projects/testframework/v3_templates/Makefile_template.mk
