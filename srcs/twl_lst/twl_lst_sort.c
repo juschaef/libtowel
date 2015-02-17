@@ -6,7 +6,7 @@
 /*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/11 22:24:18 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/31 18:51:17 by annguyen         ###   ########.fr       */
+/*   Updated: 2015/02/17 18:02:55 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <twl_lst.h>
 #include <twl_arr.h>
 #include <stdlib.h>
-
-#include <stdio.h>
 
 static void		push_item_to_lst(void *data, void *lst)
 {
