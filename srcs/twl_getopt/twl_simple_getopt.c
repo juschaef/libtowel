@@ -6,7 +6,7 @@
 /*   By: emaniez <emaniez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/14 17:19:25 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/16 16:59:16 by emaniez          ###   ########.fr       */
+/*   Updated: 2015/02/17 09:03:03 by emaniez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 ** Does not (yet) integrate option arguments.
 ** If character is not part of optstr, optopt points to that character.
 ** If return is -1, optopt is set to the first post-option character.
+** Limited integration of optind : upon exit, sets optind to index of the next
+** argument.
 */
 
 int	spaces(int *i, int *j, char **optopt, const char **av)
@@ -60,8 +62,10 @@ int	double_hyphen(int *i, int *j, char **optopt, const char **av)
 	return (0);
 }
 
-int	error_return(int *hyphen, int *i, int *j)
+int	error_return(int *hyphen, int *i, int *j, int *optind)
 {
+	if (optind)
+		*optind = *i;
 	*hyphen = 0;
 	*i = 1;
 	*j = 0;
@@ -80,22 +84,24 @@ int	opening_hyphen(const char **av, int *hyphen)
 	return (0);
 }
 
-int	twl_simple_getopt(const char **av, const char *optstr, char **optopt)
+int	twl_simple_getopt(const char **av, const char *optstr,
+		char **optopt, int *optind)
 {
 	static int	hyphen = 0;
 	static int	i = 1;
 	static int	j = 0;
 
-	if (!av || !av[1] || !optstr || !optopt)
-		return (error_return(&hyphen, &i, &j));
+	if (!av || !av[1] || !optstr || !optopt || !optind)
+		return (error_return(&hyphen, &i, &j, optind));
 	*optopt = (char*)&av[i][j];
 	if (!opening_hyphen(av, &hyphen))
-		return (error_return(&hyphen, &i, &j));
+		return (error_return(&hyphen, &i, &j, optind));
 	if (spaces(&i, &j, optopt, av) == -1)
-		return (error_return(&hyphen, &i, &j));
+		return (error_return(&hyphen, &i, &j, optind));
 	if (double_hyphen(&i, &j, optopt, av) == -1)
-		return (error_return(&hyphen, &i, &j));
+		return (error_return(&hyphen, &i, &j, optind));
 	*optopt = (char*)&av[i][j];
+	*optind = i + 1;
 	j++;
 	if (!twl_strchr(optstr, av[i][j - 1]))
 		return ('?');
