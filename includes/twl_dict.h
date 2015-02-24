@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_dict.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:20:27 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/13 21:35:31 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/24 18:15:53 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void			twl_dict_add(t_twl_dict *dict, char *key, void *data);
 void			twl_dict_set(t_twl_dict *dict, char *key, void *data,
 															void (*delfn)());
 void			twl_dict_delone(t_twl_dict *dict, char *key, void (*delfn)());
-
+t_bool			twl_dict_key_exist(t_twl_dict *dict, char *key);
 /*
 ** iter
 */
