@@ -8,9 +8,7 @@ static void test_simple(t_test *test)
 
 	twl_opt = twl_opt_new(argv);
 	
-	// mt_assert(twl_opt_get(twl_opt, "l"))
-	(void)twl_opt;
-	mt_assert(0);
+	mt_assert(strcmp(twl_opt->cmd, "ls") == 0);
 }
 
 void	suite_twl_opt_new(t_suite *suite)
