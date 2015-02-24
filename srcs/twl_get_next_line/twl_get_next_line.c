@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:37:49 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 20:32:13 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/24 11:22:32 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <twl_string.h>
 #include <twl_xstring.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 static char		*twl_strchr_nl(const char *s)
 {
@@ -32,10 +33,10 @@ static int		twl_read_buffer(int fd, char **s_str, char **line)
 		if (ret < 0)
 			return (-1);
 		buf[ret] = '\0';
-		temp = twl_strnew(twl_strlen(*line) + twl_strlen(buf));
-		if (!temp)
+		if (!(temp = twl_strnew(twl_strlen(*line) + twl_strlen(buf))))
 			return (-1);
 		twl_strcpy(temp, *line);
+		free(*line);
 		*line = temp;
 		if (twl_strchr_nl(buf))
 		{
