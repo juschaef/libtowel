@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:37:49 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 11:22:32 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/24 12:54:42 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,13 @@ int				do_get_next_line(int const fd, char **line)
 	}
 	twl_strcat(*line, s_str[fd]);
 	ret = twl_read_buffer(fd, &s_str[fd], line);
-	if (ret == 1)
-		return (1);
-	if (ret == -1)
-		return (-1);
+	if (ret == 1 || ret == -1)
+		return (ret);
 	if (ret == 0 && twl_strlen(*line) == 0 && twl_strlen(s_str[fd]) == 0)
 		**line = '\0';
 	if (twl_strlen(*line) > 0 || twl_strlen(s_str[fd]) > 0)
 		return (1);
+	free(*line);
 	return (0);
 }
 
