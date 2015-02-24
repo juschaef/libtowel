@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_opt.h                                          :+:      :+:    :+:   */
+/*   twl_opt_elem_new.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/16 16:43:29 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/24 19:03:21 by yyang            ###   ########.fr       */
+/*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
+/*   Updated: 2015/02/24 19:12:14 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_OPT_H
-# define TWL_OPT_H
+#include <twl_opt_elem.h>
+#include <stdlib.h>
+#include <twl_arr.h>
+#include <twl_xstring.h>
 
-# include <twl_lst.h>
-
-typedef struct	s_twl_opt
+t_twl_opt_elem	*twl_opt_elem_new(char *key, char*value)
 {
-	char		*cmd;
-	t_lst		*opts;
-}				t_twl_opt;
+	t_twl_opt_elem *twl_opt_elem;
 
-t_twl_opt		*twl_opt_new(char **argv);
-t_bool			twl_opt_exist(t_twl_opt *twl_opt, char *opt_key);
-
-#endif
+	twl_opt_elem = malloc(sizeof(t_twl_opt_elem));
+	twl_opt_elem->key = twl_strdup(key);
+	if (value)
+		twl_opt_elem->value = twl_strdup(value);
+	else
+		twl_opt_elem->value = NULL;
+	return (twl_opt_elem);
+}
