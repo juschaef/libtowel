@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_mlximg_new.c                                   :+:      :+:    :+:   */
+/*   twl_mlximg_del.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 22:18:04 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 11:29:30 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/24 11:32:24 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,8 @@
 #include <stdlib.h>
 #include <mlx.h>
 
-t_mlximg	*mlximg_new(void *mlx, int width, int height)
+void mlximg_del(t_mlximg *mlximg)
 {
-	t_mlximg *mlximg;
-
-	mlximg = malloc(sizeof(t_mlximg));
-	mlximg->height = height;
-	mlximg->width = width;
-	mlximg->mlx = mlx;
-	mlximg->img = mlx_new_image(mlx, mlximg->width, mlximg->height);
-	mlximg->img_data = mlx_get_data_addr(mlximg->img,
-		&(mlximg->bits_per_pixel), &(mlximg->size_line), &(mlximg->endian));
-	return (mlximg);
+	mlx_destroy_image(mlximg->mlx, mlximg->img);
+	free(mlximg);
 }

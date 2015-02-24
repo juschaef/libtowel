@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_mlximg.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 19:56:14 by juschaef          #+#    #+#             */
-/*   Updated: 2015/02/02 20:28:40 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/24 11:32:14 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 typedef struct	s_mlximg
 {
+	void		*mlx;
 	void		*img;
 	char		*img_data;
 	int			width;
@@ -26,8 +27,10 @@ typedef struct	s_mlximg
 	int			endian;
 }				t_mlximg;
 
-void			mlximg_draw_point(t_mlximg *image, t_twl_point *pt, int color);
 t_mlximg		*mlximg_new(void *mlx, int width, int height);
+void			mlximg_del(t_mlximg *mlximg);
+
+void			mlximg_draw_point(t_mlximg *image, t_twl_point *pt, int color);
 void			mlximg_iter(t_mlximg *mlximg, void (*iter_fn)(t_mlximg *mlximg,
 								t_twl_point *pt, void *context), void *context);
 
