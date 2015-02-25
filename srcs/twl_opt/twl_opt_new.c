@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 19:12:44 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 11:00:43 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,16 @@ static void parse_single_arg(char *arg, t_lst *opts)
 	}
 }
 
-static void parse_argv(char **arr_opts, t_lst *opts)
+static void parse_argv(char **arr_opts, t_twl_opt *twl_opt)
 {
 	while (*arr_opts)
 	{
 		if (**arr_opts != '-')
 			break ;
-		parse_single_arg(++(*arr_opts), opts);
+		parse_single_arg(++(*arr_opts), twl_opt->opts);
 		arr_opts++;
 	}
+	twl_opt->non_opt_args = twl_arr_to_lst(arr_opts);
 }
 
 t_twl_opt	*twl_opt_new(char **argv)
@@ -48,6 +49,6 @@ t_twl_opt	*twl_opt_new(char **argv)
 	twl_opt->cmd = twl_strdup(argv[0]);
 	argv++;
 	twl_opt->opts = twl_lst_new();
-	parse_argv(argv, twl_opt->opts);
+	parse_argv(argv, twl_opt);
 	return (twl_opt);
 }
