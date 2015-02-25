@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 12:18:58 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 19:37:49 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ char		*twl_wchar_to_str(wchar_t wstr);
 char		*twl_wstr_to_str(wchar_t *wstr);
 size_t		twl_wstrlen(wchar_t *wstr);
 char		*twl_strjoinarr(const char **arr, const char *sep);
+char		*twl_strjoinlst(t_lst *lst, const char *sep);
 
 #endif
