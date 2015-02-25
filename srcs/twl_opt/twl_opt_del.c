@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 11:06:31 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 12:48:46 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@
 
 void	twl_opt_del(t_twl_opt *twl_opt)
 {
-	free(twl_opt->cmd);
-	twl_lst_del(twl_opt->opts, twl_opt_elem_del);
-	twl_lst_del(twl_opt->non_opt_args, free);
-	free(twl_opt);
+	// free(twl_opt->cmd);
+	// twl_lst_del(twl_opt->opts, twl_opt_elem_del);
+	// twl_lst_del(twl_opt->non_opt_args, free);
+	// free(twl_opt);
+	(void)twl_opt;
 }

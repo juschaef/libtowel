@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 11:22:27 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 14:50:27 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static void push_non_opt_to_lst(void *non_opt_arg, void *non_opt_arg_lst_)
 
 static void parse_argv(char **arr_opts, t_twl_opt *twl_opt)
 {
+	char *opt;
+
 	while (*arr_opts)
 	{
 		if (**arr_opts != '-')
@@ -48,7 +50,8 @@ static void parse_argv(char **arr_opts, t_twl_opt *twl_opt)
 			arr_opts++;
 			break;
 		}
-		parse_single_arg(++(*arr_opts), twl_opt->opts);
+		opt = *arr_opts;
+		parse_single_arg(opt + 1, twl_opt->opts);
 		arr_opts++;
 	}
 	twl_opt->non_opt_args = twl_lst_new();
@@ -61,8 +64,7 @@ t_twl_opt	*twl_opt_new(char **argv)
 
 	twl_opt = malloc(sizeof(t_twl_opt));
 	twl_opt->cmd = twl_strdup(argv[0]);
-	argv++;
 	twl_opt->opts = twl_lst_new();
-	parse_argv(argv, twl_opt);
+	parse_argv(argv + 1, twl_opt);
 	return (twl_opt);
 }
