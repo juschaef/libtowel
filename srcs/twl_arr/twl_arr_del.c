@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr_del.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 13:41:44 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/17 18:01:07 by annguyen         ###   ########.fr       */
+/*   Updated: 2015/02/25 15:13:53 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ static void del_fn_wrapper(void *elem, void *del_fn_)
 	void (*del_fn)(void *elem);
 
 	del_fn = del_fn_;
-	del_fn(elem);
+	if (del_fn)
+		del_fn(elem);
 }
 
 void		twl_arr_del(void *arr, void (*del_fn)(void *elem))
