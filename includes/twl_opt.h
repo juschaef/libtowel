@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   twl_opt.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/16 16:43:29 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/25 15:41:57 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 22:54:18 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TWL_OPT_H
 # define TWL_OPT_H
 
-# include <twl_lst.h>
+# include "twl_lst.h"
 
 typedef struct	s_twl_opt
 {

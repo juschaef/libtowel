@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 12:25:26 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 19:20:26 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 22:51:48 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TWL_ARR_H
 # define TWL_ARR_H
 
-# include <twl_string.h>
 # include <stddef.h>
-# include <twl_bool.h>
-# include <twl_lst.h>
-# include <twl_sort.h>
+# include "twl_string.h"
+# include "twl_bool.h"
+# include "twl_lst.h"
+# include "twl_sort.h"
 
 /*
 ** Basics

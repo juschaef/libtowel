@@ -3,18 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 14:19:53 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/25 22:53:28 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TWL_LST_H
 # define TWL_LST_H
+
 # include <stddef.h>
-# include <twl_string.h>
-# include <twl_sort.h>
+# include "twl_string.h"
+# include "twl_sort.h"
 
 typedef struct				s_twl_lst_elem
 {
