@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 15:52:38 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 16:06:38 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 #include <twl_opt_elem.h>
 #include <twl_bool.h>
 #include <twl_opt_elem.h>
+#include <twl_stdio.h>
 
-static t_bool find_fn(void *opt_, void *valid_opts_)
+static t_bool find_fn(void *opt_elem_, void *valid_opts_)
 {
-	char *opt;
+	t_twl_opt_elem *opt_elem;
 	char *valid_opts;
 
-	opt = opt_;
+	opt_elem = opt_elem_;
 	valid_opts = valid_opts_;
-	if (!twl_strchr(valid_opts, *opt))
+	if (!twl_strchr(valid_opts, *opt_elem->key))
 		return (TRUE);
 	return (FALSE);
 }
