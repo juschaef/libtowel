@@ -100,7 +100,7 @@ void						twl_lst_iter_elem__(t_lst *lst,
 			void (*f)(t_twl_lst_elem *elem, void *context), void *context);
 void						twl_lst_link__(t_twl_lst_elem *elem1,
 													t_twl_lst_elem *elem2);
-void						**twl_lst_to_arr__(t_lst *lst);
+void						**twl_lst_to_arr(t_lst *lst);
 void						twl_lst_clear__(t_lst *lst, void (*delfn)());
 
 /*

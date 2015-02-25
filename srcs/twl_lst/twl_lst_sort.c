@@ -24,7 +24,7 @@ void			twl_lst_sort(t_lst *lst, t_sort_cmp_fn *cmp_fn, void *context)
 {
 	void **tmp_arr;
 
-	tmp_arr = twl_lst_to_arr__(lst);
+	tmp_arr = twl_lst_to_arr(lst);
 	twl_arr_sort(tmp_arr, cmp_fn, context);
 	twl_lst_clear__(lst, NULL);
 	twl_arr_iter(tmp_arr, push_item_to_lst, lst);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_xstring.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/02 16:24:56 by annguyen         ###   ########.fr       */
+/*   Updated: 2015/02/25 12:18:58 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,6 @@ char		*twl_strupcase(char *str);
 char		*twl_wchar_to_str(wchar_t wstr);
 char		*twl_wstr_to_str(wchar_t *wstr);
 size_t		twl_wstrlen(wchar_t *wstr);
+char		*twl_strjoinarr(const char **arr, const char *sep);
 
 #endif
