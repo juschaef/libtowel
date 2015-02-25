@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_opt_elem.h                                     :+:      :+:    :+:   */
+/*   twl_opt_del.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/16 16:43:29 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/25 11:06:09 by yyang            ###   ########.fr       */
+/*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
+/*   Updated: 2015/02/25 11:06:31 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_OPT_ELEM_H
-# define TWL_OPT_ELEM_H
+#include <twl_opt.h>
+#include <stdlib.h>
+#include <twl_arr.h>
+#include <twl_xstring.h>
+#include <twl_opt_elem.h>
 
-typedef struct	s_twl_opt_elem
+void	twl_opt_del(t_twl_opt *twl_opt)
 {
-	char		*key;
-	char		*value;
-}				t_twl_opt_elem;
-
-t_twl_opt_elem	*twl_opt_elem_new(char *key, char *value);
-void			twl_opt_elem_del(t_twl_opt_elem *twl_opt_elem);
-
-#endif
+	free(twl_opt->cmd);
+	twl_lst_del(twl_opt->opts, twl_opt_elem_del);
+	twl_lst_del(twl_opt->non_opt_args, free);
+	free(twl_opt);
+}

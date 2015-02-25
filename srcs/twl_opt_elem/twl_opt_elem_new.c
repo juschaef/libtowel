@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 19:12:14 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 11:17:49 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <twl_arr.h>
 #include <twl_xstring.h>
 
-t_twl_opt_elem	*twl_opt_elem_new(char *key, char*value)
+t_twl_opt_elem	*twl_opt_elem_new(char *key, char *value)
 {
 	t_twl_opt_elem *twl_opt_elem;
 

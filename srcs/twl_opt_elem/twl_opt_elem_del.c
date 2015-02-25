@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_opt_elem.h                                     :+:      :+:    :+:   */
+/*   twl_opt_elem_del.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/16 16:43:29 by emaniez           #+#    #+#             */
-/*   Updated: 2015/02/25 11:06:09 by yyang            ###   ########.fr       */
+/*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
+/*   Updated: 2015/02/25 11:05:46 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_OPT_ELEM_H
-# define TWL_OPT_ELEM_H
+#include <twl_opt_elem.h>
+#include <stdlib.h>
+#include <twl_arr.h>
+#include <twl_xstring.h>
 
-typedef struct	s_twl_opt_elem
+void twl_opt_elem_del(t_twl_opt_elem *twl_opt_elem)
 {
-	char		*key;
-	char		*value;
-}				t_twl_opt_elem;
-
-t_twl_opt_elem	*twl_opt_elem_new(char *key, char *value);
-void			twl_opt_elem_del(t_twl_opt_elem *twl_opt_elem);
-
-#endif
+	free(twl_opt_elem->key);
+	free(twl_opt_elem->value);
+}
