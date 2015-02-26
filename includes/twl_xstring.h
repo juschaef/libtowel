@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 19:42:36 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/26 15:29:02 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ char		*twl_llutobasestr(unsigned long long nbr, int base);
 void		twl_memswap(void *s1, void *s2, size_t size);
 void		twl_str_replace_char(char *s, char target, char replacement);
 char		*twl_str_replace(char *s, char *target, char *replacement);
+char		*twl_str_replace_free(char *s, char *target, char *replacement);
 char		*twl_strcapitalize(char *str);
 void		twl_strclr(char *s);
 size_t		twl_strcountchar(char *s, char c);
