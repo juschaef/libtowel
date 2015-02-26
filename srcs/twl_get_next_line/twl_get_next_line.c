@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/27 13:37:49 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 12:54:42 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/26 14:27:49 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int				do_get_next_line(int const fd, char **line)
 	if (twl_strlen(*line) > 0 || twl_strlen(s_str[fd]) > 0)
 		return (1);
 	free(*line);
+	*line = NULL;
 	return (0);
 }
 
