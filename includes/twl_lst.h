@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 14:19:53 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/26 17:23:28 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ size_t						twl_lst_count(t_lst *lst, void *(*f)(void *));
 int							twl_lst_indexof(t_lst *lst, void *target,
 														int (*cmp_fn)());
 void						*twl_lst_find(t_lst *lst,
-						int (*f)(void *data, void *context), void *context);
+						t_bool (*f)(void *data, void *context), void *context);
 
 /*
 ** Move

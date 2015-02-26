@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_bool.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/21 14:54:03 by annguyen          #+#    #+#             */
-/*   Updated: 2015/02/25 23:13:21 by gbarraul         ###   ########.fr       */
+/*   Updated: 2015/02/26 17:22:02 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 typedef enum	e_bool
 {
-	FALSE,
-	TRUE
+	FALSE = 0,
+	TRUE = 1
 }				t_bool;
 
 #endif
