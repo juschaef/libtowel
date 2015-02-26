@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   twl_mlximg.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 19:56:14 by juschaef          #+#    #+#             */
-/*   Updated: 2015/02/24 11:32:14 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 22:54:05 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TWL_MLXIMG_H
 # define TWL_MLXIMG_H
 
-# include <twl_point.h>
+# include "twl_point.h"
 
 typedef struct	s_mlximg
 {

@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   twl_dict.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:20:27 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 18:15:53 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 22:52:19 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TWL_DICT_H
 # define TWL_DICT_H
-# include <twl_lst.h>
+
+# include "twl_lst.h"
 
 typedef t_lst			t_twl_dict;
 typedef t_twl_lst_elem	t_twl_dict_elem;

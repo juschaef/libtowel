@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   twl_string.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 15:25:18 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/25 22:57:29 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TWL_STRING_H
 # define TWL_STRING_H
+
 # include <stddef.h>
 
 void				twl_bzero(void *s, size_t n);
