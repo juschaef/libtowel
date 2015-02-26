@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr_delone.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 13:53:40 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 16:44:16 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/25 21:59:20 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	twl_arr_delone(void *twl_arr_, int index)
 		*arr = *(arr + 1);
 		arr++;
 	}
+	*(arr - 1) = NULL;
 }

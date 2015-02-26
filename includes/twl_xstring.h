@@ -6,13 +6,14 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 19:37:49 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/25 19:42:36 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TWL_XSTRING_H
 # define TWL_XSTRING_H
 # include <stddef.h>
+# include <twl_lst.h>
 
 # define FT_STRPAD_LEFT 'l'
 # define FT_STRPAD_RIGHT 'r'
