@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr_cpy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/18 20:08:08 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 19:20:58 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/26 17:12:52 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_arr.h>
 
-static void push_to_arr(void *data, void *new_arr)
+static void	push_to_arr(void *data, void *new_arr)
 {
 	twl_arr_push(new_arr, data);
 }
 
-void *twl_arr_cpy(void *arr)
+void		*twl_arr_cpy(void *arr)
 {
 	void **new_arr;
 

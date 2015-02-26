@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_strjoinarr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 19:40:41 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/26 17:10:24 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 char		*twl_strjoinarr(const char **arr, const char *sep)
 {
 	t_lst	*lst;
-	char *output;
+	char	*output;
 
 	lst = twl_arr_to_lst(arr);
 	output = twl_strjoinlst(lst, sep);

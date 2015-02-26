@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_opt_new.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 14:50:27 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/26 17:04:03 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void parse_argv(char **arr_opts, t_twl_opt *twl_opt)
 		if (twl_strequ(*arr_opts, "--"))
 		{
 			arr_opts++;
-			break;
+			break ;
 		}
 		opt = *arr_opts;
 		parse_single_arg(opt + 1, twl_opt->opts);
