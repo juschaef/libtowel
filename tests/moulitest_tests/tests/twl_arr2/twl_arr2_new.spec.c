@@ -14,7 +14,7 @@ static void simple_test(t_test *test)
 {
 	char ***arr;
 
-	arr = (char ***)twl_arr2_new(2, 2, new_fn, NULL);
+	arr = twl_arr2_new(2, 2, new_fn, NULL);
 
 	mt_assert(strcmp(arr[0][0], "(0,0)") == 0);
 	mt_assert(strcmp(arr[0][1], "(0,1)") == 0);
