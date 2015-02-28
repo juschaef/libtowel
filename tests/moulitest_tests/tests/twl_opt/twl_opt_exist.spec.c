@@ -1,7 +1,7 @@
 #include "project.h"
 #include <twl_opt.h>
 #include <twl_lst.h>
-#include <twl_bool.h>
+#include <stdbool.h>
 
 static void test_opt_cmd(t_test *test)
 {
@@ -10,10 +10,10 @@ static void test_opt_cmd(t_test *test)
 
 	twl_opt = twl_opt_new(argv);
 	
-	mt_assert(twl_opt_exist(twl_opt, "l") == TRUE);
-	mt_assert(twl_opt_exist(twl_opt, "b") == FALSE);
-	mt_assert(twl_opt_exist(twl_opt, "ls") == FALSE);
-	mt_assert(twl_opt_exist(twl_opt, "z") == FALSE);
+	mt_assert(twl_opt_exist(twl_opt, "l") == true);
+	mt_assert(twl_opt_exist(twl_opt, "b") == false);
+	mt_assert(twl_opt_exist(twl_opt, "ls") == false);
+	mt_assert(twl_opt_exist(twl_opt, "z") == false);
 	// twl_opt_del(twl_opt);
 }
 
@@ -24,9 +24,9 @@ static void test_opt_cmd_harder(t_test *test)
 
 	twl_opt = twl_opt_new(argv);
 	
-	mt_assert(twl_opt_exist(twl_opt, "l") == TRUE);
-	mt_assert(twl_opt_exist(twl_opt, "a") == TRUE);
-	mt_assert(twl_opt_exist(twl_opt, "u") == TRUE);
+	mt_assert(twl_opt_exist(twl_opt, "l") == true);
+	mt_assert(twl_opt_exist(twl_opt, "a") == true);
+	mt_assert(twl_opt_exist(twl_opt, "u") == true);
 	mt_assert(twl_lst_len(twl_opt->opts) == 4);
 	// twl_opt_del(twl_opt);
 }
@@ -38,8 +38,8 @@ static void test_opt_cmd_harder(t_test *test)
 
 // 	twl_opt = twl_opt_new(argv);
 	
-// 	mt_assert(twl_opt_exist(twl_opt, "l") == TRUE);
-// 	mt_assert(twl_opt_exist(twl_opt, "a") == TRUE);
+// 	mt_assert(twl_opt_exist(twl_opt, "l") == true);
+// 	mt_assert(twl_opt_exist(twl_opt, "a") == true);
 // }
 
 void	suite_twl_opt_exist(t_suite *suite)

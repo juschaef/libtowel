@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/26 18:53:23 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/28 18:10:58 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct				s_lst
 
 t_lst						*twl_lst_new(void);
 void						*twl_lst_get(t_lst *lst, int index);
+void						*twl_lst_get_rand(t_lst *lst);
 size_t						twl_lst_len(t_lst *lst);
 void						twl_lst_del(t_lst *lst, void (*delfn)());
 
@@ -52,7 +53,7 @@ size_t						twl_lst_count(t_lst *lst, void *(*f)(void *));
 int							twl_lst_indexof(t_lst *lst, void *target,
 														int (*cmp_fn)());
 void						*twl_lst_find(t_lst *lst,
-						t_bool (*f)(void *data, void *context), void *context);
+						bool (*f)(void *data, void *context), void *context);
 
 /*
 ** Move
@@ -72,7 +73,7 @@ void						twl_lst_iteri(t_lst *lst,
 						void (*f)(void *data, void *context, int index),
 																void *context);
 void						twl_lst_filter(t_lst *lst,
-						t_bool (*filter_fn)(void *data, void *context),
+						bool (*filter_fn)(void *data, void *context),
 						void *context, void (*delfn)(void *));
 t_lst						*twl_lst_map(t_lst *lst,
 													void *(*f)(void *data));

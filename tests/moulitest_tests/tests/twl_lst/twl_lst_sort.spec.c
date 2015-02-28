@@ -1,7 +1,7 @@
 #include "project.h"
 #include <twl_lst.h>
 
-t_bool 		sort_twl_strcmp(void *str1, void *str2, void *context)
+bool 		sort_twl_strcmp(void *str1, void *str2, void *context)
 {
 	char *s1;
 	char *s2;

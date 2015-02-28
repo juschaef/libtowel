@@ -30,7 +30,7 @@ void			twl_dict_add(t_twl_dict *dict, char *key, void *data);
 void			twl_dict_set(t_twl_dict *dict, char *key, void *data,
 															void (*delfn)());
 void			twl_dict_delone(t_twl_dict *dict, char *key, void (*delfn)());
-t_bool			twl_dict_key_exist(t_twl_dict *dict, char *key);
+bool			twl_dict_key_exist(t_twl_dict *dict, char *key);
 /*
 ** iter
 */

@@ -13,7 +13,7 @@
 #include <twl_arr.h>
 #include "twl_printf.h"
 
-void	*twl_arr_filter_del(void *arr_, t_bool (*filter_fn)
+void	*twl_arr_filter_del(void *arr_, bool (*filter_fn)
 			(void *data, void *context), void *context, void (*delfn)(void *))
 {
 	void	**arr;

@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_bool.h                                         :+:      :+:    :+:   */
+/*   twl_randint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/21 14:54:03 by annguyen          #+#    #+#             */
-/*   Updated: 2015/02/26 17:22:02 by juschaef         ###   ########.fr       */
+/*   Created: 2015/02/28 18:02:23 by juschaef          #+#    #+#             */
+/*   Updated: 2015/02/28 18:57:30 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_BOOL_H
-# define TWL_BOOL_H
+#include <stdlib.h>
+#include <time.h>
 
-typedef enum	e_bool
+int		twl_randint(int start, int end)
 {
-	FALSE = 0,
-	TRUE = 1
-}				t_bool;
-
-#endif
+	srand(time(NULL));
+	return (rand() % (end + 1 - start) + start);
+}

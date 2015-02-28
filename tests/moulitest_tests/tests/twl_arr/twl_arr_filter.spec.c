@@ -1,9 +1,9 @@
 #include <project.h>
 #include <twl_arr.h>
-#include <twl_bool.h>
+#include <stdbool.h>
 #include <twl_arr.h>
 
-static t_bool filter_fn(void *elem, void *context)
+static bool filter_fn(void *elem, void *context)
 {
 	(void)context;
 	return (*(char *)elem == 'b');

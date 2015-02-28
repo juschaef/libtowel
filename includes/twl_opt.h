@@ -24,7 +24,7 @@ typedef struct	s_twl_opt
 
 t_twl_opt		*twl_opt_new(char **argv);
 void			twl_opt_del(t_twl_opt *twl_opt);
-t_bool			twl_opt_exist(t_twl_opt *twl_opt, char *opt_key);
+bool			twl_opt_exist(t_twl_opt *twl_opt, char *opt_key);
 char			*twl_opt_checkerr(t_twl_opt *twl_opt, char *valid_opts);
 
 #endif

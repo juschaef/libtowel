@@ -1,9 +1,9 @@
 #include <twl_lst.h>
 #include "project.h"
-#include <twl_bool.h>
+#include <stdbool.h>
 #include <string.h>
 
-static t_bool filter_fn(void *data, void *context_)
+static bool filter_fn(void *data, void *context_)
 {
 	char *str;
 	char *context;
@@ -11,8 +11,8 @@ static t_bool filter_fn(void *data, void *context_)
 	context = context_;
 	str = data;
 	if (strcmp(str, context) == 0)
-		return (FALSE);
-	return (TRUE);
+		return (false);
+	return (true);
 }
 
 static int del_counter;

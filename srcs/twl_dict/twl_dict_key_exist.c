@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   twl_dict_key_exist.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 18:16:20 by yyang            ###   ########.fr       */
+/*   Updated: 2015/02/28 18:29:03 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_dict.h>
 #include <twl_string.h>
-#include <twl_bool.h>
+#include <stdbool.h>
 
-t_bool twl_dict_key_exist(t_twl_dict *dict, char *key)
+bool twl_dict_key_exist(t_twl_dict *dict, char *key)
 {
 	t_twl_dict_elem	*elem;
 
@@ -22,8 +22,8 @@ t_bool twl_dict_key_exist(t_twl_dict *dict, char *key)
 	while (elem)
 	{
 		if (twl_strcmp(elem->key, key) == 0)
-			return (TRUE);
+			return (true);
 		elem = elem->next;
 	}
-	return (FALSE);
+	return (false);
 }
