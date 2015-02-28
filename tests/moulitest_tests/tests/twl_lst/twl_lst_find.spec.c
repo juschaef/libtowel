@@ -1,7 +1,7 @@
 #include <project.h>
 #include <twl_lst.h>
 
-int find_nbr(void *data, void *context)
+t_bool find_nbr(void *data, void *context)
 {
 	int *nbr_p1;
 	int *nbr_p2;
