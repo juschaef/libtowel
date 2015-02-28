@@ -18,7 +18,7 @@ static void simple_test(t_test *test)
 	arr[1][2] = NULL;
 	arr[2] = NULL;
 
-	arr_new = twl_arr2_rotate(arr, 0);
+	arr_new = twl_arr2_rotate(arr, 1);
 
 	mt_assert(strcmp(arr_new[0][0], "c") == 0);
 	mt_assert(strcmp(arr_new[0][1], "a") == 0);
@@ -56,8 +56,41 @@ static void harder_test(t_test *test)
 	mt_assert(rotated_arr[3] == NULL);
 }
 
+static void test_rotate_twice(t_test *test)
+{
+	char ***arr;
+	char ***rotated_arr;
+
+	arr = twl_arr2_new(2, 2, new_fn, NULL);
+	rotated_arr = twl_arr2_rotate(arr, 2);
+
+	mt_assert(strcmp(rotated_arr[0][0], "(1,1)") == 0);
+	mt_assert(strcmp(rotated_arr[0][1], "(1,0)") == 0);
+	mt_assert(rotated_arr[0][2] == NULL);
+	mt_assert(strcmp(rotated_arr[1][0], "(0,1)") == 0);
+	mt_assert(strcmp(rotated_arr[1][1], "(0,0)") == 0);
+	mt_assert(rotated_arr[1][2] == NULL);
+	mt_assert(rotated_arr[2] == NULL);
+}
+
+static void test_rotate_large(t_test *test)
+{
+	char ***arr;
+	char ***rotated_arr;
+
+	arr = twl_arr2_new(10, 10, new_fn, NULL);
+	rotated_arr = twl_arr2_rotate(arr, 1);
+
+	mt_assert(strcmp(rotated_arr[0][0], "(9,0)") == 0);
+	mt_assert(strcmp(rotated_arr[9][9], "(0,9)") == 0);
+	mt_assert(strcmp(rotated_arr[0][9], "(0,0)") == 0);
+	mt_assert(strcmp(rotated_arr[9][0], "(9,9)") == 0);
+}
+
 void	suite_twl_arr2_rotate(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 	SUITE_ADD_TEST(suite, harder_test);
+	SUITE_ADD_TEST(suite, test_rotate_twice);
+	SUITE_ADD_TEST(suite, test_rotate_large);
 }

@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_arr2.h                                         :+:      :+:    :+:   */
+/*   twl_arr2_new.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/28 14:31:03 by juschaef          #+#    #+#             */
-/*   Updated: 2015/02/28 21:31:48 by juschaef         ###   ########.fr       */
+/*   Created: 2015/02/28 14:35:01 by juschaef          #+#    #+#             */
+/*   Updated: 2015/02/28 20:46:03 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_MAP_H
-# define TWL_MAP_H
+#include <twl_arr.h>
+#include <stdlib.h>
 
-void	*twl_arr2_new(int rows, int cols,
-		void *(*new_fn)(int y, int x, void *context), void *context);
-void	twl_arr2_del(void *arr2, void (*del_fn)(void *elem));
+static void		free_fn(void *arr, void *del_fn)
+{
+	twl_arr_del(arr, del_fn);
+}
 
-void	twl_arr2_iter(void *map_, void (*iter_fn)(void *data, void *context),
-																void *context);
-void	*twl_arr2_rotate(void *arr_, int times);
-
-#endif
+void			twl_arr2_del(void *arr2, void (*del_fn)(void *elem))
+{
+	twl_arr_iter(arr2, free_fn, del_fn);
+	free(arr2);
+}
