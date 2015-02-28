@@ -29,8 +29,6 @@ static void simple_test(t_test *test)
 
 	twl_arr2_iter(arr, iter_fn, arr);
 
-	// printf("%s\n",arr[0][1]);
-	// printf("%s\n",arr[0][0]);
 	mt_assert(strcmp(arr[0][1], "Abcdefghabcdefghabcdefghabcdefgh") == 0);
 	mt_assert(strcmp(arr[0][0], "Abcdefghabcdefghabcdefghabcdefgh") == 0);
 	mt_assert(arr[0][2] == NULL);
