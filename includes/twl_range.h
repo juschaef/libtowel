@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_get_rand.c                                 :+:      :+:    :+:   */
+/*   twl_range.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/28 19:16:44 by juschaef         ###   ########.fr       */
+/*   Created: 2015/02/28 19:18:18 by juschaef          #+#    #+#             */
+/*   Updated: 2015/02/28 19:27:27 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_lst.h>
-#include <twl_xstdlib.h>
+#ifndef TWL_RANGE_H
+# define TWL_RANGE_H
 
-void	*twl_lst_get_rand(t_lst *lst)
-{
-	t_twl_lst_elem	*elem;
-	size_t len;
-	int random;
+void twl_range_iter(int start, int end, void (*iter_fn)(int i, void *context),
+																void *context);
 
-	len = twl_lst_len(lst);
-	random = twl_randint(0, len - 1);
-	elem = twl_lst_get_elem__(lst, random);
-	if (elem)
-		return (elem->data);
-	return (NULL);
-}
+
+#endif
