@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_arr2_iter.c                                    :+:      :+:    :+:   */
+/*   twl_arr2_iter_coord.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 14:35:01 by juschaef          #+#    #+#             */
-/*   Updated: 2015/02/28 21:59:20 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/28 22:03:31 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <twl_arr2.h>
 
-void	twl_arr2_iter(void *map_, void (*iter_fn)(void *data, void *context),
-																void *context)
+void	twl_arr2_iter_coord(void *arr2_, void (*iter_fn)(void *arr2, int y, int x, void *context), void *context)
 {
 	int y;
 	int x;
-	void ***map;
+	void ***arr2;
 
-	map = map_;
+	arr2 = arr2_;
 	y = 0;
-	while (map[y])
+	while (arr2[y])
 	{
 		x = 0;
-		while (map[y][x])
+		while (arr2[y][x])
 		{
-			iter_fn(map[y][x], context);
+			iter_fn(arr2, x, y, context);
 			x++;
 		}
 		y++;

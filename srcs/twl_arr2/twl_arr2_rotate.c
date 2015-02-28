@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 14:35:01 by juschaef          #+#    #+#             */
-/*   Updated: 2015/02/28 21:37:59 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/28 21:44:42 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	*twl_arr2_rotate(void *original_arr, int times)
 		tmp = newarr;
 		newarr = twl_arr2_rotate_one(newarr);
 		twl_arr2_del(tmp, NULL);
+		(void)tmp;
 	}
 	return newarr;
 }

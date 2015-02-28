@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 14:31:03 by juschaef          #+#    #+#             */
-/*   Updated: 2015/02/28 21:31:48 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/02/28 22:02:59 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	twl_arr2_del(void *arr2, void (*del_fn)(void *elem));
 
 void	twl_arr2_iter(void *map_, void (*iter_fn)(void *data, void *context),
 																void *context);
+void	twl_arr2_iter_coord(void *arr2_,
+	void (*iter_fn)(void *arr2, int y, int x, void *context), void *context);
 void	*twl_arr2_rotate(void *arr_, int times);
 
 #endif
