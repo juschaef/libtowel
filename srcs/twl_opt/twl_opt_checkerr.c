@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_opt_checkerr.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/28 18:29:21 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/01 17:10:21 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <twl_opt_elem.h>
 #include <twl_stdio.h>
 
-static bool	find_fn(void *opt_elem_, void *valid_opts_)
+static bool		find_fn(void *opt_elem_, void *valid_opts_)
 {
 	t_twl_opt_elem	*opt_elem;
 	char			*valid_opts;

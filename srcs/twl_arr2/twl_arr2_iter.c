@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr2_iter.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 14:35:01 by juschaef          #+#    #+#             */
-/*   Updated: 2015/02/28 20:32:05 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/01 17:08:28 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	twl_arr2_iter(void *map_, void (*iter_fn)(void *data, void *context),
 																void *context)
 {
-	int y;
-	int x;
-	void ***map;
+	int		y;
+	int		x;
+	void	***map;
 
 	map = map_;
 	y = 0;
