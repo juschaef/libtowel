@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 14:35:01 by juschaef          #+#    #+#             */
-/*   Updated: 2015/02/28 21:59:20 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/01 17:21:22 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	twl_arr2_iter(void *map_, void (*iter_fn)(void *data, void *context),
 																void *context)
 {
-	int y;
-	int x;
-	void ***map;
+	int		y;
+	int		x;
+	void	***map;
 
 	map = map_;
 	y = 0;
