@@ -3,28 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   twl_realloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/21 12:17:36 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 16:13:01 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/02 18:11:00 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "twl_string.h"
 
+/*
+** print string 's' to file descriptor 'fd'
+*/
+
 void		*twl_realloc(void *ptr, size_t size)
 {
 	void	*dup;
 
-	dup = malloc(size);
-	if (!dup)
+	if (!(dup = malloc(size)))
 		return (NULL);
-	if (ptr)
-	{
-		if (dup)
-			twl_memcpy(dup, ptr, size);
-		free(ptr);
-	}
+	twl_memcpy(dup, ptr, size);
+	free(ptr);
 	return (dup);
 }

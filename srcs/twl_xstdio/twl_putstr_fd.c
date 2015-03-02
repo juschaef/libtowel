@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   twl_putstr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 16:13:00 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/02 18:09:12 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "twl_string.h"
+
+/*
+** print string 's' to file descriptor 'fd'
+*/
 
 void	twl_putstr_fd(char const *s, int fd)
 {
-	int len;
-
-	len = 0;
-	while (s[len])
-		len++;
-	write(fd, s, len);
+	write(fd, s, twl_strlen(s));
 }

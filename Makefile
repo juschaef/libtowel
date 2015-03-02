@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yyang <yyang@student.42.fr>                +#+  +:+       +#+         #
+#    By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/08 15:09:01 by yyang             #+#    #+#              #
-#    Updated: 2015/01/30 14:51:50 by yyang            ###   ########.fr        #
+#    Updated: 2015/03/02 17:56:02 by gbarraul         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ COL_GRAY = \033[1;30m
 COL_RESET = \033[0;0m
 COL_RED = \033[0;31m
 COL_GREEN = \033[0;32m
-CC_OPTIONS = $(CC_FLAGS) $(CC_HEADERS) $(CC_LIBMLX) $(CC_FLAGS_EXTRA)
+CC_OPTIONS = $(CC_FLAGS) $(CC_HEADERS) $(CC_FLAGS_EXTRA)
 
 all:
 ifeq ($(DEBUG), 1)
@@ -49,7 +49,7 @@ ifeq ($(OUTPUT_TYPE), lib)
 	@ar rcs $@ $^
 endif
 ifeq ($(OUTPUT_TYPE), exec)
-	@gcc $(CC_OPTIONS) $(CC_DEBUG) $^ -o $@
+	@gcc $(CC_OPTIONS) $(CC_LIBMLX) $(CC_DEBUG) $^ -o $@
 endif
 	@echo "$(COL_GREEN)$(NAME)$(COL_RESET)"
 
