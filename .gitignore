@@ -1,3 +1,6 @@
 tests/moulitest_tests/libtwl_test*
 tests/moulitest_tests/libtowel_test*
 *dSYM
+*.o
+*.a
+./tmp/
