@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_point.h>
 #include <stdlib.h>
+#include "twl_point.h"
 
 t_twl_point	*twl_point_init(int x, int y)
 {

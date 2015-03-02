@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
-#include <twl_xstring.h>
-#include <twl_stdio.h>
 #include <stdlib.h>
+#include "twl_string.h"
+#include "twl_xstring.h"
+#include "twl_stdio.h"
 
 static int		twl_count_words(const char *s, char c)
 {

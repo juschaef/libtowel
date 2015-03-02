@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_arr2_new.c                                     :+:      :+:    :+:   */
+/*   twl_arr2_del.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 14:35:01 by juschaef          #+#    #+#             */
-/*   Updated: 2015/02/28 20:46:03 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/02 11:42:17 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_arr.h>
 #include <stdlib.h>
+#include "twl_arr.h"
 
 static void		free_fn(void *arr, void *del_fn)
 {

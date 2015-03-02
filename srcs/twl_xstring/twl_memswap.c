@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
-#include <twl_xstring.h>
 #include <stdlib.h>
+#include "twl_string.h"
+#include "twl_xstring.h"
 
 void	twl_memswap(void *s1, void *s2, size_t len)
 {

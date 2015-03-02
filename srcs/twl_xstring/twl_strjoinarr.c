@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
 #include <stdlib.h>
-#include <twl_arr.h>
-#include <twl_xstring.h>
+#include "twl_string.h"
+#include "twl_arr.h"
+#include "twl_xstring.h"
 
 char		*twl_strjoinarr(const char **arr, const char *sep)
 {

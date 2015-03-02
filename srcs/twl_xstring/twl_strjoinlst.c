@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
 #include <stdlib.h>
-#include <twl_arr.h>
-#include <twl_xstring.h>
+#include "twl_string.h"
+#include "twl_arr.h"
+#include "twl_xstring.h"
 
 static void *twl_lst_join(void *elem_, void *context_)
 {

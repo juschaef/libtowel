@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   twl_dict_del.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/02 11:31:10 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/02 11:45:38 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_dict.h>
 #include <stdlib.h>
+#include "twl_dict.h"
 
 void	twl_dict_del(t_twl_dict *dict, void (*delfn)(void *))
 {

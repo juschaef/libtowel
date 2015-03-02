@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
-#include <twl_xstring.h>
+#include "twl_string.h"
+#include "twl_xstring.h"
 
 char	*twl_strtrim(char const *s)
 {

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   twl_dict_key_exist.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/28 18:29:03 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/02 11:45:48 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_dict.h>
-#include <twl_string.h>
 #include <stdbool.h>
+#include "twl_dict.h"
+#include "twl_string.h"
 
 bool twl_dict_key_exist(t_twl_dict *dict, char *key)
 {

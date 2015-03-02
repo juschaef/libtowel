@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_lst.h>
-#include <twl_arr.h>
 #include <stdlib.h>
+#include "twl_lst.h"
+#include "twl_arr.h"
 
 static void		push_to_arr(void *data, void *arr)
 {

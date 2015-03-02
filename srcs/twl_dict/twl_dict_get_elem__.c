@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_dict.h>
-#include <twl_string.h>
+#include "twl_dict.h"
+#include "twl_string.h"
 
 t_twl_dict_elem		*twl_dict_get_elem__(t_twl_dict *dict, char *key)
 {

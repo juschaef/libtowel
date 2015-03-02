@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_lst.h>
-#include <twl_dict.h>
+#include "twl_lst.h"
+#include "twl_dict.h"
 
 t_twl_dict		*twl_dict_new(void)
 {

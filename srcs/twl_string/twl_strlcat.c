@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
+#include "twl_string.h"
 
 size_t	twl_strlcat(char *dst, const char *src, size_t size)
 {

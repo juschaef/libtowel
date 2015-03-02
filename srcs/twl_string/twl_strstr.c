@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
+#include "twl_string.h"
 
 char	*twl_strstr(const char *s1, const char *s2)
 {

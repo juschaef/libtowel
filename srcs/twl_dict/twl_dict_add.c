@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   twl_dict_add.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:21:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 18:46:07 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/02 11:45:19 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_dict.h>
-#include <twl_string.h>
-#include <twl_xstdio.h>
 #include <stdio.h>
+#include "twl_dict.h"
+#include "twl_string.h"
+#include "twl_xstdio.h"
 
 /*
 ** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_twl_dict *dict,

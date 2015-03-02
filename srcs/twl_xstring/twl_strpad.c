@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
-#include <twl_xstring.h>
 #include <stdlib.h>
+#include "twl_string.h"
+#include "twl_xstring.h"
 
 char	*twl_strpad(const char *s, size_t min_width, char pad_dir, char c)
 {

@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
-#include <twl_lst.h>
-#include <twl_arr.h>
 #include <stdlib.h>
+#include "twl_string.h"
+#include "twl_lst.h"
+#include "twl_arr.h"
 
 static void		swap_elems_directions(t_twl_lst_elem *elem)
 {
