@@ -11,7 +11,7 @@ static bool filter_fn(void *elem, void *context)
 
 static void simple_test(t_test *test)
 {
-	char *arr[4];
+	char *arr[5];
 	char **arr2;
 
 	arr[0] = strdup("aaa");

@@ -3,41 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   twl_putnbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 16:12:52 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/02 18:08:27 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "twl_xstdio.h"
 
 /*
-** Et si tu resolvais le leak dans ft_printf?
+** print number 'n' to file descriptor 1
+** works with minimum int and negatives
 */
 
 void	twl_putnbr(int n)
 {
-	char c;
-
-	if (n == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
 	if (n < 0)
 	{
-		n = -n;
-		write(1, "-", 1);
-	}
-	if (n < 10)
-	{
-		c = n + '0';
-		write(1, &c, 1);
+		twl_putchar('-');
+		if (n < -9)
+		{
+			twl_putnbr(n / 10 * -1);
+		}
+		twl_putchar((char)(n % 10 * -1 + 48));
 	}
 	else
 	{
-		twl_putnbr(n / 10);
-		twl_putnbr(n % 10);
+		if (n > 9)
+		{
+			twl_putnbr(n / 10);
+		}
+		twl_putchar((char)(n % 10 + 48));
 	}
 }
