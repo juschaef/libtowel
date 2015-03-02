@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_xstring.h>
 #include <stdlib.h>
+#include "twl_xstring.h"
 
 char *twl_str_replace_free(char *s, char *target, char *replacement)
 {

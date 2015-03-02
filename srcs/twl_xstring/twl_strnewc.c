@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
 #include <stdlib.h>
+#include "twl_string.h"
 
 char			*twl_strnewc(size_t size, char c)
 {

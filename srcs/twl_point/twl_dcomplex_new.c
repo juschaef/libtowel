@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_point.h>
 #include <stdlib.h>
+#include "twl_point.h"
 
 t_twl_dcomplex	twl_dcomplex_new(double r, double i)
 {

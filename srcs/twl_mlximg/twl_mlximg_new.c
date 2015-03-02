@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   twl_mlximg_new.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/14 22:18:04 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 11:29:30 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/02 11:49:03 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_mlximg.h>
 #include <stdlib.h>
 #include <mlx.h>
+#include "twl_mlximg.h"
 
 t_mlximg	*mlximg_new(void *mlx, int width, int height)
 {

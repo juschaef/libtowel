@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
+#include "twl_string.h"
 
 int		twl_strequ(char const *s1, char const *s2)
 {

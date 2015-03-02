@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_xstring.h>
-#include <twl_string.h>
-#include <twl_stdio.h>
+#include "twl_xstring.h"
+#include "twl_string.h"
+#include "twl_stdio.h"
 
 char	*twl_strtrimc(char const *s, char *chars)
 {

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_opt.h>
 #include <stdbool.h>
-#include <twl_opt_elem.h>
+#include "twl_opt.h"
+#include "twl_opt_elem.h"
 
 bool find_opt(void *opt_elem_, void *opt_key)
 {

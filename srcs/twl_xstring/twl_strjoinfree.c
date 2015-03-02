@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
-#include <twl_xstring.h>
 #include <stdlib.h>
+#include "twl_string.h"
+#include "twl_xstring.h"
 
 char	*twl_strjoinfree(char *left, char *right, char free_num)
 {

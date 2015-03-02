@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_graphics.h>
+#include "twl_graphics.h"
 
 int		get_rgba_color(int r, int g, int b, int a)
 {

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_lst.h>
-#include <twl_xstdlib.h>
+#include "twl_lst.h"
+#include "twl_xstdlib.h"
 
 void	*twl_lst_get_rand(t_lst *lst)
 {

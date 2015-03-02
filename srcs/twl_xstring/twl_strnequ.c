@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
-#include <twl_xstring.h>
+#include "twl_string.h"
+#include "twl_xstring.h"
 
 int		twl_strnequ(char const *s1, char const *s2, size_t n)
 {

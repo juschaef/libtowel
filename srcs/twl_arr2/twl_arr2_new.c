@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <twl_arr2.h>
-#include <twl_xstdlib.h>
+#include "twl_arr2.h"
+#include "twl_xstdlib.h"
 
 void	*twl_arr2_new(int rows, int cols,
 				void *(*new_fn)(int y, int x, void *context), void *context)

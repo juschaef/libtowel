@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_string.h>
-#include <twl_xstring.h>
 #include <wchar.h>
+#include "twl_string.h"
+#include "twl_xstring.h"
 
 static int	nbits(unsigned int nbr)
 {

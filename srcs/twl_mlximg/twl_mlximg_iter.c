@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_mlximg.h>
+#include "twl_mlximg.h"
 
 #define DEFAULT_COLOR 0x000000
 

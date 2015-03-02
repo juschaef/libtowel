@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_dict.h>
-#include <twl_lst.h>
+#include "twl_dict.h"
+#include "twl_lst.h"
 
 void	twl_dict_delone(t_twl_dict *dict, char *key, void (*delfn)())
 {

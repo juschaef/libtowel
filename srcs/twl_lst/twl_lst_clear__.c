@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_clear.c                                    :+:      :+:    :+:   */
+/*   twl_lst_clear__.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/21 23:23:44 by annguyen          #+#    #+#             */
-/*   Updated: 2015/01/30 15:45:43 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/02 11:47:13 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_lst.h>
 #include <stdlib.h>
+#include "twl_lst.h"
 
 static void		del_elem_without_link(t_twl_lst_elem *elem, void (*delfn)())
 {

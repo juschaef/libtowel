@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_xstring.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/26 18:53:13 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/02 11:26:01 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define TWL_XSTRING_H
 
 # include <stddef.h>
-# include <twl_lst.h>
+# include "twl_lst.h"
 
 # define FT_STRPAD_LEFT 'l'
 # define FT_STRPAD_RIGHT 'r'

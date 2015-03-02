@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr_del.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/13 13:41:44 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/25 15:13:53 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/02 11:41:00 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_arr.h>
 #include <stdlib.h>
+#include "twl_arr.h"
 
 static void del_fn_wrapper(void *elem, void *del_fn_)
 {

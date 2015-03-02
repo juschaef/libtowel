@@ -10,12 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_opt.h>
 #include <stdbool.h>
-#include <twl_opt_elem.h>
-#include <stdbool.h>
-#include <twl_opt_elem.h>
-#include <twl_stdio.h>
+#include "twl_opt.h"
+#include "twl_opt_elem.h"
+#include "twl_stdio.h"
 
 static bool		find_fn(void *opt_elem_, void *valid_opts_)
 {

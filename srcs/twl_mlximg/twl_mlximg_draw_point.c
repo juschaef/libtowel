@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <twl_mlximg.h>
-#include <twl_string.h>
+#include "twl_mlximg.h"
+#include "twl_string.h"
 
 void	mlximg_draw_point(t_mlximg *image, t_twl_point *pt, int color)
 {

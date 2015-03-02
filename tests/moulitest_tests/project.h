@@ -14,12 +14,12 @@
 # define PROJECT_H
 
 # include <fw.h>
-# include <twl_string.h>
+# include "twl_string.h"
 # include <string.h>
 # include <ctype.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <twl_lst.h>
+# include "twl_lst.h"
 
 char	map_test(char c);
 char	mapi_test(unsigned int i, char c);

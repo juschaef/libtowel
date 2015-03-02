@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_lst.h>
 #include <stdlib.h>
 #include <assert.h>
+#include "twl_lst.h"
 
 void	twl_lst_pop(t_lst *lst, void (*f)())
 {

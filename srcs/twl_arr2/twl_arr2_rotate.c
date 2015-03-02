@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   twl_arr2_rotate.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 14:35:01 by juschaef          #+#    #+#             */
-/*   Updated: 2015/03/01 17:21:30 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/02 11:43:28 by gbarraul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <twl_arr2.h>
-#include <twl_arr.h>
 #include <stdlib.h>
+#include "twl_arr2.h"
+#include "twl_arr.h"
 
 static void		*new_fn(int y, int x, void *arr_original_)
 {
