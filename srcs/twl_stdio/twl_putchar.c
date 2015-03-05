@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_putchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/02 16:48:37 by gbarraul          #+#    #+#             */
-/*   Updated: 2015/03/02 18:08:09 by gbarraul         ###   ########.fr       */
+/*   Updated: 2015/03/04 20:00:01 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** print char 'c' to file descriptor 1
 */
 
-void	twl_putchar(char c)
+int		twl_putchar(int c)
 {
-	write(1, &c, 1);
+	return (write(1, &c, 1));
 }
