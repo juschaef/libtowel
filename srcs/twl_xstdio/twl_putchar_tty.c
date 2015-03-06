@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_get_elem__.c                               :+:      :+:    :+:   */
+/*   twl_putchar_tty.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/06 16:31:21 by juschaef         ###   ########.fr       */
+/*   Created: 2015/03/02 16:39:07 by gbarraul          #+#    #+#             */
+/*   Updated: 2015/03/06 18:15:59 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <assert.h>
-#include "twl_lst.h"
+#include <unistd.h>
+#include <fcntl.h>
 
-t_twl_lst_elem	*twl_lst_get_elem__(t_lst *lst, int index)
+/*
+** print char 'c' to file descriptor 'fd'
+*/
+
+int		twl_putchar_tty(int c)
 {
-	t_twl_lst_elem	*elem;
-	size_t			len;
+	int fd;
+	int ret;
 
-	len = twl_lst_len(lst);
-	if (index < 0)
-		index = (int)len + index;
-	elem = lst->head;
-	while (elem && index--)
-		elem = elem->next;
-	return (elem);
+	fd = open("/dev/tty", O_WRONLY);
+	ret = write(fd, &c, 1);
+	close(fd);
+	return (ret);
 }
