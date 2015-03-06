@@ -3,11 +3,10 @@
 
 static void simple_test(t_test *test)
 {
-	char *arr[4];
+	char **arr;
 
-	arr[0] = strdup("aaa");
-	arr[2] = NULL;
-
+	arr = twl_arr_new(3);
+	twl_arr_push(arr, "aaa");
 	twl_arr_push(arr, "bbb");
 	twl_arr_push(arr, "ccc");
 	mt_assert(strcmp(arr[0], "aaa") == 0);

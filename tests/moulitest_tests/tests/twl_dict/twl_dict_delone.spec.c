@@ -10,7 +10,7 @@ static void	del_data(char *str)
 
 static void test_del_first(t_test *test)
 {
-	t_twl_dict *dict;
+	t_dict *dict;
 
 	dict = twl_lst_new();
 	twl_dict_add(dict, "key1", strdup("data1"));
@@ -26,7 +26,7 @@ static void test_del_first(t_test *test)
 
 static void test_del_middle(t_test *test)
 {
-	t_twl_dict *dict;
+	t_dict *dict;
 
 	dict = twl_lst_new();
 	twl_dict_add(dict, "key1", strdup("data1"));
@@ -42,7 +42,7 @@ static void test_del_middle(t_test *test)
 
 static void test_del_last(t_test *test)
 {
-	t_twl_dict *dict;
+	t_dict *dict;
 
 	dict = twl_lst_new();
 	twl_dict_add(dict, "key1", strdup("data1"));

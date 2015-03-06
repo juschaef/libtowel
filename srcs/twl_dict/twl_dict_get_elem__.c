@@ -13,9 +13,9 @@
 #include "twl_dict.h"
 #include "twl_string.h"
 
-t_twl_dict_elem		*twl_dict_get_elem__(t_twl_dict *dict, char *key)
+t_dict_elem		*twl_dict_get_elem__(t_dict *dict, char *key)
 {
-	t_twl_dict_elem	*elem;
+	t_dict_elem	*elem;
 
 	elem = dict->head;
 	while (elem)
