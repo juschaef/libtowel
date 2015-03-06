@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/15 14:55:14 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/03 17:17:45 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/06 15:05:52 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@ typedef struct	s_twl_complex
 	long double		r;
 	long double		i;
 }				t_twl_complex;
+
+int		twl_abs(int n);
 
 #endif
