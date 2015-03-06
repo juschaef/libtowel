@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/28 18:10:58 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/06 17:56:54 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void						*twl_lst_find(t_lst *lst,
 void						twl_lst_pop(t_lst *lst, void (*f)());
 void						twl_lst_push(t_lst *lst, void *data);
 void						twl_lst_unshift(t_lst *lst, void *data);
+void						twl_lst_swap(t_lst *lst, int i, int j);
 
 /*
 ** Collection
