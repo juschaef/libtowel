@@ -16,14 +16,14 @@
 #include "twl_xstdio.h"
 
 /*
-** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_twl_dict *dict,
-** t_twl_dict_elem *elem)"
+** Mise a la norme, creer une fonction "twl_lst_push_elem_(t_dict *dict,
+** t_dict_elem *elem)"
 */
 
-void		twl_dict_add(t_twl_dict *dict, char *key, void *data)
+void		twl_dict_add(t_dict *dict, char *key, void *data)
 {
-	t_twl_dict_elem	*elem;
-	t_twl_dict_elem	*tmpelem;
+	t_dict_elem	*elem;
+	t_dict_elem	*tmpelem;
 
 	if (twl_dict_key_exist(dict, key))
 	{

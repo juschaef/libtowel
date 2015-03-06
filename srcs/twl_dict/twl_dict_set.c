@@ -13,10 +13,10 @@
 #include "twl_dict.h"
 #include "twl_string.h"
 
-void		twl_dict_set(t_twl_dict *dict, char *key,
+void		twl_dict_set(t_dict *dict, char *key,
 												void *data, void (*delfn)())
 {
-	t_twl_dict_elem	*elem;
+	t_dict_elem	*elem;
 
 	elem = twl_dict_get_elem__(dict, key);
 	if (elem != NULL)

@@ -13,9 +13,9 @@
 #include "twl_dict.h"
 #include "twl_lst.h"
 
-void	twl_dict_delone(t_twl_dict *dict, char *key, void (*delfn)())
+void	twl_dict_delone(t_dict *dict, char *key, void (*delfn)())
 {
-	t_twl_dict_elem	*elem;
+	t_dict_elem	*elem;
 
 	elem = twl_dict_get_elem__(dict, key);
 	twl_lst_link__(elem->prev, elem->next);

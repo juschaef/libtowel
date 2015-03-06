@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "twl_dict.h"
 
-void	twl_dict_del(t_twl_dict *dict, void (*delfn)(void *))
+void	twl_dict_del(t_dict *dict, void (*delfn)(void *))
 {
 	twl_lst_del(dict, delfn);
 }
