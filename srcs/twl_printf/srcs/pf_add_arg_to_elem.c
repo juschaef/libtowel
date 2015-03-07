@@ -68,7 +68,7 @@ static void		*pf_get_values(t_pf *pf, t_pfelem *pfelem, int i, int ac)
 
 void			pf_add_arg_to_elem(t_pf *pf)
 {
-	t_lst_elem	*elem;
+	t_lst_elem		*elem;
 	t_pfelem		*pfelem;
 	int				i;
 	int				ac;

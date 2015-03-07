@@ -15,7 +15,7 @@
 void		*twl_lst_find(t_lst *lst, bool (*iter_fn)(void *data,
 												void *context), void *context)
 {
-	t_lst_elem	*elem;
+	t_lst_elem		*elem;
 
 	elem = lst->head;
 	while (elem)

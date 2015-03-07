@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst_get_elem__.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/06 16:31:21 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/07 14:46:48 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <assert.h>
 #include "twl_lst.h"
 
-t_lst_elem	*twl_lst_get_elem__(t_lst *lst, int index)
+t_lst_elem		*twl_lst_get_elem__(t_lst *lst, int index)
 {
-	t_lst_elem	*elem;
+	t_lst_elem		*elem;
 	size_t			len;
 
 	len = twl_lst_len(lst);

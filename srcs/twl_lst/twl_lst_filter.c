@@ -16,8 +16,8 @@
 void	twl_lst_filter(t_lst *lst, bool (*filter_fn)
 			(void *data, void *context), void *context, void (*delfn)(void *))
 {
-	t_lst_elem	*elem;
-	t_lst_elem	*next;
+	t_lst_elem		*elem;
+	t_lst_elem		*next;
 
 	elem = lst->head;
 	while (elem)

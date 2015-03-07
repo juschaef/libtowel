@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_strjoinlst.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/26 17:09:17 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/07 14:47:46 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 static void *twl_lst_join(void *elem_, void *context_)
 {
 	t_twl_strjoinarr_context	*context;
-	t_lst_elem				*elem;
+	t_lst_elem					*elem;
 
 	context = context_;
 	elem = elem_;

@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/07 14:44:07 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/07 14:50:47 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 typedef struct				s_lst_elem
 {
 	void					*data;
-	struct s_lst_elem	*next;
-	struct s_lst_elem	*prev;
+	struct s_lst_elem		*next;
+	struct s_lst_elem		*prev;
 	char					*key;
 }							t_lst_elem;
 
 typedef struct				s_lst
 {
-	t_lst_elem			*head;
+	t_lst_elem				*head;
 }							t_lst;
 
 /*
@@ -103,8 +103,8 @@ void						*twl_lst_to_arr2(t_lst *lst, int cols);
 ** Private
 */
 
-t_lst_elem				*twl_lst_get_elem__(t_lst *lst, int index);
-t_lst_elem				*twl_lst_create_elem__(void *data);
+t_lst_elem					*twl_lst_get_elem__(t_lst *lst, int index);
+t_lst_elem					*twl_lst_create_elem__(void *data);
 void						twl_lst_del_elem__(t_lst *lst,
 									t_lst_elem *elem,
 														void (*delfn)());

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 09:17:53 by juschaef          #+#    #+#             */
-/*   Updated: 2015/01/30 15:45:50 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/07 14:46:38 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t		twl_lst_count(t_lst *lst, void *(*f)(void *))
 {
 	int				len;
-	t_lst_elem	*elem;
+	t_lst_elem		*elem;
 
 	len = 0;
 	elem = lst->head;
