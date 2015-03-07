@@ -16,7 +16,7 @@
 # include "twl_lst.h"
 
 typedef t_lst			t_dict;
-typedef t_twl_lst_elem	t_dict_elem;
+typedef t_lst_elem	t_dict_elem;
 
 /*
 ** Basics

@@ -14,7 +14,7 @@
 
 int twl_lst_reducei(t_lst *lst, int (*fn)(void *data, int memo), int memo)
 {
-	t_twl_lst_elem	*elem;
+	t_lst_elem	*elem;
 
 	elem = lst->head;
 	while (elem)

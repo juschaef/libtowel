@@ -3,8 +3,8 @@
 
 static void simple_test(t_test *test)
 {
-	t_twl_lst_elem *elem1;
-	t_twl_lst_elem *elem2;
+	t_lst_elem *elem1;
+	t_lst_elem *elem2;
 
 	elem1 = twl_lst_create_elem__("111");
 	elem2 = twl_lst_create_elem__("222");

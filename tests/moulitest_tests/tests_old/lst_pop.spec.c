@@ -4,7 +4,7 @@ UT_TEST(twl_lst_pop)
 {
 	UT_ASSERT_W(0);
 	// t_lst	*lst;
-	// t_twl_lst_elem *elem;
+	// t_lst_elem *elem;
 	// lst = twl_lst_new();
 
 	// twl_lst_push(lst, twl_lst_create_elem(strdup("aaa")));

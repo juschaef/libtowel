@@ -14,10 +14,10 @@
 #include "twl_printf.h"
 
 void	twl_lst_iter_elem__(t_lst *lst,
-				void (*f)(t_twl_lst_elem *elem, void *context), void *context)
+				void (*f)(t_lst_elem *elem, void *context), void *context)
 {
-	t_twl_lst_elem	*elem;
-	t_twl_lst_elem	*next;
+	t_lst_elem	*elem;
+	t_lst_elem	*next;
 
 	elem = lst->head;
 	while (elem)

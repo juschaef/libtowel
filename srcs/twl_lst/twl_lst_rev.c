@@ -15,9 +15,9 @@
 #include "twl_lst.h"
 #include "twl_arr.h"
 
-static void		swap_elems_directions(t_twl_lst_elem *elem)
+static void		swap_elems_directions(t_lst_elem *elem)
 {
-	t_twl_lst_elem *tmp_elem;
+	t_lst_elem *tmp_elem;
 
 	tmp_elem = elem->next;
 	elem->next = elem->prev;
@@ -26,8 +26,8 @@ static void		swap_elems_directions(t_twl_lst_elem *elem)
 
 void			twl_lst_rev(t_lst *lst)
 {
-	t_twl_lst_elem *elem;
-	t_twl_lst_elem *tmp_elem;
+	t_lst_elem *elem;
+	t_lst_elem *tmp_elem;
 
 	elem = lst->head;
 	while (elem)

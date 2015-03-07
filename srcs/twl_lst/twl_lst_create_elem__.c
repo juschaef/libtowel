@@ -13,11 +13,11 @@
 #include <stdlib.h>
 #include "twl_lst.h"
 
-t_twl_lst_elem	*twl_lst_create_elem__(void *data)
+t_lst_elem	*twl_lst_create_elem__(void *data)
 {
-	t_twl_lst_elem *elem;
+	t_lst_elem *elem;
 
-	elem = (t_twl_lst_elem *)malloc(sizeof(t_twl_lst_elem));
+	elem = (t_lst_elem *)malloc(sizeof(t_lst_elem));
 	elem->data = data;
 	elem->next = NULL;
 	elem->prev = NULL;

@@ -21,7 +21,7 @@
 
 void	*twl_lst_get(t_lst *lst, int index)
 {
-	t_twl_lst_elem	*elem;
+	t_lst_elem	*elem;
 
 	elem = twl_lst_get_elem__(lst, index);
 	if (elem)

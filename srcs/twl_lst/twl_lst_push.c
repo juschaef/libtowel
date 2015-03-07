@@ -14,8 +14,8 @@
 
 void	twl_lst_push(t_lst *lst, void *data)
 {
-	t_twl_lst_elem *tmpelem;
-	t_twl_lst_elem *newelem;
+	t_lst_elem *tmpelem;
+	t_lst_elem *newelem;
 
 	newelem = twl_lst_create_elem__(data);
 	if (!lst->head)

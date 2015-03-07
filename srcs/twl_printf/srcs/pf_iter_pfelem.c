@@ -14,7 +14,7 @@
 
 void	pf_iter_pfelem(t_pf *pf)
 {
-	t_twl_lst_elem	*elem;
+	t_lst_elem	*elem;
 	t_pfelem		*pfelem;
 	void			*conv_str_data;
 

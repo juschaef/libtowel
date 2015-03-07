@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/07 14:43:38 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/07 14:44:07 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@
 # include "twl_string.h"
 # include "twl_sort.h"
 
-typedef struct				s_twl_lst_elem
+typedef struct				s_lst_elem
 {
 	void					*data;
-	struct s_twl_lst_elem	*next;
-	struct s_twl_lst_elem	*prev;
+	struct s_lst_elem	*next;
+	struct s_lst_elem	*prev;
 	char					*key;
-}							t_twl_lst_elem;
+}							t_lst_elem;
 
 typedef struct				s_lst
 {
-	t_twl_lst_elem			*head;
+	t_lst_elem			*head;
 }							t_lst;
 
 /*
@@ -103,22 +103,16 @@ void						*twl_lst_to_arr2(t_lst *lst, int cols);
 ** Private
 */
 
-t_twl_lst_elem				*twl_lst_get_elem__(t_lst *lst, int index);
-t_twl_lst_elem				*twl_lst_create_elem__(void *data);
+t_lst_elem				*twl_lst_get_elem__(t_lst *lst, int index);
+t_lst_elem				*twl_lst_create_elem__(void *data);
 void						twl_lst_del_elem__(t_lst *lst,
-									t_twl_lst_elem *elem,
+									t_lst_elem *elem,
 														void (*delfn)());
 void						twl_lst_iter_elem__(t_lst *lst,
-			void (*f)(t_twl_lst_elem *elem, void *context), void *context);
-void						twl_lst_link__(t_twl_lst_elem *elem1,
-													t_twl_lst_elem *elem2);
+			void (*f)(t_lst_elem *elem, void *context), void *context);
+void						twl_lst_link__(t_lst_elem *elem1,
+													t_lst_elem *elem2);
 
 void						twl_lst_clear__(t_lst *lst, void (*delfn)());
-
-/*
-** Implement if necessary
-** size_t				size__;
-** t_twl_lst_elem		tail__;
-*/
 
 #endif

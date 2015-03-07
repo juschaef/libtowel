@@ -1,6 +1,6 @@
 #include "project.h"
 
-static void *twl_lst_join(t_twl_lst_elem *elem, void *memo)
+static void *twl_lst_join(t_lst_elem *elem, void *memo)
 {
 	memo = twl_strjoinfree(memo, elem->data, 'l');
 	if (elem->next)
@@ -8,7 +8,7 @@ static void *twl_lst_join(t_twl_lst_elem *elem, void *memo)
 	return (memo);
 }
 
-static void *sum(t_twl_lst_elem *elem, void *memo)
+static void *sum(t_lst_elem *elem, void *memo)
 {
 	*(int *)memo = *(int *)elem->data + *(int *)memo;
 	return (memo);

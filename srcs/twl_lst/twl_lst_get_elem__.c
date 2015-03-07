@@ -13,9 +13,9 @@
 #include <assert.h>
 #include "twl_lst.h"
 
-t_twl_lst_elem	*twl_lst_get_elem__(t_lst *lst, int index)
+t_lst_elem	*twl_lst_get_elem__(t_lst *lst, int index)
 {
-	t_twl_lst_elem	*elem;
+	t_lst_elem	*elem;
 	size_t			len;
 
 	len = twl_lst_len(lst);
