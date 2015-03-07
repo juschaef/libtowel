@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:20:27 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/07 15:36:39 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/07 16:26:36 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef t_lst_elem__	t_dict_elem;
 
 t_dict					*twl_dict_new(void);
 void					twl_dict_del(t_dict *dict, void (*delfn)(void *));
+size_t					twl_dict_len(t_dict *dict);
 
 void					*twl_dict_get(t_dict *dict, char *key);
 void					twl_dict_add(t_dict *dict, char *key, void *data);
