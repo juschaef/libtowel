@@ -1,6 +1,6 @@
 #include "project.h"
 
-static t_lst_elem *catHello(t_lst_elem *elem)
+static t_lst_elem__ *catHello(t_lst_elem__ *elem)
 {
 	char *str;
 

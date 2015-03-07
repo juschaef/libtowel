@@ -18,7 +18,7 @@
 static void *twl_lst_join(void *elem_, void *context_)
 {
 	t_twl_strjoinarr_context	*context;
-	t_lst_elem					*elem;
+	t_lst_elem__				*elem;
 
 	context = context_;
 	elem = elem_;

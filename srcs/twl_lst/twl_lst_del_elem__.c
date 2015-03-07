@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "twl_lst.h"
 
-void	twl_lst_del_elem__(t_lst *lst, t_lst_elem *elem, void (*delfn)())
+void	twl_lst_del_elem__(t_lst *lst, t_lst_elem__ *elem, void (*delfn)())
 {
 	twl_lst_link__(elem->prev, elem->next);
 	if (!elem->prev)

@@ -16,7 +16,7 @@
 
 void	*twl_lst_popi(t_lst *lst, int index)
 {
-	t_lst_elem		*elem;
+	t_lst_elem__	*elem;
 	void			*data;
 
 	elem = twl_lst_get_elem__(lst, index);

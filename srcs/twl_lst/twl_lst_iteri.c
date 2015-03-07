@@ -16,8 +16,8 @@
 void	twl_lst_iteri(t_lst *lst, void (*iter_fn)(void *data,
 									int index, void *context), void *context)
 {
-	t_lst_elem		*elem;
-	t_lst_elem		*next;
+	t_lst_elem__	*elem;
+	t_lst_elem__	*next;
 	int				index;
 
 	elem = lst->head;

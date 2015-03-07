@@ -15,7 +15,7 @@
 size_t		twl_lst_count(t_lst *lst, void *(*f)(void *))
 {
 	int				len;
-	t_lst_elem		*elem;
+	t_lst_elem__	*elem;
 
 	len = 0;
 	elem = lst->head;

@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:20:27 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/07 14:01:42 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/07 14:54:37 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "twl_lst.h"
 
 typedef t_lst			t_dict;
-typedef t_lst_elem	t_dict_elem;
+typedef t_lst_elem__	t_dict_elem;
 
 /*
 ** Basics

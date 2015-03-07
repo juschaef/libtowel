@@ -16,7 +16,7 @@
 
 void	*twl_lst_pop(t_lst *lst)
 {
-	t_lst_elem		*elem;
+	t_lst_elem__	*elem;
 	void			*data;
 
 	elem = lst->head;

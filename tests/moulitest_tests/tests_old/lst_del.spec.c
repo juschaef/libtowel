@@ -13,8 +13,8 @@ UT_TEST(twl_lst_del)
 	t_lst *lst;
 	char *str1;
 	char *str2;
-	t_lst_elem *elem1;
-	t_lst_elem *elem2;
+	t_lst_elem__ *elem1;
+	t_lst_elem__ *elem2;
 
 	lst = twl_lst_new();
 	str1 = strdup("aaa");

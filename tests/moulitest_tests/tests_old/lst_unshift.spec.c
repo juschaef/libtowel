@@ -3,7 +3,7 @@
 UT_TEST(twl_lst_unshift)
 {
 	t_lst	*lst;
-	t_lst_elem *elem;
+	t_lst_elem__ *elem;
 	lst = twl_lst_new();
 
 	twl_lst_push(lst, twl_lst_create_elem("aaa"));

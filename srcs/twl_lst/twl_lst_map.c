@@ -15,7 +15,7 @@
 t_lst		*twl_lst_map(t_lst *lst, void *(*f)(void *data))
 {
 	t_lst			*new_lst;
-	t_lst_elem		*elem;
+	t_lst_elem__	*elem;
 
 	elem = lst->head;
 	new_lst = twl_lst_new();
