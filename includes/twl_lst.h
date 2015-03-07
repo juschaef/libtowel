@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/06 22:03:00 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/07 14:38:13 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,14 @@ void						twl_lst_swap(t_lst *lst, int i, int j);
 */
 
 void						twl_lst_iter(t_lst *lst,
-						void (*f)(void *data, void *context), void *context);
+	void (*f)(void *data, void *context), void *context);
 void						twl_lst_iteri(t_lst *lst,
-						void (*f)(void *data, void *context, int index),
-																void *context);
+	void (*iter_fn)(void *data, int index, void *context), void *context);
+
 void						twl_lst_filter(t_lst *lst,
-						bool (*filter_fn)(void *data, void *context),
-						void *context, void (*delfn)(void *));
-t_lst						*twl_lst_map(t_lst *lst,
-													void *(*f)(void *data));
+	bool (*filter_fn)(void *data, void *context),
+	void *context, void (*delfn)(void *));
+t_lst						*twl_lst_map(t_lst *lst, void *(*f)(void *data));
 void						*twl_lst_reduce(t_lst *lst,
 						void *(*fn)(void *data, void *memo), void *context);
 int							twl_lst_reducei(t_lst *lst,

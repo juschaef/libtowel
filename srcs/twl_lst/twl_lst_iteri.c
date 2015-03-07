@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst_iteri.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:29:17 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/24 14:23:31 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/07 14:36:19 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "twl_lst.h"
 #include "twl_printf.h"
 
-void	twl_lst_iteri(t_lst *lst, void (*f)(void *data,
-									void *context, int index), void *context)
+void	twl_lst_iteri(t_lst *lst, void (*iter_fn)(void *data,
+									int index, void *context), void *context)
 {
 	t_twl_lst_elem	*elem;
 	t_twl_lst_elem	*next;
@@ -25,7 +25,7 @@ void	twl_lst_iteri(t_lst *lst, void (*f)(void *data,
 	while (elem)
 	{
 		next = elem->next;
-		f(elem->data, context, index);
+		iter_fn(elem->data, index, context);
 		elem = next;
 		index++;
 	}
