@@ -6,16 +6,18 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 21:12:40 by annguyen          #+#    #+#             */
-/*   Updated: 2015/03/07 14:34:31 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/07 15:04:29 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include <sys/stat.h>
 
-int		twl_issocket(char *path)
+bool		twl_issocket(char *path)
 {
 	struct stat st;
 
-	lstat(path, &st);
+	if (lstat(path, &st) == -1)
+		return (false);
 	return (S_ISSOCK(st.st_mode));
 }
