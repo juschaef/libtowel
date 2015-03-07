@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/28 14:31:03 by juschaef          #+#    #+#             */
-/*   Updated: 2015/03/07 14:00:30 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/07 14:42:33 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ void			twl_arr2_iter(void *map_,
 void			twl_arr2_iter_coord(void *arr2_,
 	void (*iter_fn)(void *arr2, int y, int x, void *context), void *context);
 void			*twl_arr2_rotate(void *arr_, int times);
-void			*twl_lst_to_arr2(t_lst *lst, int width);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/07 14:38:13 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/07 14:43:38 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,14 @@ int							twl_lst_reducei(t_lst *lst,
 void						twl_lst_sort(t_lst *lst,
 									t_sort_cmp_fn *cmp_fn, void *context);
 void						twl_lst_rev(t_lst *lst);
+
+/*
+** Convert
+*/
+
+void						**twl_lst_to_arr(t_lst *lst);
+void						*twl_lst_to_arr2(t_lst *lst, int cols);
+
 /*
 ** Private
 */
@@ -104,7 +112,7 @@ void						twl_lst_iter_elem__(t_lst *lst,
 			void (*f)(t_twl_lst_elem *elem, void *context), void *context);
 void						twl_lst_link__(t_twl_lst_elem *elem1,
 													t_twl_lst_elem *elem2);
-void						**twl_lst_to_arr(t_lst *lst);
+
 void						twl_lst_clear__(t_lst *lst, void (*delfn)());
 
 /*
