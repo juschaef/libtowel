@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:20:27 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/07 14:54:37 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/07 15:36:39 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ bool					twl_dict_key_exist(t_dict *dict, char *key);
 /*
 ** iter
 */
+
+void	twl_dict_iter(t_lst *lst,
+	void (*f)(char *key, void *data, void *context), void *context);
 
 /*
 ** private
