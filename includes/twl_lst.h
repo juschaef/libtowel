@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lst.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/08 16:45:00 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/08 21:37:07 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ size_t						twl_lst_len(t_lst *lst);
 ** Aggregate
 */
 
-size_t						twl_lst_count(t_lst *lst, void *(*f)(void *));
+size_t						twl_lst_count(t_lst *lst,
+				void *(*condition_fn)(void *, void *context), void *context);
 
 /*
 ** Search
