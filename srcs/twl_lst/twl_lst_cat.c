@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_insert.c                                   :+:      :+:    :+:   */
+/*   twl_lst_cat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/08 16:31:30 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/08 16:39:09 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,13 @@
 #include "twl_lst.h"
 #include "twl_xstdio.h"
 
-void	twl_lst_insert(t_lst *lst, int index, void *data)
+void	twl_lst_cat(t_lst *lst_dest, t_lst *lst_src)
 {
 	t_lst_elem__ *elem;
 
-	if (index == 0)
-		twl_lst_unshift(lst, data);
-	else if (index >= (int)twl_lst_len(lst))
-		twl_putstr_fd("\n[warning] Index does not exist !\n", 2);
+	elem = twl_lst_get_elem__(lst_dest, -1);
+	if (!elem)
+		lst_dest->head = lst_src->head;
 	else
-	{	
-		elem = twl_lst_get_elem__(lst, index);
-		twl_lst_link3__(elem->prev, twl_lst_create_elem__(data), elem);
-	}
+		twl_lst_link__(elem, lst_src->head);
 }
