@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/08 16:45:00 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/09 17:26:56 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define TWL_LST_H
 
 # include <stddef.h>
+# include <stdbool.h>
 # include "twl_string.h"
 # include "twl_sort.h"
 
@@ -36,6 +37,8 @@ typedef struct				s_lst
 
 t_lst						*twl_lst_new(void);
 void						twl_lst_del(t_lst *lst, void (*delfn)());
+t_lst						*twl_lst_copy(t_lst *lst,
+											void *(*copy_fn)(void *data));
 void						*twl_lst_get(t_lst *lst, int index);
 void						*twl_lst_get_rand(t_lst *lst);
 size_t						twl_lst_len(t_lst *lst);
@@ -44,14 +47,15 @@ size_t						twl_lst_len(t_lst *lst);
 ** Aggregate
 */
 
-size_t						twl_lst_count(t_lst *lst, void *(*f)(void *));
+size_t						twl_lst_count(t_lst *lst, 
+				 		bool (*f)(void *data, void *context), void *context);
 
 /*
 ** Search
 */
 
 int							twl_lst_indexof(t_lst *lst, void *target,
-														int (*cmp_fn)());
+														bool (*cmp_fn)());
 void						*twl_lst_find(t_lst *lst,
 						bool (*f)(void *data, void *context), void *context);
 

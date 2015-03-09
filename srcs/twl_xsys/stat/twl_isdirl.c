@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_count.c                                    :+:      :+:    :+:   */
+/*   twl_isdirl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/07 09:17:53 by juschaef          #+#    #+#             */
-/*   Updated: 2015/03/09 10:27:46 by juschaef         ###   ########.fr       */
+/*   Created: 2015/01/20 21:12:40 by annguyen          #+#    #+#             */
+/*   Updated: 2015/03/09 10:09:18 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include <sys/stat.h>
+#include <stdbool.h>
 
-size_t		twl_lst_count(t_lst *lst, bool (*f)(void *data, void *context),
-																void *context)
+
+bool	twl_isdirl(char *path)
 {
-	int				count;
-	t_lst_elem__	*elem;
+	struct stat st;
 
-	count = 0;
-	elem = lst->head;
-	while (elem)
-	{
-		if (f(elem->data, context))
-			count++;
-		elem = elem->next;
-	}
-	return (count);
+	if (stat(path, &st) == -1)
+		return (false);
+	return (S_ISDIR(st.st_mode));
 }

@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_count.c                                    :+:      :+:    :+:   */
+/*   twl_lst_copy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/07 09:17:53 by juschaef          #+#    #+#             */
-/*   Updated: 2015/03/09 10:27:46 by juschaef         ###   ########.fr       */
+/*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
+/*   Updated: 2015/03/09 17:30:22 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "twl_lst.h"
 
-size_t		twl_lst_count(t_lst *lst, bool (*f)(void *data, void *context),
-																void *context)
+t_lst *twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
 {
-	int				count;
-	t_lst_elem__	*elem;
+	t_lst *lst_new;
+	t_lst_elem__ *elem;
 
-	count = 0;
 	elem = lst->head;
+	lst_new = twl_lst_new();
 	while (elem)
 	{
-		if (f(elem->data, context))
-			count++;
+		if (copy_fn)
+			twl_lst_push(lst_new, copy_fn(elem->data));
+		else
+			twl_lst_push(lst_new, elem->data);
 		elem = elem->next;
 	}
-	return (count);
+	return (lst_new);
 }

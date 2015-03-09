@@ -4,11 +4,12 @@
 // size_t		twl_lstcount(t_lst *lst, void *(*f)(void *));
 
 
-void 	*twl_count_chars_3(void *s)
+bool twl_count_chars_3(void *s, void *context)
 {
 	if (strlen(s) == 3)
-		return (s);
-	return (0);
+		return (true);
+	return (false);
+	(void)context;
 
 }
 
@@ -26,7 +27,7 @@ static void test_simple_count(t_test *test)
 	twl_lst_push(lst, strdup("1111"));
 	twl_lst_push(lst, strdup("ccc"));
 
-	mt_assert(twl_lst_count(lst, twl_count_chars_3) == 3);
+	mt_assert(twl_lst_count(lst, twl_count_chars_3, NULL) == 3);
 }
 
 void	suite_twl_lst_count(t_suite *suite)
