@@ -6,15 +6,13 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 19:33:34 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/09 17:26:56 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/09 17:39:18 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TWL_LST_H
-# define TWL_LST_H
+#define TWL_LST_H
 
-# include <stddef.h>
-# include <stdbool.h>
 # include "twl_string.h"
 # include "twl_sort.h"
 
@@ -47,8 +45,7 @@ size_t						twl_lst_len(t_lst *lst);
 ** Aggregate
 */
 
-size_t						twl_lst_count(t_lst *lst, 
-				 		bool (*f)(void *data, void *context), void *context);
+size_t						twl_lst_count(t_lst *lst, bool (*f)(void *data, void *context), void *context);
 
 /*
 ** Search

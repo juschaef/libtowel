@@ -3,14 +3,12 @@
 
 // size_t		twl_lstcount(t_lst *lst, void *(*f)(void *));
 
-
 bool twl_count_chars_3(void *s, void *context)
 {
 	if (strlen(s) == 3)
 		return (true);
 	return (false);
 	(void)context;
-
 }
 
 
