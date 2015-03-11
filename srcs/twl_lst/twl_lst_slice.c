@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/08 17:04:00 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/11 16:52:33 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 
 t_lst						*twl_lst_slice(t_lst *lst, int begin, int end)
 {
-	t_lst *new_lst;
-	t_lst_elem__ *elem;
-	size_t	len;
+	t_lst			*new_lst;
+	t_lst_elem__	*elem;
+	size_t			len;
 
 	new_lst = twl_lst_new();
 	elem = twl_lst_get_elem__(lst, begin);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_dict.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 13:20:27 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/07 16:26:36 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/11 16:53:36 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ bool					twl_dict_key_exist(t_dict *dict, char *key);
 ** iter
 */
 
-void	twl_dict_iter(t_lst *lst,
+void					twl_dict_iter(t_lst *lst,
 	void (*f)(char *key, void *data, void *context), void *context);
 
 /*

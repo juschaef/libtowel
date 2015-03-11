@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_isdirl.c                                       :+:      :+:    :+:   */
+/*   term_cols.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/20 21:12:40 by annguyen          #+#    #+#             */
-/*   Updated: 2015/03/11 16:53:24 by juschaef         ###   ########.fr       */
+/*   Created: 2015/02/24 15:35:27 by juschaef          #+#    #+#             */
+/*   Updated: 2015/03/11 16:52:55 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/stat.h>
-#include <stdbool.h>
+#include <sys/ioctl.h>
+#include <unistd.h>
 
-bool	twl_isdirl(char *path)
+int		term_cols(void)
 {
-	struct stat st;
+	struct winsize w;
 
-	if (stat(path, &st) == -1)
-		return (false);
-	return (S_ISDIR(st.st_mode));
+	ioctl(0, TIOCGWINSZ, &w);
+	return (w.ws_col);
 }

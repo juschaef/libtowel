@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/08 16:31:30 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/11 16:52:09 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	twl_lst_insert(t_lst *lst, int index, void *data)
 	else if (index >= (int)twl_lst_len(lst))
 		twl_putstr_fd("\n[warning] Index does not exist !\n", 2);
 	else
-	{	
+	{
 		elem = twl_lst_get_elem__(lst, index);
 		twl_lst_link3__(elem->prev, twl_lst_create_elem__(data), elem);
 	}

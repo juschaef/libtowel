@@ -6,13 +6,12 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 21:12:40 by annguyen          #+#    #+#             */
-/*   Updated: 2015/03/07 15:05:38 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/11 16:53:19 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <sys/stat.h>
 #include <stdbool.h>
-
 
 bool	twl_isdir(char *path)
 {

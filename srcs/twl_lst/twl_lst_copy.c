@@ -6,7 +6,7 @@
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/09 17:30:22 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/11 16:51:54 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_lst *twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
 {
-	t_lst *lst_new;
-	t_lst_elem__ *elem;
+	t_lst			*lst_new;
+	t_lst_elem__	*elem;
 
 	elem = lst->head;
 	lst_new = twl_lst_new();

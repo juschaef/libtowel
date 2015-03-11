@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_xstring.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gbarraul <gbarraul@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 19:05:35 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/02 11:26:01 by gbarraul         ###   ########.fr       */
+/*   Updated: 2015/03/11 11:10:34 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,5 @@ char			*twl_wstr_to_str(wchar_t *wstr);
 size_t			twl_wstrlen(wchar_t *wstr);
 char			*twl_strjoinarr(const char **arr, const char *sep);
 char			*twl_strjoinlst(t_lst *lst, const char *sep);
-
+void			twl_add_char(char *s, char c);
 #endif

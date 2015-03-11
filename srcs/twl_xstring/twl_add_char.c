@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   term_width.c                                       :+:      :+:    :+:   */
+/*   twl_add_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/24 15:35:27 by juschaef          #+#    #+#             */
-/*   Updated: 2015/02/24 15:36:40 by juschaef         ###   ########.fr       */
+/*   Created: 2014/11/05 19:45:53 by yyang             #+#    #+#             */
+/*   Updated: 2015/03/11 11:10:21 by juschaef         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/ioctl.h>
-#include <unistd.h>
-
-int		term_width(void)
+void	twl_add_char(char *s, char c)
 {
-	struct winsize w;
-
-	ioctl(0, TIOCGWINSZ, &w);
-	return (w.ws_col);
+	while (*s)
+		s++;
+	*s = c;
+	s++;
+	*s = 0;
 }
