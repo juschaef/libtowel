@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   twl_lprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/25 16:08:05 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/11 20:00:07 by juschaef         ###   ########.fr       */
+/*   Updated: 2015/03/12 11:06:26 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int			twl_lprintf(const char *fmt, ...)
 	size_t	len;
 	int		fd;
 
-	fd = open("debug.out", O_CREAT | O_WRONLY | O_APPEND);
+	fd = open(".debug.out", O_CREAT | O_WRONLY | O_APPEND, 0644);
 	pf = pf_create((char *)fmt);
 	va_start(pf->arglist, (char *)fmt);
 	pf_prepare_xprintf__(pf);

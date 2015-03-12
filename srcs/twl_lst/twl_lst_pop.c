@@ -6,7 +6,7 @@
 /*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/12 09:41:52 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/06 21:39:49 by yyang            ###   ########.fr       */
+/*   Updated: 2015/03/12 11:49:18 by yyang            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	*twl_lst_pop(t_lst *lst)
 	void			*data;
 
 	elem = lst->head;
+	assert(elem);
 	while (elem->next)
 		elem = elem->next;
 	data = elem->data;
