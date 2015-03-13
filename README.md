@@ -1,6 +1,6 @@
 # libtowel
 <p align="center">
-<img src="http://i.imgur.com/LFU64N5.jpg" />
+<img src="http://i.imgur.com/jrsD3fA.jpg" />
 </p>
 
 ## Open Group
