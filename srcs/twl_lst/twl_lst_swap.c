@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_swap.c                                     :+:      :+:    :+:   */
+/*   check_norris_loves_the_norminette.c                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: Chuck Noris <chuck@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/11 22:24:18 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/06 18:43:42 by yyang            ###   ########.fr       */
+/*   Created: 2042/02/30 42:00:00 by chuck             #+#    #+#             */
+/*   Updated: 2042/02/30 42:00:00 by chuck            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,27 @@
 #include "twl_lst.h"
 #include "twl_arr.h"
 
-static void		push_item_to_lst(void *data, void *lst)
+static	void	lst_swap_static(int *i, int *j)
 {
-	twl_lst_push((t_lst *)lst, data);
+	int tmp;
+
+	tmp = *i;
+	*i = *j;
+	*j = tmp;
 }
 
 void			twl_lst_swap(t_lst *lst, int i, int j)
 {
-	void **tmp_arr;
+	t_lst_elem__ *elemi;
+	t_lst_elem__ *elemj;
 
-	tmp_arr = twl_lst_to_arr(lst);
-	twl_arr_swap(tmp_arr, i, j);
-	twl_lst_clear__(lst, NULL);
-	twl_arr_iter(tmp_arr, push_item_to_lst, lst);
-	free(tmp_arr);
+	if (i > j)
+		lst_swap_static(&i, &j);
+	elemj = twl_lst_popi(lst, j);
+	elemi = twl_lst_popi(lst, i);
+	twl_lst_insert(lst, i, elemj);
+	if ((int)twl_lst_len(lst) == j)
+		twl_lst_push(lst, elemi);
+	else
+		twl_lst_insert(lst, j, elemi);
 }
