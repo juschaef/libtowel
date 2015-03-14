@@ -50,7 +50,8 @@ static void		pf_add_arg_c_handle_null_char(t_pfelem *pfelem)
 
 static void		*pf_get_values(t_pf *pf, t_pfelem *pfelem, int i, int ac)
 {
-	t_conv_val_fn conv_val_fn;
+	t_conv_val_fn	conv_val_fn;
+	char			*dict_key;
 
 	if (i < (ac - 1))
 	{
@@ -59,8 +60,10 @@ static void		*pf_get_values(t_pf *pf, t_pfelem *pfelem, int i, int ac)
 	}
 	if (twl_strchr(CONV_SPEC_ALL, pfelem->conv_spec))
 	{
-		conv_val_fn = twl_dict_get(pf->conv_val_fns,
-		twl_strjoin(pfelem->length_modifier_str, pfelem->conv_spec_str));
+		dict_key = twl_strjoin(pfelem->length_modifier_str,
+														pfelem->conv_spec_str);
+		conv_val_fn = twl_dict_get(pf->conv_val_fns, dict_key);
+		free(dict_key);
 		return (conv_val_fn(pf));
 	}
 	return (NULL);

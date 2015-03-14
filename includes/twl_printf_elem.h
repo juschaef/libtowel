@@ -151,9 +151,9 @@ typedef struct		s_pf_elem
 	int		length_modifier;
 	char	*length_modifier_str;
 	int		c_is_null_char;
-	void	*values[MAX_VA_LIST_ELEM];
+	void	**values;
 	int		values_count;
-	char	*split[SEG_COUNT];
+	char	**split;
 	char	*raw;
 	char	*str;
 	char	*prefix;

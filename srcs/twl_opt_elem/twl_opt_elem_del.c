@@ -19,4 +19,5 @@ void twl_opt_elem_del(t_twl_opt_elem *twl_opt_elem)
 {
 	free(twl_opt_elem->key);
 	free(twl_opt_elem->value);
+	free(twl_opt_elem);
 }

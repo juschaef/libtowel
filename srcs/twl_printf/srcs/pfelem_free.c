@@ -12,43 +12,17 @@
 
 #include <stdlib.h>
 #include "twl_printf.h"
-
-static void		free_splits(t_pfelem *pfelem)
-{
-	int i;
-
-	i = 0;
-	if (!pfelem_is_raw_string(pfelem))
-	{
-		while (i < 5)
-		{
-			free(pfelem->split[i]);
-			i++;
-		}
-	}
-}
-
-static void		freevlues(t_pfelem *elem)
-{
-	int i;
-
-	i = 0;
-	if (!pfelem_is_raw_string(elem))
-	{
-		while (i < elem->values_count)
-		{
-			free(elem->values[i]);
-			i++;
-		}
-	}
-}
+#include "twl_arr.h"
 
 void			pfelem_free(t_pfelem *elem)
 {
 	free(elem->str);
 	free(elem->prefix);
-	free_splits(elem);
+	twl_arr_del(elem->split, free);
 	free(elem->raw);
+	twl_arr_del(elem->values, free);
+	if (elem->length_modifier_str)
+		free(elem->length_modifier_str);
+	free(elem->conv_spec_str);
 	free(elem);
-	(void)freevlues;
 }

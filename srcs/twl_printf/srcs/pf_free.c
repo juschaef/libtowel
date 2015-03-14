@@ -14,6 +14,8 @@
 
 void	pf_free(t_pf *pf)
 {
+	twl_lst_del(pf->conv_str_fns, NULL);
+	twl_lst_del(pf->conv_val_fns, NULL);
 	twl_lst_del(pf->pflst, pfelem_free);
 	free(pf->output);
 	free(pf);

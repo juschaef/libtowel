@@ -12,12 +12,13 @@
 
 #include <stdlib.h>
 #include "twl_arr.h"
+#include "twl_xstdlib.h"
 
 void	*twl_arr_new(size_t size)
 {
 	void **arr;
 
-	arr = malloc(sizeof(void *) * (size + 1));
+	arr = twl_malloc_x0(sizeof(void *) * (size + 1));
 	arr[0] = NULL;
 	return ((void *)arr);
 }
