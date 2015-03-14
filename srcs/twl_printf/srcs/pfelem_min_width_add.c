@@ -37,7 +37,6 @@ static void		pfelem_min_width_set_wildcard(t_pfelem *pfelem)
 		pfelem->min_width *= -1;
 		pfelem->flags = pfelem->flags | FLAG_MINUS_MASK;
 	}
-	free(pfelem->values[0]);
 }
 
 static void		pfelem_ajust_min_width_if_prefix(t_pfelem *pfelem)

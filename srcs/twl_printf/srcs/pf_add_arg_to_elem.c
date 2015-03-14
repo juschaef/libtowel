@@ -13,6 +13,8 @@
 #include "twl_printf.h"
 #include "twl_arr.h"
 
+#include <stdio.h>
+
 static int		pf_count_args(char *s)
 {
 	int i;
@@ -87,6 +89,7 @@ void			pf_add_arg_to_elem(t_pf *pf)
 			pfelem->values[i] = pf_get_values(pf, pfelem, i, ac);
 			i++;
 		}
+		pfelem->values[i] = NULL;
 		pfelem->values_count = i;
 		pf_add_arg_c_handle_null_char(pfelem);
 		elem = elem->next;

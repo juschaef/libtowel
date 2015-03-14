@@ -14,20 +14,14 @@
 
 #define VOID_PTR_TO(type, value) *((type *)(value))
 
-void			*freevl(void *val, void *val_to_free)
-{
-	free(val_to_free);
-	return (val);
-}
-
 static char		*pf_conv_str_ptr(void *val)
 {
-	return (freevl(twl_llutobasestr(VOID_PTR_TO(long, val), 16), val));
+	return (twl_llutobasestr(VOID_PTR_TO(long, val), 16));
 }
 
 static char		*pf_conv_str_octal_uc(void *val)
 {
-	return (freevl(twl_llutobasestr(VOID_PTR_TO(unsigned char, val), 8), val));
+	return (twl_llutobasestr(VOID_PTR_TO(unsigned char, val), 8));
 }
 
 static void		pf_set_conv_str_fns_help(t_pf *pf)

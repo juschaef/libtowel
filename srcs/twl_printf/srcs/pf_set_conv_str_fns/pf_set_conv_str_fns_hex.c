@@ -19,7 +19,7 @@ char *pf_conv_str_hex_uc(void *val)
 	char *s;
 
 	s = twl_llutobasestr(VOID_PTR_TO(unsigned char, val), 16);
-	return (freevl(s, val));
+	return (s);
 }
 
 char *pf_conv_str_hex_us(void *val)
@@ -27,7 +27,7 @@ char *pf_conv_str_hex_us(void *val)
 	char *s;
 
 	s = twl_llutobasestr(VOID_PTR_TO(unsigned short int, val), 16);
-	return (freevl(s, val));
+	return (s);
 }
 
 char *pf_conv_str_hex(void *val)
@@ -35,7 +35,7 @@ char *pf_conv_str_hex(void *val)
 	char *s;
 
 	s = twl_llutobasestr(VOID_PTR_TO(unsigned int, val), 16);
-	return (freevl(s, val));
+	return (s);
 }
 
 char *pf_conv_str_hex_uc_up(void *val)

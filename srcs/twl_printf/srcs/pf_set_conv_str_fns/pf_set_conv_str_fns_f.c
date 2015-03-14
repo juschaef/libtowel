@@ -16,5 +16,5 @@
 
 char *pf_conv_str_float(void *val)
 {
-	return (freevl(twl_ldtoa(VOID_PTR_TO(double, val)), val));
+	return (twl_ldtoa(VOID_PTR_TO(double, val)));
 }

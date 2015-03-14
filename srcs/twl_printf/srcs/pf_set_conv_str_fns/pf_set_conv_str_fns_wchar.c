@@ -23,7 +23,7 @@ char	*pf_conv_str_wstr(void *val)
 
 char	*pf_conv_str_wchar(void *val)
 {
-	return (freevl(twl_wstr_to_str((wchar_t *)(val)), val));
+	return (twl_wstr_to_str((wchar_t *)(val)));
 }
 
 char	*pf_conv_str_hex_up(void *val)
@@ -38,5 +38,5 @@ char	*pf_conv_str_hex_ul_up(void *val)
 
 char	*pf_conv_str_unsign(void *val)
 {
-	return (freevl(twl_lltoa(VOID_PTR_TO(unsigned int, val)), val));
+	return (twl_lltoa(VOID_PTR_TO(unsigned int, val)));
 }

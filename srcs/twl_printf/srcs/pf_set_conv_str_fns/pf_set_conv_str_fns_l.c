@@ -16,12 +16,12 @@
 
 char *pf_conv_str_long(void *val)
 {
-	return (freevl(twl_lltoa(VOID_PTR_TO(long, val)), val));
+	return (twl_lltoa(VOID_PTR_TO(long, val)));
 }
 
 char *pf_conv_str_octal_long(void *val)
 {
-	return (freevl(twl_llutobasestr(VOID_PTR_TO(long, val), 8), val));
+	return (twl_llutobasestr(VOID_PTR_TO(long, val), 8));
 }
 
 char *pf_conv_str_uoctal_long(void *val)
@@ -29,12 +29,12 @@ char *pf_conv_str_uoctal_long(void *val)
 	char *s;
 
 	s = twl_llutobasestr(VOID_PTR_TO(unsigned long, val), 8);
-	return (freevl(s, val));
+	return (s);
 }
 
 char *pf_conv_str_unsign_long(void *val)
 {
-	return (freevl(twl_llutoa(VOID_PTR_TO(unsigned long, val)), val));
+	return (twl_llutoa(VOID_PTR_TO(unsigned long, val)));
 }
 
 char *pf_conv_str_hex_long(void *val)
@@ -42,5 +42,5 @@ char *pf_conv_str_hex_long(void *val)
 	char *s;
 
 	s = twl_llutobasestr(VOID_PTR_TO(unsigned long, val), 16);
-	return (freevl(s, val));
+	return (s);
 }

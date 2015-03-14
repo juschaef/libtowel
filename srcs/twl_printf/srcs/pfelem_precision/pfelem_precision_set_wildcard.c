@@ -29,5 +29,4 @@ void	pfelem_precision_set_wildcard(t_pfelem *pfelem)
 		pfelem->precision = PRECISION_NOT_SET;
 	else
 		pfelem->precision = precision;
-	free(pfelem->values[index]);
 }
