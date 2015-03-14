@@ -79,9 +79,10 @@ t_lst						*twl_lst_slice(t_lst *lst, int begin, int end);
 
 void						twl_lst_iter(t_lst *lst,
 	void (*f)(void *data, void *context), void *context);
+void	twl_lst_itern(t_lst *lst, void (*f)(void *data, void *next_data,
+		void *context), void *context);
 void						twl_lst_iteri(t_lst *lst,
 	void (*iter_fn)(void *data, int index, void *context), void *context);
-
 void						twl_lst_filter(t_lst *lst,
 	bool (*filter_fn)(void *data, void *context),
 	void *context, void (*delfn)(void *));
