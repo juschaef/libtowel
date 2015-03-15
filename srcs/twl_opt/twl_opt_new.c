@@ -37,7 +37,7 @@ static void push_non_opt_to_lst(void *non_opt_arg, void *non_opt_arg_lst_)
 	twl_lst_push(non_opt_arg_lst, twl_strdup(non_opt_arg));
 }
 
-static void parse_argv(char **arr_opts, t_twl_opt *twl_opt)
+static void parse_argv(char **arr_opts, t_opt *twl_opt)
 {
 	char *opt;
 
@@ -58,11 +58,11 @@ static void parse_argv(char **arr_opts, t_twl_opt *twl_opt)
 	twl_arr_iter(arr_opts, push_non_opt_to_lst, twl_opt->non_opt_args);
 }
 
-t_twl_opt	*twl_opt_new(char **argv)
+t_opt	*twl_opt_new(char **argv)
 {
-	t_twl_opt *twl_opt;
+	t_opt *twl_opt;
 
-	twl_opt = malloc(sizeof(t_twl_opt));
+	twl_opt = malloc(sizeof(t_opt));
 	twl_opt->cmd = twl_strdup(argv[0]);
 	twl_opt->opts = twl_lst_new();
 	parse_argv(argv + 1, twl_opt);

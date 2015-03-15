@@ -17,9 +17,9 @@ typedef struct	s_twl_opt_elem
 {
 	char		*key;
 	char		*value;
-}				t_twl_opt_elem;
+}				t_opt_elem;
 
-t_twl_opt_elem	*twl_opt_elem_new(char *key, char *value);
-void			twl_opt_elem_del(t_twl_opt_elem *twl_opt_elem);
+t_opt_elem	*twl_opt_elem_new(char *key, char *value);
+void			twl_opt_elem_del(t_opt_elem *twl_opt_elem);
 
 #endif

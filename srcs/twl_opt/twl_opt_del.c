@@ -16,7 +16,7 @@
 #include "twl_xstring.h"
 #include "twl_opt_elem.h"
 
-void	twl_opt_del(t_twl_opt *twl_opt)
+void	twl_opt_del(t_opt *twl_opt)
 {
 	free(twl_opt->cmd);
 	twl_lst_del(twl_opt->opts, twl_opt_elem_del);

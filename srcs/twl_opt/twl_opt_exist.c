@@ -16,7 +16,7 @@
 
 bool find_opt(void *opt_elem_, void *opt_key)
 {
-	t_twl_opt_elem *opt_elem;
+	t_opt_elem *opt_elem;
 
 	opt_elem = opt_elem_;
 	if (twl_strcmp(opt_elem->key, opt_key) == 0)
@@ -24,7 +24,7 @@ bool find_opt(void *opt_elem_, void *opt_key)
 	return (false);
 }
 
-bool twl_opt_exist(t_twl_opt *twl_opt, char *opt_key)
+bool twl_opt_exist(t_opt *twl_opt, char *opt_key)
 {
 	return (!!twl_lst_find(twl_opt->opts, find_opt, opt_key));
 }

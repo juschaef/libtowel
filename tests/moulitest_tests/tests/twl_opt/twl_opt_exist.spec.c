@@ -6,7 +6,7 @@
 static void test_opt_cmd(t_test *test)
 {
 	char *argv[] = {"ls", "-l", "ab", NULL};
-	t_twl_opt *twl_opt;
+	t_opt *twl_opt;
 
 	twl_opt = twl_opt_new(argv);
 	
@@ -20,7 +20,7 @@ static void test_opt_cmd(t_test *test)
 static void test_opt_cmd_harder(t_test *test)
 {
 	char *argv[] = {"ls", "-la", "-ul", NULL};
-	t_twl_opt *twl_opt;
+	t_opt *twl_opt;
 
 	twl_opt = twl_opt_new(argv);
 	
@@ -34,7 +34,7 @@ static void test_opt_cmd_harder(t_test *test)
 // static void test_opt_cmd_harder2(t_test *test)
 // {
 // 	char *argv[] = {"ls", "-la", NULL};
-// 	t_twl_opt *twl_opt;
+// 	t_opt *twl_opt;
 
 // 	twl_opt = twl_opt_new(argv);
 	

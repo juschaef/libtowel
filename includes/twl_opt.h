@@ -15,16 +15,16 @@
 
 # include "twl_lst.h"
 
-typedef struct	s_twl_opt
+typedef struct	s_opt
 {
 	char		*cmd;
 	t_lst		*opts;
 	t_lst		*non_opt_args;
-}				t_twl_opt;
+}				t_opt;
 
-t_twl_opt		*twl_opt_new(char **argv);
-void			twl_opt_del(t_twl_opt *twl_opt);
-bool			twl_opt_exist(t_twl_opt *twl_opt, char *opt_key);
-char			*twl_opt_checkerr(t_twl_opt *twl_opt, char *valid_opts);
+t_opt			*twl_opt_new(char **argv);
+void			twl_opt_del(t_opt *twl_opt);
+bool			twl_opt_exist(t_opt *twl_opt, char *opt_key);
+char			*twl_opt_checkerr(t_opt *twl_opt, char *valid_opts);
 
 #endif
