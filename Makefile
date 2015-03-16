@@ -56,7 +56,7 @@ endif
 $(O_DIR)%.o: $(C_DIR)%.c
 	@mkdir -p $(O_DIRS) $(O_DIR) 2> /dev/null || echo "" > /dev/null
 	@gcc $(CC_OPTIONS) $(CC_DEBUG) -o $@ -c $< \
-		&& echo "$<  >>>>  $@"
+		&& echo "$<  >>>>  $@" | sed 's;//;/;g'
 
 debug: _debug all
 

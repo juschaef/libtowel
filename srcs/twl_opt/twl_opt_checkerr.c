@@ -15,9 +15,9 @@
 #include "twl_opt_elem.h"
 #include "twl_stdio.h"
 
-static bool		find_fn(void *opt_elem_, void *valid_opts_)
+static bool			find_fn(void *opt_elem_, void *valid_opts_)
 {
-	t_opt_elem	*opt_elem;
+	t_opt_elem		*opt_elem;
 	char			*valid_opts;
 
 	opt_elem = opt_elem_;
@@ -27,9 +27,9 @@ static bool		find_fn(void *opt_elem_, void *valid_opts_)
 	return (false);
 }
 
-char			*twl_opt_checkerr(t_opt *twl_opt, char *valid_opts)
+char				*twl_opt_checkerr(t_opt *twl_opt, char *valid_opts)
 {
-	t_opt_elem *opt_elem;
+	t_opt_elem		*opt_elem;
 
 	opt_elem = twl_lst_find(twl_opt->opts, find_fn, valid_opts);
 	if (opt_elem)

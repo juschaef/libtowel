@@ -12,7 +12,7 @@
 
 #include "twl_lst.h"
 
-int		twl_lst_indexof(t_lst *lst, void *target, bool (*cmp_fn)())
+int					twl_lst_indexof(t_lst *lst, void *target)
 {
 	t_lst_elem__	*elem;
 	int				i;
@@ -21,7 +21,7 @@ int		twl_lst_indexof(t_lst *lst, void *target, bool (*cmp_fn)())
 	i = 0;
 	while (elem)
 	{
-		if (cmp_fn(elem->data, target))
+		if (elem->data == target)
 			return (i);
 		elem = elem->next;
 		i++;

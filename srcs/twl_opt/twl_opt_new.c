@@ -16,9 +16,9 @@
 #include "twl_xstring.h"
 #include "twl_opt_elem.h"
 
-static void parse_single_arg(char *arg, t_lst *opts)
+static void			parse_single_arg(char *arg, t_lst *opts)
 {
-	char opt_key[2];
+	char			opt_key[2];
 
 	twl_bzero(opt_key, 2);
 	while (*arg)
@@ -29,17 +29,18 @@ static void parse_single_arg(char *arg, t_lst *opts)
 	}
 }
 
-static void push_non_opt_to_lst(void *non_opt_arg, void *non_opt_arg_lst_)
+static void			push_non_opt_to_lst(void *non_opt_arg,
+														void *non_opt_arg_lst_)
 {
-	t_lst *non_opt_arg_lst;
+	t_lst			*non_opt_arg_lst;
 
 	non_opt_arg_lst = non_opt_arg_lst_;
 	twl_lst_push(non_opt_arg_lst, twl_strdup(non_opt_arg));
 }
 
-static void parse_argv(char **arr_opts, t_opt *twl_opt)
+static void			parse_argv(char **arr_opts, t_opt *twl_opt)
 {
-	char *opt;
+	char			*opt;
 
 	while (*arr_opts)
 	{
@@ -58,9 +59,9 @@ static void parse_argv(char **arr_opts, t_opt *twl_opt)
 	twl_arr_iter(arr_opts, push_non_opt_to_lst, twl_opt->non_opt_args);
 }
 
-t_opt	*twl_opt_new(char **argv)
+t_opt				*twl_opt_new(char **argv)
 {
-	t_opt *twl_opt;
+	t_opt			*twl_opt;
 
 	twl_opt = malloc(sizeof(t_opt));
 	twl_opt->cmd = twl_strdup(argv[0]);

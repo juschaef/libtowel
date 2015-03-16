@@ -52,8 +52,7 @@ size_t						twl_lst_count(t_lst *lst,
 ** Search
 */
 
-int							twl_lst_indexof(t_lst *lst, void *target,
-														bool (*cmp_fn)());
+int							twl_lst_indexof(t_lst *lst, void *target);
 void						*twl_lst_find(t_lst *lst,
 						bool (*f)(void *data, void *context), void *context);
 
