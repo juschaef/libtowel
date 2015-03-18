@@ -24,7 +24,7 @@ static void simple_test(t_test *test)
 	twl_lst_push(lst, &nbr4);
 
 	mt_assert(twl_lst_reducei(lst, sum, memo) == 10);
-	free(lst);
+	twl_lst_del(lst, NULL);
 }
 
 void	suite_twl_lst_reducei(t_suite *suite)

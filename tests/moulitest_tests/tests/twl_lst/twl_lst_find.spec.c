@@ -38,7 +38,7 @@ static void simple_test(t_test *test)
 	nbr_p = (int *)(twl_lst_find(lst, find_nbr, &nbr1));
 	mt_assert(*nbr_p == 1);
 
-	free(lst);
+	twl_lst_del(lst, NULL);
 }
 
 void	suite_twl_lst_find(t_suite *suite)

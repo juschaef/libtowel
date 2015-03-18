@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_create_elem__.c                            :+:      :+:    :+:   */
+/*   check_norris_loves_the_norminette.c                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chuck <chuck@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/12 10:18:33 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/30 15:45:09 by juschaef         ###   ########.fr       */
+/*   Created: 2042/02/30 42:00:00 by chuck             #+#    #+#             */
+/*   Updated: 2042/02/30 41:59:59 by chuck            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
 
 #include "twl_lst.h"
 #include "twl_smem.h"
 
-t_lst_elem__	*twl_lst_create_elem__(void *data)
-{
-	t_lst_elem__ *elem;
+#define SMEM_LST_MAX 1 * 1000 * 1000
 
-	// elem = malloc(sizeof(t_lst_elem__));
-	elem = twl_smem_type_lst_elem__();
-	elem->data = data;
-	elem->next = NULL;
-	elem->prev = NULL;
-	elem->key = NULL;
-	return (elem);
+void				*twl_smem_type_lst(void)
+{
+	static t_lst	lst[SMEM_LST_MAX];
+	static int		lst_idx = 0;
+
+	if (lst_idx >= SMEM_LST_MAX)
+	{
+		twl_smem_err_overflow("static_mem_lst");
+		return (NULL);
+	}
+	return (&(lst[lst_idx++]));
 }

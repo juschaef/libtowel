@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_lst_new.c                                      :+:      :+:    :+:   */
+/*   check_norris_loves_the_norminette.c                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yyang <yyang@student.42.fr>                +#+  +:+       +#+        */
+/*   By: chuck <chuck@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/12/12 09:45:21 by yyang             #+#    #+#             */
-/*   Updated: 2015/01/25 17:39:12 by yyang            ###   ########.fr       */
+/*   Created: 2042/02/30 42:00:00 by chuck             #+#    #+#             */
+/*   Updated: 2042/02/30 41:59:59 by chuck            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "twl_lst.h"
+#include "twl_stdio.h"
+
 #include "twl_smem.h"
 
-t_lst	*twl_lst_new(void)
+void				twl_smem_err_overflow(char *msg)
 {
-	t_lst	*lst;
-
-	lst = twl_smem_type_lst();
-	lst->head = NULL;
-	return (lst);
+	twl_dprintf(2, "ERROR: Static memory overflow: %s\n", msg);
 }
+

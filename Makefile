@@ -14,8 +14,8 @@ include Makefile.cfg
 
 NAME = $(CONFIG_NAME)
 OUTPUT_TYPE = $(CONFIG_OUTPUT_TYPE)
-C_DIR = srcs/
-O_DIR = .tmp/objects/
+C_DIR = srcs
+O_DIR = .tmp/objects
 
 # CC_OPTIMIZATION_FLAGS = -O2
 CC_LIBMLX = -L/usr/X11/lib -lmlx -lXext -lX11

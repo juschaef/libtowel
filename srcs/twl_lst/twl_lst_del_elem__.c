@@ -26,5 +26,6 @@ void	twl_lst_del_elem__(t_lst *lst, t_lst_elem__ *elem, void (*delfn)())
 	elem->next = NULL;
 	elem->prev = NULL;
 	elem->key = NULL;
-	free(elem);
+	// free(elem);
+	(void)delfn;
 }
