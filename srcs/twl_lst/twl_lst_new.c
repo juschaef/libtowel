@@ -19,6 +19,8 @@ t_lst	*twl_lst_new(void)
 	t_lst	*lst;
 
 	lst = twl_smem_type_lst();
+	if (lst == NULL)
+		return (NULL);
 	lst->head = NULL;
 	return (lst);
 }

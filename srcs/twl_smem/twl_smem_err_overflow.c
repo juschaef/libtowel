@@ -10,11 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_stdio.h"
+#include "twl_xstdio.h"
 
 #include "twl_smem.h"
 
 void				twl_smem_err_overflow(char *msg)
 {
-	twl_dprintf(2, "ERROR: Static memory overflow: %s\n", msg);
+	twl_putstr_fd("ERROR: Static memory overflow: ", 2);
+	twl_putstr_fd(msg, 2);
+	twl_putstr_fd("\n", 2);
 }

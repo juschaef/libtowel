@@ -17,6 +17,8 @@ void	twl_lst_unshift(t_lst *lst, void *data)
 	t_lst_elem__ *elem;
 
 	elem = twl_lst_create_elem__(data);
+	if (!elem)
+		return ;
 	twl_lst_link__(elem, lst->head);
 	lst->head = elem;
 }

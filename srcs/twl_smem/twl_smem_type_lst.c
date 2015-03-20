@@ -13,13 +13,15 @@
 #include "twl_lst.h"
 #include "twl_smem.h"
 
-#define SMEM_LST_MAX 1 * 1000 * 1000
+#define SMEM_LST_MAX 1000
 
 void				*twl_smem_type_lst(void)
 {
 	static t_lst	lst[SMEM_LST_MAX];
 	static int		lst_idx = 0;
 
+	if (lst_idx == 0)
+		twl_bzero(lst, sizeof(t_lst) * SMEM_LST_MAX);
 	if (lst_idx >= SMEM_LST_MAX)
 	{
 		twl_smem_err_overflow("static_mem_lst");

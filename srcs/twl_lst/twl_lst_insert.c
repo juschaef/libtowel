@@ -18,6 +18,7 @@
 void	twl_lst_insert(t_lst *lst, int index, void *data)
 {
 	t_lst_elem__ *elem;
+	t_lst_elem__ *elem_new;
 
 	if (index == 0)
 		twl_lst_unshift(lst, data);
@@ -26,6 +27,9 @@ void	twl_lst_insert(t_lst *lst, int index, void *data)
 	else
 	{
 		elem = twl_lst_get_elem__(lst, index);
-		twl_lst_link3__(elem->prev, twl_lst_create_elem__(data), elem);
+		elem_new = twl_lst_create_elem__(data);
+		if (!elem_new)
+			return ;
+		twl_lst_link3__(elem->prev, elem_new, elem);
 	}
 }
