@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SMEM_H
-# define SMEM_H
+#ifndef TWL_SMEM_H
+# define TWL_SMEM_H
 
 # include <stddef.h>
 

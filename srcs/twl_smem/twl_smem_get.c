@@ -18,4 +18,3 @@ void				*twl_smem_get(t_twl_smem type)
 		return (twl_smem_type_lst());
 	return (NULL);
 }
-

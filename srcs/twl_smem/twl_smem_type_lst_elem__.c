@@ -18,7 +18,7 @@
 void				*twl_smem_type_lst_elem__(void)
 {
 	static t_lst_elem__	lst_elem__[SMEM_LST_ELEM_MAX];
-	static int		lst_elem_idx = 0;
+	static int			lst_elem_idx = 0;
 
 	if (lst_elem_idx >= SMEM_LST_ELEM_MAX)
 	{

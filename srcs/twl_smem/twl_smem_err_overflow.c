@@ -18,4 +18,3 @@ void				twl_smem_err_overflow(char *msg)
 {
 	twl_dprintf(2, "ERROR: Static memory overflow: %s\n", msg);
 }
-

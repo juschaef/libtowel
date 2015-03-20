@@ -25,5 +25,4 @@ void	twl_lst_del(t_lst *lst, void (*delfn)(void *))
 		twl_lst_del_elem__(lst, elem, delfn);
 		elem = next;
 	}
-	// free(lst);
 }
