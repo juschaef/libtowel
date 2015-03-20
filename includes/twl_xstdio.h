@@ -13,11 +13,13 @@
 #ifndef TWL_XSTDIO_H
 # define TWL_XSTDIO_H
 
-void	twl_putstr(char const *s);
-void	twl_putstr_fd(char const *s, int fd);
-void	twl_putchar_fd(char c, int fd);
-int		twl_putchar_tty(int c);
-void	twl_putnstr_fd(char const *s, int n, int fd);
-int		twl_lprintf(const char *fmt, ...);
+void				twl_putstr(char const *s);
+void				twl_putstr_fd(char const *s, int fd);
+void				twl_putchar_fd(char c, int fd);
+int					twl_putchar_tty(int c);
+void				twl_putnstr_fd(char const *s, int n, int fd);
+int					twl_lprintf(const char *fmt, ...);
+void				twl_putnbr(int n);
+void				twl_putnbr_fd(int n, int fd);
 
 #endif

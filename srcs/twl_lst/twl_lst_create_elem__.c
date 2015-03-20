@@ -19,8 +19,9 @@ t_lst_elem__	*twl_lst_create_elem__(void *data)
 {
 	t_lst_elem__ *elem;
 
-	// elem = malloc(sizeof(t_lst_elem__));
 	elem = twl_smem_type_lst_elem__();
+	if (!elem)
+		return (NULL);
 	elem->data = data;
 	elem->next = NULL;
 	elem->prev = NULL;

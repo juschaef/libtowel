@@ -20,7 +20,6 @@ typedef enum		e_twl_smem
 	TWL_SMEM_TYPE_LST
 }					t_twl_smem;
 
-void				*twl_smem_get(t_twl_smem type);
 void				twl_smem_err_overflow(char *msg);
 void				*twl_smem_type_lst(void);
 void				*twl_smem_type_lst_elem__(void);
