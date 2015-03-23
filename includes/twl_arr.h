@@ -40,7 +40,7 @@ void	twl_arr_delone(void *twl_arr_, int index);
 ** Search
 */
 
-void	*twl_arr_find(void *twl_arr_, int (*find_fn)(void *arr, void *context),
+void	*twl_arr_find(void *twl_arr_, bool (*find_fn)(void *arr, void *context),
 																void *context);
 int		twl_arr_indexof(void *twl_arr_, void *target);
 void	*twl_arr_last(void *twl_arr_);
