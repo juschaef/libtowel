@@ -2,7 +2,7 @@
 #include "twl_arr.h"
 #include "twl_xstring.h"
 
-static int find_fn(void *str, void *key)
+static bool find_fn(void *str, void *key)
 {
 	if (twl_strequ(str, key))
 		return (1);
