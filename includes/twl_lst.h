@@ -103,7 +103,7 @@ void						twl_lst_rev(t_lst *lst);
 ** Convert
 */
 
-void						**twl_lst_to_arr(t_lst *lst);
+void						*twl_lst_to_arr(t_lst *lst);
 void						*twl_lst_to_arr2(t_lst *lst, int cols);
 
 /*

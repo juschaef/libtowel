@@ -19,7 +19,7 @@ static void		push_to_arr(void *data, void *arr)
 	twl_arr_push(arr, data);
 }
 
-void			**twl_lst_to_arr(t_lst *lst)
+void			*twl_lst_to_arr(t_lst *lst)
 {
 	void **arr;
 
