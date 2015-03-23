@@ -17,6 +17,7 @@
 #include "twl_arr.h"
 #include "twl_xstring.h"
 #include "twl_xstdlib.h"
+#include "twl_xstdio.h"
 
 #define PATH_KEY_PREFIX "PATH="
 
@@ -68,5 +69,10 @@ int					twl_execvep(char *file, char **argv, char **envp)
 	found_path = twl_arr_find(paths, has_executable_binary_fn, file);
 	if (found_path)
 		file = twl_joinpath(found_path, file);
-	return (execve(file, argv, envp));
+	execve(file, argv, envp);
+	twl_putstr_fd("execve error: ", 2);
+	twl_putstr_fd(file, 2);
+	twl_putstr_fd("\n", 2);
+	exit(1);
+	return (-1);
 }
