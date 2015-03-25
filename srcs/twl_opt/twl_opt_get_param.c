@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_opt_exist.c                                    :+:      :+:    :+:   */
+/*   check_norris_loves_the_norminette.c                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juschaef <juschaef@student.42.fr>          +#+  +:+       +#+        */
+/*   By: chuck <chuck@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/02/24 16:23:02 by yyang             #+#    #+#             */
-/*   Updated: 2015/02/28 18:29:41 by juschaef         ###   ########.fr       */
+/*   Created: 2042/02/30 42:00:00 by chuck             #+#    #+#             */
+/*   Updated: 2042/02/30 41:59:59 by chuck            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdbool.h>
+
 #include "twl_opt.h"
 #include "twl_opt_elem.h"
 
@@ -24,7 +25,13 @@ static bool			find_opt(void *opt_elem_, void *opt_key)
 	return (false);
 }
 
-bool				twl_opt_exist(t_opt *twl_opt, char *opt_key)
+char				*twl_opt_get_param(t_opt *twl_opt, char *opt_key)
 {
-	return (!!twl_lst_find(twl_opt->opts, find_opt, opt_key));
+	t_opt_elem		*opt;
+
+	opt = twl_lst_find(twl_opt->opts, find_opt, opt_key);
+	if (opt->value != NULL)
+		return (opt->value);
+	else
+		return (NULL);
 }

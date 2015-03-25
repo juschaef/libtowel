@@ -15,6 +15,8 @@
 #include "twl_opt_elem.h"
 #include "twl_stdio.h"
 
+#include <stdio.h>
+
 static bool			find_fn(void *opt_elem_, void *valid_opts_)
 {
 	t_opt_elem		*opt_elem;
