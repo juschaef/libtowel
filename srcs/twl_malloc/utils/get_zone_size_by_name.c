@@ -17,11 +17,13 @@
 
 #include "twl_malloc.h"
 
+#define TWL_MALLOC_PAGESIZE 4096
+
 size_t				get_zone_size_by_name(char *name)
 {
 	if (twl_strequ(name, ZONE_NAME_TINY))
-		return (CONST_N_UP_PAGES * getpagesize());
+		return (CONST_N_UP_PAGES * TWL_MALLOC_PAGESIZE);
 	else if (twl_strequ(name, ZONE_NAME_SMALL))
-		return (CONST_M_UP_PAGES * getpagesize());
+		return (CONST_M_UP_PAGES * TWL_MALLOC_PAGESIZE);
 	return (0);
 }
