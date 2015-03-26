@@ -20,8 +20,6 @@ void				*static_mem_zone_mgr(void)
 	static t_zone_mgr		zone_mgr[MAX_ZONE_MGR];
 	static int				zone_mgr_idx = 0;
 
-	if (zone_mgr_idx == 0)
-		twl_bzero(zone_mgr, sizeof(t_zone_mgr) * MAX_ZONE_MGR);
 	if (zone_mgr_idx >= MAX_ZONE_MGR)
 	{
 		smem_err_overflow("static_mem_zone");

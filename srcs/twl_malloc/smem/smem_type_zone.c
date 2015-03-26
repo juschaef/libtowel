@@ -13,15 +13,13 @@
 #include "twl_malloc/gmem.h"
 #include "twl_malloc/smem.h"
 
-#define MAX_ZONE 10 * 1000
+#define MAX_ZONE 1000 * 1000
 
 void				*static_mem_zone(void)
 {
 	static t_zone	zone[MAX_ZONE];
 	static int		zone_idx = 0;
 
-	if (zone_idx == 0)
-		twl_bzero(zone, sizeof(t_zone) * MAX_ZONE);
 	if (zone_idx >= MAX_ZONE)
 	{
 		smem_err_overflow("static_mem_zone");

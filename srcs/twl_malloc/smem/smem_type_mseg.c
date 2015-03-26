@@ -13,15 +13,13 @@
 #include "twl_malloc/mseg.h"
 #include "twl_malloc/smem.h"
 
-#define MAX_MSEG 100 * 1000
+#define MAX_MSEG 1000 * 1000
 
 void				*static_mem_mseg(void)
 {
 	static t_mseg		mseg[MAX_MSEG];
 	static int			mseg_idx = 0;
 
-	if (mseg_idx == 0)
-		twl_bzero(mseg, sizeof(t_mseg) * MAX_MSEG);
 	if (mseg_idx >= MAX_MSEG)
 	{
 		smem_err_overflow("static_mem_mseg");
