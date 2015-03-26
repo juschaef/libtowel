@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MALLOC_H
-# define MALLOC_H
+#ifndef TWL_MALLOC_H
+# define TWL_MALLOC_H
 
 # include <stddef.h>
 
