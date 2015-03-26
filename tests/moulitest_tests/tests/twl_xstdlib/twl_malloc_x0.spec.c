@@ -1,4 +1,5 @@
 #include <project.h>
+#include "twl_stdlib.h"
 #include "twl_xstdlib.h"
 #include <string.h>
 
@@ -10,7 +11,7 @@ static void simple_test(t_test *test)
 	bzero(control, 10);
 	str = twl_malloc_x0(10);
 	mt_assert(memcmp(str, control, 10) == 0);
-	free(str);
+	twl_free(str);
 }
 
 void	suite_twl_malloc_x0(t_suite *suite)

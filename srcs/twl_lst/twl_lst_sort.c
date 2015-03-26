@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_string.h"
 #include "twl_lst.h"
 #include "twl_arr.h"
@@ -28,5 +29,5 @@ void			twl_lst_sort(t_lst *lst, t_sort_cmp_fn *cmp_fn, void *context)
 	twl_arr_sort(tmp_arr, cmp_fn, context);
 	twl_lst_clear__(lst, NULL);
 	twl_arr_iter(tmp_arr, push_item_to_lst, lst);
-	free(tmp_arr);
+	twl_free(tmp_arr);
 }

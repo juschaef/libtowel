@@ -12,12 +12,13 @@
 
 #include "twl_xstdlib.h"
 #include "twl_string.h"
+#include "twl_malloc.h"
 
 void	*twl_malloc_x0(int size)
 {
 	void *new_malloc;
 
-	new_malloc = twl_xmalloc(size);
+	new_malloc = twl_malloc_exit(size);
 	twl_bzero(new_malloc, size);
 	return (new_malloc);
 }
