@@ -10,22 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include <stddef.h>
-
-static void		twl_bzero(void *s, size_t n)
-{
-	size_t	index;
-	char	*temp;
-
-	temp = s;
-	index = 0;
-	while (index < n)
-	{
-		temp[index] = 0;
-		index++;
-	}
-}
 
 char			*twl_strnew(size_t size)
 {

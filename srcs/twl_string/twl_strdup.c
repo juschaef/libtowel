@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_string.h"
 
 char	*twl_strdup(const char *s1)

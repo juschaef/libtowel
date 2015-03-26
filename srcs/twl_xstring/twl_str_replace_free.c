@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_xstring.h"
 
 char *twl_str_replace_free(char *s, char *target, char *replacement)
@@ -18,6 +18,6 @@ char *twl_str_replace_free(char *s, char *target, char *replacement)
 	char *replaced_str;
 
 	replaced_str = twl_str_replace(s, target, replacement);
-	free(s);
+	twl_free(s);
 	return (replaced_str);
 }

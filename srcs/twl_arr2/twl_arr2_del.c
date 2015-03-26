@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_arr.h"
 
 static void		free_fn(void *arr, void *del_fn)
@@ -21,5 +21,5 @@ static void		free_fn(void *arr, void *del_fn)
 void			twl_arr2_del(void *arr2, void (*del_fn)(void *elem))
 {
 	twl_arr_iter(arr2, free_fn, del_fn);
-	free(arr2);
+	twl_free(arr2);
 }

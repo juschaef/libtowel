@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 #include <wchar.h>
-#include <stdlib.h>
+#include "twl_stdlib.h"
+#include "twl_stdlib.h"
 #include "twl_string.h"
 #include "twl_xstring.h"
 
@@ -27,7 +28,7 @@ char	*twl_wstr_to_str(wchar_t *wstr)
 	{
 		wcharstr = twl_wchar_to_str(*wstr++);
 		str = twl_strcat(str, wcharstr);
-		free(wcharstr);
+		twl_free(wcharstr);
 	}
 	return (str);
 }

@@ -14,7 +14,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(arr[1], "bbb") == 0);
 	mt_assert(strcmp(arr[2], "ccc") == 0);
 	mt_assert(arr[3] == NULL);
-	free(arr);
+	twl_free(arr);
 }
 
 void	suite_twl_arr_new(t_suite *suite)

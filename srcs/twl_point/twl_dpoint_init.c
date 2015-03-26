@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_point.h"
 
 t_twl_dpoint	*twl_dpoint_init(double x, double y)

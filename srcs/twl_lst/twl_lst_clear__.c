@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_lst.h"
 
 static void		del_elem_without_link(t_lst_elem__ *elem, void (*delfn)())
@@ -18,7 +18,7 @@ static void		del_elem_without_link(t_lst_elem__ *elem, void (*delfn)())
 	if (delfn)
 		delfn(elem->data);
 	if (elem->key)
-		free(elem->key);
+		twl_free(elem->key);
 	elem->data = NULL;
 	elem->next = NULL;
 	elem->prev = NULL;

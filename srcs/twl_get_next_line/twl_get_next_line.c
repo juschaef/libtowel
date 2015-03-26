@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_get_next_line.h"
 #include "twl_string.h"
 #include "twl_xstring.h"
@@ -36,7 +36,7 @@ static int		twl_read_buffer(int fd, char **s_str, char **line)
 		if (!(temp = twl_strnew(twl_strlen(*line) + twl_strlen(buf))))
 			return (-1);
 		twl_strcpy(temp, *line);
-		free(*line);
+		twl_free(*line);
 		*line = temp;
 		if (twl_strchr_nl(buf))
 		{
@@ -74,7 +74,7 @@ int				do_get_next_line(int const fd, char **line)
 		**line = '\0';
 	if (twl_strlen(*line) > 0 || twl_strlen(s_str[fd]) > 0)
 		return (1);
-	free(*line);
+	twl_free(*line);
 	*line = NULL;
 	return (0);
 }

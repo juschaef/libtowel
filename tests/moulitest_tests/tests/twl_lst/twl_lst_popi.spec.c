@@ -18,7 +18,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(twl_lst_get(lst, 1), "ccc") == 0);
 	mt_assert(twl_lst_get(lst, 2) == NULL);
 	twl_lst_del(lst, free);
-	free(str);
+	twl_free(str);
 }
 
 void	suite_twl_lst_popi(t_suite *suite)

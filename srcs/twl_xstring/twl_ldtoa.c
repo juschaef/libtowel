@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_string.h"
 #include "twl_xstring.h"
 
@@ -33,12 +33,12 @@ char	*twl_ldtoa(long double ld)
 	str = twl_llutoa((long long)(ld * FT_LDTOA_PRECISION_MULT));
 	tmp = str;
 	str = twl_strpad(str, FT_LDTOA_PRECISION, FT_STRPAD_LEFT, '0');
-	free(tmp);
+	twl_free(tmp);
 	twl_bzero(first, 20);
 	twl_strncpy(first, str, twl_strlen(str) - 6);
 	tmp = twl_strjoin(first, ".");
 	tmp = twl_strjoinfree(tmp, str + twl_strlen(first), 'l');
-	free(str);
+	twl_free(str);
 	if (is_neg)
 		tmp = twl_strjoinfree("-", tmp, 'r');
 	return (tmp);

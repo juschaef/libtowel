@@ -11,17 +11,7 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <stdlib.h>
-
-static size_t	twl_strlen(const char *str)
-{
-	int len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
+#include "twl_stdlib.h"
 
 char			*twl_strmapi(char const *s, char (*f)(unsigned int, char))
 {

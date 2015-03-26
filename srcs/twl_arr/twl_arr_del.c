@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_arr.h"
 
 static void del_fn_wrapper(void *elem, void *del_fn_)
@@ -25,5 +25,5 @@ static void del_fn_wrapper(void *elem, void *del_fn_)
 void		twl_arr_del(void *arr, void (*del_fn)(void *elem))
 {
 	twl_arr_iter(arr, del_fn_wrapper, del_fn);
-	free(arr);
+	twl_free(arr);
 }

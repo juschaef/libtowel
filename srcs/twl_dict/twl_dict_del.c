@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_dict.h"
 
 void	twl_dict_del(t_dict *dict, void (*delfn)(void *))

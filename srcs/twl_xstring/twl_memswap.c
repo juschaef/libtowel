@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_string.h"
 #include "twl_xstring.h"
 
@@ -22,5 +22,5 @@ void	twl_memswap(void *s1, void *s2, size_t len)
 	twl_memcpy(tmp, s1, len);
 	twl_memcpy(s1, s2, len);
 	twl_memcpy(s2, tmp, len);
-	free(tmp);
+	twl_free(tmp);
 }

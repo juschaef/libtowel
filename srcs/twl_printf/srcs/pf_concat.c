@@ -48,10 +48,10 @@ char			*pf_cat(t_pf *pf, t_pfelem *pfelem)
 	str = twl_strdup(pfelem->str);
 	len = pf_printf_len(pfelem);
 	tmp = twl_memdup(pf->output, pf->output_len + len + 1);
-	free(pf->output);
+	twl_free(pf->output);
 	pf_clean_str(pfelem, str);
 	twl_memcpy(tmp + pf->output_len, str, len);
-	free(str);
+	twl_free(str);
 	tmp[pf->output_len + len] = '\0';
 	return (tmp);
 }

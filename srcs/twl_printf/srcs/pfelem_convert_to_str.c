@@ -21,7 +21,7 @@ static void		pfelem_process_raw_string(t_pfelem *pfelem)
 		tmp = "%";
 	else
 		tmp = pfelem->raw;
-	free(pfelem->str);
+	twl_free(pfelem->str);
 	pfelem->str = twl_strdup(tmp);
 }
 
@@ -49,7 +49,7 @@ static void		pfelem_process_conversion(t_pfelem *pfelem)
 	{
 		tmp = pfelem->str;
 		pfelem->str = pfelem_get_str(pfelem);
-		free(tmp);
+		twl_free(tmp);
 		if (twl_strchr(CONV_SPEC_ALL, pfelem->conv_spec))
 		{
 			pfelem_flag_add(pfelem);

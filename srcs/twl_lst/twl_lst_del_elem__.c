@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_lst.h"
 
 void	twl_lst_del_elem__(t_lst *lst, t_lst_elem__ *elem, void (*delfn)())
@@ -21,7 +21,7 @@ void	twl_lst_del_elem__(t_lst *lst, t_lst_elem__ *elem, void (*delfn)())
 	if (delfn)
 		delfn(elem->data);
 	if (elem->key)
-		free(elem->key);
+		twl_free(elem->key);
 	elem->data = NULL;
 	elem->next = NULL;
 	elem->prev = NULL;

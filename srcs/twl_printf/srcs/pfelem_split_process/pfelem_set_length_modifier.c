@@ -44,5 +44,5 @@ void			pfelem_set_length_modifier(t_pfelem *pfelem, char *len_mod)
 		pfelem->length_modifier = len_mod[0] * len_mod[1];
 	if (len == 1)
 		pfelem->length_modifier = *len_mod;
-	free(len_mod);
+	twl_free(len_mod);
 }

@@ -14,7 +14,7 @@ static int counter;
 static void del_fn(void *elem)
 {
 	counter++;
-	free(elem);
+	twl_free(elem);
 }
 
 static void simple_test(t_test *test)

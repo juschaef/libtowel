@@ -47,12 +47,12 @@ static void		pfelem_precision_pad_handle_neg(t_pfelem *pfelem)
 	}
 	pfelem->str = twl_strpad(pfelem->str, pfelem->precision,
 														FT_STRPAD_LEFT, '0');
-	free(tmp);
+	twl_free(tmp);
 	tmp = pfelem->str;
 	if (is_neg)
 	{
 		pfelem->str = twl_strjoin("-", pfelem->str);
-		free(tmp);
+		twl_free(tmp);
 	}
 }
 

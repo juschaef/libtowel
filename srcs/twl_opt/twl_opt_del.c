@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_opt.h"
 #include "twl_arr.h"
 #include "twl_xstring.h"
@@ -18,8 +18,8 @@
 
 void	twl_opt_del(t_opt *twl_opt)
 {
-	free(twl_opt->cmd);
+	twl_free(twl_opt->cmd);
 	twl_lst_del(twl_opt->opts, twl_opt_elem_del);
 	twl_lst_del(twl_opt->non_opt_args, free);
-	free(twl_opt);
+	twl_free(twl_opt);
 }

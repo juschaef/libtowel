@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_string.h"
 #include "twl_xstring.h"
 #include "twl_stdio.h"

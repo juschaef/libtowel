@@ -6,7 +6,7 @@ static int counter;
 static void del_fn(void *elem)
 {
 	counter++;
-	free(elem);
+	twl_free(elem);
 }
 
 static void *new_fn(int y, int x, void *context)

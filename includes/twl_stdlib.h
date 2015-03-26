@@ -13,6 +13,7 @@
 #ifndef TWL_STDLIB_H
 # define TWL_STDLIB_H
 
+# include <stdlib.h>
 # include "twl_malloc.h"
 
 int		twl_atoi(const char *str);

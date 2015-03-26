@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include <mlx.h>
 #include "twl_mlximg.h"
 
 void mlximg_del(t_mlximg *mlximg)
 {
 	mlx_destroy_image(mlximg->mlx, mlximg->img);
-	free(mlximg);
+	twl_free(mlximg);
 }

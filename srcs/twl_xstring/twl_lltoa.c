@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_xstring.h"
 
 char	*twl_lltoa(long long ln)
@@ -30,7 +30,7 @@ char	*twl_lltoa(long long ln)
 	{
 		tmp = out;
 		out = twl_strjoin("-", out);
-		free(tmp);
+		twl_free(tmp);
 	}
 	return (out);
 }

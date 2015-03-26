@@ -11,10 +11,11 @@
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include <stdbool.h>
 
 #include "twl_arr.h"
+#include "twl_stdlib.h"
 #include "twl_xstring.h"
 #include "twl_xstdlib.h"
 #include "twl_xstdio.h"
@@ -56,7 +57,7 @@ static bool			has_executable_binary_fn(void *path, void *file)
 
 	fullpath = twl_joinpath(path, file);
 	is_exec = is_local_executable(fullpath);
-	free(fullpath);
+	twl_free(fullpath);
 	return (is_exec);
 }
 

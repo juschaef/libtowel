@@ -3,7 +3,7 @@
 
 static void del(void *data)
 {
-	free(data);
+	twl_free(data);
 }
 
 static void simple_test(t_test *test)

@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
+#include "twl_stdlib.h"
 #include "twl_string.h"
 #include "twl_xstring.h"
 
@@ -21,12 +22,12 @@ char	*twl_strjoinfree(char *left, char *right, char free_num)
 	out = twl_strjoin(left, right);
 	if (free_num == 'b')
 	{
-		free(left);
-		free(right);
+		twl_free(left);
+		twl_free(right);
 	}
 	else if (free_num == 'l')
-		free(left);
+		twl_free(left);
 	else if (free_num == 'r')
-		free(right);
+		twl_free(right);
 	return (out);
 }

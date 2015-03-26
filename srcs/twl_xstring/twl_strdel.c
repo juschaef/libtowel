@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 
 void	twl_strdel(char **as)
 {
 	if (as && *as)
 	{
-		free(*as);
+		twl_free(*as);
 		*as = NULL;
 	}
 }

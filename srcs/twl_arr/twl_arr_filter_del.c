@@ -32,6 +32,6 @@ void	*twl_arr_filter_del(void *arr_, bool (*filter_fn)
 		i++;
 	}
 	if (delfn)
-		free(arr);
+		twl_free(arr);
 	return (filtered_arr);
 }

@@ -14,7 +14,7 @@
 # define TWL_PRINTF_H
 
 # include <stdarg.h>
-# include <stdlib.h>
+# include "twl_stdlib.h"
 
 # include "twl_lst.h"
 # include "twl_dict.h"

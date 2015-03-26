@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_printf.h"
 #include "twl_arr.h"
 
 void			pfelem_free(t_pfelem *elem)
 {
-	free(elem->str);
-	free(elem->prefix);
+	twl_free(elem->str);
+	twl_free(elem->prefix);
 	twl_arr_del(elem->split, free);
-	free(elem->raw);
+	twl_free(elem->raw);
 	twl_arr_del(elem->values, free);
 	if (elem->length_modifier_str)
-		free(elem->length_modifier_str);
-	free(elem->conv_spec_str);
-	free(elem);
+		twl_free(elem->length_modifier_str);
+	twl_free(elem->conv_spec_str);
+	twl_free(elem);
 }

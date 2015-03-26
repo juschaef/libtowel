@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_opt_elem.h"
 #include "twl_arr.h"
 #include "twl_xstring.h"
 
 void twl_opt_elem_del(t_opt_elem *twl_opt_elem)
 {
-	free(twl_opt_elem->key);
-	free(twl_opt_elem->value);
-	free(twl_opt_elem);
+	twl_free(twl_opt_elem->key);
+	twl_free(twl_opt_elem->value);
+	twl_free(twl_opt_elem);
 }

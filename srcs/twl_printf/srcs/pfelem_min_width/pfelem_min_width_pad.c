@@ -28,11 +28,11 @@ void	pfelem_min_width_pad(t_pfelem *pfelem, int pad_dir, char fill_char)
 		pfelem->str++;
 	}
 	pfelem->str = twl_strpad(pfelem->str, pad_width, pad_dir, fill_char);
-	free(tmp);
+	twl_free(tmp);
 	tmp = pfelem->str;
 	if (is_neg)
 	{
 		pfelem->str = twl_strjoin("-", pfelem->str);
-		free(tmp);
+		twl_free(tmp);
 	}
 }

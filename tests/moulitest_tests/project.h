@@ -17,7 +17,7 @@
 # include "twl_string.h"
 # include <string.h>
 # include <ctype.h>
-# include <stdlib.h>
+# include "twl_stdlib.h"
 # include <unistd.h>
 # include "twl_lst.h"
 

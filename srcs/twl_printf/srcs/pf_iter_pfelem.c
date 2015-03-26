@@ -30,7 +30,7 @@ void	pf_iter_pfelem(t_pf *pf)
 														pfelem->conv_spec_str);
 			conv_str_data = twl_dict_get(pf->conv_str_fns, dict_key);
 			pfelem->conv_to_str = (conv_str_data) ? conv_str_data : NULL;
-			free(dict_key);
+			twl_free(dict_key);
 		}
 		else
 			pfelem->conv_to_str = NULL;

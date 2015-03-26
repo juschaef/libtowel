@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include "twl_string.h"
 
 /*
@@ -24,6 +24,6 @@ void		*twl_realloc(void *ptr, size_t size)
 	if (!(dup = malloc(size)))
 		return (NULL);
 	twl_memcpy(dup, ptr, size);
-	free(ptr);
+	twl_free(ptr);
 	return (dup);
 }

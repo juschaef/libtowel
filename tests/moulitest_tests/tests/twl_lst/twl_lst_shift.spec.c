@@ -17,7 +17,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(twl_lst_get(lst, 0), "bbb") == 0);
 	mt_assert(strcmp(twl_lst_get(lst, 1), "ccc") == 0);
 	mt_assert(twl_lst_get(lst, 2) == NULL);
-	free(s);
+	twl_free(s);
 }
 
 void	suite_twl_lst_shift(t_suite *suite)

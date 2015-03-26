@@ -20,14 +20,14 @@ static int del_counter;
 static void delfn(void *str_)
 {
 	del_counter++;
-	free(str_);
+	twl_free(str_);
 }
 
 static void simple_test(t_test *test)
 {
 	t_lst	*lst;
 	lst = twl_lst_new();
-	
+
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("bbb"));
 	twl_lst_push(lst, strdup("ccc"));

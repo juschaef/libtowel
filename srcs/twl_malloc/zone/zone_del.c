@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <stdlib.h>
+#include "twl_stdlib.h"
 #include <sys/mman.h>
 
 #include "twl_malloc/zone.h"

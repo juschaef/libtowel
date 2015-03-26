@@ -3,7 +3,7 @@
 
 static void	del_data(char *str)
 {
-	free(str);
+	twl_free(str);
 	str = NULL;
 	(void)str;
 }

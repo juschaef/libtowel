@@ -16,7 +16,7 @@ static void test1(t_test *test)
 	mt_assert(twl_arr_indexof(arr, s1) == 0);
 	mt_assert(twl_arr_indexof(arr, s2) == 1);
 	mt_assert(twl_arr_indexof(arr, s3) == 2);
-	free(arr);
+	twl_free(arr);
 }
 
 static void test2(t_test *test)
@@ -35,7 +35,7 @@ static void test2(t_test *test)
 	mt_assert(twl_arr_indexof(arr, s1) == 2);
 	mt_assert(twl_arr_indexof(arr, s2) == 1);
 	mt_assert(twl_arr_indexof(arr, s3) == 0);
-	free(arr);
+	twl_free(arr);
 }
 static void test_not_found(t_test *test)
 {
@@ -48,7 +48,7 @@ static void test_not_found(t_test *test)
 	twl_arr_push(arr, s2);
 
 	mt_assert(twl_arr_indexof(arr, "not in arr") == -1);
-	free(arr);
+	twl_free(arr);
 }
 
 void	suite_twl_arr_indexof(t_suite *suite)

@@ -31,7 +31,7 @@ UT_TEST(twl_lst_reduce)
 
 	twl_lst_reduce(lst, sum, &memo);
 	UT_ASSERT(memo == 10);
-	free(lst);
+	twl_free(lst);
 
 	lst = twl_lst_new();
 	char *str1 = "pomme";
@@ -47,6 +47,6 @@ UT_TEST(twl_lst_reduce)
 
 	output = twl_lst_reduce(lst, twl_lst_join, output);
 	UT_ASSERT(strcmp(output, "pomme, jambon, carrote, beurre") == 0);
-	free(lst);
-	free(output);
+	twl_free(lst);
+	twl_free(output);
 }
