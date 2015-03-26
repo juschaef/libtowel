@@ -16,7 +16,7 @@ void *pf_conv_val_uchar(t_pf *pf)
 {
 	unsigned char *intptr;
 
-	intptr = malloc(sizeof(unsigned char));
+	intptr = twl_malloc(sizeof(unsigned char));
 	*intptr = (unsigned char)(va_arg(pf->arglist, int));
 	return (intptr);
 }

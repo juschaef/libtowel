@@ -22,7 +22,7 @@ char			*twl_strmap(char const *s, char (*f)(char))
 	i = 0;
 	if (!s || !f)
 		return (NULL);
-	new = (char *)malloc(sizeof(char) * (twl_strlen(s) + 1));
+	new = (char *)twl_malloc(sizeof(char) * (twl_strlen(s) + 1));
 	if (!new)
 		return (NULL);
 	while (s[i])

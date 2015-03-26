@@ -16,7 +16,7 @@ void	*twl_xmalloc(int size)
 {
 	char *new;
 
-	new = (char *)malloc(size);
+	new = (char *)twl_malloc(size);
 	if (!new)
 		exit(1);
 	return (new);

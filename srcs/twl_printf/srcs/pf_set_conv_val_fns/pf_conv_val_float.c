@@ -17,7 +17,7 @@ void *pf_conv_val_float(t_pf *pf)
 	double	*lptr;
 	int		sign;
 
-	lptr = malloc(sizeof(double));
+	lptr = twl_malloc(sizeof(double));
 	*lptr = va_arg(pf->arglist, double);
 	sign = (*lptr >= 0) ? 1 : -1;
 	*lptr += 0.0000001 * (double)sign;

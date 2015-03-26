@@ -109,7 +109,7 @@ t_opt				*twl_opt_new(char **argv, char *valid_opts)
 	t_opt			*opt;
 	char			**argv_without_cmd;
 
-	opt = malloc(sizeof(t_opt));
+	opt = twl_malloc(sizeof(t_opt));
 	opt->cmd = twl_strdup(argv[0]);
 	argv_without_cmd = argv + 1;
 	opt->opts = twl_lst_new();

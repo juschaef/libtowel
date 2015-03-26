@@ -20,6 +20,6 @@ void	twl_opt_del(t_opt *twl_opt)
 {
 	twl_free(twl_opt->cmd);
 	twl_lst_del(twl_opt->opts, twl_opt_elem_del);
-	twl_lst_del(twl_opt->non_opt_args, free);
+	twl_lst_del(twl_opt->non_opt_args, twl_free);
 	twl_free(twl_opt);
 }

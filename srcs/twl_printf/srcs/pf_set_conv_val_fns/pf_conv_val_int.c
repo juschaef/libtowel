@@ -16,7 +16,7 @@ void *pf_conv_val_int(t_pf *pf)
 {
 	int *intptr;
 
-	intptr = malloc(sizeof(int));
+	intptr = twl_malloc(sizeof(int));
 	*intptr = va_arg(pf->arglist, int);
 	return (intptr);
 }

@@ -16,7 +16,7 @@ void *pf_conv_val_ullong(t_pf *pf)
 {
 	unsigned long long *lptr;
 
-	lptr = malloc(sizeof(unsigned long long));
+	lptr = twl_malloc(sizeof(unsigned long long));
 	*lptr = va_arg(pf->arglist, unsigned long long);
 	return (lptr);
 }

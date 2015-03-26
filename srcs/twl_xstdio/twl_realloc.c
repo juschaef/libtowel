@@ -21,7 +21,7 @@ void		*twl_realloc(void *ptr, size_t size)
 {
 	void	*dup;
 
-	if (!(dup = malloc(size)))
+	if (!(dup = twl_malloc(size)))
 		return (NULL);
 	twl_memcpy(dup, ptr, size);
 	twl_free(ptr);

@@ -16,7 +16,7 @@ void *pf_conv_val_ushort(t_pf *pf)
 {
 	unsigned short int *intptr;
 
-	intptr = malloc(sizeof(unsigned int));
+	intptr = twl_malloc(sizeof(unsigned int));
 	*intptr = va_arg(pf->arglist, unsigned int);
 	return (intptr);
 }

@@ -18,7 +18,7 @@ void	twl_memswap(void *s1, void *s2, size_t len)
 {
 	void *tmp;
 
-	tmp = malloc(len);
+	tmp = twl_malloc(len);
 	twl_memcpy(tmp, s1, len);
 	twl_memcpy(s1, s2, len);
 	twl_memcpy(s2, tmp, len);

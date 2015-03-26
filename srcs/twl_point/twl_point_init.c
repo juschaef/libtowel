@@ -17,7 +17,7 @@ t_twl_point	*twl_point_init(int x, int y)
 {
 	t_twl_point *pt;
 
-	pt = malloc(sizeof(t_twl_point));
+	pt = twl_malloc(sizeof(t_twl_point));
 	pt->x = x;
 	pt->y = y;
 	return (pt);

@@ -17,7 +17,7 @@ char	*twl_strdup(const char *s1)
 {
 	char *copy;
 
-	if (!(copy = (char *)malloc(sizeof(char) * (twl_strlen(s1) + 1))))
+	if (!(copy = (char *)twl_malloc(sizeof(char) * (twl_strlen(s1) + 1))))
 		return (NULL);
 	twl_strcpy(copy, s1);
 	return (copy);

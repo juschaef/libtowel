@@ -17,7 +17,7 @@ t_pf	*pf_create(char *fmt)
 {
 	t_pf *pf;
 
-	pf = malloc(sizeof(t_pf));
+	pf = twl_malloc(sizeof(t_pf));
 	pf->fmt = fmt;
 	pf->conv_val_fns = twl_lst_new();
 	pf->conv_str_fns = twl_lst_new();

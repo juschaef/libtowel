@@ -18,9 +18,9 @@ void			pfelem_free(t_pfelem *elem)
 {
 	twl_free(elem->str);
 	twl_free(elem->prefix);
-	twl_arr_del(elem->split, free);
+	twl_arr_del(elem->split, twl_free);
 	twl_free(elem->raw);
-	twl_arr_del(elem->values, free);
+	twl_arr_del(elem->values, twl_free);
 	if (elem->length_modifier_str)
 		twl_free(elem->length_modifier_str);
 	twl_free(elem->conv_spec_str);

@@ -59,7 +59,7 @@ char			**twl_strsplit(char const *s, char c)
 		return (NULL);
 	index = 0;
 	word_count = twl_count_words(s, c);
-	t = (char **)malloc(sizeof(*t) * (word_count + 1));
+	t = (char **)twl_malloc(sizeof(*t) * (word_count + 1));
 	if (t == NULL)
 		return (NULL);
 	while (word_count--)

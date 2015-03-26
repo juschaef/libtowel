@@ -19,7 +19,7 @@ char	*twl_strsub(char const *s, unsigned int start, size_t len)
 
 	if ((int)len < 0 || !s)
 		return (NULL);
-	sub = (char *)malloc(sizeof(char) * (len + 1));
+	sub = (char *)twl_malloc(sizeof(char) * (len + 1));
 	if (!sub)
 		return (NULL);
 	twl_bzero(sub, len + 1);

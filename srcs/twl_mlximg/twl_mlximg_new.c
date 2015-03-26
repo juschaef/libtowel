@@ -18,7 +18,7 @@ t_mlximg	*mlximg_new(void *mlx, int width, int height)
 {
 	t_mlximg *mlximg;
 
-	mlximg = malloc(sizeof(t_mlximg));
+	mlximg = twl_malloc(sizeof(t_mlximg));
 	mlximg->height = height;
 	mlximg->width = width;
 	mlximg->mlx = mlx;

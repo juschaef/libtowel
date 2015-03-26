@@ -46,7 +46,7 @@ static char			**get_paths(char *envp[])
 	env = twl_arr_find(envp, is_path_env_fn, NULL);
 	env_segs = twl_strsplit(env, '=');
 	paths = twl_strsplit(env_segs[1], ':');
-	twl_arr_del(env_segs, free);
+	twl_arr_del(env_segs, twl_free);
 	return (paths);
 }
 

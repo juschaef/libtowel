@@ -16,7 +16,7 @@ void *pf_conv_val_uint(t_pf *pf)
 {
 	unsigned int *lptr;
 
-	lptr = malloc(sizeof(unsigned int));
+	lptr = twl_malloc(sizeof(unsigned int));
 	*lptr = va_arg(pf->arglist, unsigned int);
 	return (lptr);
 }

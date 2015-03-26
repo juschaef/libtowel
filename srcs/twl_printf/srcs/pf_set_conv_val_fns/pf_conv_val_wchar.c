@@ -16,7 +16,7 @@ void *pf_conv_val_wchar(t_pf *pf)
 {
 	wchar_t *intptr;
 
-	intptr = malloc(sizeof(wchar_t) * 2);
+	intptr = twl_malloc(sizeof(wchar_t) * 2);
 	twl_bzero(intptr, sizeof(wchar_t) * 2);
 	*intptr = (wchar_t)(va_arg(pf->arglist, wchar_t));
 	return (intptr);

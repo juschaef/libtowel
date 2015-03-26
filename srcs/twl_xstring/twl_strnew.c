@@ -17,7 +17,7 @@ char			*twl_strnew(size_t size)
 {
 	char *new;
 
-	new = (char *)malloc(sizeof(char) * (size + 1));
+	new = (char *)twl_malloc(sizeof(char) * (size + 1));
 	if (!new)
 		return (NULL);
 	twl_bzero(new, size + 1);

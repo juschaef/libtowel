@@ -18,7 +18,7 @@ t_pfelem	*pfelem_create(char *s)
 {
 	t_pfelem *elem;
 
-	elem = malloc(sizeof(t_pfelem));
+	elem = twl_malloc(sizeof(t_pfelem));
 	elem->flags = 0;
 	elem->min_width = 0;
 	elem->precision = PRECISION_NOT_SET;

@@ -19,7 +19,7 @@ t_opt_elem	*twl_opt_elem_new(char *key, char *value)
 {
 	t_opt_elem *twl_opt_elem;
 
-	twl_opt_elem = malloc(sizeof(t_opt_elem));
+	twl_opt_elem = twl_malloc(sizeof(t_opt_elem));
 	twl_opt_elem->key = twl_strdup(key);
 	if (value)
 		twl_opt_elem->value = twl_strdup(value);

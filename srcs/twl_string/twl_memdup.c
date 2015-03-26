@@ -19,7 +19,7 @@ void	*twl_memdup(const void *s, size_t n)
 
 	if (!s)
 		return (NULL);
-	dup = malloc(n);
+	dup = twl_malloc(n);
 	if (!dup)
 		return (NULL);
 	twl_memcpy(dup, s, n);
