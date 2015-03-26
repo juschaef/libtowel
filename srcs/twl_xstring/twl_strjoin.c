@@ -18,7 +18,8 @@ char	*twl_strjoin(char const *s1, char const *s2)
 	char *s;
 	char *save;
 
-	s = (char *)twl_malloc(sizeof(char) * (twl_strlen(s1) + twl_strlen(s2) + 1));
+	s = (char *)twl_malloc(sizeof(char) *
+										(twl_strlen(s1) + twl_strlen(s2) + 1));
 	if (!s)
 		return (NULL);
 	save = s;
