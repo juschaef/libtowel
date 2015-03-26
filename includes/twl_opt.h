@@ -29,4 +29,7 @@ bool				twl_opt_exist(t_opt *twl_opt, char *opt_key);
 char				*twl_opt_checkerr(t_opt *twl_opt, char *valid_opts);
 char				*twl_opt_get_param(t_opt *twl_opt, char *opt_key);
 
+char				**twl_opt_new_parse_arg_opt_and_return_non_opt_args__(
+								char **arr_opts, t_opt *opt, char *valid_opts);
+
 #endif
