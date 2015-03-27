@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   twl_math.h                                         :+:      :+:    :+:   */
+/*   twl_sqrt.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/15 14:55:14 by yyang             #+#    #+#             */
-/*   Updated: 2015/03/27 16:49:21 by annguyen         ###   ########.fr       */
+/*   Created: 2014/11/10 19:19:58 by yyang             #+#    #+#             */
+/*   Updated: 2015/03/27 16:49:53 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_MATH_H
-# define TWL_MATH_H
-
-# define T_FT_COMPLEX(r, i)	((t_twl_complex){(r), (i)})
-
-typedef struct		s_twl_complex
+double				twl_sqrt(const double m)
 {
-	long double		r;
-	long double		i;
-}					t_twl_complex;
+	double			i;
+	int				j;
+	double			x1;
+	double			x2;
 
-int					twl_abs(int n);
-double				twl_sqrt(const double m);
-
-#endif
+	i = 0;
+	while ((i * i) <= m )
+		i += 0.1f;
+	x1 = i;
+	j = 0;
+	while (j < 10)
+	{
+		x2 = m;
+		x2 /= x1;
+		x2 += x1;
+		x2 /= 2;
+		x1 = x2;
+		j++;
+	}
+	return (x2);
+}
