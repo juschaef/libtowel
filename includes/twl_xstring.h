@@ -53,6 +53,7 @@ char			*twl_strpad(const char *s, size_t min_width,
 					char pad_dir, char c);
 char			*twl_strrev(char *s);
 char			**twl_strsplit(char const *s, char c);
+char			**twl_strsplit_mul(char const *s, char *c);
 char			*twl_strsub(char const *s, unsigned int start, size_t len);
 void			twl_strswap(char **s1, char **s2);
 char			*twl_strtrim(char const *s);

@@ -10,21 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #ifndef TWL_OPT_H
 # define TWL_OPT_H
 
 # include "twl_lst.h"
 
-typedef struct	s_opt
+typedef struct		s_opt
 {
-	char		*cmd;
-	t_lst		*opts;
-	t_lst		*non_opt_args;
-}				t_opt;
+	char			*cmd;
+	t_lst			*opts;
+	char			*valid_opts;
+	t_lst			*non_opt_args;
+}					t_opt;
 
-t_opt			*twl_opt_new(char **argv);
-void			twl_opt_del(t_opt *twl_opt);
-bool			twl_opt_exist(t_opt *twl_opt, char *opt_key);
-char			*twl_opt_checkerr(t_opt *twl_opt, char *valid_opts);
+t_opt				*twl_opt_new(char **argv, char *valid_opts);
+void				twl_opt_del(t_opt *twl_opt);
+bool				twl_opt_exist(t_opt *twl_opt, char *opt_key);
+char				*twl_opt_checkerr(t_opt *twl_opt, char *valid_opts);
+char				*twl_opt_get_param(t_opt *twl_opt, char *opt_key);
+
+char				**twl_opt_new_parse_arg_opt_and_return_non_opt_args__(
+								char **arr_opts, t_opt *opt, char *valid_opts);
 
 #endif
