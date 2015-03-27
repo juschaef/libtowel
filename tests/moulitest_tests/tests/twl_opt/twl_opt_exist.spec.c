@@ -8,7 +8,7 @@ static void test_opt_cmd(t_test *test)
 	char *argv[] = {"ls", "-l", "ab", NULL};
 	t_opt *twl_opt;
 
-	twl_opt = twl_opt_new(argv);
+	twl_opt = twl_opt_new(argv, "lbsz");
 	
 	mt_assert(twl_opt_exist(twl_opt, "l") == true);
 	mt_assert(twl_opt_exist(twl_opt, "b") == false);
@@ -22,7 +22,7 @@ static void test_opt_cmd_harder(t_test *test)
 	char *argv[] = {"ls", "-la", "-ul", NULL};
 	t_opt *twl_opt;
 
-	twl_opt = twl_opt_new(argv);
+	twl_opt = twl_opt_new(argv, "laus");
 	
 	mt_assert(twl_opt_exist(twl_opt, "l") == true);
 	mt_assert(twl_opt_exist(twl_opt, "a") == true);
