@@ -17,5 +17,6 @@
 
 typedef bool	t_troll_norm;
 typedef bool	(t_sort_cmp_fn)(void *item1, void *item2, void *context);
+typedef bool	(t_qsort_cmp_fn)(void *item1, void *item2);
 
 #endif
