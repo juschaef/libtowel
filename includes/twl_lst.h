@@ -97,6 +97,7 @@ int							twl_lst_reducei(t_lst *lst,
 
 void						twl_lst_sort(t_lst *lst,
 									t_sort_cmp_fn *cmp_fn, void *context);
+void						twl_lst_qsort(t_lst *lst, t_qsort_cmp_fn *cmp_fn);
 void						twl_lst_rev(t_lst *lst);
 
 /*

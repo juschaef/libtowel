@@ -1,11 +1,10 @@
 #include <project.h>
 #include "twl_arr.h"
 
-bool 		strcmp_fn(void *item1, void *item2, void *context)
+bool 		strcmp_fn(void *item1, void *item2)
 {
 	char *s1 = item1;
 	char *s2 = item2;
-	(void)context;
 	return (strcmp(s1, s2) < 0);
 }
 
@@ -18,7 +17,7 @@ static void simple_test(t_test *test)
 	twl_arr_push(arr, strdup("aaa"));
 	twl_arr_push(arr, strdup("bbb"));
 
-	twl_arr_sort(arr, strcmp_fn, NULL);
+	twl_arr_qsort(arr, strcmp_fn);
 
 	mt_assert(strcmp(arr[0], "aaa") == 0);
 	mt_assert(strcmp(arr[1], "bbb") == 0);

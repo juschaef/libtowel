@@ -65,6 +65,7 @@ void	*twl_arr_filter_del(void *arr_, bool (*filter_fn)
 */
 
 void	twl_arr_sort(void *twl_arr_, t_sort_cmp_fn *cmp_fn, void *context);
+void	twl_arr_qsort(void *arr_, t_qsort_cmp_fn *cmp_fn);
 void	*twl_arr_rev(void *arr);
 t_lst	*twl_arr_to_lst(void *arr);
 
