@@ -50,4 +50,3 @@ t_opt				*twl_opt_new(char **argv, char *valid_opts)
 	parse_argv(argv_without_cmd, opt, valid_opts);
 	return (opt);
 }
-

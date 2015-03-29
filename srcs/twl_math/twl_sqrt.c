@@ -18,7 +18,7 @@ double				twl_sqrt(const double m)
 	double			x2;
 
 	i = 0;
-	while ((i * i) <= m )
+	while ((i * i) <= m)
 		i += 0.1f;
 	x1 = i;
 	j = 0;
