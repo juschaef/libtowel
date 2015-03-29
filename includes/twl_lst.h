@@ -40,6 +40,8 @@ t_lst						*twl_lst_copy(t_lst *lst,
 void						*twl_lst_get(t_lst *lst, int index);
 void						*twl_lst_get_rand(t_lst *lst);
 size_t						twl_lst_len(t_lst *lst);
+void						*twl_lst_last(t_lst *lst);
+void						*twl_lst_first(t_lst *lst);
 
 /*
 ** Aggregate
