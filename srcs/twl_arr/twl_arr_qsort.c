@@ -15,17 +15,6 @@
 #include "twl_string.h"
 #include "twl_arr.h"
 
-static void			strswap(void **s1, void **s2)
-{
-	void			*temp;
-
-	temp = twl_strdup(*s1);
-	free(*s1);
-	*s1 = twl_strdup(*s2);
-	free(*s2);
-	*s2 = temp;
-}
-
 static int			partition(void **s, int l, int h, t_qsort_cmp_fn *cmp_fn)
 {
 	int				i;
@@ -39,12 +28,12 @@ static int			partition(void **s, int l, int h, t_qsort_cmp_fn *cmp_fn)
 	{
 		if (cmp_fn(s[i], s[p]))
 		{
-			strswap(&s[i], &s[firsthight]);
+			twl_arr_swap(s, i, firsthight);
 			firsthight++;
 		}
 		i++;
 	}
-	strswap(&s[p], &s[firsthight]);
+	twl_arr_swap(s, p, firsthight);
 	return (firsthight);
 }
 
