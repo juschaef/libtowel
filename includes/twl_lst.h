@@ -57,8 +57,8 @@ size_t						twl_lst_count(t_lst *lst,
 int							twl_lst_indexof(t_lst *lst, void *target);
 void						*twl_lst_find(t_lst *lst,
 						bool (*f)(void *data, void *context), void *context);
-t_lst				*twl_lst_findall(t_lst *lst, bool (*iter_fn)(void *data,
-												void *context), void *context);
+t_lst						*twl_lst_findall(t_lst *lst,
+					bool (*iter_fn)(void *data, void *context), void *context);
 /*
 ** Move
 */
@@ -102,6 +102,7 @@ void						twl_lst_sort(t_lst *lst,
 									t_sort_cmp_fn *cmp_fn, void *context);
 void						twl_lst_qsort(t_lst *lst, t_qsort_cmp_fn *cmp_fn);
 void						twl_lst_rev(t_lst *lst);
+void						twl_lst_putstr(t_lst *lst, char *sep);
 
 /*
 ** Convert
