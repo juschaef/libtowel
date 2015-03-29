@@ -27,11 +27,11 @@ static bool			find_fn(void *opt_elem_, void *valid_opts_)
 	return (false);
 }
 
-char				*twl_opt_checkerr(t_opt *twl_opt, char *valid_opts)
+char				*twl_opt_check_invalid_opts(t_opt *opt)
 {
 	t_opt_elem		*opt_elem;
 
-	opt_elem = twl_lst_find(twl_opt->opts, find_fn, valid_opts);
+	opt_elem = twl_lst_find(opt->opts, find_fn, opt->valid_opts);
 	if (opt_elem)
 		return (opt_elem->key);
 	return (NULL);
