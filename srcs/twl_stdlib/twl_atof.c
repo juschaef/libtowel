@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -10,31 +11,53 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int					twl_atoi(const char *str)
+#include "twl_stdio.h"
+#include "twl_ctype.h"
+
+static long long 	power_ten(int power)
 {
-	long			value;
+	long long		power_ten;
+
+	power_ten = 1;
+	while (power > 0)
+	{
+		power_ten *= 10;
+		power--;
+	}
+	return (power_ten);
+}
+
+double				twl_atof(const char *s)
+{
+	double			result;
+	long long int	res_int;
+	int				power;
 	int				sign;
 
-	value = 0;
+	result = 0;
+	power = 0;
+	res_int = 0;
 	sign = 1;
-	while ((*str == '\t' || *str == '\n' || *str == '\v' || *str == '\f'
-		|| *str == '\r' || *str == ' '))
-		str++;
-	if (*str == '+' || *str == '-')
+	if (*s == '-')
 	{
-		if (*str == '-')
-			sign = -1;
-		str++;
+		sign = -1;
+		s++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*s != '\0' && twl_isdigit(*s))
 	{
-		value *= 10;
-		value += (long)(*str - '0');
-		str++;
+		result = result * 10 + (*s - '0');
+		s++;
 	}
-	if (((int)(value * sign) == 0 && value != 0) || (value < 0))
+	if (*s == '.')
 	{
-		value = (sign < 0) ? 0 : -1;
+		s++;
+		while (*s != '\0' && twl_isdigit(*s))
+		{
+			res_int = res_int * 10 + (*s - '0');
+			power = power + 1;
+			s++;
+		}
 	}
-	return (int)(value * sign);
+	result += res_int / (power_ten(power) * 1.0);
+	return (result * sign);
 }

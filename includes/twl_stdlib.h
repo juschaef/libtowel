@@ -13,6 +13,7 @@
 #ifndef TWL_STDLIB_H
 # define TWL_STDLIB_H
 
-int		twl_atoi(const char *str);
+int					twl_atoi(const char *str);
+double				twl_atof(const char *str);
 
 #endif
