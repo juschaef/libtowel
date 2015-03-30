@@ -29,9 +29,9 @@ static void test_non_opt_arguments(t_test *test)
 	t_opt *twl_opt;
 
 	twl_opt = twl_opt_new(argv, "ls");
-	mt_assert(strcmp(twl_lst_get(twl_opt->non_opt_args, 0), "file1") == 0);
-	mt_assert(strcmp(twl_lst_get(twl_opt->non_opt_args, 1), "dir1") == 0);
-	mt_assert(twl_lst_len(twl_opt->non_opt_args) == 2);
+	mt_assert(strcmp(twl_lst_get(twl_opt->args, 0), "file1") == 0);
+	mt_assert(strcmp(twl_lst_get(twl_opt->args, 1), "dir1") == 0);
+	mt_assert(twl_lst_len(twl_opt->args) == 2);
 	twl_opt_del(twl_opt);
 }
 
@@ -41,9 +41,9 @@ static void test_double_dash(t_test *test)
 	t_opt *twl_opt;
 
 	twl_opt = twl_opt_new(argv, "la");
-	mt_assert(strcmp(twl_lst_get(twl_opt->non_opt_args, 0), "-file_starting_with_hyphen") == 0);
-	mt_assert(strcmp(twl_lst_get(twl_opt->non_opt_args, 1), "file1") == 0);
-	mt_assert(twl_lst_len(twl_opt->non_opt_args) == 4);
+	mt_assert(strcmp(twl_lst_get(twl_opt->args, 0), "-file_starting_with_hyphen") == 0);
+	mt_assert(strcmp(twl_lst_get(twl_opt->args, 1), "file1") == 0);
+	mt_assert(twl_lst_len(twl_opt->args) == 4);
 	twl_opt_del(twl_opt);
 }
 

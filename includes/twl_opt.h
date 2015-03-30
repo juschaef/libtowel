@@ -19,8 +19,8 @@ typedef struct		s_opt
 {
 	char			*cmd;
 	t_lst			*opts;
+	t_lst			*args;
 	char			*valid_opts;
-	t_lst			*non_opt_args;
 }					t_opt;
 
 t_opt				*twl_opt_new(char **argv, char *valid_opts);

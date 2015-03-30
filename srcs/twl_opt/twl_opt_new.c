@@ -32,9 +32,9 @@ static void			parse_argv(char **arr_opts, t_opt *opt, char *valid_opts)
 
 	non_opt_args = twl_opt_new_parse_arg_opt_and_return_non_opt_args__(
 													arr_opts, opt, valid_opts);
-	opt->non_opt_args = twl_lst_new();
+	opt->args = twl_lst_new();
 	if (non_opt_args)
-		twl_arr_iter(non_opt_args, push_non_opt_to_lst, opt->non_opt_args);
+		twl_arr_iter(non_opt_args, push_non_opt_to_lst, opt->args);
 }
 
 t_opt				*twl_opt_new(char **argv, char *valid_opts)
