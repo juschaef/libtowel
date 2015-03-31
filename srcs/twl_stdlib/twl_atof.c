@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -14,7 +13,7 @@
 #include "twl_stdio.h"
 #include "twl_ctype.h"
 
-static long long 	power_ten(int power)
+static long long	power_ten(int power)
 {
 	long long		power_ten;
 
@@ -44,20 +43,14 @@ double				twl_atof(const char *s)
 		s++;
 	}
 	while (*s != '\0' && twl_isdigit(*s))
-	{
-		result = result * 10 + (*s - '0');
-		s++;
-	}
-	if (*s == '.')
-	{
-		s++;
+		result = result * 10 + (*s++ - '0');
+	if (*s++ == '.')
 		while (*s != '\0' && twl_isdigit(*s))
 		{
 			res_int = res_int * 10 + (*s - '0');
 			power = power + 1;
 			s++;
 		}
-	}
 	result += res_int / (power_ten(power) * 1.0);
 	return (result * sign);
 }
