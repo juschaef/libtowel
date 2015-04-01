@@ -18,7 +18,6 @@ C_DIR = srcs/
 O_DIR = .tmp/objects/
 
 # CC_OPTIMIZATION_FLAGS = -O2
-CC_LIBMLX = -L/usr/X11/lib -lmlx -lXext -lX11
 CC_FLAGS = -g -Wall -Wextra -Werror
 CC_HEADERS = -I ./includes -I ./srcs/libft/includes
 CC_DEBUG =
@@ -49,7 +48,7 @@ ifeq ($(OUTPUT_TYPE), lib)
 	@ar rcs $@ $^
 endif
 ifeq ($(OUTPUT_TYPE), exec)
-	@gcc $(CC_OPTIONS) $(CC_LIBMLX) $(CC_DEBUG) $^ -o $@
+	@gcc $(CC_OPTIONS) $(CC_DEBUG) $^ -o $@
 endif
 	@echo "$(COL_GREEN)$(NAME)$(COL_RESET)"
 
