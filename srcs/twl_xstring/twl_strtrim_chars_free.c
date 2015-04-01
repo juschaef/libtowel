@@ -10,10 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_string.h"
-#include "twl_xstring.h"
+#include <stdlib.h>
 
-char	*twl_strtrim(char const *s)
+#include "twl_xstring.h"
+#include "twl_string.h"
+#include "twl_stdio.h"
+
+char				*twl_strtrim_chars_free(char *s, char *chars)
 {
-	return (twl_strtrim_chars(s, " \n\t"));
+	char			*trimed_str;
+
+	trimed_str = twl_strtrim_chars(s, chars);
+	free(s);
+	return (trimed_str);
 }

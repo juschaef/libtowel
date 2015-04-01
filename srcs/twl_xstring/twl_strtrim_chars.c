@@ -10,10 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_string.h"
 #include "twl_xstring.h"
+#include "twl_string.h"
+#include "twl_stdio.h"
 
-char	*twl_strtrim(char const *s)
+char	*twl_strtrim_chars(char const *s, char *chars)
 {
-	return (twl_strtrim_chars(s, " \n\t"));
+	int start;
+	int end;
+
+	start = 0;
+	end = twl_strlen(s) - 1;
+	while (twl_strchr(chars, s[start]))
+		start++;
+	while (twl_strchr(chars, s[end]))
+		end--;
+	return (twl_strsub(s, start, end - start + 1));
 }
