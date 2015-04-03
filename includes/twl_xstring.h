@@ -69,5 +69,6 @@ size_t				twl_wstrlen(wchar_t *wstr);
 char				*twl_strjoinarr(const char **arr, const char *sep);
 char				*twl_strjoinlst(t_lst *lst, const char *sep);
 void				twl_add_char(char *s, char c);
+char				**twl_str_to_av(char *str);
 
 #endif
