@@ -13,7 +13,7 @@
 #include "twl_string.h"
 #include "twl_xstring.h"
 
-int		twl_strnequ(char const *s1, char const *s2, size_t n)
+int					twl_str_starts_with(char *base, char *prefix)
 {
-	return (twl_strncmp(s1, s2, n) == 0);
+	return (twl_strnequ(base, prefix, twl_strlen(prefix)));
 }

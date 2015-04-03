@@ -14,5 +14,6 @@
 # define TWL_XUNISTD_H
 
 int					twl_execvep(char *file, char **argv, char **envp);
+char				*twl_getcwd_str(void);
 
 #endif

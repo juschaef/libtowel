@@ -10,10 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "twl_string.h"
-#include "twl_xstring.h"
 
-int		twl_strnequ(char const *s1, char const *s2, size_t n)
+#define PATH_MAX 100 * 1000
+
+char				*twl_getcwd_str(void)
 {
-	return (twl_strncmp(s1, s2, n) == 0);
+    char			cwd[PATH_MAX];
+
+	getcwd(cwd, PATH_MAX);
+    return (twl_strdup(cwd));
 }
