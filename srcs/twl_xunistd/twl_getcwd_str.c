@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_norris_loves_the_norminette.c                :+:      :+:    :+:   */
+/*   twl_getcwd_str.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chuck <chuck@student.42.fr>                +#+  +:+       +#+        */
+/*   By: annguyen <annguyen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2042/02/30 42:00:00 by chuck             #+#    #+#             */
-/*   Updated: 2042/02/30 41:59:59 by chuck            ###   ########.fr       */
+/*   Updated: 2015/04/03 19:17:58 by annguyen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 char				*twl_getcwd_str(void)
 {
-    char			cwd[PATH_MAX];
+	char			cwd[PATH_MAX];
 
 	getcwd(cwd, PATH_MAX);
-    return (twl_strdup(cwd));
+	return (twl_strdup(cwd));
 }
