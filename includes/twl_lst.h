@@ -34,6 +34,8 @@ typedef struct				s_lst
 */
 
 t_lst						*twl_lst_new(void);
+t_lst						*twl_lst_new_fill(int nbr,
+													void *(*constructor)(void));
 void						twl_lst_del(t_lst *lst, void (*delfn)());
 t_lst						*twl_lst_copy(t_lst *lst,
 											void *(*copy_fn)(void *data));
