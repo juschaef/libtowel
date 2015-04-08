@@ -10,19 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <assert.h>
 #include "twl_lst.h"
-#include "twl_xstdlib.h"
 
-void				*twl_lst_get_rand(t_lst *lst)
+void				twl_lst_shuffle(t_lst *lst)
 {
-	t_lst_elem__	*elem;
-	size_t			len;
-	int				random;
+	t_lst			*tmp;
 
-	len = twl_lst_len(lst);
-	random = twl_randint(0, len - 1);
-	elem = twl_lst_get_elem__(lst, random);
-	if (elem)
-		return (elem->data);
-	return (NULL);
+	tmp = twl_lst_new();
+	tmp->head = lst->head;
+	lst->head = NULL;
+	while (twl_lst_len(tmp))
+		twl_lst_push(lst, twl_lst_popi(tmp, twl_lst_indexof(tmp, twl_lst_get_rand(tmp))));
+	twl_lst_del(tmp, NULL);
 }

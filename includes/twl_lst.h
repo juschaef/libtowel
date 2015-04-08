@@ -95,7 +95,7 @@ void						*twl_lst_reduce(t_lst *lst,
 						void *(*fn)(void *data, void *memo), void *context);
 int							twl_lst_reducei(t_lst *lst,
 								int (*fn)(void *data, int memo), int memo);
-
+void						twl_lst_shuffle(t_lst *lst);
 /*
 ** Misc
 */
