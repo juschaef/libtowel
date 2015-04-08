@@ -10,15 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_XSTDIO_H
-# define TWL_XSTDIO_H
+#include <unistd.h>
 
-void	twl_putstr(char const *s);
-void	twl_putstr_fd(char const *s, int fd);
-void	twl_putnchar(int n, char c);
-void	twl_putchar_fd(char c, int fd);
-int		twl_putchar_tty(int c);
-void	twl_putnstr_fd(char const *s, int n, int fd);
-int		twl_lprintf(const char *fmt, ...);
+/*
+** print char 'c' to file descriptor 'fd'
+*/
 
-#endif
+void	twl_putnchar(int n, char c)
+{
+	while (n--)
+		write(1, &c, 1);
+}
