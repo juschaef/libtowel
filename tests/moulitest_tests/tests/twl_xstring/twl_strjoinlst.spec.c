@@ -3,16 +3,17 @@
 
 static void simple_test(t_test *test)
 {
-	t_lst *lst;
-	char *output;
+	// t_lst *lst;
+	// char *output;
 
-	lst = twl_lst_new();
-	twl_lst_push(lst, "aaa");
-	twl_lst_push(lst, "bbb");
-	twl_lst_push(lst, "ccc");
+	// lst = twl_lst_new();
+	// twl_lst_push(lst, "aaa");
+	// twl_lst_push(lst, "bbb");
+	// twl_lst_push(lst, "ccc");
 
-	output = twl_strjoinlst(lst, " ");
-	mt_assert(strcmp(output, "aaa bbb ccc") == 0);
+	// output = twl_strjoinlst(lst, " ");
+	// mt_assert(strcmp(output, "aaa bbb ccc") == 0);
+	mt_assert(0);
 }
 
 void	suite_twl_strjoinlst(t_suite *suite)

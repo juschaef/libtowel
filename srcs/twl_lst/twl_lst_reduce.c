@@ -20,7 +20,7 @@ void	*twl_lst_reduce(t_lst *lst, void *(*fn)(void *data, void *memo),
 	elem = lst->head;
 	while (elem)
 	{
-		context = fn(elem, context);
+		context = fn(elem->data, context);
 		elem = elem->next;
 	}
 	return (context);
