@@ -15,26 +15,27 @@
 #include "twl_arr.h"
 #include "twl_xstring.h"
 
-static void *twl_lst_join(void *elem_, void *context_)
+static void			twl_lst_join(void *str_, void *next, void *context_)
 {
 	t_twl_strjoinarr_context	*context;
-	t_lst_elem__				*elem;
+	char						*str;
 
 	context = context_;
-	elem = elem_;
-	context->output = twl_strjoinfree(context->output, elem->data, 'l');
-	if (elem->next)
+	str = str_;
+	context->output = twl_strjoinfree(context->output, str, 'l');
+	if (next)
+	{
 		context->output = twl_strjoinfree(context->output,
 											(char *)context->separator, 'l');
-	return (context);
+	}
 }
 
-char		*twl_strjoinlst(t_lst *lst, const char *sep)
+char				*twl_strjoinlst(t_lst *lst, const char *sep)
 {
-	t_twl_strjoinarr_context context;
+	t_twl_strjoinarr_context		context;
 
 	context.output = twl_strdup("");
 	context.separator = sep;
-	twl_lst_reduce(lst, twl_lst_join, &context);
+	twl_lst_itern(lst, twl_lst_join, &context);
 	return (context.output);
 }
