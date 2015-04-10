@@ -15,6 +15,6 @@
 
 int		twl_randint(int start, int end)
 {
-	srand(time(NULL));
+	srand(clock());
 	return (rand() % (end + 1 - start) + start);
 }

@@ -10,13 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_STDIO_H
-# define TWL_STDIO_H
+#include "twl_printf.h"
 
-int				twl_printf(const char *fmt, ...);
-int				twl_sprintf(char **s, const char *fmt, ...);
-int				twl_asprintf(char **s, const char *fmt, ...);
-int				twl_dprintf(const int fd, const char *fmt, ...);
-int				twl_putchar(int c);
+int			twl_asprintf(char **out, const char *fmt, ...)
+{
+	t_pf	*pf;
+	size_t	len;
 
-#endif
+	pf = pf_create((char *)fmt);
+	va_start(pf->arglist, (char *)fmt);
+	pf_prepare_xprintf__(pf);
+	va_end(pf->arglist);
+	*out = twl_strcpy(*out, pf->output);
+	len = pf->output_len;
+	pf_free(pf);
+	return (len);
+}
