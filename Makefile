@@ -43,19 +43,21 @@ else
 endif
 
 $(NAME): $(O_FILES)
-	$(info [info] compile $(OUTPUT_TYPE) ...)
+	@echo ""
+	@echo "[info] compile $(OUTPUT_TYPE) ..."
 ifeq ($(OUTPUT_TYPE), lib)
 	@ar rcs $@ $^
 endif
 ifeq ($(OUTPUT_TYPE), exec)
 	@gcc $(CC_OPTIONS) $(CC_DEBUG) $^ -o $@
 endif
-	@echo "$(COL_GREEN)$(NAME)$(COL_RESET)"
+	@echo "$(COL_GREEN)lib compiled$(COL_RESET)"
 
 $(O_DIR)%.o: $(C_DIR)%.c
 	@mkdir -p $(O_DIRS) $(O_DIR) 2> /dev/null || echo "" > /dev/null
 	@gcc $(CC_OPTIONS) $(CC_DEBUG) -o $@ -c $< \
-		&& echo "$<  >>>>  $@" | sed 's;//;/;g'
+		&& printf "."
+	@#&& printf "$<  >>>>  $@" | sed 's;//;/;g'
 
 debug: _debug all
 
