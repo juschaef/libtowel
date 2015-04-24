@@ -14,7 +14,7 @@
 #include "twl_stdio.h"
 #include "twl_xstdio.h"
 
-void				twl_arr_str_print(void *arr_, char *sep)
+void				twl_arr_putstr(void *arr_, char *sep)
 {
 	size_t			i;
 	size_t			len;

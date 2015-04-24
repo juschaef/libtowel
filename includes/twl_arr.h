@@ -69,6 +69,6 @@ void				twl_arr_sort(void *twl_arr_, t_sort_cmp_fn *cmp_fn,
 void				twl_arr_qsort(void *arr_, t_qsort_cmp_fn *cmp_fn);
 void				*twl_arr_rev(void *arr);
 t_lst				*twl_arr_to_lst(void *arr);
-void				twl_arr_str_print(void *arr, char *sep);
+void				twl_arr_putstr(void *arr, char *sep);
 
 #endif

@@ -59,8 +59,11 @@ size_t						twl_lst_count(t_lst *lst,
 int							twl_lst_indexof(t_lst *lst, void *target);
 void						*twl_lst_find(t_lst *lst,
 						bool (*f)(void *data, void *context), void *context);
+void						*twl_lst_find_and_pop(t_lst *lst,
+						bool (*f)(void *data, void *context), void *context);
 t_lst						*twl_lst_findall(t_lst *lst,
 					bool (*iter_fn)(void *data, void *context), void *context);
+
 /*
 ** Move
 */
