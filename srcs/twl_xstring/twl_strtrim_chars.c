@@ -12,12 +12,12 @@
 
 #include "twl_xstring.h"
 #include "twl_string.h"
-#include "twl_stdio.h"
 
-char	*twl_strtrim_chars(char const *s, char *chars)
+char				*twl_strtrim_chars(char const *s, char *chars)
 {
-	int start;
-	int end;
+	int				start;
+	int				end;
+	char			*trimed;
 
 	start = 0;
 	end = twl_strlen(s) - 1;
@@ -25,5 +25,8 @@ char	*twl_strtrim_chars(char const *s, char *chars)
 		start++;
 	while (twl_strchr(chars, s[end]))
 		end--;
-	return (twl_strsub(s, start, end - start + 1));
+	trimed = twl_strsub(s, start, end - start + 1);
+	if (!trimed)
+		return (twl_strdup(""));
+	return (trimed);
 }
