@@ -13,7 +13,9 @@
 #include "twl_string.h"
 #include "twl_xstring.h"
 
-int					twl_str_ends_with(char *base, char *suffix)
+bool				twl_str_ends_with(char *base, char *suffix)
 {
+	if (twl_strlen(suffix) > twl_strlen(base))
+		return (false);
 	return (twl_strequ(base + twl_strlen(base) - twl_strlen(suffix), suffix));
 }

@@ -12,7 +12,7 @@
 
 #include "twl_printf.h"
 
-int			twl_asprintf(char **out, const char *fmt, ...)
+int			twl_sprintf(char *out, const char *fmt, ...)
 {
 	t_pf	*pf;
 	size_t	len;
@@ -21,7 +21,7 @@ int			twl_asprintf(char **out, const char *fmt, ...)
 	va_start(pf->arglist, (char *)fmt);
 	pf_prepare_xprintf__(pf);
 	va_end(pf->arglist);
-	*out = twl_strcpy(*out, pf->output);
+	twl_memcpy(out, pf->output, pf->output_len);
 	len = pf->output_len;
 	pf_free(pf);
 	return (len);
