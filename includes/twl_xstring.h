@@ -73,5 +73,6 @@ char				**twl_str_to_av(char *str);
 int					twl_str_starts_with(char *base, char *prefix);
 bool				twl_str_ends_with(char *base, char *suffix);
 unsigned int		twl_str_count_char(char *s, char c);
+char				*twl_str_compress_char(char *s, char c);
 
 #endif
