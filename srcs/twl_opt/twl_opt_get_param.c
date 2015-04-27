@@ -10,28 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_OPT_H
-# define TWL_OPT_H
+#include <stdbool.h>
 
-# include "twl_lst.h"
+#include "twl_opt.h"
+#include "twl_opt_elem.h"
 
-typedef struct		s_opt
+static bool			find_opt(void *opt_elem_, void *opt_key)
 {
-	char			*cmd;
-	t_lst			*opts;
-	t_lst			*args;
-	char			*valid_opts;
-}					t_opt;
+	t_opt_elem *opt_elem;
 
-t_opt				*twl_opt_new(char **argv, char *valid_opts);
-void				twl_opt_del(t_opt *opt);
-bool				twl_opt_exist(t_opt *opt, char *opt_key);
-char				*twl_opt_check_invalid_opts(t_opt *opt);
+	opt_elem = opt_elem_;
+	if (twl_strcmp(opt_elem->key, opt_key) == 0)
+		return (true);
+	return (false);
+}
 
-char				**twl_opt_new_parse_arg_opt_and_return_non_opt_args__(
-								char **arr_opts, t_opt *opt, char *valid_opts);
-size_t				twl_opt_args_len(t_opt *opt);
-char				*twl_opt_args_get(t_opt *opt, int index);
-char				*twl_opt_get_param(t_opt *twl_opt, char *opt_key);
+char				*twl_opt_get_param(t_opt *twl_opt, char *opt_key)
+{
+	t_opt_elem		*opt;
 
-#endif
+	opt = twl_lst_find(twl_opt->opts, find_opt, opt_key);
+	if (opt->value != NULL)
+		return (opt->value);
+	else
+		return (NULL);
+}
