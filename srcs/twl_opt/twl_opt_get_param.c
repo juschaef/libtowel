@@ -30,7 +30,7 @@ char				*twl_opt_get_param(t_opt *twl_opt, char *opt_key)
 	t_opt_elem		*opt;
 
 	opt = twl_lst_find(twl_opt->opts, find_opt, opt_key);
-	if (opt->value != NULL)
+	if (opt && opt->value != NULL)
 		return (opt->value);
 	else
 		return (NULL);

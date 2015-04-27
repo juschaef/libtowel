@@ -45,10 +45,21 @@ static void test_simple4(t_test *test)
 	twl_opt_del(twl_opt);
 }
 
+static void test_opt_that_does_not_exist(t_test *test)
+{
+	char *argv[] = {"ls", NULL};
+	t_opt *twl_opt;
+
+	twl_opt = twl_opt_new(argv, "l");
+	mt_assert(twl_opt_get_param(twl_opt, "l") == NULL);
+	twl_opt_del(twl_opt);
+}
+
 void	suite_twl_opt_get_param(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, test_simple);
 	SUITE_ADD_TEST(suite, test_simple2);
 	SUITE_ADD_TEST(suite, test_simple3);
 	SUITE_ADD_TEST(suite, test_simple4);
+	SUITE_ADD_TEST(suite, test_opt_that_does_not_exist);
 }
