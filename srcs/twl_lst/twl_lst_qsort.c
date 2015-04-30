@@ -26,7 +26,7 @@ void			twl_lst_qsort(t_lst *lst, t_qsort_cmp_fn *cmp_fn)
 
 	tmp_arr = twl_lst_to_arr(lst);
 	twl_arr_qsort(tmp_arr, cmp_fn);
-	twl_lst_clear__(lst, NULL);
+	twl_lst_clear(lst, NULL);
 	twl_arr_iter(tmp_arr, push_item_to_lst, lst);
 	free(tmp_arr);
 }

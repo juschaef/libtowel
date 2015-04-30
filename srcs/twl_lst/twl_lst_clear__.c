@@ -26,7 +26,7 @@ static void		del_elem_without_link(t_lst_elem__ *elem, void (*delfn)())
 	free(elem);
 }
 
-void			twl_lst_clear__(t_lst *lst, void (*delfn)())
+void			twl_lst_clear(t_lst *lst, void (*delfn)())
 {
 	twl_lst_iter_elem__(lst, (void *)del_elem_without_link, delfn);
 	lst->head = NULL;

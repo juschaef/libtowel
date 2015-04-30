@@ -135,6 +135,6 @@ void						twl_lst_link__(t_lst_elem__ *elem1,
 void						twl_lst_link3__(t_lst_elem__ *elem1,
 									t_lst_elem__ *elem2, t_lst_elem__ *elem3);
 
-void						twl_lst_clear__(t_lst *lst, void (*delfn)());
+void						twl_lst_clear(t_lst *lst, void (*delfn)());
 
 #endif
