@@ -20,6 +20,8 @@ void	*twl_lst_shift(t_lst *lst)
 	void			*data;
 
 	elem = lst->head;
+	if (!elem)
+		return (NULL);
 	data = elem->data;
 	lst->head = elem->next;
 	twl_lst_del_elem__(lst, elem, NULL);
