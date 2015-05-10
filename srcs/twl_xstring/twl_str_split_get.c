@@ -16,12 +16,12 @@
 
 #include "twl_xstring.h"
 
-char				*twl_str_split_get(char *str, char c, int index)
+char				*twl_str_split_get(char *str, char *split_chars, int index)
 {
 	char			**segs;
 	char			*ret;
 
-	segs = twl_strsplit(str, c);
+	segs = twl_strsplit_mul(str, split_chars);
 	if (index < 0 || index > (int)twl_arr_len(segs) - 1)
 		return (NULL);
 	ret = twl_strdup(segs[index]);
