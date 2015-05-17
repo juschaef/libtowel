@@ -10,17 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_XSTDIO_H
-# define TWL_XSTDIO_H
+#include <unistd.h>
+#include <ncurses.h>
 
-void				twl_putstr(char const *s);
-void				twl_putstr_fd(char const *s, int fd);
-void				twl_putnchar(int n, char c);
-void				twl_putchar_fd(char c, int fd);
-int					twl_putchar_tty(int c);
-void				twl_putnstr_fd(char const *s, int n, int fd);
-int					twl_lprintf(const char *fmt, ...);
-void				twl_xprintf(const char *fmt, ...);
-void				twl_nxprintf(const char *fmt, ...);
+#include "twl_printf.h"
 
-#endif
+void				twl_nxprintf(const char *fmt, ...)
+{
+	t_pf	*pf;
+	size_t	len;
+
+	endwin();
+	pf = pf_create((char *)fmt);
+	va_start(pf->arglist, (char *)fmt);
+	pf_prepare_xprintf__(pf);
+	pf_print_fd(pf, STDERR_FILENO);
+	va_end(pf->arglist);
+	len = pf->output_len;
+	pf_free(pf);
+	exit(1);
+}
