@@ -35,12 +35,7 @@ COL_RED = \033[0;31m
 COL_GREEN = \033[0;32m
 CC_OPTIONS = $(CC_FLAGS) $(CC_HEADERS) $(CC_FLAGS_EXTRA)
 
-all:
-ifeq ($(DEBUG), 1)
-	@make -j4 _debug $(NAME);
-else
-	@make -j4 $(NAME)
-endif
+all: $(NAME)
 
 $(NAME): $(O_FILES)
 	@echo ""
@@ -70,7 +65,9 @@ fclean: clean
 	$(info [info] $@ ...)
 	@rm $(NAME) 2> /dev/null || echo "" > /dev/null
 
-re: fclean all
+re:
+	make fclean
+	make all
 
 _debug:
 	$(eval CC_FLAGS = -Wall -Wextra -g)

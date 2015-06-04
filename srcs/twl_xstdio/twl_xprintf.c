@@ -12,6 +12,9 @@
 
 #include <unistd.h>
 
+#include "twl_stdio.h"
+#include "twl_color.h"
+
 #include "twl_printf.h"
 
 void				twl_xprintf(const char *fmt, ...)
@@ -22,7 +25,9 @@ void				twl_xprintf(const char *fmt, ...)
 	pf = pf_create((char *)fmt);
 	va_start(pf->arglist, (char *)fmt);
 	pf_prepare_xprintf__(pf);
+	twl_dprintf(STDERR_FILENO, "%s[error] ", C_RED);
 	pf_print_fd(pf, STDERR_FILENO);
+	twl_dprintf(STDERR_FILENO, "%s\n", C_CLEAR);
 	va_end(pf->arglist);
 	len = pf->output_len;
 	pf_free(pf);
