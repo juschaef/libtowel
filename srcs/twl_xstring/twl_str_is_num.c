@@ -10,21 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-#include "twl_stdlib.h"
 #include "twl_ctype.h"
 #include "twl_xstring.h"
 
-bool				twl_str_is_int(char *s)
+bool				twl_str_is_num(char *s)
 {
-	char			*tmp;
-	int				is_int;
-
 	if (twl_strlen(s) == 0)
 		return (false);
-	tmp = twl_itoa(twl_atoi(s));
-	is_int = twl_strequ(tmp, s);
-	free(tmp);
-	return (is_int);
+	if (*s == '-')
+		s++;
+	return (twl_str_is_pos_num(s));
 }

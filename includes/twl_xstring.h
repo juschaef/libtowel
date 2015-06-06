@@ -76,6 +76,8 @@ unsigned int		twl_str_count_char(char *s, char c);
 char				*twl_str_compress_char(char *s, char c);
 bool				twl_str_contains_only(char *source, char *target);
 bool				twl_str_is_int(char *s);
+bool				twl_str_is_num(char *s);
+bool				twl_str_is_pos_num(char *s);
 char				*twl_str_split_get(char *str, char *split_chars, int index);
 
 #endif
