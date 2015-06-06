@@ -16,11 +16,12 @@
 
 char	*twl_llutoa(unsigned long long ln)
 {
-	char	*str;
+	char	str[50];
 	int		i;
 
 	i = 0;
-	str = (char *)malloc(sizeof(char) * 50);
+	// str = (char *)malloc(sizeof(char) * 50);
+	twl_bzero(str, sizeof(str));
 	if (!str)
 		return (NULL);
 	while (1)
@@ -32,5 +33,6 @@ char	*twl_llutoa(unsigned long long ln)
 			break ;
 	}
 	str[i] = '\0';
-	return (twl_strrev(str));
+	twl_strrev(str);
+	return (twl_strdup(str));
 }
