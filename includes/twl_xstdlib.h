@@ -16,6 +16,7 @@
 char				*twl_joinpath(char *s1, char *s2);
 void				*twl_xmalloc(int size);
 void				*twl_malloc_x0(int size);
+int					twl_rand(void);
 int					twl_randint(int start, int end);
 int					twl_clockrand(void);
 #endif
