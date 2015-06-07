@@ -11,10 +11,17 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdbool.h>
 #include <time.h>
 
 int					twl_rand(void)
 {
-	srand(clock());
+	static bool		has_been_called_one = false;
+
+	if (!has_been_called_one)
+	{
+		srand(clock());
+		has_been_called_one = true;
+	}
 	return (rand());
 }
