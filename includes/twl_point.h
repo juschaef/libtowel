@@ -13,7 +13,7 @@
 #ifndef TWL_POINT_H
 # define TWL_POINT_H
 
-# define T_FT_POINT(x, y)	((t_twl_point){(x), (y)})
+# define T_TWL_POINT(x, y)	((t_twl_point){(x), (y)})
 
 typedef struct	s_twl_point
 {

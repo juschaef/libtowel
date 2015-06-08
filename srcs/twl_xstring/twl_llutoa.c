@@ -20,7 +20,6 @@ char	*twl_llutoa(unsigned long long ln)
 	int		i;
 
 	i = 0;
-	// str = (char *)malloc(sizeof(char) * 50);
 	twl_bzero(str, sizeof(str));
 	if (!str)
 		return (NULL);
