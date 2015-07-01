@@ -39,7 +39,7 @@ void				twl_graph_reset(twl_graph *this);
 
 void				twl_graph_add(twl_graph *this, twl_graph_node *node);
 void				twl_graph_link(twl_graph_node *node1, twl_graph_node *node2);
-// void				graph_travel(t_graph *this, int start, void (*fn)(t_node *node));
+// void				graph_travel(twl_graph *this, int start, void (*fn)(t_node *node));
 size_t				twl_graph_size(twl_graph *this);
 
 int					twl_graph_longest_path(twl_graph *this);
