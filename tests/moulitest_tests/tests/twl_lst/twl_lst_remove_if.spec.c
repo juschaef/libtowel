@@ -27,14 +27,14 @@ static void simple_test(t_test *test)
 {
 	t_lst	*lst;
 	lst = twl_lst_new();
-	
+
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("bbb"));
 	twl_lst_push(lst, strdup("ccc"));
 	twl_lst_push(lst, strdup("bbb"));
 
 	del_counter = 0;
-	twl_lst_filter(lst, filter_fn, "bbb", delfn);
+	twl_lst_remove_if(lst, filter_fn, "bbb", delfn);
 
 	mt_assert(strcmp(twl_lst_get(lst, 0), "aaa") == 0);
 	mt_assert(strcmp(twl_lst_get(lst, 1), "ccc") == 0);
@@ -42,7 +42,7 @@ static void simple_test(t_test *test)
 	mt_assert(del_counter == 2);
 }
 
-void	suite_twl_lst_filter(t_suite *suite)
+void	suite_twl_lst_remove_if(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }

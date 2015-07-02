@@ -94,7 +94,7 @@ void						twl_lst_iter2(t_lst *lst,
 		void (*f)(void *data, void *ctx1, void *ctx2), void *ctx1, void *ctx2);
 void						twl_lst_iter0(t_lst *lst, void (*f)(void *data));
 
-void						twl_lst_filter(t_lst *lst,
+void						twl_lst_remove_if(t_lst *lst,
 	bool (*filter_fn)(void *data, void *context),
 	void *context, void (*delfn)(void *));
 t_lst						*twl_lst_map(t_lst *lst, void *(*f)(void *data));

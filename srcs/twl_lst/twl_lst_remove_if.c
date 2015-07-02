@@ -13,8 +13,9 @@
 #include "twl_lst.h"
 #include "twl_printf.h"
 
-void	twl_lst_filter(t_lst *lst, bool (*filter_fn)
-			(void *data, void *context), void *context, void (*delfn)(void *))
+void				twl_lst_remove_if(t_lst *lst,
+						bool (*filter_fn) (void *data, void *context),
+						void *context, void (*delfn)(void *))
 {
 	t_lst_elem__	*elem;
 	t_lst_elem__	*next;
