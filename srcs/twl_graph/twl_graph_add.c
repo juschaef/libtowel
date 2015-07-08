@@ -18,7 +18,7 @@
 
 void				twl_graph_add(twl_graph *graph, twl_graph_node *node)
 {
-	if (!twl_graph_node_find_by_id(graph, node->id_))
+	if (!twl_node_find_by_id(graph->nodes_, node->id_))
 	{
 		twl_lst_push(graph->nodes_, node);
 	}
