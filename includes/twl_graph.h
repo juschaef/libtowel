@@ -41,6 +41,8 @@ void				*twl_graph_get_node_data(t_graph *this, t_graph_node_id node_id);
 size_t				twl_graph_node_count(t_graph *this);
 size_t				twl_graph_edge_count(t_graph *this);
 
+void				twl_graph_debug_print(t_graph *this);
+
 /*
 void				twl_graph_reset(t_graph *this);
 int					twl_graph_longest_path(t_graph *this);

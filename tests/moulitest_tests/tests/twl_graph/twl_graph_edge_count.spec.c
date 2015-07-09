@@ -9,6 +9,7 @@ static void simple_test(t_test *test)
 
 	t_graph_edge_id edge_id = twl_graph_add_edge(graph, nodeA_id, nodeB_id, NULL);
 	(void)edge_id;
+	twl_graph_debug_print(graph);
 	mt_assert(twl_graph_edge_count(graph) == 1);
 }
 
