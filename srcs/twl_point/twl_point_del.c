@@ -10,32 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_POINT_H
-# define TWL_POINT_H
+#include <stdlib.h>
+#include "twl_point.h"
 
-# define T_TWL_POINT(x, y)	((t_twl_point){(x), (y)})
-
-typedef struct		s_twl_point
+void				twl_point_del(t_twl_point *point)
 {
-	int x;
-	int y;
-}					t_twl_point;
-
-typedef struct		s_twl_dpoint
-{
-	double x;
-	double y;
-}					t_twl_dpoint;
-
-typedef struct		s_twl_dcomplex
-{
-	double	r;
-	double	i;
-}					t_twl_dcomplex;
-
-t_twl_point			*twl_point_init(int x, int y);
-void				twl_point_del(t_twl_point *point);
-t_twl_dpoint		*twl_dpoint_init(double x, double y);
-t_twl_dcomplex		twl_dcomplex_new(double r, double i);
-
-#endif
+	free(point);
+}
