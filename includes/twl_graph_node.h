@@ -25,7 +25,7 @@ typedef struct		s_node
 	bool			is_visited_;
 }					t_graph_node;
 
-t_graph_node		*twl_graph_node_new(void *data);
+t_graph_node		*twl_graph_node_new(t_node_id node_id, void *data);
 void				twl_graph_node_del(t_graph_node *this,
 													void (*del_fn)(void *));
 

@@ -20,5 +20,6 @@ t_graph				*twl_graph_new(void)
 
 	graph = twl_malloc_x0(sizeof(t_graph));
 	graph->nodes_ = twl_lst_new();
+	graph->node_id_count_ = 0;
 	return (graph);
 }

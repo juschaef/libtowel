@@ -8,10 +8,10 @@ static void simple_test(t_test *test)
 	t_graph_node			*node2;
 	t_graph_node			*node3;
 
-	node0 = twl_graph_node_new("A");
-	node1 = twl_graph_node_new("B");
-	node2 = twl_graph_node_new("C");
-	node3 = twl_graph_node_new("D");
+	node0 = twl_graph_node_new(0, "A");
+	node1 = twl_graph_node_new(1, "B");
+	node2 = twl_graph_node_new(2, "C");
+	node3 = twl_graph_node_new(3, "D");
 
 	mt_assert(strcmp(node0->data_, "A") == 0);
 	mt_assert(strcmp(node1->data_, "B") == 0);

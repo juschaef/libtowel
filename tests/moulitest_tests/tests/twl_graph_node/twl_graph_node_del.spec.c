@@ -8,10 +8,10 @@ static void simple_test(t_test *test)
 	t_graph_node			*node2;
 	t_graph_node			*node3;
 
-	node0 = twl_graph_node_new(strdup("A"));
-	node1 = twl_graph_node_new(strdup("B"));
-	node2 = twl_graph_node_new(strdup("C"));
-	node3 = twl_graph_node_new(strdup("D"));
+	node0 = twl_graph_node_new(0, strdup("A"));
+	node1 = twl_graph_node_new(1, strdup("B"));
+	node2 = twl_graph_node_new(2, strdup("C"));
+	node3 = twl_graph_node_new(3, strdup("D"));
 
 	mt_assert(twl_lst_len(node0->links_) == 0);
 	twl_graph_node_del(node0, free);

@@ -14,10 +14,9 @@
 
 #include "twl_xstdlib.h"
 
-t_graph_node			*twl_graph_node_new(void *data)
+t_graph_node			*twl_graph_node_new(t_node_id node_id, void *data)
 {
 	t_graph_node	*node;
-	static int		node_id = 0;
 
 	node = twl_malloc_x0(sizeof(t_graph_node));
 	node->id_ = node_id;
