@@ -10,13 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_graph.h"
+#include <stdlib.h>
+
+#include "twl_graph_edge.h"
 
 #include "twl_xstdlib.h"
 
-#include "twl_xstdio.h"
-
-size_t				twl_graph_size(t_graph *this)
+void				twl_graph_edge_del(t_graph_edge *edge,
+														void (*del_fn)(void *))
 {
-	return (twl_lst_len(this->nodes_));
+	if (del_fn)
+	{
+		del_fn(edge->data_);
+	}
+	free(edge);
 }

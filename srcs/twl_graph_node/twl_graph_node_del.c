@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_graph.h"
+#include <stdlib.h>
+
+#include "twl_graph_node.h"
 
 #include "twl_xstdlib.h"
 

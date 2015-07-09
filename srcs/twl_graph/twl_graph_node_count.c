@@ -10,39 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_GRAPH_H
-# define TWL_GRAPH_H
+#include "twl_graph.h"
 
-# include "twl_lst.h"
-# include "twl_graph_node_mgr.h"
-# include "twl_graph_edge.h"
+#include "twl_xstdlib.h"
 
-# include <stdlib.h>
-# include <stdbool.h>
-# include <string.h>
+#include "twl_xstdio.h"
 
-typedef struct		s_graph
+size_t				twl_graph_node_count(t_graph *this)
 {
-	t_node_id		node_id_count_;
-	t_lst			*nodes_;
-}					t_graph;
-
-t_graph				*twl_graph_new(void);
-void				twl_graph_del(t_graph *graph, void (*del_fn)());
-
-t_node_id			twl_graph_add_node(t_graph *this, void *data);
-void				*twl_graph_get_node_data(t_graph *this, t_node_id node_id);
-
-void				twl_graph_link(t_graph *this, t_graph_node *node1, t_graph_node *node2);
-
-
-
-void				twl_graph_reset(t_graph *this);
-
-
-int					twl_graph_longest_path(t_graph *this);
-
-
-size_t				twl_graph_node_count(t_graph *this);
-
-#endif
+	return (twl_lst_len(this->nodes_));
+}

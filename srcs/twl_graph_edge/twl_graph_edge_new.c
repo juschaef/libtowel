@@ -10,39 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_GRAPH_H
-# define TWL_GRAPH_H
+#include "twl_xstdio.h"
 
-# include "twl_lst.h"
-# include "twl_graph_node_mgr.h"
-# include "twl_graph_edge.h"
+#include "twl_graph_edge.h"
 
-# include <stdlib.h>
-# include <stdbool.h>
-# include <string.h>
+#include "twl_xstdlib.h"
 
-typedef struct		s_graph
+t_graph_edge		*twl_graph_edge_new(t_graph_edge_id edge_id,
+						t_graph_node *left_node, t_graph_node *right_node,
+						void *data)
 {
-	t_node_id		node_id_count_;
-	t_lst			*nodes_;
-}					t_graph;
+	t_graph_edge	*edge;
 
-t_graph				*twl_graph_new(void);
-void				twl_graph_del(t_graph *graph, void (*del_fn)());
-
-t_node_id			twl_graph_add_node(t_graph *this, void *data);
-void				*twl_graph_get_node_data(t_graph *this, t_node_id node_id);
-
-void				twl_graph_link(t_graph *this, t_graph_node *node1, t_graph_node *node2);
-
-
-
-void				twl_graph_reset(t_graph *this);
-
-
-int					twl_graph_longest_path(t_graph *this);
-
-
-size_t				twl_graph_node_count(t_graph *this);
-
-#endif
+	edge = twl_malloc_x0(sizeof(t_graph_edge));
+	edge->id_ = edge_id;
+	edge->data_ = data;
+	edge->left_node_ = left_node;
+	edge->right_node_ = right_node;
+	if (!edge->left_node_ || !edge->right_node_)
+	{
+		twl_xprintf("twl_graph_edge_new: left and right nodes are required");
+	}
+	return (edge);
+}
