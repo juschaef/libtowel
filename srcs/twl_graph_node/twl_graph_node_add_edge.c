@@ -12,17 +12,8 @@
 
 #include "twl_graph_node.h"
 
-#include "twl_xstdlib.h"
-
-t_graph_node			*twl_graph_node_new(t_node_id node_id, void *data)
+void				twl_graph_node_add_edge(t_graph_node *node,
+															t_graph_edge *edge)
 {
-	t_graph_node	*node;
-
-	node = twl_malloc_x0(sizeof(t_graph_node));
-	node->id_ = node_id;
-	node->data_ = data;
-	node->links_ = twl_lst_new(); // del this
-	node->edges_ = twl_lst_new();
-	node->is_visited_ = 0;
-	return (node);
+	twl_lst_push(node->edges_, edge);
 }

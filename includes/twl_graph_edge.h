@@ -13,7 +13,7 @@
 #ifndef TWL_GRAPH_EDGE_H
 # define TWL_GRAPH_EDGE_H
 
-# include "twl_graph_node.h"
+struct s_graph_node;
 
 typedef int			t_graph_edge_id;
 
@@ -21,13 +21,13 @@ typedef struct		s_graph_edge
 {
 	t_graph_edge_id	id_;
 	void			*data_;
-	t_graph_node	*left_node_;
-	t_graph_node	*right_node_;
+	struct s_graph_node	*left_node_;
+	struct s_graph_node	*right_node_;
 	double			weight_;
 }					t_graph_edge;
 
 t_graph_edge		*twl_graph_edge_new(t_graph_edge_id edge_id,
-						t_graph_node *left_node, t_graph_node *right_node,
+						struct s_graph_node *left_node, struct s_graph_node *right_node,
 						void *data);
 void				twl_graph_edge_del(t_graph_edge *this,
 													void (*del_fn)(void *));

@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 
+#include "twl_graph_node.h"
 #include "twl_graph_edge.h"
 
 #include "twl_xstdlib.h"
