@@ -18,7 +18,7 @@ void				*twl_graph_get_node_data(t_graph *graph, t_node_id node_id)
 {
 	t_graph_node	*node;
 
-	node = twl_graph_node_mgr_find_by_id_(graph->nodes_, node_id);
+	node = twl_graph_node_mgr_find_by_id(graph->nodes_, node_id);
 	if (node)
 	{
 		return (node->data_);

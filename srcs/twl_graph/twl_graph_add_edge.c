@@ -21,8 +21,8 @@ t_graph_edge_id			twl_graph_add_edge(t_graph *this, t_node_id node_id1,
 	t_graph_node	*node2;
 	t_graph_edge	*edge;
 
-	node1 = twl_graph_node_mgr_find_by_id_(this->nodes_, node_id1);
-	node2 = twl_graph_node_mgr_find_by_id_(this->nodes_, node_id2);
+	node1 = twl_graph_node_mgr_find_by_id(this->nodes_, node_id1);
+	node2 = twl_graph_node_mgr_find_by_id(this->nodes_, node_id2);
 	edge = twl_graph_edge_new(this->edge_id_count_, node1, node2, data);
 	this->edge_id_count_++;
 	return (edge->id_);
