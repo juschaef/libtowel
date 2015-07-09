@@ -27,7 +27,13 @@ static void simple_test(t_test *test)
 	mt_assert(!node3->is_visited_);
 }
 
+static void simple_test_set_id(t_test *test)
+{
+	mt_assert(twl_graph_node_new(42, "A")->id_ == 42);
+}
+
 void	suite_twl_graph_node_new(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
+	SUITE_ADD_TEST(suite, simple_test_set_id);
 }

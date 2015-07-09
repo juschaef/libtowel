@@ -14,19 +14,14 @@
 #include "twl_xstdlib.h"
 #include "twl_xstdio.h"
 
-t_node_id			twl_graph_add_node(t_graph *graph, void *data)
+void				*twl_graph_get_node_data(t_graph *graph, t_node_id node_id)
 {
 	t_graph_node	*node;
 
-	node = twl_graph_node_new(graph->node_id_count_, data);
-	if (!twl_graph_node_mgr_find_by_id_(graph->nodes_, node->id_))
+	node = twl_graph_node_mgr_find_by_id_(graph->nodes_, node_id);
+	if (node)
 	{
-		twl_lst_push(graph->nodes_, node);
+		return (node->data_);
 	}
-	else
-	{
-		twl_xprintf("%s duplicate entry", __FILE__);
-	}
-	graph->node_id_count_++;
-	return (node->id_);
+	return (NULL);
 }
