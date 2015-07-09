@@ -14,7 +14,7 @@
 
 #include "twl_xstdlib.h"
 
-t_graph_node			*twl_graph_node_new(t_node_id node_id, void *data)
+t_graph_node			*twl_graph_node_new(t_graph_node_id node_id, void *data)
 {
 	t_graph_node	*node;
 

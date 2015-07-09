@@ -16,6 +16,7 @@
 # include "twl_lst.h"
 # include "twl_graph_edge.h"
 
-t_graph_edge		*twl_graph_edge_mgr_find_by_id(t_lst *edges, t_graph_edge_id id);
+t_graph_edge		*twl_graph_edge_mgr_find_by_id(t_lst *edges,
+														t_graph_edge_id id);
 
 #endif

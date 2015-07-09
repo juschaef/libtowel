@@ -6,7 +6,7 @@ static void simple_test(t_test *test)
 	t_graph		*graph;
 
 	graph = twl_graph_new();
-	t_node_id node_id = twl_graph_add_node(graph, strdup("A"));
+	t_graph_node_id node_id = twl_graph_add_node(graph, strdup("A"));
 	mt_assert(twl_graph_node_mgr_find_by_id(graph->nodes_, node_id)->id_ == node_id);
 }
 

@@ -17,18 +17,18 @@
 # include "twl_lst.h"
 # include "twl_graph_edge.h"
 
-typedef int			t_node_id;
+typedef int			t_graph_node_id;
 
 typedef struct		s_graph_node
 {
-	t_node_id		id_;
+	t_graph_node_id	id_;
 	void			*data_;
 	t_lst			*links_;
 	t_lst			*edges_;
 	bool			is_visited_;
 }					t_graph_node;
 
-t_graph_node		*twl_graph_node_new(t_node_id node_id, void *data);
+t_graph_node		*twl_graph_node_new(t_graph_node_id node_id, void *data);
 void				twl_graph_node_del(t_graph_node *this,
 													void (*del_fn)(void *));
 void				twl_graph_node_add_edge(t_graph_node *node,

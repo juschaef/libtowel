@@ -4,8 +4,8 @@
 static void simple_test(t_test *test)
 {
 	t_graph			*graph;
-	t_node_id		nodeA_id;
-	t_node_id		nodeB_id;
+	t_graph_node_id		nodeA_id;
+	t_graph_node_id		nodeB_id;
 
 	graph = twl_graph_new();
 	nodeA_id = twl_graph_add_node(graph, strdup("A"));

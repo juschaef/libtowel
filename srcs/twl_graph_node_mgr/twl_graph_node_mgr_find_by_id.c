@@ -17,14 +17,14 @@
 static bool			find_by_id(void *node_, void *id_ptr_)
 {
 	t_graph_node	*node;
-	t_node_id		*id_ptr;
+	t_graph_node_id		*id_ptr;
 
 	node = node_;
 	id_ptr = id_ptr_;
 	return (node->id_ == *id_ptr);
 }
 
-t_graph_node		*twl_graph_node_mgr_find_by_id(t_lst *nodes, t_node_id node_id)
+t_graph_node		*twl_graph_node_mgr_find_by_id(t_lst *nodes, t_graph_node_id node_id)
 {
 	return (twl_lst_find(nodes, find_by_id, &node_id));
 }

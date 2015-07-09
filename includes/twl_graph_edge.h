@@ -15,7 +15,7 @@
 
 # include <stdbool.h>
 
-struct s_graph_node;
+struct				s_graph_node;
 
 typedef int			t_graph_edge_id;
 
@@ -29,14 +29,13 @@ typedef struct		s_graph_edge
 }					t_graph_edge;
 
 t_graph_edge		*twl_graph_edge_new(t_graph_edge_id edge_id,
-						struct s_graph_node *left_node, struct s_graph_node *right_node,
+						struct s_graph_node *left_node,
+						struct s_graph_node *right_node,
 						void *data);
 void				twl_graph_edge_del(t_graph_edge *this,
 													void (*del_fn)(void *));
-
 bool				twl_graph_edge_equal(t_graph_edge *this,
 														t_graph_edge *other);
-
 void				twl_graph_node_remove_edge(struct s_graph_node *node,
 															t_graph_edge *edge);
 

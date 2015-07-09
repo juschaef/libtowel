@@ -4,7 +4,7 @@
 static void simple_test(t_test *test)
 {
 	t_graph			*g;
-	t_node_id		node_id;
+	t_graph_node_id		node_id;
 
 	g = twl_graph_new();
 	node_id = twl_graph_add_node(g, strdup("ABC"));
@@ -14,7 +14,7 @@ static void simple_test(t_test *test)
 static void test_null(t_test *test)
 {
 	t_graph			*g;
-	t_node_id		node_id;
+	t_graph_node_id		node_id;
 
 	g = twl_graph_new();
 	node_id = twl_graph_add_node(g, strdup("ABC"));
