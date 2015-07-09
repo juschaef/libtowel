@@ -10,28 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_GRAPH_NODE_H
-# define TWL_GRAPH_NODE_H
+#include "twl_graph_node.h"
 
-# include <stdbool.h>
-# include "twl_lst.h"
-# include "twl_graph_edge.h"
-
-typedef int			t_node_id;
-
-typedef struct		s_graph_node
+static bool			remove_edge_by_id_fn(void *edge_, void *target_edge_)
 {
-	t_node_id		id_;
-	void			*data_;
-	t_lst			*links_;
-	t_lst			*edges_;
-	bool			is_visited_;
-}					t_graph_node;
+	return (!twl_graph_edge_equal(edge_, target_edge_));
+}
 
-t_graph_node		*twl_graph_node_new(t_node_id node_id, void *data);
-void				twl_graph_node_del(t_graph_node *this,
-													void (*del_fn)(void *));
-void				twl_graph_node_add_edge(t_graph_node *node,
-															t_graph_edge *edge);
-
-#endif
+void				twl_graph_node_remove_edge(t_graph_node *node,
+															t_graph_edge *edge)
+{
+	twl_lst_remove_if(node->edges_, remove_edge_by_id_fn, edge, NULL);
+}

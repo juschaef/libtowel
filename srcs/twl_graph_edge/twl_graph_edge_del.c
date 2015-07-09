@@ -17,12 +17,14 @@
 
 #include "twl_xstdlib.h"
 
-void				twl_graph_edge_del(t_graph_edge *edge,
+void				twl_graph_edge_del(t_graph_edge *this,
 														void (*del_fn)(void *))
 {
+	twl_graph_node_remove_edge(this->left_node_, this);
+	twl_graph_node_remove_edge(this->right_node_, this);
 	if (del_fn)
 	{
-		del_fn(edge->data_);
+		del_fn(this->data_);
 	}
-	free(edge);
+	free(this);
 }
