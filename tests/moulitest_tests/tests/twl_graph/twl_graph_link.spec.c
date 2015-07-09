@@ -12,7 +12,7 @@ static void simple_test(t_test *test)
 	node1 = twl_graph_node_new(strdup("B"));
 	twl_graph_add(graph, node0);
 	twl_graph_add(graph, node1);
-	twl_graph_link(node0, node1);
+	twl_graph_link(graph, node0, node1);
 	t_graph_node  *tmp1 = twl_lst_first(node0->links_);
 	t_graph_node  *tmp2 = twl_lst_first(node1->links_);
 	mt_assert(tmp1->id_ == node1->id_);

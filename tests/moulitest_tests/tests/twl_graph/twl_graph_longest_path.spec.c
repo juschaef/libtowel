@@ -21,10 +21,10 @@ static void simple_test(t_test *test)
 	twl_graph_add(graph, node2);
 	twl_graph_add(graph, node3);
 	twl_graph_add(graph, node4);
-	twl_graph_link(node0, node1);
-	twl_graph_link(node1, node2);
-	twl_graph_link(node2, node3);
-	twl_graph_link(node3, node4);
+	twl_graph_link(graph, node0, node1);
+	twl_graph_link(graph, node1, node2);
+	twl_graph_link(graph, node2, node3);
+	twl_graph_link(graph, node3, node4);
 	mt_assert(twl_graph_longest_path(graph) == 5);
 }
 

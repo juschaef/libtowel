@@ -16,6 +16,6 @@
 # include "twl_lst.h"
 # include "twl_graph_node.h"
 
-t_graph_node		*twl_node_find_by_id(t_lst *nodes, int id);
+t_graph_node		*twl_graph_node_mgr_find_by_id(t_lst *nodes, int id);
 
 #endif

@@ -26,7 +26,7 @@ static bool			find_by_id(void *node_, void *id_ptr_)
 	return (node->id_ == *id_ptr);
 }
 
-t_graph_node		*twl_node_find_by_id(t_lst *nodes, int id)
+t_graph_node		*twl_graph_node_mgr_find_by_id(t_lst *nodes, int id)
 {
 	return (twl_lst_find(nodes, find_by_id, &id));
 }
