@@ -14,7 +14,16 @@ static void simple_test(t_test *test)
 	mt_assert(twl_graph_size(graph) == 5);
 }
 
+static void empty_graph(t_test *test)
+{
+	t_graph		*graph;
+
+	graph = twl_graph_new();
+	mt_assert(twl_graph_size(graph) == 0);
+}
+
 void	suite_twl_graph_size(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
+	SUITE_ADD_TEST(suite, empty_graph);
 }

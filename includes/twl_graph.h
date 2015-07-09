@@ -31,12 +31,9 @@ void				twl_graph_del(t_graph *graph, void (*del_fn)());
 
 t_node_id			twl_graph_add_node(t_graph *this, void *data);
 void				*twl_graph_get_node_data(t_graph *this, t_node_id node_id);
-
-
-
-
-
 size_t				twl_graph_size(t_graph *this);
+
+
 void				twl_graph_reset(t_graph *this);
 
 void				twl_graph_link(t_graph *this, t_graph_node *node1, t_graph_node *node2);
