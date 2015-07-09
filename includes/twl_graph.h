@@ -35,6 +35,8 @@ void				twl_graph_del(t_graph *graph, void (*del_fn)());
 t_node_id			twl_graph_add_node(t_graph *this, void *data);
 t_graph_edge_id		twl_graph_add_edge(t_graph *this, t_node_id node_id1,
 											t_node_id node_id2, void *data);
+
+t_graph_node		*twl_graph_get_node_(t_graph *graph, t_node_id node_id);
 void				*twl_graph_get_node_data(t_graph *this, t_node_id node_id);
 
 
