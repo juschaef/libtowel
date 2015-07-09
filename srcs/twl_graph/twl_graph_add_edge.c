@@ -11,17 +11,19 @@
 /* ************************************************************************** */
 
 #include "twl_graph.h"
-
 #include "twl_xstdlib.h"
+#include "twl_xstdio.h"
 
-t_graph				*twl_graph_new(void)
+t_graph_edge_id			twl_graph_add_edge(t_graph *this, t_node_id node_id1,
+											t_node_id node_id2, void *data)
 {
-	t_graph			*graph;
+	t_graph_node	*node1;
+	t_graph_node	*node2;
+	t_graph_edge	*edge;
 
-	graph = twl_malloc_x0(sizeof(t_graph));
-	graph->nodes_ = twl_lst_new();
-	graph->edges_ = twl_lst_new();
-	graph->node_id_count_ = 0;
-	graph->edge_id_count_ = 0;
-	return (graph);
+	node1 = twl_graph_node_mgr_find_by_id_(this->nodes_, node_id1);
+	node2 = twl_graph_node_mgr_find_by_id_(this->nodes_, node_id2);
+	edge = twl_graph_edge_new(this->edge_id_count_, node1, node2, data);
+	this->edge_id_count_++;
+	return (edge->id_);
 }
