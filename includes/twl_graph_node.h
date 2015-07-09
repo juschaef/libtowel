@@ -15,9 +15,11 @@
 
 # include "twl_lst.h"
 
+typedef int			t_node_id;
+
 typedef struct		s_node
 {
-	int				id_;
+	t_node_id		id_;
 	void			*data_;
 	t_lst			*links_;
 	bool			is_visited_;

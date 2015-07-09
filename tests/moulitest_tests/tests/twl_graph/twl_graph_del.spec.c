@@ -16,9 +16,9 @@ static void simple_test(t_test *test)
 	counter = 0;
 
 	graph = twl_graph_new();
-	twl_graph_add(graph, twl_graph_node_new(strdup("B")));
-	twl_graph_add(graph, twl_graph_node_new(strdup("C")));
-	twl_graph_add(graph, twl_graph_node_new(strdup("D")));
+	twl_graph_add_node(graph, strdup("B"));
+	twl_graph_add_node(graph, strdup("C"));
+	twl_graph_add_node(graph, strdup("D"));
 
 	twl_graph_del(graph, del_string_data_fn);
 	mt_assert(counter == 3);

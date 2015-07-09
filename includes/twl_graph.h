@@ -22,18 +22,23 @@
 
 typedef struct		s_graph
 {
+	t_node_id		node_id_count_;
 	t_lst			*nodes_;
 }					t_graph;
 
 t_graph				*twl_graph_new(void);
 void				twl_graph_del(t_graph *graph, void (*del_fn)());
 
+t_node_id			twl_graph_add_node(t_graph *this, void *data);
+
+
+
+
+
 size_t				twl_graph_size(t_graph *this);
 void				twl_graph_reset(t_graph *this);
 
-void				twl_graph_add(t_graph *this, t_graph_node *node);
-void				twl_graph_link(t_graph *this, t_graph_node *node1,
-														t_graph_node *node2);
+void				twl_graph_link(t_graph *this, t_graph_node *node1, t_graph_node *node2);
 
 int					twl_graph_longest_path(t_graph *this);
 

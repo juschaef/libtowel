@@ -26,6 +26,8 @@ DEBUG = 0
 C_FILES = $(shell find $(C_DIR) -type f -follow -print | grep ".*\.c$$")
 C_DIRS = $(shell find $(C_DIR) -type d -follow -print)
 
+H_FILES = $(shell find includes -type f -follow -print | grep ".*\.h$$")
+
 O_DIRS = $(C_DIRS:$(C_DIR)%=$(O_DIR)%)
 O_FILES = $(C_FILES:$(C_DIR)%.c=$(O_DIR)%.o)
 
@@ -48,7 +50,7 @@ ifeq ($(OUTPUT_TYPE), exec)
 endif
 	@echo "$(COL_GREEN)lib compiled$(COL_RESET)"
 
-$(O_DIR)%.o: $(C_DIR)%.c
+$(O_DIR)%.o: $(C_DIR)%.c $(H_FILES)
 	@mkdir -p $(O_DIRS) $(O_DIR) 2> /dev/null || echo "" > /dev/null
 	@gcc $(CC_OPTIONS) $(CC_DEBUG) -o $@ -c $< \
 		&& printf "."

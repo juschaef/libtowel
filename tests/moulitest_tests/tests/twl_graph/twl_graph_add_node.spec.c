@@ -3,18 +3,19 @@
 
 static void simple_test(t_test *test)
 {
-	t_graph		*graph;
+	t_graph			*graph;
+	t_node_id		node_id;
 
 	graph = twl_graph_new();
-	twl_graph_add_node(graph, strdup("A"));
+	node_id = twl_graph_add_node(graph, strdup("A"));
+	mt_assert(twl_graph_size(graph) == 1);
 	twl_graph_add_node(graph, strdup("B"));
 	twl_graph_add_node(graph, strdup("C"));
 	twl_graph_add_node(graph, strdup("D"));
-	twl_graph_add_node(graph, strdup("E"));
-	mt_assert(twl_graph_size(graph) == 5);
+	mt_assert(twl_graph_size(graph) == 4);
 }
 
-void	suite_twl_graph_size(t_suite *suite)
+void	suite_twl_graph_add_node(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }
