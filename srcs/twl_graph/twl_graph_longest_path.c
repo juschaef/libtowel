@@ -18,10 +18,10 @@
 
 #include <stdio.h>
 
-static void			process_recursive(twl_graph_node *node, int cur, int *max)
+static void			process_recursive(t_graph_node *node, int cur, int *max)
 {
 	t_lst_elem__	*tmp;
-	twl_graph_node	*node_tmp;
+	t_graph_node	*node_tmp;
 
 
 	tmp = node->links_->head;
@@ -41,7 +41,7 @@ static void			process_recursive(twl_graph_node *node, int cur, int *max)
 	}
 }
 
-int					twl_graph_longest_path(twl_graph *this)
+int					twl_graph_longest_path(t_graph *this)
 {
 	int				longest_path;
 	t_lst_elem__	*tmp;

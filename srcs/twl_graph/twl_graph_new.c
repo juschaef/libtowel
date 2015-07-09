@@ -14,11 +14,11 @@
 
 #include "twl_xstdlib.h"
 
-twl_graph			*twl_graph_new()
+t_graph			*twl_graph_new()
 {
-	twl_graph		*graph;
+	t_graph		*graph;
 
-	graph = twl_malloc_x0(sizeof(twl_graph));
+	graph = twl_malloc_x0(sizeof(t_graph));
 	graph->nodes_ = twl_lst_new();
 	return (graph);
 }

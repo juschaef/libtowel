@@ -3,8 +3,8 @@
 
 static void simple_test(t_test *test)
 {
-	twl_graph		*graph;
-	twl_graph_node		*node0;
+	t_graph		*graph;
+	t_graph_node		*node0;
 
 	graph = twl_graph_new();
 	node0 = twl_graph_node_new(strdup("A"));

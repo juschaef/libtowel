@@ -10,23 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_graph.h"
+#ifndef TWL_GRAPH_NODE_H
+# define TWL_GRAPH_NODE_H
 
-#include "twl_xstdlib.h"
+# include "twl_lst.h"
 
-#include "twl_xstdio.h"
-
-static bool			find_by_id(void *node_, void *id_ptr_)
+typedef struct		s_node
 {
-	t_graph_node		*node;
-	int				*id_ptr;
+	int				id_;
+	void			*data_;
+	t_lst			*links_;
+	bool			is_visited_;
+}					t_graph_node;
 
-	node = node_;
-	id_ptr = id_ptr_;
-	return (node->id_ == *id_ptr);
-}
-
-t_graph_node		*twl_node_find_by_id(t_lst *nodes, int id)
-{
-	return (twl_lst_find(nodes, find_by_id, &id));
-}
+#endif

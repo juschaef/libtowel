@@ -14,39 +14,32 @@
 # define TWL_GRAPH_H
 
 # include "twl_lst.h"
+# include "twl_graph_node.h"
 
 # include <stdlib.h>
 # include <stdbool.h>
 # include <string.h>
 
-typedef struct		s_node
-{
-	int				id_;
-	void			*data_;
-	t_lst			*links_;
-	bool			is_visited_;
-}					twl_graph_node;
-
 typedef struct		s_graph
 {
 	t_lst			*nodes_;
-}					twl_graph;
+}					t_graph;
 
-twl_graph			*twl_graph_new(void);
-void				twl_graph_del(twl_graph *graph,  void (*del_fn)());
+t_graph				*twl_graph_new(void);
+void				twl_graph_del(t_graph *graph,  void (*del_fn)());
 
-void				twl_graph_reset(twl_graph *this);
+void				twl_graph_reset(t_graph *this);
 
-void				twl_graph_add(twl_graph *this, twl_graph_node *node);
-void				twl_graph_link(twl_graph_node *node1, twl_graph_node *node2);
-// void				graph_travel(twl_graph *this, int start, void (*fn)(t_node *node));
-size_t				twl_graph_size(twl_graph *this);
+void				twl_graph_add(t_graph *this, t_graph_node *node);
+void				twl_graph_link(t_graph_node *node1, t_graph_node *node2);
 
-int					twl_graph_longest_path(twl_graph *this);
+size_t				twl_graph_size(t_graph *this);
 
-twl_graph_node		*twl_graph_node_new(void *data);
-void				twl_graph_node_del(twl_graph_node *del, void (*del_fn)(void *));
+int					twl_graph_longest_path(t_graph *this);
 
-twl_graph_node		*twl_node_find_by_id(t_lst *nodes, int id);
+t_graph_node		*twl_graph_node_new(void *data);
+void				twl_graph_node_del(t_graph_node *this, void (*del_fn)(void *));
+
+t_graph_node		*twl_node_find_by_id(t_lst *nodes, int id);
 
 #endif

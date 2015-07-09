@@ -16,7 +16,7 @@
 
 #include "twl_xstdio.h"
 
-void				twl_graph_add(twl_graph *graph, twl_graph_node *node)
+void				twl_graph_add(t_graph *graph, t_graph_node *node)
 {
 	if (!twl_node_find_by_id(graph->nodes_, node->id_))
 	{

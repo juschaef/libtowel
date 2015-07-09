@@ -3,7 +3,7 @@
 
 static void simple_test(t_test *test)
 {
-	twl_graph		*graph;
+	t_graph		*graph;
 
 	graph = twl_graph_new();
 	mt_assert(twl_lst_len(graph->nodes_) == 0);

@@ -14,7 +14,7 @@
 
 #include "twl_xstdlib.h"
 
-void				twl_graph_del(twl_graph *graph, void (*del_fn)())
+void				twl_graph_del(t_graph *graph, void (*del_fn)())
 {
 	// twl_lst_iter(graph->nodes_, w,del_fn)
 	(void)del_fn;

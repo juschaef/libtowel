@@ -16,7 +16,7 @@
 
 #include "twl_xstdio.h"
 
-void				twl_graph_link(twl_graph_node *node1, twl_graph_node *node2)
+void				twl_graph_link(t_graph_node *node1, t_graph_node *node2)
 {
 	if (!twl_node_find_by_id(node1->links_, node2->id_))
 	{

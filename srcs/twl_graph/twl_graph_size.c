@@ -16,7 +16,7 @@
 
 #include "twl_xstdio.h"
 
-size_t				twl_graph_size(twl_graph *this)
+size_t				twl_graph_size(t_graph *this)
 {
 	return (twl_lst_len(this->nodes_));
 }

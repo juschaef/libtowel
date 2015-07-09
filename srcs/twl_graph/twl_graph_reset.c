@@ -18,14 +18,14 @@
 
 static void			reset_fn(void *node_, void *ctx)
 {
-	twl_graph_node	*node;
+	t_graph_node	*node;
 
 	node = node_;
 	node->is_visited_ = false;
 	(void)ctx;
 }
 
-void				twl_graph_reset(twl_graph *this)
+void				twl_graph_reset(t_graph *this)
 {
 	twl_lst_iter(this->nodes_, reset_fn, NULL);
 

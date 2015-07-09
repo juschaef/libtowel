@@ -14,12 +14,12 @@
 
 #include "twl_xstdlib.h"
 
-twl_graph_node			*twl_graph_node_new(void *data)
+t_graph_node			*twl_graph_node_new(void *data)
 {
-	twl_graph_node		*node;
+	t_graph_node		*node;
 	static int		node_id = 0;
 
-	node = twl_malloc_x0(sizeof(twl_graph_node));
+	node = twl_malloc_x0(sizeof(t_graph_node));
 	node->id_ = node_id;
 	node->data_ = data;
 	node->links_ = twl_lst_new();
