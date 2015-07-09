@@ -12,7 +12,7 @@ static void simple_test(t_test *test)
 	mt_assert(twl_graph_node_mgr_find_by_id(graph->nodes_, node0->id_)->id_ == node0->id_);
 }
 
-void	suite_twl_node_find_by_id(t_suite *suite)
+void	suite_twl_graph_node_mgr_find_by_id(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }
