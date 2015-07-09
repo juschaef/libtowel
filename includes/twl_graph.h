@@ -26,7 +26,7 @@ typedef struct		s_graph
 }					t_graph;
 
 t_graph				*twl_graph_new(void);
-void				twl_graph_del(t_graph *graph,  void (*del_fn)());
+void				twl_graph_del(t_graph *graph, void (*del_fn)());
 
 size_t				twl_graph_size(t_graph *this);
 void				twl_graph_reset(t_graph *this);
@@ -35,8 +35,6 @@ void				twl_graph_add(t_graph *this, t_graph_node *node);
 void				twl_graph_link(t_graph *this, t_graph_node *node1,
 														t_graph_node *node2);
 
-
 int					twl_graph_longest_path(t_graph *this);
-
 
 #endif

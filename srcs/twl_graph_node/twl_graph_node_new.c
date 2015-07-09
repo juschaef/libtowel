@@ -16,7 +16,7 @@
 
 t_graph_node			*twl_graph_node_new(void *data)
 {
-	t_graph_node		*node;
+	t_graph_node	*node;
 	static int		node_id = 0;
 
 	node = twl_malloc_x0(sizeof(t_graph_node));

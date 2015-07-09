@@ -14,10 +14,13 @@
 
 #include "twl_xstdlib.h"
 
-void				twl_graph_node_del(t_graph_node *node, void (*del_fn)(void *))
+void				twl_graph_node_del(t_graph_node *node,
+														void (*del_fn)(void *))
 {
 	if (del_fn)
+	{
 		del_fn(node->data_);
+	}
 	twl_lst_del(node->links_, NULL);
 	free(node);
 }

@@ -10,19 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_graph.h"
-
-#include "twl_xstdlib.h"
-
-#include "twl_xstdio.h"
-
 #include <stdio.h>
+
+#include "twl_graph.h"
+#include "twl_xstdlib.h"
+#include "twl_xstdio.h"
 
 static void			process_recursive(t_graph_node *node, int cur, int *max)
 {
 	t_lst_elem__	*tmp;
 	t_graph_node	*node_tmp;
-
 
 	tmp = node->links_->head;
 	node->is_visited_ = true;

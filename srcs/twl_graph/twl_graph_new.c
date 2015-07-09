@@ -14,9 +14,9 @@
 
 #include "twl_xstdlib.h"
 
-t_graph			*twl_graph_new()
+t_graph				*twl_graph_new(void)
 {
-	t_graph		*graph;
+	t_graph			*graph;
 
 	graph = twl_malloc_x0(sizeof(t_graph));
 	graph->nodes_ = twl_lst_new();

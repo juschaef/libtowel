@@ -16,8 +16,7 @@
 
 void				twl_graph_del(t_graph *graph, void (*del_fn)())
 {
-	// twl_lst_iter(graph->nodes_, w,del_fn)
-	(void)del_fn;
 	twl_lst_del(graph->nodes_, NULL);
 	free(graph);
+	(void)del_fn;
 }

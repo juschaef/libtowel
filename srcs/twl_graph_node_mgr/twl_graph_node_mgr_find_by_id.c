@@ -18,7 +18,7 @@
 
 static bool			find_by_id(void *node_, void *id_ptr_)
 {
-	t_graph_node		*node;
+	t_graph_node	*node;
 	int				*id_ptr;
 
 	node = node_;
