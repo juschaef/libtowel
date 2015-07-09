@@ -15,7 +15,7 @@
 
 # include "twl_lst.h"
 # include "twl_graph_node_mgr.h"
-# include "twl_graph_edge.h"
+# include "twl_graph_edge_mgr.h"
 
 # include <stdlib.h>
 # include <stdbool.h>

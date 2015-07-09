@@ -10,28 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_graph.h"
-#include "twl_xstdlib.h"
-#include "twl_xstdio.h"
+#include "twl_stdio.h"
 
-t_graph_edge_id			twl_graph_add_edge(t_graph *this, t_node_id node_id1,
-											t_node_id node_id2, void *data)
+#include "twl_graph_edge_mgr.h"
+
+static bool			find_by_id(void *edge_, void *id_ptr_)
 {
-	t_graph_node	*node1;
-	t_graph_node	*node2;
 	t_graph_edge	*edge;
+	t_graph_edge_id	*id_ptr;
 
-	node1 = twl_graph_node_mgr_find_by_id(this->nodes_, node_id1);
-	node2 = twl_graph_node_mgr_find_by_id(this->nodes_, node_id2);
-	edge = twl_graph_edge_new(this->edge_id_count_, node1, node2, data);
-	if (!twl_graph_edge_mgr_find_by_id(this->edges_, edge->id_))
-	{
-		twl_lst_push(this->edges_, edge);
-	}
-	else
-	{
-		twl_xprintf("%s duplicate entry", __FILE__);
-	}
-	this->edge_id_count_++;
-	return (edge->id_);
+	edge = edge_;
+	id_ptr = id_ptr_;
+	return (edge->id_ == *id_ptr);
+}
+
+t_graph_edge		*twl_graph_edge_mgr_find_by_id(t_lst *edges,
+													t_graph_edge_id edge_id)
+{
+	return (twl_lst_find(edges, find_by_id, &edge_id));
 }
