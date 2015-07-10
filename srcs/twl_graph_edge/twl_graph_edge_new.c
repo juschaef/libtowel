@@ -32,6 +32,7 @@ t_graph_edge		*twl_graph_edge_new(t_graph_edge_id edge_id,
 	edge->data_ = data;
 	edge->left_node_ = left_node;
 	edge->right_node_ = right_node;
+	edge->weight_ = GRAPH_EDGE_DEFAULT_WEIGHT;
 	twl_graph_node_add_edge(left_node, edge);
 	twl_graph_node_add_edge(right_node, edge);
 	return (edge);
