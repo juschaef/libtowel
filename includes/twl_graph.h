@@ -43,7 +43,7 @@ size_t				twl_graph_edge_count(t_graph *this);
 
 void				twl_graph_debug_print(t_graph *this);
 
-void				*twl_graph_find_node(t_graph *this,
+void				*twl_graph_find_node_data(t_graph *this,
 												bool (*find_fn)(void *data,
 												void *context), void *context);
 

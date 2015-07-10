@@ -14,9 +14,23 @@
 #include "twl_xstdlib.h"
 #include "twl_xstdio.h"
 
-void				*twl_graph_find_node(t_graph *this,
+static bool			find_node_fn(void *node_, void *find_fn_, void *context)
+{
+	t_graph_node	*node;
+	bool (*find_fn)(void *data, void *context);
+
+
+	node = node_;
+	find_fn = find_fn_;
+	return (find_fn(node->data_, context));
+}
+
+void				*twl_graph_find_node_data(t_graph *this,
 												bool (*find_fn)(void *data,
 												void *context), void *context)
 {
-	return (twl_lst_find(this->nodes_, find_fn, context));
+	t_graph_node	*node;
+
+	node = twl_lst_find2(this->nodes_, find_node_fn, find_fn, context);
+	return (node->data_);
 }
