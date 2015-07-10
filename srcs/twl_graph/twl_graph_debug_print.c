@@ -13,12 +13,22 @@
 #include "twl_stdio.h"
 #include "twl_graph.h"
 
+static void			iter_edges_fn(void *edge, void *src_node)
+{
+	t_graph_node	*node;
+
+	node = twl_graph_edge_get_other_node(edge, src_node);
+	twl_printf("%d,", node->id_);
+}
+
 static void			iter_node_fn(void *node_)
 {
 	t_graph_node	*node;
 
 	node = node_;
-	twl_printf("node: %s\n", node->data_);
+	twl_printf("Node %d => ", node->id_);
+	twl_lst_iter(node->edges_, iter_edges_fn, node);
+	twl_printf("\n");
 }
 
 void				twl_graph_debug_print(t_graph *this)

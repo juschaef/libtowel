@@ -39,4 +39,7 @@ bool				twl_graph_edge_equal(t_graph_edge *this,
 void				twl_graph_node_remove_edge(struct s_graph_node *node,
 															t_graph_edge *edge);
 
+
+struct s_graph_node	*twl_graph_edge_get_other_node(t_graph_edge *this,
+												struct s_graph_node *src_node);
 #endif
