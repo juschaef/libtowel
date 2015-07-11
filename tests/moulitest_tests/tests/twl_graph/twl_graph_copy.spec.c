@@ -14,6 +14,7 @@ static void simple_test(t_test *test)
 
 	new_graph = twl_graph_copy(graph);
 	mt_assert(twl_graph_node_count(graph) == twl_graph_node_count(new_graph));
+	mt_assert(twl_graph_edge_count(graph) == twl_graph_edge_count(new_graph));
 	mt_assert(new_graph->nodes_ != graph->nodes_);
 	mt_assert(new_graph->edges_ != graph->edges_);
 	mt_assert(twl_lst_first(new_graph->nodes_) != twl_lst_first(graph->nodes_));
