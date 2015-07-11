@@ -14,18 +14,16 @@ static void simple_test(t_test *test)
 	twl_graph_add_edge(graph, nodeB_id, nodeC_id, NULL);
 	mt_assert(twl_graph_node_count(graph) == 4);
 	mt_assert(twl_graph_edge_count(graph) == 3);
-	twl_graph_clear_node(graph, nodeA_id);
-	mt_assert(twl_graph_node_count(graph) == 4);
+	twl_graph_clear_remove_node(graph, nodeA_id);
+	mt_assert(twl_graph_node_count(graph) == 3);
 	mt_assert(twl_graph_edge_count(graph) == 1);
-	t_graph_node	*nodeA = twl_graph_get_node(graph, nodeA_id);
 	t_graph_node	*nodeB = twl_graph_get_node(graph, nodeB_id);
 	t_graph_node	*nodeC = twl_graph_get_node(graph, nodeC_id);
-	mt_assert(twl_lst_len(twl_graph_node_get_edges(nodeA)) == 0);
 	mt_assert(twl_lst_len(twl_graph_node_get_edges(nodeB)) == 1);
 	mt_assert(twl_lst_len(twl_graph_node_get_edges(nodeC)) == 1);
 }
 
-void	suite_twl_graph_clear_node(t_suite *suite)
+void	suite_twl_graph_clear_remove_node(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }
