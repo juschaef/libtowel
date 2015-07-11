@@ -23,6 +23,6 @@ void				twl_graph_node_del(t_graph_node *node,
 	{
 		del_fn(node->data_);
 	}
-	twl_lst_del(node->links_, NULL);
+	twl_lst_del(node->edges_, NULL);
 	free(node);
 }

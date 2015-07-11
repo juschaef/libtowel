@@ -25,7 +25,6 @@ typedef struct		s_graph_node
 {
 	t_graph_node_id	id_;
 	void			*data_;
-	t_lst			*links_;
 	t_lst			*edges_;
 	bool			is_visited_;
 	t_gnode			*came_from_;

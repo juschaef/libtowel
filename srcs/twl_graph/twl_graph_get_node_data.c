@@ -14,7 +14,8 @@
 #include "twl_xstdlib.h"
 #include "twl_xstdio.h"
 
-void				*twl_graph_get_node_data(t_graph *graph, t_graph_node_id node_id)
+void				*twl_graph_get_node_data(t_graph *graph,
+													t_graph_node_id node_id)
 {
 	t_graph_node	*node;
 

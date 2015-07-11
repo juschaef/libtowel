@@ -21,7 +21,6 @@ t_graph_node			*twl_graph_node_new(t_graph_node_id node_id, void *data)
 	node = twl_malloc_x0(sizeof(t_graph_node));
 	node->id_ = node_id;
 	node->data_ = data;
-	node->links_ = twl_lst_new(); // del this
 	node->edges_ = twl_lst_new();
 	node->is_visited_ = 0;
 	node->came_from_ = NULL;

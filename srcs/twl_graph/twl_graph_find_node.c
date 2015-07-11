@@ -17,8 +17,7 @@
 static bool			find_node_fn(void *node_, void *find_fn_, void *context)
 {
 	t_graph_node	*node;
-	bool (*find_fn)(void *data, void *context);
-
+	bool			(*find_fn)(void *data, void *context);
 
 	node = node_;
 	find_fn = find_fn_;

@@ -13,7 +13,7 @@ static void simple_test(t_test *test)
 	node2 = twl_graph_node_new(2, strdup("C"));
 	node3 = twl_graph_node_new(3, strdup("D"));
 
-	mt_assert(twl_lst_len(node0->links_) == 0);
+	mt_assert(twl_lst_len(node0->edges_) == 0);
 	twl_graph_node_del(node0, free);
 	twl_graph_node_del(node1, free);
 	twl_graph_node_del(node2, free);

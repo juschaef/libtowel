@@ -14,8 +14,10 @@
 #include "twl_xstdlib.h"
 #include "twl_xstdio.h"
 
-t_graph_edge_id			twl_graph_add_edge(t_graph *this, t_graph_node_id node_id1,
-											t_graph_node_id node_id2, void *data)
+t_graph_edge_id			twl_graph_add_edge(t_graph *this,
+											t_graph_node_id node_id1,
+											t_graph_node_id node_id2,
+											void *data)
 {
 	t_graph_node	*node1;
 	t_graph_node	*node2;

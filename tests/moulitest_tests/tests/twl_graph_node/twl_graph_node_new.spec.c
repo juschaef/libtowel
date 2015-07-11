@@ -17,10 +17,10 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(node1->data_, "B") == 0);
 	mt_assert(strcmp(node2->data_, "C") == 0);
 	mt_assert(strcmp(node3->data_, "D") == 0);
-	mt_assert(twl_lst_len(node0->links_) == 0);
-	mt_assert(twl_lst_len(node1->links_) == 0);
-	mt_assert(twl_lst_len(node2->links_) == 0);
-	mt_assert(twl_lst_len(node3->links_) == 0);
+	mt_assert(twl_lst_len(node0->edges_) == 0);
+	mt_assert(twl_lst_len(node1->edges_) == 0);
+	mt_assert(twl_lst_len(node2->edges_) == 0);
+	mt_assert(twl_lst_len(node3->edges_) == 0);
 	mt_assert(!node0->is_visited_);
 	mt_assert(!node1->is_visited_);
 	mt_assert(!node2->is_visited_);
