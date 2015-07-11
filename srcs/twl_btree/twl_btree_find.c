@@ -10,21 +10,41 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_BTREE_H
-# define TWL_BTREE_H
+#include "twl_btree.h"
 
-# include "twl_btree_node.h"
-
-typedef struct		s_btree
+static void			*process_recursiv(t_btree_node *cur_node, t_btree_node *new_node, int (*cmp_fn)(void *data, void *cur_data))
 {
-	t_btree_node	*head;
-}					t_btree;
+	if (cmp_fn(cur_node->data, new_node->data) > 0)
+	{
+		if (cur_node->left)
+			return (process_recursiv(cur_node->left, new_node, cmp_fn));
+		else
+			return (NULL);
+	}
+	else if (cmp_fn(cur_node->data, new_node->data) == 0)
+	{
+		return (cur_node->data);
+	}
+	else
+	{
+		if (cur_node->right)
+			return (process_recursiv(cur_node->right, new_node, cmp_fn));
+		else
+			return (NULL);
+	}
+}
 
-t_btree				*twl_btree_new();
-void				twl_btree_del(t_btree *this);
+void				*twl_btree_find(t_btree *this, void *data, int (*cmp_fn)(void *data, void *cur_data))
+{
+	t_btree_node	*new_node;
+	t_btree_node	*tmp;
 
-void				twl_btree_insert(t_btree *this, void *data, int	(*cmp_fn)(void *data, void *cur));
-
-void				*twl_btree_find(t_btree *this, void *data, int (*cmp_fn)(void *data, void *cur));
-
-#endif /* TWL_BTREE_H */
+	new_node = twl_btree_node_new(data);
+	tmp = this->head;
+	if (!tmp)
+		return (NULL);
+	else
+	{
+		return (process_recursiv(tmp, new_node, cmp_fn));
+	}
+}
