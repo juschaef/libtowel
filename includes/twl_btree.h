@@ -18,6 +18,7 @@
 typedef struct		s_btree
 {
 	t_btree_node	*head;
+	size_t			size;
 }					t_btree;
 
 t_btree				*twl_btree_new();
@@ -26,5 +27,7 @@ void				twl_btree_del(t_btree *this);
 void				twl_btree_insert(t_btree *this, void *data, int	(*cmp_fn)(void *data, void *cur));
 
 void				*twl_btree_find(t_btree *this, void *data, int (*cmp_fn)(void *data, void *cur));
+
+size_t				twl_btree_size(t_btree *this);
 
 #endif /* TWL_BTREE_H */

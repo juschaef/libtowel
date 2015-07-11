@@ -48,4 +48,5 @@ void				twl_btree_insert(t_btree *this, void *data, int (*cmp_fn)(void *data, vo
 	{
 		process_recursiv(tmp, new_node, cmp_fn);
 	}
+	this->size += 1;
 }
