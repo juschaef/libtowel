@@ -16,7 +16,6 @@ static void simple_test(t_test *test)
 	twl_btree_insert(btree, "B", cmp_fn);
 	twl_btree_insert(btree, "C", cmp_fn);
 	twl_btree_insert(btree, "D", cmp_fn);
-	// printf("%s\n", btree->head->data);
 	mt_assert(strcmp(btree->head->data, "A") == 0);
 	mt_assert(strcmp(btree->head->right->data, "B") == 0);
 	mt_assert(btree->head->left == NULL);
