@@ -10,17 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_GRAPH_NODE_MGR_H
-# define TWL_GRAPH_NODE_MGR_H
+#include "twl_graph.h"
 
-# include "twl_lst.h"
-# include "twl_graph_node.h"
-
-// bool				twl_graph_node_mgr_exist(t_lst *nodes, t_graph_node_id id);
-
-t_graph_node		*twl_graph_node_mgr_find_by_id(t_lst *nodes,
-														t_graph_node_id id);
 bool				twl_graph_node_mgr_contains(t_lst *nodes,
-														t_graph_node *node);
-
-#endif
+														t_graph_node *node)
+{
+	return (twl_graph_node_mgr_find_by_id(nodes, twl_graph_node_get_id(node)));
+}
