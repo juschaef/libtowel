@@ -10,37 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_GRAPH_NODE_H
-# define TWL_GRAPH_NODE_H
+#include <stdlib.h>
 
-# include <stdbool.h>
-# include "twl_lst.h"
-# include "twl_graph_edge.h"
+#include "twl_graph_node.h"
 
-typedef int			t_graph_node_id;
+#include "twl_xstdlib.h"
 
-typedef struct s_graph_node t_gnode;
-
-typedef struct		s_graph_node
+t_graph_node		*twl_graph_node_copy(t_graph_node *node)
 {
-	t_graph_node_id	id_;
-	void			*data_;
-	t_lst			*edges_;
-	bool			is_visited_;
-	t_gnode			*came_from_;
-}					t_graph_node;
-
-t_graph_node		*twl_graph_node_new(t_graph_node_id node_id, void *data);
-void				twl_graph_node_del(t_graph_node *this,
-													void (*del_fn)(void *));
-t_graph_node		*twl_graph_node_copy(t_graph_node *node);
-void				*twl_graph_node_copy_void(void *node);
-
-void				twl_graph_node_add_edge(t_graph_node *node,
-															t_graph_edge *edge);
-
-t_lst				*twl_graph_node_neighbors(t_graph_node *node);
-t_graph_node_id		twl_graph_node_get_id(t_graph_node *node);
-void				*twl_graph_node_get_data(t_graph_node *node);
-
-#endif
+	return (twl_graph_node_new(node->id_, node->data_));
+}
