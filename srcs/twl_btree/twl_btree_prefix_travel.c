@@ -10,30 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_BTREE_H
-# define TWL_BTREE_H
+#include "twl_btree.h"
 
-# include "twl_btree_node.h"
 
-typedef struct		s_btree
+static void			process_recursive(t_btree_node *node, void (*tr_fn)(void *data, void *ctx), void *ctx)
 {
-	t_btree_node	*head;
-	size_t			size;
-}					t_btree;
+	tr_fn(node->data, ctx);
+	if (node->left)
+		process_recursive(node->left, tr_fn, ctx);
+	if (node->right)
+		process_recursive(node->right, tr_fn, ctx);
+}
 
-t_btree				*twl_btree_new();
-void				twl_btree_del(t_btree *this);
-
-void				twl_btree_insert(t_btree *this, void *data, int	(*cmp_fn)(void *data, void *cur));
-
-void				*twl_btree_find(t_btree *this, void *data, int (*cmp_fn)(void *data, void *cur));
-
-void				twl_btree_prefix_travel(t_btree *this, void (*tr_fn)(void *data, void *ctx), void *ctx);
-void				twl_btree_infix_travel(t_btree *this, void (*tr_fn)(void *data, void *ctx), void *ctx);
-void				twl_btree_sufix_travel(t_btree *this, void (*tr_fn)(void *data, void *ctx), void *ctx);
-
-// void				twl_btree_remove_node(t_btree *this, void *data, int (*cmp_fn)(void *data, void *cur));
-
-size_t				twl_btree_size(t_btree *this);
-
-#endif /* TWL_BTREE_H */
+void				twl_btree_prefix_travel(t_btree *this, void (*tr_fn)(void *data, void *ctx), void *ctx)
+{
+	process_recursive(this->head, tr_fn, ctx);
+}

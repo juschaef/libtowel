@@ -12,7 +12,17 @@
 
 #include "twl_btree.h"
 
+
+static void			process_recursive(t_btree_node *node, void (*tr_fn)(void *data, void *ctx), void *ctx)
+{
+	if (node->left)
+		process_recursive(node->left, tr_fn, ctx);
+	tr_fn(node->data, ctx);
+	if (node->right)
+		process_recursive(node->right, tr_fn, ctx);
+}
+
 void				twl_btree_infix_travel(t_btree *this, void (*tr_fn)(void *data, void *ctx), void *ctx)
 {
-	process_recursive();
+	process_recursive(this->head, tr_fn, ctx);
 }
