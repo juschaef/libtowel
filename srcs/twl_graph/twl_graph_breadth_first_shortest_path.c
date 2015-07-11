@@ -17,12 +17,54 @@
 #include "twl_graph.h"
 #include "twl_graph_node.h"
 
-static void			iter_neighbors_fn(void *node, void *frontier, void *came_from)
+static void			iter_neighbors_fn(t_graph_node *node, void *frontier,
+													void *closed,
+													t_graph_node *cur_node)
 {
-	twl_printf("neighbor: %s\n", twl_graph_node_get_data(node));
-	// twl_printf("neighbor: %s\n", twl_graph_node_mgr_find_by_id(came_from, node));
-	(void)frontier;
-	(void)came_from;
+	if (!twl_graph_node_mgr_contains(closed, node))
+	{
+		twl_lst_push(frontier, node);
+		twl_lst_push(closed, node);
+		node->came_from_ = cur_node;
+	}
+}
+
+static void			neighbors_iter(t_lst *neighbors, t_lst *frontier,
+									t_lst *closed, t_graph_node *cur_node)
+{
+	t_lst_elem__	*elem;
+	t_lst_elem__	*next;
+
+	elem = neighbors->head;
+	while (elem)
+	{
+		next = elem->next;
+		iter_neighbors_fn(elem->data, frontier, closed, cur_node);
+		elem = next;
+	}
+}
+
+static void			handle_neighbors(t_lst *frontier, t_lst *closed,
+													t_graph_node *cur_node)
+{
+	t_lst			*neighbors;
+
+	neighbors = twl_graph_node_neighbors(cur_node);
+	neighbors_iter(neighbors, frontier, closed, cur_node);
+	twl_lst_del(neighbors, NULL);
+}
+
+static t_lst		*get_data_solution_list(t_graph_node *solution_node)
+{
+	t_lst			*solution;
+
+	solution = twl_lst_new();
+	while (solution_node)
+	{
+		twl_lst_unshift(solution, twl_graph_node_get_data(solution_node));
+		solution_node = solution_node->came_from_;
+	}
+	return (solution);
 }
 
 t_lst				*twl_graph_breadth_first_shortest_path(t_graph *this,
@@ -30,52 +72,28 @@ t_lst				*twl_graph_breadth_first_shortest_path(t_graph *this,
 												t_graph_node_id end_node_id)
 {
 	t_lst			*frontier;
-	t_lst			*came_from;
+	t_lst			*closed;
 	t_graph_node	*start_node;
 	t_graph_node	*end_node;
 	t_graph_node	*cur_node;
-	t_lst			*neighbors;
 
 	frontier = twl_lst_new();
-	came_from = twl_lst_new();
+	closed = twl_lst_new();
 	start_node = twl_graph_get_node(this, start_node_id);
 	end_node = twl_graph_get_node(this, end_node_id);
-	twl_printf("start_node: %s\n", twl_graph_node_get_data(start_node));
-	twl_printf("end_node: %s\n", twl_graph_node_get_data(end_node));
-	twl_printf("==================\n");
 	twl_lst_push(frontier, start_node);
-	twl_lst_push(came_from, start_node);
+	twl_lst_push(closed, start_node);
 	while (twl_lst_len(frontier) > 0)
 	{
 		cur_node = twl_lst_shift(frontier);
-		twl_printf("--------- %s ---------\n", twl_graph_node_get_data(cur_node));
-		twl_printf("cur_node: %s\n", twl_graph_node_get_data(cur_node));
 		if (cur_node == end_node)
+		{
+			return (get_data_solution_list(cur_node));
 			break ;
-		neighbors = twl_graph_node_neighbors(cur_node);
-		twl_lst_iter2(neighbors, iter_neighbors_fn, frontier, came_from);
-		twl_lst_del(neighbors, NULL);
-		// twl_printf("len: %zu\n", twl_lst_len(frontier));
+		}
+		handle_neighbors(frontier, closed, cur_node);
 	}
+	twl_lst_del(frontier, NULL);
+	twl_lst_del(closed, NULL);
 	return (NULL);
-	(void)this;
 }
-
-/*
-frontier = Queue()
-frontier.put(start)
-came_from = {}
-came_from[start] = None
-
-while not frontier.empty():
-   current = frontier.get()
-
-   if current == goal:
-      break
-
-   for next in graph.neighbors(current):
-      if next not in came_from:
-         frontier.put(next)
-         came_from[next] = current
-
-*/

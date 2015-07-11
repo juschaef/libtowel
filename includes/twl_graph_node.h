@@ -19,6 +19,8 @@
 
 typedef int			t_graph_node_id;
 
+typedef struct s_graph_node t_gnode;
+
 typedef struct		s_graph_node
 {
 	t_graph_node_id	id_;
@@ -26,6 +28,7 @@ typedef struct		s_graph_node
 	t_lst			*links_;
 	t_lst			*edges_;
 	bool			is_visited_;
+	t_gnode			*came_from_;
 }					t_graph_node;
 
 t_graph_node		*twl_graph_node_new(t_graph_node_id node_id, void *data);
