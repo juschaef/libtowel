@@ -58,6 +58,9 @@ t_graph_node		*twl_graph_get_node(t_graph *graph,
 t_lst				*twl_graph_breadth_first_shortest_path(t_graph *this,
 												t_graph_node_id src_node_id,
 												t_graph_node_id dest_node_id);
+t_lst				*twl_graph_node_get_edges(t_graph_node *node);
+void				twl_graph_clear_node(t_graph *graph,
+													t_graph_node_id node_id);
 
 /*
 void				twl_graph_reset(t_graph *this);

@@ -10,22 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
-#include "twl_printf.h"
+#include "twl_graph.h"
+#include "twl_xstdlib.h"
+#include "twl_xstdio.h"
 
-void				twl_lst_remove_if(t_lst *lst,
-						bool (*filter_fn) (void *data, void *context),
-						void *context, void (*delfn)(void *))
+static bool			is_target_edge_fn(void *edge_, void *node_id_ptr)
 {
-	t_lst_elem__	*elem;
-	t_lst_elem__	*next;
+	t_graph_node_id node_id;
+	t_graph_edge	*edge;
 
-	elem = lst->head;
-	while (elem)
-	{
-		next = elem->next;
-		if (filter_fn(elem->data, context))
-			twl_lst_del_elem__(lst, elem, delfn);
-		elem = next;
-	}
+	node_id = *(t_graph_node_id *)node_id_ptr;
+	edge = edge_;
+	return (edge->left_node_->id_ == node_id || edge->right_node_->id_ == node_id);
+}
+
+static void			iter_node_fn(void *node, void *node_id_ptr)
+{
+	twl_lst_remove_if(twl_graph_node_get_edges(node), is_target_edge_fn, node_id_ptr, NULL);
+}
+
+void				twl_graph_clear_node(t_graph *graph,
+													t_graph_node_id node_id)
+{
+	twl_lst_iter(graph->nodes_, iter_node_fn, &node_id);
+	twl_lst_remove_if(graph->edges_, is_target_edge_fn, &node_id, NULL);
 }

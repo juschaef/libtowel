@@ -14,7 +14,7 @@
 
 static bool			remove_edge_by_id_fn(void *edge_, void *target_edge_)
 {
-	return (!twl_graph_edge_equal(edge_, target_edge_));
+	return (twl_graph_edge_equal(edge_, target_edge_));
 }
 
 void				twl_graph_node_remove_edge(t_graph_node *node,
