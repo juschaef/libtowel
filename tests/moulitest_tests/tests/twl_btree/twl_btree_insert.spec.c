@@ -36,8 +36,21 @@ static void simple_test2(t_test *test)
 	twl_btree_del(btree);
 }
 
+static void simple_test3(t_test *test)
+{
+	t_btree			*btree;
+
+	btree = twl_btree_new();
+	twl_btree_insert(btree, "1", cmp_fn);
+	twl_btree_insert(btree, "2", cmp_fn);
+	twl_btree_insert(btree, "2", cmp_fn);
+	mt_assert(twl_btree_size(btree) == 2);
+	twl_btree_del(btree);
+}
+
 void	suite_twl_btree_insert(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 	SUITE_ADD_TEST(suite, simple_test2);
+	SUITE_ADD_TEST(suite, simple_test3);
 }

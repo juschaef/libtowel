@@ -28,6 +28,8 @@ void				twl_btree_insert(t_btree *this, void *data, int	(*cmp_fn)(void *data, vo
 
 void				*twl_btree_find(t_btree *this, void *data, int (*cmp_fn)(void *data, void *cur));
 
+void				twl_btree_infix_travel(t_btree *this, void (*tr_fn)(void *data, void *ctx), void *ctx);
+
 // void				twl_btree_remove_node(t_btree *this, void *data, int (*cmp_fn)(void *data, void *cur));
 
 size_t				twl_btree_size(t_btree *this);
