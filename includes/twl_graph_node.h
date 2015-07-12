@@ -40,7 +40,11 @@ void				twl_graph_node_add_edge(t_graph_node *node,
 															t_graph_edge *edge);
 
 t_lst				*twl_graph_node_neighbors(t_graph_node *node);
+
+t_lst				*twl_graph_node_neighbors_data(t_graph_node *node);
+
 t_graph_node_id		twl_graph_node_get_id(t_graph_node *node);
+
 void				*twl_graph_node_get_data(t_graph_node *node);
 
 #endif
