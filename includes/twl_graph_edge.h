@@ -44,4 +44,7 @@ void				twl_graph_node_remove_edge(struct s_graph_node *node,
 
 struct s_graph_node	*twl_graph_edge_get_other_node(t_graph_edge *this,
 												struct s_graph_node *src_node);
+void				*twl_graph_edge_get_left_node(t_graph_edge *this);
+void				*twl_graph_edge_get_right_node(t_graph_edge *this);
+
 #endif

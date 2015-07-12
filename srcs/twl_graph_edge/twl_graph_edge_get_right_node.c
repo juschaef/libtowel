@@ -13,10 +13,11 @@
 #include <stdlib.h>
 
 #include "twl_graph_node.h"
+#include "twl_graph_edge.h"
 
 #include "twl_xstdlib.h"
 
-t_graph_node		*twl_graph_node_copy(t_graph_node *node)
+void				*twl_graph_edge_get_right_node(t_graph_edge *this)
 {
-	return (twl_graph_node_new(node->id_, node->data_));
+	return (this->right_node_);
 }

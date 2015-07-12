@@ -65,6 +65,7 @@ void				twl_graph_remove_node(t_graph *graph,
 													t_graph_node_id node_id);
 void				twl_graph_clear_remove_node(t_graph *graph,
 													t_graph_node_id node_id);
+void				*twl_graph_edge_get_data(t_graph_edge *this);
 
 /*
 void				twl_graph_reset(t_graph *this);
