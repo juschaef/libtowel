@@ -66,6 +66,10 @@ void				twl_graph_remove_node(t_graph *graph,
 void				twl_graph_clear_remove_node(t_graph *graph,
 													t_graph_node_id node_id);
 
+
+void 				twl_graph_iter_node(t_graph *this,
+												void (*iter_fn)(void *data,
+												void *context), void *context);
 /*
 void				twl_graph_reset(t_graph *this);
 int					twl_graph_longest_path(t_graph *this);
