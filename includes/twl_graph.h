@@ -30,7 +30,9 @@ typedef struct		s_graph
 }					t_graph;
 
 t_graph				*twl_graph_new(void);
-void				twl_graph_del(t_graph *graph, void (*del_fn)());
+void				twl_graph_del(t_graph *graph,
+										void (*del_node_data_fn)(void *data),
+										void (*del_edge_data_fn)(void *));
 t_graph				*twl_graph_copy(t_graph *this);
 
 t_graph_node_id			twl_graph_add_node(t_graph *this, void *data);

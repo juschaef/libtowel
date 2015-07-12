@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "twl_stdio.h"
 #include "twl_graph_node.h"
 
 static bool			remove_edge_by_id_fn(void *edge_, void *target_edge_)

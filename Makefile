@@ -37,6 +37,8 @@ COL_RED = \033[0;31m
 COL_GREEN = \033[0;32m
 CC_OPTIONS = $(CC_FLAGS) $(CC_HEADERS) $(CC_FLAGS_EXTRA)
 
+DEBUG_FILE_NAME = .debug.out
+
 all: $(NAME)
 
 $(NAME): $(O_FILES)
@@ -84,5 +86,9 @@ check:
 
 norm:
 	find srcs includes -name '*.c' -o -name '*.h' | xargs norminette
+
+log:
+	touch $(DEBUG_FILE_NAME)
+	tail -f $(DEBUG_FILE_NAME)
 
 .PHONY: all debug clean fclean re _debug
