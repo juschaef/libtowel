@@ -13,6 +13,8 @@
 #ifndef TWL_XSTDIO_H
 # define TWL_XSTDIO_H
 
+# define COUCOU twl_lprintf("@ %s %s (%d)\n", __FILE__, __FUNCTION__, __LINE__);
+
 void				twl_putstr(char const *s);
 void				twl_putstr_fd(char const *s, int fd);
 void				twl_putnchar(int n, char c);
