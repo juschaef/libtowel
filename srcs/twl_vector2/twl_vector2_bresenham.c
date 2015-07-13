@@ -11,18 +11,18 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-
 #include <stdio.h>
 
+#include "twl_math.h"
 #include "twl_vector2.h"
 
 static t_delta		init_delta(t_vector2 *src, t_vector2 *dst)
 {
 	t_delta			delta;
 
-	delta.delta_x = abs(dst->x - src->x);
+	delta.delta_x = twl_abs(dst->x - src->x);
 	delta.sign_x = src->x < dst->x ? 1 : -1;
-	delta.delta_y = abs(dst->y - src->y);
+	delta.delta_y = twl_abs(dst->y - src->y);
 	delta.sign_y = src->y < dst->y ? 1 : -1;
 	delta.error = (delta.delta_x > delta.delta_y ? delta.delta_x :
 														-(delta.delta_y)) / 2;

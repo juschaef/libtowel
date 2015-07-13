@@ -17,10 +17,6 @@
 # include "twl_graph_node_mgr.h"
 # include "twl_graph_edge_mgr.h"
 
-# include <stdlib.h>
-# include <stdbool.h>
-# include <string.h>
-
 typedef struct		s_graph
 {
 	t_graph_node_id	node_id_count_;
