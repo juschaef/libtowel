@@ -19,7 +19,7 @@
 
 typedef int			t_graph_node_id;
 
-typedef struct s_graph_node t_gnode;
+typedef struct s_graph_node	t_gnode;
 
 typedef struct		s_graph_node
 {

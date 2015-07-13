@@ -18,15 +18,19 @@ static bool			is_target_edge_fn(void *edge_, void *node_id_ptr)
 {
 	t_graph_node_id node_id;
 	t_graph_edge	*edge;
+	bool			return_value;
 
 	node_id = *(t_graph_node_id *)node_id_ptr;
 	edge = edge_;
-	return (edge->left_node_->id_ == node_id || edge->right_node_->id_ == node_id);
+	return_value = edge->left_node_->id_ == node_id
+						|| edge->right_node_->id_ == node_id;
+	return (return_value);
 }
 
 static void			iter_node_fn(void *node, void *node_id_ptr)
 {
-	twl_lst_remove_if(twl_graph_node_get_edges(node), is_target_edge_fn, node_id_ptr, NULL);
+	twl_lst_remove_if(twl_graph_node_get_edges(node), is_target_edge_fn,
+															node_id_ptr, NULL);
 }
 
 void				twl_graph_clear_node(t_graph *graph,

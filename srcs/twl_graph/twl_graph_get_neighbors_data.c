@@ -17,6 +17,8 @@
 t_lst				*twl_graph_get_neighbors_data(t_graph *graph,
 													t_graph_node_id node_id)
 {
-	return (twl_graph_node_neighbors_data(twl_graph_node_mgr_find_by_id(graph->nodes_, node_id)));
+	t_graph_node	*node;
 
+	node = twl_graph_node_mgr_find_by_id(graph->nodes_, node_id);
+	return (twl_graph_node_neighbors_data(node));
 }

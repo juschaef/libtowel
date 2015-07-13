@@ -16,8 +16,6 @@
 # include "twl_lst.h"
 # include "twl_graph_node.h"
 
-// bool				twl_graph_node_mgr_exist(t_lst *nodes, t_graph_node_id id);
-
 t_graph_node		*twl_graph_node_mgr_find_by_id(t_lst *nodes,
 														t_graph_node_id id);
 bool				twl_graph_node_mgr_contains(t_lst *nodes,

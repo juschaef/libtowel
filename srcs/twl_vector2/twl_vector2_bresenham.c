@@ -16,15 +16,6 @@
 
 #include "twl_vector2.h"
 
-typedef struct s_delta
-{
-	int				delta_x;
-	int				sign_x;
-	int				delta_y;
-	int				sign_y;
-	int				error;
-}					t_delta;
-
 static t_delta		init_delta(t_vector2 *src, t_vector2 *dst)
 {
 	t_delta			delta;
@@ -33,7 +24,8 @@ static t_delta		init_delta(t_vector2 *src, t_vector2 *dst)
 	delta.sign_x = src->x < dst->x ? 1 : -1;
 	delta.delta_y = abs(dst->y - src->y);
 	delta.sign_y = src->y < dst->y ? 1 : -1;
-	delta.error = (delta.delta_x > delta.delta_y ? delta.delta_x : -(delta.delta_y)) / 2;
+	delta.error = (delta.delta_x > delta.delta_y ? delta.delta_x :
+														-(delta.delta_y)) / 2;
 	return (delta);
 }
 

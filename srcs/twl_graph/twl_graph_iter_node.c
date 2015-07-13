@@ -24,7 +24,7 @@ static void			find_node_fn(void *node_, void *iter_fn_, void *context)
 	iter_fn(node->data_, context);
 }
 
-void 				twl_graph_iter_node(t_graph *this,
+void				twl_graph_iter_node(t_graph *this,
 												void (*iter_fn)(void *data,
 												void *context), void *context)
 {

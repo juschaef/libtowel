@@ -13,13 +13,22 @@
 #ifndef TWL_VECTOR2_H
 # define TWL_VECTOR2_H
 
-#include <stdbool.h>
+# include <stdbool.h>
 
 typedef struct		s_vector2
 {
 	int				x;
 	int				y;
 }					t_vector2;
+
+typedef struct		s_delta
+{
+	int				delta_x;
+	int				sign_x;
+	int				delta_y;
+	int				sign_y;
+	int				error;
+}					t_delta;
 
 t_vector2			*twl_vector2_new(int x, int y);
 void				twl_vector2_del(t_vector2 *this);
