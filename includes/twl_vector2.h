@@ -26,4 +26,7 @@ void				twl_vector2_del(t_vector2 *this);
 
 bool				twl_vector2_is_equal(t_vector2 *this, t_vector2 *other);
 
+void				twl_vector2_bresenham(t_vector2 *this, t_vector2 *dst,
+					void (*fn)(int x, int y, void *), void *ctx);
+
 #endif
