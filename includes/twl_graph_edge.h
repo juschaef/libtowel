@@ -19,8 +19,6 @@
 
 typedef int				t_graph_edge_id;
 
-typedef struct s_graph_node	t_fuck_norm;
-
 typedef struct			s_graph_edge
 {
 	t_graph_edge_id		id_;
