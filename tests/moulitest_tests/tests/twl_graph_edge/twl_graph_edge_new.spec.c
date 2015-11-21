@@ -30,6 +30,7 @@ static void test_edges_added_to_nodes(t_test *test)
 	mt_assert(edge_from_node0->id_ == 0);
 	mt_assert(twl_lst_len(node1->edges_) == 1);
 	mt_assert(edge_from_node1->id_ == 0);
+	(void)edge;
 }
 
 static void test_edges_advanced(t_test *test)

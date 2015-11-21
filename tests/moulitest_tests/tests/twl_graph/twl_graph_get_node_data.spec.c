@@ -14,10 +14,9 @@ static void simple_test(t_test *test)
 static void test_null(t_test *test)
 {
 	t_graph			*g;
-	t_graph_node_id		node_id;
 
 	g = twl_graph_new();
-	node_id = twl_graph_add_node(g, strdup("ABC"));
+	twl_graph_add_node(g, strdup("ABC"));
 	mt_assert(twl_graph_get_node_data(g, 42) == NULL);
 }
 

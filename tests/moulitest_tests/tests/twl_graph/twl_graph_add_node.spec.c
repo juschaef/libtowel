@@ -4,10 +4,9 @@
 static void simple_test(t_test *test)
 {
 	t_graph			*graph;
-	t_graph_node_id		node_id;
 
 	graph = twl_graph_new();
-	node_id = twl_graph_add_node(graph, strdup("A"));
+	twl_graph_add_node(graph, strdup("A"));
 	mt_assert(twl_graph_node_count(graph) == 1);
 	twl_graph_add_node(graph, strdup("B"));
 	twl_graph_add_node(graph, strdup("C"));
