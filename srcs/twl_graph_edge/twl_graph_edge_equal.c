@@ -10,22 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_graph_edge.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+bool				twl_graph_edge_equal(t_graph_edge *this,
+														t_graph_edge *other)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
-
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
+	return (this->id_ == other->id_);
 }

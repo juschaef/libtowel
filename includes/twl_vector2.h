@@ -10,22 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#ifndef TWL_VECTOR2_H
+# define TWL_VECTOR2_H
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+# include <stdbool.h>
+
+typedef struct		s_vector2
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	int				x;
+	int				y;
+}					t_vector2;
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
-}
+typedef struct		s_delta
+{
+	int				delta_x;
+	int				sign_x;
+	int				delta_y;
+	int				sign_y;
+	int				error;
+}					t_delta;
+
+t_vector2			*twl_vector2_new(int x, int y);
+void				twl_vector2_del(t_vector2 *this);
+
+bool				twl_vector2_is_equal(t_vector2 *this, t_vector2 *other);
+
+void				twl_vector2_bresenham(t_vector2 *this, t_vector2 *dst,
+					void (*fn)(int x, int y, void *), void *ctx);
+
+#endif

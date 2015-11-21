@@ -24,7 +24,7 @@ void				twl_lst_remove_if(t_lst *lst,
 	while (elem)
 	{
 		next = elem->next;
-		if (!filter_fn(elem->data, context))
+		if (filter_fn(elem->data, context))
 			twl_lst_del_elem__(lst, elem, delfn);
 		elem = next;
 	}

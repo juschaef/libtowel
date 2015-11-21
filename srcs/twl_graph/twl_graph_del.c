@@ -10,22 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include <stdlib.h>
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+#include "twl_stdio.h"
+
+#include "twl_graph.h"
+
+#include "twl_xstdlib.h"
+
+static void			del_node_fn(void *node, void *del_node_data_fn)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	twl_graph_node_del(node, del_node_data_fn);
+}
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
+static void			del_edge_fn(void *edge, void *del_edge_data_fn)
+{
+	twl_graph_edge_del(edge, del_edge_data_fn);
+}
+
+void				twl_graph_del(t_graph *graph,
+										void (*del_node_data_fn)(void *),
+										void (*del_edge_data_fn)(void *))
+{
+	twl_lst_iter(graph->edges_, del_edge_fn, del_edge_data_fn);
+	twl_lst_iter(graph->nodes_, del_node_fn, del_node_data_fn);
+	twl_lst_del(graph->nodes_, NULL);
+	free(graph);
 }

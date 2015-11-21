@@ -10,22 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_xstdio.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+#include "twl_graph_node.h"
+#include "twl_graph_edge.h"
+
+t_graph_node		*twl_graph_edge_get_other_node(t_graph_edge *this,
+														t_graph_node *src_node)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
-
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
+	if (this->left_node_->id_ == src_node->id_)
 	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
+		return (this->right_node_);
 	}
-	return (lst_new);
+	else if (this->right_node_->id_ == src_node->id_)
+	{
+		return (this->left_node_);
+	}
+	twl_xprintf("twl_graph_edge_get_other_node: source node should be either"
+													" one of the edge sides.");
+	return (NULL);
 }

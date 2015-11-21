@@ -10,22 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_stdio.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+#include "twl_graph_edge_mgr.h"
+
+static bool			find_by_id(void *edge_, void *id_ptr_)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	t_graph_edge	*edge;
+	t_graph_edge_id	*id_ptr;
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
+	edge = edge_;
+	id_ptr = id_ptr_;
+	return (edge->id_ == *id_ptr);
+}
+
+t_graph_edge		*twl_graph_edge_mgr_find_by_id(t_lst *edges,
+													t_graph_edge_id edge_id)
+{
+	return (twl_lst_find(edges, find_by_id, &edge_id));
 }

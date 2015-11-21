@@ -10,22 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_vector2.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+#include "twl_xstdlib.h"
+
+t_vector2				*twl_vector2_new(int x, int y)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	t_vector2			*vector2;
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
+	vector2 = twl_malloc_x0(sizeof(t_vector2));
+	vector2->x = x;
+	vector2->y = y;
+	return (vector2);
 }

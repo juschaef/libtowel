@@ -10,22 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_xstdio.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+#include "twl_graph_node.h"
+#include "twl_graph_edge.h"
+
+#include "twl_xstdlib.h"
+
+t_graph_edge		*twl_graph_edge_new(t_graph_edge_id edge_id,
+						t_graph_node *left_node, t_graph_node *right_node,
+						void *data)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	t_graph_edge	*edge;
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
+	if (!left_node || !right_node)
 	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
+		twl_xprintf("twl_graph_edge_new: left and right nodes are required");
 	}
-	return (lst_new);
+	edge = twl_malloc_x0(sizeof(t_graph_edge));
+	edge->id_ = edge_id;
+	edge->data_ = data;
+	edge->left_node_ = left_node;
+	edge->right_node_ = right_node;
+	edge->weight_ = GRAPH_EDGE_DEFAULT_WEIGHT;
+	twl_graph_node_add_edge(left_node, edge);
+	twl_graph_node_add_edge(right_node, edge);
+	return (edge);
 }

@@ -10,22 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#ifndef TWL_GRAPH_NODE_MGR_H
+# define TWL_GRAPH_NODE_MGR_H
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
-{
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+# include "twl_lst.h"
+# include "twl_graph_node.h"
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
-}
+t_graph_node		*twl_graph_node_mgr_find_by_id(t_lst *nodes,
+														t_graph_node_id id);
+bool				twl_graph_node_mgr_contains(t_lst *nodes,
+														t_graph_node *node);
+
+#endif

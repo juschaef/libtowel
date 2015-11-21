@@ -10,22 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_graph.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+static bool			is_target_node_fn(void *node_, void *node_id_ptr)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	t_graph_node_id node_id;
+	t_graph_node	*node;
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
+	node_id = *(t_graph_node_id *)node_id_ptr;
+	node = node_;
+	return (node->id_ == node_id);
+}
+
+void				twl_graph_remove_node(t_graph *graph,
+													t_graph_node_id node_id)
+{
+	twl_lst_remove_if(graph->nodes_, is_target_node_fn, &node_id, NULL);
 }

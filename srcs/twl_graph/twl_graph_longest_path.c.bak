@@ -10,22 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include <stdio.h>
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+#include "twl_graph.h"
+#include "twl_xstdlib.h"
+#include "twl_xstdio.h"
+
+static void			process_recursive(t_graph_node *node, int cur, int *max)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	t_lst_elem__	*tmp;
+	t_graph_node	*node_tmp;
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
+	tmp = node->links_->head;
+	node->is_visited_ = true;
+	cur++;
+	if (cur > *max)
+		*max = cur;
+	while (tmp != NULL)
 	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
+		node_tmp = tmp->data;
+		if (node_tmp->is_visited_ == false)
+		{
+			process_recursive(tmp->data, cur, max);
+			node->is_visited_ = false;
+		}
+		tmp = tmp->next;
 	}
-	return (lst_new);
+}
+
+int					twl_graph_longest_path(t_graph *this)
+{
+	int				longest_path;
+	t_lst_elem__	*tmp;
+
+	longest_path = 0;
+	tmp = this->nodes_->head;
+	while (tmp != NULL)
+	{
+		process_recursive(tmp->data, 0, &longest_path);
+		// twl_graph_reset(this);
+		tmp = tmp->next;
+	}
+	return (longest_path);
 }

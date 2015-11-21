@@ -10,22 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_stdio.h"
+#include "twl_graph_node.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+static bool			remove_edge_by_id_fn(void *edge_, void *target_edge_)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	return (twl_graph_edge_equal(edge_, target_edge_));
+}
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
+void				twl_graph_node_remove_edge(t_graph_node *node,
+															t_graph_edge *edge)
+{
+	twl_lst_remove_if(node->edges_, remove_edge_by_id_fn, edge, NULL);
 }

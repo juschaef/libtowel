@@ -10,22 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_graph_node.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+#include "twl_xstdlib.h"
+
+t_graph_node			*twl_graph_node_new(t_graph_node_id node_id, void *data)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	t_graph_node	*node;
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
+	node = twl_malloc_x0(sizeof(t_graph_node));
+	node->id_ = node_id;
+	node->data_ = data;
+	node->edges_ = twl_lst_new();
+	node->is_visited_ = 0;
+	node->came_from_ = NULL;
+	return (node);
 }

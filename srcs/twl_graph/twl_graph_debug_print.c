@@ -10,22 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_xstdio.h"
+#include "twl_graph.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+static void			iter_edges_fn(void *edge, void *src_node)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	t_graph_node	*node;
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
+	node = twl_graph_edge_get_other_node(edge, src_node);
+	twl_lprintf("%d,", node->id_);
+}
+
+static void			iter_node_fn(void *node_)
+{
+	t_graph_node	*node;
+
+	node = node_;
+	twl_lprintf("Node %d => ", node->id_);
+	twl_lst_iter(node->edges_, iter_edges_fn, node);
+	twl_lprintf("\n");
+}
+
+void				twl_graph_debug_print(t_graph *this)
+{
+	twl_lst_iter0(this->nodes_, iter_node_fn);
 }

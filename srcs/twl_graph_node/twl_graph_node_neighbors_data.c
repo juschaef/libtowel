@@ -10,22 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_graph.h"
+#include "twl_xstdlib.h"
+#include "twl_xstdio.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+static void			push_neighbor_fn(void *edge, void *neighbors, void *node)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	twl_lst_push(neighbors, twl_graph_edge_get_other_node(edge, node)->data_);
+}
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
-	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
-	}
-	return (lst_new);
+t_lst				*twl_graph_node_neighbors_data(t_graph_node *node)
+{
+	t_lst			*neighbors;
+
+	neighbors = twl_lst_new();
+	twl_lst_iter2(node->edges_, push_neighbor_fn, neighbors, node);
+	return (neighbors);
 }

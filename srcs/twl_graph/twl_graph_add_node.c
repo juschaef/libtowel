@@ -10,22 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_graph.h"
+#include "twl_xstdlib.h"
+#include "twl_xstdio.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+t_graph_node_id			twl_graph_add_node(t_graph *graph, void *data)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	t_graph_node	*node;
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
+	node = twl_graph_node_new(graph->node_id_count_, data);
+	if (!twl_graph_node_mgr_find_by_id(graph->nodes_, node->id_))
 	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
+		twl_lst_push(graph->nodes_, node);
 	}
-	return (lst_new);
+	else
+	{
+		twl_xprintf("%s duplicate entry", __FILE__);
+	}
+	graph->node_id_count_++;
+	return (node->id_);
 }

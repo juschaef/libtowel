@@ -11,8 +11,8 @@ static bool filter_fn(void *data, void *context_)
 	context = context_;
 	str = data;
 	if (strcmp(str, context) == 0)
-		return (false);
-	return (true);
+		return (true);
+	return (false);
 }
 
 static int del_counter;

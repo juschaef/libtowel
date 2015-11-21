@@ -10,22 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_lst.h"
+#include "twl_graph.h"
+#include "twl_xstdlib.h"
+#include "twl_xstdio.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+void				*twl_graph_find_node_data(t_graph *this,
+												bool (*find_fn)(void *data,
+												void *context), void *context)
 {
-	t_lst			*lst_new;
-	t_lst_elem__	*elem;
+	t_graph_node	*node;
 
-	elem = lst->head;
-	lst_new = twl_lst_new();
-	while (elem)
+	node = twl_graph_find_node(this, find_fn, context);
+	if (!node)
 	{
-		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
-		else
-			twl_lst_push(lst_new, elem->data);
-		elem = elem->next;
+		return (NULL);
 	}
-	return (lst_new);
+	return (node->data_);
 }
