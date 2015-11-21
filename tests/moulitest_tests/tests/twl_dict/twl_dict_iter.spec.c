@@ -4,11 +4,10 @@
 static void replace_first_letter(char *key, void *data, void *context_)
 {
 	char *str;
-	char *context;
 
-	context = context_;
 	str = data;
 	*str = *key;
+	(void)context_;
 }
 
 static void simple_test(t_test *test)

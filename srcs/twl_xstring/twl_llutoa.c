@@ -21,8 +21,6 @@ char	*twl_llutoa(unsigned long long ln)
 
 	i = 0;
 	twl_bzero(str, sizeof(str));
-	if (!str)
-		return (NULL);
 	while (1)
 	{
 		str[i] = (ln % 10) + '0';

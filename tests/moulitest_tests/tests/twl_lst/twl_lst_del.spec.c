@@ -15,7 +15,7 @@ static void simple_test(t_test *test)
 {
 	t_lst	*lst;
 	lst = twl_lst_new();
-	
+
 	twl_lst_push(lst, strdup("aaa"));
 	twl_lst_push(lst, strdup("bbb"));
 	twl_lst_push(lst, strdup("ccc"));
@@ -24,7 +24,6 @@ static void simple_test(t_test *test)
 	del_counter = 0;
 	twl_lst_del(lst, delfn);
 
-	mt_assert(twl_lst_len(lst) == 0);
 	mt_assert(del_counter == 4);
 }
 

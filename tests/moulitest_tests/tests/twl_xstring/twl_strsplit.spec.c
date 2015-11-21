@@ -15,7 +15,7 @@ static void simple_nothing(t_test *test)
 	char **segs;
 
 	segs = malloc(9999);
-	bzero(segs, 99999);
+	bzero(segs, 9999);
 	segs = twl_strsplit("/", ' ');
 	mt_assert(strcmp(segs[0], "/") == 0);
 }

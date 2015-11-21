@@ -13,6 +13,8 @@
 #ifndef PROJECT_H
 # define PROJECT_H
 
+# define _GNU_SOURCE
+
 # include <fw.h>
 # include "twl_string.h"
 # include <string.h>

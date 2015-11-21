@@ -32,4 +32,5 @@ void				twl_xprintf(const char *fmt, ...)
 	len = pf->output_len;
 	pf_free(pf);
 	exit(1);
+	(void)len;
 }
