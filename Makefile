@@ -14,12 +14,20 @@ include Makefile.cfg
 
 NAME = $(CONFIG_NAME)
 OUTPUT_TYPE = $(CONFIG_OUTPUT_TYPE)
+
+MLX_PATH = ./libs/minilibx
+MLX_HEADERS = -I $(MLX_PATH)
+MLX_SRC= $(MLX_PATH)/mlx_shaders.c $(MLX_PATH)/mlx_new_window.m \
+	$(MLX_PATH)/mlx_init_loop.m $(MLX_PATH)/mlx_new_image.m \
+	$(MLX_PATH)/mlx_xpm.c $(MLX_PATH)/mlx_int_str_to_wordtab.c
+MLX_OBJ1=$(MLX_SRC:.c=.o)
+MLX_OBJ=$(MLX_OBJ1:.m=.o)
+
 C_DIR = srcs/
 O_DIR = .tmp/objects/
 
-# CC_OPTIMIZATION_FLAGS = -O2
 CC_FLAGS = -g -Wall -Wextra -Werror
-CC_HEADERS = -I ./includes -I ./srcs/libft/includes -I /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx
+CC_HEADERS = -I ./includes -I ./srcs/libft/includes $(MLX_HEADERS)
 CC_DEBUG =
 DEBUG = 0
 
@@ -39,17 +47,14 @@ CC_OPTIONS = $(CC_FLAGS) $(CC_HEADERS) $(CC_FLAGS_EXTRA)
 
 DEBUG_FILE_NAME = .debug.out
 
-SRC= /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_shaders.c /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_new_window.m /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_init_loop.m /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_new_image.m /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_xpm.c /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_int_str_to_wordtab.c
-OBJ1=$(SRC:.c=.o)
-OBJ=$(OBJ1:.m=.o)
-
 all: $(NAME)
 
-$(NAME): $(O_FILES) $(OBJ)
+$(NAME): $(O_FILES) $(MLX_OBJ)
+	make -C $(MLX_PATH)
 	@echo ""
 	@echo "[info] compile $(OUTPUT_TYPE) ..."
 ifeq ($(OUTPUT_TYPE), lib)
-	@ar rcs $@ $^ $(OBJ)
+	@ar rcs $@ $^ $(MLX_OBJ)
 endif
 ifeq ($(OUTPUT_TYPE), exec)
 	@gcc $(CC_OPTIONS) $(CC_DEBUG) $^ -o $@
@@ -58,13 +63,12 @@ endif
 
 $(O_DIR)%.o: $(C_DIR)%.c $(H_FILES)
 	@mkdir -p $(O_DIRS) $(O_DIR) 2> /dev/null || echo "" > /dev/null
-	@gcc $(CC_OPTIONS) $(CC_DEBUG) -o $@ -c $< \
-		&& printf "."
-	@#&& printf "$<  >>>>  $@" | sed 's;//;/;g'
+	@gcc $(CC_OPTIONS) $(CC_DEBUG) -o $@ -c $< && printf "."
 
 debug: _debug all
 
 clean:
+	make -C $(MLX_PATH) clean
 	$(info [info] $@ ...)
 	@rm $(O_FILES) 2> /dev/null || echo "" > /dev/null
 	@rmdir $(O_DIRS) $(O_DIR) 2> /dev/null || echo "" > /dev/null
@@ -74,6 +78,7 @@ fclean: clean
 	@rm $(NAME) 2> /dev/null || echo "" > /dev/null
 
 re:
+	make -C $(MLX_PATH) re
 	make fclean
 	make all
 
