@@ -14,18 +14,36 @@
 
 #include "twl_xstring.h"
 
-t_json_node			*twl_json_parse(char *json_str)
-{
-	t_json_node		*node;
+#include "twl_stdio.h"
 
-	node = twl_json_node_new();
-	if (twl_strequ(json_str, "true"))
-	{
-		twl_json_node_set_bool(node, true);
-	}
-	if (twl_strequ(json_str, "false"))
-	{
-		twl_json_node_set_bool(node, false);
-	}
-	return (node);
+t_jnode			*twl_json_parse(char *json_str)
+{
+	return NULL;
+	(void)json_str;
 }
+
+/*
+	[true,[false,true],false]
+
+	parent = none
+	while (str)
+		if { [
+			node = build_node(TYPE_OBJECT)
+			parent = node
+			str += 1;
+			continue
+		if } ]
+			parent = parent.parent
+			node = parent
+			close
+		if string, bool, ...
+			node = build_node(...)
+			parent.push_node(node)
+			i += len
+			continue
+		if ,
+			str++;
+			continue
+		else
+			error
+*/

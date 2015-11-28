@@ -10,14 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_jnode.h"
 
-#include "twl_json_node.h"
-
-#include "twl_xstdlib.h"
-
-void				twl_json_node_set_bool(t_json_node *node, bool bool_val)
+int					twl_jnode_get_primitive(t_jnode *node)
 {
-	node->type__ = JSON_BOOL;
-	node->value__.boolean__ = bool_val;
+	return (node->value.primitive);
 }

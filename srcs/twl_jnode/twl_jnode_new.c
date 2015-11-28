@@ -10,9 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_json_node.h"
+#include "twl_jnode.h"
 
-bool				twl_json_node_is_bool(t_json_node *node)
+#include "twl_xstdlib.h"
+
+t_jnode			*twl_jnode_new(void)
 {
-	return (node->type__ == JSON_BOOL);
+	t_jnode	*node;
+
+	node = twl_malloc_x0(sizeof(t_jnode));
+	return (node);
 }

@@ -10,9 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_json_node.h"
+#include "twl_json.h"
 
-bool				twl_json_node_get_bool(t_json_node *node)
+#include "twl_xstring.h"
+
+#include "twl_stdio.h"
+
+char				*twl_json_dump(t_jnode *root_node)
 {
-	return (node->value__.boolean__);
+	return "";
+	(void)root_node;
 }

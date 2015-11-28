@@ -12,15 +12,15 @@
 
 #include <stdlib.h>
 
-#include "twl_json_node.h"
+#include "twl_jnode.h"
 
 #include "twl_xstdlib.h"
 
-void				twl_json_node_del(t_json_node *node)
+void				twl_jnode_del(t_jnode *node)
 {
-	if (node->type__ == JSON_OBJECT)
+	if (node->type == JSON_OBJECT)
 	{
-		free(node->object_key__);
+		free(node->object_key);
 	}
 	free(node);
 }

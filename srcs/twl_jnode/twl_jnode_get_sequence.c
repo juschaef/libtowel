@@ -10,12 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_JSON_H
-# define TWL_JSON_H
+#include "twl_jnode.h"
 
-# include "twl_jnode.h"
-
-t_jnode			*twl_json_parse(char *json_str);
-char				*twl_json_dump(t_jnode *json);
-
-#endif
+t_lst				*twl_jnode_get_sequence(t_jnode *node)
+{
+	return (node->value.sequence);
+}

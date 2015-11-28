@@ -10,14 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_json_node.h"
+#include "twl_jnode.h"
 
 #include "twl_xstdlib.h"
 
-t_json_node			*twl_json_node_new(void)
+t_jnode				*twl_jnode_new_primitive(t_jnode_type type, int value)
 {
-	t_json_node	*node;
+	t_jnode	*node;
 
-	node = twl_malloc_x0(sizeof(t_json_node));
+	node = twl_jnode_new();
+	node->type = type;
+	node->value.primitive = value;
 	return (node);
 }

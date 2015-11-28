@@ -10,12 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_JSON_H
-# define TWL_JSON_H
+#ifndef TWL_JSON_NODE_H
+# define TWL_JSON_NODE_H
 
-# include "twl_jnode.h"
+# include "twl_lst.h"
 
-t_jnode			*twl_json_parse(char *json_str);
-char				*twl_json_dump(t_jnode *json);
+typedef enum		e_jnode_type
+{
+	JSON_OBJECT,
+	JSON_ARRAY,
+	JSON_STRING,
+	JSON_NULL,
+	JSON_BOOL,
+	JSON_NUMBER
+}					t_jnode_type;
+
+typedef struct		s_jnode
+{
+	t_jnode_type	type;
+	union
+	{
+		t_lst		*sequence;
+		char		*string;
+		int			primitive;
+	}				value;
+	char			*object_key;
+	struct s_jnode *parent;
+}					t_jnode;
+
+t_jnode				*twl_jnode_new();
+t_jnode				*twl_jnode_new_primitive(t_jnode_type type, int value);
+t_jnode				*twl_jnode_new_sequence(t_jnode_type type);
+
+void				twl_jnode_del(t_jnode *node);
+
+bool				twl_jnode_is_type(t_jnode *node, t_jnode_type type);
+
+int					twl_jnode_get_primitive(t_jnode *node);
+t_lst				*twl_jnode_get_sequence(t_jnode *node);
 
 #endif
