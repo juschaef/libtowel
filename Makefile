@@ -19,7 +19,7 @@ O_DIR = .tmp/objects/
 
 # CC_OPTIMIZATION_FLAGS = -O2
 CC_FLAGS = -g -Wall -Wextra -Werror
-CC_HEADERS = -I ./includes -I ./srcs/libft/includes
+CC_HEADERS = -I ./includes -I ./srcs/libft/includes -I /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx
 CC_DEBUG =
 DEBUG = 0
 
@@ -39,13 +39,17 @@ CC_OPTIONS = $(CC_FLAGS) $(CC_HEADERS) $(CC_FLAGS_EXTRA)
 
 DEBUG_FILE_NAME = .debug.out
 
+SRC= /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_shaders.c /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_new_window.m /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_init_loop.m /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_new_image.m /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_xpm.c /Users/yan/repos/projects/common/rtv1/rendu/libs/minilibx/mlx_int_str_to_wordtab.c
+OBJ1=$(SRC:.c=.o)
+OBJ=$(OBJ1:.m=.o)
+
 all: $(NAME)
 
-$(NAME): $(O_FILES)
+$(NAME): $(O_FILES) $(OBJ)
 	@echo ""
 	@echo "[info] compile $(OUTPUT_TYPE) ..."
 ifeq ($(OUTPUT_TYPE), lib)
-	@ar rcs $@ $^
+	@ar rcs $@ $^ $(OBJ)
 endif
 ifeq ($(OUTPUT_TYPE), exec)
 	@gcc $(CC_OPTIONS) $(CC_DEBUG) $^ -o $@
