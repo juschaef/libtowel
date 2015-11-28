@@ -12,7 +12,7 @@
 
 #include "twl_jnode.h"
 
-bool				twl_jnode_is_type(t_jnode *node, t_jnode_type type)
+void				twl_jnode_seq_push(t_jnode *seq_node, t_jnode *node)
 {
-	return (node->type == type);
+	twl_lst_push(seq_node->value.seq, node);
 }

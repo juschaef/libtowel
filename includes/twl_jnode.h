@@ -44,9 +44,9 @@ t_jnode				*twl_jnode_new_seq(t_jnode_type type);
 
 void				twl_jnode_del(t_jnode *node);
 
-bool				twl_jnode_is_type(t_jnode *node, t_jnode_type type);
+// int					twl_jnode_get_prim(t_jnode *node);
+// t_lst				*twl_jnode_get_seq(t_jnode *node);
 
-int					twl_jnode_get_prim(t_jnode *node);
-t_lst				*twl_jnode_get_seq(t_jnode *node);
+void				twl_jnode_seq_push(t_jnode *seq_node, t_jnode *node);
 
 #endif
