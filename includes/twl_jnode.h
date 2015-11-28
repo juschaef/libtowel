@@ -32,21 +32,21 @@ typedef struct		s_jnode
 	{
 		t_lst		*seq;
 		char		*string;
-		int			primitive;
+		int			prim;
 	}				value;
 	char			*object_key;
 	struct s_jnode *parent;
 }					t_jnode;
 
 t_jnode				*twl_jnode_new();
-t_jnode				*twl_jnode_new_primitive(t_jnode_type type, int value);
+t_jnode				*twl_jnode_new_prim(t_jnode_type type, int value);
 t_jnode				*twl_jnode_new_seq(t_jnode_type type);
 
 void				twl_jnode_del(t_jnode *node);
 
 bool				twl_jnode_is_type(t_jnode *node, t_jnode_type type);
 
-int					twl_jnode_get_primitive(t_jnode *node);
+int					twl_jnode_get_prim(t_jnode *node);
 t_lst				*twl_jnode_get_seq(t_jnode *node);
 
 #endif

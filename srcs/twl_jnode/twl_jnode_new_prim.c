@@ -14,12 +14,12 @@
 
 #include "twl_xstdlib.h"
 
-t_jnode				*twl_jnode_new_primitive(t_jnode_type type, int value)
+t_jnode				*twl_jnode_new_prim(t_jnode_type type, int value)
 {
 	t_jnode	*node;
 
 	node = twl_jnode_new();
 	node->type = type;
-	node->value.primitive = value;
+	node->value.prim = value;
 	return (node);
 }
