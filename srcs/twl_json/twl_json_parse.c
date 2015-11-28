@@ -1,0 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_norris_loves_the_norminette.c                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chuck <chuck@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2042/02/30 42:00:00 by chuck             #+#    #+#             */
+/*   Updated: 2042/02/30 41:59:59 by chuck            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "twl_json.h"
+
+#include "twl_xstring.h"
+
+t_json_node			*twl_json_parse(char *json_str)
+{
+	t_json_node		*node;
+
+	node = twl_json_node_new();
+	if (twl_strequ(json_str, "true"))
+	{
+		twl_json_node_set_bool(node, true);
+	}
+	if (twl_strequ(json_str, "false"))
+	{
+		twl_json_node_set_bool(node, false);
+	}
+	return (node);
+}
