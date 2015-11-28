@@ -47,11 +47,13 @@ CC_OPTIONS = $(CC_FLAGS) $(CC_HEADERS) $(CC_FLAGS_EXTRA)
 
 DEBUG_FILE_NAME = .debug.out
 
+MAKE = make -s
+
 all: $(NAME)
 
 $(NAME): $(O_FILES) $(MLX_OBJ)
-	make -C $(MLX_PATH)
 	@echo ""
+	$(MAKE) -C $(MLX_PATH)
 	@echo "[info] compile $(OUTPUT_TYPE) ..."
 ifeq ($(OUTPUT_TYPE), lib)
 	@ar rcs $@ $^ $(MLX_OBJ)
@@ -68,7 +70,7 @@ $(O_DIR)%.o: $(C_DIR)%.c $(H_FILES)
 debug: _debug all
 
 clean:
-	make -C $(MLX_PATH) clean
+	$(MAKE) -C $(MLX_PATH) clean
 	$(info [info] $@ ...)
 	@rm $(O_FILES) 2> /dev/null || echo "" > /dev/null
 	@rmdir $(O_DIRS) $(O_DIR) 2> /dev/null || echo "" > /dev/null
@@ -78,9 +80,9 @@ fclean: clean
 	@rm $(NAME) 2> /dev/null || echo "" > /dev/null
 
 re:
-	make -C $(MLX_PATH) re
-	make fclean
-	make all
+	$(MAKE) -C $(MLX_PATH) re
+	$(MAKE) fclean
+	$(MAKE) all
 
 _debug:
 	$(eval CC_FLAGS = -Wall -Wextra -g)
@@ -91,7 +93,7 @@ run:
 	./$(NAME)
 
 check:
-	make -C tests/moulitest_tests
+	$(MAKE) -C tests/moulitest_tests
 
 norm:
 	find srcs includes -name '*.c' -o -name '*.h' | xargs norminette
