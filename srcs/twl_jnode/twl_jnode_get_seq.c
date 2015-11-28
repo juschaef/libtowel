@@ -12,14 +12,7 @@
 
 #include "twl_jnode.h"
 
-#include "twl_xstdlib.h"
-
-t_jnode				*twl_jnode_new_sequence(t_jnode_type type)
+t_lst				*twl_jnode_get_seq(t_jnode *node)
 {
-	t_jnode	*node;
-
-	node = twl_jnode_new();
-	node->type = type;
-	node->value.sequence = twl_lst_new();
-	return (node);
+	return (node->value.seq);
 }
