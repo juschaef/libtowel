@@ -96,6 +96,9 @@ void						twl_lst_iteri(t_lst *lst,
 	void (*iter_fn)(void *data, int index, void *context), void *context);
 void						twl_lst_iter2(t_lst *lst,
 		void (*f)(void *data, void *ctx1, void *ctx2), void *ctx1, void *ctx2);
+void						twl_lst_iter2n(t_lst *lst,
+		void (*f)(void *data, void *next, void *ctx1, void *ctx2),
+		void *ctx1, void *ctx2);
 void						twl_lst_iter0(t_lst *lst, void (*f)(void *data));
 
 void						twl_lst_remove_if(t_lst *lst,
