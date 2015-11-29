@@ -18,7 +18,7 @@
 
 void				twl_jnode_del(t_jnode *node)
 {
-	if (node->type == JSON_OBJECT)
+	if (node->object_key)
 	{
 		free(node->object_key);
 	}
