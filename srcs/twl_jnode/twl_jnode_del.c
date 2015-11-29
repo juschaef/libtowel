@@ -18,9 +18,5 @@
 
 void				twl_jnode_del(t_jnode *node)
 {
-	if (node->object_key)
-	{
-		free(node->object_key);
-	}
 	free(node);
 }

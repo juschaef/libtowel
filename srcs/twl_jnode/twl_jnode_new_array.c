@@ -10,12 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_JSON_H
-# define TWL_JSON_H
+#include "twl_jnode.h"
 
-# include "twl_jnode.h"
+#include "twl_xstdlib.h"
 
-t_jnode				*twl_json_parse(char *json_str);
-char				*twl_json_dump(t_jnode *json);
+t_jnode				*twl_jnode_new_array()
+{
+	t_jnode	*node;
 
-#endif
+	node = twl_jnode_new();
+	node->type = JSON_ARRAY;
+	node->value.seq = twl_lst_new();
+	return (node);
+}

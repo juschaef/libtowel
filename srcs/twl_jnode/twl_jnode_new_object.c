@@ -12,7 +12,14 @@
 
 #include "twl_jnode.h"
 
-void				twl_jnode_set_key(t_jnode *node, char *key)
+#include "twl_xstdlib.h"
+
+t_jnode				*twl_jnode_new_object(void)
 {
-	node->object_key = twl_strdup(key);
+	t_jnode	*node;
+
+	node = twl_jnode_new();
+	node->type = JSON_OBJECT;
+	node->value.object = twl_dict_new();
+	return (node);
 }

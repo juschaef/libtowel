@@ -12,7 +12,8 @@
 
 #include "twl_jnode.h"
 
-char				*twl_jnode_get_key(t_jnode *node)
+void				twl_jnode_object_add(t_jnode *seq_node,
+													t_jnode *node, char *key)
 {
-	return (node->object_key);
+	twl_dict_add(seq_node->value.object, key, node);
 }

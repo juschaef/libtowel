@@ -14,6 +14,7 @@
 # define TWL_JSON_NODE_H
 
 # include "twl_lst.h"
+# include "twl_dict.h"
 
 typedef enum		e_jnode_type
 {
@@ -31,25 +32,27 @@ typedef struct		s_jnode
 	union
 	{
 		t_lst		*seq;
+		t_dict		*object;
 		char		*string;
 		int			prim;
 	}				value;
-	char			*object_key;
 	struct s_jnode *parent;
 }					t_jnode;
 
 t_jnode				*twl_jnode_new();
 t_jnode				*twl_jnode_new_prim(t_jnode_type type, int value);
-t_jnode				*twl_jnode_new_seq(t_jnode_type type);
+t_jnode				*twl_jnode_new_array();
+t_jnode				*twl_jnode_new_object(void);
 
 void				twl_jnode_del(t_jnode *node);
 
-// int					twl_jnode_get_prim(t_jnode *node);
+int					twl_jnode_get_prim(t_jnode *node);
 // t_lst				*twl_jnode_get_seq(t_jnode *node);
 
 void				twl_jnode_seq_push(t_jnode *seq_node, t_jnode *node);
 
-void				twl_jnode_set_key(t_jnode *node, char *key);
-char				*twl_jnode_get_key(t_jnode *node);
+void				twl_jnode_object_add(t_jnode *seq_node,
+													t_jnode *node, char *key);
+t_jnode				*twl_jnode_object_get(t_jnode *seq_node, char *key);
 
 #endif

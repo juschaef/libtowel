@@ -9,7 +9,7 @@ static void simple_test(t_test *test)
 
 	node1 = twl_jnode_new_prim(JSON_NUMBER, 1);
 	node2 = twl_jnode_new_prim(JSON_NUMBER, 2);
-	seq_node = twl_jnode_new_seq(JSON_ARRAY);
+	seq_node = twl_jnode_new_array();
 	twl_jnode_seq_push(seq_node, node1);
 	twl_jnode_seq_push(seq_node, node2);
 	mt_assert(twl_lst_len(seq_node->value.seq) == 2);
@@ -24,7 +24,7 @@ static void simple_test2(t_test *test)
 	t_jnode		*seq_node;
 
 	node1 = twl_jnode_new_prim(JSON_NUMBER, 1);
-	seq_node = twl_jnode_new_seq(JSON_ARRAY);
+	seq_node = twl_jnode_new_array();
 	twl_jnode_seq_push(seq_node, node1);
 	twl_jnode_seq_push(seq_node, node1);
 	twl_jnode_seq_push(seq_node, node1);
@@ -41,8 +41,8 @@ static void simple_test3(t_test *test)
 	t_jnode		*seq_node2;
 
 	node1 = twl_jnode_new_prim(JSON_NUMBER, 1);
-	seq_node = twl_jnode_new_seq(JSON_ARRAY);
-	seq_node2 = twl_jnode_new_seq(JSON_ARRAY);
+	seq_node = twl_jnode_new_array();
+	seq_node2 = twl_jnode_new_array();
 	twl_jnode_seq_push(seq_node, seq_node2);
 	twl_jnode_seq_push(seq_node2, node1);
 	twl_jnode_seq_push(seq_node2, node1);
