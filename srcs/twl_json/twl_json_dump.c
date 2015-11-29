@@ -25,15 +25,10 @@ static void			twl_json_dump_one(void *node_, void *next, void *output)
 	t_jnode			*node;
 
 	node = node_;
-	if (node->parent->type == JSON_OBJECT)
-	{
-		// twl_lst_push(output, key);
-		twl_lst_push(output, "\"key\":");
-	}
 	twl_json_dump_rec(node, output);
 	if (next)
 	{
-		twl_lst_push(output, ",");
+		twl_lst_push(output, JSON_SEP_CHAR);
 	}
 }
 
@@ -52,7 +47,7 @@ static void			twl_json_dump_object(char *key, void *node_, void *next,
 	twl_json_dump_rec(node, output);
 	if (next)
 	{
-		twl_lst_push(output, ",");
+		twl_lst_push(output, JSON_SEP_CHAR);
 	}
 }
 
@@ -73,6 +68,10 @@ static void			twl_json_dump_rec(t_jnode *node, t_lst *output)
 	else if (node->type == JSON_NUMBER)
 	{
 		twl_lst_push(output, twl_itoa(twl_jnode_get_prim(node)));
+	}
+	else if (node->type == JSON_BOOL)
+	{
+		twl_lst_push(output, twl_jnode_get_prim(node) ? "true" : "false");
 	}
 	else
 	{
