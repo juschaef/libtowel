@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "twl_json.h"
 
 #include "twl_xstring.h"
 
 #include "twl_stdio.h"
 #include "twl_xstdio.h"
-
-#define JSON_BOOL_TRUE_LEN 4
-#define JSON_BOOL_FALSE_LEN 5
+#include "twl_stdlib.h"
 
 static t_jnode		*twl_json_parse_do(char *json_str, int *len_ptr);
 
@@ -50,21 +50,53 @@ int					twl_json_parse_array(t_jnode *arr_node, char *json_str)
 	return (json_str - json_str_sav);
 }
 
+static char			*get_primitive_token(char *json_str)
+{
+	char			*result;
+	size_t			len;
+	char			*token;
+
+	result = twl_strchr_any(json_str, JSON_STR_END_OF_PRIMITIVE);
+	if (result == NULL)
+		return (json_str);
+	// twl_printf("result %s\n", result);
+	len = result - json_str;
+	token = twl_strnew(len);
+	twl_strncpy(token, json_str, len);
+	return (token);
+}
+
 static t_jnode		*twl_json_parse_primitive(char *json_str, int *len_ptr)
 {
 	t_jnode			*node;
+	char			*token;
 
 	node = NULL;
-	if (json_str[0] == 't')
+	token = get_primitive_token(json_str);
+	// twl_printf("===============\n");
+	// twl_printf("json_str %s\n", json_str);
+	// twl_printf("token %s\n", token);
+	if (twl_strequ(token, JSON_STR_TRUE))
 	{
 		node = twl_jnode_new_prim(JSON_BOOL, true);
-		*len_ptr = JSON_BOOL_TRUE_LEN;
+		*len_ptr = JSON_STR_TRUE_LEN;
 	}
-	else if (json_str[0] == 'f')
+	else if (twl_strequ(token, JSON_STR_FALSE))
 	{
 		node = twl_jnode_new_prim(JSON_BOOL, false);
-		*len_ptr = JSON_BOOL_FALSE_LEN;
+		*len_ptr = JSON_STR_FALSE_LEN;
 	}
+	else if (twl_strequ(token, JSON_STR_NULL))
+	{
+		node = twl_jnode_new_null();
+		*len_ptr = JSON_STR_NULL_LEN;
+	}
+	else if (twl_str_contains_only(token, JSON_NUMBER_CHARS))
+	{
+		node = twl_jnode_new_prim(JSON_NUMBER, twl_atoi(token));
+		*len_ptr = twl_strlen(token);
+	}
+	free(token);
 	return node;
 }
 
@@ -97,29 +129,3 @@ t_jnode				*twl_json_parse(char *json_str)
 	return node;
 	(void)json_str;
 }
-
-/*
-	[true,[false,true],false]
-
-	parent = none
-	while (str)
-		if { [
-			node = build_node(TYPE_OBJECT)
-			parent = node
-			str += 1;
-			continue
-		if } ]
-			parent = parent.parent
-			node = parent
-			close
-		if string, bool, ...
-			node = build_node(...)
-			parent.push_node(node)
-			i += len
-			continue
-		if ,
-			str++;
-			continue
-		else
-			error
-*/

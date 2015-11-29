@@ -15,9 +15,21 @@
 
 # include "twl_jnode.h"
 
+#define STRLEN(s) (sizeof(s)/sizeof(s[0]))
+
 # define JSON_STR_SEP ","
 # define JSON_STR_NULL "null"
+# define JSON_STR_TRUE "true"
+# define JSON_STR_TRUE_LEN 4
+# define JSON_STR_FALSE "false"
+# define JSON_STR_FALSE_LEN 5
+# define JSON_STR_NULL "null"
+# define JSON_STR_NULL_LEN 4
 # define JSON_PRIM_START_CHARS "-0123456789tfn"
+# define JSON_NUMBER_START_CHARS "-0123456789"
+# define JSON_NUMBER_CHARS "-0123456789"
+
+# define JSON_STR_END_OF_PRIMITIVE ",}]"
 
 t_jnode				*twl_json_parse(char *json_str);
 char				*twl_json_dump(t_jnode *json);
