@@ -1,7 +1,7 @@
 #include <project.h>
 #include "twl_json.h"
 
-static void demo_parser(t_test *test)
+static void demo_json_parser_and_dump(t_test *test)
 {
 	char			json_str[] = "{ \"name\" : \"Jack\", \"age\" : 27 }";
 	t_jnode			*jack;
@@ -18,7 +18,11 @@ static void demo_parser(t_test *test)
 	mt_assert(jack_age->type == JSON_NUMBER);
 	mt_assert(twl_jnode_get_primitive(jack_age) == 27);
 
+	char			*dump = twl_json_dump(jack);
+	mt_assert(twl_strcmp(dump, "{\"name\":\"Jack\",\"age\":27}") == 0);
+
 	twl_jnode_del(jack);
+	free(dump);
 }
 
 static void demo_parser_mixt_array(t_test *test)
@@ -54,6 +58,6 @@ static void demo_parser_mixt_array(t_test *test)
 
 void	suite_twl_json_parse_demo(t_suite *suite)
 {
-	SUITE_ADD_TEST(suite, demo_parser);
+	SUITE_ADD_TEST(suite, demo_json_parser_and_dump);
 	SUITE_ADD_TEST(suite, demo_parser_mixt_array);
 }
