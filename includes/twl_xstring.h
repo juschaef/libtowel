@@ -79,6 +79,7 @@ bool				twl_str_is_int(char *s);
 bool				twl_str_is_num(char *s);
 bool				twl_str_is_pos_num(char *s);
 char				*twl_str_split_get(char *str, char *split_chars, int index);
+char				*twl_strchr_any(const char *haystack, const char *needles);
 
 /*
 ** lst
