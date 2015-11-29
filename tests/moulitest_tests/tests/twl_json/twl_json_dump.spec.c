@@ -101,6 +101,23 @@ static void simple_test_bool(t_test *test)
 	twl_jnode_del(node2);
 }
 
+static void simple_test_null(t_test *test)
+{
+	t_jnode		*node1;
+	t_jnode		*node2;
+	t_jnode		*seq_node;
+
+	node1 = twl_jnode_new_null();
+	node2 = twl_jnode_new_null();
+	seq_node = twl_jnode_new_array();
+	twl_jnode_array_push(seq_node, node1);
+	twl_jnode_array_push(seq_node, node2);
+	mt_assert(strcmp(twl_json_dump(seq_node), "[null,null]") == 0);
+	twl_jnode_del(seq_node);
+	twl_jnode_del(node1);
+	twl_jnode_del(node2);
+}
+
 void	suite_twl_json_dump(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
@@ -108,4 +125,5 @@ void	suite_twl_json_dump(t_suite *suite)
 	SUITE_ADD_TEST(suite, simple_object);
 	SUITE_ADD_TEST(suite, simple_object_with_array);
 	SUITE_ADD_TEST(suite, simple_test_bool);
+	SUITE_ADD_TEST(suite, simple_test_null);
 }

@@ -41,8 +41,9 @@ typedef struct		s_jnode
 
 t_jnode				*twl_jnode_new();
 t_jnode				*twl_jnode_new_prim(t_jnode_type type, int value);
-t_jnode				*twl_jnode_new_array();
+t_jnode				*twl_jnode_new_array(void);
 t_jnode				*twl_jnode_new_object(void);
+t_jnode				*twl_jnode_new_null(void);
 
 void				twl_jnode_del(t_jnode *node);
 

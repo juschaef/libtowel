@@ -28,7 +28,7 @@ static void			twl_json_dump_one(void *node_, void *next, void *output)
 	twl_json_dump_rec(node, output);
 	if (next)
 	{
-		twl_lst_push(output, JSON_SEP_CHAR);
+		twl_lst_push(output, JSON_STR_SEP);
 	}
 }
 
@@ -47,7 +47,7 @@ static void			twl_json_dump_object(char *key, void *node_, void *next,
 	twl_json_dump_rec(node, output);
 	if (next)
 	{
-		twl_lst_push(output, JSON_SEP_CHAR);
+		twl_lst_push(output, JSON_STR_SEP);
 	}
 }
 
@@ -72,6 +72,10 @@ static void			twl_json_dump_rec(t_jnode *node, t_lst *output)
 	else if (node->type == JSON_BOOL)
 	{
 		twl_lst_push(output, twl_jnode_get_prim(node) ? "true" : "false");
+	}
+	else if (node->type == JSON_NULL)
+	{
+		twl_lst_push(output, JSON_STR_NULL);
 	}
 	else
 	{

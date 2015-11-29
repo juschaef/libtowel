@@ -14,12 +14,11 @@
 
 #include "twl_xstdlib.h"
 
-t_jnode				*twl_jnode_new_array(void)
+t_jnode				*twl_jnode_new_null(void)
 {
 	t_jnode	*node;
 
 	node = twl_jnode_new();
-	node->type = JSON_ARRAY;
-	node->value.array = twl_lst_new();
+	node->type = JSON_NULL;
 	return (node);
 }

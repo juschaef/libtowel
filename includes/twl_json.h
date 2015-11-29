@@ -15,7 +15,8 @@
 
 # include "twl_jnode.h"
 
-# define JSON_SEP_CHAR ","
+# define JSON_STR_SEP ","
+# define JSON_STR_NULL "null"
 
 t_jnode				*twl_json_parse(char *json_str);
 char				*twl_json_dump(t_jnode *json);
