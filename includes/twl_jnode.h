@@ -44,6 +44,7 @@ t_jnode				*twl_jnode_new_prim(t_jnode_type type, int value);
 t_jnode				*twl_jnode_new_array(void);
 t_jnode				*twl_jnode_new_object(void);
 t_jnode				*twl_jnode_new_null(void);
+t_jnode				*twl_jnode_new_string(char *str);
 
 void				twl_jnode_del(t_jnode *node);
 
