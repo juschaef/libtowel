@@ -41,8 +41,28 @@ static void simple_test_2levels_array(t_test *test)
 	twl_jnode_del(node2);
 }
 
+static void simple_object(t_test *test)
+{
+	t_jnode		*node1;
+	t_jnode		*node2;
+	t_jnode		*seq_node;
+
+	node1 = twl_jnode_new_prim(JSON_NUMBER, 21);
+	node2 = twl_jnode_new_prim(JSON_NUMBER, 42);
+	seq_node = twl_jnode_new_object();
+	twl_jnode_object_add(seq_node, node1, "key1");
+	twl_jnode_object_add(seq_node, node2, "key2");
+	printf("dump '%s'\n", twl_json_dump(seq_node));
+	mt_assert(strcmp(twl_json_dump(seq_node), "{\"key1\":21,\"key2\":42}") == 0);
+
+	twl_jnode_del(seq_node);
+	twl_jnode_del(node1);
+	twl_jnode_del(node2);
+}
+
 void	suite_twl_json_dump(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 	SUITE_ADD_TEST(suite, simple_test_2levels_array);
+	SUITE_ADD_TEST(suite, simple_object);
 }

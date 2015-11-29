@@ -10,44 +10,73 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+
 #include "twl_json.h"
 
 #include "twl_xstring.h"
 
 #include "twl_stdio.h"
 
-static void			twl_json_dump_rec(t_jnode *node, t_lst *head);
+static void			twl_json_dump_rec(t_jnode *node, t_lst *output);
 
-static void			twl_json_dump_one(t_jnode *node, t_jnode *next, t_lst *head)
+static void			twl_json_dump_one(void *node_, void *next, void *output)
 {
-	twl_json_dump_rec(node, head);
+	t_jnode			*node;
+
+	node = node_;
+	if (node->parent->type == JSON_OBJECT)
+	{
+		// twl_lst_push(output, key);
+		twl_lst_push(output, "\"key\":");
+	}
+	twl_json_dump_rec(node, output);
 	if (next)
 	{
-		twl_lst_push(head, ",");
+		twl_lst_push(output, ",");
 	}
 }
 
-static void			twl_json_dump_one_void(void *node, void *next, void *head)
+static void			twl_json_dump_object(char *key, void *node_, void *next,
+																 void *output)
 {
-	twl_json_dump_one(node, next, head);
+	t_jnode			*node;
+
+	node = node_;
+	if (node->parent->type == JSON_OBJECT)
+	{
+		twl_lst_push(output, "\"");
+		twl_lst_push(output, key);
+		twl_lst_push(output, "\":");
+	}
+	twl_json_dump_rec(node, output);
+	if (next)
+	{
+		twl_lst_push(output, ",");
+	}
 }
 
-static void			twl_json_dump_rec(t_jnode *node, t_lst *head)
+static void			twl_json_dump_rec(t_jnode *node, t_lst *output)
 {
-
 	if (node->type == JSON_ARRAY)
 	{
-		twl_lst_push(head, "[");
-		twl_lst_itern(node->value.array, twl_json_dump_one_void, head);
-		twl_lst_push(head, "]");
+		twl_lst_push(output, "[");
+		twl_lst_itern(node->value.array, twl_json_dump_one, output);
+		twl_lst_push(output, "]");
+	}
+	else if (node->type == JSON_OBJECT)
+	{
+		twl_lst_push(output, "{");
+		twl_dict_itern(node->value.object, twl_json_dump_object, output);
+		twl_lst_push(output, "}");
 	}
 	else if (node->type == JSON_NUMBER)
 	{
-		twl_lst_push(head, twl_itoa(twl_jnode_get_prim(node)));
+		twl_lst_push(output, twl_itoa(twl_jnode_get_prim(node)));
 	}
 	else
 	{
-		twl_lst_push(head, "?");
+		twl_lst_push(output, "?");
 	}
 }
 
