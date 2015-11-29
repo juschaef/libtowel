@@ -77,6 +77,12 @@ static void			twl_json_dump_rec(t_jnode *node, t_lst *output)
 	{
 		twl_lst_push(output, JSON_STR_NULL);
 	}
+	else if (node->type == JSON_STRING)
+	{
+		twl_lst_push(output, "\"");
+		twl_lst_push(output, twl_jnode_get_string(node));
+		twl_lst_push(output, "\"");
+	}
 	else
 	{
 		twl_lst_push(output, "?");
