@@ -15,6 +15,7 @@
 #include "twl_xstring.h"
 
 #include "twl_stdio.h"
+#include "twl_xstdio.h"
 
 #define JSON_BOOL_TRUE_LEN 4
 #define JSON_BOOL_FALSE_LEN 5
@@ -35,7 +36,7 @@ int					twl_json_parse_array(t_jnode *arr_node, char *json_str)
 	{
 		node = twl_json_parse_do(json_str, &len);
 		if (!node)
-			break ;
+			twl_xprintf("syntax error: %s\n", json_str);
 		twl_jnode_array_push(arr_node, node);
 		json_str += len;
 		total_len += len;
@@ -49,17 +50,12 @@ int					twl_json_parse_array(t_jnode *arr_node, char *json_str)
 	return (json_str - json_str_sav);
 }
 
-static t_jnode		*twl_json_parse_do(char *json_str, int *len_ptr)
+static t_jnode		*twl_json_parse_primitive(char *json_str, int *len_ptr)
 {
 	t_jnode			*node;
 
 	node = NULL;
-	if (json_str[0] == '[')
-	{
-		node = twl_jnode_new_array();
-		*len_ptr = twl_json_parse_array(node, json_str);;
-	}
-	else if (json_str[0] == 't')
+	if (json_str[0] == 't')
 	{
 		node = twl_jnode_new_prim(JSON_BOOL, true);
 		*len_ptr = JSON_BOOL_TRUE_LEN;
@@ -70,8 +66,26 @@ static t_jnode		*twl_json_parse_do(char *json_str, int *len_ptr)
 		*len_ptr = JSON_BOOL_FALSE_LEN;
 	}
 	return node;
-	(void)json_str;
-	(void)len_ptr;
+}
+
+
+
+static t_jnode		*twl_json_parse_do(char *json_str, int *len_ptr)
+{
+	t_jnode			*node;
+
+
+	node = NULL;
+	if (*json_str == '[')
+	{
+		node = twl_jnode_new_array();
+		*len_ptr = twl_json_parse_array(node, json_str);;
+	}
+	else if (twl_strchr(JSON_PRIM_START_CHARS, *json_str))
+	{
+		node = twl_json_parse_primitive(json_str, len_ptr);
+	}
+	return node;
 }
 
 t_jnode				*twl_json_parse(char *json_str)

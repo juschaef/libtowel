@@ -17,6 +17,7 @@
 
 # define JSON_STR_SEP ","
 # define JSON_STR_NULL "null"
+# define JSON_PRIM_START_CHARS "-0123456789tfn"
 
 t_jnode				*twl_json_parse(char *json_str);
 char				*twl_json_dump(t_jnode *json);
