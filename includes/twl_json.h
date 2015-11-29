@@ -20,5 +20,6 @@
 
 t_jnode				*twl_json_parse(char *json_str);
 char				*twl_json_dump(t_jnode *json);
+void				twl_json_dump_rec(t_jnode *node, t_lst *output);
 
 #endif

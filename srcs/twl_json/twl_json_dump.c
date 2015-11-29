@@ -10,86 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "twl_xstring.h"
 
 #include "twl_json.h"
 
-#include "twl_xstring.h"
-
-#include "twl_stdio.h"
-
-static void			twl_json_dump_rec(t_jnode *node, t_lst *output);
-
-static void			twl_json_dump_one(void *node_, void *next, void *output)
-{
-	t_jnode			*node;
-
-	node = node_;
-	twl_json_dump_rec(node, output);
-	if (next)
-	{
-		twl_lst_push(output, JSON_STR_SEP);
-	}
-}
-
-static void			twl_json_dump_object(char *key, void *node_, void *next,
-																 void *output)
-{
-	t_jnode			*node;
-
-	node = node_;
-	if (node->parent->type == JSON_OBJECT)
-	{
-		twl_lst_push(output, "\"");
-		twl_lst_push(output, key);
-		twl_lst_push(output, "\":");
-	}
-	twl_json_dump_rec(node, output);
-	if (next)
-	{
-		twl_lst_push(output, JSON_STR_SEP);
-	}
-}
-
-static void			twl_json_dump_rec(t_jnode *node, t_lst *output)
-{
-	if (node->type == JSON_ARRAY)
-	{
-		twl_lst_push(output, "[");
-		twl_lst_itern(node->value.array, twl_json_dump_one, output);
-		twl_lst_push(output, "]");
-	}
-	else if (node->type == JSON_OBJECT)
-	{
-		twl_lst_push(output, "{");
-		twl_dict_itern(node->value.object, twl_json_dump_object, output);
-		twl_lst_push(output, "}");
-	}
-	else if (node->type == JSON_NUMBER)
-	{
-		twl_lst_push(output, twl_itoa(twl_jnode_get_prim(node)));
-	}
-	else if (node->type == JSON_BOOL)
-	{
-		twl_lst_push(output, twl_jnode_get_prim(node) ? "true" : "false");
-	}
-	else if (node->type == JSON_NULL)
-	{
-		twl_lst_push(output, JSON_STR_NULL);
-	}
-	else if (node->type == JSON_STRING)
-	{
-		twl_lst_push(output, "\"");
-		twl_lst_push(output, twl_jnode_get_string(node));
-		twl_lst_push(output, "\"");
-	}
-	else
-	{
-		twl_lst_push(output, "?");
-	}
-}
-
-static void concat_fn(void *token, void *output_str_)
+static void			concat_fn(void *token, void *output_str_)
 {
 	char			**output_str;
 
