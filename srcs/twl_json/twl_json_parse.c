@@ -146,12 +146,12 @@ static t_jnode		*twl_json_parse_primitive(char *json_str, int *len_ptr)
 	token = get_primitive_token(json_str);
 	if (twl_strequ(token, JSON_STR_TRUE))
 	{
-		node = twl_jnode_new_prim(JSON_BOOL, true);
+		node = twl_jnode_new_primitive(JSON_BOOL, true);
 		*len_ptr = JSON_STR_TRUE_LEN;
 	}
 	else if (twl_strequ(token, JSON_STR_FALSE))
 	{
-		node = twl_jnode_new_prim(JSON_BOOL, false);
+		node = twl_jnode_new_primitive(JSON_BOOL, false);
 		*len_ptr = JSON_STR_FALSE_LEN;
 	}
 	else if (twl_strequ(token, JSON_STR_NULL))
@@ -161,7 +161,7 @@ static t_jnode		*twl_json_parse_primitive(char *json_str, int *len_ptr)
 	}
 	else if (twl_str_contains_only(token, JSON_NUMBER_CHARS))
 	{
-		node = twl_jnode_new_prim(JSON_NUMBER, twl_atoi(token));
+		node = twl_jnode_new_primitive(JSON_NUMBER, twl_atoi(token));
 		*len_ptr = twl_strlen(token);
 	}
 	free(token);

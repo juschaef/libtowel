@@ -12,7 +12,7 @@
 
 #include "twl_jnode.h"
 
-int					twl_jnode_get_prim(t_jnode *node)
+int					twl_jnode_get_primitive(t_jnode *node)
 {
 	return (node->value.prim);
 }

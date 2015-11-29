@@ -69,9 +69,9 @@ void				twl_json_dump_rec(t_jnode *node, t_lst *output)
 		twl_lst_push(output, "}");
 	}
 	else if (node->type == JSON_NUMBER)
-		twl_lst_push(output, twl_itoa(twl_jnode_get_prim(node)));
+		twl_lst_push(output, twl_itoa(twl_jnode_get_primitive(node)));
 	else if (node->type == JSON_BOOL)
-		twl_lst_push(output, twl_jnode_get_prim(node) ? "true" : "false");
+		twl_lst_push(output, twl_jnode_get_primitive(node) ? "true" : "false");
 	else if (node->type == JSON_NULL)
 		twl_lst_push(output, JSON_STR_NULL);
 	else if (node->type == JSON_STRING)

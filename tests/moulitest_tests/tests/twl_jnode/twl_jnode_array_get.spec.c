@@ -7,8 +7,8 @@ static void simple_test(t_test *test)
 	t_jnode		*node2;
 	t_jnode		*seq_node;
 
-	node1 = twl_jnode_new_prim(JSON_NUMBER, 21);
-	node2 = twl_jnode_new_prim(JSON_NUMBER, 42);
+	node1 = twl_jnode_new_primitive(JSON_NUMBER, 21);
+	node2 = twl_jnode_new_primitive(JSON_NUMBER, 42);
 	seq_node = twl_jnode_new_array();
 	twl_jnode_array_push(seq_node, node1);
 	twl_jnode_array_push(seq_node, node2);

@@ -40,7 +40,7 @@ typedef struct		s_jnode
 }					t_jnode;
 
 t_jnode				*twl_jnode_new();
-t_jnode				*twl_jnode_new_prim(t_jnode_type type, int value);
+t_jnode				*twl_jnode_new_primitive(t_jnode_type type, int value);
 t_jnode				*twl_jnode_new_array(void);
 t_jnode				*twl_jnode_new_object(void);
 t_jnode				*twl_jnode_new_null(void);
@@ -48,7 +48,7 @@ t_jnode				*twl_jnode_new_string(char *str);
 
 void				twl_jnode_del(t_jnode *node);
 
-int					twl_jnode_get_prim(t_jnode *node);
+int					twl_jnode_get_primitive(t_jnode *node);
 char				*twl_jnode_get_string(t_jnode *node);
 // t_lst				*twl_jnode_get_seq(t_jnode *node);
 

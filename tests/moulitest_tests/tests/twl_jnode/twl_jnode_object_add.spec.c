@@ -7,8 +7,8 @@ static void simple_test(t_test *test)
 	t_jnode		*node2;
 	t_jnode		*seq_node;
 
-	node1 = twl_jnode_new_prim(JSON_NUMBER, 1);
-	node2 = twl_jnode_new_prim(JSON_NUMBER, 2);
+	node1 = twl_jnode_new_primitive(JSON_NUMBER, 1);
+	node2 = twl_jnode_new_primitive(JSON_NUMBER, 2);
 	seq_node = twl_jnode_new_array();
 	twl_jnode_object_add(seq_node, node1, "key1");
 	twl_jnode_object_add(seq_node, node2, "key2");
@@ -24,8 +24,8 @@ static void simple_test_parent(t_test *test)
 	t_jnode		*node2;
 	t_jnode		*seq_node;
 
-	node1 = twl_jnode_new_prim(JSON_NUMBER, 1);
-	node2 = twl_jnode_new_prim(JSON_NUMBER, 2);
+	node1 = twl_jnode_new_primitive(JSON_NUMBER, 1);
+	node2 = twl_jnode_new_primitive(JSON_NUMBER, 2);
 	seq_node = twl_jnode_new_array();
 	twl_jnode_object_add(seq_node, node1, "key1");
 	twl_jnode_object_add(seq_node, node2, "key2");

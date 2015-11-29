@@ -7,8 +7,8 @@ static void simple_test(t_test *test)
 	t_jnode		*node2;
 	t_jnode		*seq_node;
 
-	node1 = twl_jnode_new_prim(JSON_NUMBER, 21);
-	node2 = twl_jnode_new_prim(JSON_NUMBER, 42);
+	node1 = twl_jnode_new_primitive(JSON_NUMBER, 21);
+	node2 = twl_jnode_new_primitive(JSON_NUMBER, 42);
 	seq_node = twl_jnode_new_array();
 	twl_jnode_array_push(seq_node, node1);
 	twl_jnode_array_push(seq_node, node2);
@@ -26,8 +26,8 @@ static void simple_test_2levels_array(t_test *test)
 	t_jnode		*root_array;
 	t_jnode		*inner_array;
 
-	node1 = twl_jnode_new_prim(JSON_NUMBER, 21);
-	node2 = twl_jnode_new_prim(JSON_NUMBER, 42);
+	node1 = twl_jnode_new_primitive(JSON_NUMBER, 21);
+	node2 = twl_jnode_new_primitive(JSON_NUMBER, 42);
 	inner_array = twl_jnode_new_array();
 	root_array = twl_jnode_new_array();
 	twl_jnode_array_push(root_array, inner_array);
@@ -47,8 +47,8 @@ static void simple_object(t_test *test)
 	t_jnode		*node2;
 	t_jnode		*seq_node;
 
-	node1 = twl_jnode_new_prim(JSON_NUMBER, 21);
-	node2 = twl_jnode_new_prim(JSON_NUMBER, 42);
+	node1 = twl_jnode_new_primitive(JSON_NUMBER, 21);
+	node2 = twl_jnode_new_primitive(JSON_NUMBER, 42);
 	seq_node = twl_jnode_new_object();
 	twl_jnode_object_add(seq_node, node1, "key1");
 	twl_jnode_object_add(seq_node, node2, "key2");
@@ -67,8 +67,8 @@ static void simple_object_with_array(t_test *test)
 	t_jnode		*object2;
 	t_jnode		*inner_array;
 
-	node1 = twl_jnode_new_prim(JSON_NUMBER, 21);
-	node2 = twl_jnode_new_prim(JSON_NUMBER, 42);
+	node1 = twl_jnode_new_primitive(JSON_NUMBER, 21);
+	node2 = twl_jnode_new_primitive(JSON_NUMBER, 42);
 	inner_array = twl_jnode_new_array();
 	object1 = twl_jnode_new_object();
 	object2 = twl_jnode_new_object();
@@ -89,8 +89,8 @@ static void simple_test_bool(t_test *test)
 	t_jnode		*node2;
 	t_jnode		*seq_node;
 
-	node1 = twl_jnode_new_prim(JSON_BOOL, true);
-	node2 = twl_jnode_new_prim(JSON_BOOL, false);
+	node1 = twl_jnode_new_primitive(JSON_BOOL, true);
+	node2 = twl_jnode_new_primitive(JSON_BOOL, false);
 	seq_node = twl_jnode_new_array();
 	twl_jnode_array_push(seq_node, node1);
 	twl_jnode_array_push(seq_node, node2);
@@ -142,8 +142,8 @@ static void simple_test_float(t_test *test)
 	t_jnode		*node2;
 	t_jnode		*seq_node;
 
-	node1 = twl_jnode_new_prim(JSON_NUMBER, 2.1);
-	node2 = twl_jnode_new_prim(JSON_NUMBER, 4.2);
+	node1 = twl_jnode_new_primitive(JSON_NUMBER, 2.1);
+	node2 = twl_jnode_new_primitive(JSON_NUMBER, 4.2);
 	seq_node = twl_jnode_new_array();
 	twl_jnode_array_push(seq_node, node1);
 	twl_jnode_array_push(seq_node, node2);
