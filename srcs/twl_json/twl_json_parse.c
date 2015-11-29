@@ -81,6 +81,27 @@ int					twl_json_parse_object(t_jnode *obj_node, char *json_str)
 	return (json_str - json_str_sav);
 }
 
+t_jnode				*twl_json_parse_string(char *json_str, int *len_ptr)
+{
+	char			*str_sav;
+	char			*the_string;
+	t_jnode			*node;
+
+	json_str++;
+	str_sav = json_str;
+
+	while (*json_str)
+	{
+		if (*json_str == '"' && *(json_str - 1) != '\\')
+			break;
+		json_str++;
+	}
+	the_string = twl_strndup(str_sav, json_str - str_sav);
+	*len_ptr = json_str - str_sav + 2;
+	node = twl_jnode_new_string(the_string);
+	return (node);
+}
+
 static char			*get_primitive_token(char *json_str)
 {
 	char			*result;
@@ -131,8 +152,6 @@ static t_jnode		*twl_json_parse_primitive(char *json_str, int *len_ptr)
 	return node;
 }
 
-
-
 static t_jnode		*twl_json_parse_do(char *json_str, int *len_ptr)
 {
 	t_jnode			*node;
@@ -148,6 +167,10 @@ static t_jnode		*twl_json_parse_do(char *json_str, int *len_ptr)
 	{
 		node = twl_jnode_new_object();
 		*len_ptr = twl_json_parse_object(node, json_str);;
+	}
+	else if (*json_str == '"')
+	{
+		node = twl_json_parse_string(json_str, len_ptr);
 	}
 	else if (twl_strchr(JSON_PRIM_START_CHARS, *json_str))
 	{
