@@ -26,25 +26,56 @@ int					twl_json_parse_array(t_jnode *arr_node, char *json_str)
 {
 	char			*json_str_sav;
 	int				len;
-	int				total_len;
 	t_jnode			*node;
 
 	json_str_sav = json_str;
 	json_str++;
-	total_len = 2;
 	while (*json_str != ']')
 	{
 		node = twl_json_parse_do(json_str, &len);
 		if (!node)
-			twl_xprintf("syntax error: %s\n", json_str);
+			twl_xprintf("array syntax error: %s\n", json_str);
 		twl_jnode_array_push(arr_node, node);
 		json_str += len;
-		total_len += len;
 		if (*json_str == ',')
 		{
 			json_str++;
-			total_len++;
 		}
+	}
+	json_str++;
+	return (json_str - json_str_sav);
+}
+
+static char			*twl_json_parse_get_obj_key(char *json_str, int *len_ptr)
+{
+	char			*key;
+
+	key = twl_str_before_any_char(json_str, ":");
+	*len_ptr = twl_strlen(key) + 1;
+	key = twl_strtrim_chars_free(key, "\"");
+	return (key);
+}
+
+int					twl_json_parse_object(t_jnode *obj_node, char *json_str)
+{
+	char			*json_str_sav;
+	int				len;
+	t_jnode			*node;
+	char			*key;
+
+	json_str_sav = json_str;
+	json_str++;
+	while (*json_str != '}')
+	{
+		key = twl_json_parse_get_obj_key(json_str, &len);
+		json_str += len;
+		node = twl_json_parse_do(json_str, &len);
+		if (!node)
+			twl_xprintf("object syntax error: %s\n", json_str);
+		twl_jnode_object_add(obj_node, node, key);
+		json_str += len;
+		if (*json_str == ',')
+			json_str++;
 	}
 	json_str++;
 	return (json_str - json_str_sav);
@@ -112,6 +143,11 @@ static t_jnode		*twl_json_parse_do(char *json_str, int *len_ptr)
 	{
 		node = twl_jnode_new_array();
 		*len_ptr = twl_json_parse_array(node, json_str);;
+	}
+	else if (*json_str == '{')
+	{
+		node = twl_jnode_new_object();
+		*len_ptr = twl_json_parse_object(node, json_str);;
 	}
 	else if (twl_strchr(JSON_PRIM_START_CHARS, *json_str))
 	{
