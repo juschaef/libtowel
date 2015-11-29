@@ -14,5 +14,5 @@
 
 t_lst				*twl_jnode_get_seq(t_jnode *node)
 {
-	return (node->value.seq);
+	return (node->value.array);
 }

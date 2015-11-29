@@ -31,7 +31,7 @@ typedef struct		s_jnode
 	t_jnode_type	type;
 	union
 	{
-		t_lst		*seq;
+		t_lst		*array;
 		t_dict		*object;
 		char		*string;
 		int			prim;
@@ -49,7 +49,7 @@ void				twl_jnode_del(t_jnode *node);
 int					twl_jnode_get_prim(t_jnode *node);
 // t_lst				*twl_jnode_get_seq(t_jnode *node);
 
-void				twl_jnode_seq_push(t_jnode *seq_node, t_jnode *node);
+void				twl_jnode_array_push(t_jnode *seq_node, t_jnode *node);
 
 void				twl_jnode_object_add(t_jnode *seq_node,
 													t_jnode *node, char *key);

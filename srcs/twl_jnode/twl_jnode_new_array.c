@@ -20,6 +20,6 @@ t_jnode				*twl_jnode_new_array()
 
 	node = twl_jnode_new();
 	node->type = JSON_ARRAY;
-	node->value.seq = twl_lst_new();
+	node->value.array = twl_lst_new();
 	return (node);
 }

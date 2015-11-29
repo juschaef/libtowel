@@ -7,7 +7,7 @@ static void simple_test(t_test *test)
 
 	node = twl_jnode_new();
 	mt_assert(node->value.prim == 0);
-	mt_assert(node->value.seq == NULL);
+	mt_assert(node->value.array == NULL);
 	twl_jnode_del(node);
 }
 
