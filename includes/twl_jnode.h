@@ -50,6 +50,7 @@ int					twl_jnode_get_prim(t_jnode *node);
 // t_lst				*twl_jnode_get_seq(t_jnode *node);
 
 void				twl_jnode_array_push(t_jnode *seq_node, t_jnode *node);
+t_jnode				*twl_jnode_array_get(t_jnode *seq_node, int index);
 
 void				twl_jnode_object_add(t_jnode *seq_node,
 													t_jnode *node, char *key);
