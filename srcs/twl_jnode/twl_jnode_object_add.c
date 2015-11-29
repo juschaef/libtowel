@@ -16,4 +16,5 @@ void				twl_jnode_object_add(t_jnode *seq_node,
 													t_jnode *node, char *key)
 {
 	twl_dict_add(seq_node->value.object, key, node);
+	node->parent = seq_node;
 }

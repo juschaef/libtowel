@@ -15,4 +15,5 @@
 void				twl_jnode_array_push(t_jnode *seq_node, t_jnode *node)
 {
 	twl_lst_push(seq_node->value.array, node);
+	node->parent = seq_node;
 }
