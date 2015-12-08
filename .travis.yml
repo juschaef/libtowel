@@ -1,8 +1,7 @@
 os:
-- osx
-before_install:
-  - brew update
+  - linux
+  - osx
 language: c
 compiler: gcc
 script:
-  - echo "Test script"
+  - make check
