@@ -25,5 +25,7 @@ int					twl_isspace(int c);
 int					twl_isupper(int c);
 int					twl_tolower(int c);
 int					twl_toupper(int c);
+int					twl_iscntrl(int c);
+int					twl_isxdigit(int c);
 
 #endif
