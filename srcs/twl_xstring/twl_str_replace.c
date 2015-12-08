@@ -13,7 +13,7 @@
 #include "twl_string.h"
 #include "twl_xstring.h"
 
-char *twl_str_replace(char *s, char *target, char *replacement)
+char	*twl_str_replace(char *s, char *target, char *replacement)
 {
 	char *new_s;
 	char *occ;

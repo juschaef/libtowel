@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "twl_arr.h"
 
-static void del_fn_wrapper(void *elem, void *del_fn_)
+static void	del_fn_wrapper(void *elem, void *del_fn_)
 {
 	void (*del_fn)(void *elem);
 

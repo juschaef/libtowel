@@ -12,7 +12,7 @@
 
 #include "twl_lst.h"
 
-int twl_lst_reducei(t_lst *lst, int (*fn)(void *data, int memo), int memo)
+int	twl_lst_reducei(t_lst *lst, int (*fn)(void *data, int memo), int memo)
 {
 	t_lst_elem__	*elem;
 

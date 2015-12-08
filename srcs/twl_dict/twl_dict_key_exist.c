@@ -14,7 +14,7 @@
 #include "twl_dict.h"
 #include "twl_string.h"
 
-bool twl_dict_key_exist(t_dict *dict, char *key)
+bool	twl_dict_key_exist(t_dict *dict, char *key)
 {
 	t_dict_elem	*elem;
 

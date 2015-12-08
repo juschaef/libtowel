@@ -12,7 +12,7 @@
 
 #include "twl_printf.h"
 
-void *pf_conv_val_long(t_pf *pf)
+void	*pf_conv_val_long(t_pf *pf)
 {
 	long *lptr;
 

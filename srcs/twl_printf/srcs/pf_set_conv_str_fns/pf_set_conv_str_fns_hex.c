@@ -14,7 +14,7 @@
 
 #define VOID_PTR_TO(type, value) *((type *)(value))
 
-char *pf_conv_str_hex_uc(void *val)
+char	*pf_conv_str_hex_uc(void *val)
 {
 	char *s;
 
@@ -22,7 +22,7 @@ char *pf_conv_str_hex_uc(void *val)
 	return (s);
 }
 
-char *pf_conv_str_hex_us(void *val)
+char	*pf_conv_str_hex_us(void *val)
 {
 	char *s;
 
@@ -30,7 +30,7 @@ char *pf_conv_str_hex_us(void *val)
 	return (s);
 }
 
-char *pf_conv_str_hex(void *val)
+char	*pf_conv_str_hex(void *val)
 {
 	char *s;
 
@@ -38,12 +38,12 @@ char *pf_conv_str_hex(void *val)
 	return (s);
 }
 
-char *pf_conv_str_hex_uc_up(void *val)
+char	*pf_conv_str_hex_uc_up(void *val)
 {
 	return (twl_strupcase(pf_conv_str_hex_uc(val)));
 }
 
-char *pf_conv_str_hex_us_up(void *val)
+char	*pf_conv_str_hex_us_up(void *val)
 {
 	return (twl_strupcase(pf_conv_str_hex_us(val)));
 }

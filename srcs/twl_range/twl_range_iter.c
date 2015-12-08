@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void twl_range_iter(int start, int end, void (*iter_fn)(int i, void *context),
-																void *context)
+void	twl_range_iter(int start, int end,
+						void (*iter_fn)(int i, void *context), void *context)
 {
 	while (start < end)
 	{

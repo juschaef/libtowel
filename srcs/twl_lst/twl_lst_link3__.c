@@ -12,7 +12,7 @@
 
 #include "twl_lst.h"
 
-void twl_lst_link3__(t_lst_elem__ *elem1, t_lst_elem__ *elem2,
+void	twl_lst_link3__(t_lst_elem__ *elem1, t_lst_elem__ *elem2,
 														t_lst_elem__ *elem3)
 {
 	if (elem1)

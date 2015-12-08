@@ -12,7 +12,7 @@
 
 #include "twl_printf.h"
 
-void *pf_conv_val_wstr(t_pf *pf)
+void	*pf_conv_val_wstr(t_pf *pf)
 {
 	return ((wchar_t *)(va_arg(pf->arglist, wchar_t *)));
 }
