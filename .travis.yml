@@ -4,12 +4,7 @@ os:
 language: c
 compiler: gcc
 before_script:
-  - pwd
-  - ls
-  - cd .. && git clone https://github.com/yyang42/moulitest.git
+  - git clone https://github.com/yyang42/moulitest.git ../moulitest
 
 script:
-  - pwd
-  - ls
-  - cd libtowel
   - make check
