@@ -3,6 +3,9 @@ os:
   - osx
 language: c
 compiler: gcc
+before_script:
+  - cd ..
+  - git@github.com:juschaef/libtowel.git
+
 script:
-  - git clone --depth=50 --branch=master https://github.com/juschaef/moulitest.git ../moulitest
   - make check
