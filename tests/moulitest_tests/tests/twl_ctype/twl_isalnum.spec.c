@@ -6,9 +6,9 @@ static void	tests_simple(t_test *test)
 	int		c;
 
 	c = 0;
-	while (c < 1000)
+	while (c < 0x80)
 	{
-		mt_assert(twl_isalnum(c) == isalnum(c));
+		mt_assert((twl_isalnum(c) != 0) == (isalnum(c) != 0));
 		c++;
 	}
 }

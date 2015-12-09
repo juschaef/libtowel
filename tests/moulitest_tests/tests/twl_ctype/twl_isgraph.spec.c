@@ -6,9 +6,9 @@ static void	tests_simple(t_test *test)
 	int		c;
 
 	c = 0;
-	while (c < 1000)
+	while (c < 0x80)
 	{
-		mt_assert(twl_isgraph(c) == isgraph(c));
+		mt_assert((twl_isgraph(c) != 0) == (isgraph(c) != 0));
 		c++;
 	}
 }
