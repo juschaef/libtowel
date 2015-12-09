@@ -14,7 +14,7 @@
 
 #define VOID_PTR_TO(type, value) *((type *)(value))
 
-char *pf_conv_str_float(void *val)
+char	*pf_conv_str_float(void *val)
 {
 	return (twl_ldtoa(VOID_PTR_TO(double, val)));
 }

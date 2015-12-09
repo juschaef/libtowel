@@ -12,7 +12,7 @@
 
 #include "twl_arr.h"
 
-void *twl_arr_find(void *twl_arr_, bool (*find_fn)(void *arr, void *context),
+void	*twl_arr_find(void *twl_arr_, bool (*find_fn)(void *arr, void *context),
 																void *context)
 {
 	void **arr;

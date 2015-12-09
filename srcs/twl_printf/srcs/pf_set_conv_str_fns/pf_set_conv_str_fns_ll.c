@@ -14,12 +14,12 @@
 
 #define VOID_PTR_TO(type, value) *((type *)(value))
 
-char *pf_conv_str_llong(void *val)
+char	*pf_conv_str_llong(void *val)
 {
 	return (twl_lltoa(VOID_PTR_TO(long long, val)));
 }
 
-char *pf_conv_str_octal_ull(void *val)
+char	*pf_conv_str_octal_ull(void *val)
 {
 	char *s;
 
@@ -27,12 +27,12 @@ char *pf_conv_str_octal_ull(void *val)
 	return (s);
 }
 
-char *pf_conv_str_ull(void *val)
+char	*pf_conv_str_ull(void *val)
 {
 	return (twl_llutoa(VOID_PTR_TO(unsigned long long, val)));
 }
 
-char *pf_conv_str_hex_ull(void *val)
+char	*pf_conv_str_hex_ull(void *val)
 {
 	char *s;
 
@@ -40,7 +40,7 @@ char *pf_conv_str_hex_ull(void *val)
 	return (s);
 }
 
-char *pf_conv_str_hex_ull_up(void *val)
+char	*pf_conv_str_hex_ull_up(void *val)
 {
 	return (twl_strupcase(pf_conv_str_hex_ull(val)));
 }

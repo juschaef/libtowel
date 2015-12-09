@@ -12,7 +12,7 @@
 
 #include "twl_printf.h"
 
-void pf_build_pflist(t_pf *pf)
+void	pf_build_pflist(t_pf *pf)
 {
 	t_lst *fmt_list;
 

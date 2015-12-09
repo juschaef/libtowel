@@ -14,7 +14,7 @@
 #include "twl_opt.h"
 #include "twl_opt_elem.h"
 
-bool find_opt(void *opt_elem_, void *opt_key)
+bool	find_opt(void *opt_elem_, void *opt_key)
 {
 	t_opt_elem *opt_elem;
 
@@ -24,7 +24,7 @@ bool find_opt(void *opt_elem_, void *opt_key)
 	return (false);
 }
 
-bool twl_opt_exist(t_opt *twl_opt, char *opt_key)
+bool	twl_opt_exist(t_opt *twl_opt, char *opt_key)
 {
 	return (!!twl_lst_find(twl_opt->opts, find_opt, opt_key));
 }

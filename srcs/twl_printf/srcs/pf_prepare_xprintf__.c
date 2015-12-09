@@ -12,7 +12,7 @@
 
 #include "twl_printf.h"
 
-char *pf_prepare_xprintf__(t_pf *pf)
+char	*pf_prepare_xprintf__(t_pf *pf)
 {
 	pf_build_pflist(pf);
 	pf_iter_pfelem(pf);

@@ -22,5 +22,5 @@ char				*twl_strchr_any(const char *haystack, const char *needles)
 			return ((char *)haystack);
 		haystack++;
 	}
-	return NULL;
+	return (NULL);
 }

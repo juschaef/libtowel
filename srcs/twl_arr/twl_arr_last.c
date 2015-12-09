@@ -12,7 +12,7 @@
 
 #include "twl_arr.h"
 
-void *twl_arr_last(void *twl_arr_)
+void	*twl_arr_last(void *twl_arr_)
 {
 	int		i;
 	void	**arr;

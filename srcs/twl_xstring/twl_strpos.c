@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_printf.h"
-
-void	*pfelem_str2pfelem(void *data)
+int				twl_strpos(const char *s, char c)
 {
-	t_pfelem *pfelem;
+	int	i;
 
-	pfelem = pfelem_create(twl_strdup(data));
-	return (pfelem);
+	i = 0;
+	while (s[i] != c && s[i] != 0)
+		i++;
+	return (s[i] == 0 ? -1 : i + 1);
 }

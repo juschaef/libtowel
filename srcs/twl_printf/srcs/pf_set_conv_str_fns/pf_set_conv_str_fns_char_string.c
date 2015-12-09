@@ -14,7 +14,7 @@
 
 #define VOID_PTR_TO(type, value) *((type *)(value))
 
-char *pf_conv_str_str(void *val)
+char	*pf_conv_str_str(void *val)
 {
 	char *s;
 
@@ -24,22 +24,22 @@ char *pf_conv_str_str(void *val)
 	return (twl_strdup(s));
 }
 
-char *pf_conv_str_char_c(void *val)
+char	*pf_conv_str_char_c(void *val)
 {
 	return (twl_strdup(val));
 }
 
-char *pf_conv_str_char_hh(void *val)
+char	*pf_conv_str_char_hh(void *val)
 {
 	return (twl_itoa(VOID_PTR_TO(char, val)));
 }
 
-char *pf_conv_str_uchar(void *val)
+char	*pf_conv_str_uchar(void *val)
 {
 	return (twl_itoa(VOID_PTR_TO(unsigned char, val)));
 }
 
-char *pf_conv_str_return_original(void *val)
+char	*pf_conv_str_return_original(void *val)
 {
 	return (twl_strdup(val));
 }
