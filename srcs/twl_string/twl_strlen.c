@@ -13,39 +13,12 @@
 #include <stdlib.h>
 #include "twl_string.h"
 
-#define RET(a)		{if (!p[a]) return (p - str + a);}
-#define MAKE_ALL	RET(0) RET(1) RET(2) RET(3) RET(4) RET(5) RET(6) RET(7)
-
-static inline size_t	ft_strlen_loop(const unsigned long *lp,
-		const char *p, const char *str)
+size_t	twl_strlen(const char *s)
 {
-	const unsigned long g_mask01 = 0x0101010101010101;
-	const unsigned long g_mask80 = 0x8080808080808080;
+	int len;
 
-	while (1)
-	{
-		if ((*lp - g_mask01) & g_mask80)
-		{
-			p = (const char *)(lp);
-			MAKE_ALL;
-		}
-		lp++;
-	}
-	return (0);
-}
-
-size_t					twl_strlen(const char *str)
-{
-	const char			*p;
-	const unsigned long	*lp;
-
-	p = str;
-	while ((uintptr_t)p & (sizeof(long) - 1))
-	{
-		if (*p == '\0')
-			return (p - str);
-		p++;
-	}
-	lp = (const unsigned long *)p;
-	return (ft_strlen_loop(lp, p, str));
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }
