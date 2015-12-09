@@ -17,5 +17,5 @@ int				twl_strpos(const char *s, char c)
 	i = 0;
 	while (s[i] != c && s[i] != 0)
 		i++;
-	return (s[i] == 0 ? -1 : i);
+	return (s[i] == 0 ? -1 : i + 1);
 }
