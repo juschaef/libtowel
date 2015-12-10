@@ -15,7 +15,7 @@
 #include "twl_string.h"
 
 void	*twl_dict_key_from_value(t_dict *dict,
-	 		bool (*find)(void *data, void *value), void *data)
+			bool (*find)(void *data, void *value), void *data)
 {
 	t_dict_elem	*elem;
 
