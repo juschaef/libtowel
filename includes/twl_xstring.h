@@ -62,6 +62,8 @@ char				*twl_strtrim(char const *s);
 char				*twl_strtrim_free(char *s);
 char				*twl_strtrim_chars(char const *s, char *chars);
 char				*twl_strtrim_chars_free(char *s, char *chars);
+char				**twl_strsplit_trim_chars(char const *s, char split_char,
+															char *trim_chars);
 char				*twl_strupcase(char *str);
 char				*twl_wchar_to_str(wchar_t wstr);
 char				*twl_wstr_to_str(wchar_t *wstr);
@@ -84,6 +86,7 @@ char				*twl_str_before_any_char(const char *src,
 												const char *chars);
 char				*twl_strndup(const char *src, int n);
 int					twl_strpos(const char *str, char c);
+
 /*
 ** lst
 */
