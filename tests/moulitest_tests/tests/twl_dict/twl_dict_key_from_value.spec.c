@@ -1,18 +1,19 @@
 #include <project.h>
 #include "twl_dict.h"
 #include <stdbool.h>
+#include <stdio.h>
 
-static bool			cmp_value(void *data_, void *value_) {
+static bool			cmp_value(void *elem_data_, void *data_) {
 
 	char	*data;
-	char	*value;
+	char	*elem_data;
 
 	data = data_;
-	value = value_;
+	elem_data = elem_data_;
 
-	if (value == NULL)
-		return(data == value);
-	return (twl_strcmp(data, value) == 0);
+	if (elem_data == NULL || data == NULL)
+		return(data == elem_data);
+	return (twl_strcmp(data, elem_data) == 0);
 }
 
 static void simple_test(t_test *test)
@@ -22,8 +23,8 @@ static void simple_test(t_test *test)
 	(void)test;
 	lst = twl_lst_new();
 	twl_dict_add(lst, "key1", "data1");
-	twl_dict_add(lst, "key3", "data3");
 	twl_dict_add(lst, "key2", NULL);
+	twl_dict_add(lst, "key3", "data3");
 	twl_dict_add(lst, "key4", "data4");
 
 	mt_assert(strcmp(twl_dict_key_from_value(lst, cmp_value, "data3"), "key3") == 0);
