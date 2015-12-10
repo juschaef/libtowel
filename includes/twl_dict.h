@@ -49,5 +49,7 @@ t_lst				*twl_dict_keys(t_dict *dict);
 */
 
 t_dict_elem			*twl_dict_get_elem__(t_dict *dict, char *key);
+void				*twl_dict_key_from_value(t_dict *dict,
+						bool (*f)(void *data, void *value), void *value);
 
 #endif
