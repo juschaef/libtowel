@@ -119,6 +119,7 @@ void						twl_lst_sort(t_lst *lst,
 void						twl_lst_qsort(t_lst *lst, t_qsort_cmp_fn *cmp_fn);
 void						twl_lst_rev(t_lst *lst);
 void						twl_lst_putstr(t_lst *lst, char *sep);
+char						*twl_lst_strjoin(t_lst *lst, char *sep);
 
 /*
 ** Convert
