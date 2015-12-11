@@ -20,7 +20,7 @@ char				*twl_lst_strjoin(t_lst *lst, char *sep)
 	t_lst_elem__	*next;
 	char			*out;
 
-	out = twl_strdup("x");
+	out = twl_strdup("");
 	elem = lst->head;
 	while (elem)
 	{
