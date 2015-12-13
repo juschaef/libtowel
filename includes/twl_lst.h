@@ -92,6 +92,8 @@ void						twl_lst_iter(t_lst *lst,
 	void (*f)(void *data, void *context), void *context);
 void						twl_lst_itern(t_lst *lst,
 	void (*f)(void *data, void *next_data, void *context), void *context);
+void						twl_lst_iterp(t_lst *lst,
+	void (*f)(void *data, void *next_data, void *context), void *context);
 void						twl_lst_iteri(t_lst *lst,
 	void (*iter_fn)(void *data, int index, void *context), void *context);
 void						twl_lst_iter2(t_lst *lst,
