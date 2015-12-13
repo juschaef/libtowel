@@ -91,6 +91,6 @@ int					twl_strpos(const char *str, char c);
 ** lst
 */
 
-t_lst				*twl_str_split_to_lst(char *str, char c);
+t_lst				*twl_str_split_to_lst(char *str, char *chars);
 
 #endif

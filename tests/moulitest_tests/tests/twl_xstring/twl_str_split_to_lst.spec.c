@@ -5,7 +5,7 @@ static void simple_split(t_test *test)
 {
 	t_lst			*segs;
 
-	segs = twl_str_split_to_lst("aaa bbb", ' ');
+	segs = twl_str_split_to_lst("aaa bbb", " ");
 	mt_assert(strcmp(twl_lst_get(segs, 0), "aaa") == 0);
 	mt_assert(strcmp(twl_lst_get(segs, 1), "bbb") == 0);
 }
@@ -14,7 +14,7 @@ static void simple_nothing(t_test *test)
 {
 	t_lst			*segs;
 
-	segs = twl_str_split_to_lst("/", ' ');
+	segs = twl_str_split_to_lst("/", " ");
 	mt_assert(strcmp(twl_lst_get(segs, 0), "/") == 0);
 }
 
