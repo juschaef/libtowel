@@ -86,6 +86,7 @@ char				*twl_str_before_any_char(const char *src,
 												const char *chars);
 char				*twl_strndup(const char *src, int n);
 int					twl_strpos(const char *str, char c);
+char				*twl_strstr_last(const char *s1, const char *s2);
 
 /*
 ** lst
