@@ -14,12 +14,12 @@
 #include "twl_arr.h"
 #include "twl_xstring.h"
 
-t_lst				*twl_str_split_to_lst(char *str, char c)
+t_lst				*twl_str_split_to_lst(char *str, char *chars)
 {
 	t_lst			*lst;
 	char			**segs;
 
-	segs = twl_strsplit(str, c);
+	segs = twl_strsplit_mul(str, chars);
 	lst = twl_arr_to_lst(segs);
 	twl_arr_del(segs, NULL);
 	return (lst);
