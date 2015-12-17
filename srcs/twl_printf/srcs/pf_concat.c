@@ -47,8 +47,8 @@ char			*pf_cat(t_pf *pf, t_pfelem *pfelem)
 
 	str = twl_strdup(pfelem->str);
 	len = pf_printf_len(pfelem);
-	tmp = twl_strnew(pf->output_len + len + 1);
-	twl_memcpy(tmp, pf->output, pf->output_len);
+	tmp = twl_strnew(pf->output_len + len);
+	twl_memcpy(tmp, pf->output, pf->output_len + 1);
 	free(pf->output);
 	pf_clean_str(pfelem, str);
 	twl_memcpy(tmp + pf->output_len, str, len);

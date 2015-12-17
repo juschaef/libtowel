@@ -23,6 +23,7 @@ static void test_mixed(t_test *test)
 
 	twl_asprintf(&s, "%s%p%d%d%p%s%p%p%s",
 		"a", &free, 1, 2, &malloc, "b", &free, &malloc, "c");
+	printf("s [%s]\n", s);
 	mt_assert(strcmp(s, "a0x7fff9f823ec7120x7fff9f8210b2b0x7fff9f823ec70x7fff9f8210b2c") == 0);
 }
 
