@@ -10,11 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_XUNISTD_H
-# define TWL_XUNISTD_H
+#include <unistd.h>
 
-int					twl_execvep(char *file, char **argv, char **envp);
-char				*twl_getcwd_str(void);
-int					twl_getch(void);
+#include "twl_string.h"
 
-#endif
+int					twl_getch(void)
+{
+	char			buffer[4];
+	int				key;
+
+	key = 0;
+	twl_bzero(buffer, 4);
+	read(0, buffer, 4);
+	key = buffer[0];
+	key += buffer[1] << 8;
+	key += buffer[2] << 16;
+	return (key);
+}
