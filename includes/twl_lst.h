@@ -112,6 +112,7 @@ void						*twl_lst_reduce(t_lst *lst,
 int							twl_lst_reducei(t_lst *lst,
 								int (*fn)(void *data, int memo), int memo);
 void						twl_lst_shuffle(t_lst *lst);
+void						twl_lst_extend(t_lst *dst, t_lst *src);
 /*
 ** Misc
 */
