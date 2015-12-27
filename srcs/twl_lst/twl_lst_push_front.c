@@ -10,23 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_string.h"
+#include "twl_lst.h"
 
-#include "twl_stdio.h"
-
-size_t				twl_strstr_count(const char *s1, const char *s2)
+void				twl_lst_push_front(t_lst *lst, void *data)
 {
-	size_t			count;
-	size_t			needle_len;
+	t_lst_elem__ *elem;
 
-	count = 0;
-	needle_len = twl_strlen(s2);
-	if (needle_len == 0)
-		return (0);
-	while ((s1 = twl_strstr(s1, s2)))
-	{
-		count++;
-		s1 += needle_len;
-	}
-	return (count);
+	elem = twl_lst_create_elem__(data);
+	twl_lst_link__(elem, lst->head);
+	lst->head = elem;
 }

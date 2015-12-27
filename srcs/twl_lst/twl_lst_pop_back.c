@@ -10,23 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_string.h"
+#include <stdlib.h>
+#include <assert.h>
+#include "twl_lst.h"
 
-#include "twl_stdio.h"
-
-size_t				twl_strstr_count(const char *s1, const char *s2)
+void				*twl_lst_pop_back(t_lst *lst)
 {
-	size_t			count;
-	size_t			needle_len;
+	t_lst_elem__	*elem;
+	void			*data;
 
-	count = 0;
-	needle_len = twl_strlen(s2);
-	if (needle_len == 0)
-		return (0);
-	while ((s1 = twl_strstr(s1, s2)))
-	{
-		count++;
-		s1 += needle_len;
-	}
-	return (count);
+	elem = lst->head;
+	assert(elem);
+	while (elem->next)
+		elem = elem->next;
+	data = elem->data;
+	twl_lst_del_elem__(lst, elem, NULL);
+	if (lst->head == elem)
+		lst->head = NULL;
+	return (data);
 }

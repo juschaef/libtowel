@@ -16,14 +16,5 @@
 
 void	*twl_lst_shift(t_lst *lst)
 {
-	t_lst_elem__	*elem;
-	void			*data;
-
-	elem = lst->head;
-	if (!elem)
-		return (NULL);
-	data = elem->data;
-	lst->head = elem->next;
-	twl_lst_del_elem__(lst, elem, NULL);
-	return (data);
+	return (twl_lst_pop_front(lst));
 }

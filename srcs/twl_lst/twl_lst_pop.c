@@ -14,18 +14,7 @@
 #include <assert.h>
 #include "twl_lst.h"
 
-void	*twl_lst_pop(t_lst *lst)
+void				*twl_lst_pop(t_lst *lst)
 {
-	t_lst_elem__	*elem;
-	void			*data;
-
-	elem = lst->head;
-	assert(elem);
-	while (elem->next)
-		elem = elem->next;
-	data = elem->data;
-	twl_lst_del_elem__(lst, elem, NULL);
-	if (lst->head == elem)
-		lst->head = NULL;
-	return (data);
+	return (twl_lst_pop_back(lst));
 }

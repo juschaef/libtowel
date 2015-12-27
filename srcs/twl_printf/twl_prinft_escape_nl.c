@@ -10,23 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_string.h"
+#include <unistd.h>
+#include "twl_xstring.h"
+#include "twl_xstdio.h"
+#include "twl_printf.h"
 
-#include "twl_stdio.h"
-
-size_t				twl_strstr_count(const char *s1, const char *s2)
+int					twl_printf_escape_nl(const char *fmt, ...)
 {
-	size_t			count;
-	size_t			needle_len;
+	t_pf	*pf;
+	size_t	len;
+	size_t			nl_count;
 
-	count = 0;
-	needle_len = twl_strlen(s2);
-	if (needle_len == 0)
-		return (0);
-	while ((s1 = twl_strstr(s1, s2)))
-	{
-		count++;
-		s1 += needle_len;
-	}
-	return (count);
+
+	pf = pf_create((char *)fmt);
+	va_start(pf->arglist, (char *)fmt);
+	pf_prepare_xprintf__(pf);
+	nl_count = twl_strcountchar(pf->output, '\n');
+	pf->output = twl_str_replace_free(pf->output, "\n", "\\n");
+	pf->output_len += nl_count;
+	pf_print_fd(pf, STDOUT_FILENO);
+	va_end(pf->arglist);
+	len = pf->output_len;
+	pf_free(pf);
+	return (len);
 }

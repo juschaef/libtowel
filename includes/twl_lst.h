@@ -71,6 +71,10 @@ t_lst						*twl_lst_findall(t_lst *lst,
 /*
 ** Move
 */
+void						*twl_lst_pop_front(t_lst *lst);
+void						*twl_lst_pop_back(t_lst *lst);
+void						twl_lst_push_front(t_lst *lst, void *data);
+void						twl_lst_push_back(t_lst *lst, void *data);
 
 void						twl_lst_push(t_lst *lst, void *data);
 void						*twl_lst_pop(t_lst *lst);

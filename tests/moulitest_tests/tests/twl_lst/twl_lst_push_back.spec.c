@@ -6,9 +6,9 @@ static void simple_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("tata"));
-	twl_lst_push(lst, strdup("tutu"));
-	twl_lst_push(lst, strdup("toto"));
+	twl_lst_push_back(lst, strdup("tata"));
+	twl_lst_push_back(lst, strdup("tutu"));
+	twl_lst_push_back(lst, strdup("toto"));
 
 	mt_assert(strcmp(twl_lst_get_elem__(lst, 0)->data, "tata") == 0);
 	mt_assert(strcmp(twl_lst_get_elem__(lst, 1)->data, "tutu") == 0);
@@ -16,7 +16,7 @@ static void simple_test(t_test *test)
 
 }
 
-void	suite_twl_lst_push(t_suite *suite)
+void	suite_twl_lst_push_back(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }

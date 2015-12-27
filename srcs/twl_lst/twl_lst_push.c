@@ -12,22 +12,7 @@
 
 #include "twl_lst.h"
 
-void	twl_lst_push(t_lst *lst, void *data)
+void				twl_lst_push(t_lst *lst, void *data)
 {
-	t_lst_elem__ *tmpelem;
-	t_lst_elem__ *newelem;
-
-	newelem = twl_lst_create_elem__(data);
-	if (!lst->head)
-	{
-		lst->head = newelem;
-	}
-	else
-	{
-		tmpelem = lst->head;
-		while (tmpelem->next)
-			tmpelem = tmpelem->next;
-		tmpelem->next = newelem;
-		twl_lst_link__(tmpelem, tmpelem->next);
-	}
+	twl_lst_push_back(lst, data);
 }
