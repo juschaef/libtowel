@@ -41,6 +41,7 @@ void				twl_strclr(char *s);
 size_t				twl_strcountchar(char *s, char c);
 void				twl_strdel(char **as);
 int					twl_strequ(char const *s1, char const *s2);
+bool				twl_strequ_void(void *s1, void *s2);
 void				twl_striter(char *s, void(*f)(char *));
 void				twl_striteri(char *s, void(*f)(unsigned int, char *));
 char				*twl_strjoin(char const *s1, char const *s2);
