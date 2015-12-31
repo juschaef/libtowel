@@ -12,6 +12,11 @@
 
 #include "twl_lst.h"
 
+/*
+** This function iter from end to head in en Linked list
+** and apply the 'f' function
+*/
+
 void				twl_lst_iterb(t_lst *lst, void (*f)(void *data,
 												void *context), void *context)
 {
