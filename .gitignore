@@ -5,3 +5,4 @@ tests/moulitest_tests/libtowel_test*
 *.a
 ./tmp/
 *.sublime-workspace
+*.out

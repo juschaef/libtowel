@@ -93,9 +93,11 @@ t_lst						*twl_lst_slice(t_lst *lst, int begin, int end);
 */
 
 void						twl_lst_iter(t_lst *lst,
-	void (*f)(void *data, void *context), void *context);
+						void (*f)(void *data, void *context), void *context);
+void						twl_lst_iterb(t_lst *lst, void (*f)(void *data,
+												void *context), void *context);
 void						twl_lst_itern(t_lst *lst,
-	void (*f)(void *data, void *next_data, void *context), void *context);
+		void (*f)(void *data, void *next_data, void *context), void *context);
 void						twl_lst_iterp(t_lst *lst,
 	void (*f)(void *data, void *next_data, void *context), void *context);
 void						twl_lst_iteri(t_lst *lst,
