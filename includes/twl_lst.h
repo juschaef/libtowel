@@ -88,6 +88,9 @@ void						twl_lst_insert_lst(t_lst *lst_dest, int index,
 void						twl_lst_cat(t_lst *lst_dest, t_lst *lst_src);
 t_lst						*twl_lst_slice(t_lst *lst, int begin, int end);
 
+void						twl_lst_remove_mult(t_lst *lst, int begin, int end,
+															void (*delfn)());
+
 /*
 ** Collection
 */
