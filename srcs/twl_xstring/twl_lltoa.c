@@ -10,8 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include "twl_xstring.h"
+
+#define TWL_LLTOA_LLONG_MIN_STR "-9223372036854775808"
 
 char	*twl_lltoa(long long ln)
 {
@@ -19,6 +23,8 @@ char	*twl_lltoa(long long ln)
 	char	*out;
 	char	*tmp;
 
+	if (ln == LLONG_MIN)
+		return twl_strdup(TWL_LLTOA_LLONG_MIN_STR);
 	is_neg = 0;
 	if (ln < 0)
 	{
