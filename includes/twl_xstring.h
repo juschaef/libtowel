@@ -93,6 +93,7 @@ size_t				twl_strstr_count(const char *s1, const char *s2);
 void				twl_str_print_xtimes(char *str, int times);
 
 char				*twl_str_truncate(char *str, size_t len);
+char				*twl_str_truncate_free(char *str, size_t len);
 
 /*
 ** lst
