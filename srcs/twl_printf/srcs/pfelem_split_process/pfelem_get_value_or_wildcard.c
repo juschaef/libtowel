@@ -30,6 +30,8 @@ static int		pfelem_get_last_digits_index(char *raw)
 int				pfelem_get_value_or_wildcard(char *raw, int default_val,
 											int original_val)
 {
+	if (twl_strlen(raw) == 0)
+		return (original_val);
 	if (raw[twl_strlen(raw) - 1] == '*')
 		return (default_val);
 	else if (raw && *raw)
