@@ -15,25 +15,24 @@
 
 #include "twl_string.h"
 #include "twl_xstdio.h"
+#include "twl_xstring.h"
 
 #define MAX_FILESIZE 2 * 1000 * 1000
 #define BUFF_READ_SIZE 42
 
 char				*twl_fd_to_str(int fd)
 {
-	char			buf[MAX_FILESIZE];
-	char			*ptr;
+	char			buf[BUFF_READ_SIZE + 1];
+	char			*out;
 	int				ret;
 
-	twl_bzero(buf, MAX_FILESIZE);
-	ptr = buf;
-	while ((ret = read(fd, ptr, BUFF_READ_SIZE)) > 0)
+	out = twl_strdup("");
+	while ((ret = read(fd, buf, BUFF_READ_SIZE)) > 0)
 	{
-		ptr += ret;
-		if ((ptr - buf) > (MAX_FILESIZE - BUFF_READ_SIZE - 1))
-			twl_xprintf("[ERROR] Input too large\n");
+		buf[ret] = '\0';
+		out = twl_strjoinfree(out, buf, 'l');
 	}
 	if (ret == -1)
-		twl_xprintf("[ERROR] Read error\n");
-	return (twl_strdup(buf));
+		return (NULL);
+	return (out);
 }

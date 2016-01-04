@@ -14,7 +14,8 @@
 
 static char		*get_next_seg_from_raw(char *raw, char *charlist)
 {
-	char	out[10000];
+	char	*tmp;
+	char	*out;
 	int		i;
 
 	i = 0;
@@ -22,14 +23,16 @@ static char		*get_next_seg_from_raw(char *raw, char *charlist)
 		return (twl_strdup(""));
 	if (charlist == NULL)
 		return (twl_strdup(raw));
+	tmp = twl_strnew(twl_strlen(raw));
 	while (*raw && twl_strchr(charlist, *raw))
 	{
-		out[i] = *raw;
+		tmp[i] = *raw;
 		raw++;
 		i++;
 	}
-	out[i] = 0;
-	return (twl_strdup(out));
+	out = twl_strdup(tmp);
+	free(tmp);
+	return (out);
 }
 
 void			pfelem_split_build(t_pfelem *pfelem)
