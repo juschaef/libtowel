@@ -114,6 +114,8 @@ void						twl_lst_iter0(t_lst *lst, void (*f)(void *data));
 void				twl_lst_iter3(t_lst *lst,
 		void (*f)(void *data, void *ctx1, void *ctx2, void *ctx3),
 		void *ctx1, void *ctx2, void *ctx3);
+void	twl_lst_iternp(t_lst *lst, void (*f)(void *data, void *prev_data,
+		 void *next_data, void *context), void *context);
 
 void						twl_lst_remove_if(t_lst *lst,
 	bool (*filter_fn)(void *data, void *context),
