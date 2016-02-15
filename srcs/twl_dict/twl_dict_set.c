@@ -21,7 +21,8 @@ void		twl_dict_set(t_dict *dict, char *key,
 	elem = twl_dict_get_elem__(dict, key);
 	if (elem != NULL)
 	{
-		delfn(elem->data);
+		if (delfn)
+			delfn(elem->data);
 		elem->data = data;
 	}
 	else

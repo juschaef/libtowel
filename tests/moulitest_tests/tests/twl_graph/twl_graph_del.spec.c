@@ -24,7 +24,6 @@ static void simple_test(t_test *test)
 	node_del_counter = 0;
 	edge_del_counter = 0;
 
-	COUCOU;
 	graph = twl_graph_new();
 	t_graph_node_id	nodeA_id = twl_graph_add_node(graph, strdup("node A"));
 	t_graph_node_id	nodeB_id = twl_graph_add_node(graph, strdup("node B"));

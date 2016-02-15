@@ -3,15 +3,13 @@
 static void simple_test(t_test *test)
 {
 	t_lst *lst;
-	char *coucou;
 
 	lst = twl_lst_new();
 
 	twl_lst_push(lst, strdup("tata"));
 	twl_lst_push(lst, strdup("tata"));
 	twl_lst_push(lst, strdup("tata"));
-	coucou = twl_lst_get_rand(lst);
-	mt_assert(!!coucou);
+	mt_assert(!!twl_lst_get_rand(lst));
 
 }
 
