@@ -100,5 +100,6 @@ char				*twl_str_truncate_free(char *str, size_t len);
 */
 
 t_lst				*twl_str_split_to_lst(char *str, char *chars);
+t_lst				*twl_str_split_once_to_lst(char *str, char *chars);
 
 #endif
