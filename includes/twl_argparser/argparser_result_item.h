@@ -10,25 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_ARGPARSE_H
-# define TWL_ARGPARSE_H
+#ifndef ARGPARSER_RESULT_ITEM_H
+# define ARGPARSER_RESULT_ITEM_H
 
-# include "twl_argparser/argparser_argument_mgr.h"
+# include "twl_lst.h"
+# include "twl_argparser/argparser_argument.h"
 
-typedef struct		s_argparser
+typedef struct		s_argparser_result_item
 {
-	char			*name;
-	t_lst			*arguments;
-}					t_argparser;
+	t_argparser_argument	*argparser_argument;
+	t_lst					*option_arguments;
+}					t_argparser_result_item;
 
-t_argparser			*argparser_new(char *name);
-void				argparser_del(t_argparser *argparser);
-
-void				argparser_add_argument(t_argparser *this, t_argparser_argument *item);
-void				argparser_print_help(t_argparser *this);
-char				*argparser_get_help_str(t_argparser *this);
-
-struct s_argparser_result;
-struct s_argparser_result	*argparser_parse(t_argparser *this, t_lst *str_tokens);
+t_argparser_result_item			*argparser_result_item_new(t_argparser_argument *argparser_argument);
+void				argparser_result_item_del(t_argparser_result_item *argparser_result_item);
 
 #endif

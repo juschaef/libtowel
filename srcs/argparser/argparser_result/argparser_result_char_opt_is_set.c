@@ -10,25 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_ARGPARSE_H
-# define TWL_ARGPARSE_H
+#include <stdlib.h>
+#include "twl_xstdio.h"
+#include "twl_argparser/argparser_result.h"
 
-# include "twl_argparser/argparser_argument_mgr.h"
-
-typedef struct		s_argparser
+static bool			find_fn(void *result_item_, void *char_ptr_)
 {
-	char			*name;
-	t_lst			*arguments;
-}					t_argparser;
+	t_argparser_result_item	*result_item;
+	char					*char_ptr;
 
-t_argparser			*argparser_new(char *name);
-void				argparser_del(t_argparser *argparser);
+	char_ptr = char_ptr_;
+	result_item = result_item_;
+	return (result_item->argparser_argument->char_key == *char_ptr);
+}
 
-void				argparser_add_argument(t_argparser *this, t_argparser_argument *item);
-void				argparser_print_help(t_argparser *this);
-char				*argparser_get_help_str(t_argparser *this);
-
-struct s_argparser_result;
-struct s_argparser_result	*argparser_parse(t_argparser *this, t_lst *str_tokens);
-
-#endif
+bool				argparser_result_char_opt_is_set(t_argparser_result *this, char c)
+{
+	return ((bool)twl_lst_find(this->result_items, find_fn, &c));
+}

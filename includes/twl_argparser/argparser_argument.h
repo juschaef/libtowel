@@ -16,6 +16,7 @@
 # include "twl_string.h"
 # include "twl_xstdlib.h"
 # include "twl_stdio.h"
+# include "twl_lst.h"
 
 enum argparser_argument_options {
   ARGP_REQUIRED = 0x01,
@@ -27,16 +28,17 @@ enum argparser_argument_options {
   // OPT_F = 0x20,
 };
 
-typedef struct		s_argparser_argument
+typedef struct		  s_argparser_argument
 {
 	char			char_key;
 	char			*str_key;
 	char			*help;
-	char			*value;
 	int				nargs;
-}					t_argparser_argument;
+}					          t_argparser_argument;
 
 t_argparser_argument		*argparser_argument_new(char char_key, char *str_key, char *help, int nargs);
 void				argparser_argument_del(t_argparser_argument *argparser_argument);
+
+t_argparser_argument *argparser_argument_mgr_find_by_char_key(t_lst *arguments, char c);
 
 #endif
