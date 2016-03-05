@@ -17,6 +17,16 @@
 # include "twl_xstdlib.h"
 # include "twl_stdio.h"
 
+enum argparser_argument_options {
+  ARGP_REQUIRED = 0x01,
+  ARGP_OPTION_ARGUMENT = 0x02,
+  // OPT_B = 0x02,
+  // OPT_C = 0x04,
+  // OPT_D = 0x08,
+  // OPT_E = 0x10,
+  // OPT_F = 0x20,
+};
+
 typedef struct		s_argparser_argument
 {
 	char			char_key;

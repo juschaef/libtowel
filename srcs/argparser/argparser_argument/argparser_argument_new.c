@@ -19,8 +19,8 @@ t_argparser_argument		*argparser_argument_new(char char_key, char *str_key, char
 
 	this = twl_malloc_x0(sizeof(t_argparser_argument));
 	this->char_key = char_key;
-	this->str_key = char_key ? twl_strdup(str_key) : twl_strdup("");
-	this->help = help ? twl_strdup(help) : twl_strdup("");
+	this->str_key = str_key ? twl_strdup(str_key) : NULL;
+	this->help = help ? twl_strdup(help) : NULL;
 	this->nargs = nargs;
 	return (this);
 }
