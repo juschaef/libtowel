@@ -10,14 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_argparser/argparser.h"
+#include "twl_argparser/argparser_argument_mgr.h"
 
-t_argparser			*argparser_new(char *name)
+void				argparser_argument_mgr_add(t_lst *arguments, t_argparser_argument *argparser_argument)
 {
-	t_argparser		*argparser;
-
-	argparser = twl_malloc_x0(sizeof(t_argparser));
-	argparser->name = twl_strdup(name);
-	argparser->arguments = argparser_argument_mgr_new();
-	return (argparser);
+	twl_lst_push(arguments, argparser_argument);
 }

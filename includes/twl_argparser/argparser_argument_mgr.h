@@ -10,10 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "twl_argparser/argparser_item.h"
+#ifndef TWL_ARGPARSE_ITEM_MGR_H
+# define TWL_ARGPARSE_ITEM_MGR_H
 
-void				argparser_item_del(t_argparser_item *argparser_item)
-{
-	free(argparser_item);
-}
+# include <stddef.h>
+# include <stdbool.h>
+# include "twl_xstring.h"
+# include "twl_lst.h"
+# include "twl_argparser/argparser_argument.h"
+
+t_lst				*argparser_argument_mgr_new(void);
+void				argparser_argument_mgr_del(t_lst *arguments);
+void				argparser_argument_mgr_add(t_lst *arguments, t_argparser_argument *argparser_argument);
+void				argparser_argument_mgr_remove(t_lst *arguments, t_argparser_argument *argparser_argument);
+void				argparser_argument_mgr_print(t_lst *arguments);
+
+char				*argparser_argument_mgr_get_all_chars(t_lst *arguments);
+
+#endif

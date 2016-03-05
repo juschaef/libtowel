@@ -10,9 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_argparser/argparser_item_mgr.h"
+#ifndef TWL_ARGPARSE_ITEM_H
+# define TWL_ARGPARSE_ITEM_H
 
-void				argparser_item_mgr_add(t_lst *argparser_items, t_argparser_item *argparser_item)
+# include "twl_string.h"
+# include "twl_xstdlib.h"
+# include "twl_stdio.h"
+
+typedef struct		s_argparser_argument
 {
-	twl_lst_push(argparser_items, argparser_item);
-}
+	char			char_key;
+	char			*str_key;
+	char			*help;
+	char			*value;
+	int				nargs;
+}					t_argparser_argument;
+
+t_argparser_argument		*argparser_argument_new(char char_key, char *str_key, char *help, int nargs);
+void				argparser_argument_del(t_argparser_argument *argparser_argument);
+
+#endif

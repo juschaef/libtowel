@@ -10,9 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_argparser/argparser_item_mgr.h"
+#include <stdlib.h>
+#include "twl_xstdio.h"
+#include "twl_argparser/argparser.h"
 
-void				argparser_item_mgr_del(t_lst *argparser_items)
+void				argparser_print_help(t_argparser *this)
 {
-	twl_lst_del(argparser_items, argparser_item_del);
+	char			*help_str;
+
+	help_str = argparser_get_help_str(this);
+	twl_putstr(help_str);
+	free(help_str);
 }

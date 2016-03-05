@@ -11,15 +11,9 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "twl_argparser/argparser_item.h"
+#include "twl_argparser/argparser_argument.h"
 
-t_argparser_item		*argparser_item_new(char char_key, char *str_key, char *help)
+void				argparser_argument_del(t_argparser_argument *argparser_argument)
 {
-	t_argparser_item		*this;
-
-	this = twl_malloc_x0(sizeof(t_argparser_item));
-	this->char_key = char_key;
-	this->str_key = char_key ? twl_strdup(str_key) : NULL;
-	this->help = help ? twl_strdup(help) : NULL;
-	return (this);
+	free(argparser_argument);
 }

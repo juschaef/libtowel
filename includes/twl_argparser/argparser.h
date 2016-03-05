@@ -13,17 +13,19 @@
 #ifndef TWL_ARGPARSE_H
 # define TWL_ARGPARSE_H
 
-# include "twl_argparser/argparser_item_mgr.h"
+# include "twl_argparser/argparser_argument_mgr.h"
 
 typedef struct		s_argparser
 {
-	t_lst			*str_tokens;
-	t_lst			*argparser_items;
+	char			*name;
+	t_lst			*arguments;
 }					t_argparser;
 
-t_argparser			*argparser_new(t_lst *str_tokens);
+t_argparser			*argparser_new(char *name);
 void				argparser_del(t_argparser *argparser);
 
-void				argparser_add_item(t_argparser *this, t_argparser_item *item);
+void				argparser_add_argument(t_argparser *this, t_argparser_argument *item);
+void				argparser_print_help(t_argparser *this);
+char				*argparser_get_help_str(t_argparser *this);
 
 #endif

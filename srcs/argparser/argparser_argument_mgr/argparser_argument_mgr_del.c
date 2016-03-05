@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_argparser/argparser.h"
+#include "twl_argparser/argparser_argument_mgr.h"
 
-void				argparser_add_item(t_argparser *this, t_argparser_item *item)
+void				argparser_argument_mgr_del(t_lst *arguments)
 {
-	argparser_item_mgr_add(this->argparser_items, item);
+	twl_lst_del(arguments, argparser_argument_del);
 }

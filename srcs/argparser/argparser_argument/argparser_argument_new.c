@@ -10,12 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_argparser/argparser_item_mgr.h"
+#include <stdlib.h>
+#include "twl_argparser/argparser_argument.h"
 
-t_lst				*argparser_item_mgr_new(void)
+t_argparser_argument		*argparser_argument_new(char char_key, char *str_key, char *help, int nargs)
 {
-	t_lst			*argparser_items;
+	t_argparser_argument		*this;
 
-	argparser_items = twl_lst_new();
-	return (argparser_items);
+	this = twl_malloc_x0(sizeof(t_argparser_argument));
+	this->char_key = char_key;
+	this->str_key = char_key ? twl_strdup(str_key) : twl_strdup("");
+	this->help = help ? twl_strdup(help) : twl_strdup("");
+	this->nargs = nargs;
+	return (this);
 }

@@ -10,19 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_ARGPARSE_ITEM_MGR_H
-# define TWL_ARGPARSE_ITEM_MGR_H
+#include "twl_argparser/argparser_argument_mgr.h"
 
-# include <stddef.h>
-# include <stdbool.h>
-# include "twl_xstring.h"
-# include "twl_lst.h"
-# include "twl_argparser/argparser_item.h"
+static void			print_argparser_argument_fn(void *argparser_argument_, void *all_chars_)
+{
+	t_argparser_argument	*argparser_argument;
+	char					*all_chars;
 
-t_lst				*argparser_item_mgr_new(void);
-void				argparser_item_mgr_del(t_lst *argparser_items);
-void				argparser_item_mgr_add(t_lst *argparser_items, t_argparser_item *argparser_item);
-void				argparser_item_mgr_remove(t_lst *argparser_items, t_argparser_item *argparser_item);
-void				argparser_item_mgr_print(t_lst *argparser_items);
+	argparser_argument = argparser_argument_;
+	all_chars = all_chars_;
+	if (argparser_argument->char_key)
+		all_chars[twl_strlen(all_chars)] = argparser_argument->char_key;
+}
 
-#endif
+char				*argparser_argument_mgr_get_all_chars(t_lst *arguments)
+{
+	char			*all_chars;
+
+	all_chars = twl_strnew(twl_lst_len(arguments));
+	twl_lst_iter(arguments, print_argparser_argument_fn, all_chars);
+	return (all_chars);
+}

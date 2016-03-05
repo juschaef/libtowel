@@ -11,19 +11,19 @@
 /* ************************************************************************** */
 
 #include "twl_color.h"
-#include "twl_argparser/argparser_item_mgr.h"
+#include "twl_argparser/argparser_argument_mgr.h"
 
-static void			print_argparser_item_fn(void *argparser_item_)
+static void			print_argparser_argument_fn(void *argparser_argument_)
 {
-	t_argparser_item	*argparser_item;
+	t_argparser_argument	*argparser_argument;
 
-	argparser_item = argparser_item_;
-	twl_printf("<Object #%p>\n", argparser_item);
+	argparser_argument = argparser_argument_;
+	twl_printf("<Object #%p>\n", argparser_argument);
 }
 
-void				argparser_item_mgr_print(t_lst *argparser_items)
+void				argparser_argument_mgr_print(t_lst *arguments)
 {
-	twl_printf("%s>>>>>>>>>> argparser_item list%s\n", C_CYAN, C_CLEAR);
-	twl_lst_iter0(argparser_items, print_argparser_item_fn);
+	twl_printf("%s>>>>>>>>>> argparser_argument list%s\n", C_CYAN, C_CLEAR);
+	twl_lst_iter0(arguments, print_argparser_argument_fn);
 	twl_printf("%s-------------------------------------%s\n", C_CYAN, C_CLEAR);
 }

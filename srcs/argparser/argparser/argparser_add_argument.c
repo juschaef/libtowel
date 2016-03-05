@@ -12,12 +12,7 @@
 
 #include "twl_argparser/argparser.h"
 
-t_argparser			*argparser_new(char *name)
+void				argparser_add_argument(t_argparser *this, t_argparser_argument *item)
 {
-	t_argparser		*argparser;
-
-	argparser = twl_malloc_x0(sizeof(t_argparser));
-	argparser->name = twl_strdup(name);
-	argparser->arguments = argparser_argument_mgr_new();
-	return (argparser);
+	argparser_argument_mgr_add(this->arguments, item);
 }
