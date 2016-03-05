@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "twl_stdio.h"
 #include "twl_argparser/argparser.h"
 
 static char			*argument_keys(t_argparser_argument *argument)
