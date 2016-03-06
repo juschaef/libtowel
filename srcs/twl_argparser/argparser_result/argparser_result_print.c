@@ -45,7 +45,7 @@ static void			print_errors(t_argparser_result *this)
 	}
 }
 
-void				argparser_result_print(t_argparser_result *this)
+void				argparser_result_print_debug(t_argparser_result *this)
 {
 	twl_printf("valid options:\n");
 	twl_lst_iter0(this->result_items, iter_valid_options_fn);

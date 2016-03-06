@@ -36,6 +36,7 @@ char				*argparser_result_opt_get_arg(t_argparser_result *this, char *key);
 void				argparser_result_add(t_argparser_result *argparser_result,
 								t_argparser_result_item *argparser_result_item);
 
-void				argparser_result_print(t_argparser_result *this);
+void				argparser_result_print_debug(t_argparser_result *this);
+void				argparser_result_print_error_with_help(t_argparser_result *this);;
 
 #endif

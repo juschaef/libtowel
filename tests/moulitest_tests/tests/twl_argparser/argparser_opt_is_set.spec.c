@@ -18,7 +18,7 @@
 			printf("=== help ===================================================\n"); \
 			argparser_print_help(argparser); \
 			printf("=== result =================================================\n"); \
-			argparser_result_print(result); \
+			argparser_result_print_debug(result); \
 			printf("============================================================\n"); \
 		} \
 		mt_assert(argparser_result_opt_is_set(result, tested_opt) == expected_result); \
