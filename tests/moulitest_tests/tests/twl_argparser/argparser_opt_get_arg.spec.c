@@ -32,7 +32,7 @@
 	}
 
 mt_test_arg_parse_result_get_arg(01, "echo -n -m abc 123", "m", "abc", false);
-mt_test_arg_parse_result_get_arg(02, "echo -m aaa -m bbb", "m", "aaa", true);
+mt_test_arg_parse_result_get_arg(02, "echo -m aaa -m bbb", "m", "aaa", false);
 
 void	suite_argparser_opt_get_arg(t_suite *suite)
 {

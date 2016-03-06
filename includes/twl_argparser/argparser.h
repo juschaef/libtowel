@@ -15,6 +15,9 @@
 
 # include "twl_argparser/argparser_argument_mgr.h"
 
+# define ERR_MSG_ILLEGAL_OPTION "illegal option"
+# define ERR_MSG_ARGUMENT_REQUIRED "value required"
+
 typedef struct		s_argparser
 {
 	char			*name;
@@ -31,5 +34,6 @@ char				*argparser_get_help_str(t_argparser *this);
 struct s_argparser_result;
 struct s_argparser_result	*argparser_parse(t_argparser *this, t_lst *str_tokens);
 void				argparser_parse_build_result_item_inner__(char *str_token, struct s_argparser_result *result, t_lst *tokens_to_consume);
+void				argparser_parse_build_argument__(char *key, struct s_argparser_result *result, t_lst *tokens_to_consume);
 
 #endif
