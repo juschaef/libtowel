@@ -25,9 +25,9 @@ static char			*argument_keys(t_argparser_argument *argument)
 	else
 		option_argument = "";
 	if (argument->char_key && argument->str_key)
-		twl_asprintf(&keys, "-%C%s, --%s%s", argument->char_key, option_argument, argument->str_key, option_argument);
+		twl_asprintf(&keys, "-%c%s, --%s%s", argument->char_key, option_argument, argument->str_key, option_argument);
 	else if (argument->char_key)
-		twl_asprintf(&keys, "-%C%s", argument->char_key, option_argument);
+		twl_asprintf(&keys, "-%c%s", argument->char_key, option_argument);
 	else if (argument->str_key)
 		twl_asprintf(&keys, "--%s%s", argument->str_key, option_argument);
 	else
