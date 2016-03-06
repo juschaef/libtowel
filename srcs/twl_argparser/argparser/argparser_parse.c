@@ -25,7 +25,7 @@ static void			build_push_result_item(t_lst *tokens_to_consume, t_argparser_resul
 	{
 		if (double_hyphen_occurred)
 		{
-			twl_lst_push(result->remainders, str_token);
+			twl_lst_push(result->remainders, twl_strdup(str_token));
 			continue ;
 		}
 		if (twl_strequ(str_token, "--"))
@@ -38,7 +38,7 @@ static void			build_push_result_item(t_lst *tokens_to_consume, t_argparser_resul
 			argparser_parse_build_result_item_inner__(str_token, result, tokens_to_consume);
 			continue ;
 		}
-		twl_lst_push(result->remainders, str_token);
+		twl_lst_push(result->remainders, twl_strdup(str_token));
 	}
 }
 

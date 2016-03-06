@@ -29,13 +29,15 @@
 			mt_assert(result->err_msg == expected_err_msg); \
 		} \
 		twl_lst_del(segs, free); \
+		argparser_del(argparser); \
+		argparser_result_del(result); \
 	}
 
 mt_test_arg_parse_result_is_set(01, "-n -m abc", NULL, false);
 mt_test_arg_parse_result_is_set(02, "-n -m abc -z --zoo abc", "illegal option: z", false);
-mt_test_arg_parse_result_is_set(03, "-nma", "illegal option: a", false);
+mt_test_arg_parse_result_is_set(03, "-na", "illegal option: a", false);
 mt_test_arg_parse_result_is_set(04, "---abc", "illegal option: -abc", false);
-mt_test_arg_parse_result_is_set(05, "-module", "illegal option: o", false);
+mt_test_arg_parse_result_is_set(05, "-node", "illegal option: o", false);
 mt_test_arg_parse_result_is_set(06, "-m", "value required: m", false);
 mt_test_arg_parse_result_is_set(07, "-m -n", "value required: m", false);
 
@@ -45,7 +47,7 @@ void	suite_argparser_err_msg(t_suite *suite)
 	SUITE_ADD_TEST(suite, test_02);
 	SUITE_ADD_TEST(suite, test_03);
 	SUITE_ADD_TEST(suite, test_04);
-	// SUITE_ADD_TEST(suite, test_05);
+	SUITE_ADD_TEST(suite, test_05);
 	SUITE_ADD_TEST(suite, test_06);
 	SUITE_ADD_TEST(suite, test_07);
 }

@@ -13,7 +13,9 @@
 #include <stdlib.h>
 #include "twl_argparser/argparser.h"
 
-void				argparser_del(t_argparser *argparser)
+void				argparser_del(t_argparser *this)
 {
-	free(argparser);
+	free(this->name);
+	twl_lst_del(this->arguments, argparser_argument_del_void);
+	free(this);
 }

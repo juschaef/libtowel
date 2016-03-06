@@ -13,7 +13,11 @@
 #include <stdlib.h>
 #include "twl_argparser/argparser_result.h"
 
-void				argparser_result_del(t_argparser_result *argparser_result)
+void				argparser_result_del(t_argparser_result *this)
 {
-	free(argparser_result);
+	twl_lst_del(this->result_items, argparser_result_item_del_void);
+	twl_lst_del(this->remainders, free);
+	if (this->err_msg)
+		free(this->err_msg);
+	free(this);
 }

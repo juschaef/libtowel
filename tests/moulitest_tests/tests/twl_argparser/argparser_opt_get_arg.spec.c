@@ -29,6 +29,8 @@
 		{ \
 			mt_assert(arg == expected_result); \
 		} \
+		argparser_del(argparser); \
+		argparser_result_del(result); \
 	}
 
 mt_test_arg_parse_result_get_arg(01, "-n -m abc 123", "m", "abc", false);

@@ -23,6 +23,8 @@
 		char *remainders_str = twl_lst_strjoin(result->remainders, "|"); \
 		mt_assert(strcmp(remainders_str, expected_reminder) == 0); \
 		twl_lst_del(segs, free); \
+		argparser_del(argparser); \
+		argparser_result_del(result); \
 	}
 
 mt_test_arg_parse_result_is_set(01, "-n -m aa bb", "aa|bb", false);

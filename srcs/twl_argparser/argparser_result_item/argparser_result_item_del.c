@@ -13,7 +13,9 @@
 #include <stdlib.h>
 #include "twl_argparser/argparser_result_item.h"
 
-void				argparser_result_item_del(t_argparser_result_item *argparser_result_item)
+void				argparser_result_item_del(t_argparser_result_item *this)
 {
-	free(argparser_result_item);
+	if (this->option_argument)
+		free(this->option_argument);
+	free(this);
 }

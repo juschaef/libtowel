@@ -40,6 +40,8 @@ static void demo_working_case(t_test *test)
 	mt_assert(strcmp(remainders_str, "arg1,arg2,arg3") == 0);
 
 	twl_lst_del(segs, free);
+	argparser_del(argparser);
+	argparser_result_del(result);
 }
 
 void	suite_argparser_demo(t_suite *suite)

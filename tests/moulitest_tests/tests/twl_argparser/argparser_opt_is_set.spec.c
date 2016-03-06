@@ -22,6 +22,8 @@
 			printf("============================================================\n"); \
 		} \
 		mt_assert(argparser_result_opt_is_set(result, tested_opt) == expected_result); \
+		argparser_del(argparser); \
+		argparser_result_del(result); \
 	}
 
 mt_test_arg_parse_result_is_set(01, "-n -m abc", "n", true, false);

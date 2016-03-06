@@ -36,6 +36,8 @@ static void			build_argument_one_hyphen_case(char *str_token, t_argparser_result
 	tmp_token = str_token + 1;
 	while (*tmp_token)
 	{
+		if (result->err_msg)
+			break ;
 		*char_token = *tmp_token;
 		argparser_parse_build_argument__(char_token, result, tokens_to_consume);
 		tmp_token++;

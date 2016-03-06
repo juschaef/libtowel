@@ -30,7 +30,10 @@ static void demo_errors(t_test *test)
 	segs = twl_str_split_to_lst("-d", " ");
 	result = argparser_parse(argparser, segs);
 	mt_assert(strcmp(result->err_msg, "value required: d") == 0);
+
 	twl_lst_del(segs, free);
+	argparser_del(argparser);
+	argparser_result_del(result);
 }
 
 void	suite_argparser_demo_errors(t_suite *suite)

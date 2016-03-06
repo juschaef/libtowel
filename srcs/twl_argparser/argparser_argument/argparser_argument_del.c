@@ -13,7 +13,11 @@
 #include <stdlib.h>
 #include "twl_argparser/argparser_argument.h"
 
-void				argparser_argument_del(t_argparser_argument *argparser_argument)
+void				argparser_argument_del(t_argparser_argument *this)
 {
-	free(argparser_argument);
+	if (this->str_key)
+		free(this->str_key);
+	if (this->help)
+		free(this->help);
+	free(this);
 }
