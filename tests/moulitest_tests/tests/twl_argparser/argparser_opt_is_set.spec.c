@@ -24,24 +24,24 @@
 		mt_assert(argparser_result_opt_is_set(result, tested_opt) == expected_result); \
 	}
 
-mt_test_arg_parse_result_is_set(01, "echo -n -m abc", "n", true, false);
-mt_test_arg_parse_result_is_set(02, "echo -n -m abc", "m", true, false);
-mt_test_arg_parse_result_is_set(03, "echo -n -m abc", "y", false, false);
-mt_test_arg_parse_result_is_set(04, "echo -n -m abc", "z", false, false);
-mt_test_arg_parse_result_is_set(05, "echo -n -m abc", "newline", true, false);
-mt_test_arg_parse_result_is_set(06, "echo -n -m abc", "module", true, false);
-mt_test_arg_parse_result_is_set(07, "echo -n -m abc", "not_exist", false, false);
-mt_test_arg_parse_result_is_set(08, "echo --module", "m", true, false);
-mt_test_arg_parse_result_is_set(09, "echo --module", "module", true, false);
-mt_test_arg_parse_result_is_set(10, "echo ---module", "module", false, false);
-mt_test_arg_parse_result_is_set(11, "echo -- --module", "module", false, false);
-mt_test_arg_parse_result_is_set(12, "echo -n -- --module", "n", true, false);
-mt_test_arg_parse_result_is_set(13, "echo -n -- --module", "module", false, false);
-mt_test_arg_parse_result_is_set(14, "echo -n --module", "module", true, false);
-mt_test_arg_parse_result_is_set(15, "echo -nm", "m", true, false);
-mt_test_arg_parse_result_is_set(16, "echo -nmo", "n", true, false);
-mt_test_arg_parse_result_is_set(17, "echo -nmo", "o", true, false);
-mt_test_arg_parse_result_is_set(18, "echo -nm", "module", true, false);
+mt_test_arg_parse_result_is_set(01, "-n -m abc", "n", true, false);
+mt_test_arg_parse_result_is_set(02, "-n -m abc", "m", true, false);
+mt_test_arg_parse_result_is_set(03, "-n -m abc", "y", false, false);
+mt_test_arg_parse_result_is_set(04, "-n -m abc", "z", false, false);
+mt_test_arg_parse_result_is_set(05, "-n -m abc", "newline", true, false);
+mt_test_arg_parse_result_is_set(06, "-n -m abc", "module", true, false);
+mt_test_arg_parse_result_is_set(07, "-n -m abc", "not_exist", false, false);
+mt_test_arg_parse_result_is_set(08, "--module", "m", true, false);
+mt_test_arg_parse_result_is_set(09, "--module", "module", true, false);
+mt_test_arg_parse_result_is_set(10, "---module", "module", false, false);
+mt_test_arg_parse_result_is_set(11, "-- --module", "module", false, false);
+mt_test_arg_parse_result_is_set(12, "-n -- --module", "n", true, false);
+mt_test_arg_parse_result_is_set(13, "-n -- --module", "module", false, false);
+mt_test_arg_parse_result_is_set(14, "-n --module", "module", true, false);
+mt_test_arg_parse_result_is_set(15, "-nm", "m", true, false);
+mt_test_arg_parse_result_is_set(16, "-nmo", "n", true, false);
+mt_test_arg_parse_result_is_set(17, "-nmo", "o", true, false);
+mt_test_arg_parse_result_is_set(18, "-nm", "module", true, false);
 
 void	suite_argparser_opt_is_set(t_suite *suite)
 {

@@ -31,13 +31,13 @@
 		twl_lst_del(segs, free); \
 	}
 
-mt_test_arg_parse_result_is_set(01, "echo -n -m abc", NULL, false);
-mt_test_arg_parse_result_is_set(02, "echo -n -m abc -z --zoo abc", "illegal option: z", false);
-mt_test_arg_parse_result_is_set(03, "echo -nma", "illegal option: a", false);
-mt_test_arg_parse_result_is_set(04, "echo ---abc", "illegal option: -abc", false);
-mt_test_arg_parse_result_is_set(05, "echo -module", "illegal option: o", false);
-mt_test_arg_parse_result_is_set(06, "echo -m", "value required: m", false);
-mt_test_arg_parse_result_is_set(07, "echo -m -n", "value required: m", false);
+mt_test_arg_parse_result_is_set(01, "-n -m abc", NULL, false);
+mt_test_arg_parse_result_is_set(02, "-n -m abc -z --zoo abc", "illegal option: z", false);
+mt_test_arg_parse_result_is_set(03, "-nma", "illegal option: a", false);
+mt_test_arg_parse_result_is_set(04, "---abc", "illegal option: -abc", false);
+mt_test_arg_parse_result_is_set(05, "-module", "illegal option: o", false);
+mt_test_arg_parse_result_is_set(06, "-m", "value required: m", false);
+mt_test_arg_parse_result_is_set(07, "-m -n", "value required: m", false);
 
 void	suite_argparser_err_msg(t_suite *suite)
 {
