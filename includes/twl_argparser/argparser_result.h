@@ -28,8 +28,10 @@ typedef struct		s_argparser_result
 t_argparser_result	*argparser_result_new(t_argparser *argparser, char *command_name);
 void				argparser_result_del(t_argparser_result *argparser_result);
 
-bool				argparser_result_opt_is_set(t_argparser_result *this, char *key);
+t_argparser_result_item	*argparser_result_find_item_by_key(t_argparser_result *this, char *key);
 
+bool				argparser_result_opt_is_set(t_argparser_result *this, char *key);
+char				*argparser_result_opt_get_arg(t_argparser_result *this, char *key);
 
 void				argparser_result_add(t_argparser_result *argparser_result,
 								t_argparser_result_item *argparser_result_item);

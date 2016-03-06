@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "twl_argparser/argparser_argument.h"
 
-t_argparser_argument		*argparser_argument_new(char char_key, char *str_key, char *help, int nargs)
+t_argparser_argument		*argparser_argument_new(char char_key, char *str_key, char *help, int flags)
 {
 	t_argparser_argument		*this;
 
@@ -21,6 +21,6 @@ t_argparser_argument		*argparser_argument_new(char char_key, char *str_key, char
 	this->char_key = char_key;
 	this->str_key = str_key ? twl_strdup(str_key) : NULL;
 	this->help = help ? twl_strdup(help) : NULL;
-	this->nargs = nargs;
+	this->flags = flags;
 	return (this);
 }

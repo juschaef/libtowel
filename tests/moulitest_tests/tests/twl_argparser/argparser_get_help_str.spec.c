@@ -10,7 +10,7 @@ static void simple_test(t_test *test)
 	argparser_add_argument(argparser, argparser_argument_new('e', NULL, "Enabled", 0));
 	argparser_add_argument(argparser, argparser_argument_new('f', "force", "Force", 0));
 	argparser_add_argument(argparser, argparser_argument_new('t', "time", "Set time", 0));
-	argparser_add_argument(argparser, argparser_argument_new('d', "date", "Set date", ARGP_OPTION_ARGUMENT));
+	argparser_add_argument(argparser, argparser_argument_new('d', "date", "Set date", ARGP_HAS_OPTION_ARGUMENT));
 	// argparser_print_help(argparser);
 	mt_assert(strcmp(argparser_get_help_str(argparser),
 		"usage: 42sh [-eftd]\n"

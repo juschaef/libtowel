@@ -14,7 +14,12 @@
 #include "twl_xstdio.h"
 #include "twl_argparser/argparser_result.h"
 
-bool				argparser_result_opt_is_set(t_argparser_result *this, char *key)
+char				*argparser_result_opt_get_arg(t_argparser_result *this, char *key)
 {
-	return (argparser_result_find_item_by_key(this, key));
+	t_argparser_result_item	*result_item;
+
+	result_item = argparser_result_find_item_by_key(this, key);
+	if (result_item)
+		return (twl_lst_first(result_item->option_arguments));
+	return (NULL);
 }

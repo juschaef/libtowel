@@ -20,7 +20,7 @@ char				*argparser_argument_get_keys_ast_str(t_argparser_argument *argument)
 	char			*option_argument;
 
 	keys = NULL;
-	if (argument->nargs & ARGP_OPTION_ARGUMENT)
+	if (argument->flags & ARGP_HAS_OPTION_ARGUMENT)
 		option_argument = " arg";
 	else
 		option_argument = "";

@@ -3,7 +3,7 @@
 #include "twl_argparser/argparser.h"
 #include "twl_argparser/argparser_result.h"
 
-#define mt_test_arg_parse_result_is_set(test_name, input, expected_err_msg, debug) \
+#define mt_test_arg_parse_result_get_arg(test_name, input, tested_opt, expected_result, debug) \
 	static void test_## test_name(t_test *test) \
 	{ \
 		t_argparser		*argparser; \
@@ -20,30 +20,20 @@
 			argparser_result_print(result); \
 			printf("============================================================\n"); \
 		} \
-		if (result->err_msg) \
+		char *arg = argparser_result_opt_get_arg(result, tested_opt); \
+		if (arg) \
 		{ \
-			mt_assert(strcmp(result->err_msg, expected_err_msg) == 0); \
+			mt_assert(strcmp(arg, expected_result) == 0); \
 		} \
 		else \
 		{ \
-			mt_assert(result->err_msg == expected_err_msg); \
+			mt_assert(arg == expected_result); \
 		} \
-		twl_lst_del(segs, free); \
 	}
 
-mt_test_arg_parse_result_is_set(01, "echo -n -m abc", NULL, false);
-mt_test_arg_parse_result_is_set(02, "echo -n -m abc -z --zoo abc", "illegal option: -z", false);
-mt_test_arg_parse_result_is_set(03, "echo -abc", "illegal option: -abc", false);
-mt_test_arg_parse_result_is_set(04, "echo ---abc", "illegal option: ---abc", false);
-mt_test_arg_parse_result_is_set(05, "echo -module", "illegal option: -module", false);
-mt_test_arg_parse_result_is_set(06, "echo -m", "argument required: -m", true);
+mt_test_arg_parse_result_get_arg(01, "echo -n -m abc 123", "m", "abc", true);
 
-void	suite_argparser_err_msg(t_suite *suite)
+void	suite_argparser_opt_get_arg(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, test_01);
-	SUITE_ADD_TEST(suite, test_02);
-	SUITE_ADD_TEST(suite, test_03);
-	SUITE_ADD_TEST(suite, test_04);
-	SUITE_ADD_TEST(suite, test_05);
-	SUITE_ADD_TEST(suite, test_06);
 }

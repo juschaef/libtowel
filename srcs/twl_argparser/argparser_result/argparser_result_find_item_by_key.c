@@ -14,7 +14,15 @@
 #include "twl_xstdio.h"
 #include "twl_argparser/argparser_result.h"
 
-bool				argparser_result_opt_is_set(t_argparser_result *this, char *key)
+static bool			find_fn(void *result_item_, void *key)
 {
-	return (argparser_result_find_item_by_key(this, key));
+	t_argparser_result_item	*result_item;
+
+	result_item = result_item_;
+	return (argparser_argument_test_by_key(result_item->argparser_argument, key));
+}
+
+t_argparser_result_item	*argparser_result_find_item_by_key(t_argparser_result *this, char *key)
+{
+	return (twl_lst_find(this->result_items, find_fn, key));
 }
