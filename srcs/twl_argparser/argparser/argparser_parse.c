@@ -15,21 +15,41 @@
 #include "twl_argparser/argparser.h"
 #include "twl_argparser/argparser_result.h"
 
-static void			iter_fn(void *str_token_, void *result_)
+
+
+static void			build_push_result_item_inner(char *str_token, t_argparser_result *result, int hyphens)
+{
+	t_argparser_argument	*argument;
+	t_argparser_result_item *result_item;
+
+	if (result->err_msg)
+		return ;
+	argument = argparser_argument_mgr_find_by_key(result->argparser->arguments, str_token + hyphens);
+	if (argument)
+	{
+		result_item = argparser_result_item_new(argument);
+		twl_lst_push_back(result->result_items, result_item);
+	}
+	else
+	{
+		twl_asprintf(&(result->err_msg), "illegal option: %s", str_token);
+	}
+}
+
+static void			build_push_result_item_iter_fn(void *str_token_, void *result_)
 {
 	t_argparser_result *result;
-	t_argparser_result_item *result_item;
-	t_argparser_argument	*argument;
 	char					*str_token;
+	int						hyphens;
 
 	result = result_;
 	str_token = str_token_;
-	if (twl_str_starts_with(str_token, "-"))
+	hyphens = 0;
+	while (*(str_token + hyphens) == '-')
+		hyphens++;
+	if (hyphens > 0)
 	{
-		argument = argparser_argument_mgr_find_by_char_key(
-			result->argparser->arguments, *(str_token + 1));
-		result_item = argparser_result_item_new(argument);
-		twl_lst_push_back(result->result_items, result_item);
+		build_push_result_item_inner(str_token, result, hyphens);
 	}
 }
 
@@ -38,6 +58,6 @@ t_argparser_result	*argparser_parse(t_argparser *this, t_lst *str_tokens)
 	t_argparser_result *result;
 
 	result = argparser_result_new(this);
-	twl_lst_iter(str_tokens, iter_fn, result);
+	twl_lst_iter(str_tokens, build_push_result_item_iter_fn, result);
 	return (result);
 }

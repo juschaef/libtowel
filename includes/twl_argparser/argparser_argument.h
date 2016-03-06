@@ -39,6 +39,10 @@ typedef struct		  s_argparser_argument
 t_argparser_argument		*argparser_argument_new(char char_key, char *str_key, char *help, int nargs);
 void				argparser_argument_del(t_argparser_argument *argparser_argument);
 
-t_argparser_argument *argparser_argument_mgr_find_by_char_key(t_lst *arguments, char c);
+bool        argparser_argument_test_by_key(t_argparser_argument *this, char *key);
+bool        argparser_argument_test_by_key_void(void *this, void *key);
+
+t_argparser_argument *argparser_argument_mgr_find_by_key(t_lst *arguments, char *key);
+char        *argparser_argument_get_keys_ast_str(t_argparser_argument *argument);
 
 #endif

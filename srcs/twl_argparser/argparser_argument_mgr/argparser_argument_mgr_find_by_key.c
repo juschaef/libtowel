@@ -10,15 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_xstdlib.h"
-#include "twl_argparser/argparser_result.h"
+#include "twl_color.h"
+#include "twl_argparser/argparser_argument_mgr.h"
 
-t_argparser_result			*argparser_result_new(t_argparser *argparser)
+t_argparser_argument *argparser_argument_mgr_find_by_key(t_lst *arguments, char *key)
 {
-	t_argparser_result		*this;
-
-	this = twl_malloc_x0(sizeof(t_argparser_result));
-	this->argparser = argparser;
-	this->result_items = twl_lst_new();
-	return (this);
+	return (twl_lst_find(arguments, argparser_argument_test_by_key_void, key));
 }

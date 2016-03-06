@@ -10,20 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_color.h"
-#include "twl_argparser/argparser_argument_mgr.h"
+#include <stdlib.h>
+#include "twl_argparser/argparser_argument.h"
 
-static bool			find_fn(void *argument_, void *char_ptr_)
+bool				argparser_argument_test_by_key_void(void *this, void *key)
 {
-	t_argparser_argument	*argument;
-	char					*char_ptr;
-
-	char_ptr = char_ptr_;
-	argument = argument_;
-	return (argument->char_key == *char_ptr);
-}
-
-t_argparser_argument *argparser_argument_mgr_find_by_char_key(t_lst *arguments, char c)
-{
-	return (twl_lst_find(arguments, find_fn, &c));
+	return (argparser_argument_test_by_key(this, key));
 }

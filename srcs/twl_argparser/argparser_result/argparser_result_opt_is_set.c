@@ -10,28 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARGPARSER_RESULT_H
-# define ARGPARSER_RESULT_H
+#include <stdlib.h>
+#include "twl_xstdio.h"
+#include "twl_argparser/argparser_result.h"
 
-# include "twl_argparser/argparser.h"
-# include "twl_argparser/argparser_result_item.h"
-
-typedef struct		s_argparser_result
+static bool			find_fn(void *result_item_, void *key)
 {
-	t_argparser 	*argparser;
-	t_lst		   	*result_items;
-	char			*err_msg;
-}					t_argparser_result;
+	t_argparser_result_item	*result_item;
 
-t_argparser_result	*argparser_result_new(t_argparser *argparser);
-void				argparser_result_del(t_argparser_result *argparser_result);
+	result_item = result_item_;
+	return (argparser_argument_test_by_key(result_item->argparser_argument, key));
+}
 
-bool				argparser_result_opt_is_set(t_argparser_result *this, char *key);
-
-
-void				argparser_result_add(t_argparser_result *argparser_result,
-								t_argparser_result_item *argparser_result_item);
-
-void				argparser_result_print(t_argparser_result *this);
-
-#endif
+bool				argparser_result_opt_is_set(t_argparser_result *this, char *key)
+{
+	return (twl_lst_find(this->result_items, find_fn, key));
+}

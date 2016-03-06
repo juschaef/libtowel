@@ -10,28 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARGPARSER_RESULT_H
-# define ARGPARSER_RESULT_H
+#include <stdlib.h>
+#include "twl_xstring.h"
+#include "twl_argparser/argparser_argument.h"
 
-# include "twl_argparser/argparser.h"
-# include "twl_argparser/argparser_result_item.h"
-
-typedef struct		s_argparser_result
+bool				argparser_argument_test_by_key(t_argparser_argument *this, char *key)
 {
-	t_argparser 	*argparser;
-	t_lst		   	*result_items;
-	char			*err_msg;
-}					t_argparser_result;
-
-t_argparser_result	*argparser_result_new(t_argparser *argparser);
-void				argparser_result_del(t_argparser_result *argparser_result);
-
-bool				argparser_result_opt_is_set(t_argparser_result *this, char *key);
-
-
-void				argparser_result_add(t_argparser_result *argparser_result,
-								t_argparser_result_item *argparser_result_item);
-
-void				argparser_result_print(t_argparser_result *this);
-
-#endif
+	if (twl_strlen(key) == 1)
+	{
+		return (this->char_key == *key);
+	}
+	else if (twl_strlen(key) > 1)
+	{
+		return (twl_strequ(this->str_key, key));
+	}
+	else
+	{
+		return (false);
+	}
+}

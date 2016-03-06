@@ -10,28 +10,36 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARGPARSER_RESULT_H
-# define ARGPARSER_RESULT_H
+#include <stdlib.h>
+#include "twl_xstdio.h"
+#include "twl_argparser/argparser_result.h"
+#include "twl_argparser/argparser_result_item.h"
 
-# include "twl_argparser/argparser.h"
-# include "twl_argparser/argparser_result_item.h"
-
-typedef struct		s_argparser_result
+static void			iter_valid_options_fn(void *result_item_)
 {
-	t_argparser 	*argparser;
-	t_lst		   	*result_items;
-	char			*err_msg;
-}					t_argparser_result;
+	t_argparser_result_item	*result_item;
+	char					*keys;
+	char					*option_arguments;
 
-t_argparser_result	*argparser_result_new(t_argparser *argparser);
-void				argparser_result_del(t_argparser_result *argparser_result);
+	result_item = result_item_;
+	keys = argparser_argument_get_keys_ast_str(result_item->argparser_argument);
+	option_arguments = twl_lst_strjoin(result_item->option_arguments, "|");
+	twl_printf("  %-30s%s\n", keys, option_arguments);
+	free(keys);
+	free(option_arguments);
+}
 
-bool				argparser_result_opt_is_set(t_argparser_result *this, char *key);
+static void			print_errors(t_argparser_result *this)
+{
+	if (this->err_msg)
+	{
+		twl_printf("ERRORS: %s\n", this->err_msg);
+	}
+}
 
-
-void				argparser_result_add(t_argparser_result *argparser_result,
-								t_argparser_result_item *argparser_result_item);
-
-void				argparser_result_print(t_argparser_result *this);
-
-#endif
+void				argparser_result_print(t_argparser_result *this)
+{
+	twl_printf("valid options:\n");
+	twl_lst_iter0(this->result_items, iter_valid_options_fn);
+	print_errors(this);
+}

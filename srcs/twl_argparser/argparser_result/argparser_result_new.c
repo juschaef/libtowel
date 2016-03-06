@@ -10,21 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "twl_xstdio.h"
+#include "twl_xstdlib.h"
 #include "twl_argparser/argparser_result.h"
 
-static bool			find_fn(void *result_item_, void *char_ptr_)
+t_argparser_result			*argparser_result_new(t_argparser *argparser)
 {
-	t_argparser_result_item	*result_item;
-	char					*char_ptr;
+	t_argparser_result		*this;
 
-	char_ptr = char_ptr_;
-	result_item = result_item_;
-	return (result_item->argparser_argument->char_key == *char_ptr);
-}
-
-bool				argparser_result_char_opt_is_set(t_argparser_result *this, char c)
-{
-	return ((bool)twl_lst_find(this->result_items, find_fn, &c));
+	this = twl_malloc_x0(sizeof(t_argparser_result));
+	this->argparser = argparser;
+	this->result_items = twl_lst_new();
+	this->err_msg = NULL;
+	return (this);
 }

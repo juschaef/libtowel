@@ -10,28 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARGPARSER_RESULT_H
-# define ARGPARSER_RESULT_H
+#include <stdlib.h>
+#include "twl_stdio.h"
+#include "twl_argparser/argparser.h"
 
-# include "twl_argparser/argparser.h"
-# include "twl_argparser/argparser_result_item.h"
-
-typedef struct		s_argparser_result
+char				*argparser_argument_get_keys_ast_str(t_argparser_argument *argument)
 {
-	t_argparser 	*argparser;
-	t_lst		   	*result_items;
-	char			*err_msg;
-}					t_argparser_result;
+	char			*keys;
+	char			*option_argument;
 
-t_argparser_result	*argparser_result_new(t_argparser *argparser);
-void				argparser_result_del(t_argparser_result *argparser_result);
-
-bool				argparser_result_opt_is_set(t_argparser_result *this, char *key);
-
-
-void				argparser_result_add(t_argparser_result *argparser_result,
-								t_argparser_result_item *argparser_result_item);
-
-void				argparser_result_print(t_argparser_result *this);
-
-#endif
+	keys = NULL;
+	if (argument->nargs & ARGP_OPTION_ARGUMENT)
+		option_argument = " arg";
+	else
+		option_argument = "";
+	if (argument->char_key && argument->str_key)
+		twl_asprintf(&keys, "-%c%s, --%s%s", argument->char_key, option_argument, argument->str_key, option_argument);
+	else if (argument->char_key)
+		twl_asprintf(&keys, "-%c%s", argument->char_key, option_argument);
+	else if (argument->str_key)
+		twl_asprintf(&keys, "--%s%s", argument->str_key, option_argument);
+	else
+		keys = twl_strdup("");
+	return (keys);
+}
