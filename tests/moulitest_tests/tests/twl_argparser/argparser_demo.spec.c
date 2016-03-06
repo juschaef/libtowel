@@ -8,7 +8,7 @@ static void demo_working_case(t_test *test)
 {
 	t_argparser		*argparser;
 
-	argparser = argparser_new("42sh");
+	argparser = argparser_new("some_command");
 	argparser_add_argument(argparser, argparser_argument_new('e', NULL, "Enabled", 0));
 	argparser_add_argument(argparser, argparser_argument_new(0, "dry-run", "Dry Run", 0));
 	argparser_add_argument(argparser, argparser_argument_new('f', "force", "Force", 0));
@@ -21,7 +21,7 @@ static void demo_working_case(t_test *test)
 	*/
 
 	mt_assert(strcmp(argparser_get_help_str(argparser),
-		"usage: 42sh [-eftd]\n"
+		"usage: some_command [-eftd]\n"
 		"  -e                            Enabled\n"
 		"  --dry-run                     Dry Run\n"
 		"  -f, --force                   Force\n"

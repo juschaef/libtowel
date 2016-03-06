@@ -33,7 +33,7 @@ char				*argparser_get_help_str(t_argparser *this)
 {
 	char			*help_str;
 
-	twl_asprintf(&help_str, "usage: 42sh [-%s]\n",
+	twl_asprintf(&help_str, "usage: %s [-%s]\n", this->name,
 						argparser_argument_mgr_get_all_chars(this->arguments));
 	twl_lst_iter(this->arguments, print_argparser_argument_fn, &help_str);
 	return (help_str);
