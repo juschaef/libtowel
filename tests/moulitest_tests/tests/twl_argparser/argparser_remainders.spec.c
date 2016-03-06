@@ -28,12 +28,16 @@
 mt_test_arg_parse_result_is_set(01, "echo -n -m aa bb", "aa|bb", false);
 mt_test_arg_parse_result_is_set(02, "echo -n -m", "", false);
 mt_test_arg_parse_result_is_set(03, "echo bb ccc", "bb|ccc", false);
-// mt_test_arg_parse_result_is_set(04, "echo -- -n", "-n", false);
+mt_test_arg_parse_result_is_set(04, "echo -- -n", "-n", false);
+mt_test_arg_parse_result_is_set(05, "echo -- aa -m", "aa|-m", false);
+mt_test_arg_parse_result_is_set(06, "echo -- -n --zzz xxx", "-n|--zzz|xxx", false);
 
 void	suite_argparser_remainders(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, test_01);
 	SUITE_ADD_TEST(suite, test_02);
 	SUITE_ADD_TEST(suite, test_03);
-	// SUITE_ADD_TEST(suite, test_04);
+	SUITE_ADD_TEST(suite, test_04);
+	SUITE_ADD_TEST(suite, test_05);
+	SUITE_ADD_TEST(suite, test_06);
 }
