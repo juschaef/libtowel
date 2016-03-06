@@ -29,7 +29,7 @@ char	*pf_conv_str_char_c(void *val)
 	char			*str_one_char;
 
 	str_one_char = twl_strnew(1);
-	*str_one_char = VOID_PTR_TO(char, val));
+	*str_one_char = VOID_PTR_TO(char, val);
 	return (str_one_char);
 }
 
