@@ -22,7 +22,22 @@ static void simple_test(t_test *test)
 	argparser_del(argparser);
 }
 
+static void test_without_options(t_test *test)
+{
+	t_argparser		*argparser;
+
+	argparser = argparser_new("42sh");
+	argparser_set_usage_extra(argparser, " some text");
+
+	// argparser_print_help(argparser);
+	mt_assert(strcmp(argparser_get_help_str(argparser),
+		"usage: 42sh some text\n") == 0);
+
+	argparser_del(argparser);
+}
+
 void	suite_argparser_get_help_str(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
+	SUITE_ADD_TEST(suite, test_without_options);
 }
