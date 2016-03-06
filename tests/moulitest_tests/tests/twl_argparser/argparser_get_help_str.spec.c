@@ -20,7 +20,6 @@ static void simple_test(t_test *test)
         "  -d arg, --date arg            Set date\n") == 0);
 
 	argparser_del(argparser);
-	argparser_result_del(result);
 }
 
 void	suite_argparser_get_help_str(t_suite *suite)
