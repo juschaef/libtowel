@@ -51,13 +51,20 @@ static void			build_push_result_item_iter_fn(void *str_token_, void *result_)
 	{
 		build_push_result_item_inner(str_token, result, hyphens);
 	}
+	else
+	{
+		twl_lst_push(result->remainders, str_token);
+	}
 }
 
 t_argparser_result	*argparser_parse(t_argparser *this, t_lst *str_tokens)
 {
 	t_argparser_result *result;
+	t_lst			*str_tokens_copy;
 
-	result = argparser_result_new(this);
-	twl_lst_iter(str_tokens, build_push_result_item_iter_fn, result);
+	str_tokens_copy = twl_lst_copy(str_tokens, NULL);
+	result = argparser_result_new(this, twl_lst_pop_front(str_tokens_copy));
+	twl_lst_iter(str_tokens_copy, build_push_result_item_iter_fn, result);
+	twl_lst_del(str_tokens_copy, NULL);
 	return (result);
 }

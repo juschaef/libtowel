@@ -29,6 +29,17 @@ static void			iter_valid_options_fn(void *result_item_)
 	free(option_arguments);
 }
 
+static void			print_remainders(t_argparser_result *this)
+{
+	char			*remainders_str;
+
+	if (twl_lst_len(this->remainders))
+	{
+		remainders_str = twl_lst_strjoin(this->remainders, "|");
+		twl_printf("remainders: %s\n", remainders_str);
+	}
+}
+
 static void			print_errors(t_argparser_result *this)
 {
 	if (this->err_msg)
@@ -41,5 +52,6 @@ void				argparser_result_print(t_argparser_result *this)
 {
 	twl_printf("valid options:\n");
 	twl_lst_iter0(this->result_items, iter_valid_options_fn);
+	print_remainders(this);
 	print_errors(this);
 }

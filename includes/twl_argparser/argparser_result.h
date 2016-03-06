@@ -19,11 +19,13 @@
 typedef struct		s_argparser_result
 {
 	t_argparser 	*argparser;
+	char			*command_name;
 	t_lst		   	*result_items;
 	char			*err_msg;
+	t_lst			*remainders;
 }					t_argparser_result;
 
-t_argparser_result	*argparser_result_new(t_argparser *argparser);
+t_argparser_result	*argparser_result_new(t_argparser *argparser, char *command_name);
 void				argparser_result_del(t_argparser_result *argparser_result);
 
 bool				argparser_result_opt_is_set(t_argparser_result *this, char *key);

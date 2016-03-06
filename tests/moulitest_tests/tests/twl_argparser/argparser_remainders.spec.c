@@ -3,7 +3,7 @@
 #include "twl_argparser/argparser.h"
 #include "twl_argparser/argparser_result.h"
 
-#define mt_test_arg_parse_result_is_set(test_name, input, expected_illegal_opts, debug) \
+#define mt_test_arg_parse_result_is_set(test_name, input, expected_reminder, debug) \
 	static void test_## test_name(t_test *test) \
 	{ \
 		t_argparser		*argparser; \
@@ -20,26 +20,20 @@
 			argparser_result_print(result); \
 			printf("============================================================\n"); \
 		} \
-		if (result->err_msg) \
-		{ \
-			mt_assert(strcmp(result->err_msg, expected_illegal_opts) == 0); \
-		} \
-		else \
-		{ \
-			mt_assert(result->err_msg == expected_illegal_opts); \
-		} \
+		char *remainders_str = twl_lst_strjoin(result->remainders, "|"); \
+		mt_assert(strcmp(remainders_str, expected_reminder) == 0); \
 		twl_lst_del(segs, free); \
 	}
 
-mt_test_arg_parse_result_is_set(01, "echo -n -m abc", NULL, false);
-mt_test_arg_parse_result_is_set(02, "echo -n -m -z --zoo abc", "illegal option: -z", false);
-mt_test_arg_parse_result_is_set(03, "echo -abc", "illegal option: -abc", false);
-mt_test_arg_parse_result_is_set(04, "echo ---abc", "illegal option: ---abc", false);
+mt_test_arg_parse_result_is_set(01, "echo -n -m aa bb", "aa|bb", false);
+mt_test_arg_parse_result_is_set(02, "echo -n -m", "", false);
+mt_test_arg_parse_result_is_set(03, "echo bb ccc", "bb|ccc", false);
+// mt_test_arg_parse_result_is_set(04, "echo -- -n", "-n", false);
 
-void	suite_argparser_get_illegal_options(t_suite *suite)
+void	suite_argparser_remainders(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, test_01);
 	SUITE_ADD_TEST(suite, test_02);
 	SUITE_ADD_TEST(suite, test_03);
-	SUITE_ADD_TEST(suite, test_04);
+	// SUITE_ADD_TEST(suite, test_04);
 }

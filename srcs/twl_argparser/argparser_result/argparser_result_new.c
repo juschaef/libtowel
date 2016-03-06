@@ -13,13 +13,15 @@
 #include "twl_xstdlib.h"
 #include "twl_argparser/argparser_result.h"
 
-t_argparser_result			*argparser_result_new(t_argparser *argparser)
+t_argparser_result			*argparser_result_new(t_argparser *argparser, char *command_name)
 {
 	t_argparser_result		*this;
 
 	this = twl_malloc_x0(sizeof(t_argparser_result));
 	this->argparser = argparser;
+	this->command_name = twl_strdup(command_name);
 	this->result_items = twl_lst_new();
+	this->remainders = twl_lst_new();
 	this->err_msg = NULL;
 	return (this);
 }
