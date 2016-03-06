@@ -36,7 +36,8 @@ mt_test_arg_parse_result_is_set(02, "echo -n -m abc -z --zoo abc", "illegal opti
 mt_test_arg_parse_result_is_set(03, "echo -abc", "illegal option: -abc", false);
 mt_test_arg_parse_result_is_set(04, "echo ---abc", "illegal option: ---abc", false);
 mt_test_arg_parse_result_is_set(05, "echo -module", "illegal option: -module", false);
-mt_test_arg_parse_result_is_set(06, "echo -m", "argument required: -m", true);
+mt_test_arg_parse_result_is_set(06, "echo -m", "argument required: -m", false);
+mt_test_arg_parse_result_is_set(07, "echo -m -n", "argument required: -m", false);
 
 void	suite_argparser_err_msg(t_suite *suite)
 {
@@ -46,4 +47,5 @@ void	suite_argparser_err_msg(t_suite *suite)
 	SUITE_ADD_TEST(suite, test_04);
 	SUITE_ADD_TEST(suite, test_05);
 	SUITE_ADD_TEST(suite, test_06);
+	SUITE_ADD_TEST(suite, test_07);
 }

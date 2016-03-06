@@ -20,6 +20,6 @@ char				*argparser_result_opt_get_arg(t_argparser_result *this, char *key)
 
 	result_item = argparser_result_find_item_by_key(this, key);
 	if (result_item)
-		return (twl_lst_first(result_item->option_arguments));
+		return (result_item->option_argument);
 	return (NULL);
 }

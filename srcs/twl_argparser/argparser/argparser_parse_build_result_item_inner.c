@@ -36,8 +36,9 @@ static void			handle_has_option_argument(char *str_token, t_argparser_result_ite
 {
 	if (result_item->argparser_argument->flags & ARGP_HAS_OPTION_ARGUMENT)
 	{
-		if (twl_lst_len(tokens_to_consume))
-			twl_lst_push_back(result_item->option_arguments, twl_lst_pop_front(tokens_to_consume));
+		if (twl_lst_len(tokens_to_consume)
+			&& !twl_str_starts_with(twl_lst_first(tokens_to_consume), "-"))
+			result_item->option_argument = twl_strdup(twl_lst_pop_front(tokens_to_consume));
 		else
 			set_err_msg(ERR_MSG_ARGUMENT_REQUIRED, str_token, result);
 	}

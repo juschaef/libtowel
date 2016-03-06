@@ -19,6 +19,6 @@ t_argparser_result_item			*argparser_result_item_new(t_argparser_argument *argpa
 
 	this = twl_malloc_x0(sizeof(t_argparser_result_item));
 	this->argparser_argument = argparser_argument;
-	this->option_arguments = twl_lst_new();
+	this->option_argument = NULL;
 	return (this);
 }

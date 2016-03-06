@@ -19,7 +19,7 @@
 typedef struct		s_argparser_result_item
 {
 	t_argparser_argument	*argparser_argument;
-	t_lst					*option_arguments;
+	char					*option_argument;
 }					t_argparser_result_item;
 
 t_argparser_result_item			*argparser_result_item_new(t_argparser_argument *argparser_argument);
