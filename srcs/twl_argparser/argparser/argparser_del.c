@@ -17,5 +17,7 @@ void				argparser_del(t_argparser *this)
 {
 	free(this->name);
 	twl_lst_del(this->arguments, argparser_argument_del_void);
+	if (this->usage_extra)
+		free(this->usage_extra);
 	free(this);
 }

@@ -10,18 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_xstdlib.h"
+#include <stdlib.h>
+#include "twl_xstdio.h"
 #include "twl_argparser/argparser.h"
-#include "twl_argparser/argparser_result.h"
 
-t_argparser_result			*argparser_result_new(t_argparser *argparser)
+void				argparser_result_print_error_with_help(t_argparser_result *this)
 {
-	t_argparser_result		*this;
+	char			*help_str;
 
-	this = twl_malloc_x0(sizeof(t_argparser_result));
-	this->argparser = argparser;
-	this->result_items = twl_lst_new();
-	this->remainders = twl_lst_new();
-	this->err_msg = NULL;
-	return (this);
+	help_str = argparser_get_help_str(this->argparser);
+	if (this->err_msg)
+	{
+		twl_dprintf(2, "%s: %s\n", this->argparser->name, this->err_msg);
+	}
+	twl_putstr_fd(help_str, 2);
+	free(help_str);
 }

@@ -17,7 +17,7 @@
 			printf("=== help ===================================================\n"); \
 			argparser_print_help(argparser); \
 			printf("=== result =================================================\n"); \
-			argparser_result_print(result); \
+			argparser_result_print_debug(result); \
 			printf("============================================================\n"); \
 		} \
 		if (result->err_msg) \

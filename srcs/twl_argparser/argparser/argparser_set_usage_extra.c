@@ -10,18 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_xstdlib.h"
+#include <stdlib.h>
 #include "twl_argparser/argparser.h"
-#include "twl_argparser/argparser_result.h"
 
-t_argparser_result			*argparser_result_new(t_argparser *argparser)
+void				argparser_set_usage_extra(t_argparser *this, char *text)
 {
-	t_argparser_result		*this;
-
-	this = twl_malloc_x0(sizeof(t_argparser_result));
-	this->argparser = argparser;
-	this->result_items = twl_lst_new();
-	this->remainders = twl_lst_new();
-	this->err_msg = NULL;
-	return (this);
+	this->usage_extra = twl_strdup(text);
 }
