@@ -28,7 +28,7 @@ static void demo_working_case(t_test *test)
 		"  -t, --time                    Set time\n"
         "  -d arg, --date arg            Set date\n") == 0);
 
-	t_lst *segs = twl_str_split_to_lst("-e --dry-run -d 01-01-2042 arg1 arg2 arg3", " ");
+	t_lst *segs = twl_str_split_to_lst("echo -e --dry-run -d 01-01-2042 arg1 arg2 arg3", " ");
 	t_argparser_result *result = argparser_parse(argparser, segs);
 
 	mt_assert(argparser_result_opt_is_set(result, "e") == true);

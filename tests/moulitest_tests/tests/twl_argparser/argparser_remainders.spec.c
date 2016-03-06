@@ -27,12 +27,12 @@
 		argparser_result_del(result); \
 	}
 
-mt_test_arg_parse_result_is_set(01, "-n -m aa bb", "aa|bb", false);
-mt_test_arg_parse_result_is_set(02, "-n -m", "", false);
-mt_test_arg_parse_result_is_set(03, "bb ccc", "bb|ccc", false);
-mt_test_arg_parse_result_is_set(04, "-- -n", "-n", false);
-mt_test_arg_parse_result_is_set(05, "-- aa -m", "aa|-m", false);
-mt_test_arg_parse_result_is_set(06, "-- -n --zzz xxx", "-n|--zzz|xxx", false);
+mt_test_arg_parse_result_is_set(01, "echo -n -m aa bb", "aa|bb", false);
+mt_test_arg_parse_result_is_set(02, "echo -n -m", "", false);
+mt_test_arg_parse_result_is_set(03, "echo bb ccc", "bb|ccc", false);
+mt_test_arg_parse_result_is_set(04, "echo -- -n", "-n", false);
+mt_test_arg_parse_result_is_set(05, "echo -- aa -m", "aa|-m", false);
+mt_test_arg_parse_result_is_set(06, "echo -- -n --zzz xxx", "-n|--zzz|xxx", false);
 
 void	suite_argparser_remainders(t_suite *suite)
 {

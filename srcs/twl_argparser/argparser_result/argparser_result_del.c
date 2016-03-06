@@ -19,5 +19,6 @@ void				argparser_result_del(t_argparser_result *this)
 	twl_lst_del(this->remainders, free);
 	if (this->err_msg)
 		free(this->err_msg);
+	free(this->command_name);
 	free(this);
 }

@@ -21,13 +21,13 @@ static void demo_errors(t_test *test)
 
 	/* illegal option */
 
-	segs = twl_str_split_to_lst("-m -e", " ");
+	segs = twl_str_split_to_lst("echo -m -e", " ");
 	result = argparser_parse(argparser, segs);
 	mt_assert(strcmp(result->err_msg, "illegal option: m") == 0);
 	twl_lst_del(segs, free);
 
 	/* missing option */
-	segs = twl_str_split_to_lst("-d", " ");
+	segs = twl_str_split_to_lst("echo -d", " ");
 	result = argparser_parse(argparser, segs);
 	mt_assert(strcmp(result->err_msg, "value required: d") == 0);
 
