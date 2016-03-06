@@ -10,40 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_printf.h"
+#include <stdlib.h>
+#include "twl_stdio.h"
+#include "twl_argparser/argparser.h"
 
-#define VOID_PTR_TO(type, value) *((type *)(value))
-
-char	*pf_conv_str_str(void *val)
+static void			print_argparser_argument_fn(void *argument_, void *help_str_)
 {
-	char *s;
+	t_argparser_argument	*argument;
+	char					*keys;
+	char					*line;
+	char					**help_str;
 
-	s = val;
-	if (!s)
-		return (twl_strdup(STRING_OF_NULL));
-	return (twl_strdup(s));
+	argument = argument_;
+	help_str = help_str_;
+	keys = argparser_argument_get_keys_ast_str(argument);
+	twl_asprintf(&line, "  %-30s%s\n", keys, argument->help);
+	*help_str = twl_strjoinfree(*help_str, line, 'b');
+	free(keys);
 }
 
-char	*pf_conv_str_char_c(void *val)
+char				*argparser_get_help_str(t_argparser *this)
 {
-	char			*str_one_char;
+	char			*help_str;
 
-	str_one_char = twl_strnew(1);
-	*str_one_char = VOID_PTR_TO(char, val);
-	return (str_one_char);
-}
-
-char	*pf_conv_str_char_hh(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(char, val)));
-}
-
-char	*pf_conv_str_uchar(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(unsigned char, val)));
-}
-
-char	*pf_conv_str_return_original(void *val)
-{
-	return (twl_strdup(val));
+	twl_asprintf(&help_str, "usage: 42sh [-%s]\n",
+						argparser_argument_mgr_get_all_chars(this->arguments));
+	twl_lst_iter(this->arguments, print_argparser_argument_fn, &help_str);
+	return (help_str);
 }

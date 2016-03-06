@@ -10,40 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_printf.h"
+#include <stdlib.h>
+#include "twl_xstdio.h"
+#include "twl_argparser/argparser_result.h"
 
-#define VOID_PTR_TO(type, value) *((type *)(value))
-
-char	*pf_conv_str_str(void *val)
+static bool			find_fn(void *result_item_, void *key)
 {
-	char *s;
+	t_argparser_result_item	*result_item;
 
-	s = val;
-	if (!s)
-		return (twl_strdup(STRING_OF_NULL));
-	return (twl_strdup(s));
+	result_item = result_item_;
+	return (argparser_argument_test_by_key(result_item->argparser_argument, key));
 }
 
-char	*pf_conv_str_char_c(void *val)
+t_argparser_result_item	*argparser_result_find_item_by_key(t_argparser_result *this, char *key)
 {
-	char			*str_one_char;
-
-	str_one_char = twl_strnew(1);
-	*str_one_char = VOID_PTR_TO(char, val);
-	return (str_one_char);
-}
-
-char	*pf_conv_str_char_hh(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(char, val)));
-}
-
-char	*pf_conv_str_uchar(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(unsigned char, val)));
-}
-
-char	*pf_conv_str_return_original(void *val)
-{
-	return (twl_strdup(val));
+	return (twl_lst_find(this->result_items, find_fn, key));
 }

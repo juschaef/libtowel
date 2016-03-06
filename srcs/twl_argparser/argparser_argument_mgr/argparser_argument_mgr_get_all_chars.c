@@ -10,40 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_printf.h"
+#include "twl_argparser/argparser_argument_mgr.h"
 
-#define VOID_PTR_TO(type, value) *((type *)(value))
-
-char	*pf_conv_str_str(void *val)
+static void			print_argparser_argument_fn(void *argparser_argument_, void *all_chars_)
 {
-	char *s;
+	t_argparser_argument	*argparser_argument;
+	char					*all_chars;
 
-	s = val;
-	if (!s)
-		return (twl_strdup(STRING_OF_NULL));
-	return (twl_strdup(s));
+	argparser_argument = argparser_argument_;
+	all_chars = all_chars_;
+	if (argparser_argument->char_key)
+		all_chars[twl_strlen(all_chars)] = argparser_argument->char_key;
 }
 
-char	*pf_conv_str_char_c(void *val)
+char				*argparser_argument_mgr_get_all_chars(t_lst *arguments)
 {
-	char			*str_one_char;
+	char			*all_chars;
 
-	str_one_char = twl_strnew(1);
-	*str_one_char = VOID_PTR_TO(char, val);
-	return (str_one_char);
-}
-
-char	*pf_conv_str_char_hh(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(char, val)));
-}
-
-char	*pf_conv_str_uchar(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(unsigned char, val)));
-}
-
-char	*pf_conv_str_return_original(void *val)
-{
-	return (twl_strdup(val));
+	all_chars = twl_strnew(twl_lst_len(arguments));
+	twl_lst_iter(arguments, print_argparser_argument_fn, all_chars);
+	return (all_chars);
 }

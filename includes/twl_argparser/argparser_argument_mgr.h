@@ -10,40 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_printf.h"
+#ifndef TWL_ARGPARSE_ITEM_MGR_H
+# define TWL_ARGPARSE_ITEM_MGR_H
 
-#define VOID_PTR_TO(type, value) *((type *)(value))
+# include <stddef.h>
+# include <stdbool.h>
+# include "twl_xstring.h"
+# include "twl_lst.h"
+# include "twl_argparser/argparser_argument.h"
 
-char	*pf_conv_str_str(void *val)
-{
-	char *s;
+t_lst				*argparser_argument_mgr_new(void);
+void				argparser_argument_mgr_del(t_lst *arguments);
+void				argparser_argument_mgr_add(t_lst *arguments, t_argparser_argument *argparser_argument);
+void				argparser_argument_mgr_remove(t_lst *arguments, t_argparser_argument *argparser_argument);
+void				argparser_argument_mgr_print(t_lst *arguments);
 
-	s = val;
-	if (!s)
-		return (twl_strdup(STRING_OF_NULL));
-	return (twl_strdup(s));
-}
+char				*argparser_argument_mgr_get_all_chars(t_lst *arguments);
 
-char	*pf_conv_str_char_c(void *val)
-{
-	char			*str_one_char;
-
-	str_one_char = twl_strnew(1);
-	*str_one_char = VOID_PTR_TO(char, val);
-	return (str_one_char);
-}
-
-char	*pf_conv_str_char_hh(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(char, val)));
-}
-
-char	*pf_conv_str_uchar(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(unsigned char, val)));
-}
-
-char	*pf_conv_str_return_original(void *val)
-{
-	return (twl_strdup(val));
-}
+#endif

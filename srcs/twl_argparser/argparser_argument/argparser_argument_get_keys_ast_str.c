@@ -10,40 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_printf.h"
+#include <stdlib.h>
+#include "twl_stdio.h"
+#include "twl_argparser/argparser.h"
 
-#define VOID_PTR_TO(type, value) *((type *)(value))
-
-char	*pf_conv_str_str(void *val)
+char				*argparser_argument_get_keys_ast_str(t_argparser_argument *argument)
 {
-	char *s;
+	char			*keys;
+	char			*option_argument;
 
-	s = val;
-	if (!s)
-		return (twl_strdup(STRING_OF_NULL));
-	return (twl_strdup(s));
-}
-
-char	*pf_conv_str_char_c(void *val)
-{
-	char			*str_one_char;
-
-	str_one_char = twl_strnew(1);
-	*str_one_char = VOID_PTR_TO(char, val);
-	return (str_one_char);
-}
-
-char	*pf_conv_str_char_hh(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(char, val)));
-}
-
-char	*pf_conv_str_uchar(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(unsigned char, val)));
-}
-
-char	*pf_conv_str_return_original(void *val)
-{
-	return (twl_strdup(val));
+	keys = NULL;
+	if (argument->flags & ARGP_HAS_OPTION_ARGUMENT)
+		option_argument = " arg";
+	else
+		option_argument = "";
+	if (argument->char_key && argument->str_key)
+		twl_asprintf(&keys, "-%c%s, --%s%s", argument->char_key, option_argument, argument->str_key, option_argument);
+	else if (argument->char_key)
+		twl_asprintf(&keys, "-%c%s", argument->char_key, option_argument);
+	else if (argument->str_key)
+		twl_asprintf(&keys, "--%s%s", argument->str_key, option_argument);
+	else
+		keys = twl_strdup("");
+	return (keys);
 }

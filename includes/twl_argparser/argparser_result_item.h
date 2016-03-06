@@ -10,40 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_printf.h"
+#ifndef ARGPARSER_RESULT_ITEM_H
+# define ARGPARSER_RESULT_ITEM_H
 
-#define VOID_PTR_TO(type, value) *((type *)(value))
+# include "twl_lst.h"
+# include "twl_argparser/argparser_argument.h"
 
-char	*pf_conv_str_str(void *val)
+typedef struct		s_argparser_result_item
 {
-	char *s;
+	t_argparser_argument	*argparser_argument;
+	char					*option_argument;
+}					t_argparser_result_item;
 
-	s = val;
-	if (!s)
-		return (twl_strdup(STRING_OF_NULL));
-	return (twl_strdup(s));
-}
+t_argparser_result_item		*argparser_result_item_new(t_argparser_argument *this);
+void						argparser_result_item_del(t_argparser_result_item *this);
+void						argparser_result_item_del_void(t_argparser_result_item *this);
 
-char	*pf_conv_str_char_c(void *val)
-{
-	char			*str_one_char;
-
-	str_one_char = twl_strnew(1);
-	*str_one_char = VOID_PTR_TO(char, val);
-	return (str_one_char);
-}
-
-char	*pf_conv_str_char_hh(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(char, val)));
-}
-
-char	*pf_conv_str_uchar(void *val)
-{
-	return (twl_itoa(VOID_PTR_TO(unsigned char, val)));
-}
-
-char	*pf_conv_str_return_original(void *val)
-{
-	return (twl_strdup(val));
-}
+#endif
