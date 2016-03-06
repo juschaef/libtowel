@@ -17,7 +17,7 @@ int main()
 	t_mt	*mt = mt_create("libft");
 
 	setbuf(stdout, NULL);
-	setlocale(LC_ALL, "C");
+	setlocale(LC_ALL, "en_US.UTF-8");
 
 	ADD_TESTS
 
