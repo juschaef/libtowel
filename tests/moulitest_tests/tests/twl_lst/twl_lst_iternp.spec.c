@@ -19,7 +19,7 @@ static void replace_first_letter(void *data, void *prev_data,
 		*(str + 1) = *next_str;
 	else
 		*(str + 1) = 'z';
-
+	(void)context;
 
 }
 

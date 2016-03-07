@@ -3,6 +3,8 @@
 #include "twl_argparser/argparser.h"
 #include "twl_argparser/argparser_result.h"
 
+const char *g_argparser_err_null = NULL;
+
 #define mt_test_arg_parse_result_is_set(test_name, input, expected_err_msg, debug) \
 	static void test_## test_name(t_test *test) \
 	{ \
@@ -22,18 +24,17 @@
 		} \
 		if (result->err_msg) \
 		{ \
-			mt_assert(strcmp(result->err_msg, expected_err_msg) == 0); \
+			mt_assert(strcmp((char *)result->err_msg, (char *)expected_err_msg) == 0); \
 		} \
 		else \
 		{ \
-			mt_assert(result->err_msg == expected_err_msg); \
+			mt_assert((void *)result->err_msg == (void *)expected_err_msg); \
 		} \
 		twl_lst_del(segs, free); \
 		argparser_del(argparser); \
 		argparser_result_del(result); \
 	}
-
-mt_test_arg_parse_result_is_set(01, "echo -n -m abc", NULL, false);
+mt_test_arg_parse_result_is_set(01, "echo -n -m abc", g_argparser_err_null, false);
 mt_test_arg_parse_result_is_set(02, "echo -n -m abc -z --zoo abc", "illegal option: z", false);
 mt_test_arg_parse_result_is_set(03, "echo -na", "illegal option: a", false);
 mt_test_arg_parse_result_is_set(04, "echo ---abc", "illegal option: -abc", false);
