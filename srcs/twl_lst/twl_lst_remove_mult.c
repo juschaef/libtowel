@@ -16,7 +16,6 @@
 ** This function delete the element between begin (include) and end (exclude)
 */
 
-
 void				twl_lst_remove_mult(t_lst *lst, int begin, int end,
 															void (*delfn)())
 {

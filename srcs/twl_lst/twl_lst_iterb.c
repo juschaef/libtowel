@@ -26,7 +26,7 @@ void				twl_lst_iterb(t_lst *lst, void (*f)(void *data,
 	while (elem)
 	{
 		if (!elem->next)
-			break;
+			break ;
 		elem = elem->next;
 	}
 	while (elem)
