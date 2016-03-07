@@ -13,7 +13,8 @@
 #include "twl_xstdlib.h"
 #include "twl_argparser/argparser_result_item.h"
 
-t_argparser_result_item			*argparser_result_item_new(t_argparser_argument *argparser_argument)
+t_argparser_result_item			*argparser_result_item_new(
+									t_argparser_argument *argparser_argument)
 {
 	t_argparser_result_item		*this;
 

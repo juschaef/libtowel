@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_ARGPARSE_H
-# define TWL_ARGPARSE_H
+#ifndef ARGPARSER_H
+# define ARGPARSER_H
 
 # include "twl_argparser/argparser_argument_mgr.h"
 # include "twl_argparser/argparser_result.h"
@@ -31,12 +31,17 @@ void				argparser_del(t_argparser *argparser);
 
 void				argparser_set_usage_extra(t_argparser *this, char *text);
 
-void				argparser_add_argument(t_argparser *this, t_argparser_argument *item);
+void				argparser_add_argument(t_argparser *this,
+													t_argparser_argument *item);
 void				argparser_print_help(t_argparser *this);
 char				*argparser_get_help_str(t_argparser *this);
 
 t_argparser_result	*argparser_parse(t_argparser *this, t_lst *str_tokens);
-void				argparser_parse_build_result_item_inner__(char *str_token, t_argparser_result *result, t_lst *tokens_to_consume);
-void				argparser_parse_build_argument__(char *key, t_argparser_result *result, t_lst *tokens_to_consume);
+void				argparser_parse_build_result_item_inner__(char *str_token,
+													t_argparser_result *result,
+													t_lst *tokens_to_consume);
+void				argparser_parse_build_argument__(char *key,
+													t_argparser_result *result,
+													t_lst *tokens_to_consume);
 
 #endif

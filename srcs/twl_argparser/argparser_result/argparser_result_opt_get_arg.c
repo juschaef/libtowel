@@ -14,7 +14,8 @@
 #include "twl_xstdio.h"
 #include "twl_argparser/argparser_result.h"
 
-char				*argparser_result_opt_get_arg(t_argparser_result *this, char *key)
+char				*argparser_result_opt_get_arg(t_argparser_result *this,
+																	char *key)
 {
 	t_argparser_result_item	*result_item;
 

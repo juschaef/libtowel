@@ -27,7 +27,7 @@
 		} \
 		else \
 		{ \
-			mt_assert(arg == expected_result); \
+			mt_assert((void *)arg == (void *)expected_result); \
 		} \
 		argparser_del(argparser); \
 		argparser_result_del(result); \

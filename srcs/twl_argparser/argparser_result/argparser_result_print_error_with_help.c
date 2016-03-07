@@ -14,7 +14,8 @@
 #include "twl_xstdio.h"
 #include "twl_argparser/argparser.h"
 
-void				argparser_result_print_error_with_help(t_argparser_result *this)
+void				argparser_result_print_error_with_help(
+													t_argparser_result *this)
 {
 	char			*help_str;
 

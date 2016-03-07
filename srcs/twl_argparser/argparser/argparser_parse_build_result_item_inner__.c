@@ -15,7 +15,8 @@
 #include "twl_argparser/argparser.h"
 #include "twl_argparser/argparser_result.h"
 
-static void			set_err_msg(char *msg, char *str_token, t_argparser_result *result)
+static void			set_err_msg(char *msg, char *str_token,
+													t_argparser_result *result)
 {
 	twl_asprintf(&(result->err_msg), "%s: %s", msg, str_token);
 }
@@ -27,7 +28,9 @@ static bool			is_valid_opt(char *str_token)
 	return (true);
 }
 
-static void			build_argument_one_hyphen_case(char *str_token, t_argparser_result *result, t_lst *tokens_to_consume)
+static void			build_argument_one_hyphen_case(char *str_token,
+													t_argparser_result *result,
+													t_lst *tokens_to_consume)
 {
 	char			*tmp_token;
 	char			*char_token;
@@ -45,7 +48,9 @@ static void			build_argument_one_hyphen_case(char *str_token, t_argparser_result
 	free(char_token);
 }
 
-void				argparser_parse_build_result_item_inner__(char *str_token, t_argparser_result *result, t_lst *tokens_to_consume)
+void				argparser_parse_build_result_item_inner__(char *str_token,
+													t_argparser_result *result,
+													t_lst *tokens_to_consume)
 {
 	if (result->err_msg)
 		return ;
@@ -56,7 +61,8 @@ void				argparser_parse_build_result_item_inner__(char *str_token, t_argparser_r
 	}
 	if (twl_str_starts_with(str_token, "--"))
 	{
-		argparser_parse_build_argument__(str_token + 2, result, tokens_to_consume);
+		argparser_parse_build_argument__(str_token + 2, result,
+															tokens_to_consume);
 	}
 	else if (twl_str_starts_with(str_token, "-"))
 	{

@@ -16,14 +16,17 @@
 # include "twl_lst.h"
 # include "twl_argparser/argparser_argument.h"
 
-typedef struct		s_argparser_result_item
+typedef struct				s_argparser_result_item
 {
 	t_argparser_argument	*argparser_argument;
 	char					*option_argument;
-}					t_argparser_result_item;
+}							t_argparser_result_item;
 
-t_argparser_result_item		*argparser_result_item_new(t_argparser_argument *this);
-void						argparser_result_item_del(t_argparser_result_item *this);
-void						argparser_result_item_del_void(t_argparser_result_item *this);
+t_argparser_result_item		*argparser_result_item_new(
+													t_argparser_argument *this);
+void						argparser_result_item_del(
+												t_argparser_result_item *this);
+void						argparser_result_item_del_void(
+												t_argparser_result_item *this);
 
 #endif

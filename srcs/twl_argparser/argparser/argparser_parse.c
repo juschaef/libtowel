@@ -15,7 +15,8 @@
 #include "twl_argparser/argparser.h"
 #include "twl_argparser/argparser_result.h"
 
-static void			build_push_result_item(t_lst *tokens_to_consume, t_argparser_result *result)
+static void			build_push_result_item(t_lst *tokens_to_consume,
+													t_argparser_result *result)
 {
 	char					*str_token;
 	bool					double_hyphen_occurred;
@@ -35,7 +36,8 @@ static void			build_push_result_item(t_lst *tokens_to_consume, t_argparser_resul
 		}
 		if (twl_str_starts_with(str_token, "-"))
 		{
-			argparser_parse_build_result_item_inner__(str_token, result, tokens_to_consume);
+			argparser_parse_build_result_item_inner__(str_token, result,
+															tokens_to_consume);
 			continue ;
 		}
 		twl_lst_push(result->remainders, twl_strdup(str_token));

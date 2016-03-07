@@ -13,7 +13,10 @@
 #include <stdlib.h>
 #include "twl_argparser/argparser_argument.h"
 
-t_argparser_argument		*argparser_argument_new(char char_key, char *str_key, char *help, int flags)
+t_argparser_argument		*argparser_argument_new(char char_key,
+													char *str_key,
+													char *help,
+													int flags)
 {
 	t_argparser_argument		*this;
 

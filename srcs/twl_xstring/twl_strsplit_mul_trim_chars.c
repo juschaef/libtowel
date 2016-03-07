@@ -15,8 +15,7 @@
 #include "twl_xstring.h"
 #include "twl_stdio.h"
 
-
-static int		twl_count_words(const char *s, char *c)
+static int	twl_count_words(const char *s, char *c)
 {
 	int		count;
 	int		insub;
@@ -37,7 +36,7 @@ static int		twl_count_words(const char *s, char *c)
 	return (count);
 }
 
-static int		twl_wordlen(const char *s, char *c)
+static int	twl_wordlen(const char *s, char *c)
 {
 	int		len;
 
@@ -50,8 +49,8 @@ static int		twl_wordlen(const char *s, char *c)
 	return (len);
 }
 
-char						**twl_strsplit_mul_trim_chars(char const *s,
-									char *split_chars, char *trim_chars)
+char		**twl_strsplit_mul_trim_chars(char const *s, char *split_chars,
+															char *trim_chars)
 {
 	char	**t;
 	int		word_count;

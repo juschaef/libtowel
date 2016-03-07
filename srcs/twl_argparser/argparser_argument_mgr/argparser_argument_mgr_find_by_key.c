@@ -13,7 +13,8 @@
 #include "twl_color.h"
 #include "twl_argparser/argparser_argument_mgr.h"
 
-t_argparser_argument *argparser_argument_mgr_find_by_key(t_lst *arguments, char *key)
+t_argparser_argument	*argparser_argument_mgr_find_by_key(t_lst *arguments,
+																	char *key)
 {
 	return (twl_lst_find(arguments, argparser_argument_test_by_key_void, key));
 }

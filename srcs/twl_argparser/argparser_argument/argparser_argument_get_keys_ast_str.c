@@ -14,7 +14,8 @@
 #include "twl_stdio.h"
 #include "twl_argparser/argparser.h"
 
-char				*argparser_argument_get_keys_ast_str(t_argparser_argument *argument)
+char				*argparser_argument_get_keys_ast_str(
+												t_argparser_argument *argument)
 {
 	char			*keys;
 	char			*option_argument;
@@ -25,7 +26,10 @@ char				*argparser_argument_get_keys_ast_str(t_argparser_argument *argument)
 	else
 		option_argument = "";
 	if (argument->char_key && argument->str_key)
-		twl_asprintf(&keys, "-%c%s, --%s%s", argument->char_key, option_argument, argument->str_key, option_argument);
+		twl_asprintf(&keys, "-%c%s, --%s%s", argument->char_key,
+												option_argument,
+												argument->str_key,
+												option_argument);
 	else if (argument->char_key)
 		twl_asprintf(&keys, "-%c%s", argument->char_key, option_argument);
 	else if (argument->str_key)

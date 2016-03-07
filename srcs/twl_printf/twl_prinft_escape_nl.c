@@ -19,8 +19,7 @@ int					twl_printf_escape_nl(const char *fmt, ...)
 {
 	t_pf	*pf;
 	size_t	len;
-	size_t			nl_count;
-
+	size_t	nl_count;
 
 	pf = pf_create((char *)fmt);
 	va_start(pf->arglist, (char *)fmt);
