@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_ARGPARSE_ITEM_MGR_H
-# define TWL_ARGPARSE_ITEM_MGR_H
+#ifndef TWL_ARGPARSE_ARGUMENT_MGR_H
+# define TWL_ARGPARSE_ARGUMENT_MGR_H
 
 # include <stddef.h>
 # include <stdbool.h>
@@ -21,8 +21,10 @@
 
 t_lst				*argparser_argument_mgr_new(void);
 void				argparser_argument_mgr_del(t_lst *arguments);
-void				argparser_argument_mgr_add(t_lst *arguments, t_argparser_argument *argparser_argument);
-void				argparser_argument_mgr_remove(t_lst *arguments, t_argparser_argument *argparser_argument);
+void				argparser_argument_mgr_add(t_lst *arguments,
+									t_argparser_argument *argparser_argument);
+void				argparser_argument_mgr_remove(t_lst *arguments,
+									t_argparser_argument *argparser_argument);
 void				argparser_argument_mgr_print(t_lst *arguments);
 
 char				*argparser_argument_mgr_get_all_chars(t_lst *arguments);
