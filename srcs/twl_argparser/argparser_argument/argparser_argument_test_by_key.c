@@ -14,7 +14,8 @@
 #include "twl_xstring.h"
 #include "twl_argparser/argparser_argument.h"
 
-bool				argparser_argument_test_by_key(t_argparser_argument *this, char *key)
+bool				argparser_argument_test_by_key(t_argparser_argument *this,
+																	char *key)
 {
 	if (twl_strlen(key) == 1)
 	{

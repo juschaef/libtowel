@@ -14,7 +14,8 @@
 #include "twl_argparser/argparser.h"
 #include "twl_argparser/argparser_result.h"
 
-t_argparser_result			*argparser_result_new(t_argparser *argparser, char *command_name)
+t_argparser_result			*argparser_result_new(t_argparser *argparser,
+															char *command_name)
 {
 	t_argparser_result		*this;
 

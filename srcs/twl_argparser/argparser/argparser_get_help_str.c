@@ -14,7 +14,8 @@
 #include "twl_stdio.h"
 #include "twl_argparser/argparser.h"
 
-static void			print_argparser_argument_fn(void *argument_, void *help_str_)
+static void			print_argparser_argument_fn(void *argument_,
+																void *help_str_)
 {
 	t_argparser_argument	*argument;
 	char					*keys;

@@ -22,7 +22,8 @@ static void			iter_valid_options_fn(void *result_item_)
 
 	result_item = result_item_;
 	keys = argparser_argument_get_keys_ast_str(result_item->argparser_argument);
-	twl_printf("  %-30s%s\n", keys, result_item->option_argument ? result_item->option_argument : "");
+	twl_printf("  %-30s%s\n", keys, result_item->option_argument ?
+											result_item->option_argument : "");
 	free(keys);
 }
 

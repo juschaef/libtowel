@@ -24,7 +24,7 @@ char	*twl_lltoa(long long ln)
 	char	*tmp;
 
 	if (ln == LLONG_MIN)
-		return twl_strdup(TWL_LLTOA_LLONG_MIN_STR);
+		return (twl_strdup(TWL_LLTOA_LLONG_MIN_STR));
 	is_neg = 0;
 	if (ln < 0)
 	{

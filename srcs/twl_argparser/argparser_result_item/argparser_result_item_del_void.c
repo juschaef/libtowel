@@ -13,7 +13,8 @@
 #include <stdlib.h>
 #include "twl_argparser/argparser_result_item.h"
 
-void				argparser_result_item_del_void(t_argparser_result_item *this)
+void				argparser_result_item_del_void(
+												t_argparser_result_item *this)
 {
 	argparser_result_item_del(this);
 }

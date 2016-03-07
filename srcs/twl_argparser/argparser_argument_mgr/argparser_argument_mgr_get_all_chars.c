@@ -12,7 +12,8 @@
 
 #include "twl_argparser/argparser_argument_mgr.h"
 
-static void			print_argparser_argument_fn(void *argparser_argument_, void *all_chars_)
+static void			print_argparser_argument_fn(void *argparser_argument_,
+															void *all_chars_)
 {
 	t_argparser_argument	*argparser_argument;
 	char					*all_chars;

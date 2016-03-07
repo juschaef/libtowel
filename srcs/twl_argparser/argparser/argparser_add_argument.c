@@ -12,7 +12,8 @@
 
 #include "twl_argparser/argparser.h"
 
-void				argparser_add_argument(t_argparser *this, t_argparser_argument *item)
+void				argparser_add_argument(t_argparser *this,
+													t_argparser_argument *item)
 {
 	argparser_argument_mgr_add(this->arguments, item);
 }
