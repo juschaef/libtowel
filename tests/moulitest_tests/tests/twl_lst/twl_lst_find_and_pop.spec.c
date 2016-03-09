@@ -24,10 +24,10 @@ static void simple_test(t_test *test)
 	int nbr4 = 4;
 	int *nbr_p;
 
-	twl_lst_push(lst, &nbr1);
-	twl_lst_push(lst, &nbr2);
-	twl_lst_push(lst, &nbr3);
-	twl_lst_push(lst, &nbr4);
+	twl_lst_push_back(lst, &nbr1);
+	twl_lst_push_back(lst, &nbr2);
+	twl_lst_push_back(lst, &nbr3);
+	twl_lst_push_back(lst, &nbr4);
 
 	nbr_p = (int *)(twl_lst_find_and_pop(lst, find_nbr, &nbr3));
 	mt_assert(*nbr_p == 3 && twl_lst_len(lst) == 3);

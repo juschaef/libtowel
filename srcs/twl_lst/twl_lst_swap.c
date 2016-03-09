@@ -35,7 +35,7 @@ void			twl_lst_swap(t_lst *lst, int i, int j)
 	elemi = twl_lst_popi(lst, i);
 	twl_lst_insert(lst, i, elemj);
 	if ((int)twl_lst_len(lst) == j)
-		twl_lst_push(lst, elemi);
+		twl_lst_push_back(lst, elemi);
 	else
 		twl_lst_insert(lst, j, elemi);
 }

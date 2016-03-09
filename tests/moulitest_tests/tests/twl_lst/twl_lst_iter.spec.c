@@ -16,9 +16,9 @@ static void simple_test(t_test *test)
 	t_lst	*lst;
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
 
 	char *c = "z";
 	twl_lst_iter(lst, replace_first_letter, c);

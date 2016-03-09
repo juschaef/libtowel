@@ -23,8 +23,8 @@ static void			iter_neighbors_fn(t_graph_node *node, void *frontier,
 {
 	if (!twl_graph_node_mgr_contains(closed, node))
 	{
-		twl_lst_push(frontier, node);
-		twl_lst_push(closed, node);
+		twl_lst_push_back(frontier, node);
+		twl_lst_push_back(closed, node);
 		node->came_from_ = cur_node;
 	}
 }
@@ -81,8 +81,8 @@ t_lst				*twl_graph_breadth_first_shortest_path(t_graph *this,
 	closed = twl_lst_new();
 	start_node = twl_graph_get_node(this, start_node_id);
 	end_node = twl_graph_get_node(this, end_node_id);
-	twl_lst_push(frontier, start_node);
-	twl_lst_push(closed, start_node);
+	twl_lst_push_back(frontier, start_node);
+	twl_lst_push_back(closed, start_node);
 	while (twl_lst_len(frontier) > 0)
 	{
 		cur_node = twl_lst_shift(frontier);

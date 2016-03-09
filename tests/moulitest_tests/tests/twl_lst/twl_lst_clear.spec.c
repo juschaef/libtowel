@@ -9,8 +9,8 @@ static void simple_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, twl_lst_create_elem__(s1));
-	twl_lst_push(lst, twl_lst_create_elem__(s2));
+	twl_lst_push_back(lst, twl_lst_create_elem__(s1));
+	twl_lst_push_back(lst, twl_lst_create_elem__(s2));
 
 	twl_lst_clear(lst, NULL);
 

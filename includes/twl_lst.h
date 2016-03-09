@@ -75,9 +75,6 @@ void						*twl_lst_pop_front(t_lst *lst);
 void						*twl_lst_pop_back(t_lst *lst);
 void						twl_lst_push_front(t_lst *lst, void *data);
 void						twl_lst_push_back(t_lst *lst, void *data);
-
-void						twl_lst_push(t_lst *lst, void *data);
-void						*twl_lst_pop(t_lst *lst);
 void						twl_lst_insert(t_lst *lst, int index, void *data);
 void						*twl_lst_popi(t_lst *lst, int index);
 void						twl_lst_unshift(t_lst *lst, void *data);

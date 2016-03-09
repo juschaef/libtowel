@@ -7,12 +7,12 @@ static void simple(t_test *test)
 	t_lst	*lst_src;
 
 	lst_dst = twl_lst_new();
-	twl_lst_push(lst_dst, strdup("aaa"));
-	twl_lst_push(lst_dst, strdup("bbb"));
+	twl_lst_push_back(lst_dst, strdup("aaa"));
+	twl_lst_push_back(lst_dst, strdup("bbb"));
 
 	lst_src = twl_lst_new();
-	twl_lst_push(lst_src, strdup("ccc"));
-	twl_lst_push(lst_src, strdup("ddd"));
+	twl_lst_push_back(lst_src, strdup("ccc"));
+	twl_lst_push_back(lst_src, strdup("ddd"));
 
 	twl_lst_extend(lst_dst, lst_src);
 
@@ -31,10 +31,10 @@ static void simple2(t_test *test)
 	lst_dst = twl_lst_new();
 
 	lst_src = twl_lst_new();
-	twl_lst_push(lst_src, strdup("aaa"));
-	twl_lst_push(lst_src, strdup("bbb"));
-	twl_lst_push(lst_src, strdup("ccc"));
-	twl_lst_push(lst_src, strdup("ddd"));
+	twl_lst_push_back(lst_src, strdup("aaa"));
+	twl_lst_push_back(lst_src, strdup("bbb"));
+	twl_lst_push_back(lst_src, strdup("ccc"));
+	twl_lst_push_back(lst_src, strdup("ddd"));
 
 	twl_lst_extend(lst_dst, lst_src);
 
@@ -51,10 +51,10 @@ static void simple3(t_test *test)
 	t_lst	*lst_src;
 
 	lst_dst = twl_lst_new();
-	twl_lst_push(lst_dst, strdup("aaa"));
-	twl_lst_push(lst_dst, strdup("bbb"));
-	twl_lst_push(lst_dst, strdup("ccc"));
-	twl_lst_push(lst_dst, strdup("ddd"));
+	twl_lst_push_back(lst_dst, strdup("aaa"));
+	twl_lst_push_back(lst_dst, strdup("bbb"));
+	twl_lst_push_back(lst_dst, strdup("ccc"));
+	twl_lst_push_back(lst_dst, strdup("ddd"));
 
 	lst_src = twl_lst_new();
 

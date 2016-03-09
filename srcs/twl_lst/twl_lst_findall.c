@@ -23,7 +23,7 @@ t_lst				*twl_lst_findall(t_lst *lst, bool (*iter_fn)(void *data,
 	while (elem)
 	{
 		if (iter_fn(elem->data, context))
-			twl_lst_push(new_lst, elem->data);
+			twl_lst_push_back(new_lst, elem->data);
 		elem = elem->next;
 	}
 	return (new_lst);

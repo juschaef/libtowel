@@ -6,11 +6,11 @@ static void simple_test(t_test *test)
 	t_lst	*lst;
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
-	twl_lst_push(lst, strdup("ddd"));
-	twl_lst_push(lst, strdup("eee"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("ddd"));
+	twl_lst_push_back(lst, strdup("eee"));
 
 	twl_lst_swap(lst, 1, 3);
 
@@ -26,11 +26,11 @@ static void simple_test_extrem_begin(t_test *test)
 	t_lst	*lst;
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
-	twl_lst_push(lst, strdup("ddd"));
-	twl_lst_push(lst, strdup("eee"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("ddd"));
+	twl_lst_push_back(lst, strdup("eee"));
 
 	twl_lst_swap(lst, 0, 3);
 
@@ -46,11 +46,11 @@ static void simple_test_extrem_nearby(t_test *test)
 	t_lst	*lst;
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
-	twl_lst_push(lst, strdup("ddd"));
-	twl_lst_push(lst, strdup("eee"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("ddd"));
+	twl_lst_push_back(lst, strdup("eee"));
 
 	twl_lst_swap(lst, 0, 1);
 
@@ -66,11 +66,11 @@ static void simple_test_extrem_end(t_test *test)
 	t_lst	*lst;
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
-	twl_lst_push(lst, strdup("ddd"));
-	twl_lst_push(lst, strdup("eee"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("ddd"));
+	twl_lst_push_back(lst, strdup("eee"));
 
 	twl_lst_swap(lst, 0, 4);
 

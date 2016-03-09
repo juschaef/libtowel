@@ -6,9 +6,9 @@ static void simple_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("tata"));
-	twl_lst_push(lst, strdup("tata"));
-	twl_lst_push(lst, strdup("tata"));
+	twl_lst_push_back(lst, strdup("tata"));
+	twl_lst_push_back(lst, strdup("tata"));
+	twl_lst_push_back(lst, strdup("tata"));
 	mt_assert(!!twl_lst_get_rand(lst));
 
 }

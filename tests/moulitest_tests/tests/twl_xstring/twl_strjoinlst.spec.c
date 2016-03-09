@@ -7,9 +7,9 @@ static void simple_test(t_test *test)
 	char *output;
 
 	lst = twl_lst_new();
-	twl_lst_push(lst, "aaa");
-	twl_lst_push(lst, "bbb");
-	twl_lst_push(lst, "ccc");
+	twl_lst_push_back(lst, "aaa");
+	twl_lst_push_back(lst, "bbb");
+	twl_lst_push_back(lst, "ccc");
 
 	output = twl_strjoinlst(lst, " ");
 	mt_assert(strcmp(output, "aaa bbb ccc") == 0);

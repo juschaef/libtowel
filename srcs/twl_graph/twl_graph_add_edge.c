@@ -30,7 +30,7 @@ t_graph_edge_id			twl_graph_add_edge(t_graph *this,
 	edge = twl_graph_edge_new(this->edge_id_count_, node1, node2, data);
 	if (!twl_graph_edge_mgr_find_by_id(this->edges_, edge->id_))
 	{
-		twl_lst_push(this->edges_, edge);
+		twl_lst_push_back(this->edges_, edge);
 	}
 	else
 	{

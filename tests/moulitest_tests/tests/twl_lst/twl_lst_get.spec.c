@@ -6,9 +6,9 @@ static void simple_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("tata"));
-	twl_lst_push(lst, strdup("tutu"));
-	twl_lst_push(lst, strdup("toto"));
+	twl_lst_push_back(lst, strdup("tata"));
+	twl_lst_push_back(lst, strdup("tutu"));
+	twl_lst_push_back(lst, strdup("toto"));
 
 	mt_assert(strcmp(twl_lst_get(lst, 0), "tata") == 0);
 	mt_assert(strcmp(twl_lst_get(lst, 1), "tutu") == 0);
@@ -22,9 +22,9 @@ static void negative_index(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("tata"));
-	twl_lst_push(lst, strdup("tutu"));
-	twl_lst_push(lst, strdup("toto"));
+	twl_lst_push_back(lst, strdup("tata"));
+	twl_lst_push_back(lst, strdup("tutu"));
+	twl_lst_push_back(lst, strdup("toto"));
 
 	mt_assert(strcmp(twl_lst_get(lst, -3), "tata") == 0);
 	mt_assert(strcmp(twl_lst_get(lst, -2), "tutu") == 0);
@@ -38,9 +38,9 @@ static void non_existing_index(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("tata"));
-	twl_lst_push(lst, strdup("tutu"));
-	twl_lst_push(lst, strdup("toto"));
+	twl_lst_push_back(lst, strdup("tata"));
+	twl_lst_push_back(lst, strdup("tutu"));
+	twl_lst_push_back(lst, strdup("toto"));
 
 	mt_assert(twl_lst_get(lst, 10) == NULL);
 }

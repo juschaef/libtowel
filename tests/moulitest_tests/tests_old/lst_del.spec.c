@@ -21,8 +21,8 @@ UT_TEST(twl_lst_del)
 	str2 = strdup("bbb");
 	elem1 = twl_lst_create_elem(str1);
 	elem2 = twl_lst_create_elem(str2);
-	twl_lst_push(lst, elem1);
-	twl_lst_push(lst, elem2);
+	twl_lst_push_back(lst, elem1);
+	twl_lst_push_back(lst, elem2);
 
 	UT_ASSERT(twl_lst_len(lst) == 2);
 

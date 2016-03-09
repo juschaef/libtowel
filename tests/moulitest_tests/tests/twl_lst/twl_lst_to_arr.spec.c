@@ -10,9 +10,9 @@ static void simple_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
 
 	arr = (char **)twl_lst_to_arr(lst);
 

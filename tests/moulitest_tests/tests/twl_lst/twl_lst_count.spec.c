@@ -18,12 +18,12 @@ static void test_simple_count(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("4444444"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("0"));
-	twl_lst_push(lst, strdup("1111"));
-	twl_lst_push(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("4444444"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("0"));
+	twl_lst_push_back(lst, strdup("1111"));
+	twl_lst_push_back(lst, strdup("ccc"));
 
 	mt_assert(twl_lst_count(lst, twl_count_chars_3, NULL) == 3);
 }

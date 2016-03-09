@@ -28,10 +28,10 @@ static void simple_test(t_test *test)
 	t_lst	*lst;
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
-	twl_lst_push(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("bbb"));
 
 	del_counter = 0;
 	twl_lst_remove_if(lst, filter_fn, "bbb", delfn);

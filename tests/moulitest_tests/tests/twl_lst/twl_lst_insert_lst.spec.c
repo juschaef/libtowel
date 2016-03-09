@@ -8,11 +8,11 @@ static void simple_test(t_test *test)
 	lst_dest = twl_lst_new();
 	lst_src = twl_lst_new();
 
-	twl_lst_push(lst_dest, strdup("111"));
-	twl_lst_push(lst_dest, strdup("444"));
-	twl_lst_push(lst_dest, strdup("555"));
-	twl_lst_push(lst_src, strdup("222"));
-	twl_lst_push(lst_src, strdup("333"));
+	twl_lst_push_back(lst_dest, strdup("111"));
+	twl_lst_push_back(lst_dest, strdup("444"));
+	twl_lst_push_back(lst_dest, strdup("555"));
+	twl_lst_push_back(lst_src, strdup("222"));
+	twl_lst_push_back(lst_src, strdup("333"));
 
 	twl_lst_insert_lst(lst_dest, 1, lst_src);
 
@@ -35,11 +35,11 @@ static void head_test(t_test *test)
 	lst_dest = twl_lst_new();
 	lst_src = twl_lst_new();
 
-	twl_lst_push(lst_dest, strdup("222"));
-	twl_lst_push(lst_dest, strdup("333"));
-	twl_lst_push(lst_dest, strdup("444"));
-	twl_lst_push(lst_src, strdup("000"));
-	twl_lst_push(lst_src, strdup("111"));
+	twl_lst_push_back(lst_dest, strdup("222"));
+	twl_lst_push_back(lst_dest, strdup("333"));
+	twl_lst_push_back(lst_dest, strdup("444"));
+	twl_lst_push_back(lst_src, strdup("000"));
+	twl_lst_push_back(lst_src, strdup("111"));
 
 	twl_lst_insert_lst(lst_dest, 0, lst_src);
 

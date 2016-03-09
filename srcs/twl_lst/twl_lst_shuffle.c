@@ -23,7 +23,7 @@ void				twl_lst_shuffle(t_lst *lst)
 	lst->head = NULL;
 	while (twl_lst_len(tmp))
 	{
-		twl_lst_push(lst,
+		twl_lst_push_back(lst,
 				twl_lst_popi(tmp, twl_lst_indexof(tmp, twl_lst_get_rand(tmp))));
 	}
 	twl_lst_del(tmp, NULL);

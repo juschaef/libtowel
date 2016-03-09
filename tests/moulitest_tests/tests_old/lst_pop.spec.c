@@ -7,18 +7,18 @@ UT_TEST(twl_lst_pop)
 	// t_lst_elem__ *elem;
 	// lst = twl_lst_new();
 
-	// twl_lst_push(lst, twl_lst_create_elem(strdup("aaa")));
+	// twl_lst_push_back(lst, twl_lst_create_elem(strdup("aaa")));
 	// elem = lst->elems;
-	// twl_lst_pop(lst);
+	// twl_lst_pop_back(lst);
 	// UT_ASSERT(elem->data == NULL);
 	// UT_ASSERT(twl_lst_len(lst) == 0);
 
 	// lst = twl_lst_new();
-	// twl_lst_push(lst, twl_lst_create_elem(strdup("111")));
-	// twl_lst_push(lst, twl_lst_create_elem(strdup("222")));
-	// twl_lst_push(lst, twl_lst_create_elem(strdup("333")));
+	// twl_lst_push_back(lst, twl_lst_create_elem(strdup("111")));
+	// twl_lst_push_back(lst, twl_lst_create_elem(strdup("222")));
+	// twl_lst_push_back(lst, twl_lst_create_elem(strdup("333")));
 	// UT_ASSERT(twl_lst_len(lst) == 3);
-	// twl_lst_pop(lst);
+	// twl_lst_pop_back(lst);
 
 	// UT_ASSERT(twl_lst_get(lst, 0)->prev == NULL);
 	// UT_ASSERT(strequ(twl_lst_get(lst, 0)->data, "111"));
@@ -28,8 +28,8 @@ UT_TEST(twl_lst_pop)
 	// UT_ASSERT(twl_lst_get(lst, 2) == NULL);
 	// UT_ASSERT(twl_lst_len(lst) == 2);
 
-	// twl_lst_pop(lst);
+	// twl_lst_pop_back(lst);
 	// UT_ASSERT(twl_lst_len(lst) == 1);
-	// twl_lst_pop(lst);
+	// twl_lst_pop_back(lst);
 	// UT_ASSERT(twl_lst_len(lst) == 0);
 }

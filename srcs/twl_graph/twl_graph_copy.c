@@ -21,7 +21,7 @@ static void			push_node_fn(void *node, void *new_node_list)
 
 	new_node = twl_graph_node_new(twl_graph_node_get_id(node),
 											twl_graph_node_get_data(node));
-	twl_lst_push(new_node_list, new_node);
+	twl_lst_push_back(new_node_list, new_node);
 }
 
 static void			push_edge_fn(void *edge, void *new_graph)

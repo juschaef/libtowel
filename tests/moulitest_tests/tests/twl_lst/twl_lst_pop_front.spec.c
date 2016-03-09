@@ -8,9 +8,9 @@ static void simple_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
 
 	s = twl_lst_pop_front(lst);
 	mt_assert(strcmp(s, "aaa") == 0);

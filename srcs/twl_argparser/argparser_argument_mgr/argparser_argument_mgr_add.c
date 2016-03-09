@@ -15,5 +15,5 @@
 void				argparser_argument_mgr_add(t_lst *arguments,
 									t_argparser_argument *argparser_argument)
 {
-	twl_lst_push(arguments, argparser_argument);
+	twl_lst_push_back(arguments, argparser_argument);
 }

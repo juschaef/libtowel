@@ -37,7 +37,7 @@ t_lst		*pf_split(char *s)
 	while (1)
 	{
 		tmp = pf_get_seg(s);
-		twl_lst_push(lst, tmp);
+		twl_lst_push_back(lst, tmp);
 		s = s + twl_strlen(tmp);
 		if (!*s)
 			break ;

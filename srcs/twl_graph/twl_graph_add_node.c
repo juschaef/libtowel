@@ -21,7 +21,7 @@ t_graph_node_id			twl_graph_add_node(t_graph *graph, void *data)
 	node = twl_graph_node_new(graph->node_id_count_, data);
 	if (!twl_graph_node_mgr_find_by_id(graph->nodes_, node->id_))
 	{
-		twl_lst_push(graph->nodes_, node);
+		twl_lst_push_back(graph->nodes_, node);
 	}
 	else
 	{

@@ -15,5 +15,5 @@
 void				twl_graph_node_add_edge(t_graph_node *node,
 															t_graph_edge *edge)
 {
-	twl_lst_push(node->edges_, edge);
+	twl_lst_push_back(node->edges_, edge);
 }

@@ -18,9 +18,9 @@ static void simple_test(t_test *test)
 
 	bzero(str, 4);
 	lst = twl_lst_new();
-	twl_lst_push(lst, strdup("a"));
-	twl_lst_push(lst, strdup("b"));
-	twl_lst_push(lst, strdup("c"));
+	twl_lst_push_back(lst, strdup("a"));
+	twl_lst_push_back(lst, strdup("b"));
+	twl_lst_push_back(lst, strdup("c"));
 
 	twl_lst_iterb(lst, cat_str, str);
 	mt_assert(strcmp(str, "cba") == 0);

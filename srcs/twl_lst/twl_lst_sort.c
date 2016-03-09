@@ -17,7 +17,7 @@
 
 static void		push_item_to_lst(void *data, void *lst)
 {
-	twl_lst_push((t_lst *)lst, data);
+	twl_lst_push_back((t_lst *)lst, data);
 }
 
 void			twl_lst_sort(t_lst *lst, t_sort_cmp_fn *cmp_fn, void *context)

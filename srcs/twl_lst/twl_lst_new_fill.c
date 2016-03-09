@@ -19,6 +19,6 @@ t_lst				*twl_lst_new_fill(int nbr, void *(*constructor)(void))
 
 	lst = twl_lst_new();
 	while (nbr--)
-		twl_lst_push(lst, constructor());
+		twl_lst_push_back(lst, constructor());
 	return (lst);
 }

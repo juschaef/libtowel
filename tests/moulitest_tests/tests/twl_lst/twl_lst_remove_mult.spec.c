@@ -6,11 +6,11 @@ static void simple_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("1"));
-	twl_lst_push(lst, strdup("2"));
-	twl_lst_push(lst, strdup("3"));
-	twl_lst_push(lst, strdup("4"));
-	twl_lst_push(lst, strdup("5"));
+	twl_lst_push_back(lst, strdup("1"));
+	twl_lst_push_back(lst, strdup("2"));
+	twl_lst_push_back(lst, strdup("3"));
+	twl_lst_push_back(lst, strdup("4"));
+	twl_lst_push_back(lst, strdup("5"));
 
 	twl_lst_remove_mult(lst, 1, 4, free);
 	mt_assert(strcmp(twl_lst_get(lst, 0), "1") == 0);
@@ -26,11 +26,11 @@ static void head_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("1"));
-	twl_lst_push(lst, strdup("2"));
-	twl_lst_push(lst, strdup("3"));
-	twl_lst_push(lst, strdup("4"));
-	twl_lst_push(lst, strdup("5"));
+	twl_lst_push_back(lst, strdup("1"));
+	twl_lst_push_back(lst, strdup("2"));
+	twl_lst_push_back(lst, strdup("3"));
+	twl_lst_push_back(lst, strdup("4"));
+	twl_lst_push_back(lst, strdup("5"));
 
 	twl_lst_remove_mult(lst, 0, 3, free);
 	mt_assert(strcmp(twl_lst_get(lst, 0), "4") == 0);
@@ -46,11 +46,11 @@ static void tail_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("1"));
-	twl_lst_push(lst, strdup("2"));
-	twl_lst_push(lst, strdup("3"));
-	twl_lst_push(lst, strdup("4"));
-	twl_lst_push(lst, strdup("5"));
+	twl_lst_push_back(lst, strdup("1"));
+	twl_lst_push_back(lst, strdup("2"));
+	twl_lst_push_back(lst, strdup("3"));
+	twl_lst_push_back(lst, strdup("4"));
+	twl_lst_push_back(lst, strdup("5"));
 
 	twl_lst_remove_mult(lst, 2, 5, free);
 	mt_assert(strcmp(twl_lst_get(lst, 0), "1") == 0);

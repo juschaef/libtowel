@@ -28,7 +28,7 @@ t_lst						*twl_lst_slice(t_lst *lst, int begin, int end)
 		twl_putstr_fd("\n[warning] Index error !\n", 2);
 	while (begin < end)
 	{
-		twl_lst_push(new_lst, elem->data);
+		twl_lst_push_back(new_lst, elem->data);
 		begin++;
 		elem = elem->next;
 	}

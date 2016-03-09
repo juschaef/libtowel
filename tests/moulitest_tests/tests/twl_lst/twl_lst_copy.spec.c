@@ -13,11 +13,11 @@ static void test_data(t_test *test)
 	t_lst	*lst;
 	t_lst	*lst_new;
 	lst = twl_lst_new();
-	
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
-	twl_lst_push(lst, strdup("ddd"));
+
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("ddd"));
 
 	lst_new = twl_lst_copy(lst, copy_fn);
 
@@ -33,9 +33,9 @@ static void test_deep_copy(t_test *test)
 	t_lst	*lst;
 	t_lst	*lst_new;
 	lst = twl_lst_new();
-	
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
+
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
 
 	lst_new = twl_lst_copy(lst, copy_fn);
 
@@ -49,9 +49,9 @@ static void test_shallow_copy(t_test *test)
 	t_lst	*lst;
 	t_lst	*lst_new;
 	lst = twl_lst_new();
-	
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
+
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
 
 	lst_new = twl_lst_copy(lst, NULL);
 

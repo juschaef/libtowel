@@ -14,7 +14,7 @@
 
 static void			iter_fn(void *data, void *dst)
 {
-	twl_lst_push(dst, data);
+	twl_lst_push_back(dst, data);
 }
 
 void				twl_lst_extend(t_lst *dst, t_lst *src)

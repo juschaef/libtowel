@@ -25,9 +25,9 @@ static void simple_test(t_test *test)
 	t_lst	*lst;
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaaa"));
-	twl_lst_push(lst, strdup("bbbb"));
-	twl_lst_push(lst, strdup("cccc"));
+	twl_lst_push_back(lst, strdup("aaaa"));
+	twl_lst_push_back(lst, strdup("bbbb"));
+	twl_lst_push_back(lst, strdup("cccc"));
 
 	char *c1 = "y";
 	char *c2 = "z";

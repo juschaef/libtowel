@@ -6,9 +6,9 @@ static void simple_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("111"));
-	twl_lst_push(lst, strdup("333"));
-	twl_lst_push(lst, strdup("555"));
+	twl_lst_push_back(lst, strdup("111"));
+	twl_lst_push_back(lst, strdup("333"));
+	twl_lst_push_back(lst, strdup("555"));
 
 	twl_lst_insert(lst, 1, strdup("222"));
 	twl_lst_insert(lst, 3, strdup("444"));
@@ -26,7 +26,7 @@ static void head_test(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("111"));
+	twl_lst_push_back(lst, strdup("111"));
 	twl_lst_insert(lst, 0, strdup("222"));
 
 	mt_assert(strcmp(twl_lst_get(lst, 0), "222") == 0);

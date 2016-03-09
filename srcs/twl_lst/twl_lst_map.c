@@ -21,7 +21,7 @@ t_lst		*twl_lst_map(t_lst *lst, void *(*f)(void *data))
 	new_lst = twl_lst_new();
 	while (elem)
 	{
-		twl_lst_push(new_lst, f(elem->data));
+		twl_lst_push_back(new_lst, f(elem->data));
 		elem = elem->next;
 	}
 	return (new_lst);

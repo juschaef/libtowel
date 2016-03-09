@@ -31,13 +31,13 @@ static void			build_push_result_item(t_lst *tokens_to_consume,
 			continue ;
 		}
 		{
-			twl_lst_push(result->remainders, twl_strdup(str_token));
+			twl_lst_push_back(result->remainders, twl_strdup(str_token));
 			break ;
 		}
 	}
 	while ((str_token = twl_lst_pop_front(tokens_to_consume)))
 	{
-		twl_lst_push(result->remainders, twl_strdup(str_token));
+		twl_lst_push_back(result->remainders, twl_strdup(str_token));
 	}
 }
 

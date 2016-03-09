@@ -15,9 +15,9 @@ static void test_relink(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
 	mt_assert(twl_lst_len(lst) == 3);
 
 	twl_lst_del_elem__(lst, lst->head->next, del_data);
@@ -33,8 +33,8 @@ static void test_del_first(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
 
 	twl_lst_del_elem__(lst, lst->head, del_data);
 
@@ -48,8 +48,8 @@ static void test_del_last(t_test *test)
 
 	lst = twl_lst_new();
 
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
 
 	twl_lst_del_elem__(lst, lst->head->next, del_data);
 

@@ -8,11 +8,11 @@ static void simple_test(t_test *test)
 	t_lst *lst;
 
 	lst = twl_lst_new();
-	twl_lst_push(lst, strdup("aaa"));
-	twl_lst_push(lst, strdup("bbb"));
-	twl_lst_push(lst, strdup("ccc"));
-	twl_lst_push(lst, strdup("ddd"));
-	twl_lst_push(lst, strdup("eee"));
+	twl_lst_push_back(lst, strdup("aaa"));
+	twl_lst_push_back(lst, strdup("bbb"));
+	twl_lst_push_back(lst, strdup("ccc"));
+	twl_lst_push_back(lst, strdup("ddd"));
+	twl_lst_push_back(lst, strdup("eee"));
 
 	arr = twl_lst_to_arr2(lst, 3);
 	mt_assert(strcmp(arr[0][0], "aaa") == 0);

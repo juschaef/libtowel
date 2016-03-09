@@ -8,14 +8,14 @@ UT_TEST(twl_lst_push)
 
 	char *str1;
 	str1 = "aaa";
-	twl_lst_push(lst, (str1));
+	twl_lst_push_back(lst, (str1));
 	UT_ASSERT(strequ(lst->elems->data, "aaa"));
 	UT_ASSERT(str1 == lst->elems->data);
 
 	lst = twl_lst_new();
-	twl_lst_push(lst, "aaa");
-	twl_lst_push(lst, "bbb");
-	twl_lst_push(lst, "ccc");
+	twl_lst_push_back(lst, "aaa");
+	twl_lst_push_back(lst, "bbb");
+	twl_lst_push_back(lst, "ccc");
 	UT_ASSERT(strequ(twl_lst_get(lst, 0)->data, "aaa"));
 	UT_ASSERT(strequ(twl_lst_get(lst, 1)->data, "bbb"));
 	UT_ASSERT(strequ(twl_lst_get(lst, 2)->data, "ccc"));
@@ -31,11 +31,11 @@ UT_TEST(twl_lst_push)
 
 	lst = twl_lst_new();
 	int nbr = 3;
-	twl_lst_push(lst, &nbr);
+	twl_lst_push_back(lst, &nbr);
 	UT_ASSERT(*((int *)twl_lst_get(lst, 0)->data) == nbr);
 
 	lst = twl_lst_new();
-	twl_lst_push(lst, "aaa");
+	twl_lst_push_back(lst, "aaa");
 
 	UT_ASSERT(twl_lst_get(lst, 0)->parent == lst);
 }

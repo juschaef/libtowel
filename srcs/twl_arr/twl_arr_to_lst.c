@@ -16,7 +16,7 @@
 
 static void		push_to_lst(void *elem, void *lst)
 {
-	twl_lst_push(lst, elem);
+	twl_lst_push_back(lst, elem);
 }
 
 t_lst			*twl_arr_to_lst(void *arr)

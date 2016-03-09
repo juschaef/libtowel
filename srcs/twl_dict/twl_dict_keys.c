@@ -22,7 +22,7 @@ t_lst				*twl_dict_keys(t_dict *dict)
 	elem = dict->head;
 	while (elem)
 	{
-		twl_lst_push(keys, twl_strdup(elem->key));
+		twl_lst_push_back(keys, twl_strdup(elem->key));
 		elem = elem->next;
 	}
 	return (keys);

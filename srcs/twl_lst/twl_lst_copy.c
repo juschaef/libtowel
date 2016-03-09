@@ -22,9 +22,9 @@ t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
 	while (elem)
 	{
 		if (copy_fn)
-			twl_lst_push(lst_new, copy_fn(elem->data));
+			twl_lst_push_back(lst_new, copy_fn(elem->data));
 		else
-			twl_lst_push(lst_new, elem->data);
+			twl_lst_push_back(lst_new, elem->data);
 		elem = elem->next;
 	}
 	return (lst_new);
