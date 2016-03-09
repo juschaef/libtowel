@@ -95,6 +95,8 @@ void				twl_str_print_xtimes(char *str, int times);
 char				*twl_str_truncate(char *str, size_t len);
 char				*twl_str_truncate_free(char *str, size_t len);
 
+void				*twl_strdup_void(void *str);
+
 /*
 ** lst
 */

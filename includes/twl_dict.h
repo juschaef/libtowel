@@ -23,6 +23,7 @@ typedef t_lst_elem__	t_dict_elem;
 */
 
 t_dict				*twl_dict_new(void);
+t_lst				*twl_dict_copy(t_lst *lst, void *(*copy_fn)(void *data));
 void				twl_dict_del(t_dict *dict, void (*delfn)(void *));
 size_t				twl_dict_len(t_dict *dict);
 

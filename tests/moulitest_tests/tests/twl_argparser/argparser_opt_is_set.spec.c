@@ -11,6 +11,7 @@
 		argparser_add_argument(argparser, argparser_argument_new('n', "newline", "No newline", 0)); \
 		argparser_add_argument(argparser, argparser_argument_new('m', "module", "m opt", 0)); \
 		argparser_add_argument(argparser, argparser_argument_new('o', "order", "o opt", 0)); \
+		argparser_add_argument(argparser, argparser_argument_new('c', "command", "c command", 0)); \
 		t_lst *segs = twl_str_split_to_lst(input, " "); \
 		t_argparser_result *result = argparser_parse(argparser, segs); \
 		if (debug) \
@@ -44,6 +45,8 @@ mt_test_arg_parse_result_is_set(15, "echo -nm", "m", true, false);
 mt_test_arg_parse_result_is_set(16, "echo -nmo", "n", true, false);
 mt_test_arg_parse_result_is_set(17, "echo -nmo", "o", true, false);
 mt_test_arg_parse_result_is_set(18, "echo -nm", "module", true, false);
+mt_test_arg_parse_result_is_set(19, "echo bash -c 'echo abc'", "c", false, false);
+mt_test_arg_parse_result_is_set(20, "echo -- -c 'echo abc'", "c", false, false);
 
 void	suite_argparser_opt_is_set(t_suite *suite)
 {
@@ -65,4 +68,6 @@ void	suite_argparser_opt_is_set(t_suite *suite)
 	SUITE_ADD_TEST(suite, test_16);
 	SUITE_ADD_TEST(suite, test_17);
 	SUITE_ADD_TEST(suite, test_18);
+	SUITE_ADD_TEST(suite, test_19);
+	SUITE_ADD_TEST(suite, test_20);
 }

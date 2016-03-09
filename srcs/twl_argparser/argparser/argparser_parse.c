@@ -19,27 +19,24 @@ static void			build_push_result_item(t_lst *tokens_to_consume,
 													t_argparser_result *result)
 {
 	char					*str_token;
-	bool					double_hyphen_occurred;
 
-	double_hyphen_occurred = false;
 	while ((str_token = twl_lst_pop_front(tokens_to_consume)))
 	{
-		if (double_hyphen_occurred)
-		{
-			twl_lst_push(result->remainders, twl_strdup(str_token));
-			continue ;
-		}
 		if (twl_strequ(str_token, "--"))
-		{
-			double_hyphen_occurred = true;
-			continue ;
-		}
+			break ;
 		if (twl_str_starts_with(str_token, "-"))
 		{
 			argparser_parse_build_result_item_inner__(str_token, result,
 															tokens_to_consume);
 			continue ;
 		}
+		{
+			twl_lst_push(result->remainders, twl_strdup(str_token));
+			break ;
+		}
+	}
+	while ((str_token = twl_lst_pop_front(tokens_to_consume)))
+	{
 		twl_lst_push(result->remainders, twl_strdup(str_token));
 	}
 }
