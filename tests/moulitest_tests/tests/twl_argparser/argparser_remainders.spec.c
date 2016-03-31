@@ -33,6 +33,8 @@ mt_test_arg_parse_result_is_set(03, "echo bb ccc", "bb|ccc", false);
 mt_test_arg_parse_result_is_set(04, "echo -- -n", "-n", false);
 mt_test_arg_parse_result_is_set(05, "echo -- aa -m", "aa|-m", false);
 mt_test_arg_parse_result_is_set(06, "echo -- -n --zzz xxx", "-n|--zzz|xxx", false);
+mt_test_arg_parse_result_is_set(07, "echo -", "-", true);
+mt_test_arg_parse_result_is_set(08, "echo - aa bb", "-|aa|bb", true);
 
 void	suite_argparser_remainders(t_suite *suite)
 {
@@ -42,4 +44,6 @@ void	suite_argparser_remainders(t_suite *suite)
 	SUITE_ADD_TEST(suite, test_04);
 	SUITE_ADD_TEST(suite, test_05);
 	SUITE_ADD_TEST(suite, test_06);
+	SUITE_ADD_TEST(suite, test_07);
+	SUITE_ADD_TEST(suite, test_08);
 }
