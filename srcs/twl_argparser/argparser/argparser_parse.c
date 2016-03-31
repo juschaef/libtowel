@@ -24,12 +24,13 @@ static void			build_push_result_item(t_lst *tokens_to_consume,
 	{
 		if (twl_strequ(str_token, "--"))
 			break ;
-		if (twl_str_starts_with(str_token, "-"))
+		if (twl_str_starts_with(str_token, "-") && twl_strlen(str_token) >= 2)
 		{
 			argparser_parse_build_result_item_inner__(str_token, result,
 															tokens_to_consume);
 			continue ;
 		}
+		else
 		{
 			twl_lst_push_back(result->remainders, twl_strdup(str_token));
 			break ;
