@@ -22,14 +22,14 @@
 typedef struct		s_argparser
 {
 	char			*name;
-	char			*usage_extra;
+	char			*usage_text;
 	t_lst			*arguments;
 }					t_argparser;
 
 t_argparser			*argparser_new(char *name);
 void				argparser_del(t_argparser *argparser);
 
-void				argparser_set_usage_extra(t_argparser *this, char *text);
+void				argparser_set_usage(t_argparser *this, char *text);
 
 void				argparser_add_argument(t_argparser *this,
 													t_argparser_argument *item);

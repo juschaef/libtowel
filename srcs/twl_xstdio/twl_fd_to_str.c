@@ -17,7 +17,7 @@
 #include "twl_xstdio.h"
 #include "twl_xstring.h"
 
-#define MAX_FILESIZE 2 * 1000 * 1000
+#define MAX_FILESIZE 2 * 1000 * 1000 // TODO not reliable
 #define BUFF_READ_SIZE 42
 
 char				*twl_fd_to_str(int fd)

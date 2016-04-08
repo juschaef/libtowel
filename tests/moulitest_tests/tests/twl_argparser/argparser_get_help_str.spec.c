@@ -27,7 +27,7 @@ static void test_without_options(t_test *test)
 	t_argparser		*argparser;
 
 	argparser = argparser_new("42sh");
-	argparser_set_usage_extra(argparser, " some text");
+	argparser_set_usage(argparser, "some text");
 
 	// argparser_print_help(argparser);
 	mt_assert(strcmp(argparser_get_help_str(argparser),

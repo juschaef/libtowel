@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include "twl_argparser/argparser.h"
 
-void				argparser_set_usage_extra(t_argparser *this, char *text)
+void				argparser_set_usage(t_argparser *this, char *text)
 {
-	this->usage_extra = twl_strdup(text);
+	this->usage_text = twl_strdup(text);
 }

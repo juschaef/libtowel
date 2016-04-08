@@ -11,7 +11,7 @@ static void simple_test(t_test *test)
 	argparser_add_argument(argparser, argparser_argument_new('f', "force", "Force", 0));
 	argparser_add_argument(argparser, argparser_argument_new('t', "time", "Set time", 0));
 	argparser_add_argument(argparser, argparser_argument_new('d', "date", "Set date", ARGP_HAS_OPTION_ARGUMENT));
-	argparser_set_usage_extra(argparser, " some text");
+	argparser_set_usage(argparser, "[-eftd] some text");
 	// argparser_print_help(argparser);
 	mt_assert(strcmp(argparser_get_help_str(argparser),
 		"usage: 42sh [-eftd] some text\n"
@@ -23,7 +23,7 @@ static void simple_test(t_test *test)
 	argparser_del(argparser);
 }
 
-void	suite_argparser_usage_extra(t_suite *suite)
+void	suite_argparser_usage_text(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }
