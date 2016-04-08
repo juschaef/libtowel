@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#include "twl_xstdio.h"
 #include "twl_printf.h"
 
 int			twl_lprintf(const char *fmt, ...)
@@ -22,7 +23,7 @@ int			twl_lprintf(const char *fmt, ...)
 	size_t	len;
 	int		fd;
 
-	fd = open(".debug.out", O_CREAT | O_WRONLY | O_APPEND, 0644);
+	fd = open(DEBUG_FILE_PATH, O_CREAT | O_WRONLY | O_APPEND, 0644);
 	pf = pf_create((char *)fmt);
 	va_start(pf->arglist, (char *)fmt);
 	pf_prepare_xprintf__(pf);

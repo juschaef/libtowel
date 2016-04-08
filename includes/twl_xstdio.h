@@ -13,6 +13,7 @@
 #ifndef TWL_XSTDIO_H
 # define TWL_XSTDIO_H
 
+# define DEBUG_FILE_PATH "/tmp/.debug.out"
 # define COUCOU twl_lprintf("@ %s %s (%d)\n", __FILE__, __FUNCTION__, __LINE__);
 
 void				twl_putstr(char const *s);
