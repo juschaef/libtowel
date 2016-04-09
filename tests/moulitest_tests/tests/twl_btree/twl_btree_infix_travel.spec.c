@@ -22,11 +22,11 @@ static void simple_test(t_test *test)
 
 	count = 0;
 
-	btree = twl_btree_new();
-	twl_btree_insert(btree, "A", cmp_fn);
-	twl_btree_insert(btree, "B", cmp_fn);
-	twl_btree_insert(btree, "C", cmp_fn);
-	twl_btree_insert(btree, "D", cmp_fn);
+	btree = twl_btree_new(cmp_fn);
+	twl_btree_insert(btree, "A");
+	twl_btree_insert(btree, "B");
+	twl_btree_insert(btree, "C");
+	twl_btree_insert(btree, "D");
 	twl_btree_infix_travel(btree, travl_fn, &count);
 	mt_assert(count == 4);
 	twl_btree_del(btree);

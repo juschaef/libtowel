@@ -35,12 +35,12 @@ static void			process_recursiv(t_btree_node *cur_node, t_btree_node *new_node, i
 	}
 }
 
-void				twl_btree_insert(t_btree *this, void *data, int (*cmp_fn)(void *data, void *cur_data))
+void				twl_btree_insert(t_btree *this, void *data)
 {
 	t_btree_node	*new_node;
 	t_btree_node	*tmp;
 
-	if (twl_btree_find(this, data, cmp_fn))
+	if (twl_btree_find(this, data))
 		return ;
 	new_node = twl_btree_node_new(data);
 	tmp = this->head;
@@ -48,7 +48,7 @@ void				twl_btree_insert(t_btree *this, void *data, int (*cmp_fn)(void *data, vo
 		this->head = new_node;
 	else
 	{
-		process_recursiv(tmp, new_node, cmp_fn);
+		process_recursiv(tmp, new_node, this->cmp_fn);
 	}
 	this->size += 1;
 }

@@ -11,11 +11,11 @@ static void simple_test(t_test *test)
 {
 	t_btree			*btree;
 
-	btree = twl_btree_new();
-	twl_btree_insert(btree, "A", cmp_fn);
-	twl_btree_insert(btree, "B", cmp_fn);
-	twl_btree_insert(btree, "C", cmp_fn);
-	twl_btree_insert(btree, "D", cmp_fn);
+	btree = twl_btree_new(cmp_fn);
+	twl_btree_insert(btree, "A");
+	twl_btree_insert(btree, "B");
+	twl_btree_insert(btree, "C");
+	twl_btree_insert(btree, "D");
 	mt_assert(twl_btree_size(btree) == 4);
 	free(btree);
 }
@@ -24,7 +24,7 @@ static void simple_test2(t_test *test)
 {
 	t_btree			*btree;
 
-	btree = twl_btree_new();
+	btree = twl_btree_new(cmp_fn);
 	mt_assert(twl_btree_size(btree) == 0);
 	free(btree);
 }

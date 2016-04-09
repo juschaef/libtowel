@@ -15,18 +15,21 @@
 
 # include "twl_btree_node.h"
 
+typedef int (t_btree_cmp_fn)(void *data, void *ctx);
+
 typedef struct		s_btree
 {
 	t_btree_node	*head;
+	t_btree_cmp_fn	*cmp_fn;
 	size_t			size;
 }					t_btree;
 
-t_btree				*twl_btree_new();
+t_btree				*twl_btree_new(t_btree_cmp_fn *cmp_fn);
 void				twl_btree_del(t_btree *this);
 
-void				twl_btree_insert(t_btree *this, void *data, int	(*cmp_fn)(void *data, void *cur));
+void				twl_btree_insert(t_btree *this, void *data);
 
-void				*twl_btree_find(t_btree *this, void *data, int (*cmp_fn)(void *data, void *cur));
+void				*twl_btree_find(t_btree *this, void *data);
 
 void				twl_btree_prefix_travel(t_btree *this, void (*tr_fn)(void *data, void *ctx), void *ctx);
 void				twl_btree_infix_travel(t_btree *this, void (*tr_fn)(void *data, void *ctx), void *ctx);

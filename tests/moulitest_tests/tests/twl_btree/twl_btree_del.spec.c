@@ -5,7 +5,7 @@ static void simple_test(t_test *test)
 {
 	t_btree			*btree;
 
-	btree = twl_btree_new();
+	btree = twl_btree_new(NULL);
 	mt_assert(btree->head == NULL);
 	twl_btree_del(btree);
 }

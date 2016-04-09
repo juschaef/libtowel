@@ -12,12 +12,13 @@
 
 #include "twl_btree.h"
 
-t_btree				*twl_btree_new(void)
+t_btree				*twl_btree_new(t_btree_cmp_fn *cmp_fn)
 {
 	t_btree			*this;
 
 	this = twl_malloc_x0(sizeof(t_btree));
 	this->head = NULL;
 	this->size = 0;
+	this->cmp_fn = cmp_fn;
 	return (this);
 }

@@ -34,7 +34,7 @@ static void			*process_recursiv(t_btree_node *cur_node, t_btree_node *new_node, 
 	}
 }
 
-void				*twl_btree_find(t_btree *this, void *data, int (*cmp_fn)(void *data, void *cur_data))
+void				*twl_btree_find(t_btree *this, void *data)
 {
 	t_btree_node	*new_node;
 	t_btree_node	*tmp;
@@ -45,6 +45,6 @@ void				*twl_btree_find(t_btree *this, void *data, int (*cmp_fn)(void *data, voi
 		return (NULL);
 	else
 	{
-		return (process_recursiv(tmp, new_node, cmp_fn));
+		return (process_recursiv(tmp, new_node, this->cmp_fn));
 	}
 }

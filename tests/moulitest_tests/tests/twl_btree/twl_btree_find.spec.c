@@ -10,13 +10,13 @@ static void simple_test(t_test *test)
 {
 	t_btree			*btree;
 
-	btree = twl_btree_new();
-	twl_btree_insert(btree, "A", cmp_fn);
-	twl_btree_insert(btree, "B", cmp_fn);
-	twl_btree_insert(btree, "C", cmp_fn);
-	twl_btree_insert(btree, "D", cmp_fn);
-	mt_assert(strcmp(twl_btree_find(btree, "A", cmp_fn), "A") == 0);
-	mt_assert(strcmp(twl_btree_find(btree, "B", cmp_fn), "B") == 0);
+	btree = twl_btree_new(cmp_fn);
+	twl_btree_insert(btree, "A");
+	twl_btree_insert(btree, "B");
+	twl_btree_insert(btree, "C");
+	twl_btree_insert(btree, "D");
+	mt_assert(strcmp(twl_btree_find(btree, "A"), "A") == 0);
+	mt_assert(strcmp(twl_btree_find(btree, "B"), "B") == 0);
 	twl_btree_del(btree);
 }
 
@@ -24,12 +24,12 @@ static void simple_test2(t_test *test)
 {
 	t_btree			*btree;
 
-	btree = twl_btree_new();
-	twl_btree_insert(btree, "A", cmp_fn);
-	twl_btree_insert(btree, "B", cmp_fn);
-	twl_btree_insert(btree, "C", cmp_fn);
-	twl_btree_insert(btree, "D", cmp_fn);
-	mt_assert(twl_btree_find(btree, "V", cmp_fn) == NULL);
+	btree = twl_btree_new(cmp_fn);
+	twl_btree_insert(btree, "A");
+	twl_btree_insert(btree, "B");
+	twl_btree_insert(btree, "C");
+	twl_btree_insert(btree, "D");
+	mt_assert(twl_btree_find(btree, "V") == NULL);
 	twl_btree_del(btree);
 }
 
@@ -37,8 +37,8 @@ static void simple_test3(t_test *test)
 {
 	t_btree			*btree;
 
-	btree = twl_btree_new();
-	mt_assert(twl_btree_find(btree, "A", cmp_fn) == NULL);
+	btree = twl_btree_new(cmp_fn);
+	mt_assert(twl_btree_find(btree, "A") == NULL);
 	twl_btree_del(btree);
 }
 
