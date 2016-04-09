@@ -1,13 +1,16 @@
 #include <project.h>
 #include "twl_btree.h"
 
-static void			travl_fn(void *str_, void *count_ptr_)
+static void			travl_fn(void *str_, void *accumulator_)
 {
-	int				*count_ptr;
+	char			*accumulator;
+	char			*str;
 
-	count_ptr = count_ptr_;
-	*count_ptr += 1;
-	(void)str_;
+	accumulator = accumulator_;
+	str = str_;
+	while (*accumulator)
+		accumulator++;
+	*accumulator = *str;
 }
 
 static int			cmp_fn(void *data1, void *data2)
@@ -18,17 +21,16 @@ static int			cmp_fn(void *data1, void *data2)
 static void simple_test(t_test *test)
 {
 	t_btree			*btree;
-	int				count;
+	char			str[30];
 
-	count = 0;
-
+	*str = 0;
 	btree = twl_btree_new(cmp_fn);
 	twl_btree_insert(btree, "A");
 	twl_btree_insert(btree, "B");
 	twl_btree_insert(btree, "C");
 	twl_btree_insert(btree, "D");
-	twl_btree_infix_travel(btree, travl_fn, &count);
-	mt_assert(count == 4);
+	twl_btree_infix_travel(btree, travl_fn, str);
+	mt_assert(strcmp(str, "ABCD") == 0);
 	twl_btree_del(btree);
 }
 
