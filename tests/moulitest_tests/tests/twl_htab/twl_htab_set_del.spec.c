@@ -15,7 +15,7 @@ static void simple_test(t_test *test)
 	t_htab			*htab;
 
 	htab = twl_htab_new();
-	mt_assert(twl_htab_get_size(htab) == 0);
+	mt_assert(twl_htab_len(htab) == 0);
 	del_counter = 0;
 	twl_htab_set(htab, "kayA", twl_strdup("AAA0"), delfn);
 	twl_htab_set(htab, "kayA", twl_strdup("AAA1"), delfn);

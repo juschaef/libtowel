@@ -22,12 +22,12 @@ static void simple_test(t_test *test)
 	mt_assert(twl_strcmp(twl_htab_get(htab, "keyA"), "AAA") == 0);
 	mt_assert(twl_strcmp(twl_htab_get(htab, "keyB"), "BBB") == 0);
 	mt_assert(twl_strcmp(twl_htab_get(htab, "keyC"), "CCC") == 0);
-	mt_assert(twl_htab_get_size(htab) == 3);
+	mt_assert(twl_htab_len(htab) == 3);
 
 	// set existing value
 	twl_htab_set(htab, "keyA", twl_strdup("AAA1"), del_data_fn);
 	mt_assert(twl_strcmp(twl_htab_get(htab, "keyA"), "AAA1") == 0);
-	mt_assert(twl_htab_get_size(htab) == 3);
+	mt_assert(twl_htab_len(htab) == 3);
 
 	twl_htab_del(htab, del_data_fn);
 }

@@ -35,7 +35,7 @@ void				twl_htab_del(t_htab *htab, t_htab_node_del_data_fn *delfn);
 
 int					twl_htab_set(t_htab *htab, void *key, void *data, t_htab_node_del_data_fn *delfn);
 void				*twl_htab_get(t_htab *htab, void *key);
-size_t			    twl_htab_get_size(t_htab *htab);
+size_t			    twl_htab_len(t_htab *htab);
 
 uint32_t		    twl_htab_get_hash_(t_htab *htab, void *key);
 t_lst		    	*twl_htab_get_bucket_(t_htab *htab, uint32_t hash);
