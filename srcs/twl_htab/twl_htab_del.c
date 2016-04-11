@@ -13,11 +13,6 @@
 #include <stdlib.h>
 #include "twl_htab.h"
 
-static void			iter_fn(void *node, void *delfn)
-{
-	twl_htab_node_del(node, delfn);
-}
-
 void				twl_htab_del(t_htab *htab, t_htab_node_del_data_fn *delfn)
 {
 	int				i;
@@ -26,7 +21,9 @@ void				twl_htab_del(t_htab *htab, t_htab_node_del_data_fn *delfn)
 	while (i < HTAB_NUMBER_OF_BUCKETS)
 	{
 		if (htab->buckets[i])
-			twl_lst_iter(htab->buckets[i], iter_fn, delfn);
+		{
+			twl_lst_del(htab->buckets[i], delfn);
+		}
 		i++;
 	}
 	free(htab);
