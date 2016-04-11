@@ -19,7 +19,7 @@ static void         iter_node_fn(void *node_, void *iter_fn_, void *ctx)
 
     iter_fn = iter_fn_;
     node = node_;
-    iter_fn(node->data, ctx);
+    iter_fn(node->key, node->data, ctx);
 }
 
 void				twl_htab_iter(t_htab *htab, t_htab_iter_fn *iter_fn, void *context)

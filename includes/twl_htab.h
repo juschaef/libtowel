@@ -30,7 +30,7 @@ typedef struct		s_htab
     t_copy_key		*copy_key_fn;
 }					t_htab;
 
-typedef void (t_htab_iter_fn)(void *data, void *context);
+typedef void (t_htab_iter_fn)(void *key, void *data, void *context);
 
 t_htab				*twl_htab_new(void);
 void				twl_htab_del(t_htab *htab, t_htab_node_del_data_fn *delfn);
