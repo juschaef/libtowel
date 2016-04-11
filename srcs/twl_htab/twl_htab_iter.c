@@ -10,21 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "twl_htab.h"
 
-void				twl_htab_del(t_htab *htab, t_htab_node_del_data_fn *delfn)
+static void         iter_node_fn(void *node_, void *iter_fn_, void *ctx)
 {
-	int				i;
+    t_htab_node     *node;
+    t_htab_iter_fn  *iter_fn;
 
-	i = 0;
-	while (i < HTAB_NUMBER_OF_BUCKETS)
-	{
-		if (htab->buckets[i])
-		{
-			twl_lst_del(htab->buckets[i], delfn);
-		}
-		i++;
-	}
-	free(htab);
+    iter_fn = iter_fn_;
+    node = node_;
+    iter_fn(node->key, node->data, ctx);
+}
+
+void				twl_htab_iter(t_htab *htab, t_htab_iter_fn *iter_fn, void *context)
+{
+    int             i;
+
+    i = 0;
+    while (i < HTAB_NUMBER_OF_BUCKETS)
+    {
+        if (htab->buckets[i])
+        {
+            twl_lst_iter2(htab->buckets[i], iter_node_fn, iter_fn, context);
+        }
+        i++;
+    }
 }

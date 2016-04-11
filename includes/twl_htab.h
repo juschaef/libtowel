@@ -30,6 +30,8 @@ typedef struct		s_htab
     t_copy_key		*copy_key_fn;
 }					t_htab;
 
+typedef void (t_htab_iter_fn)(void *key, void *data, void *context);
+
 t_htab				*twl_htab_new(void);
 void				twl_htab_del(t_htab *htab, t_htab_node_del_data_fn *delfn);
 
@@ -41,5 +43,7 @@ uint32_t		    twl_htab_get_hash_(t_htab *htab, void *key);
 t_lst		    	*twl_htab_get_bucket_(t_htab *htab, uint32_t hash);
 t_htab_node			*twl_htab_get_bucket_node_(t_htab *htab, t_lst *bucket, void *key);
 t_lst		    	*twl_htab_get_or_create_bucket_(t_htab *htab, uint32_t hash);
+
+void				twl_htab_iter(t_htab *htab, t_htab_iter_fn *iter_fn, void *context);
 
 #endif
