@@ -22,7 +22,7 @@ static void simple_test(t_test *test)
 	mt_assert(twl_lst_indexof(lst, NULL) == -1);
 }
 
-void	suite_twl_lst_insert(t_suite *suite)
+void	suite_twl_lst_indexof(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }
