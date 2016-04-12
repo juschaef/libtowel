@@ -34,7 +34,7 @@ static void head_test(t_test *test)
 	mt_assert(twl_lst_get_elem__(lst, 0)->prev == 0);
 }
 
-void	suite_twl_lst_indexof(t_suite *suite)
+void	suite_twl_lst_insert(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 	SUITE_ADD_TEST(suite, head_test);

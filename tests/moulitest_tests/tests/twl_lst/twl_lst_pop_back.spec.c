@@ -21,7 +21,17 @@ static void simple_test(t_test *test)
 	free(str);
 }
 
+static void pop_empty_list(t_test *test)
+{
+	t_lst	*lst;
+
+	lst = twl_lst_new();
+	mt_assert(twl_lst_pop_back(lst) == NULL);
+	twl_lst_del(lst, free);
+}
+
 void	suite_twl_lst_pop_back(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
+	SUITE_ADD_TEST(suite, pop_empty_list);
 }

@@ -80,8 +80,6 @@ void						*twl_lst_popi(t_lst *lst, int index);
 void						twl_lst_unshift(t_lst *lst, void *data);
 void						*twl_lst_shift(t_lst *lst);
 void						twl_lst_swap(t_lst *lst, int i, int j);
-void						twl_lst_insert_lst(t_lst *lst_dest, int index,
-																t_lst *lst_src);
 void						twl_lst_cat(t_lst *lst_dest, t_lst *lst_src);
 t_lst						*twl_lst_slice(t_lst *lst, int begin, int end);
 
@@ -124,6 +122,7 @@ int							twl_lst_reducei(t_lst *lst,
 								int (*fn)(void *data, int memo), int memo);
 void						twl_lst_shuffle(t_lst *lst);
 void						twl_lst_extend(t_lst *dst, t_lst *src);
+void						twl_lst_extend_front(t_lst *dst, t_lst *src);
 /*
 ** Misc
 */

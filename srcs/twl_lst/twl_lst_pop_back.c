@@ -20,7 +20,8 @@ void				*twl_lst_pop_back(t_lst *lst)
 	void			*data;
 
 	elem = lst->head;
-	assert(elem);
+	if (!elem)
+		return (NULL);
 	while (elem->next)
 		elem = elem->next;
 	data = elem->data;

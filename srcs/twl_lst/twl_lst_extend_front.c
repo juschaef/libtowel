@@ -10,27 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <assert.h>
 #include "twl_lst.h"
-#include "twl_xstdio.h"
 
-void	twl_lst_insert_lst(t_lst *lst_dest, int index, t_lst *lst_src)
+void				twl_lst_extend_front(t_lst *dst, t_lst *src)
 {
-	t_lst_elem__ *elem1;
-	t_lst_elem__ *elem2;
 	t_lst			*copy;
+	void			*data;
 
-	copy = twl_lst_copy(lst_src, NULL);
-	elem1 = twl_lst_get_elem__(lst_dest, index);
-	elem2 = elem1->prev;
-	if (index == 0)
-		lst_dest->head = copy->head;
-	else if (index >= (int)twl_lst_len(lst_dest))
-		twl_putstr_fd("\n[warning] Index does not exist !\n", 2);
-	else
-		twl_lst_link__(elem2, copy->head);
-	twl_lst_link__(twl_lst_get_elem__(copy, -1), elem1);
-	copy->head = NULL;
+	copy = twl_lst_copy(src, NULL);
+	while ((data = twl_lst_pop_back(copy)))
+	{
+		twl_lst_push_front(dst, data);
+	}
 	twl_lst_del(copy, NULL);
 }
