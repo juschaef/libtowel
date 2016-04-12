@@ -22,8 +22,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(twl_lst_get(lst_dest, 3), "444") == 0);
 	mt_assert(strcmp(twl_lst_get(lst_dest, 4), "555") == 0);
 
-	lst_src->head = NULL;
-	twl_lst_del(lst_src, free);
+	twl_lst_del(lst_src, NULL);
 	twl_lst_del(lst_dest, free);
 }
 
@@ -49,8 +48,7 @@ static void head_test(t_test *test)
 	mt_assert(strcmp(twl_lst_get(lst_dest, 3), "333") == 0);
 	mt_assert(strcmp(twl_lst_get(lst_dest, 4), "444") == 0);
 
-	lst_src->head = NULL;
-	twl_lst_del(lst_src, free);
+	twl_lst_del(lst_src, NULL);
 	twl_lst_del(lst_dest, free);
 }
 
