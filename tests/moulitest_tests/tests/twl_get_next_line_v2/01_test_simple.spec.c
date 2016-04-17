@@ -1,10 +1,12 @@
 #include <project.h>
+#include <fcntl.h>
+#include <fcntl.h>
 #include "twl_get_next_line.h"
 
 static void simple_string(t_test *test)
 {
 	char 	*line;
-	char 	*remainder = NULL;
+char 	*remainder = NULL;
 	int		out;
 	int		p[2];
 	int		fd;

@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 #include <stddef.h>
-
+#include "twl_stdio.h"
 static void		twl_bzero(void *s, size_t n)
 {
 	size_t	index;
@@ -31,9 +31,13 @@ char			*twl_strnew(size_t size)
 {
 	char *new;
 
+	// twl_dprintf(2, "twl_strnew 00\n");
 	new = (char *)malloc(sizeof(char) * (size + 1));
+	// twl_dprintf(2, "twl_strnew 01\n");
 	if (!new)
 		return (NULL);
+	// twl_dprintf(2, "twl_strnew 02\n");
 	twl_bzero(new, size + 1);
+	// twl_dprintf(2, "twl_strnew 03\n");
 	return (new);
 }

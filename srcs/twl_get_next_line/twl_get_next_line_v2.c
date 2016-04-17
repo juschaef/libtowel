@@ -80,7 +80,8 @@ static int				do_get_next_line(int const fd, char **line, char **remainder)
 
 int					twl_get_next_line_v2(int const fd, char **line, char **remainder)
 {
-	if (fd < 0)
+	if (fd < 0 || !line)
 		return (-1);
 	return (do_get_next_line(fd, line, remainder));
+	(void)remainder;
 }

@@ -4,26 +4,25 @@
 
 static void simple_string(t_test *test)
 {
-	char *line;
+	char 	*line;
 	char 	*remainder = NULL;
 	int		out;
 	int		p[2];
 	int		fd;
-	int		gnl_ret;
+
+	out = dup(1);
+	pipe(p);
 
 	fd = 1;
-	out = dup(fd);
-	pipe(p);
 	dup2(p[1], fd);
-	write(fd, "aaa", 3);
+	write(fd, "abcd", 4);
 	close(p[1]);
 	dup2(out, fd);
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "aaa") == 0);
-	mt_assert(gnl_ret == 0 || gnl_ret == 1);
+	twl_get_next_line_v2(p[0], &line, &remainder);
+	mt_assert(strcmp(line, "abcd") == 0);
 }
 
-void	suite_02_test_eof_with_close(t_suite *suite)
+void	suite_15_test_line_without_nl(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }
