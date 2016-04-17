@@ -47,7 +47,7 @@ static int		twl_read_buffer(int fd, char **s_str, char **line)
 		}
 		twl_strcat(*line, buf);
 	}
-	return (ret);
+	return (ret < 0 ? -1 : 0);
 }
 
 static int				do_get_next_line(int const fd, char **line, char **remainder)
@@ -67,17 +67,21 @@ static int				do_get_next_line(int const fd, char **line, char **remainder)
 	}
 	twl_strcat(*line, *remainder);
 	ret = twl_read_buffer(fd, &*remainder, line);
-	if (twl_strlen(*line) > 0)
+	if (ret == 1 || ret == -1)
+		return (ret);
+	if (ret == 0 && twl_strlen(*line) == 0 && twl_strlen(*remainder) == 0)
+		**line = '\0';
+	if (twl_strlen(*line) > 0 || twl_strlen(*remainder) > 0)
 		return (1);
 	free(*line);
 	*line = NULL;
-	return (ret);
+	return (0);
 }
 
 int					twl_get_next_line_v2(int const fd, char **line, char **remainder)
 {
 	if (fd < 0 || !line)
 		return (-1);
-	*line = NULL;
 	return (do_get_next_line(fd, line, remainder));
+	(void)remainder;
 }
