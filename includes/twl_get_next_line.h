@@ -20,6 +20,7 @@
 # define MAX_BUFF_SIZE 8385531
 # define MAX_PARALLEL_FILES 100000
 
-int twl_get_next_line(int const fd, char **line);
+int					twl_get_next_line(int const fd, char **line);
+int					twl_get_next_line_v2(int const fd, char **line, char **remainder);
 
 #endif
