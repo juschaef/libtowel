@@ -20,7 +20,7 @@ static void simple_string(t_test *test)
 	dup2(out, fd);
 	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "aaa") == 0);
-	mt_assert(gnl_ret == 0 || gnl_ret == 1);
+	mt_assert(gnl_ret == 1);
 }
 
 void	suite_02_test_eof_with_close(t_suite *suite)

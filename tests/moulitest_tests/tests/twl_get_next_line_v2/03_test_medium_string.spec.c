@@ -25,7 +25,7 @@ char 	*remainder = NULL;
 	dup2(out, 1);
 	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
 	mt_assert(strcmp(line, str) == 0);
-	mt_assert(gnl_ret == 0 || gnl_ret == 1);
+	mt_assert(gnl_ret == 1);
 }
 
 void	suite_03_test_medium_string(t_suite *suite)

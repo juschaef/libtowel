@@ -28,17 +28,17 @@ static void simple_string(t_test *test)
 	/* Read new line */
 	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
-	mt_assert(line == NULL || *line == '\0');
+	mt_assert(*line == '\0');
 
 	/* Read again, but meet EOF */
 	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 0);
-	mt_assert(line == NULL || *line == '\0');
+	mt_assert(line == NULL);
 
 	/* Let's do it once again */
 	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 0);
-	mt_assert(line == NULL || *line == '\0');
+	mt_assert(line == NULL);
 }
 
 void	suite_04_test_return_values(t_suite *suite)
