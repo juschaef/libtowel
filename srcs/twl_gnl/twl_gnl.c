@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include "twl_get_next_line.h"
-#include "twl_string.h"
-#include "twl_xstring.h"
+#include "twl_gnl.h"
 
 static char		*twl_strchr_nl(const char *s)
 {
@@ -25,10 +21,10 @@ static int		twl_read_buffer(int fd, char **s_str, char **line)
 {
 	int		ret;
 	char	*temp;
-	char	buf[BUFF_SIZE + 1];
+	char	buf[GNL_BUFF_SIZE + 1];
 
 	ret = 0;
-	while ((ret = read(fd, buf, BUFF_SIZE)) > 0)
+	while ((ret = read(fd, buf, GNL_BUFF_SIZE)) > 0)
 	{
 		if (ret < 0)
 			return (-1);
@@ -54,8 +50,8 @@ static int				do_get_next_line(int const fd, char **line, char **remainder)
 {
 	int				ret;
 
-	*line = twl_strnew(BUFF_SIZE + 1);
-	*remainder = (!*remainder) ? twl_strnew(BUFF_SIZE + 1) : *remainder;
+	*line = twl_strnew(GNL_BUFF_SIZE + 1);
+	*remainder = (!*remainder) ? twl_strnew(GNL_BUFF_SIZE + 1) : *remainder;
 	if (!*line || !*remainder)
 		return (-1);
 	if (twl_strchr_nl(*remainder))

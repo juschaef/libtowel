@@ -1,6 +1,6 @@
 #include <project.h>
 #include <fcntl.h>
-#include "twl_get_next_line.h"
+#include "twl_gnl.h"
 
 static void simple_string(t_test *test)
 {

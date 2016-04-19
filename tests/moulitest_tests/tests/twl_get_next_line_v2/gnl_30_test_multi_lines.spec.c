@@ -1,6 +1,6 @@
 #include <project.h>
 #include <fcntl.h>
-#include "twl_get_next_line.h"
+#include "twl_gnl.h"
 #include "twl_xstring.h"
 
 #define test_fn(testname, input, expected, debug) \
