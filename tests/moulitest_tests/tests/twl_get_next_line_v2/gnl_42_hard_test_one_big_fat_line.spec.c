@@ -1,6 +1,6 @@
 #include <project.h>
 #include <fcntl.h>
-#include "twl_get_next_line.h"
+#include "twl_gnl.h"
 
 static void test01(t_test *test)
 {
@@ -20,7 +20,7 @@ static void test01(t_test *test)
 	fd = open("sandbox/one_big_fat_line.txt", O_RDONLY);
 	fd2 = open("sandbox/one_big_fat_line.txt.mine", O_CREAT | O_RDWR | O_TRUNC, 0755);
 
-	while (twl_get_next_line_v2(fd, &line, &remainder) == 1)
+	while (twl_gnl(fd, &line, &remainder) == 1)
 	{
 	    write(fd2, line, strlen(line));
 	    write(fd2, "\n", 1);
@@ -38,7 +38,7 @@ static void test01(t_test *test)
 	mt_assert(diff_file_size == 0);
 }
 
-void	suite_42_hard_test_one_big_fat_line(t_suite *suite)
+void	suite_gnl_42_hard_test_one_big_fat_line(t_suite *suite)
 {
 	SUITE_ADD_TEST_TIMEOUT(suite, test01, 5 * 1000000);
 }

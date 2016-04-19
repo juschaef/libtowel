@@ -1,6 +1,6 @@
 #include <project.h>
 #include <fcntl.h>
-#include "twl_get_next_line.h"
+#include "twl_gnl.h"
 
 static void simple_string(t_test *test)
 {
@@ -25,25 +25,25 @@ static void simple_string(t_test *test)
 	write(fd, "stuvwxzabcdefghi\n", 17);
 	close(p[1]);
 	dup2(out, fd);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "abcdefghijklmnop") == 0);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "qrstuvwxyzabcdef") == 0);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "ghijklmnopqrstuv") == 0);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "wxyzabcdefghijkl") == 0);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "mnopqrstuvwxyzab") == 0);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "cdefghijklmnopqr") == 0);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "stuvwxzabcdefghi") == 0);
-	ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(ret == 0);
 }
 
-void	suite_11_test_few_lines_of_16(t_suite *suite)
+void	suite_gnl_11_test_few_lines_of_16(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }

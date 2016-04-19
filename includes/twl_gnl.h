@@ -10,17 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_GET_NEXT_LINE_H
-# define TWL_GET_NEXT_LINE_H
+#ifndef TWL_GNL_H
+# define TWL_GNL_H
 
-# include <unistd.h>
+#include <unistd.h>
+#include <stdlib.h>
 # include "twl_string.h"
+# include "twl_xstring.h"
 
-# define BUFF_SIZE 8
-# define MAX_BUFF_SIZE 8385531
-# define MAX_PARALLEL_FILES 100000
+# define GNL_BUFF_SIZE 8
 
-int					twl_get_next_line(int const fd, char **line);
-int					twl_get_next_line_v2(int const fd, char **line, char **remainder);
+int					twl_gnl(int const fd, char **line, char **remainder);
 
 #endif

@@ -1,6 +1,6 @@
 #include <project.h>
 #include <fcntl.h>
-#include "twl_get_next_line.h"
+#include "twl_gnl.h"
 
 static void simple_string(t_test *test)
 {
@@ -18,12 +18,12 @@ static void simple_string(t_test *test)
 	write(fd, "aaa", 3);
 	close(p[1]);
 	dup2(out, fd);
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "aaa") == 0);
 	mt_assert(gnl_ret == 1);
 }
 
-void	suite_02_test_eof_with_close(t_suite *suite)
+void	suite_gnl_02_test_eof_with_close(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }
