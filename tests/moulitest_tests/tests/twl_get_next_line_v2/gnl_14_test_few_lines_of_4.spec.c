@@ -16,34 +16,34 @@ static void simple_string(t_test *test)
 
 	fd = 1;
 	dup2(p[1], fd);
-	write(fd, "abcdefghijklmnop\n", 17);
-	write(fd, "qrstuvwxyzabcdef\n", 17);
-	write(fd, "ghijklmnopqrstuv\n", 17);
-	write(fd, "wxyzabcdefghijkl\n", 17);
-	write(fd, "mnopqrstuvwxyzab\n", 17);
-	write(fd, "cdefghijklmnopqr\n", 17);
-	write(fd, "stuvwxzabcdefghi\n", 17);
+	write(fd, "abcd\n", 5);
+	write(fd, "efgh\n", 5);
+	write(fd, "ijkl\n", 5);
+	write(fd, "mnop\n", 5);
+	write(fd, "qrst\n", 5);
+	write(fd, "uvwx\n", 5);
+	write(fd, "yzab\n", 5);
 	close(p[1]);
 	dup2(out, fd);
 	twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "abcdefghijklmnop") == 0);
+	mt_assert(strcmp(line, "abcd") == 0);
 	twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "qrstuvwxyzabcdef") == 0);
+	mt_assert(strcmp(line, "efgh") == 0);
 	twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "ghijklmnopqrstuv") == 0);
+	mt_assert(strcmp(line, "ijkl") == 0);
 	twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "wxyzabcdefghijkl") == 0);
+	mt_assert(strcmp(line, "mnop") == 0);
 	twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "mnopqrstuvwxyzab") == 0);
+	mt_assert(strcmp(line, "qrst") == 0);
 	twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "cdefghijklmnopqr") == 0);
+	mt_assert(strcmp(line, "uvwx") == 0);
 	twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "stuvwxzabcdefghi") == 0);
+	mt_assert(strcmp(line, "yzab") == 0);
 	ret = twl_get_next_line_v2(p[0], &line, &remainder);
 	mt_assert(ret == 0);
 }
 
-void	suite_11_test_few_lines_of_16(t_suite *suite)
+void	suite_gnl_14_test_few_lines_of_4(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }

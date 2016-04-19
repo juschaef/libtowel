@@ -21,7 +21,7 @@ static void simple_string(t_test *test)
 	mt_assert(twl_get_next_line_v2(42, &line, &remainder) == -1);
 }
 
-void	suite_05_test_error_handling(t_suite *suite)
+void	suite_gnl_05_test_error_handling(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }

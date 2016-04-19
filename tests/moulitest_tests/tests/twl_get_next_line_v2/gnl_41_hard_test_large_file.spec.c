@@ -34,7 +34,7 @@ static void test01(t_test *test)
 	mt_assert(diff_file_size == 0);
 }
 
-void	suite_41_hard_test_large_file(t_suite *suite)
+void	suite_gnl_41_hard_test_large_file(t_suite *suite)
 {
 	SUITE_ADD_TEST_TIMEOUT(suite, test01, 5 * 1000000);
 }

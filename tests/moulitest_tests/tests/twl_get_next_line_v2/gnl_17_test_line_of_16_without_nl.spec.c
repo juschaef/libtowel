@@ -15,14 +15,14 @@ static void simple_string(t_test *test)
 
 	fd = 1;
 	dup2(p[1], fd);
-	write(fd, "oiuytrew\n", 9);
+	write(fd, "mnopqrstuvwxyzab", 16);
 	close(p[1]);
 	dup2(out, fd);
 	twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "oiuytrew") == 0);
+	mt_assert(strcmp(line, "mnopqrstuvwxyzab") == 0);
 }
 
-void	suite_06_test_line_of_08(t_suite *suite)
+void	suite_gnl_17_test_line_of_16_without_nl(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }

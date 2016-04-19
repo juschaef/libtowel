@@ -40,7 +40,7 @@ static void simple_string(t_test *test)
 	mt_assert(strcmp(line, "wxyzabcd") == 0);
 }
 
-void	suite_08_test_few_lines_of_08(t_suite *suite)
+void	suite_gnl_08_test_few_lines_of_08(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }

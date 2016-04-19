@@ -80,7 +80,7 @@ static void newline(t_test *test)
 	mt_assert(line == NULL);
 }
 
-void	suite_04_test_return_values(t_suite *suite)
+void	suite_gnl_04_test_return_values(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 	SUITE_ADD_TEST(suite, newline);

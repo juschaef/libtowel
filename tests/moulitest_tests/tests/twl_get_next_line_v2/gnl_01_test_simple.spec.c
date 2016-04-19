@@ -29,7 +29,7 @@ char 	*remainder = NULL;
 	mt_assert(strcmp(line, "ddd") == 0);
 }
 
-void	suite_01_test_simple(t_suite *suite)
+void	suite_gnl_01_test_simple(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }

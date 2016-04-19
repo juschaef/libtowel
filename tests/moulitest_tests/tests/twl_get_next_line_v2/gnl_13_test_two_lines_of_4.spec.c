@@ -9,23 +9,26 @@ static void simple_string(t_test *test)
 	int		out;
 	int		p[2];
 	int		fd;
+	int		ret;
 
 	out = dup(1);
 	pipe(p);
 
 	fd = 1;
 	dup2(p[1], fd);
-	write(fd, "abcdefgh\n", 9);
-	write(fd, "ijklmnop\n", 9);
+	write(fd, "abcd\n", 5);
+	write(fd, "efgh\n", 5);
 	close(p[1]);
 	dup2(out, fd);
 	twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "abcdefgh") == 0);
+	mt_assert(strcmp(line, "abcd") == 0);
 	twl_get_next_line_v2(p[0], &line, &remainder);
-	mt_assert(strcmp(line, "ijklmnop") == 0);
+	mt_assert(strcmp(line, "efgh") == 0);
+	ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	mt_assert(ret == 0);
 }
 
-void	suite_07_test_two_lines_of_08(t_suite *suite)
+void	suite_gnl_13_test_two_lines_of_4(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }

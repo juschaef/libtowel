@@ -29,7 +29,7 @@ static void test01(t_test *test)
 	mt_assert(strcmp(line, str) == 0);
 }
 
-void	suite_40_hard_test_medium_string(t_suite *suite)
+void	suite_gnl_40_hard_test_medium_string(t_suite *suite)
 {
 	SUITE_ADD_TEST_TIMEOUT(suite, test01, 5 * 1000000);
 }

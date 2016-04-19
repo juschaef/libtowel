@@ -23,7 +23,7 @@ static void simple_string(t_test *test)
 	mt_assert(strcmp(line, str) == 0);
 }
 
-void	suite_18_test_long_line(t_suite *suite)
+void	suite_gnl_18_test_long_line(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }

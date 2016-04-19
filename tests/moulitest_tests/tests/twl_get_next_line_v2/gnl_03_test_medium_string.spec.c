@@ -28,7 +28,7 @@ char 	*remainder = NULL;
 	mt_assert(gnl_ret == 1);
 }
 
-void	suite_03_test_medium_string(t_suite *suite)
+void	suite_gnl_03_test_medium_string(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_string);
 }
