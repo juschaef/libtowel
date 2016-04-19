@@ -23,7 +23,7 @@ char 	*remainder = NULL;
 	write(1, str, strlen(str));
 	close(p[1]);
 	dup2(out, 1);
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, str) == 0);
 	mt_assert(gnl_ret == 1);
 }

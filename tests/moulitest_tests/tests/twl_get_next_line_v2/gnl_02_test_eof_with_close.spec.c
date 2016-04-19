@@ -18,7 +18,7 @@ static void simple_string(t_test *test)
 	write(fd, "aaa", 3);
 	close(p[1]);
 	dup2(out, fd);
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "aaa") == 0);
 	mt_assert(gnl_ret == 1);
 }

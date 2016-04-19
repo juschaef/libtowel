@@ -21,6 +21,6 @@
 # define MAX_PARALLEL_FILES 100000
 
 int					twl_get_next_line(int const fd, char **line);
-int					twl_get_next_line_v2(int const fd, char **line, char **remainder);
+int					twl_gnl(int const fd, char **line, char **remainder);
 
 #endif

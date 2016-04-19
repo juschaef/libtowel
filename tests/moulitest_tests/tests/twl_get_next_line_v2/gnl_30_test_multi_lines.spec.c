@@ -20,7 +20,7 @@ static void testname(t_test *test) \
 	close(p[1]); \
 	dup2(out, fd); \
 	joined = strdup(""); \
-	while (twl_get_next_line_v2(p[0], &line, &remainder)) \
+	while (twl_gnl(p[0], &line, &remainder)) \
 	{ \
 		joined = twl_strjoinfree(joined, line, 'b'); \
 		joined = twl_strjoinfree(joined, "\n", 'l'); \

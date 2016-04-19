@@ -25,7 +25,7 @@ static void test01(t_test *test)
 		write(1, str, strlen(str));
 	close(p[1]);
 	dup2(out, 1);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, str) == 0);
 }
 

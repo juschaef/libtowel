@@ -21,22 +21,22 @@ static void simple_string(t_test *test)
 	dup2(out, fd);
 
 	/* Read abc and new line */
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
 	mt_assert(strcmp(line, "abc") == 0);
 
 	/* Read new line */
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
 	mt_assert(*line == '\0');
 
 	/* Read again, but meet EOF */
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 0);
 	mt_assert(line == NULL);
 
 	/* Let's do it once again */
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 0);
 	mt_assert(line == NULL);
 }
@@ -60,22 +60,22 @@ static void newline(t_test *test)
 	dup2(out, fd);
 
 	/* Read abc and new line */
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
 	mt_assert(strcmp(line, "abc") == 0);
 
 	/* Read new line */
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
 	mt_assert(*line == '\0');
 
 	/* Read again, but meet EOF */
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
 	mt_assert(*line == '\0');
 
 	/* Let's do it once again */
-	gnl_ret = twl_get_next_line_v2(p[0], &line, &remainder);
+	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 0);
 	mt_assert(line == NULL);
 }

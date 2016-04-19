@@ -19,17 +19,17 @@ static void simple_test(t_test *test)
 	dup2(out, fd);
 	close(p[1]);
 	remainder = NULL;
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "aaa") == 0);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "bbb") == 0);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "ccc") == 0);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "ddd") == 0);
 }
 
-void	suite_twl_get_next_line_v2(t_suite *suite)
+void	suite_twl_gnl(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple_test);
 }

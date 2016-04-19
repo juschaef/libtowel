@@ -19,7 +19,7 @@ static void simple_string(t_test *test)
 	write(fd, str, twl_strlen(str));
 	close(p[1]);
 	dup2(out, fd);
-	twl_get_next_line_v2(p[0], &line, &remainder);
+	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, str) == 0);
 }
 
