@@ -12,6 +12,7 @@
 
 #include <fcntl.h>
 #include <stddef.h>
+#include <unistd.h>
 #include "twl_xstdio.h"
 
 char				*twl_file_to_str(char *file_name)
@@ -23,6 +24,7 @@ char				*twl_file_to_str(char *file_name)
 	if (fd == -1)
 		return (NULL);
 	str = twl_fd_to_str(fd);
+	close(fd);
 	if (!str)
 		return (NULL);
 	return (str);
