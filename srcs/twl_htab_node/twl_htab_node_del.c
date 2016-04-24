@@ -21,4 +21,5 @@ void				twl_htab_node_del(t_htab_node *htab_node,
 	{
 		delfn(htab_node->data);
 	}
+	free(htab_node);
 }
