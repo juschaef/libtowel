@@ -25,6 +25,7 @@ typedef enum		e_logger_level
 	LOGGER_LEVEL_ERROR,
 }					t_logger_level;
 
-void				twl_logger_printf(t_logger_level level, const char *fn, int line, const char *fmt, ...);
+void				twl_logger_printf(t_logger_level level, const char *fn,
+												int line, const char *fmt, ...);
 
 #endif

@@ -43,7 +43,7 @@ void					argparser_argument_del_void(void *this);
 bool					argparser_argument_test_by_key(
 										t_argparser_argument *this, char *key);
 bool					argparser_argument_test_by_key_void(void *this,
-																		void *key);
+																	void *key);
 
 t_argparser_argument	*argparser_argument_mgr_find_by_key(t_lst *arguments,
 																	char *key);
