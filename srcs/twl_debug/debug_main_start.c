@@ -12,13 +12,11 @@
 
 #include "twl_color.h"
 #include "twl_xstdio.h"
+#include "twl_logger.h"
 
 void				twl_debug_main_start(void)
 {
-	twl_lprintf("\n");
-	twl_lprintf(C_CYAN);
-	twl_lprintf("====================================================\n");
-	twl_lprintf("START MAIN\n");
-	twl_lprintf("====================================================\n");
-	twl_lprintf(C_CLEAR);
+	LOG_INFO("====================================================");
+	LOG_INFO("START MAIN");
+	LOG_INFO("====================================================");
 }

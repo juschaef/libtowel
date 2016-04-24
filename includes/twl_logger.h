@@ -10,13 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_color.h"
-#include "twl_xstdio.h"
-#include "twl_logger.h"
+#ifndef TWL_LOGGER_H
+# define TWL_LOGGER_H
 
-void				twl_debug_main_end(void)
+# define _LOGGER(lvl, ...) twl_logger_printf(lvl,__FILE__,__LINE__,__VA_ARGS__);
+# define LOG_INFO(...) _LOGGER(LOGGER_LEVEL_INFO, __VA_ARGS__);
+# define LOG_DEBUG(...) _LOGGER(LOGGER_LEVEL_DEBUG, __VA_ARGS__);
+# define LOG_ERROR(...) _LOGGER(LOGGER_LEVEL_ERROR, __VA_ARGS__);
+
+typedef enum		e_logger_level
 {
-	LOG_INFO("====================================================");
-	LOG_INFO("END MAIN");
-	LOG_INFO("====================================================");
-}
+	LOGGER_LEVEL_DEBUG,
+	LOGGER_LEVEL_INFO,
+	LOGGER_LEVEL_ERROR,
+}					t_logger_level;
+
+void				twl_logger_printf(t_logger_level level, const char *fn, int line, const char *fmt, ...);
+
+#endif
