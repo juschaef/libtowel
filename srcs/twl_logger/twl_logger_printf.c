@@ -24,28 +24,30 @@
 static char			*get_level_color(t_logger_level level)
 {
 	if (level == LOGGER_LEVEL_DEBUG)
-		return (C_CYAN"DEBUG");
+		return ("\033[36;1mDEBUG");
 	else if (level == LOGGER_LEVEL_INFO)
-		return (C_GREEN"INFO");
+		return ("\033[32;1mINFO");
 	else if (level == LOGGER_LEVEL_ERROR)
-		return (C_RED"ERROR");
+		return ("\033[31;1mERROR");
 	return ("UNKWON");
 }
 
-void				twl_logger_printf(t_logger_level level, const char *fn, int line, const char *fmt, ...)
+void				twl_logger_printf(t_logger_level level, const char *fn,
+												int line, const char *fmt, ...)
 {
 	t_pf			*pf;
 	int				fd;
-    time_t			timer;
-    char			time_buffer[26];
-    struct tm		*tm_info;
+	time_t			timer;
+	char			time_buffer[26];
+	struct tm		*tm_info;
 
-    time(&timer);
-    tm_info = localtime(&timer);
-    strftime(time_buffer, 26, "%Y:%m:%d %H:%M:%S", tm_info);
+	time(&timer);
+	tm_info = localtime(&timer);
+	strftime(time_buffer, 26, "%Y:%m:%d %H:%M:%S", tm_info);
 	fd = open(DEBUG_FILE_PATH, O_CREAT | O_WRONLY | O_APPEND, 0644);
 	pf = pf_create((char *)fmt);
-	twl_dprintf(fd, "%s %s%s [%s:%d] ", time_buffer, get_level_color(level), C_CLEAR, fn, line);
+	twl_dprintf(fd, "%s %s%s [%s:%d] ", time_buffer, get_level_color(level),
+															C_CLEAR, fn, line);
 	va_start(pf->arglist, (char *)fmt);
 	pf_prepare_xprintf__(pf);
 	pf_print_fd(pf, fd);
@@ -54,4 +56,3 @@ void				twl_logger_printf(t_logger_level level, const char *fn, int line, const 
 	pf_free(pf);
 	close(fd);
 }
-

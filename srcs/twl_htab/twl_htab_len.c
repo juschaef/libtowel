@@ -12,7 +12,7 @@
 
 #include "twl_htab.h"
 
-size_t			    twl_htab_len(t_htab *htab)
+size_t				twl_htab_len(t_htab *htab)
 {
 	int				count;
 	int				i;
@@ -27,5 +27,5 @@ size_t			    twl_htab_len(t_htab *htab)
 		}
 		i++;
 	}
-    return (count);
+	return (count);
 }

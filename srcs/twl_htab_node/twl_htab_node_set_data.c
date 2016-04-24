@@ -13,7 +13,8 @@
 #include <stdlib.h>
 #include "twl_htab_node.h"
 
-void				twl_htab_node_set_data(t_htab_node *htab_node, void *data, t_htab_node_del_data_fn *delfn)
+void				twl_htab_node_set_data(t_htab_node *htab_node, void *data,
+												t_htab_node_del_data_fn *delfn)
 {
 	if (delfn)
 	{

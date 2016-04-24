@@ -14,24 +14,26 @@
 #include "twl_htab.h"
 #include "twl_stdio.h"
 
-int					twl_htab_set(t_htab *htab, void *key, void *data, t_htab_node_del_data_fn *delfn)
+int					twl_htab_set(t_htab *htab, void *key, void *data,
+												t_htab_node_del_data_fn *delfn)
 {
-    t_lst			*bucket;
-    uint32_t		hash;
-    t_htab_node		*node;
+	t_lst			*bucket;
+	uint32_t		hash;
+	t_htab_node		*node;
 
 	hash = twl_htab_get_hash_(htab, key);
-    bucket = twl_htab_get_or_create_bucket_(htab, hash);
-    if (!bucket)
-    	return (-1);
-    node = twl_htab_get_bucket_node_(htab, bucket, key);
-    if (node)
-    {
-    	twl_htab_node_set_data(node, data, delfn);
-    }
-    else
-    {
-    	twl_lst_push_back(bucket, twl_htab_node_new(key, data, hash, htab->copy_key_fn));
-    }
-    return (0);
+	bucket = twl_htab_get_or_create_bucket_(htab, hash);
+	if (!bucket)
+		return (-1);
+	node = twl_htab_get_bucket_node_(htab, bucket, key);
+	if (node)
+	{
+		twl_htab_node_set_data(node, data, delfn);
+	}
+	else
+	{
+		twl_lst_push_back(bucket, twl_htab_node_new(key, data, hash,
+															htab->copy_key_fn));
+	}
+	return (0);
 }

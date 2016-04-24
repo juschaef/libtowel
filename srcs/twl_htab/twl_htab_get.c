@@ -14,17 +14,17 @@
 
 void				*twl_htab_get(t_htab *htab, void *key)
 {
-    t_lst			*bucket;
-    uint32_t		hash;
-    t_htab_node		*node;
+	t_lst			*bucket;
+	uint32_t		hash;
+	t_htab_node		*node;
 
-    hash = twl_htab_get_hash_(htab, key);
-    bucket = twl_htab_get_bucket_(htab, hash);
-    if (bucket)
-    {
-	    node = twl_htab_get_bucket_node_(htab, bucket, key);
-	    if (node)
-	    	return (node->data);
-    }
-    return (NULL);
+	hash = twl_htab_get_hash_(htab, key);
+	bucket = twl_htab_get_bucket_(htab, hash);
+	if (bucket)
+	{
+		node = twl_htab_get_bucket_node_(htab, bucket, key);
+		if (node)
+			return (node->data);
+	}
+	return (NULL);
 }

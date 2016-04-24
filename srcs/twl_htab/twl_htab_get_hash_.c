@@ -12,7 +12,7 @@
 
 #include "twl_htab.h"
 
-uint32_t		    twl_htab_get_hash_(t_htab *htab, void *key)
+uint32_t		twl_htab_get_hash_(t_htab *htab, void *key)
 {
-    return (htab->hash_fn(key) % HTAB_NUMBER_OF_BUCKETS);
+	return (htab->hash_fn(key) % HTAB_NUMBER_OF_BUCKETS);
 }
