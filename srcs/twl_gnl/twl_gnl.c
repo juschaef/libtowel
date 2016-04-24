@@ -19,9 +19,9 @@ static char		*twl_strchr_nl(const char *s)
 
 static int		twl_read_buffer(int fd, char **s_str, char **line)
 {
-	int		ret;
-	char	*temp;
-	char	buf[GNL_BUFF_SIZE + 1];
+	int			ret;
+	char		*temp;
+	char		buf[GNL_BUFF_SIZE + 1];
 
 	ret = 0;
 	while ((ret = read(fd, buf, GNL_BUFF_SIZE)) > 0)
@@ -46,9 +46,9 @@ static int		twl_read_buffer(int fd, char **s_str, char **line)
 	return (ret < 0 ? -1 : 0);
 }
 
-static int				do_get_next_line(int const fd, char **line, char **remainder)
+static int		do_get_next_line(int const fd, char **line, char **remainder)
 {
-	int				ret;
+	int			ret;
 
 	*line = twl_strnew(GNL_BUFF_SIZE + 1);
 	*remainder = (!*remainder) ? twl_strnew(GNL_BUFF_SIZE + 1) : *remainder;
@@ -74,7 +74,7 @@ static int				do_get_next_line(int const fd, char **line, char **remainder)
 	return (0);
 }
 
-int					twl_gnl(int const fd, char **line, char **remainder)
+int				twl_gnl(int const fd, char **line, char **remainder)
 {
 	if (fd < 0 || !line)
 		return (-1);

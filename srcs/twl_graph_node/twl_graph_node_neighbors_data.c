@@ -16,7 +16,8 @@
 
 static void			push_neighbor_fn(void *edge, void *neighbors, void *node)
 {
-	twl_lst_push_back(neighbors, twl_graph_edge_get_other_node(edge, node)->data_);
+	twl_lst_push_back(neighbors,
+			twl_graph_edge_get_other_node(edge, node)->data_);
 }
 
 t_lst				*twl_graph_node_neighbors_data(t_graph_node *node)

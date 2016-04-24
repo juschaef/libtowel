@@ -13,8 +13,8 @@
 #ifndef TWL_GNL_H
 # define TWL_GNL_H
 
-#include <unistd.h>
-#include <stdlib.h>
+# include <unistd.h>
+# include <stdlib.h>
 # include "twl_string.h"
 # include "twl_xstring.h"
 

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_ARGPARSE_ARGUMENT_MGR_H
-# define TWL_ARGPARSE_ARGUMENT_MGR_H
+#ifndef TWL_ARGPARSER_ARGUMENT_MGR_H
+# define TWL_ARGPARSER_ARGUMENT_MGR_H
 
 # include <stddef.h>
 # include <stdbool.h>

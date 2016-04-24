@@ -12,7 +12,7 @@
 
 #include "twl_htab.h"
 
-t_lst		    	*twl_htab_get_bucket_(t_htab *htab, uint32_t hash)
+t_lst				*twl_htab_get_bucket_(t_htab *htab, uint32_t hash)
 {
-    return (htab->buckets[hash]);
+	return (htab->buckets[hash]);
 }

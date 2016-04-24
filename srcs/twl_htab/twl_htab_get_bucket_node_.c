@@ -24,11 +24,12 @@ static bool			find_node_fn(void *node_, void *key, void *htab_)
 	return (htab->compare_fn(node->key, key) == 0);
 }
 
-t_htab_node         *twl_htab_get_bucket_node_(t_htab *htab, t_lst *bucket, void *key)
+t_htab_node			*twl_htab_get_bucket_node_(t_htab *htab, t_lst *bucket,
+																	void *key)
 {
-    if (bucket)
-    {
-    	return (twl_lst_find2(bucket, find_node_fn, key, htab));
-    }
-    return (NULL);
+	if (bucket)
+	{
+		return (twl_lst_find2(bucket, find_node_fn, key, htab));
+	}
+	return (NULL);
 }
