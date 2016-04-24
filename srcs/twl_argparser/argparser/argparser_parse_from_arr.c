@@ -24,6 +24,6 @@ t_argparser_result	*argparser_parse_from_arr(t_argparser *this,
 
 	str_tokens = twl_arr_to_lst(str_tokens_arr);
 	result = argparser_parse(this, str_tokens);
-	twl_arr_del(str_tokens, NULL);
+	twl_lst_del(str_tokens, NULL);
 	return (result);
 }
