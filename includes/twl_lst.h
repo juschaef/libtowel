@@ -35,10 +35,12 @@ typedef struct				s_lst
 
 t_lst						*twl_lst_new(void);
 t_lst						*twl_lst_new_fill(int nbr,
-													void *(*constructor)(void));
+							void *(*constructor)(void));
 void						twl_lst_del(t_lst *lst, void (*delfn)());
 t_lst						*twl_lst_copy(t_lst *lst,
-											void *(*copy_fn)(void *data));
+							void *(*copy_fn)(void *data));
+t_lst						*twl_lst_copy_until(t_lst *lst,
+							void *(*copy_fn)(void *data), void *sentinel);
 void						*twl_lst_get(t_lst *lst, int index);
 void						*twl_lst_get_rand(t_lst *lst);
 size_t						twl_lst_len(t_lst *lst);

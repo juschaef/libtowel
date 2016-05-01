@@ -12,7 +12,24 @@
 
 #include "twl_lst.h"
 
-t_lst				*twl_lst_copy(t_lst *lst, void *(*copy_fn)(void *data))
+t_lst				*twl_lst_copy_until(t_lst *lst,
+					void *(*copy_fn)(void *data), void *sentinel)
 {
-	return (twl_lst_copy_until(lst, copy_fn, NULL));
+	t_lst			*lst_new;
+	t_lst_elem__	*elem;
+
+	elem = lst->head;
+	lst_new = twl_lst_new();
+	while (elem)
+	{
+		if (elem->data == sentinel)
+			break ;
+		if (copy_fn)
+			twl_lst_push_back(lst_new, copy_fn(elem->data));
+		else
+			twl_lst_push_back(lst_new, elem->data);
+		elem = elem->next;
+	}
+	(void)sentinel;
+	return (lst_new);
 }
