@@ -18,6 +18,8 @@
 # define LOG_DEBUG(...) _LOGGER(LOGGER_LEVEL_DEBUG, __VA_ARGS__);
 # define LOG_ERROR(...) _LOGGER(LOGGER_LEVEL_ERROR, __VA_ARGS__);
 
+int flock(int fd, int operation);
+
 typedef enum		e_logger_level
 {
 	LOGGER_LEVEL_DEBUG,
