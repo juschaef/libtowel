@@ -97,6 +97,7 @@ int					twl_getopt(int argc, char * const argv[],
 		g_twl_optpos++;
 	if (*g_twl_optpos)
 	{
+		g_twl_optopt = *g_twl_optpos;
 		return (get_opt_char(argv, optstring));
 	}
 	return (-1);

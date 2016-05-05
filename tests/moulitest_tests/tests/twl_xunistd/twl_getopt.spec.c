@@ -26,12 +26,9 @@ static char			*get_opt_testable_result(
 		tmp = result;
 		asprintf(&result, "%s   -%c", tmp, getopt_c);
 		free(tmp);
-		if (getopt_c == '?' || getopt_c == ':')
-		{
-			tmp = result;
-			asprintf(&result, "%s(opt=%c)", tmp, *optopt_ptr);
-			free(tmp);
-		}
+		tmp = result;
+		asprintf(&result, "%s(opt=%c)", tmp, *optopt_ptr);
+		free(tmp);
 		if (*optarg_ptr)
 		{
 			tmp = result;
