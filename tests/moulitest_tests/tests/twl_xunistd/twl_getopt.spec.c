@@ -21,6 +21,7 @@ static char			*get_opt_testable_result(
 	argv = twl_strsplit(argv_str, ' ');
 	argc = twl_arr_len(argv) - 1;
 	result = twl_strdup(argv[0]);
+	*optopt_ptr = 0;
 	while ((getopt_c = getopt_fn(argc, argv, optstring)) != -1)
 	{
 		tmp = result;
