@@ -4,6 +4,7 @@
 #include "twl_arr.h"
 
 static char			*get_opt_testable_result(
+	t_test *test,
 	int (getopt_fn)(int argc, char * const argv[], const char *optstring),
 	int				*optind_ptr,
 	char *argv_str, char *optstring)
@@ -42,23 +43,33 @@ static char			*get_opt_testable_result(
 		char			*expected; \
 		char			*actual; \
 		g_twl_optind = optind = 1; \
-		expected = get_opt_testable_result(getopt, &optind, argv_str, optstring); \
-		actual = get_opt_testable_result(twl_getopt, &g_twl_optind, argv_str, optstring); \
+		expected = get_opt_testable_result(test, getopt, &optind, argv_str, optstring); \
+		actual = get_opt_testable_result(test, twl_getopt, &g_twl_optind, argv_str, optstring); \
 		if (debug) \
 		{ \
-			printf("argv_str {%s}\n", argv_str); \
-			printf("expected {%s}\n", expected); \
-			printf("actual   {%s}\n", actual); \
+			printf("\n======= case {%s}\n", argv_str); \
+			printf("expected     {%s}\n", expected); \
+			printf("actual       {%s}\n", actual); \
+			printf("g_twl_optind %d\n", g_twl_optind); \
+			printf("optind       %d\n", optind); \
+			printf("optopt       %c\n", optopt); \
 		} \
-		mt_assert(twl_strcmp(expected, actual) == 0); \
+		mt_assert(twl_strcmp(expected, actual) == 0 \
+			&& (g_twl_optind == optind)); \
 		free(actual); \
 		free(expected); \
 	}
 
-get_opt_test_macro(simple_test, "ls -l -a abc", "la", false);
+get_opt_test_macro(test_opt, "ls -l -a", "la", true);
+get_opt_test_macro(test_opt_and_optarg, "ls -l -a arg1 arg2", "la", true);
+get_opt_test_macro(test_optarg, "ls arg1 arg2", "la", true);
+get_opt_test_macro(test_grouped_opt, "ls -s -sasb arg1 arg2", "abs", true);
 
 void	suite_twl_getopt(t_suite *suite)
 {
-	SUITE_ADD_TEST(suite, simple_test);
+	SUITE_ADD_TEST(suite, test_opt);
+	SUITE_ADD_TEST(suite, test_opt_and_optarg);
+	SUITE_ADD_TEST(suite, test_optarg);
+	SUITE_ADD_TEST(suite, test_grouped_opt);
 }
 

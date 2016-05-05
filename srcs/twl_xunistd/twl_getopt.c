@@ -14,26 +14,36 @@
 
 #include "twl_stdio.h" // remove this
 
-char				*g_twl_optarg;
+char				*g_twl_optarg = NULL;
 int					g_twl_opterr = 0;
 int					g_twl_optind = 1;
 int					g_twl_optopt = 0;
 
+static char			*g_getopt_pos;
+
 int					twl_getopt(int argc, char * const argv[],
 					const char *optstring)
 {
-	char			**tmp_av;
 	char			opt;
+	char			*arg;
 
-	tmp_av = (char **)argv + g_twl_optind;
-	if (!*tmp_av)
+	if (g_twl_optind >= argc)
 		return (-1);
-	// twl_printf("tmp_av %s\n", *tmp_av);
-	if (*tmp_av[0] == '-')
+	arg = argv[g_twl_optind];
+	if (g_twl_optind == 1)
+		g_getopt_pos = arg;
+	if (!*g_getopt_pos)
+		g_getopt_pos = arg;
+	if (*arg != '-')
+		return (-1);
+	if (*g_getopt_pos == '-')
+		g_getopt_pos++;
+	if (*g_getopt_pos)
 	{
-		g_twl_optind++;
-		opt = (*tmp_av)[1];
-		// twl_printf("opt %c\n", opt);
+		opt = *g_getopt_pos;
+		g_getopt_pos++;
+		if (!*g_getopt_pos)
+			g_twl_optind++;
 		return (opt);
 	}
 	(void)argc;
