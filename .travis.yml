@@ -7,7 +7,7 @@ compiler: gcc
 matrix:
   include:
     - os: linux
-      env: PATTERN='-v _noci'
+      env: PATTERN=' -v _noci'
 
 before_script:
   - git clone https://github.com/yyang42/moulitest.git ../moulitest
