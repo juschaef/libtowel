@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
+#include "twl_xunistd.h"
 #include "twl_string.h"
 
 int					twl_getch(void)

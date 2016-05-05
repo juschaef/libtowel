@@ -13,6 +13,8 @@
 #ifndef TWL_XUNISTD_H
 # define TWL_XUNISTD_H
 
+#include <unistd.h>
+
 int					twl_execvep(char *file, char **argv, char **envp);
 char				*twl_getcwd_str(void);
 int					twl_getch(void);

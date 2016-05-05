@@ -10,11 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_GETOPT_H
-# define TWL_GETOPT_H
+#ifndef TWL_XUNISTD_H
+# define TWL_XUNISTD_H
 
-# include "twl_string.h"
+#include <unistd.h>
 
-int	twl_simple_getopt(const char **av, const char *optstr, char **optopt);
+ssize_t				read(int fildes, void *buf, size_t nbyte);
+
+/*
+** getopt
+*/
+
+extern char			*g_twl_optarg;
+extern int			g_twl_opterr;
+extern int			g_twl_optind;
+extern int			g_twl_optopt;
+int					twl_getopt(int argc, char * const argv[],
+					const char *optstring);
+
+/*
+** ...
+*/
 
 #endif
