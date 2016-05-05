@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "twl_xunistd.h"
+#include "twl_xstring.h"
 
 #include "twl_stdio.h" // remove this
 
@@ -19,35 +20,58 @@ int					g_twl_opterr = 0;
 int					g_twl_optind = 1;
 int					g_twl_optopt = 0;
 
-static char			*g_getopt_pos;
+static char			*g_twl_optpos = NULL;
+
+static int			get_opt_char(char * const argv[], const char *optstring)
+{
+	char			opt;
+	char			*found;
+
+	if ((found = twl_strchr(optstring, *g_twl_optpos)))
+	{
+		if (*(found + 1) == ':')
+		{
+			g_twl_optarg = argv[g_twl_optind + 1];
+			g_twl_optind++;
+		}
+		opt = *g_twl_optpos;
+	}
+	else
+	{
+		g_twl_optopt = *g_twl_optpos;
+		opt = '?';
+	}
+	g_twl_optpos++;
+	if (!*g_twl_optpos)
+		g_twl_optind++;
+	return (opt);
+}
 
 int					twl_getopt(int argc, char * const argv[],
 					const char *optstring)
 {
-	char			opt;
-	char			*arg;
+	char			*cur_arg;
 
+	g_twl_optopt = 0;
 	if (g_twl_optind >= argc)
 		return (-1);
-	arg = argv[g_twl_optind];
-	if (g_twl_optind == 1)
-		g_getopt_pos = arg;
-	if (!*g_getopt_pos)
-		g_getopt_pos = arg;
-	if (*arg != '-')
+	cur_arg = argv[g_twl_optind];
+	if (*cur_arg != '-')
 		return (-1);
-	if (*g_getopt_pos == '-')
-		g_getopt_pos++;
-	if (*g_getopt_pos)
+	if (twl_strequ(cur_arg, "--"))
 	{
-		opt = *g_getopt_pos;
-		g_getopt_pos++;
-		if (!*g_getopt_pos)
-			g_twl_optind++;
-		return (opt);
+		g_twl_optind++;
+		return (-1);
 	}
-	(void)argc;
-	(void)argv;
-	(void)optstring;
+	if (g_twl_optind == 1)
+		g_twl_optpos = cur_arg;
+	if (!*g_twl_optpos)
+		g_twl_optpos = cur_arg;
+	if (*g_twl_optpos == '-')
+		g_twl_optpos++;
+	if (*g_twl_optpos)
+	{
+		return (get_opt_char(argv, optstring));
+	}
 	return (-1);
 }

@@ -7,6 +7,8 @@ static char			*get_opt_testable_result(
 	t_test *test,
 	int (getopt_fn)(int argc, char * const argv[], const char *optstring),
 	int				*optind_ptr,
+	int				*optopt_ptr,
+	char			**optarg_ptr,
 	char *argv_str, char *optstring)
 {
 	char			**argv;
@@ -22,14 +24,26 @@ static char			*get_opt_testable_result(
 	while ((getopt_c = getopt_fn(argc, argv, optstring)) != -1)
 	{
 		tmp = result;
-		asprintf(&result, "%s_-%c", tmp, getopt_c);
+		asprintf(&result, "%s   -%c", tmp, getopt_c);
 		free(tmp);
+		if (getopt_c == '?')
+		{
+			tmp = result;
+			asprintf(&result, "%s(opt=%c)", tmp, *optopt_ptr);
+			free(tmp);
+		}
+		if (*optarg_ptr)
+		{
+			tmp = result;
+			asprintf(&result, "%s(arg=%s)", tmp, *optarg_ptr);
+			free(tmp);
+		}
 	}
 	remain = argv + *optind_ptr;
 	while (*remain)
 	{
 		tmp = result;
-		asprintf(&result, "%s_%s", tmp, *remain);
+		asprintf(&result, "%s   %s", tmp, *remain);
 		free(tmp);
 		remain++;
 	}
@@ -43,16 +57,16 @@ static char			*get_opt_testable_result(
 		char			*expected; \
 		char			*actual; \
 		g_twl_optind = optind = 1; \
-		expected = get_opt_testable_result(test, getopt, &optind, argv_str, optstring); \
-		actual = get_opt_testable_result(test, twl_getopt, &g_twl_optind, argv_str, optstring); \
+		if (debug) \
+			printf("\n======= case {%s}\n", argv_str); \
+		expected = get_opt_testable_result(test, getopt,     &optind,       &optopt,       &optarg,       argv_str, optstring); \
+		actual = get_opt_testable_result(test,   twl_getopt, &g_twl_optind, &g_twl_optopt, &g_twl_optarg, argv_str, optstring); \
 		if (debug) \
 		{ \
-			printf("\n======= case {%s}\n", argv_str); \
 			printf("expected     {%s}\n", expected); \
 			printf("actual       {%s}\n", actual); \
-			printf("g_twl_optind %d\n", g_twl_optind); \
-			printf("optind       %d\n", optind); \
-			printf("optopt       %c\n", optopt); \
+			printf("optind       expected: %d       actual: %d\n", optind, g_twl_optind); \
+			printf("optopt       expected: %c       actual: %c\n", optopt, g_twl_optopt); \
 		} \
 		mt_assert(twl_strcmp(expected, actual) == 0 \
 			&& (g_twl_optind == optind)); \
@@ -64,6 +78,13 @@ get_opt_test_macro(test_opt, "ls -l -a", "la", true);
 get_opt_test_macro(test_opt_and_optarg, "ls -l -a arg1 arg2", "la", true);
 get_opt_test_macro(test_optarg, "ls arg1 arg2", "la", true);
 get_opt_test_macro(test_grouped_opt, "ls -s -sasb arg1 arg2", "abs", true);
+get_opt_test_macro(test_double_dash, "ls -s -- -a arg1", "abs", true);
+get_opt_test_macro(test_double_dash_end, "ls -s --", "abs", true);
+get_opt_test_macro(test_double_dash_alone, "ls --", "abs", true);
+get_opt_test_macro(test_no_args, "ls", "abs", true);
+get_opt_test_macro(test_opt_after_no_opt, "ls -a b -a", "abs", true);
+get_opt_test_macro(test_invalid_opt, "ls -a -xyz arg1 arg2", "abc", true);
+get_opt_test_macro(test_opt_arg, "ls -a arg1 arg2", "a:bs", true);
 
 void	suite_twl_getopt(t_suite *suite)
 {
@@ -71,5 +92,11 @@ void	suite_twl_getopt(t_suite *suite)
 	SUITE_ADD_TEST(suite, test_opt_and_optarg);
 	SUITE_ADD_TEST(suite, test_optarg);
 	SUITE_ADD_TEST(suite, test_grouped_opt);
+	SUITE_ADD_TEST(suite, test_double_dash);
+	SUITE_ADD_TEST(suite, test_double_dash_end);
+	SUITE_ADD_TEST(suite, test_double_dash_alone);
+	SUITE_ADD_TEST(suite, test_no_args);
+	SUITE_ADD_TEST(suite, test_opt_after_no_opt);
+	SUITE_ADD_TEST(suite, test_invalid_opt);
+	SUITE_ADD_TEST(suite, test_opt_arg);
 }
-
