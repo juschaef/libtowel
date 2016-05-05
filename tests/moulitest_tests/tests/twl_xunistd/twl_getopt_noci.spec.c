@@ -109,7 +109,7 @@ get_opt_test_macro(test_digit_opt, "cmd -1 -2 -3 args", "123", true);
 get_opt_test_macro(test_digit_multi_opt, "cmd -11 -22 -33 args", "123", true);
 get_opt_test_macro(test_vendor_W, "cmd -Wextra arg1", "W:", true);
 
-void	suite_twl_getopt(t_suite *suite)
+void	suite_twl_getopt_noci(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, test_opt);
 	SUITE_ADD_TEST(suite, test_opt_and_optarg);

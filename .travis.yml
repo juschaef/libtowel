@@ -6,5 +6,8 @@ compiler: gcc
 before_script:
   - git clone https://github.com/yyang42/moulitest.git ../moulitest
 
+before install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export FILTER_PATTERN='-v _noci'        ; fi
+
 script:
-  - make check
+  - make check $FILTER_PATTERN
