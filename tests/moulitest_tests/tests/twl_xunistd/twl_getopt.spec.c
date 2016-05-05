@@ -85,6 +85,17 @@ get_opt_test_macro(test_no_args, "ls", "abs", true);
 get_opt_test_macro(test_opt_after_no_opt, "ls -a b -a", "abs", true);
 get_opt_test_macro(test_invalid_opt, "ls -a -xyz arg1 arg2", "abc", true);
 get_opt_test_macro(test_opt_arg, "ls -a arg1 arg2", "a:bs", true);
+get_opt_test_macro(test_opt_arg_second, "ls -b -a arg1 arg2", "a:bs", true);
+get_opt_test_macro(test_opt_arg_middle, "ls -b -bas arg1 arg2", "a:bs", true);
+get_opt_test_macro(test_opt_arg_middle2, "ls -b -ba arg1 arg2", "a:bs", true);
+get_opt_test_macro(test_opt_arg_attached, "ls -a123 arg1 arg2", "a:bs", true);
+get_opt_test_macro(test_opt_arg_missing, "ls -a -b", "a:b:s", true);
+get_opt_test_macro(test_opt_arg_missing_a, "ls -a", "a:", true);
+get_opt_test_macro(test_opt_arg_missing_aa, "ls -a -a", "a:", true);
+get_opt_test_macro(test_opt_arg_missing_aaa, "ls -a -a -a", "a:", true);
+get_opt_test_macro(test_opt_arg_missing_colon, "ls -b -a", ":a:b:s", true);
+get_opt_test_macro(test_opt_arg_missing_colon2, "ls -b -a arg1", ":ab:s", true);
+get_opt_test_macro(test_opt_arg_hyphen_folows, "ls -a -b arg1 arg2", "a:bs", true);
 
 void	suite_twl_getopt(t_suite *suite)
 {
@@ -99,4 +110,15 @@ void	suite_twl_getopt(t_suite *suite)
 	SUITE_ADD_TEST(suite, test_opt_after_no_opt);
 	SUITE_ADD_TEST(suite, test_invalid_opt);
 	SUITE_ADD_TEST(suite, test_opt_arg);
+	SUITE_ADD_TEST(suite, test_opt_arg_second);
+	SUITE_ADD_TEST(suite, test_opt_arg_middle);
+	SUITE_ADD_TEST(suite, test_opt_arg_middle2);
+	SUITE_ADD_TEST(suite, test_opt_arg_attached);
+	SUITE_ADD_TEST(suite, test_opt_arg_missing);
+	SUITE_ADD_TEST(suite, test_opt_arg_missing_a);
+	SUITE_ADD_TEST(suite, test_opt_arg_missing_aa);
+	SUITE_ADD_TEST(suite, test_opt_arg_missing_aaa);
+	SUITE_ADD_TEST(suite, test_opt_arg_missing_colon);
+	SUITE_ADD_TEST(suite, test_opt_arg_missing_colon2);
+	SUITE_ADD_TEST(suite, test_opt_arg_hyphen_folows);
 }

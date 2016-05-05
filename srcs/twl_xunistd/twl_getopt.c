@@ -12,6 +12,7 @@
 
 #include "twl_xunistd.h"
 #include "twl_xstring.h"
+#include "twl_arr.h"
 
 #include "twl_stdio.h" // remove this
 
@@ -22,19 +23,43 @@ int					g_twl_optopt = 0;
 
 static char			*g_twl_optpos = NULL;
 
-static int			get_opt_char(char * const argv[], const char *optstring)
+static int			get_opt_char(int argc, char * const argv[], const char *optstring)
 {
 	char			opt;
 	char			*found;
 
 	if ((found = twl_strchr(optstring, *g_twl_optpos)))
 	{
+		opt = *g_twl_optpos;
 		if (*(found + 1) == ':')
 		{
-			g_twl_optarg = argv[g_twl_optind + 1];
-			g_twl_optind++;
+
+			if (*(g_twl_optpos + 1) == '\0')
+			{
+				twl_printf("g_twl_optind %zu\n", g_twl_optind);
+				twl_printf("twl_arr_len((void *)argv) %zu\n", twl_arr_len((void *)(argv + g_twl_optind)));
+
+				if (twl_arr_len((void *)(argv + g_twl_optind)) <= 2
+					&& (*argv[g_twl_optind + 1] == '-'))
+				{
+					opt = (*optstring == ':') ? ':' : '?';
+					g_twl_optopt = *g_twl_optpos;
+				}
+				else
+				{
+					g_twl_optarg = argv[g_twl_optind + 1];
+				}
+				g_twl_optind += 2;
+			}
+			else
+			{
+				g_twl_optarg = g_twl_optpos + 1;
+				g_twl_optpos = NULL;
+				g_twl_optind += 1;
+			}
+			(void)argc;
+			return (opt);
 		}
-		opt = *g_twl_optpos;
 	}
 	else
 	{
@@ -53,6 +78,7 @@ int					twl_getopt(int argc, char * const argv[],
 	char			*cur_arg;
 
 	g_twl_optopt = 0;
+	g_twl_optarg = NULL;
 	if (g_twl_optind >= argc)
 		return (-1);
 	cur_arg = argv[g_twl_optind];
@@ -65,13 +91,13 @@ int					twl_getopt(int argc, char * const argv[],
 	}
 	if (g_twl_optind == 1)
 		g_twl_optpos = cur_arg;
-	if (!*g_twl_optpos)
+	if (!g_twl_optpos || !*g_twl_optpos)
 		g_twl_optpos = cur_arg;
 	if (*g_twl_optpos == '-')
 		g_twl_optpos++;
 	if (*g_twl_optpos)
 	{
-		return (get_opt_char(argv, optstring));
+		return (get_opt_char(argc, argv, optstring));
 	}
 	return (-1);
 }
