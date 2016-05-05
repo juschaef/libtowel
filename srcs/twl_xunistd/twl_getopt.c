@@ -11,18 +11,17 @@
 /* ************************************************************************** */
 
 #include "twl_xunistd.h"
-#include "twl_string.h"
 
-int					twl_getch(void)
+extern char			*g_twl_optarg;
+extern int			g_twl_opterr;
+extern int			g_twl_optind;
+extern int			g_twl_optopt;
+
+int					twl_getopt(int argc, char * const argv[],
+					const char *optstring)
 {
-	char			buffer[4];
-	int				key;
-
-	key = 0;
-	twl_bzero(buffer, 4);
-	read(0, buffer, 4);
-	key = buffer[0];
-	key += buffer[1] << 8;
-	key += buffer[2] << 16;
-	return (key);
+	(void)argc;
+	(void)argv;
+	(void)optstring;
+	return (-1);
 }
