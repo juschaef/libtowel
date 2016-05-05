@@ -1,17 +1,10 @@
 os:
+  - linux
   - osx
 language: c
 compiler: gcc
 before_script:
   - git clone https://github.com/yyang42/moulitest.git ../moulitest
 
-matrix:
-    include:
-        - os: linux
-          env: GREP_PATTERN='-v _noci'
-        - os: osx
-          env: GREP_PATTERN=''
-
 script:
-  - echo $GREP_PATTERN
-  - make check $GREP_PATTERN
+  - make check PATTERN='-v _noci'
