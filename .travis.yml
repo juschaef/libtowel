@@ -1,10 +1,19 @@
 os:
-  - linux
   - osx
+
 language: c
 compiler: gcc
+
+env:
+  - PATTERN=''
+
+matrix:
+  include:
+    - os: linux
+      env: PATTERN='-v _noci'
+
 before_script:
   - git clone https://github.com/yyang42/moulitest.git ../moulitest
 
 script:
-  - make check PATTERN='-v _noci'
+  - make check
