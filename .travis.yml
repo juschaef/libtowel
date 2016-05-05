@@ -6,11 +6,13 @@ compiler: gcc
 before_script:
   - git clone https://github.com/yyang42/moulitest.git ../moulitest
 
-before install:
-  - if [ "$TRAVIS_OS_NAME" == "linux" ]; then
-        export FILTER_PATTERN='-v _noci';
-    fi
+matrix:
+    include:
+        - os: linux
+          env: GREP_PATTERN='-v _noci'
+        - os: osx
+          env: GREP_PATTERN=''
 
 script:
-  - echo $FILTER_PATTERN
-  - make check $FILTER_PATTERN
+  - echo $GREP_PATTERN
+  - make check $GREP_PATTERN
