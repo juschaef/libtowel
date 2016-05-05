@@ -1,6 +1,6 @@
-os:
-  - linux
-  - osx
+# os:
+#   - linux
+#   - osx
 language: c
 compiler: gcc
 before_script:
