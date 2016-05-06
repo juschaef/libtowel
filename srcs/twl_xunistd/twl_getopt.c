@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_xunistd.h"
+#include "twl_unistd.h"
 #include "twl_xstring.h"
 #include "twl_arr.h"
 
@@ -21,9 +21,39 @@ int					g_twl_opterr = 0;
 int					g_twl_optind = 1;
 int					g_twl_optopt = 0;
 
-static char			*g_twl_optpos = NULL;
+char				*g_twl_optpos = NULL;
 
-static int			get_opt_char(char * const argv[], const char *optstring)
+static bool			is_next_arg_a_invalid_arg(int argc)
+{
+	if ((g_twl_optind + 1) >= argc)
+		return (true);
+	return (false);
+}
+
+static char			handle_optarg(char opt, int argc, char * const argv[], const char *optstring)
+{
+	if (*(g_twl_optpos + 1) == '\0')
+	{
+		if (is_next_arg_a_invalid_arg(argc))
+		{
+			opt = (*optstring == ':') ? ':' : '?';
+			g_twl_optopt = *g_twl_optpos;
+		}
+		else
+		{
+			g_twl_optarg = argv[g_twl_optind + 1];
+		}
+		g_twl_optind += 2;
+	}
+	else
+	{
+		g_twl_optarg = g_twl_optpos + 1;
+		g_twl_optind += 1;
+	}
+	return (opt);
+}
+
+static int			get_opt_char(int argc, char * const argv[], const char *optstring)
 {
 	char			opt;
 	char			*found;
@@ -33,27 +63,7 @@ static int			get_opt_char(char * const argv[], const char *optstring)
 		opt = *g_twl_optpos;
 		if (*(found + 1) == ':')
 		{
-
-			if (*(g_twl_optpos + 1) == '\0')
-			{
-
-				if (twl_arr_len((void *)(argv + g_twl_optind)) <= 2
-					&& (*argv[g_twl_optind + 1] == '-'))
-				{
-					opt = (*optstring == ':') ? ':' : '?';
-					g_twl_optopt = *g_twl_optpos;
-				}
-				else
-				{
-					g_twl_optarg = argv[g_twl_optind + 1];
-				}
-				g_twl_optind += 2;
-			}
-			else
-			{
-				g_twl_optarg = g_twl_optpos + 1;
-				g_twl_optind += 1;
-			}
+			opt = handle_optarg(opt, argc, argv, optstring);
 			g_twl_optpos = NULL;
 			return (opt);
 		}
@@ -98,7 +108,7 @@ int					twl_getopt(int argc, char * const argv[],
 	if (*g_twl_optpos)
 	{
 		g_twl_optopt = *g_twl_optpos;
-		return (get_opt_char(argv, optstring));
+		return (get_opt_char(argc, argv, optstring));
 	}
 	return (-1);
 }

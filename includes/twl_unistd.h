@@ -25,6 +25,8 @@ extern char			*g_twl_optarg;
 extern int			g_twl_opterr;
 extern int			g_twl_optind;
 extern int			g_twl_optopt;
+extern char			*g_twl_optpos;
+
 int					twl_getopt(int argc, char * const argv[],
 					const char *optstring);
 

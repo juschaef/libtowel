@@ -25,12 +25,12 @@ static char			*get_opt_testable_result(
 	while ((getopt_c = getopt_fn(argc, argv, optstring)) != -1)
 	{
 		tmp = result;
-		asprintf(&result, "%s   -%c", tmp, getopt_c);
+		asprintf(&result, "%s   -%c(ind=%d)", tmp, getopt_c, *optind_ptr);
 		free(tmp);
 		tmp = result;
 		asprintf(&result, "%s(opt=%c)", tmp, *optopt_ptr);
 		free(tmp);
-		if (*optarg_ptr)
+		if (*optarg_ptr && getopt_c != '?')
 		{
 			tmp = result;
 			asprintf(&result, "%s(arg=%s)", tmp, *optarg_ptr);
@@ -75,39 +75,45 @@ static char			*get_opt_testable_result(
 		free(expected); \
 	}
 
-get_opt_test_macro(test_opt, "ls -l -a", "la", true);
-get_opt_test_macro(test_opt_and_optarg, "ls -l -a arg1 arg2", "la", true);
-get_opt_test_macro(test_optarg, "ls arg1 arg2", "la", true);
-get_opt_test_macro(test_grouped_opt, "ls -s -sasb arg1 arg2", "abs", true);
-get_opt_test_macro(test_double_dash, "ls -s -- -a arg1", "abs", true);
-get_opt_test_macro(test_double_dash_end, "ls -s --", "abs", true);
-get_opt_test_macro(test_double_dash_alone, "ls --", "abs", true);
-get_opt_test_macro(test_no_args, "ls", "abs", true);
-get_opt_test_macro(test_opt_after_no_opt, "ls -a b -a", "abs", true);
-get_opt_test_macro(test_invalid_opt, "ls -a -xyz arg1 arg2", "abc", true);
-get_opt_test_macro(test_opt_arg, "ls -a arg1 arg2", "a:bs", true);
-get_opt_test_macro(test_opt_arg_second, "ls -b -a arg1 arg2", "a:bs", true);
-get_opt_test_macro(test_opt_arg_middle, "ls -b -bas arg1 arg2", "a:bs", true);
-get_opt_test_macro(test_opt_arg_middle2, "ls -b -ba arg1 arg2", "a:bs", true);
-get_opt_test_macro(test_opt_arg_attached, "ls -a123 arg1 arg2", "a:bs", true);
-get_opt_test_macro(test_opt_arg_missing, "ls -a -b", "a:b:s", true);
-get_opt_test_macro(test_opt_arg_missing_a, "ls -a", "a:", true);
-get_opt_test_macro(test_opt_arg_missing_aa, "ls -a -a", "a:", true);
-get_opt_test_macro(test_opt_arg_missing_aaa, "ls -a -a -a", "a:", true);
-get_opt_test_macro(test_opt_arg_missing_colon, "ls -b -a", ":a:b:s", true);
-get_opt_test_macro(test_opt_arg_missing_colon2, "ls -b -a arg1", ":ab:s", true);
-get_opt_test_macro(test_opt_arg_missing_double_hyphen, "ls -b --", "b:", true);
-get_opt_test_macro(test_opt_arg_missing_double_hyphen2, "ls -b --", ":b:", true);
-get_opt_test_macro(test_opt_arg_hyphen_folows, "ls -a -b arg1 arg2", "a:bs", true);
-get_opt_test_macro(test_posix_example1, "cmd -ao arg path path", ":abf:o:", true);
-get_opt_test_macro(test_posix_example2, "cmd -a -o arg path path", ":abf:o:", true);
-get_opt_test_macro(test_posix_example3, "cmd -o arg -a path path", ":abf:o:", true);
-get_opt_test_macro(test_posix_example4, "cmd -a -o arg -- path path", ":abf:o:", true);
-get_opt_test_macro(test_posix_example5, "cmd -a -oarg path path", ":abf:o:", true);
-get_opt_test_macro(test_posix_example6, "cmd -aoarg path path", ":abf:o:", true);
-get_opt_test_macro(test_digit_opt, "cmd -1 -2 -3 args", "123", true);
-get_opt_test_macro(test_digit_multi_opt, "cmd -11 -22 -33 args", "123", true);
-get_opt_test_macro(test_vendor_W, "cmd -Wextra arg1", "W:", true);
+get_opt_test_macro(test_opt, "ls -l -a", "la", false);
+get_opt_test_macro(test_opt_and_optarg, "ls -l -a arg1 arg2", "la", false);
+get_opt_test_macro(test_optarg, "ls arg1 arg2", "la", false);
+get_opt_test_macro(test_grouped_opt, "ls -s -sasb arg1 arg2", "abs", false);
+get_opt_test_macro(test_double_dash, "ls -s -- -a arg1", "abs", false);
+get_opt_test_macro(test_double_dash_end, "ls -s --", "abs", false);
+get_opt_test_macro(test_double_dash_alone, "ls --", "abs", false);
+get_opt_test_macro(test_no_args, "ls", "abs", false);
+get_opt_test_macro(test_opt_after_no_opt, "ls -a b -a", "abs", false);
+get_opt_test_macro(test_invalid_opt, "ls -a -xyz arg1 arg2", "abc", false);
+get_opt_test_macro(test_opt_arg, "ls -a arg1 arg2", "a:bs", false);
+get_opt_test_macro(test_opt_arg_second, "ls -b -a arg1 arg2", "a:bs", false);
+get_opt_test_macro(test_opt_arg_middle, "ls -b -bas arg1 arg2", "a:bs", false);
+get_opt_test_macro(test_opt_arg_middle2, "ls -b -ba arg1 arg2", "a:bs", false);
+get_opt_test_macro(test_opt_arg_attached, "ls -a123 arg1 arg2", "a:bs", false);
+get_opt_test_macro(test_opt_arg_missing, "ls -a -b", "a:b:s", false);
+get_opt_test_macro(test_opt_arg_missing_a, "ls -a", "a:", false);
+get_opt_test_macro(test_opt_arg_missing_aa, "ls -a -a", "a:", false);
+get_opt_test_macro(test_opt_arg_missing_aaa, "ls -a -a -a", "a:", false);
+get_opt_test_macro(test_opt_arg_missing_colon, "ls -b -a", ":a:b:s", false);
+get_opt_test_macro(test_opt_arg_missing_colon2, "ls -b -a arg1", ":ab:s", false);
+get_opt_test_macro(test_opt_arg_missing_double_hyphen, "ls -b --", "b:", false);
+get_opt_test_macro(test_opt_arg_missing_double_hyphen2, "ls -b --", ":b:", false);
+get_opt_test_macro(test_opt_arg_hyphen_folows, "ls -a -b arg1 arg2", "a:bs", false);
+get_opt_test_macro(test_posix_example1, "cmd -ao arg path path", ":abf:o:", false);
+get_opt_test_macro(test_posix_example2, "cmd -a -o arg path path", ":abf:o:", false);
+get_opt_test_macro(test_posix_example3, "cmd -o arg -a path path", ":abf:o:", false);
+get_opt_test_macro(test_posix_example4, "cmd -a -o arg -- path path", ":abf:o:", false);
+get_opt_test_macro(test_posix_example5, "cmd -a -oarg path path", ":abf:o:", false);
+get_opt_test_macro(test_posix_example6, "cmd -aoarg path path", ":abf:o:", false);
+get_opt_test_macro(test_digit_opt, "cmd -1 -2 -3 args", "123", false);
+get_opt_test_macro(test_digit_multi_opt, "cmd -11 -22 -33 args", "123", false);
+get_opt_test_macro(test_vendor_W, "cmd -Wextra arg1", "W:", false);
+get_opt_test_macro(test_opt_invalid, "cmd -1 -2 -3", "a", true);
+get_opt_test_macro(test_Wa, "cmd -Wa", ":a:bc", true);
+get_opt_test_macro(test_hyphen_dashdash, "cmd -a --", ":a:bc", true);
+get_opt_test_macro(test_opt_arg_with_another, "cmd -a --", ":a:bc", true);
+get_opt_test_macro(test_multi_missing, "cmd -a -a", "a:", true);
+get_opt_test_macro(test_dashdash_as_opt_arg, "cmd -a --", "a:", true);
 
 void	suite_twl_getopt_noci(t_suite *suite)
 {
@@ -144,4 +150,10 @@ void	suite_twl_getopt_noci(t_suite *suite)
 	SUITE_ADD_TEST(suite, test_digit_opt);
 	SUITE_ADD_TEST(suite, test_digit_multi_opt);
 	SUITE_ADD_TEST(suite, test_vendor_W);
+	SUITE_ADD_TEST(suite, test_opt_invalid);
+	SUITE_ADD_TEST(suite, test_Wa);
+	SUITE_ADD_TEST(suite, test_hyphen_dashdash);
+	SUITE_ADD_TEST(suite, test_opt_arg_with_another);
+	SUITE_ADD_TEST(suite, test_multi_missing);
+	SUITE_ADD_TEST(suite, test_dashdash_as_opt_arg);
 }
