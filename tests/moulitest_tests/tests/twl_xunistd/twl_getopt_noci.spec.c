@@ -110,6 +110,10 @@ get_opt_test_macro(test_digit_multi_opt, "cmd -11 -22 -33 args", "123", false);
 get_opt_test_macro(test_vendor_W, "cmd -Wextra arg1", "W:", false);
 get_opt_test_macro(test_opt_invalid, "cmd -1 -2 -3", "a", true);
 get_opt_test_macro(test_Wa, "cmd -Wa", ":a:bc", true);
+get_opt_test_macro(test_hyphen_dashdash, "cmd -a --", ":a:bc", true);
+get_opt_test_macro(test_opt_arg_with_another, "cmd -a --", ":a:bc", true);
+get_opt_test_macro(test_multi_missing, "cmd -a -a", "a:", true);
+get_opt_test_macro(test_dashdash_as_opt_arg, "cmd -a --", "a:", true);
 
 void	suite_twl_getopt_noci(t_suite *suite)
 {
@@ -148,4 +152,8 @@ void	suite_twl_getopt_noci(t_suite *suite)
 	SUITE_ADD_TEST(suite, test_vendor_W);
 	SUITE_ADD_TEST(suite, test_opt_invalid);
 	SUITE_ADD_TEST(suite, test_Wa);
+	SUITE_ADD_TEST(suite, test_hyphen_dashdash);
+	SUITE_ADD_TEST(suite, test_opt_arg_with_another);
+	SUITE_ADD_TEST(suite, test_multi_missing);
+	SUITE_ADD_TEST(suite, test_dashdash_as_opt_arg);
 }
