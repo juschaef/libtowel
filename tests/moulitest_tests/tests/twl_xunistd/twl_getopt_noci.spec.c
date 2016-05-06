@@ -25,12 +25,12 @@ static char			*get_opt_testable_result(
 	while ((getopt_c = getopt_fn(argc, argv, optstring)) != -1)
 	{
 		tmp = result;
-		asprintf(&result, "%s   -%c", tmp, getopt_c);
+		asprintf(&result, "%s   -%c(ind=%d)", tmp, getopt_c, *optind_ptr);
 		free(tmp);
 		tmp = result;
 		asprintf(&result, "%s(opt=%c)", tmp, *optopt_ptr);
 		free(tmp);
-		if (*optarg_ptr)
+		if (*optarg_ptr && getopt_c != '?')
 		{
 			tmp = result;
 			asprintf(&result, "%s(arg=%s)", tmp, *optarg_ptr);
@@ -108,6 +108,8 @@ get_opt_test_macro(test_posix_example6, "cmd -aoarg path path", ":abf:o:", false
 get_opt_test_macro(test_digit_opt, "cmd -1 -2 -3 args", "123", false);
 get_opt_test_macro(test_digit_multi_opt, "cmd -11 -22 -33 args", "123", false);
 get_opt_test_macro(test_vendor_W, "cmd -Wextra arg1", "W:", false);
+get_opt_test_macro(test_opt_invalid, "cmd -1 -2 -3", "a", true);
+get_opt_test_macro(test_Wa, "cmd -Wa", ":a:bc", true);
 
 void	suite_twl_getopt_noci(t_suite *suite)
 {
@@ -144,4 +146,6 @@ void	suite_twl_getopt_noci(t_suite *suite)
 	SUITE_ADD_TEST(suite, test_digit_opt);
 	SUITE_ADD_TEST(suite, test_digit_multi_opt);
 	SUITE_ADD_TEST(suite, test_vendor_W);
+	SUITE_ADD_TEST(suite, test_opt_invalid);
+	SUITE_ADD_TEST(suite, test_Wa);
 }
