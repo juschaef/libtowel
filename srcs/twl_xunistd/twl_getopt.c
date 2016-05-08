@@ -27,7 +27,7 @@ int					g_twl_optsign = '-';
 
 static bool			is_next_arg_a_invalid_arg(int argc)
 {
-	if ((g_twl_optind + 1) >= argc)
+	if ((g_twl_optind) >= argc)
 		return (true);
 	return (false);
 }

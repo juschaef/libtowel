@@ -34,8 +34,14 @@ get_opt_test_macro(test_opt_plus_o_without_arg, "ls +o", "o:", 1, 'a',
 	"ls   +o", true);
 get_opt_test_macro(test_opt_minus_o_without_arg, "ls -o errexit -o bbb arg", "o:", 5, 'a',
 	"ls   -o(ind=3)(opt=o)(arg=errexit)   -o(ind=5)(opt=o)(arg=bbb)   arg", true);
-// get_opt_test_macro(test_opt_o_one_arg, "ls +o arg1", "o:", 3, 'a',
-// 	"ls   +o(ind=3)(opt=o)(arg=arg1)", true);
+get_opt_test_macro(test_opt_o_one_arg, "ls +o arg1", "o:", 3, 'a',
+	"ls   +o(ind=3)(opt=o)(arg=arg1)", true);
+get_opt_test_macro(test_hyphen_dashdash, "cmd -a --", ":a:bc", 3, 'a',
+	"cmd   -a(ind=3)(opt=a)(arg=--)", true);
+get_opt_test_macro(test_multi_missing, "cmd -a -a", "a:", 3, 'a',
+	"cmd   -a(ind=3)(opt=a)(arg=-a)", true);
+get_opt_test_macro(test_dashdash_as_opt_arg, "cmd -a --", "a:", 3, 'a',
+	"cmd   -a(ind=3)(opt=a)(arg=--)", true);
 
 void	suite_twl_getopt_plus_noci(t_suite *suite)
 {
@@ -44,5 +50,9 @@ void	suite_twl_getopt_plus_noci(t_suite *suite)
 	SUITE_ADD_TEST(suite, test_opt_o);
 	SUITE_ADD_TEST(suite, test_opt_plus_o_without_arg);
 	SUITE_ADD_TEST(suite, test_opt_minus_o_without_arg);
-	// SUITE_ADD_TEST(suite, test_opt_o_one_arg);
+	SUITE_ADD_TEST(suite, test_opt_o_one_arg);
+
+	SUITE_ADD_TEST(suite, test_hyphen_dashdash);
+	SUITE_ADD_TEST(suite, test_multi_missing);
+	SUITE_ADD_TEST(suite, test_dashdash_as_opt_arg);
 }
