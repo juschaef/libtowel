@@ -25,13 +25,6 @@ char				*g_twl_optpos = NULL;
 int					g_twl_optsign_active = 0;
 int					g_twl_optsign = '-';
 
-static bool			is_next_arg_a_invalid_arg(int argc)
-{
-	if ((g_twl_optind + 1) >= argc)
-		return (true);
-	return (false);
-}
-
 static bool			is_start_of_opt(char c)
 {
 	if (g_twl_optsign_active)
@@ -43,14 +36,14 @@ static char			handle_optarg(char opt, int argc, char * const argv[], const char 
 {
 	if (*(g_twl_optpos + 1) == '\0')
 	{
-		if (is_next_arg_a_invalid_arg(argc))
+		if ((g_twl_optind + 1) < (int)twl_arr_len((char **)argv))
 		{
-			opt = (*optstring == ':') ? ':' : '?';
-			g_twl_optopt = *g_twl_optpos;
+			g_twl_optarg = argv[g_twl_optind + 1];
 		}
 		else
 		{
-			g_twl_optarg = argv[g_twl_optind + 1];
+			opt = (*optstring == ':') ? ':' : '?';
+			g_twl_optopt = *g_twl_optpos;
 		}
 		g_twl_optind += 2;
 	}
@@ -60,6 +53,7 @@ static char			handle_optarg(char opt, int argc, char * const argv[], const char 
 		g_twl_optind += 1;
 	}
 	return (opt);
+	(void)argc;
 }
 
 static int			get_opt_char(int argc, char * const argv[], const char *optstring)
