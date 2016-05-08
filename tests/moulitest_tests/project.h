@@ -22,10 +22,21 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "twl_lst.h"
+# include "twl_unistd.h"
+# include "twl_xstring.h"
+# include "twl_arr.h"
+
 
 char	map_test(char c);
 char	mapi_test(unsigned int i, char c);
 void	it_test(char *c);
 void	iti_test(unsigned int i, char *c);
+
+char			*get_opt_testable_result(
+	int (getopt_fn)(int argc, char * const argv[], const char *optstring),
+	int				*optind_ptr,
+	int				*optopt_ptr,
+	char			**optarg_ptr,
+	char *argv_str, char *optstring);
 
 #endif

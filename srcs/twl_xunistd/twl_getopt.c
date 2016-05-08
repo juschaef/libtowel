@@ -22,12 +22,21 @@ int					g_twl_optind = 1;
 int					g_twl_optopt = 0;
 
 char				*g_twl_optpos = NULL;
+int					g_twl_optsign_active = 0;
+int					g_twl_optsign = '-';
 
 static bool			is_next_arg_a_invalid_arg(int argc)
 {
 	if ((g_twl_optind + 1) >= argc)
 		return (true);
 	return (false);
+}
+
+static bool			is_start_of_opt(char c)
+{
+	if (g_twl_optsign_active)
+		return (c == '-' || c == '+');
+	return (c == '-');
 }
 
 static char			handle_optarg(char opt, int argc, char * const argv[], const char *optstring)
@@ -94,7 +103,7 @@ int					twl_getopt(int argc, char * const argv[],
 	if (g_twl_optind >= argc)
 		return (-1);
 	cur_arg = argv[g_twl_optind];
-	if (*cur_arg != '-')
+	if (!is_start_of_opt(*cur_arg))
 		return (-1);
 	if (twl_strequ(cur_arg, "--"))
 	{
@@ -103,8 +112,11 @@ int					twl_getopt(int argc, char * const argv[],
 	}
 	if (!g_twl_optpos || !*g_twl_optpos)
 		g_twl_optpos = cur_arg;
-	if (*g_twl_optpos == '-')
+	if (is_start_of_opt(*g_twl_optpos))
+	{
+		g_twl_optsign = *g_twl_optpos;
 		g_twl_optpos++;
+	}
 	if (*g_twl_optpos)
 	{
 		g_twl_optopt = *g_twl_optpos;
