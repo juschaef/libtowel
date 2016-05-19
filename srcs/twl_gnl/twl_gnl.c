@@ -28,6 +28,8 @@ static int		twl_read_buffer(int fd, char **s_str, char **line)
 	{
 		if (ret < 0)
 			return (-1);
+		if (twl_memchr(buf, '\0', ret))
+			return (GNL_ERR_BINARY_FILE);
 		buf[ret] = '\0';
 		if (!(temp = twl_strnew(twl_strlen(*line) + twl_strlen(buf))))
 			return (-1);
@@ -63,7 +65,7 @@ static int		do_get_next_line(int const fd, char **line, char **remainder)
 	}
 	twl_strcat(*line, *remainder);
 	ret = twl_read_buffer(fd, &*remainder, line);
-	if (ret == 1 || ret == -1)
+	if (ret == 1 || ret < 0)
 		return (ret);
 	if (ret == 0 && twl_strlen(*line) == 0 && twl_strlen(*remainder) == 0)
 		**line = '\0';
@@ -76,8 +78,11 @@ static int		do_get_next_line(int const fd, char **line, char **remainder)
 
 int				twl_gnl(int const fd, char **line, char **remainder)
 {
+	int				ret;
+
 	if (fd < 0 || !line)
 		return (-1);
-	return (do_get_next_line(fd, line, remainder));
+	ret = do_get_next_line(fd, line, remainder);
+	return (ret);
 	(void)remainder;
 }

@@ -19,6 +19,7 @@
 # include "twl_xstring.h"
 
 # define GNL_BUFF_SIZE 8
+# define GNL_ERR_BINARY_FILE -2
 
 int					twl_gnl(int const fd, char **line, char **remainder);
 
