@@ -20,6 +20,7 @@ void				*twl_memccpy(void *dst, const void *src, int c, size_t n);
 void				*twl_memchr(const void *s, int c, size_t n);
 int					twl_memcmp(const void *s1, const void *s2, size_t n);
 void				*twl_memcpy(void *dst, const void *src, size_t n);
+void				*twl_memmove(void *dst, const void *src, size_t n);
 void				*twl_memdup(const void *s, size_t n);
 void				*twl_memset(void *b, int c, size_t len);
 char				*twl_strcat(char *s1, const char *s2);
