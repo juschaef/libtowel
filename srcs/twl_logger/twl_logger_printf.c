@@ -49,8 +49,6 @@ void				twl_logger_printf(t_logger_level level, const char *fn,
 		twl_dprintf(2, "open error");
 		exit(1);
 	}
-	if (flock(fd, LOCK_EX) != 0)
-		twl_dprintf(2, "flock error");
 	pf = pf_create((char *)fmt);
 	twl_dprintf(fd, "%s %s%s [%s:%d] ", time_buffer, get_level_color(level),
 															C_CLEAR, fn, line);
@@ -60,7 +58,5 @@ void				twl_logger_printf(t_logger_level level, const char *fn,
 	twl_dprintf(fd, "\n");
 	va_end(pf->arglist);
 	pf_free(pf);
-	if (flock(fd, LOCK_UN) != 0)
-		twl_dprintf(2, "flock error");
 	close(fd);
 }
