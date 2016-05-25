@@ -88,8 +88,9 @@ t_lst				*twl_graph_breadth_first_shortest_path(t_graph *this,
 		cur_node = twl_lst_shift(frontier);
 		if (cur_node == end_node)
 		{
+			twl_lst_del(frontier, NULL);
+			twl_lst_del(closed, NULL);
 			return (get_data_solution_list(cur_node));
-			break ;
 		}
 		handle_neighbors(frontier, closed, cur_node);
 	}

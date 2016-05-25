@@ -144,3 +144,52 @@
    fun:setlocale
    fun:main
 }
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:__time_load_locale
+   fun:loadlocale
+   fun:setlocale
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:__part_load_locale
+   fun:__time_load_locale
+   fun:loadlocale
+   fun:setlocale
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:__part_load_locale
+   fun:__time_load_locale
+   fun:loadlocale
+   fun:setlocale
+   fun:main
+}
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: definite
+   fun:malloc
+   fun:__Balloc_D2A
+   fun:__s2b_D2A
+   fun:strtod_l
+   fun:test_num2
+   fun:test_exec_do
+   fun:test_exec
+   fun:mt_lst_iter
+   fun:suite_exec
+   fun:mt_lst_iter
+   fun:mt_exec_suites
+   fun:mt_exec
+}

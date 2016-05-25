@@ -21,6 +21,7 @@ static void simple_test(t_test *test)
 	t_graph_node	*nodeC = twl_graph_get_node(graph, nodeC_id);
 	mt_assert(twl_lst_len(twl_graph_node_get_edges(nodeB)) == 1);
 	mt_assert(twl_lst_len(twl_graph_node_get_edges(nodeC)) == 1);
+	twl_graph_del(graph, free, free);
 }
 
 void	suite_twl_graph_clear_remove_node(t_suite *suite)

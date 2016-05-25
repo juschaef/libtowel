@@ -12,6 +12,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(nodeA->data_, "A") == 0);
 	mt_assert(twl_lst_len(nodeA->edges_) == 1);
 	(void)edge_id;
+	twl_graph_del(graph, free, free);
 }
 
 static void test_error_same_node(t_test *test)
@@ -21,6 +22,7 @@ static void test_error_same_node(t_test *test)
 
 	t_graph_edge_id edge_id = twl_graph_add_edge(graph, nodeA_id, nodeA_id, NULL);
 	mt_assert(edge_id == -1);
+	twl_graph_del(graph, free, free);
 }
 
 static void test_multiple_edges_for_same_nodes(t_test *test)
@@ -32,7 +34,7 @@ static void test_multiple_edges_for_same_nodes(t_test *test)
 	t_graph_edge_id edge1_id = twl_graph_add_edge(graph, nodeA_id, nodeB_id, NULL);
 	t_graph_edge_id edge2_id = twl_graph_add_edge(graph, nodeA_id, nodeB_id, NULL);
 	mt_assert(edge1_id != edge2_id);
-
+	twl_graph_del(graph, free, free);
 }
 
 void	suite_twl_graph_add_edge(t_suite *suite)

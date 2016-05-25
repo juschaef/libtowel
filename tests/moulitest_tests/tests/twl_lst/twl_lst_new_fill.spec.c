@@ -34,6 +34,7 @@ static void simple_test(t_test *test)
 	testobj = twl_lst_last(lst);
 	mt_assert(testobj->value == 0);
 	mt_assert(twl_lst_len(lst) == 10);
+	twl_lst_del(lst, free);
 }
 
 void	suite_twl_lst_new_fill(t_suite *suite)

@@ -27,6 +27,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(twl_lst_get(solution, 2), "F") == 0);
 	mt_assert(strcmp(twl_lst_get(solution, 3), "Z") == 0);
 	twl_graph_del(graph, free, free);
+	twl_lst_del(solution, NULL);
 }
 
 static void test_simple_path(t_test *test)
@@ -46,6 +47,7 @@ static void test_simple_path(t_test *test)
 	mt_assert(strcmp(twl_lst_get(solution, 1), "B") == 0);
 	mt_assert(strcmp(twl_lst_get(solution, 2), "Z") == 0);
 	twl_graph_del(graph, free, free);
+	twl_lst_del(solution, NULL);
 }
 
 static void test_not_found(t_test *test)
@@ -59,6 +61,7 @@ static void test_not_found(t_test *test)
 	mt_assert(solution == NULL);
 	(void)nodeB_id;
 	twl_graph_del(graph, free, free);
+	twl_lst_del(solution, NULL);
 }
 
 void	suite_twl_graph_breadth_first_shortest_path(t_suite *suite)

@@ -22,6 +22,11 @@ static void test_edges_advanced(t_test *test)
 	mt_assert(strcmp(twl_graph_node_get_data(neighbors_1), "222") == 0);
 	mt_assert(strcmp(twl_graph_node_get_data(neighbors_2), "333") == 0);
 	twl_lst_del(neighbors, NULL);
+	twl_graph_node_del(node0, NULL);
+	twl_graph_node_del(node1, NULL);
+	twl_graph_node_del(node2, NULL);
+	twl_graph_node_del(node3, NULL);
+	twl_graph_node_del(node4, NULL);
 }
 
 void	suite_twl_graph_node_neighbors(t_suite *suite)

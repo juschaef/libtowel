@@ -11,6 +11,7 @@ static void simple_test(t_test *test)
 	twl_graph_remove_node(graph, nodeA_id);
 	mt_assert(twl_graph_node_count(graph) == 1);
 	(void)nodeB_id;
+	twl_graph_del(graph, free, free);
 }
 
 void	suite_twl_graph_remove_node(t_suite *suite)

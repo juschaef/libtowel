@@ -16,6 +16,7 @@ static void simple_test(t_test *test)
 	char			*data;
 	data = twl_graph_find_node_data(graph, find_fn, "BBB");
 	mt_assert(strcmp(data, "BBB") == 0);
+	twl_graph_del(graph, free, free);
 }
 
 

@@ -13,6 +13,7 @@ static void simple_test(t_test *test)
 	t_graph_edge_id edge_id = twl_graph_add_edge(graph, nodeA_id, nodeB_id, strdup("edge data"));
 	t_graph_edge *edge = twl_graph_edge_mgr_find_by_id(graph->edges_, edge_id);
 	mt_assert(strcmp(edge->data_, "edge data") == 0);
+	twl_graph_del(graph, free, free);
 }
 
 static void test_not_found(t_test *test)
@@ -21,6 +22,7 @@ static void test_not_found(t_test *test)
 
 	graph = twl_graph_new();
 	mt_assert(twl_graph_edge_mgr_find_by_id(graph->edges_, 4200) == NULL);
+	twl_graph_del(graph, free, free);
 }
 
 void	suite_twl_graph_edge_mgr_find_by_id(t_suite *suite)

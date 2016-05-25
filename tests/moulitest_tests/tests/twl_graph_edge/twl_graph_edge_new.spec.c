@@ -12,6 +12,8 @@ static void simple_test(t_test *test)
 	edge = twl_graph_edge_new(0, node0, node1, NULL);
 	mt_assert(edge->left_node_->id_ == node0->id_);
 	mt_assert(edge->right_node_->id_ == node1->id_);
+	twl_graph_node_del(node0, NULL);
+	twl_graph_node_del(node1, NULL);
 }
 
 static void test_edges_added_to_nodes(t_test *test)
@@ -31,6 +33,8 @@ static void test_edges_added_to_nodes(t_test *test)
 	mt_assert(twl_lst_len(node1->edges_) == 1);
 	mt_assert(edge_from_node1->id_ == 0);
 	(void)edge;
+	twl_graph_node_del(node0, NULL);
+	twl_graph_node_del(node1, NULL);
 }
 
 static void test_edges_advanced(t_test *test)
@@ -45,6 +49,10 @@ static void test_edges_advanced(t_test *test)
 	twl_graph_edge_new(2, node0, node3, NULL);
 
 	mt_assert(twl_lst_len(node0->edges_) == 3);
+	twl_graph_node_del(node0, NULL);
+	twl_graph_node_del(node1, NULL);
+	twl_graph_node_del(node2, NULL);
+	twl_graph_node_del(node3, NULL);
 }
 
 void	suite_twl_graph_edge_new(t_suite *suite)

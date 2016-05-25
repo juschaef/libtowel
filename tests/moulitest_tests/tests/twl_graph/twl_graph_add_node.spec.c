@@ -12,6 +12,7 @@ static void simple_test(t_test *test)
 	twl_graph_add_node(graph, strdup("C"));
 	twl_graph_add_node(graph, strdup("D"));
 	mt_assert(twl_graph_node_count(graph) == 4);
+	twl_graph_del(graph, free, free);
 }
 
 void	suite_twl_graph_add_node(t_suite *suite)

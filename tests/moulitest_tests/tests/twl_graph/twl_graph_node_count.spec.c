@@ -12,6 +12,7 @@ static void simple_test(t_test *test)
 	twl_graph_add_node(graph, strdup("D"));
 	twl_graph_add_node(graph, strdup("E"));
 	mt_assert(twl_graph_node_count(graph) == 5);
+	twl_graph_del(graph, free, free);
 }
 
 static void empty_graph(t_test *test)
@@ -20,6 +21,7 @@ static void empty_graph(t_test *test)
 
 	graph = twl_graph_new();
 	mt_assert(twl_graph_node_count(graph) == 0);
+	twl_graph_del(graph, free, free);
 }
 
 void	suite_twl_graph_node_count(t_suite *suite)
