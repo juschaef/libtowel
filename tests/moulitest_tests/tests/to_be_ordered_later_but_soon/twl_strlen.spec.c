@@ -21,7 +21,11 @@ static void empty_string(t_test *test)
 
 static void more_than_twl_strlen_max_len(t_test *test)
 {
-	mt_assert(twl_strlen(twl_strnewc(FT_STRLEN_MAX_LEN, 'z')));
+	char			*str;
+
+	str = twl_strnewc(FT_STRLEN_MAX_LEN, 'z');
+	mt_assert(twl_strlen(str));
+	free(str);
 }
 
 void	suite_twl_strlen(t_suite *suite)

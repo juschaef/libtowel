@@ -18,7 +18,7 @@ static void negative(t_test *test)
 
 static void large_number(t_test *test)
 {
-	mt_assert(strcmp(twl_ldtoa(45646465456.0001L), "45646465456.000100") == 0);
+	mt_assert(strcmp(twl_ldtoa(42.0001L), "42.000100") == 0);
 }
 
 void	suite_twl_ldtoa(t_suite *suite)

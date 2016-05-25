@@ -10,6 +10,7 @@ static void test01(t_test *test)
 	int fd3;
 	char *remainder = NULL;
 	int	diff_file_size;
+	char buff[100];
 
     system("mkdir -p sandbox");
 	system("openssl rand -out sandbox/large_file.txt -base64 $((50 * 1000 * 3/4)) 2> /dev/null");
@@ -28,7 +29,7 @@ static void test01(t_test *test)
 
 	system("diff sandbox/large_file.txt sandbox/large_file.txt.mine > sandbox/large_file.diff");
 	fd3 = open("sandbox/large_file.diff", O_RDONLY);
-	diff_file_size = read(fd3, NULL, 10);
+	diff_file_size = read(fd3, buff, 10);
 	close(fd3);
 
 	mt_assert(diff_file_size == 0);

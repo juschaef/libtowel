@@ -6,6 +6,7 @@ static void simple_test(t_test *test)
 	// test->debug = 1;
 	char s[100];
 
+	*s = 0;
 	strcpy(s, "");
 	twl_strcat(s, "abc");
 	mt_assert(strcmp(s, "abc") == 0);
@@ -27,6 +28,7 @@ static void return_value_string(t_test *test)
 	char *s;
 
 	s = malloc(sizeof(char) * 10);
+	*s = 0;
 	s = twl_strcat(s, "");
 	mt_assert(strcmp(s, "") == 0);
 }
@@ -36,6 +38,7 @@ static void return_value_same_pointer(t_test *test)
 	// test->debug = 1;
 	char s[100];
 
+	*s = 0;
 	mt_assert((long)s == (long)twl_strcat(s, ""));
 }
 

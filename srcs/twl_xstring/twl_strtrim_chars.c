@@ -21,9 +21,9 @@ char				*twl_strtrim_chars(char const *s, char *chars)
 
 	start = 0;
 	end = twl_strlen(s) - 1;
-	while (twl_strchr(chars, s[start]))
+	while (s[start] && twl_strchr(chars, s[start]))
 		start++;
-	while (twl_strchr(chars, s[end]))
+	while (s[start] && twl_strchr(chars, s[end]))
 		end--;
 	trimed = twl_strsub(s, start, end - start + 1);
 	if (!trimed)
