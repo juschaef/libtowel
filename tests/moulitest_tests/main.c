@@ -22,5 +22,6 @@ int main()
 	ADD_TESTS
 
 	int exit_code = mt_exec(mt);
+	mt_del(mt);
 	return(exit_code);
 }

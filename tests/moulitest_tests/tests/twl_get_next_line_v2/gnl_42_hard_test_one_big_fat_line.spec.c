@@ -25,6 +25,7 @@ static void test01(t_test *test)
 	{
 	    write(fd2, line, strlen(line));
 	    write(fd2, "\n", 1);
+	    free(line);
 	}
 	if (line)
 		write(fd2, line, strlen(line));
@@ -37,6 +38,7 @@ static void test01(t_test *test)
 	close(fd3);
 
 	mt_assert(diff_file_size == 0);
+	free(remainder);
 }
 
 void	suite_gnl_42_hard_test_one_big_fat_line(t_suite *suite)

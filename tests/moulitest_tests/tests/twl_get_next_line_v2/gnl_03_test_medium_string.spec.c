@@ -5,7 +5,7 @@
 static void simple_string(t_test *test)
 {
 	char 	*line;
-char 	*remainder = NULL;
+	char 	*remainder = NULL;
 	int		out;
 	int		p[2];
 	char 	*str;
@@ -26,6 +26,9 @@ char 	*remainder = NULL;
 	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, str) == 0);
 	mt_assert(gnl_ret == 1);
+	free(remainder);
+	free(str);
+	free(line);
 }
 
 void	suite_gnl_03_test_medium_string(t_suite *suite)

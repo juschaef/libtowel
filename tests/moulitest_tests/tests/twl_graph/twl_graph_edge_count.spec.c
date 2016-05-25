@@ -12,6 +12,7 @@ static void simple_test(t_test *test)
 	twl_graph_add_edge(graph, nodeA_id, nodeC_id, NULL);
 	// twl_graph_debug_print(graph);
 	mt_assert(twl_graph_edge_count(graph) == 2);
+	twl_graph_del(graph, free, free);
 }
 
 static void empty_graph(t_test *test)
@@ -20,6 +21,7 @@ static void empty_graph(t_test *test)
 
 	graph = twl_graph_new();
 	mt_assert(twl_graph_edge_count(graph) == 0);
+	twl_graph_del(graph, free, free);
 }
 
 void	suite_twl_graph_edge_count(t_suite *suite)

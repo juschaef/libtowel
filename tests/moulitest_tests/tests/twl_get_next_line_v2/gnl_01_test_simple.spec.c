@@ -6,7 +6,7 @@
 static void simple_string(t_test *test)
 {
 	char 	*line;
-char 	*remainder = NULL;
+	char 	*remainder = NULL;
 	int		out;
 	int		p[2];
 	int		fd;
@@ -21,12 +21,17 @@ char 	*remainder = NULL;
 	close(p[1]);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "aaa") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "bbb") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "ccc") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "ddd") == 0);
+	free(line);
+	free(remainder);
 }
 
 void	suite_gnl_01_test_simple(t_suite *suite)

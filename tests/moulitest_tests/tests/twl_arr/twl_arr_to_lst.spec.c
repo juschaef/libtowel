@@ -18,6 +18,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(twl_lst_get_elem__(lst, 1)->data, "zbb") == 0);
 	mt_assert(strcmp(twl_lst_get_elem__(lst, 2)->data, "zcc") == 0);
 	mt_assert(twl_lst_get_elem__(lst, 3) == NULL);
+	twl_arr_del(arr, free);
 }
 
 void	suite_twl_arr_to_lst(t_suite *suite)

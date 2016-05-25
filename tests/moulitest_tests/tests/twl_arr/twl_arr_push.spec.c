@@ -13,6 +13,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(arr[1], "bbb") == 0);
 	mt_assert(strcmp(arr[2], "ccc") == 0);
 	mt_assert(arr[3] == NULL);
+	twl_arr_del(arr, NULL);
 }
 
 static void simple_push_empty_arr(t_test *test)
@@ -25,6 +26,7 @@ static void simple_push_empty_arr(t_test *test)
 
 	mt_assert(arr[3] == NULL);
 	mt_assert(twl_arr_len(arr) == 2);
+	twl_arr_del(arr, NULL);
 }
 
 void	suite_twl_arr_push(t_suite *suite)

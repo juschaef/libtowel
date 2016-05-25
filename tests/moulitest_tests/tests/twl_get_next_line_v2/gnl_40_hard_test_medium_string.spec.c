@@ -27,6 +27,9 @@ static void test01(t_test *test)
 	dup2(out, 1);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, str) == 0);
+	free(remainder);
+	free(line);
+	free(str);
 }
 
 void	suite_gnl_40_hard_test_medium_string(t_suite *suite)

@@ -15,6 +15,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(arr[1], "bbb") == 0);
 	mt_assert(strcmp(arr[2], "aaa") == 0);
 	mt_assert(arr[3] == NULL);
+	twl_arr_del(arr, NULL);
 }
 
 void	suite_twl_arr_swap(t_suite *suite)

@@ -23,6 +23,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(arr[1][1], "(1,1)") == 0);
 	mt_assert(arr[1][2] == NULL);
 	mt_assert(arr[2] == NULL);
+	twl_arr2_del(arr, free);
 }
 
 void	suite_twl_arr2_new(t_suite *suite)

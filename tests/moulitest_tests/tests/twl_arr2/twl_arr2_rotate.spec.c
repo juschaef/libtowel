@@ -26,6 +26,8 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(arr_new[1][1], "b") == 0);
 	mt_assert(arr_new[0][2] == NULL);
 	mt_assert(arr_new[1][2] == NULL);
+	twl_arr2_del(arr, free);
+	twl_arr2_del(arr_new, NULL);
 }
 
 static void *new_fn(int y, int x, void *context)
@@ -54,6 +56,8 @@ static void harder_test(t_test *test)
 	mt_assert(strcmp(rotated_arr[2][1], "(0,2)") == 0);
 	mt_assert(rotated_arr[2][2] == NULL);
 	mt_assert(rotated_arr[3] == NULL);
+	twl_arr2_del(arr, free);
+	twl_arr2_del(rotated_arr, NULL);
 }
 
 static void test_rotate_twice(t_test *test)
@@ -71,6 +75,8 @@ static void test_rotate_twice(t_test *test)
 	mt_assert(strcmp(rotated_arr[1][1], "(0,0)") == 0);
 	mt_assert(rotated_arr[1][2] == NULL);
 	mt_assert(rotated_arr[2] == NULL);
+	twl_arr2_del(arr, free);
+	twl_arr2_del(rotated_arr, NULL);
 }
 
 static void test_rotate_large(t_test *test)
@@ -85,6 +91,8 @@ static void test_rotate_large(t_test *test)
 	mt_assert(strcmp(rotated_arr[9][9], "(0,9)") == 0);
 	mt_assert(strcmp(rotated_arr[0][9], "(0,0)") == 0);
 	mt_assert(strcmp(rotated_arr[9][0], "(9,9)") == 0);
+	twl_arr2_del(arr, free);
+	twl_arr2_del(rotated_arr, NULL);
 }
 
 void	suite_twl_arr2_rotate(t_suite *suite)

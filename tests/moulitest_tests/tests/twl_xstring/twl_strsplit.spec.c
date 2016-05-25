@@ -8,16 +8,17 @@ static void simple_split(t_test *test)
 	segs = twl_strsplit("aaa bbb", ' ');
 	mt_assert(strcmp(segs[0], "aaa") == 0);
 	mt_assert(strcmp(segs[1], "bbb") == 0);
+	twl_arr_del(segs, free);
 }
 
 static void simple_nothing(t_test *test)
 {
 	char **segs;
 
-	segs = malloc(9999);
-	bzero(segs, 9999);
 	segs = twl_strsplit("/", ' ');
 	mt_assert(strcmp(segs[0], "/") == 0);
+	twl_arr_del(segs, free);
+
 }
 
 void	suite_twl_strsplit(t_suite *suite)

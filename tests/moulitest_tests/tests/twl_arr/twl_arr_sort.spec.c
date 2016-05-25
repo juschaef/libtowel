@@ -82,6 +82,7 @@ static void simple_test(t_test *test)
 	mt_assert(strcmp(arr[i++], "d_ccc") == 0);
 	mt_assert(strcmp(arr[i++], "d_www") == 0);
 	mt_assert(strcmp(arr[i++], "d_zzz") == 0);
+	twl_arr_del(arr, free);
 }
 
 void	suite_twl_arr_sort(t_suite *suite)
