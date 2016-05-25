@@ -35,5 +35,6 @@ void				twl_graph_del(t_graph *graph,
 	twl_lst_iter(graph->edges_, del_edge_fn, del_edge_data_fn);
 	twl_lst_iter(graph->nodes_, del_node_fn, del_node_data_fn);
 	twl_lst_del(graph->nodes_, NULL);
+	twl_lst_del(graph->edges_, NULL);
 	free(graph);
 }

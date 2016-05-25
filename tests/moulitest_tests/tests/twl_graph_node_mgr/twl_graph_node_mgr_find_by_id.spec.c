@@ -8,6 +8,7 @@ static void simple_test(t_test *test)
 	graph = twl_graph_new();
 	t_graph_node_id node_id = twl_graph_add_node(graph, strdup("A"));
 	mt_assert(twl_graph_node_mgr_find_by_id(graph->nodes_, node_id)->id_ == node_id);
+	twl_graph_del(graph, free, free);
 }
 
 static void test_not_found(t_test *test)
@@ -16,6 +17,7 @@ static void test_not_found(t_test *test)
 
 	graph = twl_graph_new();
 	mt_assert(twl_graph_node_mgr_find_by_id(graph->nodes_, 4200) == NULL);
+	twl_graph_del(graph, free, free);
 }
 
 void	suite_twl_graph_node_mgr_find_by_id(t_suite *suite)

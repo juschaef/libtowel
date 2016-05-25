@@ -45,7 +45,10 @@ static void test_edges_advanced(t_test *test)
 
 	mt_assert(twl_lst_len(node0->edges_) == 1);
 	mt_assert(edge->id_ == 2);
-	(void)edge2;
+	twl_graph_node_del(node0, NULL);
+	twl_graph_node_del(node1, NULL);
+	twl_graph_node_del(node2, NULL);
+	twl_graph_node_del(node3, NULL);
 }
 
 void	suite_twl_graph_edge_del(t_suite *suite)
