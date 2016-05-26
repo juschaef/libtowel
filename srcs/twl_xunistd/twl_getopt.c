@@ -13,6 +13,7 @@
 #include "twl_unistd.h"
 #include "twl_xstring.h"
 #include "twl_arr.h"
+#include <stdlib.h>
 
 #include "twl_stdio.h" // remove this
 
@@ -22,6 +23,7 @@ int					g_twl_optind = 1;
 int					g_twl_optopt = 0;
 
 char				*g_twl_optpos = NULL;
+char				*g_twl_optpos_save = NULL;
 int					g_twl_optsign_active = 0;
 int					g_twl_optsign = '-';
 
@@ -90,6 +92,8 @@ int					twl_getopt(int argc, char * const argv[],
 	if (g_twl_optind == 0)
 	{
 		g_twl_optind = 1;
+		free(g_twl_optpos_save);
+		g_twl_optpos_save = NULL;
 		g_twl_optpos = NULL;
 	}
 	g_twl_optopt = 0;
@@ -105,7 +109,10 @@ int					twl_getopt(int argc, char * const argv[],
 		return (-1);
 	}
 	if (!g_twl_optpos || !*g_twl_optpos)
-		g_twl_optpos = cur_arg;
+	{
+		g_twl_optpos_save = twl_strdup(cur_arg);
+		g_twl_optpos = g_twl_optpos_save;
+	}
 	if (is_start_of_opt(*g_twl_optpos))
 	{
 		g_twl_optsign = *g_twl_optpos;

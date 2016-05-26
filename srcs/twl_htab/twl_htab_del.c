@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 #include "twl_htab.h"
+#include "twl_stdio.h"
 
 /*
 ** Could use twl_htab_node_del instead.
@@ -46,7 +47,9 @@ void				twl_htab_del(t_htab *htab, t_htab_node_del_data_fn *delfn)
 		if (htab->buckets[i])
 		{
 			if (delfn)
+			{
 				twl_lst_iter(htab->buckets[i], iter_fn, delfn);
+			}
 			twl_lst_del(htab->buckets[i], inner_del_fn);
 		}
 		i++;
