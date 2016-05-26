@@ -83,6 +83,8 @@ int				twl_gnl(int const fd, char **line, char **remainder)
 	if (fd < 0 || !line)
 		return (-1);
 	ret = do_get_next_line(fd, line, remainder);
+	if (ret <= 0)
+		free(*line);
 	return (ret);
 	(void)remainder;
 }
