@@ -12,34 +12,20 @@
 
 #include <stddef.h>
 
-static void		twl_bzero(void *s, size_t n)
+char			*twl_strncpy(char *dst, const char *src, size_t limit)
 {
-	size_t	index;
-	char	*temp;
+	size_t		index;
 
-	temp = s;
 	index = 0;
-	while (index < n)
+	while (src[index] != '\0' && index < limit)
 	{
-		temp[index] = 0;
-		index++;
+		dst[index] = src[index];
+		index += 1;
 	}
-}
-
-char			*twl_strncpy(char *dst, const char *src, size_t n)
-{
-	size_t i;
-
-	if (!dst || !src)
-		return (void *)0;
-	if (n <= 0)
-		return (dst);
-	twl_bzero(dst, n);
-	i = 0;
-	while (src[i] != '\0' && i < n)
+	while (index < limit)
 	{
-		dst[i] = src[i];
-		i++;
+		dst[index] = '\0';
+		index += 1;
 	}
 	return (dst);
 }
