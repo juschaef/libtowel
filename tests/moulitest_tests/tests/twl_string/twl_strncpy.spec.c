@@ -4,10 +4,10 @@
 #define mt_test_strncpy(name, src, dst, n)				\
 static void test_## name(t_test *test)					\
 {														\
-	char	src1[100]; twl_bzero(src1, 100); strcat(src1, src);	\
-	char	src2[100]; twl_bzero(src2, 100); strcat(src1, src);	\
-	char	dst1[100]; twl_bzero(dst1, 100); strcat(dst1, dst);	\
-	char	dst2[100]; twl_bzero(dst2, 100); strcat(dst1, dst);	\
+	char	src1[100]; bzero(src1, 100); strcat(src1, src);	\
+	char	src2[100]; bzero(src2, 100); strcat(src1, src);	\
+	char	dst1[100]; bzero(dst1, 100); strcat(dst1, dst);	\
+	char	dst2[100]; bzero(dst2, 100); strcat(dst1, dst);	\
 	twl_strncpy(dst1, src1, n); strncpy(dst2, src2, n);	\
 	mt_assert(memcmp(dst1, dst2, 100) == 0);			\
 }
