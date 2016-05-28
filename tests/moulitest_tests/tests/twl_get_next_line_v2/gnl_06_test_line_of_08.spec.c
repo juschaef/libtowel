@@ -20,6 +20,8 @@ static void simple_string(t_test *test)
 	dup2(out, fd);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "oiuytrew") == 0);
+	free(line);
+	free(remainder);
 }
 
 void	suite_gnl_06_test_line_of_08(t_suite *suite)

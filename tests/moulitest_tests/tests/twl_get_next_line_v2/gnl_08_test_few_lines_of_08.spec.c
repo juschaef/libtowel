@@ -26,18 +26,26 @@ static void simple_string(t_test *test)
 	dup2(out, fd);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "abcdefgh") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "ijklmnop") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "qrstuvwx") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "yzabcdef") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "ghijklmn") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "opqrstuv") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "wxyzabcd") == 0);
+	free(line);
+	free(remainder);
 }
 
 void	suite_gnl_08_test_few_lines_of_08(t_suite *suite)

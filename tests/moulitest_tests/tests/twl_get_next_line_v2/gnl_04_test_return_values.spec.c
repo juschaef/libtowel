@@ -24,21 +24,27 @@ static void simple_string(t_test *test)
 	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
 	mt_assert(strcmp(line, "abc") == 0);
+	free(line);
 
 	/* Read new line */
 	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
 	mt_assert(*line == '\0');
+	free(line);
 
 	/* Read again, but meet EOF */
 	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 0);
 	mt_assert(line == NULL);
+	free(line);
 
 	/* Let's do it once again */
 	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 0);
 	mt_assert(line == NULL);
+	free(line);
+
+	free(remainder);
 }
 
 static void newline(t_test *test)
@@ -63,21 +69,27 @@ static void newline(t_test *test)
 	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
 	mt_assert(strcmp(line, "abc") == 0);
+	free(line);
 
 	/* Read new line */
 	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
 	mt_assert(*line == '\0');
+	free(line);
 
 	/* Read again, but meet EOF */
 	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 1);
 	mt_assert(*line == '\0');
+	free(line);
 
 	/* Let's do it once again */
 	gnl_ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(gnl_ret == 0);
 	mt_assert(line == NULL);
+	free(line);
+
+	free(remainder);
 }
 
 void	suite_gnl_04_test_return_values(t_suite *suite)

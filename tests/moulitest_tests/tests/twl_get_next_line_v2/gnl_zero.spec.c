@@ -19,6 +19,8 @@ static void simple_string(t_test *test)
 	close(p[1]);
 	dup2(out, fd);
 	mt_assert(twl_gnl(p[0], &line, &remainder) == GNL_ERR_BINARY_FILE);
+	free(line);
+	free(remainder);
 }
 
 void	suite_gnl_zero(t_suite *suite)

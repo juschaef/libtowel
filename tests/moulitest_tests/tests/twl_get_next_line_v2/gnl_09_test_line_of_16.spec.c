@@ -21,8 +21,11 @@ static void simple_string(t_test *test)
 	dup2(out, fd);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "abcdefghijklmnop") == 0);
+	free(line);
 	ret = twl_gnl(p[0], &line, &remainder);
 	mt_assert(ret == 0);
+	free(line);
+	free(remainder);
 }
 
 void	suite_gnl_09_test_line_of_16(t_suite *suite)

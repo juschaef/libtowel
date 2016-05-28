@@ -21,6 +21,8 @@ static void simple_string(t_test *test)
 	dup2(out, fd);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, str) == 0);
+	free(line);
+	free(remainder);
 }
 
 void	suite_gnl_18_test_long_line(t_suite *suite)

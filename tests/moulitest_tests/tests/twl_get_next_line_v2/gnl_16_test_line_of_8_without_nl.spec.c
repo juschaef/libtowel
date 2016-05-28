@@ -20,6 +20,8 @@ static void simple_string(t_test *test)
 	dup2(out, fd);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "efghijkl") == 0);
+	free(line);
+	free(remainder);
 }
 
 void	suite_gnl_16_test_line_of_8_without_nl(t_suite *suite)

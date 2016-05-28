@@ -21,12 +21,17 @@ static void simple_test(t_test *test)
 	remainder = NULL;
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "aaa") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "bbb") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "ccc") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "ddd") == 0);
+	free(line);
+	free(remainder);
 }
 
 void	suite_twl_gnl(t_suite *suite)

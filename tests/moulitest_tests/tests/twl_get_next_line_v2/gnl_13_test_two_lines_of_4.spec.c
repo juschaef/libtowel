@@ -22,10 +22,14 @@ static void simple_string(t_test *test)
 	dup2(out, fd);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "abcd") == 0);
+	free(line);
 	twl_gnl(p[0], &line, &remainder);
 	mt_assert(strcmp(line, "efgh") == 0);
+	free(line);
 	ret = twl_gnl(p[0], &line, &remainder);
+	free(line);
 	mt_assert(ret == 0);
+	free(remainder);
 }
 
 void	suite_gnl_13_test_two_lines_of_4(t_suite *suite)

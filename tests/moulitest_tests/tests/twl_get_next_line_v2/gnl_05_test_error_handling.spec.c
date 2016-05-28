@@ -19,6 +19,7 @@ static void simple_string(t_test *test)
 
 	/* Not opened fd */
 	mt_assert(twl_gnl(42, &line, &remainder) == -1);
+	free(remainder);
 }
 
 void	suite_gnl_05_test_error_handling(t_suite *suite)

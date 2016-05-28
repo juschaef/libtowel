@@ -33,6 +33,9 @@ static void testname(t_test *test) \
 		printf("expected {%s}\n", expected); \
 	} \
 	mt_assert(strcmp(joined, expected) == 0); \
+	free(joined); \
+	free(line); \
+	free(remainder); \
 }
 
 test_fn(simple_string, "aa\nbb\ncc\n", "aa\nbb\ncc\n", false);
