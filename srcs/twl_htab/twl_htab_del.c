@@ -41,6 +41,8 @@ void				twl_htab_del(t_htab *htab, t_htab_node_del_data_fn *delfn)
 {
 	int				i;
 
+	if (!htab)
+		return ;
 	i = 0;
 	while (i < HTAB_NUMBER_OF_BUCKETS)
 	{
