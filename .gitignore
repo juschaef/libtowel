@@ -7,3 +7,4 @@ tests/moulitest_tests/libtowel_test*
 *.sublime-workspace
 *.out
 /tests/moulitest_tests/sandbox
+/sandbox
