@@ -110,6 +110,7 @@ int					twl_getopt(int argc, char * const argv[],
 	}
 	if (!g_twl_optpos || !*g_twl_optpos)
 	{
+		free(g_twl_optpos_save);
 		g_twl_optpos_save = twl_strdup(cur_arg);
 		g_twl_optpos = g_twl_optpos_save;
 	}
