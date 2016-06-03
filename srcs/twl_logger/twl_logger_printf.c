@@ -26,7 +26,9 @@ static char			*get_level_color(t_logger_level level)
 	if (level == LOGGER_LEVEL_DEBUG)
 		return ("\033[36;1mDEBUG");
 	else if (level == LOGGER_LEVEL_INFO)
-		return ("\033[32;1mINFO");
+		return ("\033[32;1mINFO-");
+	else if (level == LOGGER_LEVEL_WARN)
+		return ("\033[33;1mWARN-");
 	else if (level == LOGGER_LEVEL_ERROR)
 		return ("\033[31;1mERROR");
 	return ("UNKWON");
@@ -50,8 +52,8 @@ void				twl_logger_printf(t_logger_level level, const char *fn,
 		exit(1);
 	}
 	pf = pf_create((char *)fmt);
-	twl_dprintf(fd, "%s %s%s [%s:%d] ", time_buffer, get_level_color(level),
-															C_CLEAR, fn, line);
+	twl_dprintf(fd, "%s [%d] %s%s [%s:%d] ", time_buffer, getpid(),
+		get_level_color(level), C_CLEAR, fn, line);
 	va_start(pf->arglist, (char *)fmt);
 	pf_prepare_xprintf__(pf);
 	pf_print_fd(pf, fd);
