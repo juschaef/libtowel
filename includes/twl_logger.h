@@ -16,6 +16,7 @@
 # define _LOGGER(lvl, ...) twl_logger_printf(lvl,__FILE__,__LINE__,__VA_ARGS__);
 # define LOG_INFO(...) _LOGGER(LOGGER_LEVEL_INFO, __VA_ARGS__);
 # define LOG_DEBUG(...) _LOGGER(LOGGER_LEVEL_DEBUG, __VA_ARGS__);
+# define LOG_WARN(...) _LOGGER(LOGGER_LEVEL_WARN, __VA_ARGS__);
 # define LOG_ERROR(...) _LOGGER(LOGGER_LEVEL_ERROR, __VA_ARGS__);
 
 int flock(int fd, int operation);
@@ -24,6 +25,7 @@ typedef enum		e_logger_level
 {
 	LOGGER_LEVEL_DEBUG,
 	LOGGER_LEVEL_INFO,
+	LOGGER_LEVEL_WARN,
 	LOGGER_LEVEL_ERROR,
 }					t_logger_level;
 
