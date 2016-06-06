@@ -20,18 +20,18 @@ static void test_## name(t_test *test)					\
 	mt_assert(memcmp(dst1, dst2, 100) == 0);			\
 }
 
-mt_test_strncpy(num1a, "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10, true);
-mt_test_strncpy(num2a, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", 10, true);
-mt_test_strncpy(num3a, "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 40, true);
-mt_test_strncpy(num4a, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", 40, true);
-mt_test_strncpy(num1b, "abcde", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10, true);
-mt_test_strncpy(num2b, "ABCDE", "abcdefghijklmnopqrstuvwxyz", 10, true);
-mt_test_strncpy(num3b, "abcde", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 40, true);
-mt_test_strncpy(num4b, "ABCDE", "abcdefghijklmnopqrstuvwxyz", 40, true);
-mt_test_strncpy(num1c, "abcdefghijklmnopqrstuvwxyz", "ABCDE", 10, true);
-mt_test_strncpy(num2c, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcde", 10, true);
-mt_test_strncpy(num3c, "abcdefghijklmnopqrstuvwxyz", "ABCDE", 40, true);
-mt_test_strncpy(num4c, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcde", 40, true);
+mt_test_strncpy(num1a, "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10, false);
+mt_test_strncpy(num2a, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", 10, false);
+mt_test_strncpy(num3a, "abcdefghijklmnopqrstuvwxyz", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 40, false);
+mt_test_strncpy(num4a, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", 40, false);
+mt_test_strncpy(num1b, "abcde", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 10, false);
+mt_test_strncpy(num2b, "ABCDE", "abcdefghijklmnopqrstuvwxyz", 10, false);
+mt_test_strncpy(num3b, "abcde", "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 40, false);
+mt_test_strncpy(num4b, "ABCDE", "abcdefghijklmnopqrstuvwxyz", 40, false);
+mt_test_strncpy(num1c, "abcdefghijklmnopqrstuvwxyz", "ABCDE", 10, false);
+mt_test_strncpy(num2c, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcde", 10, false);
+mt_test_strncpy(num3c, "abcdefghijklmnopqrstuvwxyz", "ABCDE", 40, false);
+mt_test_strncpy(num4c, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcde", 40, false);
 
 void	suite_twl_strncpy(t_suite *suite)
 {
