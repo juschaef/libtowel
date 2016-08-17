@@ -64,6 +64,7 @@ static int		do_get_next_line(int const fd, char **line, char **remainder)
 		return (1);
 	}
 	twl_strcat(*line, *remainder);
+	twl_bzero(*remainder, GNL_BUFF_SIZE + 1);
 	ret = twl_read_buffer(fd, &*remainder, line);
 	if (ret == 1 || ret < 0)
 		return (ret);
@@ -71,8 +72,7 @@ static int		do_get_next_line(int const fd, char **line, char **remainder)
 		**line = '\0';
 	if (twl_strlen(*line) > 0 || twl_strlen(*remainder) > 0)
 		return (1);
-	free(*line);
-	*line = NULL;
+	twl_strdel(line);
 	return (0);
 }
 
