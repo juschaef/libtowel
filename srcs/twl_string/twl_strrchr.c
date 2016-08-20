@@ -12,26 +12,22 @@
 
 #include <stddef.h>
 
-static size_t	twl_strlen(const char *str)
-{
-	int len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
 char			*twl_strrchr(const char *s, int c)
 {
-	int		len;
+	char		*ret;
 
-	if (!s)
-		return (NULL);
-	len = twl_strlen(s);
-	while (len >= 0 && s[len] != (char)c)
-		len--;
-	if (s[len] == (char)c)
-		return ((char*)&s[len]);
-	return (NULL);
+	ret = NULL;
+	while (1)
+	{
+		if (*s == c)
+		{
+			ret = (char *)s;
+		}
+		if (*s == 0)
+		{
+			break ;
+		}
+		s += 1;
+	}
+	return (ret);
 }
