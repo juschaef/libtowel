@@ -29,7 +29,7 @@ extern char			*g_twl_optpos;
 extern int			g_twl_optsign_active;
 extern int			g_twl_optsign;
 
-int					twl_getopt(int argc, char * const argv[],
+int					twl_getopt(int argc, char *const argv[],
 					const char *optstring);
 
 /*
