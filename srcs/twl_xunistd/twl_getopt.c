@@ -15,8 +15,6 @@
 #include "twl_arr.h"
 #include <stdlib.h>
 
-#include "twl_stdio.h" // remove this
-
 char				*g_twl_optarg = NULL;
 int					g_twl_opterr = 0;
 int					g_twl_optind = 1;
@@ -84,7 +82,7 @@ static int			get_opt_char(int argc, char * const argv[], const char *optstring)
 	return (opt);
 }
 
-int					twl_getopt(int argc, char * const argv[],
+int					twl_getopt(int argc, char *const argv[],
 					const char *optstring)
 {
 	char			*cur_arg;

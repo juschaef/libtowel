@@ -19,7 +19,7 @@
 # define LOG_WARN(...) _LOGGER(LOGGER_LEVEL_WARN, __VA_ARGS__);
 # define LOG_ERROR(...) _LOGGER(LOGGER_LEVEL_ERROR, __VA_ARGS__);
 
-int flock(int fd, int operation);
+int					flock(int fd, int operation);
 
 typedef enum		e_logger_level
 {
