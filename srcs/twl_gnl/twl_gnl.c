@@ -17,6 +17,14 @@ static char		*twl_strchr_nl(const char *s)
 	return (twl_strchr(s, '\n'));
 }
 
+static int		find_new_line(char **s_str, char **line, char *buf)
+{
+	twl_strcpy(*s_str, twl_strchr_nl(buf));
+	twl_strncat(*line, buf, twl_strchr_nl(buf) - buf);
+	twl_strcpy(*s_str, *s_str + 1);
+	return (1);
+}
+
 static int		twl_read_buffer(int fd, char **s_str, char **line)
 {
 	int			ret;
@@ -38,10 +46,7 @@ static int		twl_read_buffer(int fd, char **s_str, char **line)
 		*line = temp;
 		if (twl_strchr_nl(buf))
 		{
-			twl_strcpy(*s_str, twl_strchr_nl(buf));
-			twl_strncat(*line, buf, twl_strchr_nl(buf) - buf);
-			twl_strcpy(*s_str, *s_str + 1);
-			return (1);
+			return (find_new_line(s_str, line, buf));
 		}
 		twl_strcat(*line, buf);
 	}

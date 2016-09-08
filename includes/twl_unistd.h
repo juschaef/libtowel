@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_XUNISTD_H
-# define TWL_XUNISTD_H
+#ifndef TWL_UNISTD_H
+# define TWL_UNISTD_H
 
-#include <unistd.h>
+# include <unistd.h>
 
 ssize_t				read(int fildes, void *buf, size_t nbyte);
 
@@ -29,7 +29,7 @@ extern char			*g_twl_optpos;
 extern int			g_twl_optsign_active;
 extern int			g_twl_optsign;
 
-int					twl_getopt(int argc, char * const argv[],
+int					twl_getopt(int argc, char *const argv[],
 					const char *optstring);
 
 /*

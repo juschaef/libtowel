@@ -15,8 +15,6 @@
 #include "twl_arr.h"
 #include <stdlib.h>
 
-#include "twl_stdio.h" // remove this
-
 char				*g_twl_optarg = NULL;
 int					g_twl_opterr = 0;
 int					g_twl_optind = 1;
@@ -34,7 +32,8 @@ static bool			is_start_of_opt(char c)
 	return (c == '-');
 }
 
-static char			handle_optarg(char opt, int argc, char * const argv[], const char *optstring)
+static char			handle_optarg(char opt, int argc, char *const argv[],
+						const char *optstring)
 {
 	if (*(g_twl_optpos + 1) == '\0')
 	{
@@ -58,7 +57,8 @@ static char			handle_optarg(char opt, int argc, char * const argv[], const char 
 	(void)argc;
 }
 
-static int			get_opt_char(int argc, char * const argv[], const char *optstring)
+static int			get_opt_char(int argc, char *const argv[],
+		const char *optstring)
 {
 	char			opt;
 	char			*found;
@@ -84,8 +84,29 @@ static int			get_opt_char(int argc, char * const argv[], const char *optstring)
 	return (opt);
 }
 
-int					twl_getopt(int argc, char * const argv[],
-					const char *optstring)
+static int			twl_getopt_end_fn(char *cur_arg, int argc,
+		char *const argv[], const char *optstring)
+{
+	if (!g_twl_optpos || !*g_twl_optpos)
+	{
+		g_twl_optpos_save = twl_strdup(cur_arg);
+		g_twl_optpos = g_twl_optpos_save;
+	}
+	if (is_start_of_opt(*g_twl_optpos))
+	{
+		g_twl_optsign = *g_twl_optpos;
+		g_twl_optpos++;
+	}
+	if (*g_twl_optpos)
+	{
+		g_twl_optopt = *g_twl_optpos;
+		return (get_opt_char(argc, argv, optstring));
+	}
+	return (-1);
+}
+
+int					twl_getopt(int argc, char *const argv[],
+		const char *optstring)
 {
 	char			*cur_arg;
 
@@ -108,20 +129,5 @@ int					twl_getopt(int argc, char * const argv[],
 		g_twl_optind++;
 		return (-1);
 	}
-	if (!g_twl_optpos || !*g_twl_optpos)
-	{
-		g_twl_optpos_save = twl_strdup(cur_arg);
-		g_twl_optpos = g_twl_optpos_save;
-	}
-	if (is_start_of_opt(*g_twl_optpos))
-	{
-		g_twl_optsign = *g_twl_optpos;
-		g_twl_optpos++;
-	}
-	if (*g_twl_optpos)
-	{
-		g_twl_optopt = *g_twl_optpos;
-		return (get_opt_char(argc, argv, optstring));
-	}
-	return (-1);
+	return (twl_getopt_end_fn(cur_arg, argc, argv, optstring));
 }

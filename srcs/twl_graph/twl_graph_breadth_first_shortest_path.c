@@ -73,20 +73,19 @@ t_lst				*twl_graph_breadth_first_shortest_path(t_graph *this,
 {
 	t_lst			*frontier;
 	t_lst			*closed;
-	t_graph_node	*start_node;
-	t_graph_node	*end_node;
+	t_graph_node	*temp_node;
 	t_graph_node	*cur_node;
 
 	frontier = twl_lst_new();
 	closed = twl_lst_new();
-	start_node = twl_graph_get_node(this, start_node_id);
-	end_node = twl_graph_get_node(this, end_node_id);
-	twl_lst_push_back(frontier, start_node);
-	twl_lst_push_back(closed, start_node);
+	temp_node = twl_graph_get_node(this, start_node_id);
+	twl_lst_push_back(frontier, temp_node);
+	twl_lst_push_back(closed, temp_node);
+	temp_node = twl_graph_get_node(this, end_node_id);
 	while (twl_lst_len(frontier) > 0)
 	{
 		cur_node = twl_lst_shift(frontier);
-		if (cur_node == end_node)
+		if (cur_node == temp_node)
 		{
 			twl_lst_del(frontier, NULL);
 			twl_lst_del(closed, NULL);

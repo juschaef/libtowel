@@ -18,9 +18,9 @@
 ** Could use twl_htab_node_del instead.
 */
 
-static void                    iter_fn(void *data, void *ctx)
+static void			iter_fn(void *data, void *ctx)
 {
-	t_htab_node                             *node;
+	t_htab_node				*node;
 	t_htab_node_del_data_fn *delfn;
 
 	node = data;
@@ -28,9 +28,9 @@ static void                    iter_fn(void *data, void *ctx)
 	delfn(node->data);
 }
 
-static void                    inner_del_fn(void *data)
+static void			inner_del_fn(void *data)
 {
-	t_htab_node                             *node;
+	t_htab_node		*node;
 
 	node = data;
 	free(node->key);
