@@ -13,13 +13,6 @@
 #ifndef TWL_STDIO_H
 # define TWL_STDIO_H
 
-typedef struct		s_error_info
-{
-	int				value;
-	char			*name;
-	char			*msg;
-}					t_error_info;
-
 int					twl_printf(const char *fmt, ...);
 int					twl_sprintf(char *out, const char *fmt, ...);
 int					twl_asprintf(char **s, const char *fmt, ...);
