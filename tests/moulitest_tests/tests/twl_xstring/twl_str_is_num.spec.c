@@ -41,6 +41,16 @@ static void large_neg_nbr(t_test *test)
 	mt_assert(twl_str_is_num("-97944654545656456456456456456445645645645656456456456") == true);
 }
 
+static void large_pos_nbr(t_test *test)
+{
+	mt_assert(twl_str_is_num("+97944654545656456456456456456445645645645656456456456") == true);
+}
+
+static void error(t_test *test)
+{
+	mt_assert(twl_str_is_num("45645e456") == false);
+}
+
 void	suite_twl_str_is_num(t_suite *suite)
 {
 	SUITE_ADD_TEST(suite, simple);
@@ -51,4 +61,6 @@ void	suite_twl_str_is_num(t_suite *suite)
 	SUITE_ADD_TEST(suite, negative_nbr);
 	SUITE_ADD_TEST(suite, large_nbr);
 	SUITE_ADD_TEST(suite, large_neg_nbr);
+	SUITE_ADD_TEST(suite, large_pos_nbr);
+	SUITE_ADD_TEST(suite, error);
 }
