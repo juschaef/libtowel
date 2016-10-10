@@ -5,12 +5,15 @@ static void test_all(t_test *test)
 {
 	char	*actual;
 	char	*expected;
+	int		signum;
 
-	for (int signum = 0; signum < 40; signum += 1)
+	signum = 0;
+	while (signum < 40)
 	{
 		actual = twl_strsignal(signum);
 		expected = strsignal(signum);
 		mt_assert(strcmp(actual, expected) == 0);
+		signum += 1;
 	}
 }
 
