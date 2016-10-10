@@ -10,15 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TWL_STDIO_H
-# define TWL_STDIO_H
+#include <unistd.h>
+#include <stdbool.h>
+#include <errno.h>
+#include <stdio.h>
+#include <string.h>
+#include "twl_stdio.h"
+#include "twl_string.h"
 
-int					twl_printf(const char *fmt, ...);
-int					twl_sprintf(char *out, const char *fmt, ...);
-int					twl_asprintf(char **s, const char *fmt, ...);
-int					twl_dprintf(const int fd, const char *fmt, ...);
-int					twl_putchar(int c);
+static char		g_twl_strerror_msg[1024];
 
-char				*twl_strerror(int errnum);
+char			*twl_strerror(int errnum)
+{
+	const char	**tab;
+	int			size;
 
-#endif
+	tab = (const char **)sys_errlist;
+	size = sys_nerr;
+	if (errnum < 0 || errnum > size || !tab[errnum])
+	{
+		twl_sprintf(g_twl_strerror_msg, "Unknown error %i%c", errnum, 0);
+	}
+	else
+	{
+		twl_strcpy(g_twl_strerror_msg, tab[errnum]);
+	}
+	return (g_twl_strerror_msg);
+}

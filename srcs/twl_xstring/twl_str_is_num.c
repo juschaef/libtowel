@@ -10,14 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "twl_ctype.h"
-#include "twl_xstring.h"
+#include <stdbool.h>
 
-bool				twl_str_is_num(char *s)
+bool				twl_str_is_num(char *str)
 {
-	if (twl_strlen(s) == 0)
+	if (*str == '+' || *str == '-')
+		str += 1;
+	if (!*str)
 		return (false);
-	if (*s == '-')
-		s++;
-	return (twl_str_is_pos_num(s));
+	while (*str)
+	{
+		if (*str < '0' || *str > '9')
+			return (false);
+		str += 1;
+	}
+	return (true);
 }
