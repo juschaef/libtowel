@@ -18,25 +18,23 @@ static void test_## name(t_test *test) \
 	mt_assert(strcmp(actual, expected) == 0); \
 }
 
-mt_test_strerror(num01, EPERM, false);
-mt_test_strerror(num02, ENOENT, false);
-mt_test_strerror(num03, ESRCH, false);
-mt_test_strerror(num04, EINTR, false);
-mt_test_strerror(num05, EIO, false);
-mt_test_strerror(num06, ENXIO, true);
-mt_test_strerror(num07, E2BIG, true);
-mt_test_strerror(num08, ENOEXEC, true);
-mt_test_strerror(num09, EBADF, true);
+void	tests_all(t_test *test)
+{
+	char	*actual;
+	char	*expected;
+	int		errnum;
+
+	errnum = 0;
+	while (errnum < 100)
+	{
+		actual = twl_strerror(errnum);
+		expected = strerror(errnum);
+		mt_assert(strcmp(actual, expected) == 0);
+		errnum += 1;
+	}
+}
 
 void	suite_twl_strerror(t_suite *suite)
 {
-	SUITE_ADD_TEST(suite, test_num01);
-	SUITE_ADD_TEST(suite, test_num02);
-	SUITE_ADD_TEST(suite, test_num03);
-	SUITE_ADD_TEST(suite, test_num04);
-	SUITE_ADD_TEST(suite, test_num05);
-	SUITE_ADD_TEST(suite, test_num06);
-	SUITE_ADD_TEST(suite, test_num07);
-	SUITE_ADD_TEST(suite, test_num08);
-	SUITE_ADD_TEST(suite, test_num09);
+	SUITE_ADD_TEST(suite, tests_all);
 }
