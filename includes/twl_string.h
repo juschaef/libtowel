@@ -36,6 +36,5 @@ char				*twl_strncpy(char *dst, const char *src, size_t n);
 char				*twl_strnstr(const char *s1, const char *s2, size_t n);
 char				*twl_strrchr(const char *s, int c);
 char				*twl_strstr(const char *s1, const char *s2);
-char				*twl_strsignal(int signum);
 
 #endif
