@@ -1,8 +1,6 @@
 #include <project.h>
 #include "twl_xstring.h"
 
-#define DEBUG
-
 #ifdef DEBUG
 #define mt_test_str_replace_first(name, str, old, new, expected) \
 static void	test_## name(t_test *test) \
