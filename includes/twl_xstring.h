@@ -36,6 +36,7 @@ void				twl_str_replace_char(char *s, char target,
 char				*twl_str_replace(char *s, char *target, char *replacement);
 char				*twl_str_replace_free(char *s, char *target,
 															char *replacement);
+char				*twl_str_replace_first(char *s, char *old, char *new);
 char				*twl_strcapitalize(char *str);
 void				twl_strclr(char *s);
 size_t				twl_strcountchar(char *s, char c);
