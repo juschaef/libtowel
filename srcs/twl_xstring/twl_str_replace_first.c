@@ -33,7 +33,7 @@ static char	*get_first_occurence(char *str, char *old,
 	if (!str[index])
 		return (NULL);
 	ret = str + index;
-	while (!str[index])
+	while (str[index])
 		index += 1;
 	*size_str = index;
 	return (ret);
