@@ -89,7 +89,8 @@ t_lst						*twl_lst_slice(t_lst *lst, int begin, int end);
 
 void						twl_lst_remove_mult(t_lst *lst, int begin, int end,
 															void (*delfn)());
-
+void						twl_lst_remove(t_lst *lst, void *data,
+														void (*delfn)(void *));
 /*
 ** Collection
 */
