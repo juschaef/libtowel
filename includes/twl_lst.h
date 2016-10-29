@@ -77,6 +77,7 @@ void						*twl_lst_pop_front(t_lst *lst);
 void						*twl_lst_pop_back(t_lst *lst);
 void						twl_lst_push_front(t_lst *lst, void *data);
 void						twl_lst_push_back(t_lst *lst, void *data);
+void						twl_lst_push_sorted(t_lst *lst, void *data, int (*cmp_fn)(void *data, void *data1));
 void						twl_lst_insert(t_lst *lst, int index, void *data);
 void						twl_lst_insert_lst(t_lst *lst_dest, int index,
 															t_lst *lst_src);

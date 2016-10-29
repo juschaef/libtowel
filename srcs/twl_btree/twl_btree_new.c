@@ -1,0 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_norris_loves_the_norminette.c                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: chuck <chuck@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2042/02/30 42:00:00 by chuck             #+#    #+#             */
+/*   Updated: 2042/02/30 41:59:59 by chuck            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "twl_btree.h"
+
+t_btree				*twl_btree_new(t_btree_cmp_fn *cmp_fn)
+{
+	t_btree			*this;
+
+	this = twl_malloc_x0(sizeof(t_btree));
+	this->head = NULL;
+	this->size = 0;
+	this->cmp_fn = cmp_fn;
+	return (this);
+}
